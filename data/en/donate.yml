@@ -22,12 +22,15 @@ crypto:
   title: Cryptocurrencies
   text: We believe in cryptocurrencies and we accept donations on several chains.
   btc: 1PaRrotouWgDVeiGTaoGRdXYQdFcjoo7fw
-  btcb32: bc1qejlm4wkpgpv7hgscqj4j35q390du47zcdu6s33
-  ltc: MEEbtFkxzqqxtRZ4xGtyXGZvMYX4RuMN4B
-  ltcb32: ltc1qru05ulfajwnpy47gagcgx3rdc8lj6kjku9m337
+  btcb32: bc1qsuqck5xl5su02cyh92gyv3v2rl9k5yq49rs939
+  ltc: MH4HAW2ZwDGde7USi8XS41YGcfPpczSKqt
+  ltcb32: ltc1q9jcsve8cfjxlaygtz2ts49ydgksrz8d96hus6y
   xlm: GA7OVMQNTET4ZDUZSUFADOQUFENNMB3PNJCQFWQDBNW5Q2VI4FW2WYXE
-  eth: 0x2fBf674282248701ddfeCe0bb992524043572633
-  erc20: We support USDT, USDC, BAT, SAI, DAI, MKR, Link and 0x
+  doge: D8fDCq1nAPBN1AfLC2mzLfgL95uz2S3DDh
+  dash: Xx8o5x7tarm37g1tAtPgGRExLhYLPgRpG4
+  zcash: t1daB37ZGJWki6JovW341Sr8uzx1UebxKWM
+  eth: 0xbb40037943af35B40bf6cDBFda6063982d466e95
+  erc20: We support USDT, USDC, PAXG, BAT, DAI, MKR, Link, WBTC, ZRX, KNC and more.
 
 referrals:
   title: Referral Links
