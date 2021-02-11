@@ -21,6 +21,8 @@ link = "plugins/magnific-popup/magnific-popup.css"
 link = "plugins/slick/slick.css"
 [[params.plugins.css]]
 link = "plugins/fonts/fonts.css"
+[[params.plugins.css]]
+link = "plugins/particles/particles.css"
 
 # js plugins
 [[params.plugins.js]]
@@ -35,6 +37,10 @@ link = "plugins/shuffle/shuffle.min.js"
 link = "plugins/magnific-popup/jquery.magnific-popup.min.js"
 [[params.plugins.js]]
 link = "plugins/lazy-load/lozad.min.js"
+[[params.plugins.js]]
+link = "plugins/particles/particles.min.js"
+[[params.plugins.js]]
+link = "plugins/particles/init.min.js"
 
 ############################# Navigation ##################################
 
