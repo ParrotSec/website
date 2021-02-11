@@ -6,9 +6,9 @@
 
 				{{"<!-- Footer Social Links -->" | safeHTML}}
 				<div class="social-icon">
-					<ul class="list-inline">
+					<ul class="row p-0 justify-content-center">
 						{{ range .Site.Params.social }}
-						<li class="list-inline-item center-text"><a target="_blank" href="{{ .link | safeURL }}"><img src="{{ .icon }}" width="70px" height="70px" class="img-fluid" alt="" /></a></li>
+						<li class="list-inline-item center-text mb-0 p-1 mr-0"><a target="_blank" href="{{ .link | safeURL }}"><img src="{{ .icon }}" width="70px" height="70px" class="img-fluid" alt="" /></a></li>
 						{{ end }}
 					</ul>
 				</div>

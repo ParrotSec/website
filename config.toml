@@ -116,6 +116,11 @@ portalsTitle = "Community Links"
 portalsDescription = "Telegram, Matrix, IRC, Facebook, Twitter, Instagram and more. All the official channels of our community."
 portalsURL = "docs/community"
 portalsURLtext = "Official Links"
+pwnboxTitle = "Parrot + HTB"
+pwnboxContent = "ParrotOS worked with HackTheBox to introduce you PWNBOX - use ParrotOS in your browser!"
+pwnboxBtnText = "Read more"
+pwnboxURL = "https://help.hackthebox.eu/machines-challenges/v2-pwnbox"
+htbLogoURL = "images/htb_logo_dark.png"
 
 # contribute
 [params.contribute]

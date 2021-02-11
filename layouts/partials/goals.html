@@ -14,8 +14,8 @@
                 <img class="img-fluid" src="{{ $data.goals.image | absURL}}" alt="image">
             </div>
             <div class="col-lg-6">
-                <div class="content-block">
-                    {{with $data.goals.title}} <h2>{{ . }}</h2> {{ end }}
+                <div class="content-block pt-lg-0">
+                    {{with $data.goals.title}} <h2 class="text-center text-lg-left">{{ . }}</h2> {{ end }}
                     {{with $data.goals.description}} <p>{{ . }}</p> {{ end }}
                     {{with $data.goals.description2}} <p>{{ . }}</p> {{ end }}
                     <div class="row">

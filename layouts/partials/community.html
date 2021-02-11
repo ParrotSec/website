@@ -2,15 +2,20 @@
 <section id="community" class="call-to-action section-sm bg-1 overly" style='top-padding: 20em;bottom-padding: 20em;background-image: url("{{ .Site.Params.community.background | absURL }}")'>
     <div class="container">
         <div class="row" style="background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5));border-radius: 2em;padding:4em">
-            <div class="col-lg-6 text-center">
+            <div class="col-lg-4 text-center d-flex flex-column">
                {{ with .Site.Params.community.title}} <h2 style="color:#fff">{{ . }}</h2> {{ end }}
                {{ with .Site.Params.community.content }} <p style="color:#fff">{{ . }}</p> {{ end }}
-                <a href="{{ .Site.Params.community.btnURL }}" class="btn btn-main" style="color:#222">{{ with .Site.Params.community.btnText }} {{ . }} {{end}}</a>
+                <a href="{{ .Site.Params.community.btnURL }}" class="btn btn-main mt-auto" style="color:#222">{{ with .Site.Params.community.btnText }} {{ . }} {{end}}</a>
             </div>
-            <div class="col-lg-6 text-center">
+            <div class="col-lg-4 text-center d-flex flex-column mt-4 mt-lg-0">
+               {{ with .Site.Params.community.pwnboxTitle}} <h2 style="color:#fff">{{ . }}</h2> {{ end }}
+               {{ with .Site.Params.community.pwnboxContent }} <p style="color:#fff">{{ . }}</p> {{ end }}
+	       <a href="{{ .Site.Params.community.pwnboxURL }}" class="btn btn-main mt-auto d-flex justify-content-center" id="htb"><img src="{{ .Site.Params.community.htbLogoURL}}" height="16px" width="14px" class="align-self-center mr-2"></img>{{ with .Site.Params.community.pwnboxbtnText }} {{ . }} {{end}}</a>
+            </div>
+            <div class="col-lg-4 text-center d-flex flex-column mt-4 mt-lg-0">
                 {{ with .Site.Params.community.portalsTitle}} <h2 style="color:#fff">{{ . }}</h2> {{ end }}
                 {{ with .Site.Params.community.portalsDescription }} <p style="color:#fff">{{ . }}</p> {{ end }}
-                 <a href="{{ .Site.Params.community.portalsURL }}" class="btn btn-main" style="color:#222">{{ with .Site.Params.community.portalsURLtext }} {{ . }} {{end}}</a>
+                 <a href="{{ .Site.Params.community.portalsURL }}" class="btn btn-main mt-auto" style="color:#222">{{ with .Site.Params.community.portalsURLtext }} {{ . }} {{end}}</a>
              </div>
         </div>
     </div>
