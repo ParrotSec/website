@@ -47,14 +47,17 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12">
                 <div style="background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0,0,0,0.5));padding:2em;margin-top:5em">
-                    <h1 class="text-center">{{ $data.donate.crypto.title }}</h1>
+                    <h1 class="style text-center">{{ $data.donate.crypto.title }}</h1>
                     <p>{{ $data.donate.crypto.text }}</p>
-                    <p>BTC: <b>{{ $data.donate.crypto.btc }}</b></p>
-                    <p>BTC Bech32: <b>{{ $data.donate.crypto.btcb32 }}</b></p>
-                    <p>LTC: <b>{{ $data.donate.crypto.ltc }}</b></p>
-                    <p>LTC Bech32: <b>{{ $data.donate.crypto.ltcb32 }}</b></p>
-                    <p>XLM: <b>{{ $data.donate.crypto.xlm }}</b></p>
-                    <p>ETH: <b>{{ $data.donate.crypto.eth }}</b></p>
+                    <p><button class="btn btn-copy" data-clipboard="{{ $data.donate.crypto.btc }}">BTC</button><b class="b-style">{{ $data.donate.crypto.btc }}</b></p>
+                    <p><button class="btn btn-copy" data-clipboard="{{ $data.donate.crypto.btcb32 }}">BTC Bech32</button><b class="b-style">{{ $data.donate.crypto.btcb32 }}</b></p>
+                    <p><button class="btn btn-copy" data-clipboard="{{ $data.donate.crypto.ltc }}">LTC</button><b class="b-style">{{ $data.donate.crypto.ltc }}</b></p>
+                    <p><button class="btn btn-copy" data-clipboard="{{ $data.donate.crypto.ltcb32 }}">LTC Bech32</button><b class="b-style">{{ $data.donate.crypto.ltcb32 }}</b></p>
+                    <p><button class="btn btn-copy" data-clipboard="{{ $data.donate.crypto.xlm }}">XLM</button><b class="b-style">{{ $data.donate.crypto.xlm }}</b></p>
+                    <p><button class="btn btn-copy" data-clipboard="{{ $data.donate.crypto.eth }}">ETH</button><b class="b-style">{{ $data.donate.crypto.eth }}</b></p>
+                    <p><button class="btn btn-copy" data-clipboard="{{ $data.donate.crypto.doge }}">DOGE</button><b class="b-style">{{ $data.donate.crypto.doge }}</b></p>
+                    <p><button class="btn btn-copy" data-clipboard="{{ $data.donate.crypto.dash }}">DASH</button><b class="b-style">{{ $data.donate.crypto.dash }}</b></p>
+                    <p><button class="btn btn-copy" data-clipboard="{{ $data.donate.crypto.zcash }}">ZCASH</button><b class="b-style">{{ $data.donate.crypto.zcash }}</b></p>
                     <p>ETH ERC20: {{ $data.donate.crypto.erc20 }}</p>
                 </div>
             </div>

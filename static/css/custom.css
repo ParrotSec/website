@@ -6,3 +6,142 @@
   color:#222;
   background:#9fef00;
 }
+
+/* btn style for cryptocurrency div */
+.btn-copy.btn {
+  background: #57cbcc;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px 35px;
+  text-transform: uppercase;
+}
+
+.btn-copy:hover {
+  background: #2c9091;
+  color: #fff;
+}
+
+.b-style {
+  background: none;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px 35px;
+  border: 1px solid #57cbcc;
+}
+
+@media only screen 
+  and (max-width: 991px) {
+
+  h1.style {
+      font-size: 2rem;
+  }
+
+  .b-style {
+      width: 60%; 
+      overflow-y: auto;
+      overflow-x: scroll;
+      position: relative;
+      display: inline-flex;
+      vertical-align: middle;
+  }
+
+  .btn-copy.btn {
+      width: 40%;
+      padding-left: 1px;
+      padding-right: 1px;
+  }
+}
+
+
+/* style for new documentaton section */
+/*
+#docs {
+  background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), 
+              url("../../images/backgrounds/doc-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.border-meghna.docs {
+  border-top: none;
+}
+
+.border-meghna.docs::before {
+  margin-left: -150px;
+  width: 50%;
+}
+
+.searchFieldDocs {
+  min-height: 70px;
+  width: 50%;
+  border: 0;
+  background: #fff;
+  display: block;
+  padding: 10px 70px 10px 32px;
+  font-size: 18px;
+  color: #666;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.btn-faqs.btn {
+  text-transform: none;
+  border-radius: 10px;
+}
+
+.btn-faqs.btn-main {
+  background: cyan;
+  font-size: 18px;
+}
+
+.btn-faqs.btn-main:hover {
+  background: #57cbcc;
+}
+
+.card {
+  border-radius: 20px;
+  display: block;
+
+}
+
+.card-body {
+  padding: 2px;
+}
+
+.help-box {
+  filter: invert(100%) sepia(3%) saturate(0%) hue-rotate(134deg) brightness(103%) contrast(103%);
+}
+
+.card:hover .help-box {
+  filter: invert(82%) sepia(92%) saturate(1025%) hue-rotate(104deg) brightness(101%) contrast(102%);
+}
+
+hr {
+  padding: 0;
+  margin: 0 auto;
+  width: 90%;
+}
+
+@media only screen 
+  and (max-width: 991px) {
+  
+  .searchFieldDocs {
+      width: 80%;
+  }
+
+  .border-meghna.docs::before {
+      margin-left: -50px;
+      width: 100%;
+  }
+  
+  .card {
+      margin-bottom: 40px;
+  }
+
+  .btn-jump-aboard {
+      margin-bottom: 20px;
+  }
+}*/
