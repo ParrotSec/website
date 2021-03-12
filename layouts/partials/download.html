@@ -5,7 +5,7 @@
 <div id="particles-js">
 </div>
 
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="../plugins/particles/particles.min.js"></script>
 <script>
     window.particlesJS.load('particles-js', '../plugins/particles/particles.json', function(){
       console.log('particles.json loaded!');
@@ -27,9 +27,9 @@
     <div class="text-center">
         {{ range .otherlinks }}
         {{ if .hashes }}
-        <button type="button" class="btn btn-info" ><a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/signed-hashes.txt" target="_blank">{{ .text }}</a></button>
+        <a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/signed-hashes.txt" target="_blank"><button type="button" class="btn btn-info">{{ .text }}</button></a>
         {{ else }}
-        <button type="button" class="btn btn-info" ><a href="{{ .URL }}" target="_blank">{{ .text }}</a></button>
+        <a href="{{ .URL }}" target="_blank"><button type="button" class="btn btn-info">{{ .text }}</button></a>
         {{ end }}
         {{ end }}
     </div>
