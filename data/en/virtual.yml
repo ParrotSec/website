@@ -1,0 +1,22 @@
+enable : true
+title : Download ParrotOS OVA & Docker
+description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque explicabo aspernatur soluta culpa autem tempore ad eius eos rem minima. Alias praesentium minus animi magni repellat cumque fugiat dolorum accusamus?
+
+editions : 
+  - name : OVA Home
+    description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+    icon : ../images/virtualbox.png
+    image : ../images/monitor.png
+    DE : Parrot-home
+  - name : OVA Security
+    description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+    icon : ../images/virtualbox.png
+    image : ../images/monitor.png
+    DE : Parrot-security
+    
+extension : virtual.ova
+torrent : yes
+server_icon : ../images/icons/server.png
+torrent_icon : ../images/icons/torrent.png
+
+docker_URL : https://nest.parrotsec.org/build/docker-images/-/blob/master/README.md

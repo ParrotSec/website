@@ -19,8 +19,7 @@ download:
       URL : /virtual
       image : ../images/monitor.png
 
-
-
+# old config
   categories:
     - entry: home
     - entry: security
