@@ -1,0 +1,26 @@
+enable : true
+title : Download ParrotOS Home
+description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque explicabo aspernatur soluta culpa autem tempore ad eius eos rem minima. Alias praesentium minus animi magni repellat cumque fugiat dolorum accusamus?
+
+editions : 
+  - name : MATE Edition
+    description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+    icon : ../images/icons/mate.png
+    image : ../images/monitor.png
+    DE : Parrot-home
+  - name : KDE Edition
+    description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+    icon : ../images/icons/kde.png
+    image : ../images/monitor.png
+    DE : Parrot-kde-home
+  - name : XFCE Edition
+    description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+    icon : ../images/icons/xfce.png
+    image : ../images/monitor.png
+    DE : Parrot-xfce
+
+
+extension : amd64.iso
+torrent : yes
+server_icon : ../images/icons/server.png
+torrent_icon : ../images/icons/torrent.png

@@ -1,6 +1,26 @@
 download:
   enable : true
   title : Download ParrotOS
+  defaultImg : ../images/monitor.png
+  version :
+    - title : Get Home Edition
+      description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+      icon : home_icon
+      URL : /home-edition
+      image : ../images/monitor.png
+    - title : Get Security Edition
+      description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+      icon : security_icon
+      URL : /security-edition
+      image : ../images/monitor.png
+    - title : Get Parrot Virtual
+      description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+      icon : home_icon
+      URL : /virtual
+      image : ../images/monitor.png
+
+
+
   categories:
     - entry: home
     - entry: security
