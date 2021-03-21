@@ -1,6 +1,9 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
-<section id="contribute" class="call-to-action section-sm bg-1 overly" style='top-padding: 20em;bottom-padding: 20em;background-image: url("{{ .Site.Params.contribute.background | absURL }}")'>
+<div id="particles-js">
+</div>
+
+<section id="contribute" class="call-to-action section-sm bg-1 overly" style='background-image: url("{{ .Site.Params.contribute.background | absURL }}")'>
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12 text-center">
@@ -42,3 +45,10 @@
         </div>
     </div>
 </section>
+
+<script src="../plugins/particles/particles.min.js"></script>
+<script>
+    window.particlesJS.load('particles-js', '../plugins/particles/particles.json', function(){
+      console.log('particles.json loaded!');
+    });
+</script>
