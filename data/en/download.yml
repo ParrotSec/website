@@ -1,23 +1,23 @@
 download:
   enable : true
-  title : Download ParrotOS
+  title : Download Parrot qOS
   defaultImg : ../images/monitor.png
   version :
     - title : Get Home Edition
-      description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+      description : Parrot Home Edition is a general purpose operating system with the typical Parrot look and feel. This edition is designed for daily use, privacy and software development. Parrot Tools can be manually installed to assemble a custom and lightweithg pentesting environment.
       icon : home_icon
       URL : /home-edition
-      image : ../images/monitor.png
+      image : ../images/monitor-home-mate.png
     - title : Get Security Edition
-      description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+      description : Parrot Security Edition is a special purpose operating system designed for Penetration Test and Red Team operations. It contains a full arsenal of ready to use pentest tools. 
       icon : security_icon
       URL : /security-edition
-      image : ../images/monitor.png
-    - title : Get Parrot Virtual
-      description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+      image : ../images/monitor-security-mate.png
+    - title : IoT and Cloud appliances
+      description : Parrot IoT and Cloud Appliances are special editions of Parrot Security made for embedded devices, cloud environments, virtual machines and other special deployments.
       icon : home_icon
       URL : /virtual
-      image : ../images/monitor.png
+      image : ../images/monitor-cloud.png
 
 # old config
   categories:

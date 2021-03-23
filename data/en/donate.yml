@@ -34,7 +34,7 @@ crypto:
 
 referrals:
   title: Referral Links
-  description: Even if we host most of our infrastructure on bare metal servers, some of our nodes (CDN edge nodes etc) are hosted on famous cloud providers that provide referral programs.
+  description: Even if we host most of our infrastructure on bare metal servers, some of our servers are hosted on popular cloud providers that have referral programs.
   digitalocean:
     title: DigitalOcean
     text: Get $100 of free credit with our DigitalOcean referral link.

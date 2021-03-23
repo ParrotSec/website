@@ -1,17 +1,17 @@
 enable : true
-title : Download ParrotOS OVA & Docker
-description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque explicabo aspernatur soluta culpa autem tempore ad eius eos rem minima. Alias praesentium minus animi magni repellat cumque fugiat dolorum accusamus?
+title : Download Parrot IoT and Cloud appliances
+description : Parrot IoT and Cloud Appliances are special editions of Parrot Security made for embedded devices, cloud environments, virtual machines and other special deployments.
 
 editions : 
   - name : OVA Home
-    description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+    description : Parrot Home Edition packed in a handful OVA file for VirtualBox and VMWare
     icon : ../images/virtualbox.png
-    image : ../images/monitor.png
+    image : ../images/monitor-home-mate.png
     DE : Parrot-home
   - name : OVA Security
-    description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+    description : Parrot Security Edition packed in a handful OVA file for VirtualBox and VMWare
     icon : ../images/virtualbox.png
-    image : ../images/monitor.png
+    image : ../images/monitor-security-mate.png
     DE : Parrot-security
     
 extension : virtual.ova

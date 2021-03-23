@@ -1,22 +1,22 @@
 enable : true
-title : Download ParrotOS Home
-description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque explicabo aspernatur soluta culpa autem tempore ad eius eos rem minima. Alias praesentium minus animi magni repellat cumque fugiat dolorum accusamus?
+title : Download Parrot Home Edition
+description : Parrot Home Edition is a general purpose operating system with the typical Parrot look and feel. This edition is designed for daily use, privacy and software development. Parrot Tools can be manually installed to assemble a custom and lightweithg pentesting environment.
 
 editions : 
-  - name : MATE Edition
-    description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+  - name : MATE Desktop
+    description : MATE is a lightweight desktop environment with a classical GNU/Linux layout. It is the default desktop environment of Parrot OS and represents the iconical look and feel of the system.
     icon : ../images/icons/mate.png
-    image : ../images/monitor.png
+    image : ../images/monitor-home-mate-browser.png
     DE : Parrot-home
-  - name : KDE Edition
-    description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+  - name : KDE Desktop
+    description : KDE Plasma is a modern desktop environment with advanced features and high customizability. It uses more resources compared to MATE and gives its best on powerful and modern hardware.
     icon : ../images/icons/kde.png
-    image : ../images/monitor.png
+    image : ../images/monitor-home-kde.png
     DE : Parrot-kde-home
-  - name : XFCE Edition
-    description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur odit minima dolores ex neque. Natus reprehenderit cumque quisquam voluptatum distinctio neque nemo. Veritatis tempore commodi ipsum labore vero nesciunt?
+  - name : XFCE Desktop
+    description : XFCE is a very lightweight desktop environment similar to MATE configured to offer an alternative look and feel.
     icon : ../images/icons/xfce.png
-    image : ../images/monitor.png
+    image : ../images/monitor-home-xfce.png
     DE : Parrot-xfce
 
 
