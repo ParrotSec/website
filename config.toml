@@ -122,7 +122,7 @@ portalsURLtext = "Official Links"
 pwnboxTitle = "Parrot + HTB"
 pwnboxContent = "ParrotOS worked with HackTheBox to introduce you PWNBOX - use ParrotOS in your browser!"
 pwnboxBtnText = "Read more"
-pwnboxURL = "https://help.hackthebox.eu/machines-challenges/v2-pwnbox"
+pwnboxURL = "https://www.hackthebox.eu/newsroom/supporting-parrot-os"
 htbLogoURL = "images/htb_logo_dark.png"
 
 # download 
