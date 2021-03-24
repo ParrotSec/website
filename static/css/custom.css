@@ -7,6 +7,10 @@
   background:#9fef00;
 }
 
+.navbar-toggler {
+  border: none;
+}
+
 /* btn style for cryptocurrency div */
 .btn-copy.btn {
   background: #57cbcc;

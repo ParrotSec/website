@@ -4,6 +4,9 @@
 
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
+<div id="particles-js">
+</div>
+
 <section id="donate-intro" class="call-to-action section-sm bg-1 overly" style='background-image: url("{{ .Site.Params.donate.background | absURL }}")'>
     <div class="container">
         <div class="row">
@@ -83,5 +86,12 @@
         {{ .Content }}
     </div>
 </section>
+
+<script src="../plugins/particles/particles.min.js"></script>
+<script>
+    window.particlesJS.load('particles-js', '../plugins/particles/particles.json', function(){
+      console.log('particles.json loaded!');
+    });
+</script>
 
 {{ end }}
