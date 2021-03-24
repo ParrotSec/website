@@ -11,6 +11,13 @@
   border: none;
 }
 
+@media only screen 
+  and (max-width: 991px) {
+    #navigation {
+      margin-top: 0.5rem !important;
+    }
+  }
+
 /* btn style for cryptocurrency div */
 .btn-copy.btn {
   background: #57cbcc;
