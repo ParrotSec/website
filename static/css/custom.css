@@ -11,20 +11,6 @@
   border: none;
 }
 
-@media only screen 
-  and (max-width: 991px) {
-    #navigation {
-      margin-top: 0.5rem !important;
-    }
-  }
-
-@media only screen 
-and (max-width: 340px) {
-  .navbar-brand {
-    margin: 0;
-  }
-}
-
 /* btn style for cryptocurrency div */
 .btn-copy.btn {
   background: #57cbcc;
@@ -49,30 +35,6 @@ and (max-width: 340px) {
   padding: 10px 35px;
   border: 1px solid #57cbcc;
 }
-
-@media only screen 
-  and (max-width: 991px) {
-
-  h1.style {
-      font-size: 2rem;
-  }
-
-  .b-style {
-      width: 60%; 
-      overflow-y: auto;
-      overflow-x: scroll;
-      position: relative;
-      display: inline-flex;
-      vertical-align: middle;
-  }
-
-  .btn-copy.btn {
-      width: 40%;
-      padding-left: 1px;
-      padding-right: 1px;
-  }
-}
-
 
 /* style for new documentaton section */
 /*
@@ -167,7 +129,6 @@ hr {
 
 /* Parrot OS Animated Logo by Serverket */
 .svg_logo {
-  position: center;
   z-index: 3;
   width: 30%;
   height: 30%;
@@ -315,4 +276,57 @@ hr {
     fill-opacity: 1;
     stroke-width: 0pt;
   }
+}
+
+/* Media Queries */
+@media only screen 
+  and (max-width: 991px) {
+
+  h1.style {
+      font-size: 2rem;
+  }
+
+  .b-style {
+      width: 60%; 
+      overflow-y: auto;
+      overflow-x: scroll;
+      position: relative;
+      display: inline-flex;
+      vertical-align: middle;
+  }
+
+  .btn-copy.btn {
+      width: 40%;
+      padding-left: 1px;
+      padding-right: 1px;
+  }
+}
+
+@media only screen 
+  and (max-width: 991px) {
+    #navigation {
+      margin-top: 0.5rem !important;
+    }
+  }
+
+@media only screen 
+and (max-width: 800px) {
+  .navbar-brand {
+    margin: 0;
+  }
+
+  .svg_logo {
+    width: 20% !important;
+    height: 20% !important;
+  }
+
+}
+
+@media only screen 
+and (min-width: 280px)
+and (max-width: 320px) {
+  a.navbar-brand {
+    width: 70% !important;
+  }
+
 }
