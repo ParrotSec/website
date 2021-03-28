@@ -130,8 +130,6 @@ hr {
 /* Parrot OS Animated Logo by Serverket */
 .svg_logo {
   z-index: 3;
-  width: 30%;
-  height: 30%;
 }
 
 #circle {
@@ -316,17 +314,8 @@ and (max-width: 800px) {
   }
 
   .svg_logo {
-    width: 20% !important;
-    height: 20% !important;
-  }
-
-}
-
-@media only screen 
-and (min-width: 280px)
-and (max-width: 320px) {
-  a.navbar-brand {
-    width: 70% !important;
+    width: 10% !important;
+    height: 10% !important;
   }
 
 }
