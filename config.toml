@@ -142,9 +142,9 @@ background = "images/backgrounds/mountains-poly.jpg"
 
 # footer
 [params.footer]
-copyright = "2013-2021 Lorenzo Faletra"
+copyright = "2013-2020 Lorenzo Faletra"
 copyrightURL = "https://palinuro.dev"
-copyright2 = "2021 Parrot Security CIC"
+copyright2 = "2020-2021 Parrot Security CIC"
 copyright2URL = "#you-are-already-here"
 
 
