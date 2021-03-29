@@ -3,7 +3,7 @@ title: "Parrot 4.10 Release Notes"
 date: 2020-08-16T11:30:12+02:00
 author: palinuro
 image: images/blog/4.10/parrot-4.10.jpg
-description : "Parrot 4.9 is now available for download, read the release notes"
+description : "Parrot 4.10 is now available for download, read the release notes"
 ---
 
 We are proud to announce the release of Parrot OS 4.10.
