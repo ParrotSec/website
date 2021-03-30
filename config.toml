@@ -20,8 +20,6 @@ link = "plugins/magnific-popup/magnific-popup.css"
 [[params.plugins.css]]
 link = "plugins/slick/slick.css"
 [[params.plugins.css]]
-link = "plugins/fonts/fonts.css"
-[[params.plugins.css]]
 link = "plugins/particles/particles.css"
 [[params.plugins.css]]
 link = "/css/custom.css"
