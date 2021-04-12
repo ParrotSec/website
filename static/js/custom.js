@@ -14,3 +14,6 @@
 				$tmp.remove();
 			})
 		})
+
+	/* ParticlesJS */
+	particlesJS.load('particles-js', '../plugins/particles/particles.json');

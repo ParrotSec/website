@@ -39,8 +39,8 @@ link = "plugins/magnific-popup/jquery.magnific-popup.min.js"
 link = "plugins/lazy-load/lozad.min.js"
 [[params.plugins.js]]
 link = "plugins/particles/particles.min.js"
-[[params.plugins.js]]
-link = "plugins/particles/init.min.js"
+# [[params.plugins.js]]
+# link = "plugins/particles/init.min.js"
 [[params.plugins.js]]
 link = "/js/custom.js"
 

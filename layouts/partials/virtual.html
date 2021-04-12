@@ -4,13 +4,6 @@
 <div id="particles-js">
 </div>
 
-<script src="../plugins/particles/particles.min.js"></script>
-<script>
-    window.particlesJS.load('particles-js', '../plugins/particles/particles.json', function(){
-      console.log('particles.json loaded!');
-    });
-</script>
-
 <section class="download-virtual">
     <div class="col-xl-12 my-3">
       <div class="title mt-5 pb-0 text-center">
@@ -33,6 +26,12 @@
                 <div class="col-lg-6 my-5">
                     <h2 style="display: inline; border-bottom: 1px solid #57cbcc;">{{ .name }}</h2>
                     <p class="my-3 text-white">{{ .description }}</p>
+                    <!--<a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/{{ .DE }}-{{ $.Site.Params.version }}_{{ $data.virtual.extension }}.mirrorlist" class="btn btn-main mt-3 mb-4 mx-5 w-50" style="color:#222" target="_blank">
+                        Select Server <img src="{{ $data.virtual.server_icon }}" style="width: 15px; height: 15px;">
+                    </a>
+                    <a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/{{ .DE }}-{{ $.Site.Params.version }}_{{ $data.virtual.extension }}.torrent" class="btn btn-main mt-3 mb-4 mx-5 w-50" style="color:#222">
+                        Get Torrent <img src="{{ $data.virtual.torrent_icon }}" style="width: 15px; height: 15px;">
+                    </a>-->
                     <a href="#" class="btn btn-main mt-3 mb-4 mx-5 w-50" style="color:#222">
                       Coming Soon!
                     </a>
@@ -58,6 +57,19 @@
                 </div>
               </div>
               <hr class="w-50">
+              <div class="row">
+                <div class="col-lg-6 my-5">
+                    <h2 style="display: inline; border-bottom: 1px solid #9fef00;">Parrot + HTB: Pwnbox</h2>
+                    <p class="my-3 text-white">{{ .Site.Params.community.pwnboxContent }}</p>
+                    <a href="https://help.hackthebox.eu/machines-challenges/v2-pwnbox" class="btn btn-main mt-3 mb-4 mx-5 w-50" style="color:#222" id="htb" target="_blank">
+                        Pwnbox <img src="../{{ .Site.Params.community.htbLogoURL}}" style="width: 15px; height: 15px;">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../images/htb-parrot-pwnbox.png" width="100%" height="100%"> 
+                </div>
+                <hr class="w-50">
+              </div>
             </div>
           </div>
         </div>
