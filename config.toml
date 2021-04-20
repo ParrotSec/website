@@ -78,7 +78,7 @@ weight = 14
 
 [[menu.main]]
 name = "Partners"
-URL = "docs/partners"
+URL = "partners"
 weight = 16
 
 [[menu.main]]

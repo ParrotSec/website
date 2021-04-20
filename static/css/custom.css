@@ -20,6 +20,7 @@
   letter-spacing: 1px;
   padding: 10px 35px;
   text-transform: uppercase;
+  vertical-align: unset;
 }
 
 .btn-copy:hover {
@@ -318,4 +319,12 @@ and (max-width: 800px) {
     height: 10% !important;
   }
 
+}
+
+@media only screen 
+and (max-width: 415px) { 
+  .htb_img {
+    width: 100%;
+    display: inline-block;
+  }
 }

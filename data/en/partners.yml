@@ -1,0 +1,130 @@
+enable : true 
+htb_description: Hack The Box is an online platform providing labs and challenges for cyber security training. Users can improve their penetration testing skills and exchange ideas and methodologies with thousands of people in the security field. By employing several social and gamification elements Hack The Box makes the learning experience fun and rewarding.
+htb_img: ../images/logo-htb.png
+htb_url: https://www.hackthebox.eu/
+
+collaborations: 
+  - icon: ../images/caine-logo.png
+    title: Caine
+    description: We have an open collaboration channel with Nanni Bassetti, developer of Caine, a GNU/Linux distribution focused on digital forensics. The collaboration consists in a friendly partnership where we help Caine in its development and testing process and Caine helps us with our digital forensics section.
+    URL: https://www.caine-live.net/
+
+  - icon: ../images/zorin-os.png
+    title: Zorin OS
+    description: We love Zorin OS and the amazing work done by its team, and we have some common goals for the future we would like to invest together in. The collaboration consists in a friendly partnership on some long term plans of both the projects.
+    URL: https://zorinos.com/
+
+  - icon: ../images/cs-academy-logo.png
+    title: CS-Academy
+    description: CS-Academy is an Spanish-language online training center that provides Cybersecurity and Ethical Hacking training courses, Pentesting services, digital forensics analysis and incidents response for individuals and companies.
+    URL: https://cs-academy.org/
+
+  #- icon: 
+  #  title: FSecurity Academy
+  #  description: Emerging learning resource in Costa Rica that makes use of the Parrot system.
+  #  URL: https://www.fsecurityacademy.com/#partner
+
+  - icon: ../images/prodefence-logo.png
+    title: ProDefence SRL
+    description: is an IT company dedicated to cyber security services, protecting companies from vulnerabilities and system penetration, providing security information training to their employees. Company employees can take advantage of the remote support we give anytime anyday to any platform. In addition to this, we analyze any file, as well as, network activity for malware or any other malicious and suspicious activity and help to recover and educate the users involved.
+    URL: https://www.prodefence.org/
+
+mirrors: 
+  - title: MIT
+    description: SIPB MIT (Student Information Processing Board, Massachussetts Institute of Technology)
+
+  - title: Clarkson
+    description: Clarkson University - New York
+
+  - title: Berkeley
+    description: Berkeley Open Computing Facility - California
+
+  - title: GARR
+    description: GARR Consortium - Italy
+
+  - title: RWTH-Aachen
+    description: RWTH-Aachen (Halifax students group) - Germany
+
+  - title: Nluug
+    description: Nluug - Netherlands
+
+  - title: UMU
+    description: ACC UMU (Academic Computer Club, Umea University) - Sweden
+
+  - title: Heanet
+    description: Heanet - Ireland
+
+  - title: Esslingen
+    description: Esslingen (University of Applied Sciences) - Germany
+
+  - title: UoC
+    description: UoC (University of Crete - Computer Center) - Greece
+
+  - title: Belnet
+    description: The Belgian National Research Network
+
+  - title: UP
+    description: University of Porto - Portugal
+
+  - title: Aalborg Dotsrc
+    description: Dotsrc - Aalborg University - Denmark
+
+  - title: CEDIA
+    description: RED CEDIA (National research and education center of Ecuador)
+
+  - title:  UTA
+    description: UTA (Universidad Técnica de ambato) - Ecuador
+
+  - title: UEB
+    description: UEB (Universidad Estatal de Bolivar) - Ecuador
+
+  - title: Espoch
+    description: ESPOCH (Escuela Superior Politecnica de Chimborazo). This mirror is no longer available, but we want to dedicate a big “Thank you” to the ESPOCH mirror maintainers.
+
+  - title: Yandex
+    description: Yandex - Russia
+
+  - title: Amberit
+    description: Amberit - Bangladesh
+
+  - title: NCHC
+    description: NCHC (Free Software Lab) - Taiwan
+
+  - title: USTC
+    description: USTC (University of Science and Technology of China and USTCLUG)
+
+  - title: TUNA 
+    description: TUNA (Tsinghua university of Beijing, TUNA association) - China
+
+  - title: ASIS
+    description: ASIS - Iran
+
+  - title: Lagoon
+    description: Lagoon - New Caledonia
+
+  - title: KKU
+    description: Khon Kaen University - Thailand
+
+  - title: OSLUZ 
+    description: Oficina Software Libre Universidad de Zaragoza - University of Zaragoza
+
+  - title: SHUOSC
+    description: Shanghai University Open Source Community - China
+
+  - title: EB
+    description: Eczacıbaşı Bilişim - Turkey
+
+  - title: TrueNetwork
+    description: TrueNetwork - Russia
+
+  - title: Quantum Mirror
+    description: Quantum-mirror - Open source mirroring solutions in Hungary
+
+  - title: Muug Mirror
+    description: Manitoba Unix User Group - Winnipeg
+
+  - title: Cythin
+    description: Cythin.com - France | Canada
+  
+  - title: Gonstack
+    description: IT Company - Vietnam mirror

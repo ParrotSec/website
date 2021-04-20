@@ -5,7 +5,7 @@
 <div id="particles-js">
 </div>
 
-<section class="download-page1 my-5">
+<section class="download-page my-5">
   <div class="col-xl-12 mb-3 mt-5">
     {{"<!-- section title -->" | safeHTML}}
     <div class="title text-center pb-0">
@@ -39,85 +39,5 @@
   </div>
 </section>
 
-<!-- 
-<section class="portfolio section" id="portfolio">
-	<div class="container">
-		<div class="row ">
-        </div>
-        <div class="row">
-            <div class="col-lg-12" style="padding:2em">
-                <div class="text-center">
-                    {{ range .otherlinks }}
-                    {{ if .hashes }}
-                    <button type="button" class="btn btn-info" ><a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/signed-hashes.txt" target="_blank">{{ .text }}</a></button>
-                    {{ else }}
-                    <button type="button" class="btn btn-info" ><a href="{{ .URL }}" target="_blank">{{ .text }}</a></button>
-                    {{ end }}
-                    {{ end }}
-                </div>
-            </div>
-        </div>
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="btn-group portfolio-filter btn-group-toggle justify-content-center d-flex flex-wrap"
-					data-toggle="buttons">
-					<label class="btn active">
-						<input type="radio" name="shuffle-filter" value="all" checked="checked" />{{ i18n "all"}}
-                    </label>
-                    {{ range .categories }}
-					<label class="btn">
-						<input type="radio" name="shuffle-filter" value="{{ .entry }}" />{{ .entry | humanize }}
-					</label>
-					{{ end }}
-				</div>
-			</div>
-		</div>
-
-		<div class="row shuffle-wrapper justify-content-center">
-            {{ range .download_item }}
-            
-            
-            <div class="col-lg-4 shuffle-item" data-groups="[{{range $index, $element:= .categories }}{{if ne $index 0}},{{end}}&quot;{{. | urlize}}&quot;{{ end }}]">
-                <div class="text-center">
-                    <h4>{{ .name }}</h4>
-                </div>
-                <div class="border-meghna"></div>
-                    <div style="margin: 2em;padding: 2em;background-color:#30363D"> 
-                        {{ if .link }}
-                        <a href="{{ .link }}" target="_blank">> Open</a>
-                        {{ end}}
-                        {{ if .base }}
-                        {{ if .extension }}
-                        <a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/{{ .base }}-{{ $.Site.Params.version }}_{{ .extension }}" target="_blank">> Direct Download</a><br>
-                        <a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/{{ .base }}-{{ $.Site.Params.version }}_{{ .extension }}.mirrorlist" target="_blank">> Select Server</a><br>
-                        {{ if .torrent }}
-                        <a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/{{ .base }}-{{ $.Site.Params.version }}_{{ .extension }}.torrent" target="_blank">> Get Torrent</a><br>
-                        {{ end }}
-                        {{ end }}
-                        {{ end }}
-                        <p>{{ .content | markdownify }}</p>
-                    </div>
-            </div>
-          -->
-        <!--
-			<div class="col-lg-4 shuffle-item" data-groups="[{{range $index, $element:= .categories }}{{if ne $index 0}},{{end}}&quot;{{. | urlize}}&quot;{{ end }}]">
-				<div class="portfolio-block mb-4">
-						<h4 class="mt-1">
-							{{ if or (eq .link "#") (eq .link "") }}
-							{{ .name }}
-							{{ else }}
-							<a href="{{ .link | safeURL }}">{{ .name }}</a>
-							{{ end }}
-						</h4>
-						<p>{{ .content | markdownify }}</p>
-				</div>
-            </div>
-        -->
-        <!--
-			{{ end }}
-		</div>
-	</div>
-</section>
--->
 {{ end }}
 {{ end }}

@@ -1,6 +1,4 @@
-	/* ========================================================================= */
-	/*	copy function
-	/* ========================================================================= */
+	/*	copy function */
 	$(document).ready(
 		function() {
 			$('.btn-copy').on("click", 
@@ -17,3 +15,6 @@
 
 	/* ParticlesJS */
 	particlesJS.load('particles-js', '../plugins/particles/particles.json');
+
+	/* Add active class to the first element */
+	$('.carousel-item').first().addClass('active')
