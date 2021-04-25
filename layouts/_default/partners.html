@@ -2,6 +2,86 @@
 
     {{ partial "navigation.html" . }}
 
-    {{ partial "partners.html" . }}
+    {{ $data := index .Site.Data .Site.Language.Lang }}
+    {{ if $data.partners.enable }}
+
+        <div id="particles-js">
+        </div>
+
+        <section class="partners-page my-5">
+            <div class="col-xl-12 mb-3 mt-5">
+                {{"<!-- section title -->" | safeHTML}}
+                <div class="title text-center pb-0">
+                <h2>Our<span class="color">
+                    Partners</span></h2>
+                <div class="border-meghna"></div>
+                </div>
+                {{"<!-- /section title -->" | safeHTML}}
+            </div>
+            <div class="container-fluid py-5">
+                <h2 class="text-left m-5">Main Sponsor</h2>
+                <div class="row">
+                    <div class="col-lg-6 p-0 text-center">
+                        <div class="col-lg-12 p-2">
+                            <a href="https://www.hackthebox.eu/" target="_blank">
+                                <img class="htb_img" src="{{ $data.partners.htb_img }}">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-0 mt-3 text-center">
+                        <div class="col-lg-12">
+                            <h4 class="mx-3">{{ $data.partners.htb_description }}</h4>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="w-50">
+            <div class="container-fluid">
+                <h2 class="text-left m-5 font-weight-bold">Collaborations</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div id="carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                            {{ range $data.partners.collaborations }}
+                                <div class="carousel-item">   
+                                    <div class="card bg-dark" style="border: 2px solid #57cbcc; height: 50vh; overflow-y: auto;">
+                                        <div class="text-center mt-5">
+                                            <div>
+                                                <img class="pb-4" src="{{ .icon }}" width="30%">
+                                                <a href="{{ .URL }}" target="_blank"><p>{{ .URL }}</p></a>
+                                                <h4 class="w-75 mx-auto mt-5">{{ .description }}</h4>         
+                                            </div>
+                                        </div>   
+                                    </div>
+                                </div>
+                            {{ end }}
+                            </div>
+                            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <hr class="w-75">
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <h2 class="text-left m-5 font-weight-bold">Mirrors</h2>
+                    <div class="row justify-content-center">
+                        {{ range $data.partners.mirrors }}
+                        <div class="col-md-3 mx-5">
+                            <h4 class="mx-auto">{{ .title }}</h4>
+                            <p>{{ .description }}</p>
+                        </div>
+                        {{end}}
+                    </div>     
+            </div> 
+        </section>
+
+    {{ end }}
 
 {{ end }}

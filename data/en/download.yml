@@ -4,7 +4,7 @@ download:
   defaultImg : ../images/monitor.png
   version :
     - title : Get Home Edition
-      description : Parrot Home Edition is a general purpose operating system with the typical Parrot look and feel. This edition is designed for daily use, privacy and software development. Parrot Tools can be manually installed to assemble a custom and lightweithg pentesting environment.
+      description : Parrot Home Edition is a general purpose operating system with the typical Parrot look and feel. This edition is designed for daily use, privacy and software development. Parrot Tools can be manually installed to assemble a custom and lightweight pentesting environment.
       icon : home_icon
       URL : /home-edition
       image : ../images/monitor-home-mate.png

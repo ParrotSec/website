@@ -277,6 +277,16 @@ hr {
   }
 }
 
+.profile_pic {
+  text-align: right;
+}
+
+.email {
+  color: #57cbcc; 
+  background-color: #222; 
+  width: 50%;
+}
+
 /* Media Queries */
 @media only screen 
   and (max-width: 991px) {
@@ -326,5 +336,12 @@ and (max-width: 415px) {
   .htb_img {
     width: 100%;
     display: inline-block;
+  }
+  .profile_pic {
+    text-align: center !important;
+  }
+
+  .email {
+    width: 75% !important;
   }
 }

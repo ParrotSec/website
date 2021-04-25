@@ -1,0 +1,235 @@
+enable: true
+team_description: The Parrot Project is a community-driven project. In this page we list contributors and members, past and present, who have contributed significantly to the project.
+
+# Official Team Contacts
+team_contacts: 
+  - team: Board of Directors
+    contact: director at parrotsec dot org 
+
+  - team: Development Team 
+    contact: team at parrotsec dot org
+
+# Core Team
+core_team: 
+  - nickname: palinuro
+    name: Lorenzo Faletra
+    role: Team Leader, Core Dev, Infrastructure Manager, Release manager
+    email: palinuro at parrotsec dot org
+    profile_pic: ../images/parrot_logo-circle.png
+
+  - nickname: marafed
+    name: Federica Marasà 
+    role: Project Manager, Web Dev, Social Media Manager, Graphic Designer
+    email: marafed at parrotsec dot org
+    profile_pic: ../images/parrot_logo-circle.png
+
+  - nickname: Tissy 
+    name:  Irene Pirrotta
+    role: Project Manager, ARM Dev, Community Manager
+    email: tissy at parrotsec dot org
+    profile_pic: ../images/parrot_logo-circle.png
+
+  - nickname: h0tw4t3r 
+    name: Vlad
+    role: Core Dev, Package Maintainer
+    email: h0tw4t3r at parrotsec dot org
+    profile_pic: ../images/parrot_logo-circle.png
+
+  - nickname: Dm Knght 
+    name: Nông Hoàng Tú 
+    role: Core Dev, Package Maintainer
+    email: dmknght at parrotsec dot org
+    profile_pic: ../images/parrot_logo-circle.png
+
+# Contributors
+contributors: 
+  - nickname: v1s1t0r
+    name: 
+    role: Airgeddon Creator/Maintainer
+    email: v1s1t0r.1s.h3r3 at gmail dot com
+
+  - nickname: nikksno
+    name: Nicolas North 
+    role: Sysadmin, legal support 
+    email: nz at os dot vu
+
+  - nickname: Andi 
+    name: 
+    role: Dev 
+    email: 
+
+  - nickname: disrupt_the_flow 
+    name: 
+    role:  Dev, Docs writer, Telegram Admin
+    email: disrupt_the_flow at parrotsec dot org
+
+# Community Team
+community_team: 
+  - nickname: meu
+    name: M. Emrah Ünsür
+    role: Turkish Community Leader, Forum Moderator 
+    email: meu at parrotsec dot org
+
+  - nickname: terabreik
+    name: José Gatica
+    role: Spanish Community Leader, Forum Moderator
+    email: josegatica at parrotsec dot org
+
+  - nickname: ByteHackr  
+    name: Sandipan Roy(nemo)
+    role: Indian community Leader, Forum Moderator   
+    email: sandipan at parrotsec dot org
+
+  - nickname: AresX
+    name: 
+    role:  Chinese Community Leader, Forum Moderator 
+    email:
+
+  - nickname: anubi5
+    name: Abdel Rhman Anter
+    role:  Arabic Community Leader, Forum Moderator 
+    email: anubi5 at parrotsec dot org
+
+  - nickname: disrupt_the_flow
+    name: 
+    role:  Greek Community Leader, Forum Moderator 
+    email: disrupt_the_flow at parrotsec dot org
+
+  - nickname: Mr-B Relax 
+    name: Bimantara Sutato Putra
+    role:  Indonesian Community Leader, Forum Moderator 
+    email:
+
+  - nickname: Jarfr
+    name: Jérôme Brichese
+    role:  French Community Leader, Forum Moderator 
+    email: jarfr at parrotsec dot org
+
+  - nickname: Kratvers 
+    name: Denis
+    role:  Russian Community Leader, Forum Moderator
+    email:
+
+  - nickname: ku3k3n 
+    name: 
+    role: German Community Leader, Forum Moderator
+    email:
+
+  - nickname: Nico_Paul
+    name: Nico Gialluca
+    role:  English Community Leader, Forum Moderator, Organizer
+    email: nico at parrotsec dot org
+
+  - nickname: Jeff 
+    name: Jeff Szydel
+    role: Facebook admin, System Tester
+    email: jeff at parrotsec dot org
+
+  - nickname: PTD
+    name: 
+    role:  Telegram Admin, Forum Moderator
+    email: ptd at parrotsec dot org
+
+  - nickname: mastrobirraio 
+    name: Pino Matranga
+    role: Web Team Leader, Italian Community Leader, Forum Moderator
+    email:
+
+  - nickname: LulzRose
+    name: Kurt Bruggeman 
+    role: 
+    email: LulzRose at riseup dot net
+
+  - nickname: KileXt
+    name: 
+    role: Forum Moderator, Tutorial writer
+    email: 
+
+# Security Team
+security_team: 
+  - nickname: anubi5
+    name: Abdel Rhman Anter
+    role: Security Team Leader
+    email: anubi5 at parrotsec dot org
+
+  - nickname: ByteHackr
+    name: Sandipan Roy(nemo)
+    role: Security Engineer 
+    email: sandipan at parrotsec dot 
+    
+  - nickname: XC0D3
+    name: Raul Alderete
+    role: 
+    email: 
+
+  - nickname: Spade
+    name: 
+    role: 
+    email: 
+
+# Design Team
+design_team: 
+  - nickname: marafed
+    name: Federica Marasà
+    role: Graphic Designer 
+    email: marafed at parrotsec dot org
+
+  - nickname: Serverket
+    name: Manuel Hernandez
+    role: Graphic Designer
+    email: 
+    
+  - nickname: janopineda 
+    name: Alejandro Pineda
+    role: 
+    email: 
+
+# Special Thanks
+special_thanks: Nanni Bassetti (Caine), Albano Battistella (Zorin OS), Darix Deros (KNXSecurity), Giancarlo Niccolai, Nathaniel Jones, John Draper (cap'n crunch)
+
+# Past Contributors
+past_contributors: 
+  - nickname: 
+    name: Tiago Teixeira
+    role:  
+    email: 
+
+  - nickname:  
+    name: Andrea Costa
+    role: Website contributor
+    email: 
+    
+  - nickname: Quietwalker 
+    name: Emanuel Di Vita
+    role: Former free-software licensing consultant
+    email: 
+
+  - nickname: Paal  
+    name: 
+    role: Former Forum setup, Organizer, Graphic Design
+    email: paal at parrotsec dot org
+    
+  - nickname: sheireen
+    name:  Lisetta Ferrero
+    role: Former Core Dev
+    email: sheireen at parrotsec dot org
+
+  - nickname: s1udge 
+    name: 
+    role: Operations lead, Forum Admin, Docs writer, Dev
+    email: 
+    
+  - nickname: qr0f1l3r   
+    name: Andre Patock
+    role: 
+    email: andrepatock at parrotsec dot org
+
+  - nickname: mibofra   
+    name: Francesco Bonanno
+    role: ARM Contributor
+    email: mibofra at parrotsec dot org
+
+  - nickname: gnugr   
+    name: Vangelis Mouhtsis
+    role: Debian/MATE dev
+    email: gnugr at parrotsec dot org

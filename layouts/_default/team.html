@@ -1,0 +1,182 @@
+{{ define "main" }}
+
+    {{ partial "navigation.html" . }}
+
+    {{ $data := index .Site.Data .Site.Language.Lang }}
+    {{ if $data.team.enable }}
+
+    <div id="particles-js">
+    </div>
+
+    <section class="team-page my-5">
+        <div class="col-xl-12 mb-3 mt-5">
+            {{"<!-- section title -->" | safeHTML}}
+            <div class="title text-center pb-0">
+            <h2>Meet the<span class="color">
+                Team</span></h2>
+            <div class="border-meghna"></div>
+            </div>
+            {{"<!-- /section title -->" | safeHTML}}
+        </div>
+        <!-- Core Team -->
+        <div class="col-lg-12">
+            <h2 class="text-center pt-5 font-weight-bold">Core Team</h2>
+        </div>
+        <div class="container py-5">
+            <div class="row">
+                {{ range $data.team.core_team }}
+                    <div class="profile_pic col-lg-4 no-gutters my-3">
+                        <img src="{{ .profile_pic }}" width="30%;">  
+                    </div>
+                    <div class="col-lg-8 my-3">
+                        <h4>{{ .name }} AKA {{ .nickname }}</h4>
+                        <p class="text-white">{{ .role }}</p>
+                        <p class="email card text-center">{{ .email }}</p>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+        <!-- Contributors -->
+        <div class="col-lg-12">
+            <h2 class="text-center pt-3 font-weight-bold">Contributors</h2>
+        </div>
+        <div class="col-lg-10 mx-auto">
+        <table class="table mt-5 table-dark table-bordered table-responsive-lg">
+            <thead>
+              <tr>
+                <th scope="col">Nickname</th>
+                <th scope="col">Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{ range $data.team.contributors }}
+              <tr>
+                <td style="color: #57cbcc;">{{ .nickname }}</td>
+                <td>{{ .name }}</td>
+                <td>{{ .role }}</td>
+                <td>{{ .email }}</td>
+              </tr>
+            {{ end }}
+            </tbody>
+          </table>
+        </div>
+        <!-- Community Team -->
+        <div class="col-lg-12">
+            <h2 class="text-center pt-3 font-weight-bold">Community Team</h2>
+        </div>
+        <div class="col-lg-10 mx-auto">
+        <table class="table mt-5 table-dark table-bordered table-responsive-lg">
+            <thead>
+              <tr>
+                <th scope="col">Nickname</th>
+                <th scope="col">Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{ range $data.team.community_team }}
+              <tr>
+                <td style="color: #57cbcc;">{{ .nickname }}</td>
+                <td>{{ .name }}</td>
+                <td>{{ .role }}</td>
+                <td>{{ .email }}</td>
+              </tr>
+            {{ end }}
+            </tbody>
+          </table>
+        </div>
+        <!-- Design & Security Team -->
+        <div class="col-lg-10 mx-auto py-5">
+            <div class="row">
+                <div class="col-lg-6 my-3">
+                    <div class="col-lg-12">
+                        <h2 class="text-center pt-3 font-weight-bold">Design Team</h2>
+                    </div>
+                    <table class="table mt-5 table-dark table-bordered table-responsive-lg">
+                        <thead>
+                            <tr>
+                            <th scope="col">Nickname</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {{ range $data.team.design_team }}
+                            <tr>
+                            <td style="color: #57cbcc;">{{ .nickname }}</td>
+                            <td>{{ .name }}</td>
+                            <td>{{ .role }}</td>
+                            <td>{{ .email }}</td>
+                            </tr>
+                        {{ end }}
+                        </tbody>
+                        </table>
+                </div>
+                <div class="col-lg-6 my-3">
+                    <div class="col-lg-12">
+                        <h2 class="text-center pt-3 font-weight-bold">Security Team</h2>
+                    </div>
+                    <table class="table mt-5 table-dark table-bordered table-responsive-lg">
+                        <thead>
+                            <tr>
+                            <th scope="col">Nickname</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {{ range $data.team.security_team }}
+                            <tr>
+                            <td style="color: #57cbcc;">{{ .nickname }}</td>
+                            <td>{{ .name }}</td>
+                            <td>{{ .role }}</td>
+                            <td>{{ .email }}</td>
+                            </tr>
+                        {{ end }}
+                        </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+        <!-- Special Thanks -->
+        <div class="col-lg-8 mx-auto">
+            <h2 class="text-center pt-3 mb-5 font-weight-bold" style="border-bottom: 1px solid #57cbcc; line-height: 2em;">
+                Special Thanks:
+            </h2>
+            <h3>{{ $data.team.special_thanks }}</h3>
+            <hr class="mt-5" style="border-color: #57cbcc">
+        </div>
+        <!-- Past Contributors -->
+        <div class="col-lg-12 pt-5">
+            <h2 class="text-center pt-3 font-weight-bold">Past Contributors</h2>
+        </div>
+        <div class="col-lg-10 mx-auto">
+        <table class="table mt-5 table-dark table-bordered table-responsive-lg">
+            <thead>
+                <tr>
+                <th scope="col">Nickname</th>
+                <th scope="col">Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+            {{ range $data.team.past_contributors }}
+                <tr>
+                <td style="color: #57cbcc;">{{ .nickname }}</td>
+                <td>{{ .name }}</td>
+                <td>{{ .role }}</td>
+                <td>{{ .email }}</td>
+                </tr>
+            {{ end }}
+            </tbody>
+            </table>
+        </div>
+    </section>
+    {{ end }}
+{{ end }}

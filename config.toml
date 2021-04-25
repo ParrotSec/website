@@ -73,7 +73,7 @@ weight = 11
 
 [[menu.main]]
 name = "Team"
-URL = "docs/team"
+URL = "team"
 weight = 14
 
 [[menu.main]]
