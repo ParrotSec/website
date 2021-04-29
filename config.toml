@@ -15,8 +15,8 @@ disableLanguages = []
 link = "plugins/bootstrap/bootstrap.min.css"
 [[params.plugins.css]]
 link = "plugins/themify-icons/themify-icons.css"
-[[params.plugins.css]]
-link = "plugins/magnific-popup/magnific-popup.css"
+# [[params.plugins.css]]
+# link = "plugins/magnific-popup/magnific-popup.css"
 [[params.plugins.css]]
 link = "plugins/slick/slick.css"
 [[params.plugins.css]]
@@ -29,12 +29,12 @@ link = "/css/custom.css"
 link = "plugins/jquery/jquery.min.js"
 [[params.plugins.js]]
 link = "plugins/bootstrap/bootstrap.min.js"
-[[params.plugins.js]]
-link = "plugins/slick/slick.min.js"
-[[params.plugins.js]]
-link = "plugins/shuffle/shuffle.min.js"
-[[params.plugins.js]]
-link = "plugins/magnific-popup/jquery.magnific-popup.min.js"
+# [[params.plugins.js]]
+# link = "plugins/slick/slick.min.js"
+# [[params.plugins.js]]
+# link = "plugins/shuffle/shuffle.min.js"
+# [[params.plugins.js]]
+# link = "plugins/magnific-popup/jquery.magnific-popup.min.js"
 [[params.plugins.js]]
 link = "plugins/lazy-load/lozad.min.js"
 [[params.plugins.js]]
