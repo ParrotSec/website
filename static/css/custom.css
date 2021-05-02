@@ -333,15 +333,32 @@ and (max-width: 800px) {
 
 @media only screen 
 and (max-width: 415px) { 
-  .htb_img {
-    width: 100%;
-    display: inline-block;
-  }
   .profile_pic {
     text-align: center !important;
   }
 
   .email {
     width: 75% !important;
+  }
+}
+
+@media only screen 
+and (max-width: 478px) { 
+    .htb_img {
+      width: 80%;
+      height: 80%;
+      display: inline-block;
+    }
+}
+
+@media only screen 
+and (min-width: 416px)
+and (max-width: 991px) { 
+  .profile_pic {
+    text-align: center !important;
+  }
+
+  .email {
+    width: 60% !important;
   }
 }
