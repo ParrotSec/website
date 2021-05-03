@@ -3,15 +3,22 @@
 <div id="particles-js">
 </div>
 
-<section id="contribute" class="call-to-action section-sm bg-1 overly" style='background-image: url("{{ .Site.Params.contribute.background | absURL }}")'>
+<section id="contribute" class="call-to-action section-sm bg-1 overly" style='padding-top: 0px; padding-bottom: 15%;background-image: url("{{ .Site.Params.contribute.background | absURL }}")'>
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12 text-center">
-                <h1>{{ $data.contribute.title }}</h1>
-                <h6>{{ $data.contribute.description }}</h6>
+                <div class="col-xl-12 mb-3 mt-5">
+                    {{"<!-- section title -->" | safeHTML}}
+                    <div class="title text-center pb-0">
+                    <h1>{{ $data.contribute.title }}</h1>
+                    <div class="border-meghna"></div>
+                    </div>
+                    {{"<!-- /section title -->" | safeHTML}}
+                </div>
+                <!-- <h6>{{ $data.contribute.description }}</h6> -->
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="padding-top: 5rem !important">
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <div style="background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5));border-radius: 2em;padding:2em;margin:1em">
                     <h3>Management</h3>
@@ -29,10 +36,3 @@
         </div>
     </div>
 </section>
-
-<script src="../plugins/particles/particles.min.js"></script>
-<script>
-    window.particlesJS.load('particles-js', '../plugins/particles/particles.json', function(){
-      console.log('particles.json loaded!');
-    });
-</script>
