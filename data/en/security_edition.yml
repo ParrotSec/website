@@ -3,12 +3,12 @@ title : Download Parrot Security
 description : Parrot Security Edition is a special purpose operating system designed for Penetration Test and Red Team operations. It contains a full arsenal of ready to use pentest tools.
 
 editions : 
-  - name : MATE Edition
+  - name : MATE Desktop
     description : MATE is lightweight desktop environment with a classical GNU/Linux layout. It is the default desktop environment of Parrot OS and represents the iconical look and feel of the system.
     icon : ../images/icons/mate.png
     image : ../images/monitor-security-mate.png
     DE : Parrot-security
-  - name : KDE Edition
+  - name : KDE Desktop
     description : KDE Plasma is a modern desktop environment with advanced features and high customizability. It uses more resources compared to MATE and gives its best on powerful and modern hardware.
     icon : ../images/icons/kde.png
     image : ../images/monitor-home-kde.png
