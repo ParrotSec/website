@@ -75,11 +75,6 @@ community_team:
     role: Spanish Community Leader, Forum Moderator
     email: josegatica at parrotsec dot org
 
-  - nickname: ByteHackr  
-    name: Sandipan Roy(nemo)
-    role: Indian community Leader, Forum Moderator   
-    email: sandipan at parrotsec dot org
-
   - nickname: AresX
     name: 
     role:  Chinese Community Leader, Forum Moderator 
@@ -189,6 +184,12 @@ special_thanks: Nanni Bassetti (Caine), Albano Battistella (Zorin OS), Darix Der
 
 # Past Contributors
 past_contributors: 
+
+  - nickname: ByteHackr  
+    name: Sandipan Roy(nemo)
+    role: Indian community Leader, Forum Moderator   
+    email: sandipan at parrotsec dot org
+
   - nickname: 
     name: Tiago Teixeira
     role:  
