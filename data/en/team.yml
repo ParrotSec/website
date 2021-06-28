@@ -146,12 +146,7 @@ security_team:
     name: Abdel Rhman Anter
     role: Security Team Leader
     email: anubi5 at parrotsec dot org
-
-  - nickname: ByteHackr
-    name: Sandipan Roy(nemo)
-    role: Security Engineer 
-    email: sandipan at parrotsec dot 
-    
+  
   - nickname: XC0D3
     name: Raul Alderete
     role: 
@@ -187,7 +182,7 @@ past_contributors:
 
   - nickname: ByteHackr  
     name: Sandipan Roy(nemo)
-    role: Indian community Leader, Forum Moderator   
+    role: Security Engineer, Indian Community Leader, Forum Moderator   
     email: sandipan at parrotsec dot org
 
   - nickname: 
