@@ -41,22 +41,18 @@ core_team:
     email: dmknght at parrotsec dot org
     profile_pic: ../images/parrot_logo-circle.png
 
+  - nickname: danterolle
+    name:  Dario Camonita
+    role: Core Dev, Website and Documentation Mantainer
+    email: danterolle at parrotsec dot org
+    profile_pic: ../images/parrot_logo-circle.png
+
 # Contributors
 contributors: 
   - nickname: v1s1t0r
     name: 
     role: Airgeddon Creator/Maintainer
     email: v1s1t0r.1s.h3r3 at gmail dot com
-
-  - nickname: nikksno
-    name: Nicolas North 
-    role: Sysadmin, legal support 
-    email: nz at os dot vu
-
-  - nickname: Andi 
-    name: 
-    role: Dev 
-    email: 
 
   - nickname: disrupt_the_flow 
     name: 
@@ -65,20 +61,11 @@ contributors:
 
 # Community Team
 community_team: 
-  - nickname: meu
-    name: M. Emrah Ünsür
-    role: Turkish Community Leader, Forum Moderator 
-    email: meu at parrotsec dot org
 
   - nickname: terabreik
     name: José Gatica
     role: Spanish Community Leader, Forum Moderator
     email: josegatica at parrotsec dot org
-
-  - nickname: AresX
-    name: 
-    role:  Chinese Community Leader, Forum Moderator 
-    email:
 
   - nickname: anubi5
     name: Abdel Rhman Anter
@@ -89,31 +76,6 @@ community_team:
     name: 
     role:  Greek Community Leader, Forum Moderator 
     email: disrupt_the_flow at parrotsec dot org
-
-  - nickname: Mr-B Relax 
-    name: Bimantara Sutato Putra
-    role:  Indonesian Community Leader, Forum Moderator 
-    email:
-
-  - nickname: Jarfr
-    name: Jérôme Brichese
-    role:  French Community Leader, Forum Moderator 
-    email: jarfr at parrotsec dot org
-
-  - nickname: Kratvers 
-    name: Denis
-    role:  Russian Community Leader, Forum Moderator
-    email:
-
-  - nickname: ku3k3n 
-    name: 
-    role: German Community Leader, Forum Moderator
-    email:
-
-  - nickname: Nico_Paul
-    name: Nico Gialluca
-    role:  English Community Leader, Forum Moderator, Organizer
-    email: nico at parrotsec dot org
 
   - nickname: Jeff 
     name: Jeff Szydel
@@ -179,6 +141,51 @@ special_thanks: Nanni Bassetti (Caine), Albano Battistella (Zorin OS), Darix Der
 
 # Past Contributors
 past_contributors: 
+
+  - nickname: Kratvers 
+    name: Denis
+    role:  Russian Community Leader, Forum Moderator
+    email:
+
+  - nickname: ku3k3n 
+    name: 
+    role: German Community Leader, Forum Moderator
+    email:
+
+  - nickname: Nico_Paul
+    name: Nico Gialluca
+    role:  English Community Leader, Forum Moderator, Organizer
+    email: nico at parrotsec dot org
+
+  - nickname: Mr-B Relax 
+    name: Bimantara Sutato Putra
+    role:  Indonesian Community Leader, Forum Moderator 
+    email:
+
+  - nickname: Jarfr
+    name: Jérôme Brichese
+    role:  French Community Leader, Forum Moderator 
+    email: jarfr at parrotsec dot org
+
+  - nickname: AresX
+    name: 
+    role:  Chinese Community Leader, Forum Moderator 
+    email:
+
+  - nickname: meu
+    name: M. Emrah Ünsür
+    role: Turkish Community Leader, Forum Moderator 
+    email: meu at parrotsec dot org
+
+  - nickname: nikksno
+    name: Nicolas North 
+    role: Sysadmin, legal support 
+    email: nz at os dot vu
+
+  - nickname: Andi 
+    name: 
+    role: Dev 
+    email: 
 
   - nickname: ByteHackr  
     name: Sandipan Roy(nemo)
