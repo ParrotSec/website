@@ -26,8 +26,8 @@
                 <div class="col-lg-6 my-5">
                     <h2 style="display: inline; border-bottom: 1px solid #57cbcc;">{{ .name }}</h2>
                     <p class="my-3 text-white">{{ .description }}</p>
-                    <a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/{{ .DE }}-{{ $.Site.Params.version }}_{{ $data.security_edition.extension }}.mirrorlist" class="btn btn-main mt-3 mb-4 mx-5 w-50" style="color:#222" target="_blank">
-                        Select Server <img src="{{ $data.security_edition.server_icon }}" style="width: 15px; height: 15px;">
+                    <a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/{{ .DE }}-{{ $.Site.Params.version }}_{{ $data.security_edition.extension }}" class="btn btn-main mt-3 mb-4 mx-5 w-50" style="color:#222" target="_blank">
+                        Download <img src="{{ $data.security_edition.server_icon }}" style="width: 15px; height: 15px;">
                     </a>
                     <a href="{{ $.Site.Params.mirror }}{{ $.Site.Params.version }}/{{ .DE }}-{{ $.Site.Params.version }}_{{ $data.security_edition.extension }}.torrent" class="btn btn-main mt-3 mb-4 mx-5 w-50" style="color:#222">
                         Get Torrent <img src="{{ $data.security_edition.torrent_icon }}" style="width: 15px; height: 15px;">
