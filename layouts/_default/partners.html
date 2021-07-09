@@ -19,36 +19,42 @@
                 {{"<!-- /section title -->" | safeHTML}}
             </div>
             <div class="container-fluid py-5">
-                <h2 class="text-left m-5">Main Sponsor</h2>
+                <h2 class="text-center mt-1 mb-5 font-weight-bold">Main Sponsor</h2>
                 <div class="row">
                     <div class="col-lg-6 p-0 text-center">
                         <div class="col-lg-12 p-2">
                             <a href="https://www.hackthebox.eu/" target="_blank">
                                 <img class="htb_img" src="{{ $data.partners.htb_img }}" height="125vh">
                             </a>
+                            <a id="htb" href="https://www.hackthebox.eu/invite"
+                               class="btn btn-main btn-htb d-flex justify-content-center mx-auto text-uppercase" 
+                               style="border-radius: 4px; width: 15vw">
+                                    join now
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-6 p-0 mt-3 text-center">
                         <div class="col-lg-12">
-                            <h4 class="mx-3">{{ $data.partners.htb_description }}</h4>      
+                            <h4 class="mx-3" style="line-height: 35px;">{{ $data.partners.htb_description }}</h4>      
                         </div>
                     </div>
                 </div>
             </div>
             <hr class="w-50">
             <div class="container-fluid">
-                <h2 class="text-left m-5 font-weight-bold">Collaborations</h2>
+                <h2 class="text-center m-4 font-weight-bold">Collaborations</h2>
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <div id="carousel" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                             {{ range $data.partners.collaborations }}
                                 <div class="carousel-item">   
-                                    <div class="card bg-dark" style="border: 2px solid #57cbcc; height: 50vh; overflow-y: auto;">
+                                    <div class="" style="height: 50vh; overflow-y: auto;">
                                         <div class="text-center mt-5">
                                             <div>
-                                                <img class="pb-4" src="{{ .icon }}" height="80vh">
-                                                <a href="{{ .URL }}" target="_blank"><p>{{ .URL }}</p></a>
+                                                <a href="{{ .URL }}" target="_blank">
+                                                    <img class="pb-2" src="{{ .icon }}" height="80vh">
+                                                </a>
                                                 <h4 class="w-75 mx-auto mt-5">{{ .description }}</h4>         
                                             </div>
                                         </div>   
@@ -69,8 +75,22 @@
                     </div>
                 </div>
             </div>
+            <!--
+            <div class="container">
+                <h2 class="text-center pb-2 font-weight-bold">Collaborations</h2>
+                <div class="row">
+                {{ range $data.partners.collaborations }}
+                    <div class="col-6 col-12-medium">
+                        <section>
+                            <a href="{{ .URL }}"><img class="mb-2 mt-5" src="{{ .icon }}" height="60vh"></a>
+                            <p class="text-center">{{ .description }}</p>
+                        </section>
+                    </div>
+                {{ end }}
+                </div>
+            </div>-->
             <div class="container-fluid">
-                <h2 class="text-left m-5 font-weight-bold">Mirrors</h2>
+                    <h2 class="text-center m-5 font-weight-bold">Mirrors</h2>
                     <div class="row justify-content-center">
                         {{ range $data.partners.mirrors }}
                         <div class="col-md-3 mx-5">

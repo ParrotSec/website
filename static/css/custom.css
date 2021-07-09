@@ -316,6 +316,10 @@ hr {
     #navigation {
       margin-top: 0.5rem !important;
     }
+
+    .btn-htb {
+      width: 40vw !important;
+    }
   }
 
 @media only screen 

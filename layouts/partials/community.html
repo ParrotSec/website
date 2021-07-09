@@ -10,7 +10,7 @@
             <div class="col-lg-4 text-center d-flex flex-column mt-4 mt-lg-0">
                {{ with .Site.Params.community.pwnboxTitle}} <h2 style="color:#fff">{{ . }}</h2> {{ end }}
                {{ with .Site.Params.community.pwnboxContent }} <p style="color:#fff">{{ . }}</p> {{ end }}
-	       <a href="{{ .Site.Params.community.pwnboxURL }}" class="btn btn-main mt-auto d-flex justify-content-center" id="htb"><img src="../{{ .Site.Params.community.htbLogoURL}}" height="16px" width="14px" class="align-self-center mr-2"></img>{{ with .Site.Params.community.pwnboxbtnText }} {{ . }} {{end}}</a>
+	       <a href="{{ .Site.Params.community.pwnboxURL }}" class="btn btn-main mt-auto d-flex justify-content-center" id="htb"><img src="../{{ .Site.Params.community.htbLogoURL}}" height="16px" width="14px" class="align-self-center mr-2">{{ with .Site.Params.community.pwnboxbtnText }} {{ . }} {{end}}</a>
             </div>
             <div class="col-lg-4 text-center d-flex flex-column mt-4 mt-lg-0">
                 {{ with .Site.Params.community.portalsTitle}} <h2 style="color:#fff">{{ . }}</h2> {{ end }}
