@@ -2,6 +2,7 @@ enable : true
 htb_description: Hack The Box is an online platform providing labs and challenges for cyber security training. Users can improve their penetration testing skills and exchange ideas and methodologies with thousands of people in the security field. By employing several social and gamification elements Hack The Box makes the learning experience fun and rewarding.
 htb_img: ../images/logo-htb.png
 htb_url: https://www.hackthebox.eu/
+mirrors_list: https://parrotsec.org/docs/mirrors-list.html
 
 collaborations: 
   - icon: ../images/caine-logo.png
@@ -128,3 +129,21 @@ mirrors:
   
   - title: Gonstack
     description: IT Company - Vietnam mirror
+
+  - title: Oregon - Osuosl
+    description: Oregon State University - Open Source Lab
+
+  - title: Leaseweb
+    description: Leaseweb - Virginia/Germany
+
+  - title: USP
+    description: University of Sao Paulo (USP) - Brazil
+
+  - title: 0xem
+    description: 0xem - Canada
+
+  - title: Pyratelan
+    description: Pyratelan - Germany
+
+  - title: Lyrahosting
+    description: Lyrahosting - Netherlands
