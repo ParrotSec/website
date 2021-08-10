@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 
@@ -12,11 +12,9 @@ export default App
 if (typeof document !== 'undefined') {
   const target = document.getElementById('root')
 
-  const renderMethod = target.hasChildNodes()
-    ? ReactDOM.hydrate
-    : ReactDOM.render
+  const renderMethod = target.hasChildNodes() ? ReactDOM.hydrate : ReactDOM.render
 
-  const render = (Comp: Function) => {
+  const render = (Comp: FC) => {
     renderMethod(
       <AppContainer>
         <Comp />
