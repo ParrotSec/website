@@ -23,6 +23,11 @@ const plugins = [{
         hooks: {}
       },
 {
+        location: "__react_static_root__/plugins/jss-provider",
+        plugins: [],
+        hooks: {}
+      },
+{
         location: "__react_static_root__/",
         plugins: [],
         hooks: {}

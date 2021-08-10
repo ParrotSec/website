@@ -26,6 +26,18 @@ export default {
       }
     ]
   },
+  rules: [
+    {
+      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+      use: {
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          mimetype: 'image/svg+xml'
+        }
+      }
+    }
+  ],
   plugins: [
     'react-static-plugin-typescript',
     [
@@ -35,6 +47,7 @@ export default {
       }
     ],
     require.resolve('react-static-plugin-reach-router'),
-    require.resolve('react-static-plugin-sitemap')
+    require.resolve('react-static-plugin-sitemap'),
+    'jss-provider'
   ]
 }
