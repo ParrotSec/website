@@ -1,6 +1,6 @@
 import React from 'react'
 import { Root, Routes, addPrefetchExcludes } from 'react-static'
-import { Link, Router } from '@reach/router'
+import { Link, BrowserRouter as Router } from 'react-router-dom'
 import FancyDiv from 'components/FancyDiv'
 import Dynamic from 'containers/Dynamic'
 import './app.css'
@@ -11,22 +11,22 @@ addPrefetchExcludes(['dynamic'])
 function App() {
   return (
     <Root>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/dynamic">Dynamic</Link>
-      </nav>
-      <div className="content">
-        <FancyDiv>
-          <React.Suspense fallback={<em>Loading...</em>}>
-            <Router>
+      <Router>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/dynamic">Dynamic</Link>
+        </nav>
+        <div className="content">
+          <FancyDiv>
+            <React.Suspense fallback={<em>Loading...</em>}>
               <Dynamic path="dynamic" />
               <Routes path="*" />
-            </Router>
-          </React.Suspense>
-        </FancyDiv>
-      </div>
+            </React.Suspense>
+          </FancyDiv>
+        </div>
+      </Router>
     </Root>
   )
 }
