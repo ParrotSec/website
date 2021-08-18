@@ -1,11 +1,10 @@
 import React from 'react'
 import { Root, Routes, addPrefetchExcludes } from 'react-static'
-import { Link, Router } from '@reach/router'
-import FancyDiv from 'components/FancyDiv'
+import { Router } from '@reach/router'
 import Dynamic from 'containers/Dynamic'
 import './app.css'
 import Header from 'components/Header'
-import { createTheme, MuiThemeProvider } from '@material-ui/core'
+import { createTheme, MuiThemeProvider, CssBaseline, Container } from '@material-ui/core'
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
@@ -14,35 +13,32 @@ const App = () => (
   <Root>
     <MuiThemeProvider
       theme={createTheme({
-        breakpoints: {
-          values: {
-            xs: 0,
-            sm: 576,
-            md: 768,
-            lg: 992,
-            xl: 1200
+        palette: {
+          type: 'dark',
+          primary: {
+            main: '#55ddff'
+          },
+          background: {
+            default: '#06043E',
+            paper: '#19174B'
           }
+        },
+        typography: {
+          fontFamily: 'Museo Sans',
+          fontSize: 16
         }
       })}
     >
-      <Header></Header>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/dynamic">Dynamic</Link>
-        <Link to="/other">Other</Link>
-      </nav>
-      <div className="content">
-        <FancyDiv>
-          <React.Suspense fallback={<em>Loading...</em>}>
-            <Router>
-              <Dynamic path="dynamic" />
-              <Routes path="*" />
-            </Router>
-          </React.Suspense>
-        </FancyDiv>
-      </div>
+      <CssBaseline />
+      <Container maxWidth="xl">
+        <Header />
+        <React.Suspense fallback={<em>Loading...</em>}>
+          <Router>
+            <Dynamic path="dynamic" />
+            <Routes path="*" />
+          </Router>
+        </React.Suspense>
+      </Container>
     </MuiThemeProvider>
   </Root>
 )

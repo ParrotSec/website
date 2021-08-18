@@ -3,12 +3,6 @@
      xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="50px" height="50px"
      viewBox="0 0 190.2997 180.30882" version="1.1" class="svg_logo" inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
      sodipodi:docname="parrot.svg">
-    <defs>
-        <linearGradient id="grad">
-            <stop offset="24%"  stop-color="#05EEFF"/>
-            <stop offset="81.75%" stop-color="#00FFF0"/>
-        </linearGradient>
-    </defs>
     <style>
         .svg_logo {
         position: center;
@@ -19,147 +13,14 @@
 
         #circle {
         stroke-dasharray: 2000;
-        fill: url(#grad);
-        stroke: url(#grad);
+        fill: #55ddff;
+        stroke: #55ddff;
         stroke-linecap: butt;
         stroke-linejoin: miter;
         stroke-miterlimit: 10;
         fill-rule: nonzero;
-        -webkit-animation: circle 5s alternate;
-        animation: circle 5s alternate;
         }
 
-        @-webkit-keyframes circle {
-        0% {
-        stroke-dashoffset: 2000;
-        fill-opacity: 0;
-        stroke-width: 1pt;
-        }
-
-        20% {
-        fill-opacity: 0;
-        }
-
-        40% {
-        fill-opacity: 0;
-        }
-
-        60% {
-        fill-opacity: 0.5;
-        }
-
-        80% {
-        fill-opacity: 0;
-        }
-
-        100% {
-        stroke-dashoffset: 0;
-        fill-opacity: 1;
-        stroke-width: 0pt;
-        }
-        }
-
-        @keyframes circle {
-        0% {
-        stroke-dashoffset: 2000;
-        fill-opacity: 0;
-        stroke-width: 1pt;
-        }
-
-        20% {
-        fill-opacity: 0;
-        }
-
-        40% {
-        fill-opacity: 0;
-        }
-
-        60% {
-        fill-opacity: 0.5;
-        }
-
-        80% {
-        fill-opacity: 0;
-        }
-
-        100% {
-        stroke-dashoffset: 0;
-        fill-opacity: 1;
-        stroke-width: 0pt;
-        }
-        }
-
-        #bird {
-        stroke-dasharray: 1200;
-        fill: #1a1a1a;
-        stroke: #1a1a1a;
-        stroke-linecap: butt;
-        stroke-linejoin: miter;
-        stroke-miterlimit: 10;
-        fill-rule: nonzero;
-        -webkit-animation: bird 7s alternate;
-        animation: bird 7s alternate;
-        }
-
-        @-webkit-keyframes bird {
-        0% {
-        stroke-dashoffset: 2500;
-        fill-opacity: 0;
-        stroke-width: 1pt;
-        }
-
-        20% {
-        fill-opacity: 0;
-        }
-
-        40% {
-        fill-opacity: 0;
-        }
-
-        60% {
-        fill-opacity: 0.5;
-        }
-
-        80% {
-        fill-opacity: 0;
-        }
-
-        100% {
-        stroke-dashoffset: 0;
-        fill-opacity: 1;
-        stroke-width: 0.5pt;
-        }
-        }
-
-        @keyframes bird {
-        0% {
-        stroke-dashoffset: 1500;
-        fill-opacity: 0;
-        stroke-width: 2pt;
-        }
-
-        20% {
-        fill-opacity: 0;
-        }
-
-        40% {
-        fill-opacity: 0;
-        }
-
-        60% {
-        fill-opacity: 0;
-        }
-
-        80% {
-        fill-opacity: 1;
-        }
-
-        100% {
-        stroke-dashoffset: 0;
-        fill-opacity: 1;
-        stroke-width: 0pt;
-        }
-        }
     </style>
     <a class="navbar-brand p-0" href="/">
         <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-12.544004,-57.922972)">

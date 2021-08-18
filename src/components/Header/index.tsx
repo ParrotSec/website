@@ -2,9 +2,7 @@ import React from 'react'
 import {
   AppBar,
   Collapse,
-  Container,
   Box,
-  Divider,
   Grid,
   Link,
   Hidden,
@@ -15,24 +13,25 @@ import {
 import { Menu as MenuIcon } from '@material-ui/icons'
 import { Link as RouterLink } from '@reach/router'
 import logo from './assets/logo.svg'
+import PButton from 'components/PButton'
 
 const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    maxWidth: 1140
+  root: {
+    paddingTop: '2rem',
+    paddingBottom: '2rem'
   },
-  appBar: {
-    backgroundColor: '#1d2024'
+  logo: {
+    width: 64,
+    height: 64
   },
   link: {
     padding: '0.5rem',
-    color: 'rgba(255,255,255,.5)',
+    color: 'white',
     textDecoration: 'none',
     transition: '.2s ease-in 0s',
     '&:hover': {
       textDecoration: 'none',
-      color: 'rgba(255,255,255,.75)'
+      color: '#05EEFF'
     },
     '&:focus': {
       textDecoration: 'none'
@@ -42,7 +41,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   nav: {
-    marginLeft: 'auto'
+    display: 'flex',
+    gap: 41
   },
   menu: {
     color: 'rgba(255,255,255,.5)',
@@ -72,11 +72,22 @@ const Header = () => {
   const toggleCollapse = () => setCollapsed(!collapsed)
 
   return (
-    <AppBar className={classes.appBar} position="static">
+    <AppBar className={classes.root} color="transparent" position="static" elevation={0}>
       <Toolbar disableGutters>
-        <Container className={classes.container}>
-          <Grid container xs={12} sm={8} lg={10} xl={12} alignItems="center">
-            <img src={logo} alt="Logo" />
+        <Grid container justifyContent="center">
+          <Grid
+            container
+            item
+            xs={12}
+            sm={8}
+            lg={10}
+            xl={12}
+            alignItems="center"
+            justifyContent="space-between"
+          >
+            <RouterLink to="/">
+              <img className={classes.logo} src={logo} alt="Logo" />
+            </RouterLink>
             <Hidden lgUp>
               <IconButton
                 aria-label="open drawer"
@@ -90,64 +101,57 @@ const Header = () => {
 
             <Hidden mdDown>
               <nav className={classes.nav}>
-                <Link className={classes.link} component={RouterLink} to="/download">
-                  Download
-                </Link>
                 <Link className={classes.link} component={RouterLink} to="/community">
                   Community
-                </Link>
-                <Link className={classes.link} component={RouterLink} to="/blog">
-                  Blog
                 </Link>
                 <Link className={classes.link} component={RouterLink} to="/docs">
                   Documentation
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/contribute">
-                  Get Involved
-                </Link>
-                <Link className={classes.link} component={RouterLink} to="/team">
-                  Team
+                <Link className={classes.link} component={RouterLink} to="/blog">
+                  Blog
                 </Link>
                 <Link className={classes.link} component={RouterLink} to="/donate">
-                  Donations & Gadgets
+                  Donate
+                </Link>
+                <Link className={classes.link} component={RouterLink} to="/swag">
+                  Swag
                 </Link>
                 <Link className={classes.link} component={RouterLink} to="/partners">
                   Partners
                 </Link>
               </nav>
+              <PButton variant="contained" gradient to="/download">
+                Download OS
+              </PButton>
             </Hidden>
           </Grid>
-        </Container>
+        </Grid>
       </Toolbar>
-      <Divider />
       <Hidden lgUp>
         <Collapse in={collapsed}>
           <Grid container justifyContent="center">
             <Grid item container xs={12} sm={8} lg={10} xl={12} alignItems="center">
               <Box className={classes.dropDown}>
-                <Link className={classes.link} component={RouterLink} to="/download">
-                  Download
-                </Link>
                 <Link className={classes.link} component={RouterLink} to="/community">
                   Community
-                </Link>
-                <Link className={classes.link} component={RouterLink} to="/blog">
-                  Blog
                 </Link>
                 <Link className={classes.link} component={RouterLink} to="/docs">
                   Documentation
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/contribute">
-                  Get Involved
-                </Link>
-                <Link className={classes.link} component={RouterLink} to="/team">
-                  Team
+                <Link className={classes.link} component={RouterLink} to="/blog">
+                  Blog
                 </Link>
                 <Link className={classes.link} component={RouterLink} to="/donate">
-                  Donations & Gadgets
+                  Donate
+                </Link>
+                <Link className={classes.link} component={RouterLink} to="/swag">
+                  Swag
                 </Link>
                 <Link className={classes.link} component={RouterLink} to="/partners">
                   Partners
+                </Link>
+                <Link className={classes.link} component={RouterLink} to="/download">
+                  Download OS
                 </Link>
               </Box>
             </Grid>
