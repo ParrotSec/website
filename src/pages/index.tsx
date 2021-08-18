@@ -1,10 +1,16 @@
 import React from 'react'
 import OSSelector from 'components/OSSelector'
 import { Box, Divider, Grid, makeStyles, Typography } from '@material-ui/core'
-import { WbIncandescent as Bulb } from '@material-ui/icons'
 import PButton from 'components/PButton'
 import Wallpaper from './../../assets/wallpaper.png'
 import PFeatureBlock from 'components/PFeatureBlock'
+import Bulb from '../../assets/icons/Bulb.svg'
+import Build from '../../assets/icons/Build.svg'
+import Layout from '../../assets/icons/Layout.svg'
+import Safety from '../../assets/icons/SafetyCertificate.svg'
+import Unlock from '../../assets/icons/Unlock.svg'
+import Vector from '../../assets/icons/Vector.svg'
+import WeChat from '../../assets/icons/Wechat.svg'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,8 +29,16 @@ const useStyles = makeStyles(theme => ({
   wallpaper: {
     position: 'absolute',
     top: 0,
+    left: 0,
     zIndex: -1,
-    opacity: 0.1
+    opacity: 0.1,
+    width: '100vw',
+    height: '100%',
+    backgroundSize: 'cover',
+    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper}')`
+  },
+  features: {
+    marginTop: 130
   }
 }))
 
@@ -32,7 +46,7 @@ const Index = () => {
   const classes = useStyles()
   return (
     <Grid container className={classes.root} justifyContent="center">
-      <img className={classes.wallpaper} src={Wallpaper} alt="Wallpaper" />
+      <div className={classes.wallpaper} />
       <Grid item container xs={10} justifyContent="center" alignItems="center" direction="column">
         <Box
           fontWeight={300}
@@ -78,27 +92,87 @@ const Index = () => {
         <PButton
           variant="outlined"
           to="/docs"
-          startIcon={Bulb}
+          startIcon={<img src={Bulb} alt="Bulb" />}
           style={{
             padding: '21px 87px',
             border: '1px solid rgba(255, 255, 255, 0.5)',
             borderRadius: 24
           }}
         >
-          <Bulb style={{ marginRight: 5 }} /> What`s new in Parrot OS 4.32.1
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          What's new in Parrot OS 4.32.1
         </PButton>
       </Grid>
-      <Grid container item xs={12}>
-        <Grid item xs={4}>
-          <PFeatureBlock
-            title="Secure System"
-            icon="a"
-            buttonText="Learn about Parrot’s security"
-            buttonLink="/docs"
-          >
-            Our tools are designed to be compatible with as many devices as possible via
-            containerization technologies like Docker or Podman.
-          </PFeatureBlock>
+      <Grid className={classes.features} container spacing={4} justifyContent="center">
+        <Grid container item xs={9} spacing={4}>
+          <Grid item xs>
+            <PFeatureBlock
+              title="Secure System"
+              icon={Safety}
+              buttonText="Learn about Parrot’s security"
+              buttonLink="/docs"
+            >
+              Our tools are designed to be compatible with as many devices as possible via
+              containerization technologies like Docker or Podman.
+            </PFeatureBlock>
+          </Grid>
+          <Grid item xs>
+            <PFeatureBlock
+              title="Portable"
+              icon={Build}
+              buttonText="Learn about Parrot’s portability"
+              buttonLink="/docs"
+            >
+              Our tools are designed to be compatible with as many devices as possible via
+              containerization technologies like Docker or Podman.
+            </PFeatureBlock>
+          </Grid>
+          <Grid item xs>
+            <PFeatureBlock
+              title="Performance"
+              icon={Vector}
+              buttonText="Learn about Parrot’s performance"
+              buttonLink="/docs"
+            >
+              Our tools are designed to be compatible with as many devices as possible via
+              containerization technologies like Docker or Podman.
+            </PFeatureBlock>
+          </Grid>
+        </Grid>
+        <Grid container item xs={9} spacing={4}>
+          <Grid item xs>
+            <PFeatureBlock
+              title="Privacy First"
+              icon={Unlock}
+              buttonText="Learn about Parrot’s security"
+              buttonLink="/docs"
+            >
+              Our tools are designed to be compatible with as many devices as possible via
+              containerization technologies like Docker or Podman.
+            </PFeatureBlock>
+          </Grid>
+          <Grid item xs>
+            <PFeatureBlock
+              title="Customizable"
+              icon={Layout}
+              buttonText="Learn about Parrot’s security"
+              buttonLink="/docs"
+            >
+              Our tools are designed to be compatible with as many devices as possible via
+              containerization technologies like Docker or Podman.
+            </PFeatureBlock>
+          </Grid>
+          <Grid item xs>
+            <PFeatureBlock
+              title="Free & Open Source"
+              icon={WeChat}
+              buttonText="Learn about Parrot’s security"
+              buttonLink="/docs"
+            >
+              Our tools are designed to be compatible with as many devices as possible via
+              containerization technologies like Docker or Podman.
+            </PFeatureBlock>
+          </Grid>
         </Grid>
       </Grid>
       {/* Nevermind about the bottom */}

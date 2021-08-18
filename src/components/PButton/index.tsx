@@ -11,11 +11,9 @@ const useStyles = makeStyles({
   },
   gradient: {
     background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
-    backgroundSize: '120%',
-    backgroundPosition: 0,
-    transition: 'background-position 0.3s ease-in-out',
+    transition: 'box-shadow 0.3s ease-in-out',
     '&:hover': {
-      backgroundPosition: -30
+      boxShadow: '0 0 30px 10px #2c2981'
     }
   },
   outlined: {
@@ -36,6 +34,7 @@ const PButton = ({
   children,
   gradient = false,
   variant,
+  startIcon,
   to,
   style
 }: PButtonProps & { to: string }) => {
@@ -48,6 +47,7 @@ const PButton = ({
         ...(gradient ? [classes.gradient] : []),
         classes[variant]
       )}
+      startIcon={startIcon}
       component={RouterLink}
       to={to}
       variant={variant}

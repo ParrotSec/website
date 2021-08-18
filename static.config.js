@@ -30,7 +30,7 @@ export default {
     {
       test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
       use: {
-        loader: 'url-loader',
+        loader: 'svg-url-loader',
         options: {
           limit: 10000,
           mimetype: 'image/svg+xml'
