@@ -24,6 +24,14 @@ const useStyles = makeStyles(theme => ({
     width: 64,
     height: 64
   },
+  logoHolder: {
+    flex: 1
+  },
+  downloadButtonHolder: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    display: 'flex'
+  },
   link: {
     padding: '0.5rem',
     color: 'white',
@@ -42,6 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
   nav: {
     display: 'flex',
+    flex: 1,
     gap: 41
   },
   menu: {
@@ -85,7 +94,7 @@ const Header = () => {
             alignItems="center"
             justifyContent="space-between"
           >
-            <RouterLink to="/">
+            <RouterLink className={classes.logoHolder} to="/">
               <img className={classes.logo} src={logo} alt="Logo" />
             </RouterLink>
             <Hidden lgUp>
@@ -120,9 +129,11 @@ const Header = () => {
                   Partners
                 </Link>
               </nav>
-              <PButton variant="contained" gradient to="/download">
-                Download OS
-              </PButton>
+              <div className={classes.downloadButtonHolder}>
+                <PButton variant="contained" gradient to="/download">
+                  Download OS
+                </PButton>
+              </div>
             </Hidden>
           </Grid>
         </Grid>

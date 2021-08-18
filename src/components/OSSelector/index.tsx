@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core'
 import OSCard from 'components/OSCard'
 
 const OSSelector = () => {
-  const [selected, setSelected] = useState({ home: false, security: false, cloud: false })
+  const [selected, setSelected] = useState({ home: false, security: true, cloud: false })
   const [hovered, setHovered] = useState({ home: false, security: true, cloud: false })
 
   return (

@@ -10,7 +10,13 @@ const useStyles = makeStyles({
     textTransform: 'none'
   },
   gradient: {
-    background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)'
+    background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
+    backgroundSize: '120%',
+    backgroundPosition: 0,
+    transition: 'background-position 0.3s ease-in-out',
+    '&:hover': {
+      backgroundPosition: -30
+    }
   },
   outlined: {
     borderColor: 'white'

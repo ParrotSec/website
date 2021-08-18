@@ -3,6 +3,8 @@ import OSSelector from 'components/OSSelector'
 import { Box, Divider, Grid, makeStyles, Typography } from '@material-ui/core'
 import { WbIncandescent as Bulb } from '@material-ui/icons'
 import PButton from 'components/PButton'
+import Wallpaper from './../../assets/wallpaper.png'
+import PFeatureBlock from 'components/PFeatureBlock'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,6 +14,17 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 'bold',
     marginBottom: theme.spacing(5),
     fontSize: 30
+  },
+  hackersSpan: {
+    '-webkit-background-clip': 'text',
+    '-webkit-text-fill-color': 'transparent',
+    background: ' linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%);'
+  },
+  wallpaper: {
+    position: 'absolute',
+    top: 0,
+    zIndex: -1,
+    opacity: 0.1
   }
 }))
 
@@ -19,6 +32,7 @@ const Index = () => {
   const classes = useStyles()
   return (
     <Grid container className={classes.root} justifyContent="center">
+      <img className={classes.wallpaper} src={Wallpaper} alt="Wallpaper" />
       <Grid item container xs={10} justifyContent="center" alignItems="center" direction="column">
         <Box
           fontWeight={300}
@@ -39,12 +53,8 @@ const Index = () => {
           lineHeight="86px"
         >
           The operating <br /> system for{' '}
-          <span
-            style={{
-              color: '#05EEFF'
-            }}
-          >
-            Hackers <span style={{ fontWeight: 'lighter' }}>|</span>
+          <span className={classes.hackersSpan}>
+            Hackers <span style={{ fontWeight: 100, marginLeft: '-1rem' }}>|</span>
           </span>
         </Box>
         <Box
@@ -71,14 +81,28 @@ const Index = () => {
           startIcon={Bulb}
           style={{
             padding: '21px 87px',
-            border: '1px solid rgba(255, 255, 255, 0.5)'
+            border: '1px solid rgba(255, 255, 255, 0.5)',
+            borderRadius: 24
           }}
         >
           <Bulb style={{ marginRight: 5 }} /> What`s new in Parrot OS 4.32.1
         </PButton>
       </Grid>
+      <Grid container item xs={12}>
+        <Grid item xs={4}>
+          <PFeatureBlock
+            title="Secure System"
+            icon="a"
+            buttonText="Learn about Parrot’s security"
+            buttonLink="/docs"
+          >
+            Our tools are designed to be compatible with as many devices as possible via
+            containerization technologies like Docker or Podman.
+          </PFeatureBlock>
+        </Grid>
+      </Grid>
       {/* Nevermind about the bottom */}
-      <Grid container xs={6}>
+      <Grid container item xs={6}>
         <Typography className={classes.title} variant="h1">
           Download Parrot 4.11.2
         </Typography>
