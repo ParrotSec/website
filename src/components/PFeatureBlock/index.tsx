@@ -6,7 +6,8 @@ import Arrow from './assets/vector.svg'
 const useStyles = makeStyles({
   root: {
     borderRadius: 24,
-    padding: 32
+    padding: 32,
+    height: '100%'
   },
   iconHolder: {
     height: 64,

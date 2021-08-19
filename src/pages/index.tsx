@@ -1,4 +1,6 @@
 import React from 'react'
+import { Pace, Pause, WindupChildren } from 'windups'
+import randomInteger from 'random-int'
 import OSSelector from 'components/OSSelector'
 import { Box, Divider, Grid, makeStyles, Typography } from '@material-ui/core'
 import PButton from 'components/PButton'
@@ -66,10 +68,19 @@ const Index = () => {
           fontSize={72}
           lineHeight="86px"
         >
-          The operating <br /> system for{' '}
-          <span className={classes.hackersSpan}>
-            Hackers <span style={{ fontWeight: 100, marginLeft: '-1rem' }}>|</span>
-          </span>
+          The operating <br /> system for
+          <WindupChildren>
+            <Pause ms={1000} />
+            <Pace
+              getPace={char => (char === ' ' ? randomInteger(100, 300) : randomInteger(40, 80))}
+            >
+              <span className={classes.hackersSpan}>
+                {' '}
+                Hackers<span style={{ fontWeight: 100 }}>|</span>
+              </span>
+            </Pace>
+          </WindupChildren>
+          <span style={{ fontWeight: 100, marginLeft: '-1rem', color: '#00FFF0' }}>|</span>
         </Box>
         <Box
           component="h6"

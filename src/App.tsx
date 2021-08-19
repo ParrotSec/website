@@ -1,14 +1,12 @@
-import React from 'react'
-import { Root, Routes, addPrefetchExcludes } from 'react-static'
+import React, { Suspense } from 'react'
+import { Root, Routes } from 'react-static'
 import { Router } from '@reach/router'
-import Dynamic from 'containers/Dynamic'
 import './app.css'
 import Header from 'components/Header'
 import { createTheme, MuiThemeProvider, CssBaseline, Container } from '@material-ui/core'
+import LoadingScreen from 'containers/LoadingScreen'
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
-addPrefetchExcludes(['dynamic'])
-
 const App = () => (
   <Root>
     <MuiThemeProvider
@@ -32,12 +30,11 @@ const App = () => (
       <CssBaseline />
       <Container maxWidth="xl">
         <Header />
-        <React.Suspense fallback={<em>Loading...</em>}>
+        <Suspense fallback={<LoadingScreen />}>
           <Router>
-            <Dynamic path="dynamic" />
             <Routes path="*" />
           </Router>
-        </React.Suspense>
+        </Suspense>
       </Container>
     </MuiThemeProvider>
   </Root>
