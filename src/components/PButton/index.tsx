@@ -7,6 +7,7 @@ const useStyles = makeStyles({
   root: {
     padding: '11px 36px',
     borderRadius: 85,
+    minWidth: 165,
     textTransform: 'none'
   },
   gradient: {
