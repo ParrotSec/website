@@ -15,9 +15,11 @@ import Unlock from '../../assets/icons/Unlock.svg'
 import Vector from '../../assets/icons/Vector.svg'
 import WeChat from '../../assets/icons/Wechat.svg'
 import oreo from '../../assets/oreo 1.svg'
-import tools from '../../assets/focus_notification__e9ngvxp06m62_large 1.png'
+import tools from '../../assets/screenshot.png'
+import shell from '../../assets/icons/shell.svg'
 import ToolsSection from 'containers/ToolsSection'
 import cls from 'classnames'
+import HTBSection from 'containers/HTBSection'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -54,7 +56,10 @@ const useStyles = makeStyles(theme => ({
     marginTop: 40
   },
   toolsBlock: {
-    marginTop: 90
+    marginTop: 90,
+
+    paddingLeft: 16,
+    paddingRight: 16
   },
   developerBlock: {
     marginTop: 115
@@ -91,6 +96,14 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     display: 'flex',
     flexFlow: 'column'
+  },
+  htbBlock: {
+    marginTop: 32,
+    paddingLeft: 16,
+    paddingRight: 16
+  },
+  developBlock: {
+    marginTop: 154
   }
 }))
 
@@ -251,8 +264,8 @@ const Index = () => {
           <img src={oreo} alt="oreo" />
         </Grid>
       </Grid>
-      <Grid container item xs={9} style={{ paddingLeft: 16, paddingRight: 16 }}>
-        <ToolsSection className={classes.toolsBlock} />
+      <Grid className={classes.toolsBlock} container item xs={9}>
+        <ToolsSection />
       </Grid>
       <Grid container spacing={4} item xs={9} style={{ marginTop: 32 }}>
         <Grid container item xs={6}>
@@ -353,7 +366,7 @@ const Index = () => {
               Home edition is designed for daily use, privacy and software development. Parrot Tools
               can be manually installed to assemble a custom and lightweight pentesting environment.
             </Typography>
-            <PButton variant="contained" to="/download" style={{ width: 165 }}>
+            <PButton variant="contained" to="/download" style={{ width: 177 }}>
               Download OS
             </PButton>
           </Paper>
@@ -371,7 +384,7 @@ const Index = () => {
               Testing and Red Team operations. It contains a full arsenal of ready-to use pentesting
               tools.
             </Typography>
-            <PButton variant="contained" to="/download" style={{ width: 165 }}>
+            <PButton variant="contained" to="/download" style={{ width: 177 }}>
               Download OS
             </PButton>
           </Paper>
@@ -388,11 +401,35 @@ const Index = () => {
               IoT & Cloud Appliances are special editions of Parrot Security made for embedded
               devices, cloud environments, virtual machines and other special deployments.
             </Typography>
-            <PButton variant="contained" to="/download" style={{ width: 165 }}>
+            <PButton variant="contained" to="/download" style={{ width: 177 }}>
               Download OS
             </PButton>
           </Paper>
         </Grid>
+      </Grid>
+      <Grid className={classes.htbBlock} container item xs={9}>
+        <HTBSection />
+      </Grid>
+      <Grid
+        className={classes.developBlock}
+        container
+        item
+        xs={9}
+        direction="column"
+        alignItems="center"
+      >
+        <Box className={classes.iconHolder} style={{ background: '#FFF' }}>
+          <img src={shell} alt="Shell Icon" />
+        </Box>
+        <Typography variant="h1" paragraph align="center">
+          Develop for Parrot<span style={{ fontWeight: 300 }}>OS</span>
+        </Typography>
+        <Typography variant="body1" align="center">
+          Different versions for different players, role your need and play freely.
+        </Typography>
+        <PButton variant="contained" to="/contribute" style={{ width: 165, marginTop: 37 }}>
+          Learn More
+        </PButton>
       </Grid>
     </Grid>
   )

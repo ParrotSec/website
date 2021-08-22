@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Root, Routes } from 'react-static'
 import { Router } from '@reach/router'
 import './app.css'
-import Header from 'components/Header'
+import Header from 'containers/Header'
+import Footer from 'containers/Footer'
 import { createTheme, MuiThemeProvider, CssBaseline, Container } from '@material-ui/core'
 import LoadingScreen from 'containers/LoadingScreen'
-import { SlowSuspense } from 'containers/SlowSuspense'
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 const App = () => (
@@ -28,6 +28,10 @@ const App = () => (
         },
         overrides: {
           MuiTypography: {
+            h1: {
+              fontSize: 64,
+              fontWeight: 700
+            },
             h2: {
               fontWeight: 700,
               fontSize: 48
@@ -55,13 +59,14 @@ const App = () => (
       })}
     >
       <CssBaseline />
-      <Header />
       <Container maxWidth="xl">
-        <SlowSuspense fallback={isReady => <LoadingScreen finished={isReady} />}>
+        <Header />
+        <Suspense fallback={<LoadingScreen />}>
           <Router>
             <Routes path="*" />
           </Router>
-        </SlowSuspense>
+        </Suspense>
+        <Footer />
       </Container>
     </MuiThemeProvider>
   </Root>

@@ -14,6 +14,8 @@ const LoadingScreen = ({ finished }: LoadingScreenProps) => {
       left={0}
       width="100%"
       height="100%"
+      bgcolor="#06043E"
+      zIndex={99}
       justifyContent="center"
       alignItems="center"
       display="flex"
