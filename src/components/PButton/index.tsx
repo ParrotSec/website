@@ -8,13 +8,21 @@ const useStyles = makeStyles({
     padding: '11px 36px',
     borderRadius: 85,
     minWidth: 165,
-    textTransform: 'none'
+    minHeight: 44,
+    textTransform: 'none',
   },
   gradient: {
     background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
     transition: 'box-shadow 0.3s ease-in-out',
     '&:hover': {
       boxShadow: '0 0 30px 10px #2c2981'
+    }
+  },
+  gradientWhite: {
+    background: 'linear-gradient(99.16deg, #ffffff, #b9b9b9, #777777, #3b3b3b, #000000);',
+    transition: 'box-shadow 0.3s ease-in-out',
+    '&:hover': {
+      boxShadow: '0 0 30px 10px #989898'
     }
   },
   outlined: {

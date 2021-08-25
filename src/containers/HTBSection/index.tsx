@@ -43,7 +43,7 @@ const HTBSection = ({ className, ...rest }: PaperProps) => {
             Pwnbox is a completely browser accessible virtual hacking distro including everything a
             hacker’s operating system should have.
           </Typography>
-          <PButton variant="contained" to="https://hackthebox.eu/" style={{ width: 165 }}>
+          <PButton variant="contained" to="https://hackthebox.eu/" style={{ width: 165, background: '#fff' }}>
             Explore
           </PButton>
         </Grid>

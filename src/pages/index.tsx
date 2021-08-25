@@ -173,7 +173,7 @@ const Index = () => {
           }}
         >
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          What's new in Parrot OS 4.32.1
+          What's new in Parrot OS 4.11.2
         </PButton>
       </Grid>
       <Grid className={classes.features} container item xs={9} spacing={4} justifyContent="center">
@@ -366,7 +366,7 @@ const Index = () => {
               Home edition is designed for daily use, privacy and software development. Parrot Tools
               can be manually installed to assemble a custom and lightweight pentesting environment.
             </Typography>
-            <PButton variant="contained" to="/download" style={{ width: 177 }}>
+            <PButton variant="contained" to="/download" style={{ width: 177, background: '#fff' }}>
               Download OS
             </PButton>
           </Paper>
@@ -384,7 +384,7 @@ const Index = () => {
               Testing and Red Team operations. It contains a full arsenal of ready-to use pentesting
               tools.
             </Typography>
-            <PButton variant="contained" to="/download" style={{ width: 177 }}>
+            <PButton variant="contained" to="/download" style={{ width: 177, background: '#fff' }}>
               Download OS
             </PButton>
           </Paper>
@@ -401,7 +401,7 @@ const Index = () => {
               IoT & Cloud Appliances are special editions of Parrot Security made for embedded
               devices, cloud environments, virtual machines and other special deployments.
             </Typography>
-            <PButton variant="contained" to="/download" style={{ width: 177 }}>
+            <PButton variant="contained" to="/download" style={{ width: 177, background: '#fff' }}>
               Download OS
             </PButton>
           </Paper>
@@ -427,7 +427,7 @@ const Index = () => {
         <Typography variant="body1" align="center">
           Different versions for different players, role your need and play freely.
         </Typography>
-        <PButton variant="contained" to="/contribute" style={{ width: 165, marginTop: 37 }}>
+        <PButton variant="contained" to="/contribute" style={{ marginTop: 37, background: '#fff' }}>
           Learn More
         </PButton>
       </Grid>
