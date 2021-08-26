@@ -1,25 +1,18 @@
 import React from 'react'
-import { Pace, Pause, WindupChildren } from 'windups'
-import randomInteger from 'random-int'
 import { Box, Grid, makeStyles, Paper, Typography } from '@material-ui/core'
 import PButton from 'components/PButton'
 import Wallpaper from './../../assets/wallpaper.png'
-import PFeatureBlock from 'components/PFeatureBlock'
-import Bulb from '../../assets/icons/Bulb.svg'
-import Build from '../../assets/icons/Build.svg'
-import Layout from '../../assets/icons/Layout.svg'
-import Safety from '../../assets/icons/SafetyCertificate.svg'
+import Safety from 'containers/FeaturesSectoin/assets/SafetyCertificate.svg'
 import cloud from '../../assets/icons/Cloud.svg'
 import home from '../../assets/icons/Home.svg'
-import Unlock from '../../assets/icons/Unlock.svg'
-import Vector from '../../assets/icons/Vector.svg'
-import WeChat from '../../assets/icons/Wechat.svg'
 import oreo from '../../assets/oreo 1.svg'
 import tools from '../../assets/screenshot.png'
 import shell from '../../assets/icons/shell.svg'
 import ToolsSection from 'containers/ToolsSection'
 import cls from 'classnames'
 import HTBSection from 'containers/HTBSection'
+import Welcome from 'containers/Welcome'
+import FeaturesSection from 'containers/FeaturesSectoin'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,11 +22,6 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 'bold',
     marginBottom: theme.spacing(5),
     fontSize: 30
-  },
-  hackersSpan: {
-    '-webkit-background-clip': 'text',
-    '-webkit-text-fill-color': 'transparent',
-    background: ' linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%);'
   },
   wallpaper: {
     position: 'absolute',
@@ -47,7 +35,10 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper}')`
   },
   features: {
-    marginTop: 130
+    marginTop: 130,
+    [theme.breakpoints.down('md')]: {
+      marginTop: 50
+    }
   },
   trustBlock: {
     marginTop: 90
@@ -112,139 +103,16 @@ const Index = () => {
   return (
     <Grid container className={classes.root} justifyContent="center">
       <div className={classes.wallpaper} />
-      <Grid item container xs={10} justifyContent="center" alignItems="center" direction="column">
-        <Box
-          fontWeight={300}
-          color="#05EEFF"
-          letterSpacing="0.1em"
-          textAlign="center"
-          style={{ textTransform: 'uppercase' }}
-        >
-          <span style={{ fontWeight: 'bold' }}>Parrot</span>OS
-        </Box>
-        <Box
-          component="h1"
-          marginTop={0}
-          marginBottom="10px"
-          fontWeight="bold"
-          textAlign="center"
-          fontSize={72}
-          lineHeight="86px"
-        >
-          The operating <br /> system for{' '}
-          <WindupChildren>
-            <Pause ms={3000} />
-            <Pace
-              getPace={char => (char === ' ' ? randomInteger(100, 300) : randomInteger(40, 80))}
-            >
-              <span className={classes.hackersSpan}>
-                Hackers<span style={{ fontWeight: 100 }}>|</span>
-              </span>
-            </Pace>
-          </WindupChildren>
-          <span style={{ fontWeight: 100, marginLeft: '-1rem', color: '#00FFF0' }}>|</span>
-        </Box>
-        <Box
-          component="h6"
-          fontWeight={400}
-          textAlign="center"
-          fontSize={18}
-          marginTop="27px"
-          color="rgba(255, 255, 255, 0.5);"
-        >
-          A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
-        </Box>
-        <Box display="flex" marginBottom="45px" style={{ gap: 32 }}>
-          <PButton variant="contained" to="/download" gradient>
-            Download OS
-          </PButton>
-          <PButton variant="outlined" to="/docs">
-            Getting Started
-          </PButton>
-        </Box>
-        <PButton
-          variant="outlined"
-          to="/docs"
-          startIcon={<img src={Bulb} alt="Bulb" />}
-          style={{
-            padding: '21px 87px',
-            border: '1px solid rgba(255, 255, 255, 0.5)',
-            borderRadius: 24
-          }}
-        >
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          What's new in Parrot OS 4.32.1
-        </PButton>
-      </Grid>
-      <Grid className={classes.features} container item xs={9} spacing={4} justifyContent="center">
-        <Grid item xs={4}>
-          <PFeatureBlock
-            title="Secure System"
-            icon={Safety}
-            buttonText="Learn about Parrot’s security"
-            buttonLink="/docs"
-          >
-            Our tools are designed to be compatible with as many devices as possible via
-            containerization technologies like Docker or Podman.
-          </PFeatureBlock>
-        </Grid>
-        <Grid item xs={4}>
-          <PFeatureBlock
-            title="Portable"
-            icon={Build}
-            buttonText="Learn about Parrot’s portability"
-            buttonLink="/docs"
-          >
-            Our tools are designed to be compatible with as many devices as possible via
-            containerization technologies like Docker or Podman.
-          </PFeatureBlock>
-        </Grid>
-        <Grid item xs={4}>
-          <PFeatureBlock
-            title="Performance"
-            icon={Vector}
-            buttonText="Learn about Parrot’s performance"
-            buttonLink="/docs"
-          >
-            Our tools are designed to be compatible with as many devices as possible via
-            containerization technologies like Docker or Podman.
-          </PFeatureBlock>
-        </Grid>
-        <Grid item xs={4}>
-          <PFeatureBlock
-            title="Privacy First"
-            icon={Unlock}
-            buttonText="Learn about Parrot’s security"
-            buttonLink="/docs"
-          >
-            Our tools are designed to be compatible with as many devices as possible via
-            containerization technologies like Docker or Podman.
-          </PFeatureBlock>
-        </Grid>
-        <Grid item xs={4}>
-          <PFeatureBlock
-            title="Customizable"
-            icon={Layout}
-            buttonText="Learn about Parrot’s security"
-            buttonLink="/docs"
-          >
-            Our tools are designed to be compatible with as many devices as possible via
-            containerization technologies like Docker or Podman.
-          </PFeatureBlock>
-        </Grid>
-        <Grid item xs={4}>
-          <PFeatureBlock
-            title="Free & Open Source"
-            icon={WeChat}
-            buttonText="Learn about Parrot’s security"
-            buttonLink="/docs"
-          >
-            Our tools are designed to be compatible with as many devices as possible via
-            containerization technologies like Docker or Podman.
-          </PFeatureBlock>
-        </Grid>
-      </Grid>
-      <Grid className={classes.trustBlock} container justifyContent="center" item xs={10}>
+      <Welcome />
+      <FeaturesSection className={classes.features} />
+      <Grid
+        className={classes.trustBlock}
+        container
+        justifyContent="center"
+        alignItems="center"
+        item
+        xs={10}
+      >
         <Grid item xs={10}>
           <Typography variant="body2" align="center">
             Trusted by cybersecurity professionals around the world
@@ -254,7 +122,9 @@ const Index = () => {
           className={classes.trustLogosBlock}
           container
           item
-          xs={6}
+          xs={10}
+          md={6}
+          spacing={4}
           justifyContent="space-between"
         >
           <img src={oreo} alt="oreo" />
@@ -270,30 +140,42 @@ const Index = () => {
       <Grid container spacing={4} item xs={9} style={{ marginTop: 32 }}>
         <Grid container item xs={6}>
           <Paper>
-            <Box padding="60px">
-              <Typography variant="h3">Hacking tools at your fingertips</Typography>
-              <Typography variant="body1">
-                When it comes to general tools and functional features, Parrot OS wins over Kali
-                Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
-                its own tools. There are several tools you will find on ParrotOS that is not found
-                on Kali Linux.
-              </Typography>
+            <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
+              <Box padding="60px">
+                <Typography variant="h3">Hacking tools at your fingertips</Typography>
+                <Typography variant="body1">
+                  When it comes to general tools and functional features, Parrot OS wins over Kali
+                  Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
+                  its own tools. There are several tools you will find on ParrotOS that is not found
+                  on Kali Linux.
+                </Typography>
+              </Box>
+              <img
+                src={tools}
+                style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
+                alt="Parrot Tools"
+              />
             </Box>
-            <img src={tools} style={{ display: 'block', marginLeft: 'auto' }} alt="Parrot Tools" />
           </Paper>
         </Grid>
         <Grid container item xs={6}>
           <Paper>
-            <Box padding="60px">
-              <Typography variant="h3">This block should be replaced</Typography>
-              <Typography variant="body1">
-                When it comes to general tools and functional features, Parrot OS wins over Kali
-                Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
-                its own tools. There are several tools you will find on ParrotOS that is not found
-                on Kali Linux.
-              </Typography>
+            <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
+              <Box padding="60px">
+                <Typography variant="h3">This block should be replaced</Typography>
+                <Typography variant="body1">
+                  When it comes to general tools and functional features, Parrot OS wins over Kali
+                  Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
+                  its own tools. There are several tools you will find on ParrotOS that is not found
+                  on Kali Linux.
+                </Typography>
+              </Box>
+              <img
+                src={tools}
+                style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
+                alt="Parrot Tools"
+              />
             </Box>
-            <img src={tools} style={{ display: 'block', marginLeft: 'auto' }} alt="Parrot Tools" />
           </Paper>
         </Grid>
       </Grid>

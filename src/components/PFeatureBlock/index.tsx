@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react'
 import { Link as RouterLink } from '@reach/router'
-import { Box, Button, makeStyles, Paper } from '@material-ui/core'
+import { Button, makeStyles, Paper, Typography } from '@material-ui/core'
 import Arrow from './assets/vector.svg'
 
 const useStyles = makeStyles({
@@ -18,7 +18,8 @@ const useStyles = makeStyles({
   icon: {
     padding: 16,
     background: 'white',
-    borderRadius: 6
+    borderRadius: 6,
+    marginBottom: 20
   },
   button: {
     textTransform: 'none',
@@ -27,6 +28,10 @@ const useStyles = makeStyles({
     paddingRight: 16,
     marginLeft: -16,
     borderRadius: 10
+  },
+  body: {
+    marginTop: 20,
+    marginBottom: 25
   }
 })
 
@@ -42,17 +47,10 @@ const PFeatureBlock = ({ children, icon, title, buttonText, buttonLink }: PFeatu
   return (
     <Paper className={classes.root}>
       <img className={classes.icon} src={icon} alt="Icon" />
-      <Box component="h3" fontWeight="bold" fontSize={28} marginTop="20px" marginBottom={0}>
-        {title}
-      </Box>
-      <Box
-        fontWeight="normal"
-        color="rgba(255, 255, 255, 0.5)"
-        marginTop="20px"
-        marginBottom="25px"
-      >
+      <Typography variant="h3">{title}</Typography>
+      <Typography className={classes.body} variant="body1">
         {children}
-      </Box>
+      </Typography>
       <Button
         className={classes.button}
         component={RouterLink}

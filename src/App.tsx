@@ -24,32 +24,39 @@ const App = () => (
         },
         typography: {
           fontFamily: 'Museo Sans',
-          fontSize: 16
-        },
-        overrides: {
-          MuiTypography: {
-            h1: {
-              fontSize: 64,
-              fontWeight: 700
-            },
-            h2: {
-              fontWeight: 700,
-              fontSize: 48
-            },
-            h3: {
-              fontWeight: 700,
-              fontSize: 28
-            },
-            body1: {
-              fontWeight: 'normal',
-              fontSize: 16,
-              opacity: 0.5
-            },
-            body2: {
-              fontWeight: 'normal',
-              fontSize: 14
+          fontSize: 16,
+          h1: {
+            fontSize: 64,
+            fontWeight: 700,
+            '@media (min-width:1280px)': {
+              fontSize: 52
             }
           },
+          h2: {
+            fontWeight: 700,
+            fontSize: 48,
+            '@media (max-width:1280px)': {
+              fontSize: 36
+            }
+          },
+          h3: {
+            fontWeight: 700,
+            fontSize: 28,
+            '@media (max-width:1280px)': {
+              fontSize: 20
+            }
+          },
+          body1: {
+            fontWeight: 'normal',
+            fontSize: 16,
+            opacity: 0.5
+          },
+          body2: {
+            fontWeight: 'normal',
+            fontSize: 14
+          }
+        },
+        overrides: {
           MuiPaper: {
             rounded: {
               borderRadius: 24

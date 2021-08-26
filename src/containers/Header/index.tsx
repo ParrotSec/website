@@ -54,9 +54,7 @@ const useStyles = makeStyles(theme => ({
     gap: 41
   },
   menu: {
-    color: 'rgba(255,255,255,.5)',
-    width: '2em',
-    height: '2em'
+    color: 'rgba(255,255,255,.5)'
   },
   register: {
     [theme.breakpoints.up('sm')]: {

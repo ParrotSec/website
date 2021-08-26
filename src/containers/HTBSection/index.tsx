@@ -25,7 +25,8 @@ const useStyles = makeStyles({
     borderRadius: 6
   },
   content: {
-    paddingLeft: 50
+    paddingLeft: 50,
+    paddingBottom: 78
   }
 })
 
@@ -47,7 +48,7 @@ const HTBSection = ({ className, ...rest }: PaperProps) => {
             Explore
           </PButton>
         </Grid>
-        <Grid container item xs justifyContent="flex-end">
+        <Grid container item xs direction="column" justifyContent="flex-end" alignItems="flex-end">
           <img src={htbScreenshot} alt="Screenshot of PWNBox" />
         </Grid>
       </Grid>
