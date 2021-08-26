@@ -28,8 +28,11 @@ const App = () => (
           h1: {
             fontSize: 64,
             fontWeight: 700,
-            '@media (min-width:1280px)': {
+            '@media (max-width:1280px)': {
               fontSize: 52
+            },
+            '@media (max-width:960px)': {
+              fontSize: 42
             }
           },
           h2: {
@@ -43,7 +46,7 @@ const App = () => (
             fontWeight: 700,
             fontSize: 28,
             '@media (max-width:1280px)': {
-              fontSize: 20
+              fontSize: 18
             }
           },
           body1: {

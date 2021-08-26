@@ -1,10 +1,10 @@
 import React from 'react'
-import { Box, Grid, Link, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Grid, Link, makeStyles, Paper, Typography } from '@material-ui/core'
 import logo from './assets/logo.svg'
 import PButton from 'components/PButton'
 import { Link as RouterLink } from '@reach/router'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     marginBottom: 77,
     marginTop: 154
@@ -15,7 +15,10 @@ const useStyles = makeStyles({
   },
   paper: {
     padding: 80,
-    paddingBottom: 52
+    paddingBottom: 52,
+    [theme.breakpoints.down('sm')]: {
+      padding: 40
+    }
   },
   logoBlock: {
     paddingRight: 130
@@ -64,38 +67,64 @@ const useStyles = makeStyles({
     '&:focus': {
       textDecoration: 'none'
     }
+  },
+  linksHolder: {
+    [theme.breakpoints.down('md')]: {
+      alignContent: 'flex-start'
+    }
+  },
+  copyrightSection: {
+    marginTop: 131,
+    [theme.breakpoints.down('md')]: {
+      marginTop: 50
+    }
+  },
+  legalLinks: {
+    [theme.breakpoints.up('lg')]: {
+      textAlign: 'right'
+    }
   }
-})
+}))
 
 const Footer = () => {
   const classes = useStyles()
   return (
     <Grid className={classes.root} container justifyContent="center">
-      <Grid className={classes.grid} item xs={9}>
+      <Grid className={classes.grid} item xs={12} md={9}>
         <Paper className={classes.paper}>
-          <Grid container direction="column">
-            <Grid container>
+          <Grid container spacing={4}>
+            <Grid
+              className={classes.logoBlock}
+              item
+              container
+              xs={12}
+              lg={4}
+              direction="column"
+              alignItems="flex-start"
+            >
+              <img width={64} height={64} src={logo} alt="Parrot Logo" />
+              <Typography className={classes.logoTitle} variant="h3" paragraph>
+                Parrot<span style={{ fontWeight: 300 }}>OS</span>
+              </Typography>
+              <Typography className={classes.logoSubTitle} variant="body1" paragraph>
+                A GNU/Linux distribution based on Debian and designed with Security and Privacy in
+                mind.
+              </Typography>
+              <PButton className={classes.download} variant="contained" gradient to="/download">
+                Download OS
+              </PButton>
+            </Grid>
+            <Grid container item xs={12} lg={8} spacing={4}>
               <Grid
-                className={classes.logoBlock}
-                item
+                className={classes.linksHolder}
                 container
-                xs={4}
+                item
+                xs={12}
+                sm={6}
+                lg={3}
                 direction="column"
-                alignItems="flex-start"
+                alignContent="flex-end"
               >
-                <img width={64} height={64} src={logo} alt="Parrot Logo" />
-                <Typography className={classes.logoTitle} variant="h3" paragraph>
-                  Parrot<span style={{ fontWeight: 300 }}>OS</span>
-                </Typography>
-                <Typography className={classes.logoSubTitle} variant="body1" paragraph>
-                  A GNU/Linux distribution based on Debian and designed with Security and Privacy in
-                  mind.
-                </Typography>
-                <PButton className={classes.download} variant="contained" gradient to="/download">
-                  Download OS
-                </PButton>
-              </Grid>
-              <Grid container item xs={2} direction="column" alignContent="flex-end">
                 <Typography className={classes.title} variant="h6" paragraph>
                   Parrot OS Versions
                 </Typography>
@@ -109,7 +138,16 @@ const Footer = () => {
                   Cloud Edition
                 </Link>
               </Grid>
-              <Grid container item xs={2} direction="column" alignContent="flex-end">
+              <Grid
+                className={classes.linksHolder}
+                container
+                item
+                xs={12}
+                sm={6}
+                lg={3}
+                direction="column"
+                alignContent="flex-end"
+              >
                 <Typography className={classes.title} variant="h6" paragraph>
                   Resources
                 </Typography>
@@ -126,7 +164,16 @@ const Footer = () => {
                   Blog
                 </Link>
               </Grid>
-              <Grid container item xs={2} direction="column" alignContent="flex-end">
+              <Grid
+                className={classes.linksHolder}
+                container
+                item
+                xs={12}
+                sm={6}
+                lg={3}
+                direction="column"
+                alignContent="flex-end"
+              >
                 <Typography className={classes.title} variant="h6" paragraph>
                   About Parrot
                 </Typography>
@@ -140,7 +187,16 @@ const Footer = () => {
                   Donate
                 </Link>
               </Grid>
-              <Grid container item xs={2} direction="column" alignContent="flex-end">
+              <Grid
+                className={classes.linksHolder}
+                container
+                item
+                xs={12}
+                sm={6}
+                lg={3}
+                direction="column"
+                alignContent="flex-end"
+              >
                 <Typography className={classes.title} variant="h6" paragraph>
                   Social
                 </Typography>
@@ -163,20 +219,39 @@ const Footer = () => {
                   Reddit
                 </Link>
               </Grid>
-              <Box display="flex" mt="131px" style={{ gap: 26 }} width="100%">
+            </Grid>
+            <Grid className={classes.copyrightSection} container item xs={12} spacing={4}>
+              <Grid item xs={12} lg={7}>
                 <Typography className={classes.footerText} variant="body2">
                   © 2021 Parrot Security. All rights reserved.
                 </Typography>
-                <Link className={classes.footerLink} component={RouterLink} to="/download/home">
-                  Legal Notice
-                </Link>
-                <Link className={classes.footerLink} component={RouterLink} to="/download/home">
-                  Terms
-                </Link>
-                <Link className={classes.footerLink} component={RouterLink} to="/download/home">
-                  Privacy
-                </Link>
-              </Box>
+              </Grid>
+              <Grid
+                className={classes.legalLinks}
+                container
+                item
+                xs={12}
+                lg
+                spacing={3}
+                justifyContent="flex-end"
+                alignItems="center"
+              >
+                <Grid item xs={12} lg>
+                  <Link className={classes.footerLink} component={RouterLink} to="/download/home">
+                    Legal Notice
+                  </Link>
+                </Grid>
+                <Grid item xs={12} lg>
+                  <Link className={classes.footerLink} component={RouterLink} to="/download/home">
+                    Terms
+                  </Link>
+                </Grid>
+                <Grid item xs={12} lg>
+                  <Link className={classes.footerLink} component={RouterLink} to="/download/home">
+                    Privacy
+                  </Link>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Paper>

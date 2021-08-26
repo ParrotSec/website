@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Welcome = () => {
+const WelcomeSection = () => {
   const classes = useStyles()
   return (
     <Grid
@@ -116,4 +116,4 @@ const Welcome = () => {
   )
 }
 
-export default Welcome
+export default WelcomeSection

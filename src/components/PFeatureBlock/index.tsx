@@ -3,23 +3,20 @@ import { Link as RouterLink } from '@reach/router'
 import { Button, makeStyles, Paper, Typography } from '@material-ui/core'
 import Arrow from './assets/vector.svg'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     borderRadius: 24,
     padding: 32,
     height: '100%'
   },
-  iconHolder: {
-    height: 64,
-    width: 64,
-    background: 'white',
-    borderRadius: 6
-  },
   icon: {
     padding: 16,
     background: 'white',
     borderRadius: 6,
-    marginBottom: 20
+    marginBottom: 20,
+    [theme.breakpoints.down('sm')]: {
+      padding: 8
+    }
   },
   button: {
     textTransform: 'none',
@@ -33,7 +30,7 @@ const useStyles = makeStyles({
     marginTop: 20,
     marginBottom: 25
   }
-})
+}))
 
 type PFeatureBlockProps = PropsWithChildren<{
   icon: string

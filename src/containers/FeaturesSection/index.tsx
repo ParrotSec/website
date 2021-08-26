@@ -73,7 +73,7 @@ const FeaturesSection = (props: GridProps) => {
     </PFeatureBlock>
   ]
   return (
-    <Grid {...props} container item xs={9} spacing={4} justifyContent="center">
+    <Grid {...props} container item xs={12} md={9} spacing={4} justifyContent="center">
       <Hidden smDown>
         {blocks.map(el => (
           <Grid key={`grid-${el.key}`} item sm={6} lg={4}>
