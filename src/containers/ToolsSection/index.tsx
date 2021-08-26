@@ -32,7 +32,8 @@ const useStyles = makeStyles({
     borderRadius: 6
   },
   desc: {
-    opacity: 0.5
+    opacity: 0.5,
+    paddingBottom: 20
   },
   bigIcon: {
     position: 'absolute',
