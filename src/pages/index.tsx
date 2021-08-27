@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
 import PButton from 'components/PButton'
-import Wallpaper from './../../assets/wallpaper.png'
-import shell from '../../assets/icons/shell.svg'
+import Wallpaper from '../assets/wallpaper.png'
+import shell from '../assets/icons/shell.svg'
 import ToolsSection from 'containers/ToolsSection'
 import HTBSection from 'containers/HTBSection'
 import WelcomeSection from 'containers/WelcomeSection'
@@ -11,6 +11,7 @@ import TrustSection from 'containers/TrustSection'
 import DevelopingSection from 'containers/DevelopingSection'
 import StatsSection from 'containers/StatsSection'
 import OSSection from 'containers/OSSection'
+import { useCookies } from 'react-cookie'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -75,9 +76,10 @@ const useStyles = makeStyles(theme => ({
 
 const Index = () => {
   const classes = useStyles()
+  const [cookies] = useCookies()
   return (
     <Grid container className={classes.root} justifyContent="center">
-      <div className={classes.wallpaper} />
+      {cookies.theme === 'dark' && <div className={classes.wallpaper} />}
       <WelcomeSection />
       <FeaturesSection className={classes.features} />
       <TrustSection className={classes.trustBlock} />

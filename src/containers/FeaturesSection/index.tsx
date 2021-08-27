@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, GridProps, Hidden } from '@material-ui/core'
+import { Grid, GridProps, Hidden, useTheme } from '@material-ui/core'
 import PFeatureBlock from 'components/PFeatureBlock'
 import Safety from './assets/SafetyCertificate.svg'
 import Build from './assets/Build.svg'
@@ -72,6 +72,9 @@ const FeaturesSection = (props: GridProps) => {
       technologies like Docker or Podman.
     </PFeatureBlock>
   ]
+  const {
+    palette: { type: themeType }
+  } = useTheme()
   return (
     <Grid {...props} container item xs={12} md={9} spacing={4} justifyContent="center">
       <Hidden smDown>
@@ -89,12 +92,12 @@ const FeaturesSection = (props: GridProps) => {
             navButtonsAlwaysInvisible
             indicatorIconButtonProps={{
               style: {
-                color: 'rgba(255, 255, 255, 0.5)' // 3
+                color: themeType === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'
               }
             }}
             activeIndicatorIconButtonProps={{
               style: {
-                color: '#55ddff' // 3
+                color: '#55ddff'
               }
             }}
           >

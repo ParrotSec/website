@@ -36,7 +36,7 @@ const HTBSection = (rest: GridProps) => {
   const classes = useStyles()
   return (
     <Grid {...rest} container item xs={12} md={9}>
-      <Paper className={classes.root}>
+      <Paper className={classes.root} elevation={0}>
         <Grid container item xs justifyContent="space-between">
           <Grid className={classes.content} container item xs={8} md={4} direction="column">
             <img className={classes.htbIcon} src={htbLogo} alt="HackTheBox Logo" />
@@ -47,11 +47,7 @@ const HTBSection = (rest: GridProps) => {
               Pwnbox is a completely browser accessible virtual hacking distro including everything
               a hacker’s operating system should have.
             </Typography>
-            <PButton
-              variant="contained"
-              to="https://hackthebox.eu/"
-              style={{ width: 165, background: '#fff' }}
-            >
+            <PButton variant="contained" to="https://hackthebox.eu/" style={{ maxWidth: 165 }}>
               Explore
             </PButton>
           </Grid>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, GridProps, makeStyles, Typography } from '@material-ui/core'
-import oreo from '../../../assets/oreo 1.svg'
+import oreo from '../../assets/oreo 1.svg'
 
 const useStyles = makeStyles({
   trustLogosBlock: {

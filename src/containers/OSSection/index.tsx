@@ -1,9 +1,9 @@
 import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
 import OSCard from 'components/OSCard'
-import home from '../../../assets/icons/Home.svg'
+import home from '../../assets/icons/Home.svg'
 import Safety from 'containers/FeaturesSection/assets/SafetyCertificate.svg'
-import cloud from '../../../assets/icons/Cloud.svg'
+import cloud from '../../assets/icons/Cloud.svg'
 
 const useStyles = makeStyles({
   versionsBlock: {

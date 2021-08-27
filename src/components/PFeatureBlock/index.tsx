@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react'
 import { Link as RouterLink } from '@reach/router'
-import { Button, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Link, makeStyles, Paper, Typography } from '@material-ui/core'
 import Arrow from './assets/vector.svg'
 
 const useStyles = makeStyles(theme => ({
@@ -16,11 +16,16 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 20,
     [theme.breakpoints.down('sm')]: {
       padding: 8
-    }
+    },
+    ...(theme.palette.type === 'light'
+      ? {
+          filter: 'invert() saturate(0)'
+        }
+      : {})
   },
   button: {
     textTransform: 'none',
-    color: '#05EEFF',
+    color: theme.palette.type === 'light' ? '#03232E' : '#05EEFF',
     paddingLeft: 16,
     paddingRight: 16,
     marginLeft: -16,
@@ -29,6 +34,9 @@ const useStyles = makeStyles(theme => ({
   body: {
     marginTop: 20,
     marginBottom: 25
+  },
+  '.arrow': {
+    fill: theme.palette.type === 'light' ? '#03232E' : '#05EEFF'
   }
 }))
 
@@ -42,20 +50,15 @@ type PFeatureBlockProps = PropsWithChildren<{
 const PFeatureBlock = ({ children, icon, title, buttonText, buttonLink }: PFeatureBlockProps) => {
   const classes = useStyles()
   return (
-    <Paper className={classes.root}>
+    <Paper className={classes.root} elevation={0}>
       <img className={classes.icon} src={icon} alt="Icon" />
       <Typography variant="h3">{title}</Typography>
       <Typography className={classes.body} variant="body1">
         {children}
       </Typography>
-      <Button
-        className={classes.button}
-        component={RouterLink}
-        to={buttonLink}
-        endIcon={<img src={Arrow} alt="Navigation Arrow" />}
-      >
-        {buttonText}
-      </Button>
+      <Link className={classes.button} component={RouterLink} to={buttonLink}>
+        {buttonText} <img src={Arrow} alt="Navigation Arrow" />
+      </Link>
     </Paper>
   )
 }

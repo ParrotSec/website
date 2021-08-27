@@ -29,7 +29,8 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     padding: 16,
     background: '#FFF',
-    borderRadius: 6
+    borderRadius: 6,
+    boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)'
   },
   desc: {
     opacity: 0.5,
@@ -41,7 +42,8 @@ const useStyles = makeStyles(theme => ({
     height: 84,
     padding: 16,
     background: '#FFF',
-    borderRadius: 6
+    borderRadius: 6,
+    boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)'
   },
   bg: {
     borderRadius: 6,
@@ -50,7 +52,6 @@ const useStyles = makeStyles(theme => ({
   bgHolder: {
     width: 'calc(100% - 512px)',
     marginBottom: 48,
-    marginTop: 46,
     '@media (max-width: 1600px)': {
       width: '75%'
     }
@@ -71,7 +72,7 @@ const ToolsSection = (rest: GridProps) => {
   return (
     <>
       <Grid {...rest} container item xs={12} md={9}>
-        <Paper className={classes.root}>
+        <Paper className={classes.root} elevation={0}>
           <Grid
             container
             item
@@ -89,7 +90,7 @@ const ToolsSection = (rest: GridProps) => {
             </Typography>
             {/*TODO: for futher animations need to apply box-shadow*/}
             <Hidden mdDown>
-              <Box position="relative" width={width}>
+              <Box position="relative" width={width} marginTop="46px">
                 <img
                   className={classes.bigIcon}
                   src={burp}
@@ -178,7 +179,7 @@ const ToolsSection = (rest: GridProps) => {
       </Grid>
       <Grid container spacing={4} item xs={12} md={9} style={{ marginTop: 32 }}>
         <Grid container item xs={12} md={6}>
-          <Paper>
+          <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
               <Box padding="60px">
                 <Typography variant="h3">Hacking tools at your fingertips</Typography>
@@ -198,7 +199,7 @@ const ToolsSection = (rest: GridProps) => {
           </Paper>
         </Grid>
         <Grid container item xs={12} md={6}>
-          <Paper>
+          <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
               <Box padding="60px">
                 <Typography variant="h3">This block should be replaced</Typography>

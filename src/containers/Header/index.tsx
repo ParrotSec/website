@@ -34,7 +34,6 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     padding: '0.5rem',
-    color: 'white',
     textDecoration: 'none',
     transition: '.2s ease-in 0s',
     '&:hover': {
@@ -54,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     gap: 41
   },
   menu: {
-    color: 'rgba(255,255,255,.5)'
+    color: theme.palette.type === 'light' ? 'rgba(255,255,255,.5)' : 'rgba(0,0,0,.5)'
   },
   register: {
     [theme.breakpoints.up('sm')]: {
@@ -108,22 +107,52 @@ const Header = () => {
 
             <Hidden mdDown>
               <nav className={classes.nav}>
-                <Link className={classes.link} component={RouterLink} to="/community">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/community"
+                >
                   Community
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/docs">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/docs"
+                >
                   Documentation
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/blog">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/blog"
+                >
                   Blog
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/donate">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/donate"
+                >
                   Donate
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/swag">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/swag"
+                >
                   Swag
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/partners">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/partners"
+                >
                   Partners
                 </Link>
               </nav>
@@ -141,25 +170,60 @@ const Header = () => {
           <Grid container justifyContent="center">
             <Grid item container xs={12} sm={8} lg={10} xl={12} alignItems="center">
               <Box className={classes.dropDown}>
-                <Link className={classes.link} component={RouterLink} to="/community">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/community"
+                >
                   Community
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/docs">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/docs"
+                >
                   Documentation
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/blog">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/blog"
+                >
                   Blog
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/donate">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/donate"
+                >
                   Donate
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/swag">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/swag"
+                >
                   Swag
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/partners">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/partners"
+                >
                   Partners
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/download">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  component={RouterLink}
+                  to="/download"
+                >
                   Download OS
                 </Link>
               </Box>

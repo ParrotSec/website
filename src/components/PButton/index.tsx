@@ -15,19 +15,21 @@ const useStyles = makeStyles(theme => ({
       fontSize: 12
     }
   },
+  outlined: {
+    borderColor: theme.palette.type === 'dark' ? 'white' : 'black'
+  },
+  text: {},
+  contained: {
+    color: theme.palette.type === 'dark' ? '#03232E' : '#FFFFFF',
+    background: theme.palette.type === 'light' ? '#03232E' : '#FFFFFF'
+  },
   gradient: {
     background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
     transition: 'box-shadow 0.3s ease-in-out',
     '&:hover': {
       boxShadow: '0 0 30px 10px #2c2981'
-    }
-  },
-  outlined: {
-    borderColor: 'white'
-  },
-  text: {},
-  contained: {
-    color: 'rgba(0, 0, 0, 0.87)'
+    },
+    color: '#03232E'
   }
 }))
 
@@ -50,14 +52,15 @@ const PButton = ({
       className={cls(
         classes.root,
         className,
-        ...(gradient ? [classes.gradient] : []),
-        classes[variant]
+        classes[variant],
+        ...(gradient ? [classes.gradient] : [])
       )}
       startIcon={startIcon}
       component={RouterLink}
       to={to}
       variant={variant}
       style={style}
+      disableElevation
     >
       {children}
     </Button>

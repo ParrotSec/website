@@ -30,7 +30,7 @@ const OSCard = ({ icon, iconClassName, title, children, ...rest }: OSCardProps) 
   const classes = useStyles()
   return (
     <Grid {...rest} item xs={12} md={4}>
-      <Paper className={classes.versionsPaper}>
+      <Paper className={classes.versionsPaper} elevation={0}>
         <div className={cls(classes.iconHolder, iconClassName)}>
           <img src={icon} alt="Home version" />
         </div>

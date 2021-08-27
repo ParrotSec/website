@@ -36,7 +36,9 @@ const useStyles = makeStyles(theme => ({
   wideButton: {
     marginTop: 45,
     padding: '21px 87px',
-    border: '1px solid rgba(255, 255, 255, 0.5)',
+    border: `1px solid ${
+      theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
+    }`,
     borderRadius: 24,
     [theme.breakpoints.down('sm')]: {
       padding: '21px 30px'

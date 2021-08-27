@@ -28,7 +28,7 @@ const DevelopingSection = () => {
       </Grid>
       <Grid className={classes.papersBlock} container item xs={12} md={9} spacing={4}>
         <Grid item xs={12}>
-          <Paper className={classes.devPaper}>
+          <Paper className={classes.devPaper} elevation={0}>
             <Typography variant="h3" paragraph>
               Developer tools
             </Typography>
@@ -39,7 +39,7 @@ const DevelopingSection = () => {
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.devPaper}>
+          <Paper className={classes.devPaper} elevation={0}>
             <Typography variant="h3" paragraph>
               Compilers & interpreters
             </Typography>
