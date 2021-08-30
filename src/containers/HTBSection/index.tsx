@@ -1,17 +1,20 @@
 import React from 'react'
-import { Grid, GridProps, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Grid, GridProps, makeStyles, Paper, SvgIcon, Typography } from '@material-ui/core'
 import PButton from 'components/PButton'
-import htbLogo from './assets/htbLogo.svg'
+import HTBLogo from './assets/htbLogo.svg'
 import htbScreenshot from './assets/htbScreenshot.png'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     paddingTop: 71,
     width: '100%'
   },
   htbIcon: {
     marginRight: 'auto',
-    marginBottom: 31
+    marginBottom: 31,
+    width: 'auto',
+    height: 'auto',
+    fill: theme.palette.type === 'light' ? '#141D2B' : '#FFFFFF'
   },
   desc: {
     opacity: 0.5
@@ -30,7 +33,7 @@ const useStyles = makeStyles({
   screenshotGrid: {
     marginLeft: 'auto'
   }
-})
+}))
 
 const HTBSection = (rest: GridProps) => {
   const classes = useStyles()
@@ -39,7 +42,7 @@ const HTBSection = (rest: GridProps) => {
       <Paper className={classes.root} elevation={0}>
         <Grid container item xs justifyContent="space-between">
           <Grid className={classes.content} container item xs={8} md={4} direction="column">
-            <img className={classes.htbIcon} src={htbLogo} alt="HackTheBox Logo" />
+            <SvgIcon className={classes.htbIcon} component={HTBLogo} viewBox="130 0 10 49" />
             <Typography variant="h2" paragraph>
               Parrot<span style={{ fontWeight: 300 }}>OS</span> now web-based through Hack The Box
             </Typography>

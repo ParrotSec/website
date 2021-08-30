@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, GridProps, Hidden, useTheme } from '@material-ui/core'
 import PFeatureBlock from 'components/PFeatureBlock'
-import Safety from './assets/SafetyCertificate.svg'
+import Safety from './assets/Security.svg'
 import Build from './assets/Build.svg'
 import Vector from './assets/Vector.svg'
 import Unlock from './assets/Unlock.svg'
@@ -37,6 +37,7 @@ const FeaturesSection = (props: GridProps) => {
       buttonText="Learn about Parrot’s performance"
       buttonLink="/docs"
       key="feature-3"
+      viewBox="0 0 28 26"
     >
       Our tools are designed to be compatible with as many devices as possible via containerization
       technologies like Docker or Podman.
@@ -47,6 +48,7 @@ const FeaturesSection = (props: GridProps) => {
       buttonText="Learn about Parrot’s security"
       buttonLink="/docs"
       key="feature-4"
+      viewBox="0 0 22 26"
     >
       Our tools are designed to be compatible with as many devices as possible via containerization
       technologies like Docker or Podman.

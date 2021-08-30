@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, GridProps, makeStyles, Typography } from '@material-ui/core'
 import oreo from '../../assets/oreo 1.svg'
+import SVGIcon from 'components/SVGIcon'
 
 const useStyles = makeStyles({
   trustLogosBlock: {
@@ -31,22 +32,22 @@ const TrustSection = (props: GridProps) => {
         justifyContent="center"
       >
         <Grid item xs={6} md={4} lg={2}>
-          <img className={classes.img} src={oreo} alt="oreo" />
+          <SVGIcon className={classes.img} component={oreo} viewBox="0 0 113 40" />
         </Grid>
         <Grid item xs={6} md={4} lg={2}>
-          <img className={classes.img} src={oreo} alt="oreo" />
+          <SVGIcon className={classes.img} component={oreo} viewBox="0 0 113 40" />
         </Grid>
         <Grid item xs={6} md={4} lg={2}>
-          <img className={classes.img} src={oreo} alt="oreo" />
+          <SVGIcon className={classes.img} component={oreo} viewBox="0 0 113 40" />
         </Grid>
         <Grid item xs={6} md={4} lg={2}>
-          <img className={classes.img} src={oreo} alt="oreo" />
+          <SVGIcon className={classes.img} component={oreo} viewBox="0 0 113 40" />
         </Grid>
         <Grid item xs={6} md={4} lg={2}>
-          <img className={classes.img} src={oreo} alt="oreo" />
+          <SVGIcon className={classes.img} component={oreo} viewBox="0 0 113 40" />
         </Grid>
         <Grid item xs={6} md={4} lg={2}>
-          <img className={classes.img} src={oreo} alt="oreo" />
+          <SVGIcon className={classes.img} component={oreo} viewBox="0 0 113 40" />
         </Grid>
       </Grid>
     </Grid>

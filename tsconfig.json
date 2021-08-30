@@ -20,6 +20,7 @@
       "assets/*": ["src/assets/*"],
       "components/*": ["src/components/*"],
       "containers/*": ["src/containers/*"],
+      "icons": ["src/icons/index.tsx"],
       "types/*": ["types/*"]
     },
     "lib": ["dom", "es2015", "es2016"]

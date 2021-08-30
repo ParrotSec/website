@@ -8,7 +8,8 @@ import {
   Hidden,
   IconButton,
   makeStyles,
-  Toolbar
+  Toolbar,
+  SvgIcon
 } from '@material-ui/core'
 import { Menu as MenuIcon } from '@material-ui/icons'
 import { Link as RouterLink } from '@reach/router'
@@ -92,7 +93,7 @@ const Header = () => {
             justifyContent="space-between"
           >
             <RouterLink className={classes.logoHolder} to="/">
-              <img className={classes.logo} src={logo} alt="Logo" />
+              <SvgIcon className={classes.logo} component={logo} viewBox="0 0 190.2997 180.30882" />
             </RouterLink>
             <Hidden lgUp>
               <IconButton

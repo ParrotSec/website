@@ -4,18 +4,6 @@ import path from 'path'
 
 export default {
   entry: path.join(__dirname, 'src', 'index.tsx'),
-  rules: [
-    {
-      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-      use: {
-        loader: 'svg-url-loader',
-        options: {
-          limit: 10000,
-          mimetype: 'image/svg+xml'
-        }
-      }
-    }
-  ],
   plugins: [
     'react-static-plugin-typescript',
     'react-static-plugin-reach-router',
@@ -26,6 +14,20 @@ export default {
       }
     ],
     'react-static-plugin-sitemap',
-    'jss-provider'
+    'jss-provider',
+    [
+      'react-static-plugin-svgr',
+      {
+        svgo: true,
+        svgoOptions: {
+          plugins: [
+            {
+              removeViewBox: false
+            }
+          ]
+        },
+        memo: true
+      }
+    ]
   ]
 }

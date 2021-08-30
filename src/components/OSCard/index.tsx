@@ -1,11 +1,12 @@
-import React from 'react'
-import { Grid, GridProps, makeStyles, Paper, Typography } from '@material-ui/core'
+import React, { ElementType } from 'react'
+import { Grid, GridProps, makeStyles, Paper, SvgIcon, Typography } from '@material-ui/core'
 import cls from 'classnames'
 import PButton from 'components/PButton'
 
 type OSCardProps = {
-  icon: string
+  icon: ElementType
   iconClassName?: string
+  viewBox?: string
   title: string
 } & GridProps
 
@@ -23,16 +24,28 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     marginBottom: 21
+  },
+  icon: {
+    width: 32,
+    height: 32,
+    margin: 'auto'
   }
 })
 
-const OSCard = ({ icon, iconClassName, title, children, ...rest }: OSCardProps) => {
+const OSCard = ({
+  icon,
+  iconClassName,
+  title,
+  children,
+  viewBox = '0 0 32 32',
+  ...rest
+}: OSCardProps) => {
   const classes = useStyles()
   return (
     <Grid {...rest} item xs={12} md={4}>
       <Paper className={classes.versionsPaper} elevation={0}>
         <div className={cls(classes.iconHolder, iconClassName)}>
-          <img src={icon} alt="Home version" />
+          <SvgIcon className={classes.icon} component={icon} viewBox={viewBox} />
         </div>
         <Typography variant="h3" paragraph>
           {title}

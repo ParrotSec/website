@@ -1,7 +1,8 @@
-import React, { PropsWithChildren } from 'react'
+import React, { ElementType, PropsWithChildren } from 'react'
 import { Link as RouterLink } from '@reach/router'
 import { Link, makeStyles, Paper, Typography } from '@material-ui/core'
 import Arrow from './assets/vector.svg'
+import SVGIcon from 'components/SVGIcon'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -10,18 +11,18 @@ const useStyles = makeStyles(theme => ({
     height: '100%'
   },
   icon: {
+    fill: theme.palette.type === 'light' ? '#FFFFFF' : '#06043E'
+  },
+  iconWrapper: {
+    width: 64,
+    height: 64,
     padding: 16,
-    background: 'white',
+    background: theme.palette.type === 'light' ? '#03232E' : '#FFFFFF',
     borderRadius: 6,
     marginBottom: 20,
     [theme.breakpoints.down('sm')]: {
       padding: 8
-    },
-    ...(theme.palette.type === 'light'
-      ? {
-          filter: 'invert() saturate(0)'
-        }
-      : {})
+    }
   },
   button: {
     textTransform: 'none',
@@ -41,23 +42,33 @@ const useStyles = makeStyles(theme => ({
 }))
 
 type PFeatureBlockProps = PropsWithChildren<{
-  icon: string
+  icon: ElementType
+  viewBox?: string
   title: string
   buttonText: string
   buttonLink: string
 }>
 
-const PFeatureBlock = ({ children, icon, title, buttonText, buttonLink }: PFeatureBlockProps) => {
+const PFeatureBlock = ({
+  children,
+  icon,
+  title,
+  buttonText,
+  buttonLink,
+  viewBox = '0 0 32 32'
+}: PFeatureBlockProps) => {
   const classes = useStyles()
   return (
     <Paper className={classes.root} elevation={0}>
-      <img className={classes.icon} src={icon} alt="Icon" />
+      <div className={classes.iconWrapper}>
+        <SVGIcon className={classes.icon} component={icon} viewBox={viewBox} />
+      </div>
       <Typography variant="h3">{title}</Typography>
       <Typography className={classes.body} variant="body1">
         {children}
       </Typography>
       <Link className={classes.button} component={RouterLink} to={buttonLink}>
-        {buttonText} <img src={Arrow} alt="Navigation Arrow" />
+        {buttonText} <Arrow />
       </Link>
     </Paper>
   )

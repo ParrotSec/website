@@ -11,6 +11,7 @@ import nmap from './assets/tool-logo-nmap 1.svg'
 import sqlmap from './assets/tool-logo-sqlmap 1.svg'
 import metasploit from './assets/tool-logo-metasploit 1.svg'
 import { useMeasure } from 'react-use'
+import SVGIcon from 'components/SVGIcon'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,9 +22,18 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: 75
   },
   headerIcon: {
+    fill: theme.palette.type === 'light' ? '#FFFFFF' : '#06043E'
+  },
+  headerIconWrapper: {
+    width: 64,
+    height: 64,
     padding: 16,
-    background: '#FFF',
-    borderRadius: 6
+    background: theme.palette.type === 'light' ? '#03232E' : '#FFFFFF',
+    borderRadius: 6,
+    marginBottom: 20,
+    [theme.breakpoints.down('sm')]: {
+      padding: 8
+    }
   },
   icon: {
     position: 'absolute',
@@ -81,7 +91,9 @@ const ToolsSection = (rest: GridProps) => {
             alignItems="center"
             direction="column"
           >
-            <img className={classes.headerIcon} src={tools} alt="tools icon" />
+            <div className={classes.headerIconWrapper}>
+              <SVGIcon className={classes.headerIcon} component={tools} />
+            </div>
             <Typography variant="h2" align="center" paragraph>
               Tools for every occasion
             </Typography>
@@ -91,57 +103,57 @@ const ToolsSection = (rest: GridProps) => {
             {/*TODO: for futher animations need to apply box-shadow*/}
             <Hidden mdDown>
               <Box position="relative" width={width} marginTop="46px">
-                <img
+                <SVGIcon
                   className={classes.bigIcon}
-                  src={burp}
-                  alt="Burp"
+                  component={burp}
+                  viewBox="0 0 58 58"
                   style={{
                     top: -24,
                     left: 0.922 * width
                   }}
                 />
-                <img
+                <SVGIcon
                   className={classes.bigIcon}
-                  src={john}
-                  alt="John"
+                  component={john}
+                  viewBox="0 0 56 56"
                   style={{
                     top: 0.902 * height,
                     left: 0.045 * width
                   }}
                 />
-                <img
+                <SVGIcon
                   className={classes.bigIcon}
                   width={48}
                   height={48}
-                  src={maltego}
-                  alt="Maltego"
+                  viewBox="0 0 60 60"
+                  component={maltego}
                   style={{
                     left: 0.958 * width,
                     top: 0.595 * height
                   }}
                 />
-                <img
+                <SVGIcon
                   className={classes.icon}
-                  src={nmap}
-                  alt="Nmap"
+                  component={nmap}
+                  viewBox="0 0 54 54"
                   style={{
                     top: 0.518 * height,
                     left: -0.14 * width
                   }}
                 />
-                <img
+                <SVGIcon
                   className={classes.icon}
-                  src={metasploit}
-                  alt="Metasploit"
+                  viewBox="0 0 48 48"
+                  component={metasploit}
                   style={{
                     top: 0.23 * height,
                     left: 1.111 * width
                   }}
                 />
-                <img
+                <SVGIcon
                   className={classes.bigIcon}
-                  src={sqlmap}
-                  alt="SQLmap"
+                  viewBox="0 0 65 65"
+                  component={sqlmap}
                   style={{
                     top: 0.2 * height,
                     left: -42

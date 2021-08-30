@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
+import { Box, Grid, makeStyles, SvgIcon, Typography } from '@material-ui/core'
 import { Pace, Pause, WindupChildren } from 'windups'
 import randomInteger from 'random-int'
 import PButton from 'components/PButton'
@@ -48,6 +48,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       justifyContent: 'center'
     }
+  },
+  bulb: {
+    fill: theme.palette.type === 'light' ? '#262626': '#FFFFFF'
   }
 }))
 
@@ -109,7 +112,7 @@ const WelcomeSection = () => {
         className={classes.wideButton}
         variant="outlined"
         to="/docs"
-        startIcon={<img src={Bulb} alt="Bulb" />}
+        startIcon={<SvgIcon className={classes.bulb} component={Bulb} />}
       >
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         What's new in Parrot OS 4.32.1

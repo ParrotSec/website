@@ -1,9 +1,9 @@
 import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
 import OSCard from 'components/OSCard'
-import home from '../../assets/icons/Home.svg'
-import Safety from 'containers/FeaturesSection/assets/SafetyCertificate.svg'
-import cloud from '../../assets/icons/Cloud.svg'
+import Home from './assets/Home.svg'
+import Security from './assets/Security.svg'
+import Cloud from './assets/Cloud.svg'
 
 const useStyles = makeStyles({
   versionsBlock: {
@@ -36,15 +36,20 @@ const OSSection = () => {
         </Typography>
       </Grid>
       <Grid className={classes.osBlocks} container item xs={12} md={9} spacing={4}>
-        <OSCard icon={home} iconClassName={classes.homeIcon} title="Home Edition">
+        <OSCard icon={Home} iconClassName={classes.homeIcon} title="Home Edition">
           Home edition is designed for daily use, privacy and software development. Parrot Tools can
           be manually installed to assemble a custom and lightweight pentesting environment.
         </OSCard>
-        <OSCard icon={Safety} iconClassName={classes.securityIcon} title="Security Edition">
+        <OSCard icon={Security} iconClassName={classes.securityIcon} title="Security Edition">
           Security Edition is a special purpose operating system designed for Penetration Testing
           and Red Team operations. It contains a full arsenal of ready-to use pentesting tools.
         </OSCard>
-        <OSCard icon={cloud} iconClassName={classes.cloudIcon} title="Cloud Edition">
+        <OSCard
+          icon={Cloud}
+          iconClassName={classes.cloudIcon}
+          title="Cloud Edition"
+          viewBox="0 0 28 20"
+        >
           IoT & Cloud Appliances are special editions of Parrot Security made for embedded devices,
           cloud environments, virtual machines and other special deployments.
         </OSCard>

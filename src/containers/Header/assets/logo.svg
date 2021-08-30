@@ -10,13 +10,6 @@
         </linearGradient>
     </defs>
     <style>
-        .svg_logo {
-        position: center;
-        z-index: 3;
-        width: 30%;
-        height: 30%;
-        }
-
         #circle {
         stroke-dasharray: 2000;
         fill: url(#grad);

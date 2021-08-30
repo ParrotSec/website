@@ -1,8 +1,6 @@
 import React from 'react'
-import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
-import PButton from 'components/PButton'
+import { Grid, makeStyles } from '@material-ui/core'
 import Wallpaper from '../assets/wallpaper.png'
-import shell from '../assets/icons/shell.svg'
 import ToolsSection from 'containers/ToolsSection'
 import HTBSection from 'containers/HTBSection'
 import WelcomeSection from 'containers/WelcomeSection'
@@ -12,6 +10,7 @@ import DevelopingSection from 'containers/DevelopingSection'
 import StatsSection from 'containers/StatsSection'
 import OSSection from 'containers/OSSection'
 import { useCookies } from 'react-cookie'
+import ContributeSection from 'containers/ContributeSection'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -88,27 +87,7 @@ const Index = () => {
       <StatsSection className={classes.statsBlock} />
       <OSSection />
       <HTBSection className={classes.htbBlock} />
-      <Grid
-        className={classes.developBlock}
-        container
-        item
-        xs={9}
-        direction="column"
-        alignItems="center"
-      >
-        <Box className={classes.iconHolder} style={{ background: '#FFF' }}>
-          <img src={shell} alt="Shell Icon" />
-        </Box>
-        <Typography variant="h1" paragraph align="center">
-          Develop for Parrot<span style={{ fontWeight: 300 }}>OS</span>
-        </Typography>
-        <Typography variant="body1" align="center">
-          Different versions for different players, role your need and play freely.
-        </Typography>
-        <PButton variant="contained" to="/contribute" style={{ width: 165, marginTop: 37 }}>
-          Learn More
-        </PButton>
-      </Grid>
+      <ContributeSection className={classes.developBlock} />
     </Grid>
   )
 }
