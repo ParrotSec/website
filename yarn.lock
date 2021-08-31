@@ -7899,6 +7899,11 @@ react-static-plugin-source-filesystem@^7.5.1:
     chokidar "^3.0.2"
     glob "^7.1.4"
 
+react-static-plugin-svgr@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-static-plugin-svgr/-/react-static-plugin-svgr-1.0.0.tgz#4d7865595af059b282485cdbaf03fae6717ad949"
+  integrity sha512-QCByt0PY09fM1Ac1/KGT5XElFkDMNmqzS23eXK3XDXZQQT970zsWhn/Vlb/TVb+doANEVflDRYTcbkGh6befyg==
+
 react-static-plugin-typescript@^7.5.1:
   version "7.5.3"
   resolved "https://registry.yarnpkg.com/react-static-plugin-typescript/-/react-static-plugin-typescript-7.5.3.tgz#bf900be57de35ad7f038015c60942587391f9969"

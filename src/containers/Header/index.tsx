@@ -9,12 +9,13 @@ import {
   IconButton,
   makeStyles,
   Toolbar,
-  SvgIcon
+  useTheme
 } from '@material-ui/core'
-import { Menu as MenuIcon } from '@material-ui/icons'
+import { Menu as MenuIcon, BrightnessHigh, Brightness3 } from '@material-ui/icons'
 import { Link as RouterLink } from '@reach/router'
-import logo from './assets/logo.svg'
+import Logo from './assets/logo.svg'
 import PButton from 'components/PButton'
+import { useThemeSwitch } from 'containers/ThemeProvider'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -54,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     gap: 41
   },
   menu: {
-    color: theme.palette.type === 'light' ? 'rgba(255,255,255,.5)' : 'rgba(0,0,0,.5)'
+    color: theme.palette.type === 'dark' ? 'rgba(255,255,255,.5)' : 'rgba(0,0,0,.5)'
   },
   register: {
     [theme.breakpoints.up('sm')]: {
@@ -70,6 +71,11 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       margin: theme.spacing(1)
     }
+  },
+  themeSwitcher: {
+    fontSize: 12,
+    minWidth: 'auto',
+    padding: '3px 10px'
   }
 }))
 
@@ -77,6 +83,8 @@ const Header = () => {
   const classes = useStyles()
   const [collapsed, setCollapsed] = React.useState(false)
   const toggleCollapse = () => setCollapsed(!collapsed)
+  const theme = useTheme()
+  const { switchTheme } = useThemeSwitch()
 
   return (
     <AppBar className={classes.root} color="transparent" position="static" elevation={0}>
@@ -93,7 +101,7 @@ const Header = () => {
             justifyContent="space-between"
           >
             <RouterLink className={classes.logoHolder} to="/">
-              <SvgIcon className={classes.logo} component={logo} viewBox="0 0 190.2997 180.30882" />
+              <Logo className={classes.logo} />
             </RouterLink>
             <Hidden lgUp>
               <IconButton
@@ -105,7 +113,6 @@ const Header = () => {
                 <MenuIcon className={classes.menu} />
               </IconButton>
             </Hidden>
-
             <Hidden mdDown>
               <nav className={classes.nav}>
                 <Link
@@ -163,6 +170,23 @@ const Header = () => {
                 </PButton>
               </div>
             </Hidden>
+          </Grid>
+          <Grid container item xs={12} justifyContent="center">
+            <PButton
+              className={classes.themeSwitcher}
+              variant="contained"
+              startIcon={
+                theme.palette.type === 'dark' ? (
+                  <Brightness3 fontSize="small" />
+                ) : (
+                  <BrightnessHigh fontSize="small" />
+                )
+              }
+              onClick={() => switchTheme()}
+              size="small"
+            >
+              {theme.palette.type === 'dark' ? 'Dark' : 'Light'}
+            </PButton>
           </Grid>
         </Grid>
       </Toolbar>

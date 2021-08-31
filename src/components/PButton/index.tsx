@@ -44,10 +44,12 @@ const PButton = ({
   variant,
   startIcon,
   to,
-  style
-}: PButtonProps & { to: string }) => {
+  style,
+  size,
+    ...rest
+}: PButtonProps & { to?: string }) => {
   const classes = useStyles()
-  return (
+  return to ? (
     <Button
       className={cls(
         classes.root,
@@ -60,7 +62,25 @@ const PButton = ({
       to={to}
       variant={variant}
       style={style}
+      size={size}
       disableElevation
+    >
+      {children}
+    </Button>
+  ) : (
+    <Button
+      className={cls(
+        classes.root,
+        className,
+        classes[variant],
+        ...(gradient ? [classes.gradient] : [])
+      )}
+      startIcon={startIcon}
+      variant={variant}
+      style={style}
+      size={size}
+      disableElevation
+      {...rest}
     >
       {children}
     </Button>

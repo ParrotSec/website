@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Link, makeStyles, Paper, SvgIcon, Typography } from '@material-ui/core'
+import { Grid, Link, makeStyles, Paper, Typography } from '@material-ui/core'
 import Logo from './assets/logo.svg'
 import PButton from 'components/PButton'
 import { Link as RouterLink } from '@reach/router'
@@ -105,7 +105,7 @@ const Footer = () => {
               direction="column"
               alignItems="flex-start"
             >
-              <SvgIcon className={classes.logo} component={Logo} viewBox="0 0 190.2997 180.30882" />
+              <Logo className={classes.logo} viewBox="0 0 190.2997 180.30882" />
               <Typography className={classes.logoTitle} variant="h3" paragraph>
                 Parrot<span style={{ fontWeight: 300 }}>OS</span>
               </Typography>
