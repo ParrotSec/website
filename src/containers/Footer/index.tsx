@@ -55,11 +55,9 @@ const useStyles = makeStyles(theme => ({
     }
   },
   footerText: {
-    color: '#FFF',
     marginRight: 'auto'
   },
   footerLink: {
-    color: '#FFF',
     fontSize: 14,
     textDecoration: 'none',
     transition: '.2s ease-in 0s',
@@ -105,7 +103,7 @@ const Footer = () => {
               direction="column"
               alignItems="flex-start"
             >
-              <Logo className={classes.logo} viewBox="0 0 190.2997 180.30882" />
+              <Logo className={classes.logo} />
               <Typography className={classes.logoTitle} variant="h3" paragraph>
                 Parrot<span style={{ fontWeight: 300 }}>OS</span>
               </Typography>
@@ -129,7 +127,7 @@ const Footer = () => {
                 alignContent="flex-end"
               >
                 <Typography className={classes.title} variant="h6" paragraph>
-                  Parrot OS Versions
+                  Versions
                 </Typography>
                 <Link
                   className={classes.link}
@@ -213,7 +211,7 @@ const Footer = () => {
                 alignContent="flex-end"
               >
                 <Typography className={classes.title} variant="h6" paragraph>
-                  About Parrot
+                  About Us
                 </Typography>
                 <Link
                   className={classes.link}
@@ -305,7 +303,7 @@ const Footer = () => {
             </Grid>
             <Grid className={classes.copyrightSection} container item xs={12} spacing={4}>
               <Grid item xs={12} lg={7}>
-                <Typography className={classes.footerText} variant="body2">
+                <Typography className={classes.footerText} color="textSecondary" variant="body2">
                   © 2021 Parrot Security. All rights reserved.
                 </Typography>
               </Grid>

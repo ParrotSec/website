@@ -7,12 +7,18 @@ const useStyles = makeStyles(theme => ({
     padding: 16
   },
   paper: {
+    width: '100%',
     padding: '74px 60px',
     ...(theme.palette.type === 'light'
       ? {
           background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)'
         }
       : {})
+  },
+  contentGrid: {
+    [theme.breakpoints.down('xs')]: {
+      margin: 0
+    }
   }
 }))
 
@@ -24,13 +30,21 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
       container
       {...rest}
       item
-      xs={9}
+      xs={12}
+      md={9}
       justifyContent="center"
     >
       <Paper className={classes.paper} elevation={0}>
-        <Grid container item xs={12} justifyContent="center" spacing={4}>
-          <Grid item xs={6} sm={4}>
-            <Typography variant="h3" noWrap paragraph>
+        <Grid
+          className={classes.contentGrid}
+          container
+          item
+          xs={12}
+          justifyContent="center"
+          spacing={4}
+        >
+          <Grid item xs={12} sm={4}>
+            <Typography variant="h3" paragraph>
               +2 million downloads
             </Typography>
             <Typography variant="body2">
@@ -38,8 +52,8 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
               containerization technologies like Docker or Podman.
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={4}>
-            <Typography variant="h3" noWrap paragraph>
+          <Grid item xs={12} sm={4}>
+            <Typography variant="h3" paragraph>
               +8k forum users
             </Typography>
             <Typography variant="body2">
@@ -47,8 +61,8 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
               containerization technologies like Docker or Podman.
             </Typography>
           </Grid>
-          <Grid item xs={6} sm={4}>
-            <Typography variant="h3" noWrap paragraph>
+          <Grid item xs={12} sm={4}>
+            <Typography variant="h3" paragraph>
               17 Worldwide PoP
             </Typography>
             <Typography variant="body2">

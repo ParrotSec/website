@@ -18,10 +18,7 @@ const useStyles = makeStyles(theme => ({
     padding: 16,
     background: theme.palette.type === 'light' ? '#03232E' : '#FFFFFF',
     borderRadius: 6,
-    marginBottom: 20,
-    [theme.breakpoints.down('sm')]: {
-      padding: 8
-    }
+    marginBottom: 20
   },
   button: {
     textTransform: 'none',
