@@ -2,7 +2,6 @@ import React, { ElementType, PropsWithChildren } from 'react'
 import { Link as RouterLink } from '@reach/router'
 import { Link, makeStyles, Paper, Typography } from '@material-ui/core'
 import Arrow from './assets/vector.svg'
-import SVGIcon from 'components/SVGIcon'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,26 +41,18 @@ const useStyles = makeStyles(theme => ({
 }))
 
 type PFeatureBlockProps = PropsWithChildren<{
-  icon: ElementType
-  viewBox?: string
+  Icon: ElementType
   title: string
   buttonText: string
   buttonLink: string
 }>
 
-const PFeatureBlock = ({
-  children,
-  icon,
-  title,
-  buttonText,
-  buttonLink,
-  viewBox = '0 0 32 32'
-}: PFeatureBlockProps) => {
+const PFeatureBlock = ({ children, Icon, title, buttonText, buttonLink }: PFeatureBlockProps) => {
   const classes = useStyles()
   return (
     <Paper className={classes.root} elevation={0}>
       <div className={classes.iconWrapper}>
-        <SVGIcon className={classes.icon} component={icon} viewBox={viewBox} />
+        <Icon className={classes.icon} />
       </div>
       <Typography variant="h3">{title}</Typography>
       <Typography className={classes.body} variant="body1">

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, GridProps, makeStyles, Paper, SvgIcon, Typography } from '@material-ui/core'
+import { Grid, GridProps, makeStyles, Paper, Typography } from '@material-ui/core'
 import PButton from 'components/PButton'
 import HTBLogo from './assets/htbLogo.svg'
 import htbScreenshot from './assets/htbScreenshot.png'
@@ -42,7 +42,7 @@ const HTBSection = (rest: GridProps) => {
       <Paper className={classes.root} elevation={0}>
         <Grid container item xs justifyContent="space-between">
           <Grid className={classes.content} container item xs={8} md={4} direction="column">
-            <SvgIcon className={classes.htbIcon} component={HTBLogo} viewBox="130 0 10 49" />
+            <HTBLogo className={classes.htbIcon} />
             <Typography variant="h2" paragraph>
               Parrot<span style={{ fontWeight: 300 }}>OS</span> now web-based through Hack The Box
             </Typography>

@@ -13,7 +13,7 @@ const FeaturesSection = (props: GridProps) => {
   const blocks = [
     <PFeatureBlock
       title="Secure System"
-      icon={Safety}
+      Icon={Safety}
       buttonText="Learn about Parrot’s security"
       buttonLink="/docs"
       key="feature-1"
@@ -23,7 +23,7 @@ const FeaturesSection = (props: GridProps) => {
     </PFeatureBlock>,
     <PFeatureBlock
       title="Portable"
-      icon={Build}
+      Icon={Build}
       buttonText="Learn about Parrot’s portability"
       buttonLink="/docs"
       key="feature-2"
@@ -33,29 +33,27 @@ const FeaturesSection = (props: GridProps) => {
     </PFeatureBlock>,
     <PFeatureBlock
       title="Performance"
-      icon={Vector}
+      Icon={Vector}
       buttonText="Learn about Parrot’s performance"
       buttonLink="/docs"
       key="feature-3"
-      viewBox="0 0 28 26"
     >
       Our tools are designed to be compatible with as many devices as possible via containerization
       technologies like Docker or Podman.
     </PFeatureBlock>,
     <PFeatureBlock
       title="Privacy First"
-      icon={Unlock}
+      Icon={Unlock}
       buttonText="Learn about Parrot’s security"
       buttonLink="/docs"
       key="feature-4"
-      viewBox="0 0 22 26"
     >
       Our tools are designed to be compatible with as many devices as possible via containerization
       technologies like Docker or Podman.
     </PFeatureBlock>,
     <PFeatureBlock
       title="Customizable"
-      icon={Layout}
+      Icon={Layout}
       buttonText="Learn about Parrot’s security"
       buttonLink="/docs"
       key="feature-5"
@@ -65,7 +63,7 @@ const FeaturesSection = (props: GridProps) => {
     </PFeatureBlock>,
     <PFeatureBlock
       title="Free & Open Source"
-      icon={WeChat}
+      Icon={WeChat}
       buttonText="Learn about Parrot’s security"
       buttonLink="/docs"
       key="feature-6"

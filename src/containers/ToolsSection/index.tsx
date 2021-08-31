@@ -1,17 +1,16 @@
 import React from 'react'
 import { Box, Grid, GridProps, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
-import tools from './assets/tools.svg'
+import Tools from './assets/tools.svg'
 import parrotBg from './assets/shellBg.png'
 import screenshot from './assets/screenshot.png'
 import PButton from 'components/PButton'
-import burp from './assets/tool-logo-burp 1.svg'
-import john from './assets/tool-logo-john 1.svg'
-import maltego from './assets/tool-logo-maltego 1.svg'
-import nmap from './assets/tool-logo-nmap 1.svg'
-import sqlmap from './assets/tool-logo-sqlmap 1.svg'
-import metasploit from './assets/tool-logo-metasploit 1.svg'
+import Burp from './assets/tool-logo-burp 1.svg'
+import John from './assets/tool-logo-john 1.svg'
+import Maltego from './assets/tool-logo-maltego 1.svg'
+import Nmap from './assets/tool-logo-nmap 1.svg'
+import Sqlmap from './assets/tool-logo-sqlmap 1.svg'
+import Metasploit from './assets/tool-logo-metasploit 1.svg'
 import { useMeasure } from 'react-use'
-import SVGIcon from 'components/SVGIcon'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -37,7 +36,9 @@ const useStyles = makeStyles(theme => ({
   },
   icon: {
     position: 'absolute',
-    padding: 16,
+    padding: 5,
+    width: 64,
+    height: 64,
     background: '#FFF',
     borderRadius: 6,
     boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)'
@@ -92,7 +93,7 @@ const ToolsSection = (rest: GridProps) => {
             direction="column"
           >
             <div className={classes.headerIconWrapper}>
-              <SVGIcon className={classes.headerIcon} component={tools} />
+              <Tools className={classes.headerIcon} />
             </div>
             <Typography variant="h2" align="center" paragraph>
               Tools for every occasion
@@ -103,57 +104,43 @@ const ToolsSection = (rest: GridProps) => {
             {/*TODO: for futher animations need to apply box-shadow*/}
             <Hidden mdDown>
               <Box position="relative" width={width} marginTop="46px">
-                <SVGIcon
+                <Burp
                   className={classes.bigIcon}
-                  component={burp}
-                  viewBox="0 0 58 58"
                   style={{
                     top: -24,
                     left: 0.922 * width
                   }}
                 />
-                <SVGIcon
+                <John
                   className={classes.bigIcon}
-                  component={john}
-                  viewBox="0 0 56 56"
                   style={{
                     top: 0.902 * height,
                     left: 0.045 * width
                   }}
                 />
-                <SVGIcon
+                <Maltego
                   className={classes.bigIcon}
-                  width={48}
-                  height={48}
-                  viewBox="0 0 60 60"
-                  component={maltego}
                   style={{
                     left: 0.958 * width,
                     top: 0.595 * height
                   }}
                 />
-                <SVGIcon
+                <Nmap
                   className={classes.icon}
-                  component={nmap}
-                  viewBox="0 0 54 54"
                   style={{
                     top: 0.518 * height,
                     left: -0.14 * width
                   }}
                 />
-                <SVGIcon
+                <Metasploit
                   className={classes.icon}
-                  viewBox="0 0 48 48"
-                  component={metasploit}
                   style={{
                     top: 0.23 * height,
                     left: 1.111 * width
                   }}
                 />
-                <SVGIcon
+                <Sqlmap
                   className={classes.bigIcon}
-                  viewBox="0 0 65 65"
-                  component={sqlmap}
                   style={{
                     top: 0.2 * height,
                     left: -42

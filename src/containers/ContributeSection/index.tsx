@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, GridProps, makeStyles, SvgIcon, Typography } from '@material-ui/core'
+import { Grid, GridProps, makeStyles, Typography } from '@material-ui/core'
 import Shell from 'assets/icons/shell.svg'
 import PButton from 'components/PButton'
 
@@ -27,7 +27,7 @@ const ContributeSection = (props: GridProps) => {
   return (
     <Grid container item xs={9} direction="column" alignItems="center" {...props}>
       <div className={classes.iconWrapper}>
-        <SvgIcon component={Shell} className={classes.icon} viewBox="0 0 26 26" />
+        <Shell className={classes.icon} />
       </div>
       <Typography variant="h1" paragraph align="center">
         Develop for Parrot<span style={{ fontWeight: 300 }}>OS</span>
