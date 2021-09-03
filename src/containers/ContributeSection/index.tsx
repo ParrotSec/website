@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, GridProps, makeStyles, Typography } from '@material-ui/core'
-import Shell from 'assets/icons/shell.svg'
+import Shell from 'containers/ContributeSection/assets/shell.svg'
 import PButton from 'components/PButton'
 
 const useStyles = makeStyles(theme => ({

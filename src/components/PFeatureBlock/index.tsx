@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: 20,
     marginBottom: 25
   },
-  '.arrow': {
+  arrow: {
     fill: theme.palette.type === 'light' ? '#03232E' : '#05EEFF'
   }
 }))
@@ -56,7 +56,7 @@ const PFeatureBlock = ({ children, Icon, title, buttonText, buttonLink }: PFeatu
         {children}
       </Typography>
       <Link className={classes.button} component={RouterLink} to={buttonLink}>
-        {buttonText} <Arrow />
+        {buttonText} <Arrow className={classes.arrow} />
       </Link>
     </Paper>
   )

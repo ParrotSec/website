@@ -10,13 +10,13 @@ export const useThemeSwitch = () => useContext(ThemeContext)
 
 const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>) => {
   const [cookies, setCookie] = useCookies()
-  if (!cookies.theme) {
-    setCookie('theme', 'light')
-  }
   const [themeType, _setThemeType] = useState(cookies.theme)
   const setThemeType = (theme: 'light' | 'dark') => {
     _setThemeType(theme)
     setCookie('theme', theme)
+  }
+  if (!themeType) {
+    setThemeType('light')
   }
   return (
     <ThemeContext.Provider

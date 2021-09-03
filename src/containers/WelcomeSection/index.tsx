@@ -28,10 +28,10 @@ const useStyles = makeStyles(theme => ({
     },
     marginBottom: theme.spacing(6.5)
   },
-  hackersSpan: {
+  hackers: {
+    background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
     '-webkit-background-clip': 'text',
-    '-webkit-text-fill-color': 'transparent',
-    background: ' linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%);'
+    '-webkit-text-fill-color': 'transparent'
   },
   wideButton: {
     marginTop: 45,
@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   bulb: {
-    fill: theme.palette.type === 'light' ? '#262626': '#FFFFFF'
+    fill: theme.palette.type === 'light' ? '#262626' : '#FFFFFF'
   }
 }))
 
@@ -80,7 +80,9 @@ const WelcomeSection = () => {
         <WindupChildren>
           <Pause ms={3000} />
           <Pace getPace={char => (char === ' ' ? randomInteger(100, 300) : randomInteger(40, 80))}>
-            <span className={classes.hackersSpan}>Hackers</span>
+            <Box display="inline-block" className={classes.hackers}>
+              Hackers
+            </Box>
           </Pace>
         </WindupChildren>
         <span style={{ fontWeight: 100, marginLeft: '-0.1rem', color: '#00FFF0' }}>|</span>

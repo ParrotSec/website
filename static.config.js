@@ -23,6 +23,9 @@ export default {
           plugins: [
             {
               removeViewBox: false
+            },
+            {
+              cleanupIDs: false
             }
           ]
         },

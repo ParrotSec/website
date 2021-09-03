@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, GridProps, makeStyles, Typography } from '@material-ui/core'
-import Oreo from '../../assets/oreo 1.svg'
+import Oreo from './assets/oreo 1.svg'
 
 const useStyles = makeStyles({
   trustLogosBlock: {
@@ -8,7 +8,10 @@ const useStyles = makeStyles({
   },
   img: {
     display: 'block',
-    margin: 'auto'
+    margin: 'auto',
+    '& #oreo2': {
+      fill: 'green'
+    }
   }
 })
 

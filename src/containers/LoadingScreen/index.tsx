@@ -1,20 +1,20 @@
 import React from 'react'
-import { Box, CircularProgress } from '@material-ui/core'
+import { Box, CircularProgress, useTheme } from '@material-ui/core'
 
-type LoadingScreenProps = {
-  finished?: boolean
-}
-
-const LoadingScreen = ({ finished }: LoadingScreenProps) => {
-  console.log(finished)
+const LoadingScreen = () => {
+  const {
+    palette: {
+      background: { default: background }
+    }
+  } = useTheme()
   return (
     <Box
       position="absolute"
       top={0}
       left={0}
+      bgcolor={background}
       width="100%"
       height="100%"
-      bgcolor="#06043E"
       zIndex={99}
       justifyContent="center"
       alignItems="center"
