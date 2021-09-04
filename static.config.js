@@ -19,8 +19,11 @@ export default {
       'react-static-plugin-svgr',
       {
         svgo: true,
-        svgoOptions: {
+        svgoConfig: {
           plugins: [
+            {
+              prefixIds: false
+            },
             {
               removeViewBox: false
             },

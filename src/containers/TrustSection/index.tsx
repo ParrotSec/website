@@ -2,18 +2,22 @@ import React from 'react'
 import { Grid, GridProps, makeStyles, Typography } from '@material-ui/core'
 import Oreo from './assets/oreo 1.svg'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   trustLogosBlock: {
     marginTop: 40
   },
   img: {
     display: 'block',
     margin: 'auto',
-    '& #oreo2': {
-      fill: 'green'
+    fill: theme.palette.type === 'light' ? 'white' : 'inherit',
+    '& #oreo_1_svg__path1': {
+      stroke: theme.palette.type === 'light' ? '#03232E' : '#FFF'
+    },
+    '& #oreo_1_svg__path2': {
+      fill: theme.palette.type === 'light' ? '#03232E' : '#FFF'
     }
   }
-})
+}))
 
 const TrustSection = (props: GridProps) => {
   const classes = useStyles()
