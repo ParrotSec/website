@@ -15,7 +15,7 @@ import { Menu as MenuIcon, BrightnessHigh, Brightness3 } from '@material-ui/icon
 import { Link as RouterLink } from '@reach/router'
 import Logo from './assets/logo.svg'
 import PButton from 'components/PButton'
-import { useThemeSwitch } from 'containers/ThemeProvider'
+import { useThemeSwitch } from 'containers/HomePageContainers/ThemeProvider'
 
 const useStyles = makeStyles(theme => ({
   root: {
