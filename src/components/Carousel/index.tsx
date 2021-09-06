@@ -46,7 +46,6 @@ const styles = createStyles({
     backgroundColor: 'transparent',
     '&:hover': {
       '& $button': {
-        backgroundColor: 'black',
         filter: 'brightness(120%)',
         opacity: '0.4'
       }

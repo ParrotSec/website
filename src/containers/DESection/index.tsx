@@ -35,7 +35,20 @@ const useStyles = makeStyles(theme => ({
     marginTop: 30
   },
   buttons: {
+    backgroundColor: theme.palette.background.default,
     color: theme.palette.text.primary
+  },
+  indicators: {
+    color: theme.palette.text.primary,
+    opacity: 0.5,
+    '&:hover': {
+      color: theme.palette.text.primary,
+      opacity: 1
+    },
+    '&:active': {
+      color: theme.palette.text.primary,
+      opacity: 1
+    }
   }
 }))
 
@@ -73,9 +86,14 @@ const DESection = ({ className, ...rest }: GridProps) => {
                 className: classes.buttons,
                 style: {
                   width: 40,
-                  height: 40,
-                  backgroundColor: '#06043E'
+                  height: 40
                 }
+              }}
+              indicatorIconButtonProps={{
+                className: classes.indicators
+              }}
+              activeIndicatorIconButtonProps={{
+                style: { opacity: 1 }
               }}
             >
               {/*TODO: for responsiveness width should be changed to 100% and a popup needed to check the screens in fq*/}
