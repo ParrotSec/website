@@ -38,7 +38,7 @@ const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>)
                   },
                   text: {
                     primary: '#03232E',
-                    secondary: 'rgba(3, 35, 46, 0.5)'
+                    secondary: 'rgba(3, 35, 46, 0.5)',
                   }
                 }
               : {
@@ -82,7 +82,11 @@ const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>)
             },
             body2: {
               fontWeight: 'normal',
-              fontSize: 14
+              fontSize: 14,
+            },
+            subtitle2: {
+              fontSize: 18,
+              opacity: 0.5
             }
           },
           overrides: {

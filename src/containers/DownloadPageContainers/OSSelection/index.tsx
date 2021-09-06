@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     textTransform: 'none',
     color: theme.palette.text.secondary
   },
-  gap: {
+  buttons: {
     gap: 24
   },
   osSelect: {
@@ -68,7 +68,15 @@ const OSSelection = () => {
           </Button>
           <Button className={classes.crumb}>Versions</Button>
         </Breadcrumbs>
-        <Box className={classes.gap} display="flex">
+        <Grid
+          className={classes.buttons}
+          container
+          item
+          xs={12}
+          sm
+          justifyContent="flex-end"
+          wrap="nowrap"
+        >
           <Button ref={homeButtonRef} className={classes.osSelect} onClick={() => setOS('home')}>
             Home Edition
           </Button>
@@ -82,7 +90,7 @@ const OSSelection = () => {
           <Button ref={cloudButtonRef} className={classes.osSelect} onClick={() => setOS('cloud')}>
             Cloud Edition
           </Button>
-        </Box>
+        </Grid>
       </Grid>
       <Grid className={classes.gridHr} item xs={12} lg={10}>
         <Box position="relative" height="3px">

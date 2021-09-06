@@ -37,16 +37,19 @@ const OSSection = () => {
       </Grid>
       <Grid className={classes.osBlocks} container item xs={12} md={9} spacing={4}>
         <OSCard Icon={Home} iconClassName={classes.homeIcon} title="Home Edition">
-          Home edition is designed for daily use, privacy and software development. Parrot Tools can
-          be manually installed to assemble a custom and lightweight pentesting environment.
+          Home edition is designed for <b>daily use</b>, <b>privacy</b> and{' '}
+          <b>software development</b>. Parrot Tools can be manually installed to assemble a custom
+          and lightweight pentesting environment.
         </OSCard>
         <OSCard Icon={Security} iconClassName={classes.securityIcon} title="Security Edition">
           Security Edition is a special purpose operating system designed for Penetration Testing
-          and Red Team operations. It contains a full arsenal of ready-to use pentesting tools.
+          and <b>Red Team</b> operations. It contains a full arsenal of ready-to use pentesting
+          tools.
         </OSCard>
         <OSCard Icon={Cloud} iconClassName={classes.cloudIcon} title="Cloud Edition">
-          IoT & Cloud Appliances are special editions of Parrot Security made for embedded devices,
-          cloud environments, virtual machines and other special deployments.
+          IoT & Cloud Appliances are special editions of Parrot Security made for{' '}
+          <b>embedded devices</b>,<b>cloud environments</b>, <b>virtual machines</b> and other
+          special deployments.
         </OSCard>
       </Grid>
     </>
