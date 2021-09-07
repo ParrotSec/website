@@ -34,22 +34,7 @@ const useStyles = makeStyles(theme => ({
   gridHrMarginTop: {
     marginTop: 30
   },
-  buttons: {
-    backgroundColor: theme.palette.background.default,
-    color: theme.palette.text.primary
-  },
-  indicators: {
-    color: theme.palette.text.primary,
-    opacity: 0.5,
-    '&:hover': {
-      color: theme.palette.text.primary,
-      opacity: 1
-    },
-    '&:active': {
-      color: theme.palette.text.primary,
-      opacity: 1
-    }
-  }
+  buttons: {}
 }))
 
 const DESection = ({ className, ...rest }: GridProps) => {
@@ -68,34 +53,7 @@ const DESection = ({ className, ...rest }: GridProps) => {
         </Typography>
         <Grid container spacing={8}>
           <Grid container item xs={12} lg={8} direction="column">
-            <Carousel
-              /* fullHeightHover={false}*/
-              navButtonsAlwaysVisible
-              indicators
-              autoPlay={false}
-              /* navButtonsWrapperProps={{
-                  // Move the buttons to the bottom. Unsetting top here to override default style.
-                  style: {
-                    bottom: 20,
-                    top: 'unset',
-                    margin: '0px calc(50% - 132px)',
-                    height: 'auto'
-                  }
-                }}*/
-              navButtonsProps={{
-                className: classes.buttons,
-                style: {
-                  width: 40,
-                  height: 40
-                }
-              }}
-              indicatorIconButtonProps={{
-                className: classes.indicators
-              }}
-              activeIndicatorIconButtonProps={{
-                style: { opacity: 1 }
-              }}
-            >
+            <Carousel>
               {/*TODO: for responsiveness width should be changed to 100% and a popup needed to check the screens in fq*/}
               <Box width="100%">
                 <img src={homeMate1} alt="" style={{ display: 'block', margin: 'auto' }} />
