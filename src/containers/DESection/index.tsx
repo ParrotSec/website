@@ -12,9 +12,8 @@ import {
   Typography
 } from '@material-ui/core'
 import homeMate1 from './assets/home-mate-1.png'
-import Carousel from 'react-material-ui-carousel'
+import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 const useStyles = makeStyles(theme => ({
@@ -34,6 +33,22 @@ const useStyles = makeStyles(theme => ({
   },
   gridHrMarginTop: {
     marginTop: 30
+  },
+  buttons: {
+    backgroundColor: theme.palette.background.default,
+    color: theme.palette.text.primary
+  },
+  indicators: {
+    color: theme.palette.text.primary,
+    opacity: 0.5,
+    '&:hover': {
+      color: theme.palette.text.primary,
+      opacity: 1
+    },
+    '&:active': {
+      color: theme.palette.text.primary,
+      opacity: 1
+    }
   }
 }))
 
@@ -53,13 +68,12 @@ const DESection = ({ className, ...rest }: GridProps) => {
         </Typography>
         <Grid container spacing={8}>
           <Grid container item xs={12} lg={8} direction="column">
-            <div>
-              <Carousel
-                /* fullHeightHover={false}*/
-                navButtonsAlwaysVisible
-                indicators
-                autoPlay={false}
-                /* navButtonsWrapperProps={{
+            <Carousel
+              /* fullHeightHover={false}*/
+              navButtonsAlwaysVisible
+              indicators
+              autoPlay={false}
+              /* navButtonsWrapperProps={{
                   // Move the buttons to the bottom. Unsetting top here to override default style.
                   style: {
                     bottom: 20,
@@ -68,62 +82,37 @@ const DESection = ({ className, ...rest }: GridProps) => {
                     height: 'auto'
                   }
                 }}*/
-                navButtonsProps={{
-                  style: {
-                    width: 40,
-                    height: 40,
-                    backgroundColor: '#06043E'
-                  }
-                }}
-                indicatorContainerProps={{
-                  style: {
-                    display: 'flex',
-                    gap: '12px',
-                    justifyContent: 'center'
-                    /* padding: 32,
-                    marginTop: 0*/
-                  }
-                }}
-                indicatorIconButtonProps={{
-                  style: {
-                    padding: 3,
-                    color: 'rgba(255,255,255,0.5)'
-                  }
-                }}
-                activeIndicatorIconButtonProps={{
-                  style: {
-                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                    padding: 3,
-                    color: '#fff'
-                  }
-                }}
-                IndicatorIcon={
-                  <FiberManualRecordIcon
-                    style={{
-                      width: 9,
-                      height: 9
-                    }}
-                  />
+              navButtonsProps={{
+                className: classes.buttons,
+                style: {
+                  width: 40,
+                  height: 40
                 }
-              >
-                {/*TODO: for responsiveness width should be changed to 100% and a popup needed to check the screens in fq*/}
-                <Box width="100%">
-                  <img src={homeMate1} alt="" style={{ width: '100%' }} />
-                </Box>
-                <Box width="100%">
-                  <img src={homeMate1} alt="" style={{ width: '100%' }} />
-                </Box>
-                <Box width="100%">
-                  <img src={homeMate1} alt="" style={{ width: '100%' }} />
-                </Box>
-                <Box width="100%">
-                  <img src={homeMate1} alt="" style={{ width: '100%' }} />
-                </Box>
-                <Box width="100%">
-                  <img src={homeMate1} alt="" style={{ width: '100%' }} />
-                </Box>
-              </Carousel>
-            </div>
+              }}
+              indicatorIconButtonProps={{
+                className: classes.indicators
+              }}
+              activeIndicatorIconButtonProps={{
+                style: { opacity: 1 }
+              }}
+            >
+              {/*TODO: for responsiveness width should be changed to 100% and a popup needed to check the screens in fq*/}
+              <Box width="100%">
+                <img src={homeMate1} alt="" style={{ display: 'block', margin: 'auto' }} />
+              </Box>
+              <Box width="100%">
+                <img src={homeMate1} alt="" style={{ display: 'block', margin: 'auto' }} />
+              </Box>
+              <Box width="100%">
+                <img src={homeMate1} alt="" style={{ display: 'block', margin: 'auto' }} />
+              </Box>
+              <Box width="100%">
+                <img src={homeMate1} alt="" style={{ display: 'block', margin: 'auto' }} />
+              </Box>
+              <Box width="100%">
+                <img src={homeMate1} alt="" style={{ display: 'block', margin: 'auto' }} />
+              </Box>
+            </Carousel>
           </Grid>
           <Grid container item xs={12} lg={4} direction="column">
             <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
