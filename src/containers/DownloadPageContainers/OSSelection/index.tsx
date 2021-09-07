@@ -3,11 +3,31 @@ import { Box, Breadcrumbs, Button, Divider, Grid, makeStyles } from '@material-u
 import Left from 'assets/Left.svg'
 import { Link as RouterLink } from '@reach/router'
 import { useMeasure } from 'react-use'
+import Carousel from 'components/Carousel'
+import OSHome from 'containers/DownloadPageContainers/OSHome'
+import OSSecurity from 'containers/DownloadPageContainers/OSSecurity'
+import OSCloud from 'containers/DownloadPageContainers/OSCloud'
 
 const useStyles = makeStyles(theme => ({
   arrow: {
     verticalAlign: 'middle',
     fill: theme.palette.text.secondary
+  },
+  gridHeader: {
+    marginTop: 45
+  },
+  headerIcon: {
+    width: 32,
+    height: 32,
+    margin: 'auto'
+  },
+  iconHolder: {
+    width: 64,
+    height: 64,
+    borderRadius: 6,
+    display: 'flex',
+    justifyContent: 'center',
+    marginRight: theme.spacing(4)
   },
   crumb: {
     textTransform: 'none',
@@ -54,6 +74,13 @@ const OSSelection = () => {
     security: cloudButtonWidth + 40,
     cloud: 0
   }
+
+  const osIndexes = {
+    home: 0,
+    security: 1,
+    cloud: 2
+  }
+
   return (
     <>
       <Grid container item xs={12} lg={10} justifyContent="space-between">
@@ -105,6 +132,17 @@ const OSSelection = () => {
         </Box>
         <Divider variant="fullWidth" />
       </Grid>
+      <Carousel
+        indicators={false}
+        autoPlay={false}
+        navButtonsAlwaysInvisible
+        animation="fade"
+        index={osIndexes[os]}
+      >
+        <OSHome classesGeneral={classes} />
+        <OSSecurity classesGeneral={classes} />
+        <OSCloud classesGeneral={classes} />
+      </Carousel>
     </>
   )
 }
