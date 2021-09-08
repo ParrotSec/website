@@ -46,8 +46,8 @@ const useStyles = makeStyles(theme => ({
   },
   toolsBlock: {
     marginTop: 90,
-    paddingLeft: 16,
-    paddingRight: 16
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2)
   },
   statsBlock: {
     marginTop: 217,
@@ -57,15 +57,15 @@ const useStyles = makeStyles(theme => ({
   },
   htbBlock: {
     marginTop: 32,
-    paddingLeft: 16,
-    paddingRight: 16
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2)
   },
   developBlock: {
     marginTop: 154
   },
   iconHolder: {
-    width: 64,
-    height: 64,
+    width: theme.spacing(8),
+    height: theme.spacing(8),
     borderRadius: 6,
     display: 'flex',
     justifyContent: 'center',
