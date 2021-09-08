@@ -1,11 +1,13 @@
-/** https://github.com/Learus/react-material-ui-carousel but in TypeScript and without relative positioning */
+/** https://github.com/Learus/react-material-ui-carousel but in TypeScript and without relative positioning
+ * This would be nice to optimize but it's a low-priority task at the current stage of fast development
+ **/
 
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { AriaAttributes, Children, Component, ReactNode, SyntheticEvent } from 'react'
 import Fade from '@material-ui/core/Fade'
 import Slide from '@material-ui/core/Slide'
 import IconButton from '@material-ui/core/IconButton'
-import { createStyles, WithStyles, withStyles } from '@material-ui/core/styles'
+import { alpha, createStyles, Theme, WithStyles, withStyles } from '@material-ui/core/styles'
 import autoBind from 'auto-bind'
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
@@ -13,70 +15,70 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 import { useSwipeable } from 'react-swipeable'
 import { Box } from '@material-ui/core'
 
-const styles = createStyles({
-  root: {},
-  indicators: {
-    textAlign: 'center',
-    display: 'flex',
-    gap: '12px',
-    height: 'min-content',
-    alignSelf: 'center',
-    justifyContent: 'center'
-  },
-  indicator: {
-    cursor: 'pointer',
-    transition: '200ms',
-    padding: 3,
-    '&:hover': {
-      color: '#ffffff'
+const styles = (theme: Theme) =>
+  createStyles({
+    root: {},
+    indicators: {
+      textAlign: 'center',
+      display: 'flex',
+      gap: '12px',
+      height: 'min-content',
+      alignSelf: 'center',
+      justifyContent: 'center'
     },
-    '&:active': {
-      color: '#ffffff'
+    indicator: {
+      cursor: 'pointer',
+      transition: '200ms',
+      padding: 3,
+      '&:hover': {
+        color: theme.palette.text.primary
+      },
+      '&:active': {
+        color: theme.palette.text.primary
+      },
+      color: alpha(theme.palette.text.primary, 0.5)
     },
-    color: 'rgba(255,255,255,0.5)'
-  },
-  indicatorIcon: {
-    fontSize: 10
-  },
-  active: {
-    color: '#ffffff',
-    backgroundColor: 'rgba(255, 255, 255, 0.2)'
-  },
-  buttonWrapper: {
-    backgroundColor: 'transparent',
-    '&:hover': {
-      '& $button': {
-        filter: 'brightness(120%)',
-        opacity: '0.4'
+    indicatorIcon: {
+      fontSize: 10
+    },
+    active: {
+      color: theme.palette.text.primary,
+      backgroundColor: alpha(theme.palette.text.primary, 0.2)
+    },
+    buttonWrapper: {
+      backgroundColor: 'transparent',
+      '&:hover': {
+        '& $button': {
+          filter: 'brightness(120%)',
+          opacity: '0.4'
+        }
       }
-    }
-  },
-  fullHeightHoverWrapper: {
-    height: '100%', // This is 100% - indicator height - indicator margin
-    top: '0'
-  },
-  buttonVisible: {
-    opacity: '1'
-  },
-  buttonHidden: {
-    opacity: '0'
-  },
-  button: {
-    margin: '0 10px',
-    position: 'relative',
-    backgroundColor: '#494949',
-    top: 'calc(50% - 20px) !important',
-    color: 'white',
-    fontSize: '30px',
-    transition: '200ms',
-    cursor: 'pointer',
-    '&:hover': {
-      opacity: '0.6 !important'
-    }
-  },
-  next: {},
-  prev: {}
-})
+    },
+    fullHeightHoverWrapper: {
+      height: '100%', // This is 100% - indicator height - indicator margin
+      top: 0
+    },
+    buttonVisible: {
+      opacity: 1
+    },
+    buttonHidden: {
+      opacity: 0
+    },
+    button: {
+      backgroundColor: theme.palette.background.default,
+      color: theme.palette.text.primary,
+      width: 40,
+      height: 40,
+      fontSize: '30px',
+      transition: '200ms',
+      cursor: 'pointer',
+      '&:hover': {
+        opacity: '0.6 !important'
+      }
+    },
+    next: {},
+    prev: {}
+  })
 
 interface CarouselNavProps extends AriaAttributes {
   className?: string
@@ -206,7 +208,6 @@ const sanitizeNavProps = (props: CarouselNavProps) => {
 const sanitizeProps = (props: CarouselProps) => {
   const animation = props.animation ?? 'fade'
   const timeout = props.timeout ? props.timeout : animation === 'fade' ? 500 : 200
-
   return {
     className: props.className ?? '',
     children: props.children ?? [],
@@ -225,7 +226,7 @@ const sanitizeProps = (props: CarouselProps) => {
     swipe: props.swipe ?? true,
 
     navButtonsAlwaysInvisible: props.navButtonsAlwaysInvisible ?? false,
-    navButtonsAlwaysVisible: props.navButtonsAlwaysVisible ?? false,
+    navButtonsAlwaysVisible: props.navButtonsAlwaysVisible ?? true,
     cycleNavigation: props.cycleNavigation ?? true,
     fullHeightHover: props.fullHeightHover ?? false,
     navButtonsWrapperProps: sanitizeNavProps(props.navButtonsWrapperProps),
