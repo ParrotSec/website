@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, GridProps, Hidden, useTheme } from '@material-ui/core'
+import { Grid, GridProps, Hidden } from '@material-ui/core'
 import PFeatureBlock from 'components/PFeatureBlock'
 import Safety from './assets/Security.svg'
 import Build from './assets/Build.svg'
@@ -7,7 +7,7 @@ import Vector from './assets/Vector.svg'
 import Unlock from './assets/Unlock.svg'
 import Layout from './assets/Layout.svg'
 import WeChat from './assets/Wechat.svg'
-import Carousel from 'react-material-ui-carousel'
+import Carousel from 'components/Carousel'
 
 const FeaturesSection = (props: GridProps) => {
   const blocks = [
@@ -72,9 +72,6 @@ const FeaturesSection = (props: GridProps) => {
       technologies like Docker or Podman.
     </PFeatureBlock>
   ]
-  const {
-    palette: { type: themeType }
-  } = useTheme()
   return (
     <Grid {...props} container item xs={12} md={9} spacing={4} justifyContent="center">
       <Hidden smDown>
@@ -86,21 +83,7 @@ const FeaturesSection = (props: GridProps) => {
       </Hidden>
       <Hidden mdUp>
         <Grid item xs={12}>
-          <Carousel
-            swipe
-            animation="slide"
-            navButtonsAlwaysInvisible
-            indicatorIconButtonProps={{
-              style: {
-                color: themeType === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'
-              }
-            }}
-            activeIndicatorIconButtonProps={{
-              style: {
-                color: '#55ddff'
-              }
-            }}
-          >
+          <Carousel swipe animation="slide" navButtonsAlwaysInvisible>
             {blocks}
           </Carousel>
         </Grid>

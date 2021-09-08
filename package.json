@@ -25,7 +25,6 @@
     "react-dom": "^16.14.0",
     "react-hot-loader": "^4.13.0",
     "react-image-lightbox": "^5.1.4",
-    "react-material-ui-carousel": "^2.3.1",
     "react-router-dom": "^5.2.0",
     "react-static": "^7.5.1",
     "react-static-plugin-reach-router": "^7.5.1",
