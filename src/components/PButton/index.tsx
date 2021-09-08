@@ -35,6 +35,7 @@ const useStyles = makeStyles(theme => ({
 
 type PButtonProps = {
   gradient?: boolean
+  to?: string
 } & ButtonProps
 
 const PButton = ({
@@ -46,8 +47,8 @@ const PButton = ({
   to,
   style,
   size,
-    ...rest
-}: PButtonProps & { to?: string }) => {
+  ...rest
+}: PButtonProps) => {
   const classes = useStyles()
   return to ? (
     <Button

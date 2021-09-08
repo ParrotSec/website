@@ -27,7 +27,10 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 6,
     display: 'flex',
     justifyContent: 'center',
-    marginRight: theme.spacing(4)
+    margin: theme.spacing(4),
+    [theme.breakpoints.down('sm')]: {
+      margin: theme.spacing(2)
+    }
   },
   crumb: {
     textTransform: 'none',

@@ -254,10 +254,10 @@ type CarouselState = {
   active: number
   prevActive: number
   displayed: number
-  timer: ReturnType<typeof setTimeout>
 }
 
 class Carousel extends Component<CarouselProps, CarouselState> {
+  private timer: ReturnType<typeof setTimeout>
   constructor(props: CarouselProps) {
     super(props)
     autoBind(this)
@@ -265,8 +265,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
     this.state = {
       active: 0,
       prevActive: 0,
-      displayed: 0,
-      timer: null
+      displayed: 0
     }
   }
 
@@ -299,16 +298,16 @@ class Carousel extends Component<CarouselProps, CarouselState> {
   }
 
   stop() {
-    if (this.state.timer) {
-      clearInterval(this.state.timer)
-      this.setState({ timer: null })
+    if (this.timer) {
+      clearInterval(this.timer)
+      this.timer = null
     }
   }
 
   start() {
     const { autoPlay, interval } = sanitizeProps(this.props)
     if (autoPlay) {
-      this.setState({ timer: setInterval(this.next, interval) })
+      this.timer = setInterval(this.next, interval)
     }
   }
 
@@ -593,7 +592,11 @@ function CarouselItem(props: CarouselItemProps) {
   })
 
   return props.display ? (
-    <div {...(props.swipe ? swipeHandlers : {})} className="CarouselItem">
+    <div
+      {...(props.swipe ? swipeHandlers : {})}
+      className="CarouselItem"
+      style={{ height: '100%' }}
+    >
       {props.animation === 'slide' ? (
         <Slide
           direction={
@@ -605,7 +608,7 @@ function CarouselItem(props: CarouselItemProps) {
           <div>{props.child}</div>
         </Slide>
       ) : (
-        <Fade in={props.active} timeout={props.timeout}>
+        <Fade in={props.active} timeout={props.timeout} style={{ height: '100%' }}>
           <div>{props.child}</div>
         </Fade>
       )}
