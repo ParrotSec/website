@@ -15,7 +15,7 @@ import Paypal from './assets/paypal.svg'
 import Referral from './assets/referral.svg'
 import linode from './assets/linode.png'
 import vultr from './assets/vultr.png'
-import Arrow from 'components/PFeatureBlock/assets/vector.svg'
+import Arrow from 'components/PFeatureBlock/assets/arrow.svg'
 import Bitcoin from './assets/bitcoin.svg'
 import { useSnackbar } from 'notistack'
 

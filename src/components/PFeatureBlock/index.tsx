@@ -1,7 +1,7 @@
 import React, { ElementType, ReactNode } from 'react'
 import { Link as RouterLink } from '@reach/router'
 import { Link, makeStyles, Paper, PaperProps, Typography } from '@material-ui/core'
-import Arrow from './assets/vector.svg'
+import Arrow from './assets/arrow.svg'
 
 const useStyles = makeStyles(theme => ({
   root: {

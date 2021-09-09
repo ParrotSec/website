@@ -11,6 +11,7 @@ import StatsSection from 'containers/HomeContainers/StatsSection'
 import OSSection from 'containers/HomeContainers/OSSection'
 import { useCookies } from 'react-cookie'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
+import NewsletterSection from 'containers/HomeContainers/NewsletterSection'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -70,6 +71,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     marginBottom: 21
+  },
+  newsletterBlock: {
+    marginTop: 120
   }
 }))
 
@@ -88,6 +92,7 @@ const Index = () => {
       <OSSection />
       <HTBSection className={classes.htbBlock} />
       <ContributeSection className={classes.developBlock} />
+      <NewsletterSection className={classes.newsletterBlock} />
     </Grid>
   )
 }
