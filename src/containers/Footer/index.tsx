@@ -1,8 +1,10 @@
 import React from 'react'
-import { Grid, Link, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Grid, Link, makeStyles, Paper, Typography, useTheme } from '@material-ui/core'
 import Logo from './assets/logo.svg'
 import PButton from 'components/PButton'
 import { Link as RouterLink } from '@reach/router'
+import { Brightness3, BrightnessHigh } from '@material-ui/icons'
+import { useThemeSwitch } from 'containers/HomeContainers/ThemeProvider'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -84,11 +86,18 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('lg')]: {
       textAlign: 'right'
     }
+  },
+  themeSwitcher: {
+    fontSize: 12,
+    minWidth: 'auto',
+    padding: '3px 10px'
   }
 }))
 
 const Footer = () => {
   const classes = useStyles()
+  const theme = useTheme()
+  const { switchTheme } = useThemeSwitch()
   return (
     <Grid className={classes.root} container justifyContent="center" component="footer">
       <Grid className={classes.grid} item xs={12} md={9}>
@@ -301,7 +310,24 @@ const Footer = () => {
                 </Link>
               </Grid>
             </Grid>
-            <Grid className={classes.copyrightSection} container item xs={12} spacing={4}>
+            <Grid className={classes.copyrightSection} item xs={12}>
+              <PButton
+                className={classes.themeSwitcher}
+                variant="contained"
+                startIcon={
+                  theme.palette.type === 'dark' ? (
+                    <Brightness3 fontSize="small" />
+                  ) : (
+                    <BrightnessHigh fontSize="small" />
+                  )
+                }
+                onClick={() => switchTheme()}
+                size="small"
+              >
+                {theme.palette.type === 'dark' ? 'Dark' : 'Light'}
+              </PButton>
+            </Grid>
+            <Grid container item xs={12} spacing={4}>
               <Grid item xs={12} lg={7}>
                 <Typography className={classes.footerText} color="textSecondary" variant="body2">
                   © 2021 Parrot Security. All rights reserved.

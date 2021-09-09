@@ -72,7 +72,7 @@ const useIconStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.default
   },
   btc: {
-    fill: theme.palette.type === 'light' ?   '#06043E' :'#FFFFFF'
+    fill: theme.palette.type === 'light' ? '#06043E' : '#FFFFFF'
   }
 }))
 
@@ -97,6 +97,7 @@ const DonateSection = (props: GridProps) => {
             title="Patreon"
             buttonText="Adopt us"
             buttonLink="https://patreon.com"
+            outLink
           >
             Adopt us and become a recurring contributor
           </PFeatureBlock>
@@ -107,6 +108,7 @@ const DonateSection = (props: GridProps) => {
             title="Paypal"
             buttonText="Send us a tip"
             buttonLink="https://paypal.com"
+            outLink
           >
             Send us a tip on PayPal
           </PFeatureBlock>

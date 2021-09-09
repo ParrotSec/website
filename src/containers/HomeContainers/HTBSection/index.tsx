@@ -12,8 +12,10 @@ const useStyles = makeStyles(theme => ({
   htbIcon: {
     marginRight: 'auto',
     marginBottom: 31,
-    width: 'auto',
+    width: '100%',
     height: 'auto',
+    maxWidth: 249,
+    maxHeight: 49,
     fill: theme.palette.type === 'light' ? '#141D2B' : '#FFFFFF'
   },
   desc: {
@@ -28,6 +30,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     paddingLeft: 50,
+    paddingRight: 50,
     paddingBottom: 78
   },
   screenshotGrid: {
@@ -41,7 +44,7 @@ const HTBSection = (rest: GridProps) => {
     <Grid {...rest} container item xs={12} md={9}>
       <Paper className={classes.root} elevation={0}>
         <Grid container item xs justifyContent="space-between">
-          <Grid className={classes.content} container item xs={8} md={4} direction="column">
+          <Grid className={classes.content} container item xs={12} md={4} direction="column">
             <HTBLogo className={classes.htbIcon} />
             <Typography variant="h2" paragraph>
               Parrot<span style={{ fontWeight: 300 }}>OS</span> now web-based through Hack The Box

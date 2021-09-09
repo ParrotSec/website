@@ -21,7 +21,7 @@ const LoadingScreen = () => {
       display="flex"
     >
       <CircularProgress size={64} />
-      <Box marginLeft="1rem" fontSize={64}>
+      <Box marginLeft="1rem" fontSize={64} fontWeight={900}>
         Loading
       </Box>
     </Box>

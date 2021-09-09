@@ -41,6 +41,7 @@ type PFeatureBlockProps = {
   title: string
   buttonText?: string
   buttonLink?: string
+  outLink?: boolean
   CustomFooter?: ReactNode
 } & PaperProps
 
@@ -51,6 +52,7 @@ const PFeatureBlock = ({
   buttonText,
   buttonLink,
   CustomFooter,
+  outLink,
   ...rest
 }: PFeatureBlockProps) => {
   const classes = useStyles()
@@ -63,11 +65,16 @@ const PFeatureBlock = ({
       <Typography className={classes.body} variant="body1">
         {children}
       </Typography>
-      {CustomFooter ?? (
-        <Link className={classes.button} component={RouterLink} to={buttonLink}>
-          {buttonText} <Arrow className={classes.arrow} />
-        </Link>
-      )}
+      {CustomFooter ??
+        (outLink ? (
+          <Link className={classes.button} href={buttonLink}>
+            {buttonText} <Arrow className={classes.arrow} />
+          </Link>
+        ) : (
+          <Link className={classes.button} component={RouterLink} to={buttonLink}>
+            {buttonText} <Arrow className={classes.arrow} />
+          </Link>
+        ))}
     </Paper>
   )
 }

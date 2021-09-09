@@ -44,6 +44,7 @@ const SocialsSection = (props: GridProps) => {
             Icon={Forum}
             buttonText="Explore Forum"
             buttonLink="https://community.parrotsec.org"
+            outLink
           >
             Our tools are designed to be compatible with as many devices as possible via
             containerization technologies like Docker or Podman.
@@ -54,7 +55,8 @@ const SocialsSection = (props: GridProps) => {
             title="Parrot + HTB"
             Icon={HackTheBox}
             buttonText="Explore Colab"
-            buttonLink="/docs"
+            buttonLink="https://www.hackthebox.eu/blog/pwnbox-parrot"
+            outLink
           >
             Our tools are designed to be compatible with as many devices as possible via
             containerization technologies like Docker or Podman.
@@ -65,7 +67,8 @@ const SocialsSection = (props: GridProps) => {
             title="Discord"
             Icon={Discord}
             buttonText="Join Discord"
-            buttonLink="/docs"
+            buttonLink="https://discord.com"
+            outLink
           >
             Our tools are designed to be compatible with as many devices as possible via
             containerization technologies like Docker or Podman.

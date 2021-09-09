@@ -1,7 +1,7 @@
-@import url('assets/fonts/stylesheet.css');
+@import url('https://use.typekit.net/adk3ies.css');
 
 body {
-  font-family: 'Museo Sans', sans-serif;
+  font-family: 'museo-sans', sans-serif;
   font-weight: 300;
   font-size: 16px;
   margin: 0;

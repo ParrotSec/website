@@ -38,7 +38,7 @@ const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>)
                   },
                   text: {
                     primary: '#03232E',
-                    secondary: 'rgba(3, 35, 46, 0.5)',
+                    secondary: 'rgba(3, 35, 46, 0.5)'
                   }
                 }
               : {
@@ -49,27 +49,27 @@ const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>)
                 })
           },
           typography: {
-            fontFamily: 'Museo Sans',
+            fontFamily: 'museo-sans',
             fontSize: 16,
             h1: {
               fontSize: 64,
-              fontWeight: 700,
+              fontWeight: 900,
               '@media (max-width:1280px)': {
                 fontSize: 52
               },
               '@media (max-width:960px)': {
-                fontSize: 42
+                fontSize: 32
               }
             },
             h2: {
-              fontWeight: 700,
+              fontWeight: 900,
               fontSize: 48,
               '@media (max-width:1280px)': {
-                fontSize: 36
+                fontSize: 26
               }
             },
             h3: {
-              fontWeight: 700,
+              fontWeight: 900,
               fontSize: 28,
               '@media (max-width:1280px)': {
                 fontSize: 18
@@ -78,15 +78,18 @@ const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>)
             body1: {
               fontWeight: 'normal',
               fontSize: 16,
-              opacity: 0.5
+              opacity: 0.5,
+              fontFamily: 'nimbus-sans'
             },
             body2: {
               fontWeight: 'normal',
               fontSize: 14,
+              fontFamily: 'nimbus-sans'
             },
             subtitle2: {
               fontSize: 18,
-              opacity: 0.5
+              opacity: 0.5,
+              fontFamily: 'nimbus-sans'
             }
           },
           overrides: {

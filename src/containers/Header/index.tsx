@@ -8,14 +8,12 @@ import {
   Hidden,
   IconButton,
   makeStyles,
-  Toolbar,
-  useTheme
+  Toolbar
 } from '@material-ui/core'
-import { Menu as MenuIcon, BrightnessHigh, Brightness3 } from '@material-ui/icons'
+import { Menu as MenuIcon } from '@material-ui/icons'
 import { Link as RouterLink } from '@reach/router'
 import Logo from './assets/logo.svg'
 import PButton from 'components/PButton'
-import { useThemeSwitch } from 'containers/HomeContainers/ThemeProvider'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -71,11 +69,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       margin: theme.spacing(1)
     }
-  },
-  themeSwitcher: {
-    fontSize: 12,
-    minWidth: 'auto',
-    padding: '3px 10px'
   }
 }))
 
@@ -83,8 +76,6 @@ const Header = () => {
   const classes = useStyles()
   const [collapsed, setCollapsed] = React.useState(false)
   const toggleCollapse = () => setCollapsed(!collapsed)
-  const theme = useTheme()
-  const { switchTheme } = useThemeSwitch()
 
   return (
     <AppBar className={classes.root} color="transparent" position="static" elevation={0}>
@@ -170,23 +161,6 @@ const Header = () => {
                 </PButton>
               </div>
             </Hidden>
-          </Grid>
-          <Grid container item xs={12} justifyContent="center">
-            <PButton
-              className={classes.themeSwitcher}
-              variant="contained"
-              startIcon={
-                theme.palette.type === 'dark' ? (
-                  <Brightness3 fontSize="small" />
-                ) : (
-                  <BrightnessHigh fontSize="small" />
-                )
-              }
-              onClick={() => switchTheme()}
-              size="small"
-            >
-              {theme.palette.type === 'dark' ? 'Dark' : 'Light'}
-            </PButton>
           </Grid>
         </Grid>
       </Toolbar>

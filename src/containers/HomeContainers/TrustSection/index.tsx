@@ -7,13 +7,17 @@ const useStyles = makeStyles(theme => ({
     marginTop: 40
   },
   img: {
+    width: '100%',
+    height: 'auto',
+    maxWidth: 113,
+    maxHeight: 40,
     display: 'block',
     margin: 'auto',
     fill: theme.palette.type === 'light' ? 'white' : 'inherit',
-    '& #oreo_1_svg__path1': {
+    '& #path1': {
       stroke: theme.palette.type === 'light' ? '#03232E' : '#FFF'
     },
-    '& #oreo_1_svg__path2': {
+    '& #path2': {
       fill: theme.palette.type === 'light' ? '#03232E' : '#FFF'
     }
   }

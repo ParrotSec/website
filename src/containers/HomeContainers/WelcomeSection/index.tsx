@@ -76,18 +76,20 @@ const WelcomeSection = () => {
         <span style={{ fontWeight: 'bold' }}>Parrot</span>OS
       </Box>
       <Typography className={classes.headingTitle} variant="h1" align="center">
-        The operating <br /> system for{' '}
-        <WindupChildren>
-          <Pause ms={3000} />
-          <Pace getPace={char => (char === ' ' ? randomInteger(100, 300) : randomInteger(40, 80))}>
-            <Box display="inline-block" className={classes.hackers}>
-              Hackers
-            </Box>
-          </Pace>
-        </WindupChildren>
+        The operating <br /> system for
+        <span className={classes.hackers}>
+          <WindupChildren>
+            {' '}
+            <Pause ms={500} />
+            <Pace
+              getPace={char => (char === ' ' ? randomInteger(100, 300) : randomInteger(40, 80))}
+            >
+              {'Hackers'}
+            </Pace>
+          </WindupChildren>
+        </span>
         <span style={{ fontWeight: 100, marginLeft: '-0.1rem', color: '#00FFF0' }}>|</span>
       </Typography>
-
       <Typography className={classes.headingSubTitle} variant="body1" align="center">
         A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
       </Typography>
