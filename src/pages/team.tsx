@@ -15,6 +15,7 @@ import Twitter from '../assets/Twitter.svg'
 import LinkedIn from '../assets/LinkedIn.svg'
 import Email from '../assets/Email.svg'
 import PButton from 'components/PButton'
+import ContributeSection from 'containers/HomeContainers/ContributeSection'
 {
   /*import { DataGrid, GridColDef } from '@mui/x-data-grid'*/
 }
@@ -38,16 +39,8 @@ const useStyles = makeStyles(theme => ({
   communityTitle: {
     margin: theme.spacing(4)
   },
-  gridAlign: {
-    margin: theme.spacing(0, 'auto'),
-    height: 400,
-    width: '100%'
-  },
-  dataGrid: {
-    borderRadius: 3
-  },
   specialThanks: {
-    padding: theme.spacing(7)
+    marginTop: theme.spacing(20)
   },
   headingSubTitle: {
     marginTop: 27,
@@ -82,7 +75,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: theme.spacing(5)
     }
   },
-  coreTeam: {
+  team: {
     margin: theme.spacing(3)
   },
   nicknameTextColor: {
@@ -115,6 +108,10 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(20),
     marginRight: theme.spacing(20)
   },
+  contribRole: {
+    marginTop: 10,
+    marginBottom: 20
+  },
   contribSection: {
     marginTop: theme.spacing(7)
   },
@@ -128,6 +125,18 @@ const useStyles = makeStyles(theme => ({
       theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
     }`,
     borderRadius: 24
+  },
+  specialThanksTitle: {
+    marginBottom: theme.spacing(5)
+  },
+  specialThanksCard: {
+    margin: theme.spacing(1)
+  },
+  specialThanksRole: {
+    marginTop: theme.spacing(2)
+  },
+  developBlock: {
+    marginTop: 154
   }
 }))
 
@@ -145,7 +154,7 @@ const Team = () => {
           A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
         </Typography>
       </Grid>
-      <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+      <Grid className={classes.team} item xs={3} justifyContent="center">
         <Card>
           <CardContent className={classes.card}>
             <Avatar className={classes.iconLarge} src="" />
@@ -171,7 +180,7 @@ const Team = () => {
           </CardContent>
         </Card>
       </Grid>
-      <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+      <Grid className={classes.team} item xs={3} justifyContent="center">
         <Card>
           <CardContent className={classes.card}>
             <Avatar className={classes.iconLarge} src="" />
@@ -197,7 +206,7 @@ const Team = () => {
           </CardContent>
         </Card>
       </Grid>
-      <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+      <Grid className={classes.team} item xs={3} justifyContent="center">
         <Card>
           <CardContent className={classes.card}>
             <Avatar className={classes.iconLarge} src="" />
@@ -223,7 +232,7 @@ const Team = () => {
           </CardContent>
         </Card>
       </Grid>
-      <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+      <Grid className={classes.team} item xs={3} justifyContent="center">
         <Card>
           <CardContent className={classes.card}>
             <Avatar className={classes.iconLarge} src="" />
@@ -249,7 +258,7 @@ const Team = () => {
           </CardContent>
         </Card>
       </Grid>
-      <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+      <Grid className={classes.team} item xs={3} justifyContent="center">
         <Card>
           <CardContent className={classes.card}>
             <Avatar className={classes.iconLarge} src="" />
@@ -275,7 +284,7 @@ const Team = () => {
           </CardContent>
         </Card>
       </Grid>
-      <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+      <Grid className={classes.team} item xs={3} justifyContent="center">
         <Card>
           <CardContent className={classes.card}>
             <Avatar className={classes.iconLarge} src="" />
@@ -328,14 +337,14 @@ const Team = () => {
         >
           <Paper className={classes.paper} elevation={0}>
             <Grid container justifyContent="center">
-              <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+              <Grid className={classes.team} item xs={3} justifyContent="center">
                 <Card className={classes.contribCard}>
                   <CardContent className={classes.card}>
                     <Avatar className={classes.iconLarge} src="" />
                     <Typography variant="h5" component="h2">
                       Name
                     </Typography>
-                    <Typography className={classes.role}>Role</Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
                     <Grid container direction="row" alignItems="center" spacing={2}>
                       <Grid item>
                         <Github className={classes.icons} />
@@ -353,14 +362,14 @@ const Team = () => {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+              <Grid className={classes.team} item xs={3} justifyContent="center">
                 <Card className={classes.contribCard}>
                   <CardContent className={classes.card}>
                     <Avatar className={classes.iconLarge} src="" />
                     <Typography variant="h5" component="h2">
                       Name
                     </Typography>
-                    <Typography className={classes.role}>Role</Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
                     <Grid container direction="row" alignItems="center" spacing={2}>
                       <Grid item>
                         <Github className={classes.icons} />
@@ -378,14 +387,14 @@ const Team = () => {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+              <Grid className={classes.team} item xs={3} justifyContent="center">
                 <Card className={classes.contribCard}>
                   <CardContent className={classes.card}>
                     <Avatar className={classes.iconLarge} src="" />
                     <Typography variant="h5" component="h2">
                       Name
                     </Typography>
-                    <Typography className={classes.role}>Role</Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
                     <Grid container direction="row" alignItems="center" spacing={2}>
                       <Grid item>
                         <Github className={classes.icons} />
@@ -403,14 +412,14 @@ const Team = () => {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+              <Grid className={classes.team} item xs={3} justifyContent="center">
                 <Card className={classes.contribCard}>
                   <CardContent className={classes.card}>
                     <Avatar className={classes.iconLarge} src="" />
                     <Typography variant="h5" component="h2">
                       Name
                     </Typography>
-                    <Typography className={classes.role}>Role</Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
                     <Grid container direction="row" alignItems="center" spacing={2}>
                       <Grid item>
                         <Github className={classes.icons} />
@@ -428,14 +437,14 @@ const Team = () => {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+              <Grid className={classes.team} item xs={3} justifyContent="center">
                 <Card className={classes.contribCard}>
                   <CardContent className={classes.card}>
                     <Avatar className={classes.iconLarge} src="" />
                     <Typography variant="h5" component="h2">
                       Name
                     </Typography>
-                    <Typography className={classes.role}>Role</Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
                     <Grid container direction="row" alignItems="center" spacing={2}>
                       <Grid item>
                         <Github className={classes.icons} />
@@ -453,14 +462,14 @@ const Team = () => {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid className={classes.coreTeam} item xs={3} justifyContent="center">
+              <Grid className={classes.team} item xs={3} justifyContent="center">
                 <Card className={classes.contribCard}>
                   <CardContent className={classes.card}>
                     <Avatar className={classes.iconLarge} src="" />
                     <Typography variant="h5" component="h2">
                       Name
                     </Typography>
-                    <Typography className={classes.role}>Role</Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
                     <Grid container direction="row" alignItems="center" spacing={2}>
                       <Grid item>
                         <Github className={classes.icons} />
@@ -487,176 +496,278 @@ const Team = () => {
           </Paper>
         </Grid>
       </Grid>
-      {/*
-      <Grid item xs={4}>
-        <Card className={classes.card}>
-          <CardHeader
-            avatar={<Avatar src="logo" className={classes.iconLarge} />}
-            title={<Typography variant="h5">Name</Typography>}
-            subheader="Role"
-          />
-          <CardContent>
-            <Typography variant="body1" noWrap>
-              Short description
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={4}>
-        <Card className={classes.card}>
-          <CardHeader
-            avatar={
-              <Avatar src="../containers/Header/assets/logo.svg" className={classes.iconLarge} />
-            }
-            title={<Typography variant="h5">Name</Typography>}
-            subheader="Role"
-          />
-          <CardContent>
-            <Typography variant="body1" noWrap>
-              Short description
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={4}>
-        <Card className={classes.card}>
-          <CardHeader
-            avatar={
-              <Avatar src="../containers/Header/assets/logo.svg" className={classes.iconLarge} />
-            }
-            title={<Typography variant="h5">Name</Typography>}
-            subheader="Role"
-          />
-          <CardContent>
-            <Typography variant="body1" noWrap>
-              Short description
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={4}>
-        <Card className={classes.card}>
-          <CardHeader
-            avatar={
-              <Avatar src="../containers/Header/assets/logo.svg" className={classes.iconLarge} />
-            }
-            title={<Typography variant="h5">Name</Typography>}
-            subheader="Role"
-          />
-          <CardContent>
-            <Typography variant="body1" noWrap>
-              Short description
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={4}>
-        <Card className={classes.card}>
-          <CardHeader
-            avatar={
-              <Avatar src="../containers/Header/assets/logo.svg" className={classes.iconLarge} />
-            }
-            title={<Typography variant="h5">Name</Typography>}
-            subheader="Role"
-          />
-          <CardContent>
-            <Typography variant="body1" noWrap>
-              Short description
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={4}>
-        <Card className={classes.card}>
-          <CardHeader
-            avatar={
-              <Avatar src="../containers/Header/assets/logo.svg" className={classes.iconLarge} />
-            }
-            title={<Typography variant="h5">Name</Typography>}
-            subheader="Role"
-          />
-          <CardContent>
-            <Typography variant="body1" noWrap>
-              Short description
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={12}>
-        <Typography variant="subtitle1" align="center">
-          eslint-disable-next-line react/no-unescaped-entities
-          ParrotOS doesn't exist only thanks to the <span style={{ color: '#00FFF0' }}>core </span>
-          team, but is also the result of the help of many contributors who improve the OS every
-          day.
-        </Typography>
-        <Typography variant="h4" align="center" className={classes.communityTitle}>
-          Community Contributors
-        </Typography>
-      </Grid>
-      <Grid item xs={6} justifyContent="center" className={classes.gridAlign}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          autoHeight={false}
-          autoPageSize={false}
-          className={classes.dataGrid}
-          disableExtendRowFullWidth={false}
-          disableColumnFilter
-          disableColumnMenu
-          disableColumnSelector
-          disableDensitySelector
-          disableSelectionOnClick
-          hideFooter
-        />
-      </Grid>
-      <Grid container justifyContent="center" spacing={2} className={classes.specialThanks}>
-        <Grid item xs={2}>
-          <Typography variant="h1" align="right" className={classes.communityTitle}>
-            Special Thanks
+      <Grid
+        className={classes.specialThanks}
+        container
+        xs={9}
+        justifyContent="space-around"
+        spacing={5}
+      >
+        <Grid item xs={4}>
+          <Typography variant="h1" className={classes.specialThanksTitle}>
+            Special <br /> Thanks
+          </Typography>
+          <Typography variant="subtitle2">
+            Compilers, interpreters and intelligent editors. All you need to start programming comes
+            out of the box, with the most secure Linux environment.
           </Typography>
         </Grid>
-        <Grid item xs={3}>
-          <Typography variant="subtitle1" align="left" className={classes.communityTitle}>
-            Nanni Bassetti (Caine)
-          </Typography>
-          <Typography variant="subtitle1" align="left" className={classes.communityTitle}>
-            Albano Battistella (Zorin OS)
-          </Typography>
-          <Typography variant="subtitle1" align="left" className={classes.communityTitle}>
-            Darix Deros (KNXSecurity)
-          </Typography>
-          <Typography variant="subtitle1" align="left" className={classes.communityTitle}>
-            Giancarlo Niccolai
-          </Typography>
-          <Typography variant="subtitle1" align="left" className={classes.communityTitle}>
-            Nathaniel Jones
-          </Typography>
-          <Typography variant="subtitle1" align="left" className={classes.communityTitle}>
-            John Draper (cap'n crunch)
-          </Typography>
+        <Grid container item xs={8} direction="row" spacing={3}>
+          <Grid item xs={6}>
+            <Card>
+              <CardContent className={classes.specialThanksCard}>
+                <Typography variant="h5" component="h2">
+                  Name
+                </Typography>
+                <Typography className={classes.nicknameTextColor}>nickname</Typography>
+                <Typography className={classes.specialThanksRole}>Role</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={6}>
+            <Card>
+              <CardContent className={classes.specialThanksCard}>
+                <Typography variant="h5" component="h2">
+                  Name
+                </Typography>
+                <Typography className={classes.nicknameTextColor}>nickname</Typography>
+                <Typography className={classes.specialThanksRole}>Role</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={6}>
+            <Card>
+              <CardContent className={classes.specialThanksCard}>
+                <Typography variant="h5" component="h2">
+                  Name
+                </Typography>
+                <Typography className={classes.nicknameTextColor}>nickname</Typography>
+                <Typography className={classes.specialThanksRole}>Role</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={6}>
+            <Card>
+              <CardContent className={classes.specialThanksCard}>
+                <Typography variant="h5" component="h2">
+                  Name
+                </Typography>
+                <Typography className={classes.nicknameTextColor}>nickname</Typography>
+                <Typography className={classes.specialThanksRole}>Role</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={6}>
+            <Card>
+              <CardContent className={classes.specialThanksCard}>
+                <Typography variant="h5" component="h2">
+                  Name
+                </Typography>
+                <Typography className={classes.nicknameTextColor}>nickname</Typography>
+                <Typography className={classes.specialThanksRole}>Role</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={6}>
+            <Card>
+              <CardContent className={classes.specialThanksCard}>
+                <Typography variant="h5" component="h2">
+                  Name
+                </Typography>
+                <Typography className={classes.nicknameTextColor}>nickname</Typography>
+                <Typography className={classes.specialThanksRole}>Role</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <Typography variant="h4" align="center" className={classes.communityTitle}>
-          Past Contributors
+      <Grid className={classes.activeContrib} item xs={12} justifyContent="center">
+        <Box
+          className={classes.contribHeader}
+          fontWeight={700}
+          color="#05EEFF"
+          letterSpacing="0.1em"
+          textAlign="center"
+        >
+          <span style={{ fontWeight: 'bold' }}>past contributors</span>
+        </Box>
+        <Typography className={classes.contribTitle} variant="h1" align="center">
+          Legacy Contributors
         </Typography>
+        <Typography className={classes.contribSubtitle} variant="subtitle2" align="center">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          ParrotOS doesn't exist only thanks to the core team, but is also the result of the help of
+          many <br /> contributors who improve the OS every day.
+        </Typography>
+        <Grid
+          className={classes.contribSection}
+          item
+          xs={12}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Paper className={classes.paper} elevation={0}>
+            <Grid container justifyContent="center">
+              <Grid className={classes.team} item xs={3} justifyContent="center">
+                <Card className={classes.contribCard}>
+                  <CardContent className={classes.card}>
+                    <Avatar className={classes.iconLarge} src="" />
+                    <Typography variant="h5" component="h2">
+                      Name
+                    </Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
+                    <Grid container direction="row" alignItems="center" spacing={2}>
+                      <Grid item>
+                        <Github className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Twitter className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <LinkedIn className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Email className={classes.icons} />
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid className={classes.team} item xs={3} justifyContent="center">
+                <Card className={classes.contribCard}>
+                  <CardContent className={classes.card}>
+                    <Avatar className={classes.iconLarge} src="" />
+                    <Typography variant="h5" component="h2">
+                      Name
+                    </Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
+                    <Grid container direction="row" alignItems="center" spacing={2}>
+                      <Grid item>
+                        <Github className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Twitter className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <LinkedIn className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Email className={classes.icons} />
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid className={classes.team} item xs={3} justifyContent="center">
+                <Card className={classes.contribCard}>
+                  <CardContent className={classes.card}>
+                    <Avatar className={classes.iconLarge} src="" />
+                    <Typography variant="h5" component="h2">
+                      Name
+                    </Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
+                    <Grid container direction="row" alignItems="center" spacing={2}>
+                      <Grid item>
+                        <Github className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Twitter className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <LinkedIn className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Email className={classes.icons} />
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid className={classes.team} item xs={3} justifyContent="center">
+                <Card className={classes.contribCard}>
+                  <CardContent className={classes.card}>
+                    <Avatar className={classes.iconLarge} src="" />
+                    <Typography variant="h5" component="h2">
+                      Name
+                    </Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
+                    <Grid container direction="row" alignItems="center" spacing={2}>
+                      <Grid item>
+                        <Github className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Twitter className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <LinkedIn className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Email className={classes.icons} />
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid className={classes.team} item xs={3} justifyContent="center">
+                <Card className={classes.contribCard}>
+                  <CardContent className={classes.card}>
+                    <Avatar className={classes.iconLarge} src="" />
+                    <Typography variant="h5" component="h2">
+                      Name
+                    </Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
+                    <Grid container direction="row" alignItems="center" spacing={2}>
+                      <Grid item>
+                        <Github className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Twitter className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <LinkedIn className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Email className={classes.icons} />
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid className={classes.team} item xs={3} justifyContent="center">
+                <Card className={classes.contribCard}>
+                  <CardContent className={classes.card}>
+                    <Avatar className={classes.iconLarge} src="" />
+                    <Typography variant="h5" component="h2">
+                      Name
+                    </Typography>
+                    <Typography className={classes.contribRole}>Role</Typography>
+                    <Grid container direction="row" alignItems="center" spacing={2}>
+                      <Grid item>
+                        <Github className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Twitter className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <LinkedIn className={classes.icons} />
+                      </Grid>
+                      <Grid item>
+                        <Email className={classes.icons} />
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+            <Grid container xs={12} justifyContent="center">
+              <PButton className={classes.wideButton} variant="outlined" to="">
+                View All Contributors
+              </PButton>
+            </Grid>
+          </Paper>
+        </Grid>
       </Grid>
-      <Grid item xs={6} justifyContent="center" className={classes.gridAlign}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          autoHeight={false}
-          autoPageSize={false}
-          className={classes.dataGrid}
-          disableExtendRowFullWidth={false}
-          disableColumnFilter
-          disableColumnMenu
-          disableColumnSelector
-          disableDensitySelector
-          disableSelectionOnClick
-          hideFooter
-        />
-      </Grid>*/}
+      <ContributeSection className={classes.developBlock} />
     </Grid>
   )
 }
