@@ -198,6 +198,7 @@ const Header = () => {
                 <Link
                   className={classes.link}
                   color="textSecondary"
+                  onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/community"
                 >
@@ -206,6 +207,7 @@ const Header = () => {
                 <Link
                   className={classes.link}
                   color="textSecondary"
+                  onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/docs"
                 >
@@ -214,6 +216,7 @@ const Header = () => {
                 <Link
                   className={classes.link}
                   color="textSecondary"
+                  onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/blog"
                 >
@@ -222,6 +225,7 @@ const Header = () => {
                 <Link
                   className={classes.link}
                   color="textSecondary"
+                  onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/donate"
                 >
@@ -230,6 +234,7 @@ const Header = () => {
                 <Link
                   className={classes.link}
                   color="textSecondary"
+                  onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/swag"
                 >
@@ -238,6 +243,7 @@ const Header = () => {
                 <Link
                   className={classes.link}
                   color="textSecondary"
+                  onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/partners"
                 >
@@ -246,6 +252,7 @@ const Header = () => {
                 <Link
                   className={classes.link}
                   color="textSecondary"
+                  onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/download"
                 >
