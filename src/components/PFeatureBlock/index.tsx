@@ -1,13 +1,12 @@
-import React, { ElementType, PropsWithChildren } from 'react'
+import React, { ElementType, ReactNode } from 'react'
 import { Link as RouterLink } from '@reach/router'
-import { Link, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Link, makeStyles, Paper, PaperProps, Typography } from '@material-ui/core'
 import Arrow from './assets/vector.svg'
 
 const useStyles = makeStyles(theme => ({
   root: {
     borderRadius: 24,
-    padding: 32,
-    height: '100%'
+    padding: 32
   },
   icon: {
     fill: theme.palette.type === 'light' ? '#FFFFFF' : '#06043E'
@@ -37,17 +36,26 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-type PFeatureBlockProps = PropsWithChildren<{
+type PFeatureBlockProps = {
   Icon: ElementType
   title: string
-  buttonText: string
-  buttonLink: string
-}>
+  buttonText?: string
+  buttonLink?: string
+  CustomFooter?: ReactNode
+} & PaperProps
 
-const PFeatureBlock = ({ children, Icon, title, buttonText, buttonLink }: PFeatureBlockProps) => {
+const PFeatureBlock = ({
+  children,
+  Icon,
+  title,
+  buttonText,
+  buttonLink,
+  CustomFooter,
+  ...rest
+}: PFeatureBlockProps) => {
   const classes = useStyles()
   return (
-    <Paper className={classes.root} elevation={0}>
+    <Paper className={classes.root} elevation={0} {...rest}>
       <div className={classes.iconWrapper}>
         <Icon className={classes.icon} />
       </div>
@@ -55,9 +63,11 @@ const PFeatureBlock = ({ children, Icon, title, buttonText, buttonLink }: PFeatu
       <Typography className={classes.body} variant="body1">
         {children}
       </Typography>
-      <Link className={classes.button} component={RouterLink} to={buttonLink}>
-        {buttonText} <Arrow className={classes.arrow} />
-      </Link>
+      {CustomFooter ?? (
+        <Link className={classes.button} component={RouterLink} to={buttonLink}>
+          {buttonText} <Arrow className={classes.arrow} />
+        </Link>
+      )}
     </Paper>
   )
 }

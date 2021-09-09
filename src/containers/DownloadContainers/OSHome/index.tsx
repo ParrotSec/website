@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
 import cls from 'classnames'
-import Home from 'containers/HomePageContainers/OSSection/assets/Home.svg'
-import DESection from 'containers/DownloadPageContainers/DESection'
+import Home from 'containers/HomeContainers/OSSection/assets/Home.svg'
+import DESection from 'containers/DownloadContainers/DESection'
 import homeMate1 from './assets/home-mate-1.png'
 
 const useStyles = makeStyles(theme => ({

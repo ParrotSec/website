@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
 import cls from 'classnames'
-import Cloud from 'containers/HomePageContainers/OSSection/assets/Cloud.svg'
-import DESection from 'containers/DownloadPageContainers/DESection'
-import homeMate1 from 'containers/DownloadPageContainers/OSHome/assets/home-mate-1.png'
+import Cloud from 'containers/HomeContainers/OSSection/assets/Cloud.svg'
+import DESection from 'containers/DownloadContainers/DESection'
+import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
 
 const useStyles = makeStyles(theme => ({
   cloud: {

@@ -5,8 +5,8 @@ import './app.css'
 import Header from 'containers/Header'
 import Footer from 'containers/Footer'
 import { CssBaseline, Container } from '@material-ui/core'
-import LoadingScreen from 'containers/HomePageContainers/LoadingScreen'
-import ThemeProvider from 'containers/HomePageContainers/ThemeProvider'
+import LoadingScreen from 'containers/HomeContainers/LoadingScreen'
+import ThemeProvider from 'containers/HomeContainers/ThemeProvider'
 import { CookiesProvider } from 'react-cookie'
 
 // Any routes that start with 'dynamic' will be treated as non-static routes

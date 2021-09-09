@@ -16,7 +16,7 @@ const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>)
     setCookie('theme', theme)
   }
   if (!themeType) {
-    setThemeType('light')
+    setThemeType('dark')
   }
   return (
     <ThemeContext.Provider

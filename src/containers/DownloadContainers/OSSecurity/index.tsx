@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
 import cls from 'classnames'
-import Security from 'containers/HomePageContainers/OSSection/assets/Security.svg'
-import DESection from 'containers/DownloadPageContainers/DESection'
-import homeMate1 from 'containers/DownloadPageContainers/OSHome/assets/home-mate-1.png'
+import Security from 'containers/HomeContainers/OSSection/assets/Security.svg'
+import DESection from 'containers/DownloadContainers/DESection'
+import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
 
 const useStyles = makeStyles(theme => ({
   security: {
