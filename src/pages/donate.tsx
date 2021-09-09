@@ -1,9 +1,8 @@
 import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
-import SocialsSection from 'containers/CommunityContainers/SocialsSection'
-import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import Wallpaper from 'assets/wallpaper.png'
-import { useCookies } from 'react-cookie'
+import DonateSection from 'containers/DonateContainers/DonateSection'
+import { SnackbarProvider } from 'notistack'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,43 +41,44 @@ const useStyles = makeStyles(theme => ({
     },
     marginBottom: theme.spacing(6.5)
   },
-  features: {
+  donate: {
     marginTop: 88,
     [theme.breakpoints.down('md')]: {
       marginTop: 50
     }
   },
-  developBlock: {
-    marginTop: 154
+  snackbar: {
+    background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
+    color: '#03232E',
+    borderRadius: 16
   }
 }))
 
-const Community = () => {
+const Donate = () => {
   const classes = useStyles()
-  const [cookies] = useCookies()
   return (
-    <Grid container className={classes.root} justifyContent="center">
-      {cookies.theme === 'dark' && <div className={classes.wallpaper} />}
-      <Grid
-        item
-        container
-        xs={10}
-        justifyContent="center"
-        alignItems="center"
-        direction="column"
-        wrap="nowrap"
-      >
-        <Typography className={classes.headingTitle} variant="h1" align="center">
-          Join the Parrot Community
-        </Typography>
-        <Typography className={classes.headingSubTitle} variant="body1" align="center">
-          A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
-        </Typography>
+    <SnackbarProvider preventDuplicate classes={{ variantSuccess: classes.snackbar }}>
+      <Grid container className={classes.root} justifyContent="center">
+        <Grid
+          item
+          container
+          xs={10}
+          justifyContent="center"
+          alignItems="center"
+          direction="column"
+          wrap="nowrap"
+        >
+          <Typography className={classes.headingTitle} variant="h1" align="center">
+            Buy Us A Coffee
+          </Typography>
+          <Typography className={classes.headingSubTitle} variant="body1" align="center">
+            A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
+          </Typography>
+        </Grid>
+        <DonateSection className={classes.donate} />
       </Grid>
-      <SocialsSection className={classes.features} />
-      <ContributeSection className={classes.developBlock} />
-    </Grid>
+    </SnackbarProvider>
   )
 }
 
-export default Community
+export default Donate

@@ -4,9 +4,9 @@ import Left from 'assets/Left.svg'
 import { Link as RouterLink } from '@reach/router'
 import { useMeasure } from 'react-use'
 import Carousel from 'components/Carousel'
-import OSHome from 'containers/DownloadPageContainers/OSHome'
-import OSSecurity from 'containers/DownloadPageContainers/OSSecurity'
-import OSCloud from 'containers/DownloadPageContainers/OSCloud'
+import OSHome from 'containers/DownloadContainers/OSHome'
+import OSSecurity from 'containers/DownloadContainers/OSSecurity'
+import OSCloud from 'containers/DownloadContainers/OSCloud'
 
 const useStyles = makeStyles(theme => ({
   arrow: {
@@ -138,6 +138,7 @@ const OSSelection = () => {
       <Carousel
         indicators={false}
         autoPlay={false}
+        swipe={false}
         navButtonsAlwaysInvisible
         animation="fade"
         index={osIndexes[os]}

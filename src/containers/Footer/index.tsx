@@ -90,7 +90,7 @@ const useStyles = makeStyles(theme => ({
 const Footer = () => {
   const classes = useStyles()
   return (
-    <Grid className={classes.root} container justifyContent="center">
+    <Grid className={classes.root} container justifyContent="center" component="footer">
       <Grid className={classes.grid} item xs={12} md={9}>
         <Paper className={classes.paper} elevation={0}>
           <Grid container spacing={4}>
@@ -133,7 +133,7 @@ const Footer = () => {
                   className={classes.link}
                   color="textSecondary"
                   component={RouterLink}
-                  to="/download/home"
+                  to="/download"
                 >
                   Home Edition
                 </Link>
@@ -141,7 +141,7 @@ const Footer = () => {
                   className={classes.link}
                   color="textSecondary"
                   component={RouterLink}
-                  to="/download/home"
+                  to="/download"
                 >
                   Security Edition
                 </Link>
@@ -149,7 +149,7 @@ const Footer = () => {
                   className={classes.link}
                   color="textSecondary"
                   component={RouterLink}
-                  to="/download/home"
+                  to="/download"
                 >
                   Cloud Edition
                 </Link>
