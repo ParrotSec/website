@@ -11,6 +11,7 @@ import Nmap from './assets/tool-logo-nmap 1.svg'
 import Sqlmap from './assets/tool-logo-sqlmap 1.svg'
 import Metasploit from './assets/tool-logo-metasploit 1.svg'
 import { useMeasure } from 'react-use'
+import InfiniteSlider from 'components/InfiniteSlider'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -61,7 +62,7 @@ const useStyles = makeStyles(theme => ({
   },
   bgHolder: {
     width: 'calc(100% - 512px)',
-    marginBottom: 48,
+    marginBottom: theme.spacing(6),
     '@media (max-width: 1600px)': {
       width: '75%'
     }
@@ -72,21 +73,17 @@ const useStyles = makeStyles(theme => ({
     }
   },
   buttons: {
-    marginTop: 31
+    marginTop: theme.spacing(4)
   },
   smMarquee: {
-    display: 'flex',
-    gap: 32,
-    width: '100%',
-    '& > svg': {
-      left: 'calc(100% - 64px)',
-      animation: `$marquee 8s linear infinite`,
-      position: 'absolute'
-    }
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4)
   },
-  '@keyframes marquee': {
-    '0%': { transform: 'translate(0, 0)' },
-    '100%': { transform: 'translate(-900%, 0)' }
+  paperPadding: {
+    padding: theme.spacing(8),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(4)
+    }
   }
 }))
 
@@ -94,94 +91,86 @@ const ToolsSection = (rest: GridProps) => {
   const classes = useStyles()
   const [ref, { width, height }] = useMeasure()
 
-  const icons = (absolute: boolean) => (
-    <>
-      <Burp
-        className={classes.bigIcon}
-        style={
-          absolute
-            ? {
-                position: 'absolute',
-                top: -24,
-                left: 0.922 * width
-              }
-            : {
-                animationDelay: `-${8}s`
-              }
-        }
-      />
-      <John
-        className={classes.bigIcon}
-        style={
-          absolute
-            ? {
-                position: 'absolute',
-                top: 0.902 * height,
-                left: 0.045 * width
-              }
-            : {
-                animationDelay: `-${(8 / 6) * 5}s`
-              }
-        }
-      />
-      <Maltego
-        className={classes.bigIcon}
-        style={
-          absolute
-            ? {
-                position: 'absolute',
-                left: 0.958 * width,
-                top: 0.595 * height
-              }
-            : {
-                animationDelay: `-${(8 / 6) * 4}s`
-              }
-        }
-      />
-      <Nmap
-        className={classes.icon}
-        style={
-          absolute
-            ? {
-                position: 'absolute',
-                top: 0.518 * height,
-                left: -0.14 * width
-              }
-            : {
-                animationDelay: `-${(8 / 6) * 3}s`
-              }
-        }
-      />
-      <Metasploit
-        className={classes.icon}
-        style={
-          absolute
-            ? {
-                position: 'absolute',
-                top: 0.23 * height,
-                left: 1.111 * width
-              }
-            : {
-                animationDelay: `-${(8 / 6) * 2}s`
-              }
-        }
-      />
-      <Sqlmap
-        className={classes.bigIcon}
-        style={
-          absolute
-            ? {
-                position: 'absolute',
-                top: 0.2 * height,
-                left: -42
-              }
-            : {
-                animationDelay: `-${(8 / 6) * 1}s`
-              }
-        }
-      />
-    </>
-  )
+  const icons = (absolute: boolean) => [
+    <Burp
+      className={classes.bigIcon}
+      key="burp"
+      style={
+        absolute
+          ? {
+              position: 'absolute',
+              top: -24,
+              left: 0.922 * width
+            }
+          : {}
+      }
+    />,
+    <John
+      className={classes.bigIcon}
+      key="john"
+      style={
+        absolute
+          ? {
+              position: 'absolute',
+              top: 0.902 * height,
+              left: 0.045 * width
+            }
+          : {}
+      }
+    />,
+    <Maltego
+      className={classes.bigIcon}
+      key="maltego"
+      style={
+        absolute
+          ? {
+              position: 'absolute',
+              left: 0.958 * width,
+              top: 0.595 * height
+            }
+          : {}
+      }
+    />,
+    <Nmap
+      className={classes.icon}
+      key="nmap"
+      style={
+        absolute
+          ? {
+              position: 'absolute',
+              top: 0.518 * height,
+              left: -0.14 * width
+            }
+          : {}
+      }
+    />,
+    <Metasploit
+      className={classes.icon}
+      key="metasploit"
+      style={
+        absolute
+          ? {
+              position: 'absolute',
+              top: 0.23 * height,
+              left: 1.111 * width
+            }
+          : {}
+      }
+    />,
+    <Sqlmap
+      className={classes.bigIcon}
+      key="sqlmap"
+      style={
+        absolute
+          ? {
+              position: 'absolute',
+              top: 0.2 * height,
+              left: -42
+            }
+          : {}
+      }
+    />
+  ]
 
   return (
     <>
@@ -211,19 +200,15 @@ const ToolsSection = (rest: GridProps) => {
               </Box>
             </Hidden>
             <Hidden mdUp>
-              <Box
-                position="relative"
-                width={width}
-                marginTop="46px"
-                marginBottom="80px"
-                className={classes.smMarquee}
-              >
+              <InfiniteSlider className={classes.smMarquee} height={64}>
                 {icons(false)}
-              </Box>
+              </InfiniteSlider>
             </Hidden>
-            <Box className={classes.bgHolder}>
-              <img ref={ref} className={classes.bg} src={parrotBg} alt="Parrot BG" />
-            </Box>
+            <Hidden smDown>
+              <div className={classes.bgHolder}>
+                <img ref={ref} className={classes.bg} src={parrotBg} alt="Parrot BG" />
+              </div>
+            </Hidden>
             <Typography variant="h3" align="center">
               Explore over 600+ tools
             </Typography>
@@ -253,7 +238,7 @@ const ToolsSection = (rest: GridProps) => {
         <Grid container item xs={12} md={6}>
           <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
-              <Box padding="60px">
+              <div className={classes.paperPadding}>
                 <Typography variant="h3">Hacking tools at your fingertips</Typography>
                 <Typography variant="body1">
                   When it comes to general tools and functional features, Parrot OS wins over Kali
@@ -261,7 +246,7 @@ const ToolsSection = (rest: GridProps) => {
                   its own tools. There are several tools you will find on ParrotOS that is not found
                   on Kali Linux.
                 </Typography>
-              </Box>
+              </div>
               <img
                 src={screenshot}
                 style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
@@ -273,7 +258,7 @@ const ToolsSection = (rest: GridProps) => {
         <Grid container item xs={12} md={6}>
           <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
-              <Box padding="60px">
+              <div className={classes.paperPadding}>
                 <Typography variant="h3">This block should be replaced</Typography>
                 <Typography variant="body1">
                   When it comes to general tools and functional features, Parrot OS wins over Kali
@@ -281,7 +266,7 @@ const ToolsSection = (rest: GridProps) => {
                   its own tools. There are several tools you will find on ParrotOS that is not found
                   on Kali Linux.
                 </Typography>
-              </Box>
+              </div>
               <img
                 src={screenshot}
                 style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}

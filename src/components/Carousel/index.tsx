@@ -17,7 +17,9 @@ import { Box } from '@material-ui/core'
 
 const styles = (theme: Theme) =>
   createStyles({
-    root: {},
+    root: {
+      overflow: 'hidden'
+    },
     indicators: {
       textAlign: 'center',
       display: 'flex',

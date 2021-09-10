@@ -9,6 +9,9 @@ const useStyles = makeStyles(theme => ({
   paper: {
     width: '100%',
     padding: '74px 60px',
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(4)
+    },
     ...(theme.palette.type === 'light'
       ? {
           background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)'

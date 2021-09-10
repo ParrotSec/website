@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, makeStyles, Paper, Typography } from '@material-ui/core'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   developerBlock: {
     marginTop: 115
   },
@@ -9,9 +9,12 @@ const useStyles = makeStyles({
     marginTop: 66
   },
   devPaper: {
-    padding: '60px 74px'
+    padding: `${theme.spacing(9)}px ${theme.spacing(8)}px`,
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(4)
+    }
   }
-})
+}))
 
 const DevelopingSection = () => {
   const classes = useStyles()

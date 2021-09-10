@@ -6,7 +6,8 @@ import Arrow from './assets/arrow.svg'
 const useStyles = makeStyles(theme => ({
   root: {
     borderRadius: 24,
-    padding: 32
+    padding: 32,
+    height: '100%'
   },
   icon: {
     fill: theme.palette.type === 'light' ? '#FFFFFF' : '#06043E',
@@ -35,6 +36,9 @@ const useStyles = makeStyles(theme => ({
   },
   arrow: {
     fill: theme.palette.type === 'light' ? '#03232E' : '#05EEFF'
+  },
+  fullHeight: {
+    height: '100%'
   }
 }))
 
