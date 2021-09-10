@@ -2,11 +2,12 @@ import React from 'react'
 import { makeStyles, Grid, Typography } from '@material-ui/core'
 import Wallpaper from 'assets/wallpaper.png'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
-import TeamCard from 'containers/TeamContainers/TeamCard'
 import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSection'
 import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
 import PastContributors from 'containers/TeamContainers/PastContributorsSection'
 import { useCookies } from 'react-cookie'
+import UserCard from 'components/UserCard'
+import lorenzo from 'assets/lorenzo.png'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -70,12 +71,78 @@ const Team = () => {
         </Typography>
       </Grid>
       <Grid container xs={12} md={9} spacing={4}>
-        <TeamCard />
-        <TeamCard />
-        <TeamCard />
-        <TeamCard />
-        <TeamCard />
-        <TeamCard />
+        <UserCard
+          avatar={lorenzo}
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          socials={{
+            github: 'https://github.com',
+            twitter: 'https://twitter.com',
+            linkedIn: 'https://linkedin.com',
+            email: 'mailto:god@god.com'
+          }}
+        />
+        <UserCard
+          avatar={lorenzo}
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          socials={{
+            github: 'https://github.com',
+            twitter: 'https://twitter.com',
+            linkedIn: 'https://linkedin.com',
+            email: 'mailto:god@god.com'
+          }}
+        />
+        <UserCard
+          avatar={lorenzo}
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          socials={{
+            github: 'https://github.com',
+            twitter: 'https://twitter.com',
+            linkedIn: 'https://linkedin.com',
+            email: 'mailto:god@god.com'
+          }}
+        />
+        <UserCard
+          avatar={lorenzo}
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          socials={{
+            github: 'https://github.com',
+            twitter: 'https://twitter.com',
+            linkedIn: 'https://linkedin.com',
+            email: 'mailto:god@god.com'
+          }}
+        />
+        <UserCard
+          avatar={lorenzo}
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          socials={{
+            github: 'https://github.com',
+            twitter: 'https://twitter.com',
+            linkedIn: 'https://linkedin.com',
+            email: 'mailto:god@god.com'
+          }}
+        />
+        <UserCard
+          avatar={lorenzo}
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          socials={{
+            github: 'https://github.com',
+            twitter: 'https://twitter.com',
+            linkedIn: 'https://linkedin.com',
+            email: 'mailto:god@god.com'
+          }}
+        />
       </Grid>
       <ActiveContributors />
       <SpecialThanks />

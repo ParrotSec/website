@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles, Grid, Typography, GridProps } from '@material-ui/core'
-import SpecialThanksCard from 'containers/TeamContainers/SpecialThanksCard'
+import UserCard from 'components/UserCard'
 
 const useStyles = makeStyles(theme => ({
   specialThanks: {
@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
   },
   specialThanksTitle: {
     marginBottom: theme.spacing(5)
-  },
+  }
 }))
 
 const SpecialThanks = (props: GridProps) => {
@@ -19,7 +19,8 @@ const SpecialThanks = (props: GridProps) => {
       {...props}
       className={classes.specialThanks}
       container
-      xs={9}
+      xs={12}
+      md={9}
       justifyContent="space-around"
       spacing={5}
     >
@@ -33,12 +34,36 @@ const SpecialThanks = (props: GridProps) => {
         </Typography>
       </Grid>
       <Grid container item xs={12} md={8} direction="row" spacing={3}>
-        <SpecialThanksCard />
-        <SpecialThanksCard />
-        <SpecialThanksCard />
-        <SpecialThanksCard />
-        <SpecialThanksCard />
-        <SpecialThanksCard />
+        <UserCard
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+        />
+        <UserCard
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+        />
+        <UserCard
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+        />
+        <UserCard
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+        />
+        <UserCard
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+        />
+        <UserCard
+          name="Lorenzo Faletra"
+          nickname="palinuro"
+          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+        />
       </Grid>
     </Grid>
   )
