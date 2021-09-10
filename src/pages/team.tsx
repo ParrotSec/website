@@ -77,7 +77,8 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3)
   },
   nicknameTextColor: {
-    color: '#05EEFF'
+    color: '#05EEFF',
+    opacity: 1
   },
   role: {
     marginTop: 20,
