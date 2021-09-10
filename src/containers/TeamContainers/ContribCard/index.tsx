@@ -30,10 +30,6 @@ const useStyles = makeStyles(theme => ({
     color: '#05EEFF',
     opacity: 1
   },
-  role: {
-    marginTop: 20,
-    marginBottom: 50
-  },
   icons: {
     display: 'block',
     margin: 'auto',

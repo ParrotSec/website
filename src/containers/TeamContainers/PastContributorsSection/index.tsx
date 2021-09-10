@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  makeStyles,
-  Grid,
-  Typography,
-  GridProps,
-  Box,
-  Paper
-} from '@material-ui/core'
+import { makeStyles, Grid, Typography, GridProps, Box, Paper } from '@material-ui/core'
 import PButton from 'components/PButton'
 import ContribCard from 'containers/TeamContainers/ContribCard'
 
@@ -29,10 +22,6 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(5),
     marginLeft: theme.spacing(20),
     marginRight: theme.spacing(20)
-  },
-  contribRole: {
-    marginTop: 10,
-    marginBottom: 20
   },
   contribSection: {
     marginTop: theme.spacing(7)
@@ -59,10 +48,10 @@ const ActiveContributors = (props: GridProps) => {
         letterSpacing="0.1em"
         textAlign="center"
       >
-        <span style={{ fontWeight: 'bold' }}>active contributors</span>
+        <span style={{ fontWeight: 'bold' }}>past contributors</span>
       </Box>
       <Typography className={classes.contribTitle} variant="h1" align="center">
-        Community Contributors
+        Legacy Contributors
       </Typography>
       <Typography className={classes.contribSubtitle} variant="subtitle2" align="center">
         {/* eslint-disable-next-line react/no-unescaped-entities */}
