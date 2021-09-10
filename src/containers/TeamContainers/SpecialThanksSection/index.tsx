@@ -23,7 +23,7 @@ const SpecialThanks = (props: GridProps) => {
       justifyContent="space-around"
       spacing={5}
     >
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         <Typography variant="h1" className={classes.specialThanksTitle}>
           Special <br /> Thanks
         </Typography>
@@ -32,7 +32,7 @@ const SpecialThanks = (props: GridProps) => {
           out of the box, with the most secure Linux environment.
         </Typography>
       </Grid>
-      <Grid container item xs={8} direction="row" spacing={3}>
+      <Grid container item xs={12} md={8} direction="row" spacing={3}>
         <SpecialThanksCard />
         <SpecialThanksCard />
         <SpecialThanksCard />

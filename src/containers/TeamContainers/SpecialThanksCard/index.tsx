@@ -18,8 +18,8 @@ const SpecialThanksCard = (props: GridProps) => {
   const classes = useStyles()
 
   return (
-    <Grid {...props} item xs={6}>
-      <Card>
+    <Grid {...props} item xs={12} md={6}>
+      <Card elevation={0}>
         <CardContent className={classes.specialThanksCard}>
           <Typography variant="h5" component="h2">
             Name

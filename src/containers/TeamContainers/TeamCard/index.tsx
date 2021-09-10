@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 15
   },
   team: {
-    margin: theme.spacing(3)
   },
   nicknameTextColor: {
     color: '#05EEFF',
@@ -61,8 +60,8 @@ const TeamCard = (props: GridProps) => {
   const classes = useStyles()
 
   return (
-    <Grid {...props} className={classes.team} item xs={3} justifyContent="center">
-      <Card>
+    <Grid {...props} className={classes.team} item xs={12} md={4} justifyContent="center">
+      <Card elevation={0}>
         <CardContent className={classes.card}>
           <Avatar className={classes.iconLarge} src="" />
           <Typography variant="h5" component="h2">

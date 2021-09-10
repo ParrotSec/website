@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  makeStyles,
-  Grid,
-  Typography,
-  GridProps,
-  Box,
-  Paper
-} from '@material-ui/core'
+import { makeStyles, Grid, Typography, GridProps, Box, Paper } from '@material-ui/core'
 import PButton from 'components/PButton'
 import ContribCard from 'containers/TeamContainers/ContribCard'
 
@@ -26,16 +19,16 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3)
   },
   paper: {
-    padding: theme.spacing(5),
-    marginLeft: theme.spacing(20),
-    marginRight: theme.spacing(20)
+    padding: theme.spacing(5)
   },
   contribRole: {
     marginTop: 10,
     marginBottom: 20
   },
   contribSection: {
-    marginTop: theme.spacing(7)
+    marginTop: theme.spacing(7),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2)
   },
   wideButton: {
     marginTop: theme.spacing(3),
@@ -51,33 +44,46 @@ const ActiveContributors = (props: GridProps) => {
   const classes = useStyles()
 
   return (
-    <Grid {...props} className={classes.activeContrib} item xs={12} justifyContent="center">
-      <Box
-        className={classes.contribHeader}
-        fontWeight={700}
-        color="#05EEFF"
-        letterSpacing="0.1em"
-        textAlign="center"
-      >
-        <span style={{ fontWeight: 'bold' }}>active contributors</span>
-      </Box>
-      <Typography className={classes.contribTitle} variant="h1" align="center">
-        Community Contributors
-      </Typography>
-      <Typography className={classes.contribSubtitle} variant="subtitle2" align="center">
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        ParrotOS doesn't exist only thanks to the core team, but is also the result of the help of
-        many <br /> contributors who improve the OS every day.
-      </Typography>
+    <Grid
+      {...props}
+      className={classes.activeContrib}
+      container
+      item
+      xs={12}
+      alignItems="center"
+      direction="column"
+      wrap="nowrap"
+    >
+      <Grid item xs={12}>
+        <Box
+          className={classes.contribHeader}
+          fontWeight={700}
+          color="#05EEFF"
+          letterSpacing="0.1em"
+          textAlign="center"
+        >
+          <span style={{ fontWeight: 'bold' }}>active contributors</span>
+        </Box>
+        <Typography className={classes.contribTitle} variant="h1" align="center">
+          Community Contributors
+        </Typography>
+        <Typography className={classes.contribSubtitle} variant="subtitle2" align="center">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          ParrotOS doesn't exist only thanks to the core team, but is also the result of the help of
+          many <br /> contributors who improve the OS every day.
+        </Typography>
+      </Grid>
       <Grid
         className={classes.contribSection}
         item
+        container
         xs={12}
+        md={9}
         justifyContent="center"
         alignItems="center"
       >
         <Paper className={classes.paper} elevation={0}>
-          <Grid container justifyContent="center">
+          <Grid container justifyContent="center" spacing={3}>
             <ContribCard />
             <ContribCard />
             <ContribCard />

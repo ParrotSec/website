@@ -19,9 +19,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3)
   },
   paper: {
-    padding: theme.spacing(5),
-    marginLeft: theme.spacing(20),
-    marginRight: theme.spacing(20)
+    padding: theme.spacing(5)
   },
   contribSection: {
     marginTop: theme.spacing(7)
@@ -40,7 +38,7 @@ const ActiveContributors = (props: GridProps) => {
   const classes = useStyles()
 
   return (
-    <Grid {...props} className={classes.activeContrib} item xs={12} justifyContent="center">
+    <Grid {...props} className={classes.activeContrib} item xs={12} md={9} justifyContent="center">
       <Box
         className={classes.contribHeader}
         fontWeight={700}
@@ -66,7 +64,7 @@ const ActiveContributors = (props: GridProps) => {
         alignItems="center"
       >
         <Paper className={classes.paper} elevation={0}>
-          <Grid container justifyContent="center">
+          <Grid container justifyContent="center" spacing={3}>
             <ContribCard />
             <ContribCard />
             <ContribCard />
