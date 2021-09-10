@@ -18,7 +18,8 @@ import Email from '../assets/Email.svg'
 import PButton from 'components/PButton'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import TeamCard from 'containers/TeamContainers/TeamCard'
-import ActiveContributors from 'containers/TeamContainers/ActiveContributors'
+import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSection'
+import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -179,91 +180,7 @@ const Team = () => {
       <TeamCard />
       <TeamCard />
       <ActiveContributors />
-      <Grid
-        className={classes.specialThanks}
-        container
-        xs={9}
-        justifyContent="space-around"
-        spacing={5}
-      >
-        <Grid item xs={4}>
-          <Typography variant="h1" className={classes.specialThanksTitle}>
-            Special <br /> Thanks
-          </Typography>
-          <Typography variant="subtitle2">
-            Compilers, interpreters and intelligent editors. All you need to start programming comes
-            out of the box, with the most secure Linux environment.
-          </Typography>
-        </Grid>
-        <Grid container item xs={8} direction="row" spacing={3}>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent className={classes.specialThanksCard}>
-                <Typography variant="h5" component="h2">
-                  Name
-                </Typography>
-                <Typography className={classes.nicknameTextColor}>nickname</Typography>
-                <Typography className={classes.specialThanksRole}>Role</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent className={classes.specialThanksCard}>
-                <Typography variant="h5" component="h2">
-                  Name
-                </Typography>
-                <Typography className={classes.nicknameTextColor}>nickname</Typography>
-                <Typography className={classes.specialThanksRole}>Role</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent className={classes.specialThanksCard}>
-                <Typography variant="h5" component="h2">
-                  Name
-                </Typography>
-                <Typography className={classes.nicknameTextColor}>nickname</Typography>
-                <Typography className={classes.specialThanksRole}>Role</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent className={classes.specialThanksCard}>
-                <Typography variant="h5" component="h2">
-                  Name
-                </Typography>
-                <Typography className={classes.nicknameTextColor}>nickname</Typography>
-                <Typography className={classes.specialThanksRole}>Role</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent className={classes.specialThanksCard}>
-                <Typography variant="h5" component="h2">
-                  Name
-                </Typography>
-                <Typography className={classes.nicknameTextColor}>nickname</Typography>
-                <Typography className={classes.specialThanksRole}>Role</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={6}>
-            <Card>
-              <CardContent className={classes.specialThanksCard}>
-                <Typography variant="h5" component="h2">
-                  Name
-                </Typography>
-                <Typography className={classes.nicknameTextColor}>nickname</Typography>
-                <Typography className={classes.specialThanksRole}>Role</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
-      </Grid>
+      <SpecialThanks />
       <Grid className={classes.activeContrib} item xs={12} justifyContent="center">
         <Box
           className={classes.contribHeader}
