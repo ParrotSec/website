@@ -34,8 +34,11 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     padding: '0.5rem',
+    fontSize: 16,
+    fontFamily: 'museo-sans',
     textDecoration: 'none',
     transition: '.2s ease-in 0s',
+    color: theme.palette.type === 'dark' ? '#FFF' : 'rgba(255, 255, 255, 0.5)',
     '&:hover': {
       textDecoration: 'none',
       color: '#05EEFF'
@@ -106,52 +109,25 @@ const Header = () => {
             </Hidden>
             <Hidden mdDown>
               <nav className={classes.nav}>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/community"
-                >
+                <Link className={classes.link} component={RouterLink} to="/community">
                   Community
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/docs"
-                >
+                <Link className={classes.link} component={RouterLink} to="/docs">
                   Documentation
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/blog"
-                >
+                <Link className={classes.link} component={RouterLink} to="/blog">
                   Blog
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/donate"
-                >
+                <Link className={classes.link} component={RouterLink} to="/donate">
                   Donate
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/swag"
-                >
+                <Link className={classes.link} component={RouterLink} to="/swag">
                   Swag
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/partners"
-                >
+                <Link className={classes.link} component={RouterLink} to="/team">
+                  Team
+                </Link>
+                <Link className={classes.link} component={RouterLink} to="/partners">
                   Partners
                 </Link>
               </nav>
@@ -171,7 +147,6 @@ const Header = () => {
               <Box className={classes.dropDown}>
                 <Link
                   className={classes.link}
-                  color="textSecondary"
                   onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/community"
@@ -180,7 +155,6 @@ const Header = () => {
                 </Link>
                 <Link
                   className={classes.link}
-                  color="textSecondary"
                   onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/docs"
@@ -189,7 +163,6 @@ const Header = () => {
                 </Link>
                 <Link
                   className={classes.link}
-                  color="textSecondary"
                   onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/blog"
@@ -198,7 +171,6 @@ const Header = () => {
                 </Link>
                 <Link
                   className={classes.link}
-                  color="textSecondary"
                   onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/donate"
@@ -207,7 +179,6 @@ const Header = () => {
                 </Link>
                 <Link
                   className={classes.link}
-                  color="textSecondary"
                   onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/swag"
@@ -216,7 +187,14 @@ const Header = () => {
                 </Link>
                 <Link
                   className={classes.link}
-                  color="textSecondary"
+                  onClick={() => setCollapsed(false)}
+                  component={RouterLink}
+                  to="/team"
+                >
+                  Team
+                </Link>
+                <Link
+                  className={classes.link}
                   onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/partners"
@@ -225,7 +203,6 @@ const Header = () => {
                 </Link>
                 <Link
                   className={classes.link}
-                  color="textSecondary"
                   onClick={() => setCollapsed(false)}
                   component={RouterLink}
                   to="/download"
