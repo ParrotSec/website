@@ -72,7 +72,7 @@ const useIconStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.default
   },
   btc: {
-    fill: theme.palette.type === 'light' ?   '#06043E' :'#FFFFFF'
+    fill: theme.palette.type === 'light' ? '#06043E' : '#FFFFFF'
   }
 }))
 

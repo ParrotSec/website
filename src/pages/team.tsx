@@ -85,7 +85,24 @@ const useStyles = makeStyles(theme => ({
   },
   icons: {
     display: 'block',
-    margin: 'auto'
+    margin: 'auto',
+    fill: theme.palette.type === 'light' ? 'white' : 'inherit',
+    '& #github': {
+      stroke: theme.palette.type === 'light' ? '#06043E' : '#FFF',
+      fill: theme.palette.type === 'light' ? '#06043E' : '#FFF'
+    },
+    '& #twitter': {
+      stroke: theme.palette.type === 'light' ? '#06043E' : '#FFF',
+      fill: theme.palette.type === 'light' ? '#06043E' : '#FFF'
+    },
+    '& #linkedin': {
+      stroke: theme.palette.type === 'light' ? '#06043E' : '#FFF',
+      fill: theme.palette.type === 'light' ? '#06043E' : '#FFF'
+    },
+    '& #email': {
+      stroke: theme.palette.type === 'light' ? '#06043E' : '#FFF',
+      fill: theme.palette.type === 'light' ? '#06043E' : '#FFF'
+    }
   },
   activeContrib: {
     marginTop: theme.spacing(10)
@@ -161,7 +178,7 @@ const Team = () => {
             </Typography>
             <Typography className={classes.nicknameTextColor}>nickname</Typography>
             <Typography className={classes.role}>Role</Typography>
-            <Grid container direction="row" alignItems="center" spacing={1}>
+            <Grid container direction="row" alignItems="center" spacing={2}>
               <Grid item>
                 <IconButton size="small">
                   <Github className={classes.icons} />
@@ -195,7 +212,7 @@ const Team = () => {
             </Typography>
             <Typography className={classes.nicknameTextColor}>nickname</Typography>
             <Typography className={classes.role}>Role</Typography>
-            <Grid container direction="row" alignItems="center" spacing={1}>
+            <Grid container direction="row" alignItems="center" spacing={2}>
               <Grid item>
                 <IconButton size="small">
                   <Github className={classes.icons} />
@@ -229,7 +246,7 @@ const Team = () => {
             </Typography>
             <Typography className={classes.nicknameTextColor}>nickname</Typography>
             <Typography className={classes.role}>Role</Typography>
-            <Grid container direction="row" alignItems="center" spacing={1}>
+            <Grid container direction="row" alignItems="center" spacing={2}>
               <Grid item>
                 <IconButton size="small">
                   <Github className={classes.icons} />
@@ -263,7 +280,7 @@ const Team = () => {
             </Typography>
             <Typography className={classes.nicknameTextColor}>nickname</Typography>
             <Typography className={classes.role}>Role</Typography>
-            <Grid container direction="row" alignItems="center" spacing={1}>
+            <Grid container direction="row" alignItems="center" spacing={2}>
               <Grid item>
                 <IconButton size="small">
                   <Github className={classes.icons} />
@@ -297,7 +314,7 @@ const Team = () => {
             </Typography>
             <Typography className={classes.nicknameTextColor}>nickname</Typography>
             <Typography className={classes.role}>Role</Typography>
-            <Grid container direction="row" alignItems="center" spacing={1}>
+            <Grid container direction="row" alignItems="center" spacing={2}>
               <Grid item>
                 <IconButton size="small">
                   <Github className={classes.icons} />
@@ -331,7 +348,7 @@ const Team = () => {
             </Typography>
             <Typography className={classes.nicknameTextColor}>nickname</Typography>
             <Typography className={classes.role}>Role</Typography>
-            <Grid container direction="row" alignItems="center" spacing={1}>
+            <Grid container direction="row" alignItems="center" spacing={2}>
               <Grid item>
                 <IconButton size="small">
                   <Github className={classes.icons} />
@@ -391,7 +408,7 @@ const Team = () => {
                       Name
                     </Typography>
                     <Typography className={classes.contribRole}>Role</Typography>
-                    <Grid container direction="row" alignItems="center" spacing={1}>
+                    <Grid container direction="row" alignItems="center" spacing={2}>
                       <Grid item>
                         <IconButton size="small">
                           <Github className={classes.icons} />
