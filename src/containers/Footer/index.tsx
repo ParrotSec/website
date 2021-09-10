@@ -4,7 +4,7 @@ import Logo from './assets/logo.svg'
 import PButton from 'components/PButton'
 import { Link as RouterLink } from '@reach/router'
 import { Brightness3, BrightnessHigh } from '@material-ui/icons'
-import { useThemeSwitch } from 'containers/HomeContainers/ThemeProvider'
+import { useThemeSwitch } from 'containers/ThemeProvider'
 
 const useStyles = makeStyles(theme => ({
   root: {

@@ -32,7 +32,6 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 20
   },
   icon: {
-    position: 'absolute',
     padding: 5,
     width: 64,
     height: 64,
@@ -45,13 +44,16 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: 20
   },
   bigIcon: {
-    position: 'absolute',
     width: 84,
     height: 84,
     padding: 16,
     background: '#FFF',
     borderRadius: 6,
-    boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)'
+    boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)',
+    [theme.breakpoints.down('md')]: {
+      width: 64,
+      height: 64
+    }
   },
   bg: {
     borderRadius: 6,
@@ -71,12 +73,116 @@ const useStyles = makeStyles(theme => ({
   },
   buttons: {
     marginTop: 31
+  },
+  smMarquee: {
+    display: 'flex',
+    gap: 32,
+    width: '100%',
+    '& > svg': {
+      left: 'calc(100% - 64px)',
+      animation: `$marquee 8s linear infinite`,
+      position: 'absolute'
+    }
+  },
+  '@keyframes marquee': {
+    '0%': { transform: 'translate(0, 0)' },
+    '100%': { transform: 'translate(-900%, 0)' }
   }
 }))
 
 const ToolsSection = (rest: GridProps) => {
   const classes = useStyles()
   const [ref, { width, height }] = useMeasure()
+
+  const icons = (absolute: boolean) => (
+    <>
+      <Burp
+        className={classes.bigIcon}
+        style={
+          absolute
+            ? {
+                position: 'absolute',
+                top: -24,
+                left: 0.922 * width
+              }
+            : {
+                animationDelay: `-${8}s`
+              }
+        }
+      />
+      <John
+        className={classes.bigIcon}
+        style={
+          absolute
+            ? {
+                position: 'absolute',
+                top: 0.902 * height,
+                left: 0.045 * width
+              }
+            : {
+                animationDelay: `-${(8 / 6) * 5}s`
+              }
+        }
+      />
+      <Maltego
+        className={classes.bigIcon}
+        style={
+          absolute
+            ? {
+                position: 'absolute',
+                left: 0.958 * width,
+                top: 0.595 * height
+              }
+            : {
+                animationDelay: `-${(8 / 6) * 4}s`
+              }
+        }
+      />
+      <Nmap
+        className={classes.icon}
+        style={
+          absolute
+            ? {
+                position: 'absolute',
+                top: 0.518 * height,
+                left: -0.14 * width
+              }
+            : {
+                animationDelay: `-${(8 / 6) * 3}s`
+              }
+        }
+      />
+      <Metasploit
+        className={classes.icon}
+        style={
+          absolute
+            ? {
+                position: 'absolute',
+                top: 0.23 * height,
+                left: 1.111 * width
+              }
+            : {
+                animationDelay: `-${(8 / 6) * 2}s`
+              }
+        }
+      />
+      <Sqlmap
+        className={classes.bigIcon}
+        style={
+          absolute
+            ? {
+                position: 'absolute',
+                top: 0.2 * height,
+                left: -42
+              }
+            : {
+                animationDelay: `-${(8 / 6) * 1}s`
+              }
+        }
+      />
+    </>
+  )
+
   return (
     <>
       <Grid {...rest} container item xs={12} md={9}>
@@ -99,50 +205,20 @@ const ToolsSection = (rest: GridProps) => {
               Choose between 600+ tools for all your hacking needs
             </Typography>
             {/*TODO: for futher animations need to apply box-shadow*/}
-            <Hidden mdDown>
+            <Hidden smDown>
               <Box position="relative" width={width} marginTop="46px">
-                <Burp
-                  className={classes.bigIcon}
-                  style={{
-                    top: -24,
-                    left: 0.922 * width
-                  }}
-                />
-                <John
-                  className={classes.bigIcon}
-                  style={{
-                    top: 0.902 * height,
-                    left: 0.045 * width
-                  }}
-                />
-                <Maltego
-                  className={classes.bigIcon}
-                  style={{
-                    left: 0.958 * width,
-                    top: 0.595 * height
-                  }}
-                />
-                <Nmap
-                  className={classes.icon}
-                  style={{
-                    top: 0.518 * height,
-                    left: -0.14 * width
-                  }}
-                />
-                <Metasploit
-                  className={classes.icon}
-                  style={{
-                    top: 0.23 * height,
-                    left: 1.111 * width
-                  }}
-                />
-                <Sqlmap
-                  className={classes.bigIcon}
-                  style={{
-                    top: 0.2 * height,
-                    left: -42
-                  }}
-                />
+                {icons(true)}
+              </Box>
+            </Hidden>
+            <Hidden mdUp>
+              <Box
+                position="relative"
+                width={width}
+                marginTop="46px"
+                marginBottom="80px"
+                className={classes.smMarquee}
+              >
+                {icons(false)}
               </Box>
             </Hidden>
             <Box className={classes.bgHolder}>

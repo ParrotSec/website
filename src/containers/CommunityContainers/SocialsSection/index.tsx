@@ -3,13 +3,13 @@ import { Box, Grid, GridProps, IconButton, makeStyles, Paper, Typography } from 
 import PFeatureBlock from 'components/PFeatureBlock'
 import HackTheBox from './assets/hackthebox.svg'
 import Forum from './assets/forum.svg'
-import Discord from './assets/discord.svg'
 import Instagram from './assets/instagram.svg'
 import LinkedIn from './assets/linkedin.svg'
 import Twitch from './assets/twitch.svg'
 import Twitter from './assets/twitter.svg'
 import Facebook from './assets/facebook.svg'
 import YouTube from './assets/youtube.svg'
+import Telegram from '@material-ui/icons/Telegram'
 
 const useStyles = makeStyles(theme => ({
   grid: {
@@ -64,10 +64,10 @@ const SocialsSection = (props: GridProps) => {
         </Grid>
         <Grid item sm={12} lg={4}>
           <PFeatureBlock
-            title="Discord"
-            Icon={Discord}
-            buttonText="Join Discord"
-            buttonLink="https://discord.com"
+            title="Telegram"
+            Icon={Telegram}
+            buttonText="Join Telegram"
+            buttonLink="https://t.me/parrotsecgroup"
             outLink
           >
             Our tools are designed to be compatible with as many devices as possible via

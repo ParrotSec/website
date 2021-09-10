@@ -9,7 +9,9 @@ const useStyles = makeStyles(theme => ({
     padding: 32
   },
   icon: {
-    fill: theme.palette.type === 'light' ? '#FFFFFF' : '#06043E'
+    fill: theme.palette.type === 'light' ? '#FFFFFF' : '#06043E',
+    width: 32,
+    height: 32
   },
   iconWrapper: {
     width: 64,
