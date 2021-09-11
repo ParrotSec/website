@@ -35,9 +35,9 @@
     "react-static-plugin-svgr": "^1.0.0",
     "react-static-plugin-typescript": "^7.5.1",
     "react-swipeable": "^6.2.0",
+    "react-typewriter-hook": "^1.0.1",
     "react-use": "^17.2.4",
-    "url-loader": "^4.1.1",
-    "windups": "^1.1.9"
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "@svgr/plugin-jsx": "^5.5.0",

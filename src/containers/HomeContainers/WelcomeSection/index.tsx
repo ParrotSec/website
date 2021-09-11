@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Box, Grid, makeStyles, SvgIcon, Typography } from '@material-ui/core'
-import { Pace, Pause, WindupChildren } from 'windups'
-import randomInteger from 'random-int'
+import useTypewriter from 'react-typewriter-hook'
 import PButton from 'components/PButton'
 import Bulb from './assets/Bulb.svg'
 
@@ -29,9 +28,24 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(6.5)
   },
   hackers: {
-    background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
-    '-webkit-background-clip': 'text',
-    '-webkit-text-fill-color': 'transparent'
+    color: theme.palette.primary.main,
+    [theme.breakpoints.up(1203)]: {
+      backgroundImage: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
+      backgroundSize: '100%',
+      backgroundRepeat: 'repeat',
+      '-webkit-background-clip': 'text',
+      '-webkit-text-fill-color': 'transparent',
+      '-moz-background-clip': 'text',
+      '-moz-text-fill-color': 'transparent'
+    }
+  },
+  cursor: {
+    color: theme.palette.primary.main,
+    fontWeight: 100,
+    marginLeft: '-0.1rem',
+    [theme.breakpoints.up(1203)]: {
+      color: '#00FFF0'
+    }
   },
   wideButton: {
     marginTop: 45,
@@ -54,8 +68,25 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+const typeData = ['Hackers', 'Security specialists', 'Developers', 'Sysadmins', 'Network engineers']
+let index = 0
+
 const WelcomeSection = () => {
   const classes = useStyles()
+
+  const [magicName, setMagicName] = useState(typeData[0])
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(null)
+  const name = useTypewriter(magicName)
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      index = index > typeData.length ? 0 : ++index
+      setMagicName(typeData[index])
+    }, 5000)
+    return () => {
+      clearInterval(intervalRef.current)
+    }
+  }, [magicName])
+
   return (
     <Grid
       item
@@ -76,19 +107,8 @@ const WelcomeSection = () => {
         <span style={{ fontWeight: 'bold' }}>Parrot</span>OS
       </Box>
       <Typography className={classes.headingTitle} variant="h1" align="center">
-        The operating <br /> system for
-        <span className={classes.hackers}>
-          <WindupChildren>
-            {' '}
-            <Pause ms={500} />
-            <Pace
-              getPace={char => (char === ' ' ? randomInteger(100, 300) : randomInteger(40, 80))}
-            >
-              {'Hackers'}
-            </Pace>
-          </WindupChildren>
-        </span>
-        <span style={{ fontWeight: 100, marginLeft: '-0.1rem', color: '#00FFF0' }}>|</span>
+        The operating <br /> system for <span className={classes.hackers}>{name}</span>
+        <span className={classes.cursor}>|</span>
       </Typography>
       <Typography className={classes.headingSubTitle} variant="body1" align="center">
         A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.

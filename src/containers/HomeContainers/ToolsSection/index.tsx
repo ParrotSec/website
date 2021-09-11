@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
     background: '#FFF',
     borderRadius: 6,
     boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       width: 64,
       height: 64
     }
@@ -200,7 +200,7 @@ const ToolsSection = (rest: GridProps) => {
               </Box>
             </Hidden>
             <Hidden mdUp>
-              <InfiniteSlider className={classes.smMarquee} height={64}>
+              <InfiniteSlider className={classes.smMarquee} height={86}>
                 {icons(false)}
               </InfiniteSlider>
             </Hidden>

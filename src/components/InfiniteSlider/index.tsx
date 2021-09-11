@@ -1,11 +1,11 @@
-import React, { Children, PropsWithChildren } from 'react'
-import { Box, makeStyles } from '@material-ui/core'
+import React, { Children } from 'react'
+import { Box, BoxProps, makeStyles } from '@material-ui/core'
 import cls from 'classnames'
 
-type InfiniteSliderProps = PropsWithChildren<{
+type InfiniteSliderProps = {
   className?: string
   height?: number
-}>
+} & BoxProps
 
 const useStyles = makeStyles({
   root: {
@@ -22,29 +22,34 @@ const useStyles = makeStyles({
     position: 'absolute',
     width: '100%',
     minWidth: 440,
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
     //width: 845,
-    animation: `$marquee 8s linear infinite`,
-    '-webkit-animation': `$marquee 8s linear infinite`
+    animation: `$marquee 8s linear infinite`
     /*[theme.breakpoints.down('sm')]: {
       width: 400
     }*/
   }
 })
 
-const InfiniteSlider = ({ className, height = 64, children }: InfiniteSliderProps) => {
+const InfiniteSlider = ({ className, height = 64, children, ...rest }: InfiniteSliderProps) => {
   const classes = useStyles()
+
   return (
-    <Box className={cls(className, classes.root)} height={height}>
+    <Box className={cls(className, classes.root)} height={height} {...rest}>
       {Children.map(children, (el, i) => (
-        <Box
+        <div
           className={classes.wrapper}
           key={`slider-wrapper-${i}`}
           style={{
             animationDelay: `-${(8 / Children.count(children)) * (Children.count(children) - i)}s`
           }}
         >
-          <Box paddingLeft="100%">{el}</Box>
-        </Box>
+          <Box paddingLeft="100%" paddingRight={10}>
+            {el}
+          </Box>
+        </div>
       ))}
     </Box>
   )

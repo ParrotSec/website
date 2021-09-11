@@ -65,6 +65,8 @@ const NewsletterSection = ({ className, ...rest }: GridProps) => {
               variant="outlined"
               label="Your best email"
               fullWidth
+              type="email"
+              inputProps={{ pattern: '^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$' }}
               InputProps={{ classes: { root: classes.textField } }}
               InputLabelProps={{ classes: { root: classes.inputLabel } }}
             />

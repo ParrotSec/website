@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     fontFamily: 'museo-sans',
     textDecoration: 'none',
     transition: '.2s ease-in 0s',
-    color: theme.palette.type === 'dark' ? '#FFF' : 'rgba(255, 255, 255, 0.5)',
+    color: theme.palette.type === 'dark' ? '#FFF' : 'rgba(0, 0, 0, 0.5)',
     '&:hover': {
       textDecoration: 'none',
       color: '#05EEFF'

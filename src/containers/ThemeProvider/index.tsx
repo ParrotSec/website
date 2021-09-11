@@ -28,7 +28,7 @@ const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>)
           palette: {
             type: themeType,
             primary: {
-              main: '#55ddff'
+              main: '#05EEFF',
             },
             ...(themeType === 'light'
               ? {
