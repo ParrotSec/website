@@ -3,7 +3,7 @@ import { Grid, makeStyles, Typography } from '@material-ui/core'
 import SocialsSection from 'containers/CommunityContainers/SocialsSection'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import Wallpaper from 'assets/wallpaper.png'
-import { useCookies } from 'react-cookie'
+import {useCookie} from "react-use";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -55,10 +55,10 @@ const useStyles = makeStyles(theme => ({
 
 const Community = () => {
   const classes = useStyles()
-  const [cookies] = useCookies()
+  const [theme] = useCookie('theme')
   return (
     <Grid container className={classes.root} justifyContent="center">
-      {cookies.theme === 'dark' && <div className={classes.wallpaper} />}
+      {theme === 'dark' && <div className={classes.wallpaper} />}
       <Grid
         item
         container

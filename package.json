@@ -22,7 +22,6 @@
     "notistack": "^1.0.10",
     "random-int": "^3.0.0",
     "react": "^16.14.0",
-    "react-cookie": "^4.1.1",
     "react-dom": "^16.14.0",
     "react-hot-loader": "^4.13.0",
     "react-image-lightbox": "^5.1.4",

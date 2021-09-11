@@ -54,7 +54,7 @@ const DevelopingSection = () => {
   ]
   return (
     <>
-      <Grid className={classes.developerBlock} container item xs={9} md={6}>
+      <Grid className={classes.developerBlock} container item xs={12} md={7}>
         <Typography variant="h1" align="center" paragraph>
           Parrot is developer friendly. Secure in a Linux Environment.
         </Typography>
@@ -75,7 +75,7 @@ const DevelopingSection = () => {
                 containerization technologies like Docker or Podman.
               </Typography>
             </div>
-            <InfiniteSlider className={classes.devPaperEnd} height={86}>
+            <InfiniteSlider className={classes.devPaperEnd} height={110}>
               {icons}
             </InfiniteSlider>
           </Paper>

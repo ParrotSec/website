@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 import { createTheme, MuiThemeProvider, ThemeProviderProps } from '@material-ui/core'
-import { useCookies } from 'react-cookie'
+import { useCookie } from 'react-use'
 
 export const ThemeContext = createContext({
   switchTheme: null
@@ -9,11 +9,11 @@ export const ThemeContext = createContext({
 export const useThemeSwitch = () => useContext(ThemeContext)
 
 const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>) => {
-  const [cookies, setCookie] = useCookies()
-  const [themeType, _setThemeType] = useState(cookies.theme)
-  const setThemeType = (theme: 'light' | 'dark') => {
+  const [themeOption, setCookie] = useCookie('theme')
+  const [themeType, _setThemeType] = useState(themeOption as 'light' | 'dark')
+  const setThemeType = (theme: typeof themeType) => {
     _setThemeType(theme)
-    setCookie('theme', theme)
+    setCookie(theme)
   }
   if (!themeType) {
     setThemeType('dark')
@@ -28,7 +28,7 @@ const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>)
           palette: {
             type: themeType,
             primary: {
-              main: '#05EEFF',
+              main: '#05EEFF'
             },
             ...(themeType === 'light'
               ? {

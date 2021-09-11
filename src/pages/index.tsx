@@ -9,9 +9,9 @@ import TrustSection from 'containers/HomeContainers/TrustSection'
 import DevelopingSection from 'containers/HomeContainers/DevelopingSection'
 import StatsSection from 'containers/HomeContainers/StatsSection'
 import OSSection from 'containers/HomeContainers/OSSection'
-import { useCookies } from 'react-cookie'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import NewsletterSection from 'containers/HomeContainers/NewsletterSection'
+import {useCookie} from "react-use";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -79,10 +79,10 @@ const useStyles = makeStyles(theme => ({
 
 const Index = () => {
   const classes = useStyles()
-  const [cookies] = useCookies()
+  const [theme] = useCookie('theme')
   return (
     <Grid container className={classes.root} justifyContent="center">
-      {cookies.theme === 'dark' && <div className={classes.wallpaper} />}
+      {theme === 'dark' && <div className={classes.wallpaper} />}
       <WelcomeSection />
       <FeaturesSection className={classes.features} />
       <TrustSection className={classes.trustBlock} />

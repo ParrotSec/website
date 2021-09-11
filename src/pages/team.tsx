@@ -5,9 +5,9 @@ import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSection'
 import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
 import PastContributors from 'containers/TeamContainers/PastContributorsSection'
-import { useCookies } from 'react-cookie'
 import UserCard from 'components/UserCard'
 import lorenzo from 'assets/lorenzo.png'
+import { useCookie } from 'react-use'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -57,11 +57,11 @@ const useStyles = makeStyles(theme => ({
 
 const Team = () => {
   const classes = useStyles()
-  const [cookies] = useCookies()
+  const [theme] = useCookie('theme')
 
   return (
     <Grid container xs={12} className={classes.root} justifyContent="center">
-      {cookies.theme === 'dark' && <div className={classes.wallpaper} />}
+      {theme === 'dark' && <div className={classes.wallpaper} />}
       <Grid className={classes.title} item xs={12} justifyContent="center">
         <Typography className={classes.headingTitle} variant="h1" align="center">
           The Team <br /> behind Parrot<span style={{ fontWeight: 300 }}>OS</span>
