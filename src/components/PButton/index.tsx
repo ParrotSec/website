@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, ButtonProps, makeStyles } from '@material-ui/core'
 import cls from 'classnames'
-import { Link as RouterLink } from '@reach/router'
+import RouterLink from 'next/link'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,13 +36,14 @@ const useStyles = makeStyles(theme => ({
 type PButtonProps = {
   gradient?: boolean
   to?: string
-} & ButtonProps
+  children: string
+} & Omit<ButtonProps, 'children'>
 
 const PButton = ({
   className,
   children,
   gradient = false,
-  variant,
+  variant = 'outlined',
   startIcon,
   to,
   style,
@@ -51,23 +52,23 @@ const PButton = ({
 }: PButtonProps) => {
   const classes = useStyles()
   return to ? (
-    <Button
-      className={cls(
-        classes.root,
-        className,
-        classes[variant],
-        ...(gradient ? [classes.gradient] : [])
-      )}
-      startIcon={startIcon}
-      component={RouterLink}
-      to={to}
-      variant={variant}
-      style={style}
-      size={size}
-      disableElevation
-    >
-      {children}
-    </Button>
+    <RouterLink href={to}>
+      <Button
+        className={cls(
+          classes.root,
+          className,
+          classes[variant],
+          ...(gradient ? [classes.gradient] : [])
+        )}
+        startIcon={startIcon}
+        variant={variant}
+        style={style}
+        size={size}
+        disableElevation
+      >
+        {children}
+      </Button>
+    </RouterLink>
   ) : (
     <Button
       className={cls(

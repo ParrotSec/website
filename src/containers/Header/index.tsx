@@ -4,16 +4,15 @@ import {
   Collapse,
   Box,
   Grid,
-  Link,
   Hidden,
   IconButton,
   makeStyles,
   Toolbar
 } from '@material-ui/core'
+import Link from 'components/NextLink'
 import { Menu as MenuIcon } from '@material-ui/icons'
-import { Link as RouterLink } from '@reach/router'
-import Logo from './assets/logo.svg'
 import PButton from 'components/PButton'
+import Logo from './assets/logo.svg'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -94,9 +93,13 @@ const Header = () => {
             alignItems="center"
             justifyContent="space-between"
           >
-            <RouterLink className={classes.logoHolder} to="/">
-              <Logo className={classes.logo} />
-            </RouterLink>
+            <div className={classes.logoHolder}>
+              <Link href="/">
+                <div>
+                  <Logo className={classes.logo} />
+                </div>
+              </Link>
+            </div>
             <Hidden lgUp>
               <IconButton
                 aria-label="open drawer"
@@ -109,25 +112,25 @@ const Header = () => {
             </Hidden>
             <Hidden mdDown>
               <nav className={classes.nav}>
-                <Link className={classes.link} component={RouterLink} to="/community">
+                <Link className={classes.link} href="/community">
                   Community
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/docs">
+                <Link className={classes.link} href="/docs">
                   Documentation
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/blog">
+                <Link className={classes.link} href="/blog">
                   Blog
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/donate">
+                <Link className={classes.link} href="/donate">
                   Donate
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/swag">
+                <Link className={classes.link} href="/swag">
                   Swag
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/team">
+                <Link className={classes.link} href="/team">
                   Team
                 </Link>
-                <Link className={classes.link} component={RouterLink} to="/partners">
+                <Link className={classes.link} href="/partners">
                   Partners
                 </Link>
               </nav>
@@ -148,66 +151,30 @@ const Header = () => {
                 <Link
                   className={classes.link}
                   onClick={() => setCollapsed(false)}
-                  component={RouterLink}
-                  to="/community"
+                  href="/community"
                 >
                   Community
                 </Link>
-                <Link
-                  className={classes.link}
-                  onClick={() => setCollapsed(false)}
-                  component={RouterLink}
-                  to="/docs"
-                >
+                <Link className={classes.link} onClick={() => setCollapsed(false)} href="/docs">
                   Documentation
                 </Link>
-                <Link
-                  className={classes.link}
-                  onClick={() => setCollapsed(false)}
-                  component={RouterLink}
-                  to="/blog"
-                >
+                <Link className={classes.link} onClick={() => setCollapsed(false)} href="/blog">
                   Blog
                 </Link>
-                <Link
-                  className={classes.link}
-                  onClick={() => setCollapsed(false)}
-                  component={RouterLink}
-                  to="/donate"
-                >
+                <Link className={classes.link} onClick={() => setCollapsed(false)} href="/donate">
                   Donate
                 </Link>
-                <Link
-                  className={classes.link}
-                  onClick={() => setCollapsed(false)}
-                  component={RouterLink}
-                  to="/swag"
-                >
+                <Link className={classes.link} onClick={() => setCollapsed(false)} href="/swag">
                   Swag
                 </Link>
-                <Link
-                  className={classes.link}
-                  onClick={() => setCollapsed(false)}
-                  component={RouterLink}
-                  to="/team"
-                >
+                <Link className={classes.link} onClick={() => setCollapsed(false)} href="/team">
                   Team
                 </Link>
-                <Link
-                  className={classes.link}
-                  onClick={() => setCollapsed(false)}
-                  component={RouterLink}
-                  to="/partners"
-                >
+                <Link className={classes.link} onClick={() => setCollapsed(false)} href="/partners">
                   Partners
                 </Link>
-                <Link
-                  className={classes.link}
-                  onClick={() => setCollapsed(false)}
-                  component={RouterLink}
-                  to="/download"
-                >
-                  Download OS
+                <Link className={classes.link} onClick={() => setCollapsed(false)} href="/download">
+                  <div>Download OS</div>
                 </Link>
               </Box>
             </Grid>

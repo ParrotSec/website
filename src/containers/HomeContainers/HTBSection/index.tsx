@@ -67,7 +67,7 @@ const HTBSection = (rest: GridProps) => {
             justifyContent="flex-end"
             alignItems="flex-end"
           >
-            <img src={htbScreenshot} alt="Screenshot of PWNBox" />
+            <img src={htbScreenshot.src} alt="Screenshot of PWNBox" />
           </Grid>
         </Grid>
       </Paper>

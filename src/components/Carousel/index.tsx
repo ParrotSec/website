@@ -1,19 +1,21 @@
 /** https://github.com/Learus/react-material-ui-carousel but in TypeScript and without relative positioning
  * This would be nice to optimize but it's a low-priority task at the current stage of fast development
- **/
+ * */
 
 /* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable react/destructuring-assignment */
+
 import React, { AriaAttributes, Children, Component, ReactNode, SyntheticEvent } from 'react'
+import { Box } from '@material-ui/core'
 import Fade from '@material-ui/core/Fade'
-import Slide from '@material-ui/core/Slide'
 import IconButton from '@material-ui/core/IconButton'
+import Slide from '@material-ui/core/Slide'
 import { alpha, createStyles, Theme, WithStyles, withStyles } from '@material-ui/core/styles'
-import autoBind from 'auto-bind'
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
 import NavigateNextIcon from '@material-ui/icons/NavigateNext'
+import autoBind from 'auto-bind'
 import { useSwipeable } from 'react-swipeable'
-import { Box } from '@material-ui/core'
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -90,7 +92,7 @@ interface CarouselNavProps extends AriaAttributes {
 type CarouselProps = {
   children?: ReactNode
 
-  /** Defines custom class name(s), that will be added to Carousel element **/
+  /** Defines custom class name(s), that will be added to Carousel element * */
   className?: string
 
   /** Defines which child (assuming there are more than 1 children) will be displayed. Next and Previous Buttons as well as Indicators will work normally after the first render. When this prop is updated the carousel will display the chosen child. Use this prop to programmatically set the active child. If (index > children.length) then if (strictIndexing) index = last element. index */
@@ -178,20 +180,20 @@ type CarouselProps = {
    * Type: `{className: string, style: React.CSSProperties}` */
   activeIndicatorIconButtonProps?: CarouselNavProps
 
-  /** Function that is called **after** internal `setActive()` method. The `setActive()` method is called when the next and previous buttons are pressed, when an indicator is pressed, or when the `index` prop changes. First argument is the child **we are going to display**, while the second argument is the child **that was previously displayed**.*/
-  onChange?: (active?: number, prevActive?: number) => unknown
+  /** Function that is called **after** internal `setActive()` method. The `setActive()` method is called when the next and previous buttons are pressed, when an indicator is pressed, or when the `index` prop changes. First argument is the child **we are going to display**, while the second argument is the child **that was previously displayed**. */
+  onChange?: (_active?: number, _prevActive?: number) => unknown
 
   /** Defines if `onChange` prop will be called when the carousel renders for the first time. In `componentDidMount` */
   changeOnFirstRender?: boolean
 
   /** Function that is called **after** internal `next()` method. First argument is the child **we are going to display**, while the second argument is the child **that was previously displayed** */
-  next?: (active?: number, prevActive?: number) => unknown
+  next?: (_active?: number, _prevActive?: number) => unknown
 
   /** Function that is called **after** internal `prev()` method. First argument is the child **we are going to display**, while the second argument is the child **that was previously displayed** */
-  prev?: (active?: number, prevActive?: number) => unknown
+  prev?: (_active?: number, _prevActive?: number) => unknown
 
   /** Defines the element inside the indicator `IconButton`s Refer to [MaterialUI Button Documentation](https://material-ui.com/components/buttons/) for more examples.
-   * It is advised to use Material UI Icons, but you could use any element (`<img/>`, `<div/>`, ...) you like.*/
+   * It is advised to use Material UI Icons, but you could use any element (`<img/>`, `<div/>`, ...) you like. */
   IndicatorIcon?: ReactNode
 } & WithStyles<typeof styles>
 
@@ -221,9 +223,9 @@ const sanitizeProps = (props: CarouselProps) => {
     stopAutoPlayOnHover: props.stopAutoPlayOnHover ?? true,
     interval: props.interval ?? 4000,
 
-    animation: animation,
+    animation,
     reverseEdgeAnimationDirection: props.reverseEdgeAnimationDirection ?? true,
-    timeout: timeout,
+    timeout,
 
     swipe: props.swipe ?? true,
 
@@ -231,17 +233,17 @@ const sanitizeProps = (props: CarouselProps) => {
     navButtonsAlwaysVisible: props.navButtonsAlwaysVisible ?? true,
     cycleNavigation: props.cycleNavigation ?? true,
     fullHeightHover: props.fullHeightHover ?? false,
-    navButtonsWrapperProps: sanitizeNavProps(props.navButtonsWrapperProps),
-    navButtonsProps: sanitizeNavProps(props.navButtonsProps),
+    navButtonsWrapperProps: sanitizeNavProps(props.navButtonsWrapperProps ?? {}),
+    navButtonsProps: sanitizeNavProps(props.navButtonsProps ?? {}),
     NavButton: props.NavButton,
 
     NextIcon: props.NextIcon ?? <NavigateNextIcon style={{ fontSize: 16, opacity: 0.5 }} />,
     PrevIcon: props.PrevIcon ?? <NavigateBeforeIcon style={{ fontSize: 16, opacity: 0.5 }} />,
 
     indicators: props.indicators ?? true,
-    indicatorContainerProps: sanitizeNavProps(props.indicatorContainerProps),
-    indicatorIconButtonProps: sanitizeNavProps(props.indicatorIconButtonProps),
-    activeIndicatorIconButtonProps: sanitizeNavProps(props.activeIndicatorIconButtonProps),
+    indicatorContainerProps: sanitizeNavProps(props.indicatorContainerProps ?? {}),
+    indicatorIconButtonProps: sanitizeNavProps(props.indicatorIconButtonProps ?? {}),
+    activeIndicatorIconButtonProps: sanitizeNavProps(props.activeIndicatorIconButtonProps ?? {}),
     IndicatorIcon: props.IndicatorIcon,
 
     onChange: props.onChange ?? (() => {}),
@@ -259,7 +261,8 @@ type CarouselState = {
 }
 
 class Carousel extends Component<CarouselProps, CarouselState> {
-  private timer: ReturnType<typeof setTimeout>
+  private timer: ReturnType<typeof setInterval> | null
+
   constructor(props: CarouselProps) {
     super(props)
     autoBind(this)
@@ -269,6 +272,8 @@ class Carousel extends Component<CarouselProps, CarouselState> {
       prevActive: 0,
       displayed: 0
     }
+
+    this.timer = null
   }
 
   componentDidMount() {
@@ -341,7 +346,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
     this.setState(
       {
         active: index,
-        prevActive: prevActive,
+        prevActive,
         displayed: prevActive
       },
       this.reset
@@ -366,7 +371,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
     )
   }
 
-  next(event: SyntheticEvent) {
+  next(event?: SyntheticEvent) {
     const { children, next, cycleNavigation } = sanitizeProps(this.props)
 
     const nextActive =
@@ -378,10 +383,10 @@ class Carousel extends Component<CarouselProps, CarouselState> {
 
     this.setActive(nextActive, next)
 
-    if (event) event.stopPropagation()
+    event?.stopPropagation()
   }
 
-  prev(event: SyntheticEvent) {
+  prev(event?: SyntheticEvent) {
     const { children, prev, cycleNavigation } = sanitizeProps(this.props)
 
     const nextActive =
@@ -393,7 +398,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
 
     this.setActive(nextActive, prev)
 
-    if (event) event.stopPropagation()
+    event?.stopPropagation()
   }
 
   render() {
@@ -425,7 +430,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
       IndicatorIcon
     } = sanitizeProps(this.props)
 
-    const classes = this.props.classes
+    const { classes } = this.props
     const { className: buttonsClass, style: buttonsStyle, ...buttonsProps } = navButtonsProps
     const {
       className: buttonsWrapperClass,
@@ -468,7 +473,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
 
     return (
       <div
-        className={`${classes.root} ${className ? className : ''}`}
+        className={`${classes.root} ${className || ''}`}
         onMouseOver={() => {
           stopAutoPlayOnHover && this.stop()
         }}
@@ -495,9 +500,9 @@ class Carousel extends Component<CarouselProps, CarouselState> {
           })
         ) : (
           <CarouselItem
-            key={`carousel-item0`}
-            display={true}
-            active={true}
+            key="carousel-item0"
+            display
+            active
             child={children}
             animation={animation}
             timeout={timeout}
@@ -514,7 +519,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
                 NavButton({
                   onClick: this.prev,
                   className: buttonCssClassValue,
-                  style: navButtonsProps.style,
+                  style: navButtonsProps.style ?? {},
                   next: false,
                   prev: true,
                   ...buttonsProps
@@ -554,7 +559,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
                 NavButton({
                   onClick: this.next,
                   className: buttonCssClassValue,
-                  style: buttonsStyle,
+                  style: buttonsStyle ?? {},
                   next: true,
                   prev: false,
                   ...buttonsProps
@@ -583,22 +588,26 @@ type CarouselItemProps = {
   isNext?: boolean
   display: boolean
   child: ReactNode
-  next?: (event?: SyntheticEvent) => unknown
-  prev?: (event?: SyntheticEvent) => unknown
-} & Pick<CarouselProps, 'swipe' | 'animation' | 'timeout'>
+} & Pick<CarouselProps, 'animation' | 'timeout'> &
+  (
+    | {
+        swipe: true
+        next: (event?: SyntheticEvent) => unknown
+        prev: (event?: SyntheticEvent) => unknown
+      }
+    | { swipe?: false }
+  )
 
 function CarouselItem(props: CarouselItemProps) {
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => props.next(),
-    onSwipedRight: () => props.prev()
-  })
+  const swipeHandlers = props.swipe
+    ? useSwipeable({
+        onSwipedLeft: () => props.next(),
+        onSwipedRight: () => props?.prev()
+      })
+    : {}
 
   return props.display ? (
-    <div
-      {...(props.swipe ? swipeHandlers : {})}
-      className="CarouselItem"
-      style={{ height: '100%' }}
-    >
+    <div {...swipeHandlers} className="CarouselItem" style={{ height: '100%' }}>
       {props.animation === 'slide' ? (
         <Slide
           direction={
@@ -620,7 +629,11 @@ function CarouselItem(props: CarouselItemProps) {
 
 type IndicatorsProps = {
   active: number
-  press: (active: number, callback?: CallableFunction, runCallbacks?: boolean) => unknown
+  press: (
+    active: number,
+    callback?: (_index: number, _prevActive: number) => unknown,
+    runCallbacks?: boolean
+  ) => void
   length: number
 } & Pick<
   CarouselProps,
@@ -632,7 +645,7 @@ type IndicatorsProps = {
   WithStyles<typeof styles>
 
 function Indicators(props: IndicatorsProps) {
-  const classes = props.classes
+  const { classes } = props
   const IndicatorIcon =
     props.IndicatorIcon !== undefined ? (
       props.IndicatorIcon
@@ -643,12 +656,12 @@ function Indicators(props: IndicatorsProps) {
     className: indicatorIconButtonClass,
     style: indicatorIconButtonStyle,
     ...indicatorIconButtonProps
-  } = props.indicatorIconButtonProps
+  } = props.indicatorIconButtonProps ?? { className: '', style: {} }
   const {
     className: activeIndicatorIconButtonClass,
     style: activeIndicatorIconButtonStyle,
     ...activeIndicatorIconButtonProps
-  } = props.activeIndicatorIconButtonProps
+  } = props.activeIndicatorIconButtonProps ?? { className: '', style: {} }
 
   const indicators = []
   for (let i = 0; i < props.length; i++) {
@@ -659,12 +672,12 @@ function Indicators(props: IndicatorsProps) {
 
     const style =
       i === props.active
-        ? Object.assign({}, indicatorIconButtonStyle, activeIndicatorIconButtonStyle)
+        ? { ...indicatorIconButtonStyle, ...activeIndicatorIconButtonStyle }
         : indicatorIconButtonStyle
 
     const restProps =
       i === props.active
-        ? Object.assign({}, indicatorIconButtonProps, activeIndicatorIconButtonProps)
+        ? { ...indicatorIconButtonProps, ...activeIndicatorIconButtonProps }
         : indicatorIconButtonProps
 
     if (restProps['aria-label'] === undefined) restProps['aria-label'] = 'carousel indicator'
@@ -693,7 +706,7 @@ function Indicators(props: IndicatorsProps) {
     className: indicatorContainerClass,
     style: indicatorContainerStyle,
     ...indicatorContainerProps
-  } = props.indicatorContainerProps
+  } = props.indicatorContainerProps ?? { className: '', style: {} }
 
   return (
     <div

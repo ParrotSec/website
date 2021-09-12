@@ -1,8 +1,8 @@
 import React from 'react'
-import { Grid, Link, makeStyles, Paper, Typography, useTheme } from '@material-ui/core'
+import { Grid, makeStyles, Paper, Typography, useTheme } from '@material-ui/core'
+import Link from 'components/NextLink'
 import Logo from './assets/logo.svg'
 import PButton from 'components/PButton'
-import { Link as RouterLink } from '@reach/router'
 import { Brightness3, BrightnessHigh } from '@material-ui/icons'
 import { useThemeSwitch } from 'containers/ThemeProvider'
 
@@ -120,7 +120,7 @@ const Footer = () => {
                 A GNU/Linux distribution based on Debian and designed with Security and Privacy in
                 mind.
               </Typography>
-              <PButton className={classes.download} variant="contained" gradient to="/download">
+              <PButton className={classes.download} variant="contained" gradient href="/download">
                 Download OS
               </PButton>
             </Grid>
@@ -138,28 +138,13 @@ const Footer = () => {
                 <Typography className={classes.title} variant="h6" paragraph>
                   Versions
                 </Typography>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download">
                   Home Edition
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download">
                   Security Edition
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download">
                   Cloud Edition
                 </Link>
               </Grid>
@@ -176,36 +161,16 @@ const Footer = () => {
                 <Typography className={classes.title} variant="h6" paragraph>
                   Resources
                 </Typography>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Documentation
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Get Involved
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Community
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Blog
                 </Link>
               </Grid>
@@ -222,28 +187,13 @@ const Footer = () => {
                 <Typography className={classes.title} variant="h6" paragraph>
                   About Us
                 </Typography>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Team
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Partners
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Donate
                 </Link>
               </Grid>
@@ -260,52 +210,22 @@ const Footer = () => {
                 <Typography className={classes.title} variant="h6" paragraph>
                   Social
                 </Typography>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Facebook
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Twitter
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Instagram
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Discord
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Telegram
                 </Link>
-                <Link
-                  className={classes.link}
-                  color="textSecondary"
-                  component={RouterLink}
-                  to="/download/home"
-                >
+                <Link className={classes.link} color="textSecondary" href="/download/home">
                   Reddit
                 </Link>
               </Grid>
@@ -344,32 +264,17 @@ const Footer = () => {
                 alignItems="center"
               >
                 <Grid item xs={12} lg>
-                  <Link
-                    className={classes.footerLink}
-                    color="textSecondary"
-                    component={RouterLink}
-                    to="/download/home"
-                  >
-                    Legal Notice
+                  <Link className={classes.footerLink} color="textSecondary" href="/download/home">
+                    <div>Legal Notice</div>
                   </Link>
                 </Grid>
                 <Grid item xs={12} lg>
-                  <Link
-                    className={classes.footerLink}
-                    color="textSecondary"
-                    component={RouterLink}
-                    to="/download/home"
-                  >
+                  <Link className={classes.footerLink} color="textSecondary" href="/download/home">
                     Terms
                   </Link>
                 </Grid>
                 <Grid item xs={12} lg>
-                  <Link
-                    className={classes.footerLink}
-                    color="textSecondary"
-                    component={RouterLink}
-                    to="/download/home"
-                  >
+                  <Link className={classes.footerLink} color="textSecondary" href="/download/home">
                     Privacy
                   </Link>
                 </Grid>

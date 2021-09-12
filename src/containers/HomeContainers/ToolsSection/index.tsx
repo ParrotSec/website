@@ -57,6 +57,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   bg: {
+    height: 'auto',
+    width: '100%',
     borderRadius: 6,
     boxShadow: '0px 14px 56px 21px rgba(0, 0, 0, 0.25)'
   },
@@ -89,7 +91,7 @@ const useStyles = makeStyles(theme => ({
 
 const ToolsSection = (rest: GridProps) => {
   const classes = useStyles()
-  const [ref, { width, height }] = useMeasure()
+  const [ref, { width, height }] = useMeasure<HTMLImageElement>()
 
   const icons = (absolute: boolean) => [
     <Burp
@@ -206,7 +208,7 @@ const ToolsSection = (rest: GridProps) => {
             </Hidden>
             <Hidden smDown>
               <div className={classes.bgHolder}>
-                <img ref={ref} className={classes.bg} src={parrotBg} alt="Parrot BG" />
+                <img ref={ref} className={classes.bg} src={parrotBg.src} alt="Parrot BG" />
               </div>
             </Hidden>
             <Typography variant="h3" align="center">
@@ -248,7 +250,7 @@ const ToolsSection = (rest: GridProps) => {
                 </Typography>
               </div>
               <img
-                src={screenshot}
+                src={screenshot.src}
                 style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
                 alt="Parrot Tools"
               />
@@ -268,7 +270,7 @@ const ToolsSection = (rest: GridProps) => {
                 </Typography>
               </div>
               <img
-                src={screenshot}
+                src={screenshot.src}
                 style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
                 alt="Parrot Tools"
               />

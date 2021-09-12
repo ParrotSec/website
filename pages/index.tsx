@@ -1,17 +1,18 @@
 import React from 'react'
 import { Grid, makeStyles } from '@material-ui/core'
-import Wallpaper from '../assets/wallpaper.png'
-import ToolsSection from 'containers/HomeContainers/ToolsSection'
-import HTBSection from 'containers/HomeContainers/HTBSection'
-import WelcomeSection from 'containers/HomeContainers/WelcomeSection'
-import FeaturesSection from 'containers/HomeContainers/FeaturesSection'
-import TrustSection from 'containers/HomeContainers/TrustSection'
-import DevelopingSection from 'containers/HomeContainers/DevelopingSection'
-import StatsSection from 'containers/HomeContainers/StatsSection'
-import OSSection from 'containers/HomeContainers/OSSection'
+import { useCookie } from 'react-use'
+import Wallpaper from 'assets/wallpaper.png'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
+import DevelopingSection from 'containers/HomeContainers/DevelopingSection'
+import FeaturesSection from 'containers/HomeContainers/FeaturesSection'
+import HTBSection from 'containers/HomeContainers/HTBSection'
 import NewsletterSection from 'containers/HomeContainers/NewsletterSection'
-import {useCookie} from "react-use";
+import OSSection from 'containers/HomeContainers/OSSection'
+import StatsSection from 'containers/HomeContainers/StatsSection'
+import ToolsSection from 'containers/HomeContainers/ToolsSection'
+import TrustSection from 'containers/HomeContainers/TrustSection'
+import WelcomeSection from 'containers/HomeContainers/WelcomeSection'
+import { NextPage } from 'next'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -77,7 +78,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Index = () => {
+const Index: NextPage = () => {
   const classes = useStyles()
   const [theme] = useCookie('theme')
   return (

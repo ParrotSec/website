@@ -1,9 +1,10 @@
 import React from 'react'
 import { Grid, makeStyles } from '@material-ui/core'
+import { SnackbarProvider } from 'notistack'
 import OSSelection from 'containers/DownloadContainers/OSSelection'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
-import { SnackbarProvider } from 'notistack'
 import 'react-image-lightbox/style.css'
+import { NextPage } from 'next'
 
 const useStyles = makeStyles({
   contribute: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles({
   }
 })
 
-const Download = () => {
+const Download: NextPage = () => {
   const classes = useStyles()
   return (
     <SnackbarProvider preventDuplicate classes={{ variantSuccess: classes.snackbar }}>

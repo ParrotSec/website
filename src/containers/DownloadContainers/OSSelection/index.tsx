@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Breadcrumbs, Button, Divider, Grid, makeStyles } from '@material-ui/core'
 import Left from 'assets/Left.svg'
-import { Link as RouterLink } from '@reach/router'
+import RouterLink from 'next/link'
 import { useMeasure } from 'react-use'
 import Carousel from 'components/Carousel'
 import OSHome from 'containers/DownloadContainers/OSHome'
@@ -62,9 +62,9 @@ const useStyles = makeStyles(theme => ({
 const OSSelection = () => {
   const classes = useStyles()
   const [os, setOS] = useState<'home' | 'security' | 'cloud'>('home')
-  const [homeButtonRef, { width: homeButtonWidth }] = useMeasure()
-  const [securityButtonRef, { width: securityButtonWidth }] = useMeasure()
-  const [cloudButtonRef, { width: cloudButtonWidth }] = useMeasure()
+  const [homeButtonRef, { width: homeButtonWidth }] = useMeasure<HTMLButtonElement>()
+  const [securityButtonRef, { width: securityButtonWidth }] = useMeasure<HTMLButtonElement>()
+  const [cloudButtonRef, { width: cloudButtonWidth }] = useMeasure<HTMLButtonElement>()
 
   const osButtonsWidth = {
     home: homeButtonWidth,
@@ -88,14 +88,15 @@ const OSSelection = () => {
     <>
       <Grid container item xs={12} lg={10} justifyContent="space-between">
         <Breadcrumbs separator="|" aria-label="breadrcumb">
-          <Button
-            className={classes.crumb}
-            startIcon={<Left className={classes.arrow} fill="textSecondary" />}
-            component={RouterLink}
-            to="/"
-          >
-            ParrotOS
-          </Button>
+          <RouterLink href="/">
+            <Button
+              className={classes.crumb}
+              startIcon={<Left className={classes.arrow} fill="textSecondary" />}
+              href="/"
+            >
+              ParrotOS
+            </Button>
+          </RouterLink>
           <Button className={classes.crumb}>Versions</Button>
         </Breadcrumbs>
         <Grid

@@ -1,13 +1,13 @@
 import React, { createContext, ReactNode, useContext, useRef, useState } from 'react'
+import { ButtonProps, makeStyles, MenuItem, MenuItemProps } from '@material-ui/core'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import Grow from '@material-ui/core/Grow'
+import MenuList from '@material-ui/core/MenuList'
 import Paper from '@material-ui/core/Paper'
 import Popper from '@material-ui/core/Popper'
-import MenuList from '@material-ui/core/MenuList'
-import { ButtonProps, makeStyles, MenuItem, MenuItemProps } from '@material-ui/core'
 import { ArrowDropDown } from '@material-ui/icons'
-import PButton from 'components/PButton'
 import cls from 'classnames'
+import PButton from 'components/PButton'
 
 type SelectButtonProps = {
   label: string
@@ -35,7 +35,7 @@ export const SelectButtonItem = ({ onClick, children, ...rest }: Omit<MenuItemPr
   return (
     <MenuItem
       onClick={e => {
-        onClick(e)
+        if (onClick) onClick(e)
         handleClose()
       }}
       {...rest}

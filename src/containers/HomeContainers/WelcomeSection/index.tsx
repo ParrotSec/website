@@ -75,7 +75,7 @@ const WelcomeSection = () => {
   const classes = useStyles()
 
   const [magicName, setMagicName] = useState(typeData[0])
-  const intervalRef = useRef<ReturnType<typeof setInterval>>(null)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const name = useTypewriter(magicName)
   useEffect(() => {
     intervalRef.current = setInterval(() => {
@@ -83,7 +83,7 @@ const WelcomeSection = () => {
       setMagicName(typeData[index])
     }, 5000)
     return () => {
-      clearInterval(intervalRef.current)
+      if (intervalRef.current) clearInterval(intervalRef.current)
     }
   }, [magicName])
 

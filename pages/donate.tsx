@@ -1,8 +1,9 @@
 import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
+import { SnackbarProvider } from 'notistack'
 import Wallpaper from 'assets/wallpaper.png'
 import DonateSection from 'containers/DonateContainers/DonateSection'
-import { SnackbarProvider } from 'notistack'
+import { NextPage } from 'next'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -54,7 +55,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Donate = () => {
+const Donate: NextPage = () => {
   const classes = useStyles()
   return (
     <SnackbarProvider preventDuplicate classes={{ variantSuccess: classes.snackbar }}>

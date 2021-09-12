@@ -1,6 +1,6 @@
 import React, { ElementType, ReactNode } from 'react'
-import { Link as RouterLink } from '@reach/router'
 import { Link, makeStyles, Paper, PaperProps, Typography } from '@material-ui/core'
+import NextLink from 'components/NextLink'
 import Arrow from './assets/arrow.svg'
 
 const useStyles = makeStyles(theme => ({
@@ -42,14 +42,24 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-type PFeatureBlockProps = {
-  Icon: ElementType
-  title: string
-  buttonText?: string
-  buttonLink?: string
-  outLink?: boolean
-  CustomFooter?: ReactNode
-} & PaperProps
+type PFeatureBlockProps =
+  | {
+      Icon: ElementType
+      title: string
+      outLink?: boolean
+    } & (
+      | {
+          CustomFooter: ReactNode
+          buttonText?: never
+          buttonLink?: never
+        }
+      | {
+          CustomFooter?: never
+          buttonText: string
+          buttonLink: string
+        }
+    ) &
+      PaperProps
 
 const PFeatureBlock = ({
   children,
@@ -74,12 +84,16 @@ const PFeatureBlock = ({
       {CustomFooter ??
         (outLink ? (
           <Link className={classes.button} href={buttonLink}>
-            {buttonText} <Arrow className={classes.arrow} />
+            <div>
+              {buttonText} <Arrow className={classes.arrow} />
+            </div>
           </Link>
         ) : (
-          <Link className={classes.button} component={RouterLink} to={buttonLink}>
-            {buttonText} <Arrow className={classes.arrow} />
-          </Link>
+          <NextLink className={classes.button} href={buttonLink ?? '/'}>
+            <div>
+              {buttonText} <Arrow className={classes.arrow} />
+            </div>
+          </NextLink>
         ))}
     </Paper>
   )

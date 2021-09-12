@@ -1,9 +1,10 @@
 import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
+import { useCookie } from 'react-use'
+import Wallpaper from 'assets/wallpaper.png'
 import SocialsSection from 'containers/CommunityContainers/SocialsSection'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
-import Wallpaper from 'assets/wallpaper.png'
-import {useCookie} from "react-use";
+import { NextPage } from 'next'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -53,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Community = () => {
+const Community: NextPage = () => {
   const classes = useStyles()
   const [theme] = useCookie('theme')
   return (

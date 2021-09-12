@@ -3,7 +3,7 @@ import { createTheme, MuiThemeProvider, ThemeProviderProps } from '@material-ui/
 import { useCookie } from 'react-use'
 
 export const ThemeContext = createContext({
-  switchTheme: null
+  switchTheme: () => {}
 })
 
 export const useThemeSwitch = () => useContext(ThemeContext)

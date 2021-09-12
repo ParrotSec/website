@@ -68,7 +68,7 @@ type DESectionProps = {
   releaseDate: string
   architecture: string
   size: string
-  screenshots: string[]
+  screenshots: StaticImageData[]
   requirements?: FixedLengthArray<{ heading: string; description: string }, 4>
   features?: {
     hero: string
@@ -117,13 +117,15 @@ const DESection = ({
           <Grid container item xs={12} md={8} direction="column">
             {lightBoxOpened && (
               <Lightbox
-                mainSrc={screenshots[lightBoxIndex]}
-                nextSrc={screenshots[(lightBoxIndex + 1) % screenshots.length]}
-                prevSrc={screenshots[(lightBoxIndex + screenshots.length - 1) % screenshots.length]}
-                mainSrcThumbnail={screenshots[lightBoxIndex]}
-                nextSrcThumbnail={screenshots[(lightBoxIndex + 1) % screenshots.length]}
+                mainSrc={screenshots[lightBoxIndex].src}
+                nextSrc={screenshots[(lightBoxIndex + 1) % screenshots.length].src}
+                prevSrc={
+                  screenshots[(lightBoxIndex + screenshots.length - 1) % screenshots.length].src
+                }
+                mainSrcThumbnail={screenshots[lightBoxIndex].src}
+                nextSrcThumbnail={screenshots[(lightBoxIndex + 1) % screenshots.length].src}
                 prevSrcThumbnail={
-                  screenshots[(lightBoxIndex + screenshots.length - 1) % screenshots.length]
+                  screenshots[(lightBoxIndex + screenshots.length - 1) % screenshots.length].src
                 }
                 onAfterOpen={() => (document.body.style.overflow = 'hidden')}
                 onCloseRequest={() => {
@@ -139,10 +141,10 @@ const DESection = ({
             )}
             <Carousel>
               {/*TODO: for responsiveness width should be changed to 100% and a popup needed to check the screens in fq*/}
-              {screenshots.map((src, i) => (
+              {screenshots.map((image, i) => (
                 <img
                   className={classes.carouselImg}
-                  src={src}
+                  src={image.src}
                   onClick={() => setLightBoxOpened(true)}
                   key={`screenshot-${i}`}
                   alt={`screenshot-${i}`}

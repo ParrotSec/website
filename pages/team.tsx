@@ -1,13 +1,14 @@
 import React from 'react'
 import { makeStyles, Grid, Typography } from '@material-ui/core'
+import { useCookie } from 'react-use'
+import lorenzo from 'assets/lorenzo.png'
 import Wallpaper from 'assets/wallpaper.png'
+import UserCard from 'components/UserCard'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSection'
-import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
 import PastContributors from 'containers/TeamContainers/PastContributorsSection'
-import UserCard from 'components/UserCard'
-import lorenzo from 'assets/lorenzo.png'
-import { useCookie } from 'react-use'
+import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
+import { NextPage } from 'next'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -55,7 +56,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Team = () => {
+const Team: NextPage = () => {
   const classes = useStyles()
   const [theme] = useCookie('theme')
 

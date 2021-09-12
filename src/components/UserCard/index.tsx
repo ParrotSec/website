@@ -9,11 +9,11 @@ import {
   IconButton,
   GridProps
 } from '@material-ui/core'
-import Github from 'assets/Github.svg'
-import Twitter from 'assets/Twitter.svg'
-import LinkedIn from 'assets/LinkedIn.svg'
-import Email from 'assets/Email.svg'
 import cls from 'classnames'
+import Email from 'assets/Email.svg'
+import Github from 'assets/Github.svg'
+import LinkedIn from 'assets/LinkedIn.svg'
+import Twitter from 'assets/Twitter.svg'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -61,7 +61,7 @@ type UserCardProps = {
   name: string
   nickname?: string
   role: string
-  avatar?: string
+  avatar?: StaticImageData
   socials?: {
     github: string
     twitter: string
@@ -86,7 +86,7 @@ const UserCard = ({
     <Grid {...props} item xs={12} md={4} justifyContent="center">
       <Card className={cls({ [classes.bgColor]: variant === 'background' })} elevation={0}>
         <CardContent className={classes.card}>
-          {avatar && <Avatar className={classes.iconLarge} src={avatar} />}
+          {avatar && <Avatar className={classes.iconLarge} src={avatar.src} />}
           <Typography variant="h3" paragraph={!nickname}>
             {name}
           </Typography>
