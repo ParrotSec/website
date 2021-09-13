@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles, Grid, Typography } from '@material-ui/core'
-import { useCookie } from 'react-use'
 import lorenzo from 'assets/lorenzo.png'
 import Wallpaper from 'assets/wallpaper.png'
 import UserCard from 'components/UserCard'
@@ -26,17 +25,20 @@ const useStyles = makeStyles(theme => ({
     },
     marginBottom: theme.spacing(6.5)
   },
-  wallpaper: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: -1,
-    opacity: 0.1,
-    width: '100%',
-    height: '100%',
-    backgroundSize: 'cover',
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper}')`
-  },
+  wallpaper:
+    theme.palette.type === 'dark'
+      ? {
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          opacity: 0.1,
+          width: '100%',
+          height: '100%',
+          backgroundSize: 'cover',
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
+        }
+      : { display: 'none' },
   headingTitle: {
     marginTop: 0,
     marginBottom: 10,
@@ -58,11 +60,10 @@ const useStyles = makeStyles(theme => ({
 
 const Team: NextPage = () => {
   const classes = useStyles()
-  const [theme] = useCookie('theme')
 
   return (
     <Grid container xs={12} className={classes.root} justifyContent="center">
-      {theme === 'dark' && <div className={classes.wallpaper} />}
+      <div className={classes.wallpaper} />
       <Grid className={classes.title} item xs={12} justifyContent="center">
         <Typography className={classes.headingTitle} variant="h1" align="center">
           The Team <br /> behind Parrot<span style={{ fontWeight: 300 }}>OS</span>

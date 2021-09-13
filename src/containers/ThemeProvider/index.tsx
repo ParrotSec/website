@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { createTheme, MuiThemeProvider, ThemeProviderProps } from '@material-ui/core'
 import { useCookie } from 'react-use'
 
@@ -8,16 +8,17 @@ export const ThemeContext = createContext({
 
 export const useThemeSwitch = () => useContext(ThemeContext)
 
-const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>) => {
-  const [themeOption, setCookie] = useCookie('theme')
-  const [themeType, _setThemeType] = useState(themeOption as 'light' | 'dark')
-  const setThemeType = (theme: typeof themeType) => {
+const SwitchThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>) => {
+  const [themeCookie, setCookie] = useCookie('theme')
+  const [themeType, _setThemeType] = useState<'light' | 'dark'>('dark')
+  const setThemeType = (theme: 'light' | 'dark') => {
+    console.log('theme changed')
     _setThemeType(theme)
     setCookie(theme)
   }
-  if (!themeType) {
-    setThemeType('dark')
-  }
+  useEffect(() => {
+    setThemeType((themeCookie as 'light' | 'dark') ?? 'dark')
+  }, [themeCookie])
   return (
     <ThemeContext.Provider
       value={{ switchTheme: () => setThemeType(themeType === 'light' ? 'dark' : 'light') }}
@@ -107,4 +108,4 @@ const ThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'theme'>)
   )
 }
 
-export default ThemeProvider
+export default SwitchThemeProvider

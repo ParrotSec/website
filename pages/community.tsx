@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
-import { useCookie } from 'react-use'
 import Wallpaper from 'assets/wallpaper.png'
 import SocialsSection from 'containers/CommunityContainers/SocialsSection'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
@@ -10,17 +9,20 @@ const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 100
   },
-  wallpaper: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: -1,
-    opacity: 0.1,
-    width: '100%',
-    height: '100%',
-    backgroundSize: 'cover',
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper}')`
-  },
+  wallpaper:
+    theme.palette.type === 'dark'
+      ? {
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          opacity: 0.1,
+          width: '100%',
+          height: '100%',
+          backgroundSize: 'cover',
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
+        }
+      : { display: 'none' },
   headingTitle: {
     marginTop: 0,
     marginBottom: 10,
@@ -56,10 +58,9 @@ const useStyles = makeStyles(theme => ({
 
 const Community: NextPage = () => {
   const classes = useStyles()
-  const [theme] = useCookie('theme')
   return (
     <Grid container className={classes.root} justifyContent="center">
-      {theme === 'dark' && <div className={classes.wallpaper} />}
+      <div className={classes.wallpaper} />
       <Grid
         item
         container
