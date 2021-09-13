@@ -1,8 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 // eslint-disable-next-line no-use-before-define
 import React from 'react'
-import { ServerStyleSheets } from '@material-ui/core/styles'
+import {
+  ServerStyleSheets,
+  createGenerateClassName,
+  StylesProvider
+} from '@material-ui/core/styles'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { SheetsRegistry } from 'jss'
+import ThemeProvider from 'containers/ThemeProvider'
 
 export default class MyDocument extends Document {
   render() {
@@ -50,11 +56,21 @@ MyDocument.getInitialProps = async ctx => {
 
   // Render app and page and get the context of the page with collected side effects.
   const sheets = new ServerStyleSheets()
+  const registry = new SheetsRegistry()
+  const sheetsManager = new Map()
+  const generateClassName = createGenerateClassName()
   const originalRenderPage = ctx.renderPage
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: App => props => sheets.collect(<App {...props} />)
+      enhanceApp: App => props =>
+        sheets.collect(
+          <StylesProvider>
+            <ThemeProvider>
+              <App {...props} />
+            </ThemeProvider>
+          </StylesProvider>
+        )
     })
 
   const initialProps = await Document.getInitialProps(ctx)
