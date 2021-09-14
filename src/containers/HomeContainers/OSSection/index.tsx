@@ -31,7 +31,7 @@ const OSSection = () => {
         <Typography variant="h1" align="center" paragraph>
           Parrot<span style={{ fontWeight: 300 }}>OS</span> versions
         </Typography>
-        <Typography variant="body1" align="center">
+        <Typography variant="subtitle2" align="center">
           Different versions for different players, role your need and play freely.
         </Typography>
       </Grid>

@@ -39,7 +39,8 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 10
   },
   arrow: {
-    fill: theme.palette.type === 'light' ? '#03232E' : '#05EEFF'
+    fill: theme.palette.type === 'light' ? '#03232E' : '#05EEFF',
+    marginLeft: 8
   },
   paper: {
     display: 'flex',
@@ -51,6 +52,10 @@ const useStyles = makeStyles(theme => ({
     wordBreak: 'break-word',
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column'
+    },
+    transition: theme.transitions.create('color'),
+    '&:hover': {
+      color: theme.palette.primary.main
     }
   },
   highOpacity: {

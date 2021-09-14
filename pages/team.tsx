@@ -68,7 +68,7 @@ const Team: NextPage = () => {
         <Typography className={classes.headingTitle} variant="h1" align="center">
           The Team <br /> behind Parrot<span style={{ fontWeight: 300 }}>OS</span>
         </Typography>
-        <Typography className={classes.headingSubTitle} variant="body1" align="center">
+        <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
           A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
         </Typography>
       </Grid>

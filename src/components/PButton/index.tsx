@@ -9,6 +9,7 @@ const useStyles = makeStyles(theme => ({
     minWidth: 165,
     textTransform: 'none',
     fontSize: 14,
+    fontWeight: 700,
     paddingTop: 11,
     paddingBottom: 11,
     [theme.breakpoints.down('sm')]: {

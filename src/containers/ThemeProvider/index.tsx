@@ -98,6 +98,16 @@ const SwitchThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'th
               rounded: {
                 borderRadius: 24
               }
+            },
+            MuiTypography: {
+              paragraph: {
+                marginBottom: 20
+              }
+            },
+            MuiButtonBase: {
+              root: {
+                fontWeight: 700
+              }
             }
           }
         })}

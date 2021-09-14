@@ -7,6 +7,7 @@ import Carousel from 'components/Carousel'
 import OSHome from 'containers/DownloadContainers/OSHome'
 import OSSecurity from 'containers/DownloadContainers/OSSecurity'
 import OSCloud from 'containers/DownloadContainers/OSCloud'
+import cls from 'classnames'
 
 const useStyles = makeStyles(theme => ({
   arrow: {
@@ -42,6 +43,9 @@ const useStyles = makeStyles(theme => ({
   osSelect: {
     textTransform: 'none',
     color: theme.palette.text.primary
+  },
+  selected: {
+    color: theme.palette.primary.main
   },
   highlight: {
     borderRadius: '3px',
@@ -108,17 +112,25 @@ const OSSelection = () => {
           justifyContent="flex-end"
           wrap="nowrap"
         >
-          <Button ref={homeButtonRef} className={classes.osSelect} onClick={() => setOS('home')}>
+          <Button
+            ref={homeButtonRef}
+            className={cls(classes.osSelect, { [classes.selected]: os === 'home' })}
+            onClick={() => setOS('home')}
+          >
             Home Edition
           </Button>
           <Button
             ref={securityButtonRef}
-            className={classes.osSelect}
+            className={cls(classes.osSelect, { [classes.selected]: os === 'security' })}
             onClick={() => setOS('security')}
           >
             Security Edition
           </Button>
-          <Button ref={cloudButtonRef} className={classes.osSelect} onClick={() => setOS('cloud')}>
+          <Button
+            ref={cloudButtonRef}
+            className={cls(classes.osSelect, { [classes.selected]: os === 'cloud' })}
+            onClick={() => setOS('cloud')}
+          >
             Cloud Edition
           </Button>
         </Grid>

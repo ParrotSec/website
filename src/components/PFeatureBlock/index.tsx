@@ -35,7 +35,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 25
   },
   arrow: {
-    fill: theme.palette.type === 'light' ? '#03232E' : '#05EEFF'
+    fill: theme.palette.type === 'light' ? '#03232E' : '#05EEFF',
+    marginLeft: 8
   },
   fullHeight: {
     height: '100%'

@@ -28,7 +28,7 @@ const TrustSection = (props: GridProps) => {
   return (
     <Grid {...props} container justifyContent="center" alignItems="center" item xs={10}>
       <Grid item xs={10}>
-        <Typography variant="body2" align="center">
+        <Typography variant="body1" align="center" style={{ opacity: 1 }}>
           Trusted by cybersecurity professionals around the world
         </Typography>
       </Grid>

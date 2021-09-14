@@ -508,7 +508,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
             timeout={timeout}
           />
         )}
-        <Box display="flex" style={{ gap: 20 }} marginTop="15px" justifyContent="center">
+        <Box display="flex" style={{ gap: 20 }} marginTop="24px" justifyContent="center">
           {!navButtonsAlwaysInvisible && showButton(false) && (
             <div
               className={`${buttonWrapperCssClassValue} ${classes.prev}`}

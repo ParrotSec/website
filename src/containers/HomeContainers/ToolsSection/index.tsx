@@ -40,10 +40,6 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 6,
     boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)'
   },
-  desc: {
-    opacity: 0.5,
-    paddingBottom: 20
-  },
   bigIcon: {
     width: 84,
     height: 84,
@@ -192,7 +188,7 @@ const ToolsSection = (rest: GridProps) => {
             <Typography variant="h2" align="center" paragraph>
               Tools for every occasion
             </Typography>
-            <Typography className={classes.desc} variant="body1" align="center">
+            <Typography variant="subtitle2" align="center" paragraph>
               Choose between 600+ tools for all your hacking needs
             </Typography>
             {/*TODO: for futher animations need to apply box-shadow*/}
@@ -241,7 +237,7 @@ const ToolsSection = (rest: GridProps) => {
           <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
               <div className={classes.paperPadding}>
-                <Typography variant="h3">Hacking tools at your fingertips</Typography>
+                <Typography variant="h3" paragraph>Hacking tools at your fingertips</Typography>
                 <Typography variant="body1">
                   When it comes to general tools and functional features, Parrot OS wins over Kali
                   Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
@@ -261,7 +257,7 @@ const ToolsSection = (rest: GridProps) => {
           <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
               <div className={classes.paperPadding}>
-                <Typography variant="h3">This block should be replaced</Typography>
+                <Typography variant="h3" paragraph>This block should be replaced</Typography>
                 <Typography variant="body1">
                   When it comes to general tools and functional features, Parrot OS wins over Kali
                   Linux. Parrot OS has all the tools that are available in Kali Linux and also adds

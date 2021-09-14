@@ -110,10 +110,10 @@ const WelcomeSection = () => {
         The operating <br /> system for <span className={classes.hackers}>{name}</span>
         <span className={classes.cursor}>|</span>
       </Typography>
-      <Typography className={classes.headingSubTitle} variant="body1" align="center">
+      <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
         A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
       </Typography>
-      <Grid container item xs={12} spacing={4}>
+      <Grid container item xs={12} spacing={2}>
         <Grid
           className={classes.responsiveJustify}
           container

@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode, useState, Fragment } from 'react'
 import {
   Accordion,
   AccordionDetails,
@@ -21,8 +21,8 @@ import Lightbox from 'react-image-lightbox'
 
 const useStyles = makeStyles(theme => ({
   grid: {
-    paddingLeft: 16,
-    paddingRight: 16
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2)
   },
   root: {
     width: '100%',
@@ -31,11 +31,18 @@ const useStyles = makeStyles(theme => ({
       padding: theme.spacing(4)
     }
   },
+  subtitleMargined: {
+    marginBottom: theme.spacing(4)
+  },
   lowOpacity: {
     opacity: 0.5
   },
   highOpacity: {
     opacity: 1
+  },
+  subBlockHeading: {
+    fontFamily: 'museo-sans',
+    fontWeight: 900
   },
   accordionSummary: {
     alignItems: 'center',
@@ -152,7 +159,7 @@ const DESection = ({
               ))}
             </Carousel>
           </Grid>
-          <Grid container item xs={12} md={4} spacing={2} wrap="wrap-reverse">
+          <Grid container item xs={12} md={4} spacing={3} wrap="wrap-reverse">
             <Grid item xs={12} sm={6} md={12}>
               <Box
                 display="flex"
@@ -248,7 +255,7 @@ const DESection = ({
                 style={{ padding: 0 }}
               >
                 <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
-                  <Typography className={classes.highOpacity} variant="subtitle2">
+                  <Typography className={cls(classes.subBlockHeading, classes.highOpacity)} variant="subtitle2">
                     Features
                   </Typography>
                   <Typography className={classes.highOpacity} color="primary" variant="body1">
@@ -259,19 +266,32 @@ const DESection = ({
               <AccordionDetails style={{ padding: 0 }}>
                 <Grid container>
                   {features.map(({ hero, content }, i, arr) => (
-                    <>
+                    <Fragment key={`features-fragment-${i}`}>
                       <Grid item xs={12} container spacing={2} key={`features-${i}`}>
-                        <Grid item xs={12} sm={4}>
-                          <Typography className={classes.highOpacity} variant="body1">
+                        <Grid item xs={12} sm={4} key={`features-hero-grid-${i}`}>
+                          <Typography
+                            className={classes.highOpacity}
+                            variant="body1"
+                            key={`features-hero-${i}`}
+                          >
                             {hero}
                           </Typography>
                         </Grid>
                         {content.map(({ heading, description }, j) => (
                           <Grid item xs={12} sm={4} key={`features-inner-${i}-${j}`}>
-                            <Typography className={classes.highOpacity} variant="body1" paragraph>
+                            <Typography
+                              className={classes.highOpacity}
+                              variant="body1"
+                              paragraph
+                              key={`features-inner-${i}-${j}-heading`}
+                            >
                               {heading}
                             </Typography>
-                            <Typography className={classes.lowOpacity} variant="body2">
+                            <Typography
+                              className={classes.lowOpacity}
+                              variant="body2"
+                              key={`features-inner-${i}-${j}-description`}
+                            >
                               {description}
                             </Typography>
                           </Grid>
@@ -287,7 +307,7 @@ const DESection = ({
                           <Divider variant="fullWidth" />
                         </Grid>
                       )}
-                    </>
+                    </Fragment>
                   ))}
                 </Grid>
               </AccordionDetails>
@@ -299,16 +319,24 @@ const DESection = ({
                 <Divider variant="fullWidth" />
               </Grid>
               <Grid className={classes.gridHrMarginTop} item xs={12}>
-                <Typography className={classes.highOpacity} variant="subtitle2" paragraph>
+                <Typography className={cls(classes.subBlockHeading, classes.highOpacity)} variant="subtitle2" paragraph>
                   Requirements
                 </Typography>
                 <Grid container item xs={12} justifyContent="space-between" spacing={3}>
                   {requirements.map(({ heading, description }, i) => (
                     <Grid item xs={12} sm={6} lg={3} key={`requirements-${i}`}>
-                      <Typography className={classes.lowOpacity} variant="body2">
+                      <Typography
+                        className={classes.lowOpacity}
+                        variant="body2"
+                        key={`requirements-${i}-heading`}
+                      >
                         {heading}
                       </Typography>
-                      <Typography className={classes.highOpacity} variant="body1">
+                      <Typography
+                        className={classes.highOpacity}
+                        variant="body1"
+                        key={`requirements-${i}-description`}
+                      >
                         {description}
                       </Typography>
                     </Grid>

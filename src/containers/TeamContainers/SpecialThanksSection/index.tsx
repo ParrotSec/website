@@ -22,9 +22,8 @@ const SpecialThanks = (props: GridProps) => {
       xs={12}
       md={9}
       justifyContent="space-around"
-      spacing={5}
     >
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} md={3}>
         <Typography variant="h1" className={classes.specialThanksTitle}>
           Special <br /> Thanks
         </Typography>

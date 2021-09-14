@@ -58,7 +58,7 @@ const DevelopingSection = () => {
         <Typography variant="h1" align="center" paragraph>
           Parrot is developer friendly. Secure in a Linux Environment.
         </Typography>
-        <Typography variant="body1" align="center">
+        <Typography variant="subtitle2" align="center">
           Compilers, interpreters and intelligent editors. All you need to start programming comes
           out of the box, with the most secure Linux environment.
         </Typography>
