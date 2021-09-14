@@ -237,7 +237,9 @@ const ToolsSection = (rest: GridProps) => {
           <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
               <div className={classes.paperPadding}>
-                <Typography variant="h3" paragraph>Hacking tools at your fingertips</Typography>
+                <Typography variant="h3" paragraph>
+                  Hacking tools at your fingertips
+                </Typography>
                 <Typography variant="body1">
                   When it comes to general tools and functional features, Parrot OS wins over Kali
                   Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
@@ -257,7 +259,9 @@ const ToolsSection = (rest: GridProps) => {
           <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
               <div className={classes.paperPadding}>
-                <Typography variant="h3" paragraph>This block should be replaced</Typography>
+                <Typography variant="h3" paragraph>
+                  This block should be replaced
+                </Typography>
                 <Typography variant="body1">
                   When it comes to general tools and functional features, Parrot OS wins over Kali
                   Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
