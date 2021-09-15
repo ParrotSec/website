@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box, Grid, GridProps, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
 import Tools from './assets/tools.svg'
 import parrotBg from './assets/shellBg.png'

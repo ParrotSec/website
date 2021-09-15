@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 // eslint-disable-next-line no-use-before-define
-import React from 'react'
 import { ServerStyleSheets } from '@material-ui/core/styles'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { Children } from 'react'
 
 export default class MyDocument extends Document {
   render() {
@@ -62,6 +62,6 @@ MyDocument.getInitialProps = async ctx => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()]
+    styles: [...Children.toArray(initialProps.styles), sheets.getStyleElement()]
   }
 }

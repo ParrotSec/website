@@ -1,4 +1,3 @@
-import React from 'react'
 import { Grid, GridProps, makeStyles, Typography } from '@material-ui/core'
 import Oreo from './assets/oreo 1.svg'
 

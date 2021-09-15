@@ -1,4 +1,3 @@
-import React from 'react'
 import { Grid, makeStyles, Paper, Typography } from '@material-ui/core'
 import Burp from 'containers/HomeContainers/ToolsSection/assets/tool-logo-burp 1.svg'
 import John from 'containers/HomeContainers/ToolsSection/assets/tool-logo-john 1.svg'

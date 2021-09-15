@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box, Grid, GridProps, IconButton, makeStyles, Paper, Typography } from '@material-ui/core'
 import PFeatureBlock from 'components/PFeatureBlock'
 import HackTheBox from './assets/hackthebox.svg'

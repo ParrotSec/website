@@ -1,6 +1,6 @@
 // pages/_app.tsx
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { Container } from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { AppProps } from 'next/app'

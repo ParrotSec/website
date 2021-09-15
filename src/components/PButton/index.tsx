@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button, ButtonProps, makeStyles } from '@material-ui/core'
 import cls from 'classnames'
 import RouterLink from 'next/link'

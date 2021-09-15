@@ -1,4 +1,4 @@
-import React, { ElementType } from 'react'
+import { ElementType } from 'react'
 import { Grid, GridProps, makeStyles, Paper, Typography } from '@material-ui/core'
 import cls from 'classnames'
 import PButton from 'components/PButton'

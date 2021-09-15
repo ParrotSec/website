@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
 import cls from 'classnames'
 import Home from 'containers/HomeContainers/OSSection/assets/Home.svg'

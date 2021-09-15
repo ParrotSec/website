@@ -1,4 +1,3 @@
-import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
 import OSCard from 'components/OSCard'
 import Home from './assets/Home.svg'

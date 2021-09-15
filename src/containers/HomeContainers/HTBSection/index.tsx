@@ -1,4 +1,3 @@
-import React from 'react'
 import { Grid, GridProps, makeStyles, Paper, Typography } from '@material-ui/core'
 import PButton from 'components/PButton'
 import HTBLogo from './assets/htbLogo.svg'

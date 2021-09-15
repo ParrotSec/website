@@ -1,4 +1,3 @@
-import React from 'react'
 import { Grid, GridProps, makeStyles, Typography } from '@material-ui/core'
 import Shell from 'containers/HomeContainers/ContributeSection/assets/shell.svg'
 import PButton from 'components/PButton'

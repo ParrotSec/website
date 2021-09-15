@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, Fragment } from 'react'
+import { ReactNode, useState, Fragment } from 'react'
 import {
   Accordion,
   AccordionDetails,

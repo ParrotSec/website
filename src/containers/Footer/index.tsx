@@ -1,4 +1,3 @@
-import React from 'react'
 import { Grid, makeStyles, Paper, Typography, useTheme } from '@material-ui/core'
 import Link from 'components/NextLink'
 import Logo from './assets/logo.svg'

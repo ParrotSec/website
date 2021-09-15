@@ -1,4 +1,3 @@
-import React from 'react'
 import { Grid, GridProps, Hidden } from '@material-ui/core'
 import PFeatureBlock from 'components/PFeatureBlock'
 import Safety from './assets/Security.svg'

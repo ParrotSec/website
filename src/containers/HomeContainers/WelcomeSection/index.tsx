@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Box, Grid, makeStyles, SvgIcon, Typography } from '@material-ui/core'
 import useTypewriter from 'react-typewriter-hook'
 import PButton from 'components/PButton'

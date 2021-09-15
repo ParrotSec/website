@@ -1,4 +1,3 @@
-import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
 import { SnackbarProvider } from 'notistack'
 import Wallpaper from 'assets/wallpaper.png'

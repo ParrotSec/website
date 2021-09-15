@@ -1,4 +1,3 @@
-import React from 'react'
 import { GridProps } from '@material-ui/core'
 import UserCard from 'components/UserCard'
 import lorenzo from 'assets/lorenzo.png'

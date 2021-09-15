@@ -1,4 +1,3 @@
-import React from 'react'
 import { makeStyles, Grid, Typography, GridProps } from '@material-ui/core'
 import UserCard from 'components/UserCard'
 

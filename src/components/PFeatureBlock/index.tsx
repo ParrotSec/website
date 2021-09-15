@@ -1,4 +1,4 @@
-import React, { ElementType, ReactNode } from 'react'
+import { ElementType, ReactNode } from 'react'
 import { Link, makeStyles, Paper, PaperProps, Typography } from '@material-ui/core'
 import NextLink from 'components/NextLink'
 import Arrow from './assets/arrow.svg'

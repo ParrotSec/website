@@ -5,7 +5,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable react/destructuring-assignment */
 
-import React, { AriaAttributes, Children, Component, ReactNode, SyntheticEvent } from 'react'
+import { AriaAttributes, Children, Component, ReactNode, SyntheticEvent } from 'react'
 import { Box } from '@material-ui/core'
 import Fade from '@material-ui/core/Fade'
 import IconButton from '@material-ui/core/IconButton'

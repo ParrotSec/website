@@ -1,4 +1,3 @@
-import React from 'react'
 import { makeStyles, Grid, Typography, GridProps, Box, Paper } from '@material-ui/core'
 import PButton from 'components/PButton'
 

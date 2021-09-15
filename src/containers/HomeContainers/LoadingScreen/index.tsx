@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box, CircularProgress, useTheme } from '@material-ui/core'
 
 const LoadingScreen = () => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   AppBar,
   Collapse,
@@ -13,6 +12,7 @@ import Link from 'components/NextLink'
 import { Menu as MenuIcon } from '@material-ui/icons'
 import PButton from 'components/PButton'
 import Logo from './assets/logo.svg'
+import { useState } from 'react'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -76,7 +76,7 @@ const useStyles = makeStyles(theme => ({
 
 const Header = () => {
   const classes = useStyles()
-  const [collapsed, setCollapsed] = React.useState(false)
+  const [collapsed, setCollapsed] = useState(false)
   const toggleCollapse = () => setCollapsed(!collapsed)
 
   return (
