@@ -198,7 +198,7 @@ const ToolsSection = (rest: GridProps) => {
               </Box>
             </Hidden>
             <Hidden mdUp>
-              <InfiniteSlider className={classes.smMarquee} height={86}>
+              <InfiniteSlider className={classes.smMarquee}>
                 {icons(false)}
               </InfiniteSlider>
             </Hidden>

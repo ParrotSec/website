@@ -1,57 +1,81 @@
-import React, { Children } from 'react'
-import { Box, BoxProps, makeStyles } from '@material-ui/core'
+import React, { Children, PropsWithChildren, useEffect, useState } from 'react'
+import { makeStyles } from '@material-ui/core'
 import cls from 'classnames'
+import { Theme } from '@material-ui/core/styles'
+import { useMeasure } from 'react-use'
 
-type InfiniteSliderProps = {
+type InfiniteSliderProps = PropsWithChildren<{
   className?: string
-  height?: number
-} & BoxProps
+  spacing?: number
+}>
 
-const useStyles = makeStyles({
+const useStyles = makeStyles<Theme, Required<Pick<InfiniteSliderProps, 'spacing'>>>(theme => ({
   root: {
-    position: 'relative',
-    overflow: 'hidden',
-    width: '100%'
-  },
-  '@keyframes marquee': {
-    '0%': { transform: 'translate(0, 0)' },
-    '100%': { transform: 'translate(-100%, 0) translate(-64px, 0)' }
-  },
-  // Can't make it dynamic unfortunately :( https://github.com/mui-org/material-ui/issues/21011
-  wrapper: {
-    position: 'absolute',
-    width: '100%',
-    minWidth: 440,
-    height: '100%',
-    display: 'flex',
     alignItems: 'center',
-    //width: 845,
-    animation: `$marquee 8s linear infinite`
-    /*[theme.breakpoints.down('sm')]: {
-      width: 400
-    }*/
-  }
-})
+    display: 'flex',
+    flexDirection: 'row',
+    minHeight: 50,
+    overflow: 'hidden',
+    position: 'relative',
+    width: '100%',
+    '&:hover $slider': {
+      animationPlayState: 'paused'
+    }
+  },
+  slider: {
+    alignItems: 'center',
+    animation: '$scroll 12s linear infinite',
+    display: 'flex',
+    flexDirection: 'row'
+  },
+  '@keyframes scroll': {
+    '0%': {
+      transform: 'translateX(0)'
+    },
+    to: {
+      transform: 'translateX(-100%)'
+    }
+  },
+  element: ({ spacing }) => ({
+    margin: `0 ${theme.spacing(spacing)}px`
+  })
+}))
 
-const InfiniteSlider = ({ className, height = 64, children, ...rest }: InfiniteSliderProps) => {
-  const classes = useStyles()
+/* In order for slider to work properly, the content inside should fill the parent width by 100%.
+ * First wrapper after fading out of the parent is placed back at the starting point meanwhile the
+ * second wrapper enters the parent*/
+const InfiniteSlider = ({ className, children, spacing = 4, ...rest }: InfiniteSliderProps) => {
+  const classes = useStyles({ spacing })
+  const [rootRef, { width: rootWidth }] = useMeasure<HTMLDivElement>()
+  const [boxRef, { width: boxWidth }] = useMeasure<HTMLDivElement>()
+  const [cloneFactor, setCloneFactor] = useState(0)
+
+  // if childs do not fill the element we need to copy it over
+  useEffect(() => {
+    console.log(rootWidth, boxWidth, Math.ceil(rootWidth / boxWidth))
+    if (rootWidth && boxWidth) setCloneFactor(Math.ceil(rootWidth / boxWidth))
+  }, [rootWidth, boxWidth])
 
   return (
-    <Box className={cls(className, classes.root)} height={height} {...rest}>
-      {Children.map(children, (el, i) => (
-        <div
-          className={classes.wrapper}
-          key={`slider-wrapper-${i}`}
-          style={{
-            animationDelay: `-${(8 / Children.count(children)) * (Children.count(children) - i)}s`
-          }}
-        >
-          <Box paddingLeft="100%" paddingRight={10}>
+    <div className={cls(className, classes.root)} ref={rootRef} {...rest}>
+      <div className={classes.slider} ref={boxRef}>
+        {Children.map(children, (el, i) => (
+          <div key={`slider-child-${i}`} className={classes.element}>
             {el}
-          </Box>
-        </div>
-      ))}
-    </Box>
+          </div>
+        ))}
+      </div>
+      {cloneFactor > 0 &&
+        Array.from(Array(cloneFactor), (_, i) => (
+          <div key={`slider-cloned-${i}`} className={classes.slider}>
+            {Children.map(children, (el, j) => (
+              <div key={`slider-child-${i}-${j}`} className={classes.element}>
+                {el}
+              </div>
+            ))}
+          </div>
+        ))}
+    </div>
   )
 }
 

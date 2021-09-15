@@ -8,6 +8,7 @@ import Head from 'next/head'
 import Footer from 'containers/Footer'
 import Header from 'containers/Header'
 import SwitchThemeProvider from 'containers/ThemeProvider'
+import '../styles/globals.css'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {

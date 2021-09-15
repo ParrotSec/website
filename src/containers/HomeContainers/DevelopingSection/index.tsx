@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Grid, makeStyles, Paper, Tooltip, Typography } from '@material-ui/core'
 import Burp from 'containers/HomeContainers/ToolsSection/assets/tool-logo-burp 1.svg'
 import John from 'containers/HomeContainers/ToolsSection/assets/tool-logo-john 1.svg'
 import Maltego from 'containers/HomeContainers/ToolsSection/assets/tool-logo-maltego 1.svg'
@@ -7,7 +7,6 @@ import Nmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-nmap 1
 import Metasploit from 'containers/HomeContainers/ToolsSection/assets/tool-logo-metasploit 1.svg'
 import Sqlmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-sqlmap 1.svg'
 import InfiniteSlider from 'components/InfiniteSlider'
-import cls from 'classnames'
 
 const useStyles = makeStyles(theme => ({
   developerBlock: {
@@ -17,20 +16,13 @@ const useStyles = makeStyles(theme => ({
     marginTop: 66
   },
   devPaper: {
-    paddingTop: theme.spacing(9),
-    paddingLeft: theme.spacing(8),
-    paddingRight: theme.spacing(8),
+    padding: `${theme.spacing(9)}px ${theme.spacing(8)}px`,
     [theme.breakpoints.down('xs')]: {
-      paddingTop: theme.spacing(4),
-      paddingLeft: theme.spacing(4),
-      paddingRight: theme.spacing(4)
+      padding: theme.spacing(4)
     }
   },
-  devPaperEnd: {
-    paddingBottom: theme.spacing(9),
-    [theme.breakpoints.down('xs')]: {
-      paddingBottom: theme.spacing(4)
-    }
+  sliderBlock: {
+    marginBottom: theme.spacing(4)
   },
   icon: {
     padding: 5,
@@ -44,14 +36,6 @@ const useStyles = makeStyles(theme => ({
 
 const DevelopingSection = () => {
   const classes = useStyles()
-  const icons = [
-    <Burp className={classes.icon} key="burp" />,
-    <John className={classes.icon} key="john" />,
-    <Maltego className={classes.icon} key="maltego" />,
-    <Nmap className={classes.icon} key="nmap" />,
-    <Metasploit className={classes.icon} key="metasploit" />,
-    <Sqlmap className={classes.icon} key="sqlmap" />
-  ]
   return (
     <>
       <Grid className={classes.developerBlock} container item xs={12} md={7}>
@@ -65,23 +49,50 @@ const DevelopingSection = () => {
       </Grid>
       <Grid className={classes.papersBlock} container item xs={12} md={9} spacing={4}>
         <Grid item xs={12}>
-          <Paper elevation={0}>
-            <div className={classes.devPaper}>
-              <Typography variant="h3" paragraph>
-                Developer tools
-              </Typography>
-              <Typography variant="body1" paragraph>
-                Our tools are designed to be compatible with as many devices as possible via
-                containerization technologies like Docker or Podman.
-              </Typography>
-            </div>
-            <InfiniteSlider className={classes.devPaperEnd} height={110}>
-              {icons}
+          <Paper className={classes.devPaper} elevation={0}>
+            <Typography variant="h3" paragraph>
+              Developer tools
+            </Typography>
+            <Typography variant="body1" paragraph>
+              Our tools are designed to be compatible with as many devices as possible via
+              containerization technologies like Docker or Podman.
+            </Typography>
+            <InfiniteSlider className={classes.sliderBlock} spacing={4}>
+              <Tooltip title="example">
+                <a href="https://github.com">
+                  <Burp className={classes.icon} key="burp" />
+                </a>
+              </Tooltip>
+              <Tooltip title="example">
+                <a href="https://github.com">
+                  <John className={classes.icon} key="john" />
+                </a>
+              </Tooltip>
+              <Tooltip title="example">
+                <a href="https://github.com">
+                  <Maltego className={classes.icon} key="maltego" />
+                </a>
+              </Tooltip>
+              <Tooltip title="example">
+                <a href="https://github.com">
+                  <Nmap className={classes.icon} key="nmap" />
+                </a>
+              </Tooltip>
+              <Tooltip title="example">
+                <a href="https://github.com">
+                  <Metasploit className={classes.icon} key="metasploit" />
+                </a>
+              </Tooltip>
+              <Tooltip title="example">
+                <a href="https://github.com">
+                  <Sqlmap className={classes.icon} key="sqlmap" />
+                </a>
+              </Tooltip>
             </InfiniteSlider>
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={cls(classes.devPaper, classes.devPaperEnd)} elevation={0}>
+          <Paper className={classes.devPaper} elevation={0}>
             <Typography variant="h3" paragraph>
               Compilers & interpreters
             </Typography>
