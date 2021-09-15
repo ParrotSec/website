@@ -20,6 +20,27 @@ const useStyles = makeStyles<Theme, Required<Pick<InfiniteSliderProps, 'spacing'
     width: '100%',
     '&:hover $slider': {
       animationPlayState: 'paused'
+    },
+    '&::before, &::after': {
+      content: '""',
+      height: '100%',
+      pointerEvents: 'none',
+      position: 'absolute',
+      top: 0,
+      width: '23%!important',
+      zIndex: 3
+    },
+    '&::before': {
+      background: `transparent linear-gradient(90deg,${
+        theme.palette.background.paper
+      } 2.52%,hsla(0,0%,${theme.palette.type === 'light' ? 100 : 0}%,0)) repeat scroll 0 0`,
+      left: 0
+    },
+    '&::after': {
+      background: `transparent linear-gradient(270deg,${
+        theme.palette.background.paper
+      } 2.52%,hsla(0,0%,${theme.palette.type === 'light' ? 100 : 0}%,0)) repeat scroll 0 0`,
+      right: 0
     }
   },
   slider: {
@@ -52,12 +73,11 @@ const InfiniteSlider = ({ className, children, spacing = 4, ...rest }: InfiniteS
 
   // if childs do not fill the element we need to copy it over
   useEffect(() => {
-    console.log(rootWidth, boxWidth, Math.ceil(rootWidth / boxWidth))
     if (rootWidth && boxWidth) setCloneFactor(Math.ceil(rootWidth / boxWidth))
   }, [rootWidth, boxWidth])
 
   return (
-    <div className={cls(className, classes.root)} ref={rootRef} {...rest}>
+    <div className={cls(classes.root, className)} ref={rootRef} {...rest}>
       <div className={classes.slider} ref={boxRef}>
         {Children.map(children, (el, i) => (
           <div key={`slider-child-${i}`} className={classes.element}>

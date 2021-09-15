@@ -12,6 +12,7 @@ import Sqlmap from './assets/tool-logo-sqlmap 1.svg'
 import Metasploit from './assets/tool-logo-metasploit 1.svg'
 import { useMeasure } from 'react-use'
 import InfiniteSlider from 'components/InfiniteSlider'
+import PIconLink from 'components/PIconLink'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,26 +32,6 @@ const useStyles = makeStyles(theme => ({
     background: theme.palette.type === 'light' ? '#03232E' : '#FFFFFF',
     borderRadius: 6,
     marginBottom: 20
-  },
-  icon: {
-    padding: 5,
-    width: 64,
-    height: 64,
-    background: '#FFF',
-    borderRadius: 6,
-    boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)'
-  },
-  bigIcon: {
-    width: 84,
-    height: 84,
-    padding: 16,
-    background: '#FFF',
-    borderRadius: 6,
-    boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)',
-    [theme.breakpoints.down('sm')]: {
-      width: 64,
-      height: 64
-    }
   },
   bg: {
     height: 'auto',
@@ -74,6 +55,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(4)
   },
   smMarquee: {
+    minHeight: 93,
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4)
   },
@@ -90,9 +72,11 @@ const ToolsSection = (rest: GridProps) => {
   const [ref, { width, height }] = useMeasure<HTMLImageElement>()
 
   const icons = (absolute: boolean) => [
-    <Burp
-      className={classes.bigIcon}
+    <PIconLink
       key="burp"
+      href="https://nest.parrotsec.org/packages/tools/burpsuite"
+      Icon={Burp}
+      large
       style={
         absolute
           ? {
@@ -102,10 +86,21 @@ const ToolsSection = (rest: GridProps) => {
             }
           : {}
       }
-    />,
-    <John
-      className={classes.bigIcon}
+    >
+      <>
+        <b>Burp Suite</b>
+        <br />
+        Burp Suite is a set of tools used for penetration testing of web applications. It is
+        developed by the company named Portswigger, which is also the alias of its founder Dafydd
+        Stuttard. BurpSuite aims to be an all in one set of tools and its capabilities can be
+        enhanced by installing add-ons that are called BApps.
+      </>
+    </PIconLink>,
+    <PIconLink
       key="john"
+      href="https://nest.parrotsec.org/packages/tools/john"
+      Icon={John}
+      large
       style={
         absolute
           ? {
@@ -115,10 +110,23 @@ const ToolsSection = (rest: GridProps) => {
             }
           : {}
       }
-    />,
-    <Maltego
-      className={classes.bigIcon}
+    >
+      <>
+        <b>John the Ripper</b>
+        <br />
+        John the Ripper is a fast password cracker, currently available for many flavors of Unix,
+        macOS, Windows, DOS, BeOS, and OpenVMS (the latter requires a contributed patch). Its
+        primary purpose is to detect weak Unix passwords. Besides several crypt(3) password hash
+        types most commonly found on various Unix flavors, supported out of the box are Kerberos/AFS
+        and Windows LM hashes, as well as DES-based tripcodes, plus hundreds of additional hashes
+        and ciphers in "-jumbo" versions.
+      </>
+    </PIconLink>,
+    <PIconLink
       key="maltego"
+      href="https://www.maltego.com/product-features/"
+      Icon={Maltego}
+      large
       style={
         absolute
           ? {
@@ -128,10 +136,20 @@ const ToolsSection = (rest: GridProps) => {
             }
           : {}
       }
-    />,
-    <Nmap
-      className={classes.icon}
+    >
+      <>
+        <b>Maltego</b>
+        <br />
+        Maltego is an open source intelligence and graphical link analysis tool for gathering and
+        connecting information for investigative tasks. Maltego is a Java application that runs on
+        Windows, Mac and Linux. Maltego is used by a broad range of users, ranging from security
+        professionals to forensic investigators, investigative journalists, and researchers.
+      </>
+    </PIconLink>,
+    <PIconLink
       key="nmap"
+      href="https://nest.parrotsec.org/packages/tools/nmap"
+      Icon={Nmap}
       style={
         absolute
           ? {
@@ -141,10 +159,24 @@ const ToolsSection = (rest: GridProps) => {
             }
           : {}
       }
-    />,
-    <Metasploit
-      className={classes.icon}
+    >
+      <>
+        <b>Nmap</b>
+        <br />
+        Nmap is an open source tool for network exploration and security auditing. It was designed
+        to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw
+        IP packets in novel ways to determine what hosts are available on the network, what services
+        (application name and version) those hosts are offering, what operating systems (and OS
+        versions) they are running, what type of packet filters/firewalls are in use, and dozens of
+        other characteristics. While Nmap is commonly used for security audits, many systems and
+        network administrators find it useful for routine tasks such as network inventory, managing
+        service upgrade schedules, and monitoring host or service uptime.
+      </>
+    </PIconLink>,
+    <PIconLink
       key="metasploit"
+      href="https://nest.parrotsec.org/packages/tools/metasploit-framework"
+      Icon={Metasploit}
       style={
         absolute
           ? {
@@ -154,10 +186,20 @@ const ToolsSection = (rest: GridProps) => {
             }
           : {}
       }
-    />,
-    <Sqlmap
-      className={classes.bigIcon}
+    >
+      <>
+        <b>Metasploit</b>
+        <br />
+        Metasploit is a tool for developing and executing exploit code against a remote target
+        machine. Other important sub-projects include the Opcode Database, shellcode archive and
+        related research.
+      </>
+    </PIconLink>,
+    <PIconLink
       key="sqlmap"
+      href="https://nest.parrotsec.org/packages/tools/sqlmap"
+      Icon={Sqlmap}
+      large
       style={
         absolute
           ? {
@@ -167,7 +209,18 @@ const ToolsSection = (rest: GridProps) => {
             }
           : {}
       }
-    />
+    >
+      <>
+        <b>SQLMap</b>
+        <br />
+        SQLmap is an open source penetration testing tool that automates the process of detecting
+        and exploiting SQL injection flaws and taking over of database servers. It comes with a
+        powerful detection engine, many niche features for the ultimate penetration tester, and a
+        broad range of switches including database fingerprinting, over data fetching from the
+        database, accessing the underlying file system, and executing commands on the operating
+        system via out-of-band connections.
+      </>
+    </PIconLink>
   ]
 
   return (
@@ -198,9 +251,7 @@ const ToolsSection = (rest: GridProps) => {
               </Box>
             </Hidden>
             <Hidden mdUp>
-              <InfiniteSlider className={classes.smMarquee}>
-                {icons(false)}
-              </InfiniteSlider>
+              <InfiniteSlider className={classes.smMarquee}>{icons(false)}</InfiniteSlider>
             </Hidden>
             <Hidden smDown>
               <div className={classes.bgHolder}>

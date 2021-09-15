@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, makeStyles, Paper, Tooltip, Typography } from '@material-ui/core'
+import { Grid, makeStyles, Paper, Typography } from '@material-ui/core'
 import Burp from 'containers/HomeContainers/ToolsSection/assets/tool-logo-burp 1.svg'
 import John from 'containers/HomeContainers/ToolsSection/assets/tool-logo-john 1.svg'
 import Maltego from 'containers/HomeContainers/ToolsSection/assets/tool-logo-maltego 1.svg'
@@ -7,6 +7,7 @@ import Nmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-nmap 1
 import Metasploit from 'containers/HomeContainers/ToolsSection/assets/tool-logo-metasploit 1.svg'
 import Sqlmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-sqlmap 1.svg'
 import InfiniteSlider from 'components/InfiniteSlider'
+import PIconLink from 'components/PIconLink'
 
 const useStyles = makeStyles(theme => ({
   developerBlock: {
@@ -22,15 +23,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   sliderBlock: {
+    minHeight: 93,
     marginBottom: theme.spacing(4)
-  },
-  icon: {
-    padding: 5,
-    width: 64,
-    height: 64,
-    background: '#FFF',
-    borderRadius: 6,
-    boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)'
   }
 }))
 
@@ -58,36 +52,80 @@ const DevelopingSection = () => {
               containerization technologies like Docker or Podman.
             </Typography>
             <InfiniteSlider className={classes.sliderBlock} spacing={4}>
-              <Tooltip title="example">
-                <a href="https://github.com">
-                  <Burp className={classes.icon} key="burp" />
-                </a>
-              </Tooltip>
-              <Tooltip title="example">
-                <a href="https://github.com">
-                  <John className={classes.icon} key="john" />
-                </a>
-              </Tooltip>
-              <Tooltip title="example">
-                <a href="https://github.com">
-                  <Maltego className={classes.icon} key="maltego" />
-                </a>
-              </Tooltip>
-              <Tooltip title="example">
-                <a href="https://github.com">
-                  <Nmap className={classes.icon} key="nmap" />
-                </a>
-              </Tooltip>
-              <Tooltip title="example">
-                <a href="https://github.com">
-                  <Metasploit className={classes.icon} key="metasploit" />
-                </a>
-              </Tooltip>
-              <Tooltip title="example">
-                <a href="https://github.com">
-                  <Sqlmap className={classes.icon} key="sqlmap" />
-                </a>
-              </Tooltip>
+              <PIconLink href="https://nest.parrotsec.org/packages/tools/burpsuite" Icon={Burp}>
+                <>
+                  <b>Burp Suite</b>
+                  <br />
+                  Burp Suite is a set of tools used for penetration testing of web applications. It
+                  is developed by the company named Portswigger, which is also the alias of its
+                  founder Dafydd Stuttard. BurpSuite aims to be an all in one set of tools and its
+                  capabilities can be enhanced by installing add-ons that are called BApps.
+                </>
+              </PIconLink>
+              <PIconLink href="https://nest.parrotsec.org/packages/tools/john" Icon={John}>
+                <>
+                  <b>John the Ripper</b>
+                  <br />
+                  John the Ripper is a fast password cracker, currently available for many flavors
+                  of Unix, macOS, Windows, DOS, BeOS, and OpenVMS (the latter requires a contributed
+                  patch). Its primary purpose is to detect weak Unix passwords. Besides several
+                  crypt(3) password hash types most commonly found on various Unix flavors,
+                  supported out of the box are Kerberos/AFS and Windows LM hashes, as well as
+                  DES-based tripcodes, plus hundreds of additional hashes and ciphers in "-jumbo"
+                  versions.
+                </>
+              </PIconLink>
+              <PIconLink href="https://www.maltego.com/product-features/" Icon={Maltego}>
+                <>
+                  <b>Maltego</b>
+                  <br />
+                  Maltego is an open source intelligence and graphical link analysis tool for
+                  gathering and connecting information for investigative tasks. Maltego is a Java
+                  application that runs on Windows, Mac and Linux. Maltego is used by a broad range
+                  of users, ranging from security professionals to forensic investigators,
+                  investigative journalists, and researchers.
+                </>
+              </PIconLink>
+              <PIconLink href="https://nest.parrotsec.org/packages/tools/nmap" Icon={Nmap}>
+                <>
+                  <b>Nmap</b>
+                  <br />
+                  Nmap is an open source tool for network exploration and security auditing. It was
+                  designed to rapidly scan large networks, although it works fine against single
+                  hosts. Nmap uses raw IP packets in novel ways to determine what hosts are
+                  available on the network, what services (application name and version) those hosts
+                  are offering, what operating systems (and OS versions) they are running, what type
+                  of packet filters/firewalls are in use, and dozens of other characteristics. While
+                  Nmap is commonly used for security audits, many systems and network administrators
+                  find it useful for routine tasks such as network inventory, managing service
+                  upgrade schedules, and monitoring host or service uptime.
+                </>
+              </PIconLink>
+              <PIconLink
+                href="https://nest.parrotsec.org/packages/tools/metasploit-framework"
+                Icon={Metasploit}
+              >
+                <>
+                  <b>Metasploit</b>
+                  <br />
+                  Metasploit is a tool for developing and executing exploit code against a remote
+                  target machine. Other important sub-projects include the Opcode Database,
+                  shellcode archive and related research.
+                </>
+              </PIconLink>
+              <PIconLink href="https://nest.parrotsec.org/packages/tools/sqlmap" Icon={Sqlmap}>
+                <>
+                  <b>SQLMap</b>
+                  <br />
+                  SQLmap is an open source penetration testing tool that automates the process of
+                  detecting and exploiting SQL injection flaws and taking over of database servers.
+                  It comes with a powerful detection engine, many niche features for the ultimate
+                  penetration tester, and a broad range of switches including database
+                  fingerprinting, over data fetching from the database, accessing the underlying
+                  file system, and executing commands on the operating system via out-of-band
+                  connections.
+                </>
+              </PIconLink>
             </InfiniteSlider>
           </Paper>
         </Grid>

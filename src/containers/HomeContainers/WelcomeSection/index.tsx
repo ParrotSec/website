@@ -10,17 +10,20 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 10,
     fontSize: theme.spacing(9),
     [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(8)
+      fontSize: theme.spacing(8),
+      minHeight: 222
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: theme.spacing(7)
+      fontSize: theme.spacing(7),
+      minHeight: 260
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: theme.spacing(5)
-    }
+      fontSize: theme.spacing(4),
+      minHeight: 148
+    },
   },
   headingSubTitle: {
-    marginTop: 27,
+    marginTop: theme.spacing(1),
     fontSize: 18,
     [theme.breakpoints.down('md')]: {
       fontSize: 15.3
