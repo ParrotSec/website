@@ -23,6 +23,7 @@ const useStyles = makeStyles<Theme, Required<Pick<InfiniteSliderProps, 'spacing'
     },
     '&::before, &::after': {
       content: '""',
+      boxSizing: 'border-box',
       height: '100%',
       pointerEvents: 'none',
       position: 'absolute',
@@ -44,6 +45,7 @@ const useStyles = makeStyles<Theme, Required<Pick<InfiniteSliderProps, 'spacing'
     }
   },
   slider: {
+    boxSizing: 'border-box',
     alignItems: 'center',
     animation: '$scroll 12s linear infinite',
     display: 'flex',
@@ -78,23 +80,25 @@ const InfiniteSlider = ({ className, children, spacing = 4, ...rest }: InfiniteS
 
   return (
     <div className={cls(classes.root, className)} ref={rootRef} {...rest}>
-      <div className={classes.slider} ref={boxRef}>
-        {Children.map(children, (el, i) => (
-          <div key={`slider-child-${i}`} className={classes.element}>
-            {el}
-          </div>
-        ))}
-      </div>
-      {cloneFactor > 0 &&
-        Array.from(Array(cloneFactor), (_, i) => (
-          <div key={`slider-cloned-${i}`} className={classes.slider}>
+      {cloneFactor > 0 ? (
+        Array.from(Array(cloneFactor + 1), (_, i) => (
+          <div key={`slider-cloned-${i}`} className={classes.slider} ref={boxRef}>
             {Children.map(children, (el, j) => (
               <div key={`slider-child-${i}-${j}`} className={classes.element}>
                 {el}
               </div>
             ))}
           </div>
-        ))}
+        ))
+      ) : (
+        <div className={classes.slider} ref={boxRef}>
+          {Children.map(children, (el, i) => (
+            <div key={`slider-child-${i}`} className={classes.element}>
+              {el}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
