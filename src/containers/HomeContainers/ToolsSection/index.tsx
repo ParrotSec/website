@@ -242,7 +242,7 @@ const ToolsSection = (rest: GridProps) => {
               </Box>
             </Hidden>
             <Hidden mdUp>
-              <Slider className={classes.smMarquee}>{icons(false)}</Slider>
+              <Slider className={classes.smMarquee} cloneFactor={2}>{icons(false)}</Slider>
             </Hidden>
             <Hidden smDown>
               <div className={classes.bgHolder}>

@@ -1,14 +1,14 @@
-import { Children, Fragment, PropsWithChildren, useEffect, useMemo, useState } from 'react'
+import { Children, Fragment, PropsWithChildren, useMemo } from 'react'
 import { Box, makeStyles } from '@material-ui/core'
 import cls from 'classnames'
 import { alpha, Theme } from '@material-ui/core/styles'
-import { useMeasure } from 'utils'
 
 type SliderProps = PropsWithChildren<{
   className?: string
   spacing?: number
   reversed?: boolean
   orientation?: 'horizontal' | 'vertical'
+  cloneFactor?: number
 }>
 
 // Unfortunately passing props to classes is buggy and was solved only in Material v5
@@ -135,28 +135,10 @@ const Slider = ({
   spacing = 4,
   reversed = false,
   orientation = 'horizontal',
+  cloneFactor = 1,
   ...rest
 }: SliderProps) => {
   const classes = useStyles({ spacing, orientation })
-  const [rootRef, { height: rootHeight, width: rootWidth }] = useMeasure<HTMLDivElement>()
-  const [boxRef, { height: boxHeight, width: boxWidth }] = useMeasure<HTMLDivElement>()
-  const [cloneFactor, setCloneFactor] = useState(0)
-
-  // if childs do not fill the element we need to copy it over
-  if (orientation === 'horizontal') {
-    useEffect(() => {
-      if (rootWidth && boxWidth) {
-        setCloneFactor(Math.ceil(rootWidth / boxWidth))
-      }
-    }, [rootWidth, boxWidth])
-  } else {
-    useEffect(() => {
-      if (rootHeight && boxHeight) {
-        setCloneFactor(Math.ceil(rootHeight / boxHeight))
-      }
-    }, [rootHeight, boxHeight])
-  }
-
   const Wrapper = useMemo(() => (orientation === 'vertical' ? Box : Fragment), [])
 
   return (
@@ -173,38 +155,26 @@ const Slider = ({
               }
             : {})
         })}
-        ref={rootRef}
         {...rest}
       >
-        {cloneFactor > 0 ? (
-          Array.from(Array(cloneFactor + 1), (_, i) => (
-            <div
-              key={`slider-cloned-${i}`}
-              className={cls(classes.slider, {
-                [classes.reversed]: reversed,
-                [classes.sliderHorizontal]: orientation === 'horizontal',
-                [classes.row]: orientation === 'horizontal',
-                [classes.sliderVertical]: orientation === 'vertical',
-                [classes.column]: orientation === 'vertical'
-              })}
-              ref={boxRef}
-            >
-              {Children.map(children, (el, j) => (
-                <div key={`slider-child-${i}-${j}`} className={classes.element}>
-                  {el}
-                </div>
-              ))}
-            </div>
-          ))
-        ) : (
-          <div className={cls(classes.slider, { [classes.reversed]: reversed })} ref={boxRef}>
-            {Children.map(children, (el, i) => (
-              <div key={`slider-child-${i}`} className={classes.element}>
+        {Array.from(Array(cloneFactor + 1), (_, i) => (
+          <div
+            key={`slider-cloned-${i}`}
+            className={cls(classes.slider, {
+              [classes.reversed]: reversed,
+              [classes.sliderHorizontal]: orientation === 'horizontal',
+              [classes.row]: orientation === 'horizontal',
+              [classes.sliderVertical]: orientation === 'vertical',
+              [classes.column]: orientation === 'vertical'
+            })}
+          >
+            {Children.map(children, (el, j) => (
+              <div key={`slider-child-${i}-${j}`} className={classes.element}>
                 {el}
               </div>
             ))}
           </div>
-        )}
+        ))}
       </div>
     </Wrapper>
   )

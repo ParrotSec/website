@@ -27,8 +27,7 @@
     "react-jss": "^10.7.1",
     "react-swipeable": "^6.2.0",
     "react-typewriter-hook": "^1.0.1",
-    "react-use": "^17.3.1",
-    "resize-observer-polyfill": "^1.5.1"
+    "react-use": "^17.3.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.1.0",
