@@ -25,7 +25,7 @@
       "assets/*": ["src/assets/*"],
       "components/*": ["src/components/*"],
       "containers/*": ["src/containers/*"],
-      "icons": ["src/icons/index.tsx"]
+      "utils": ["src/utils/index.ts"]
     },
     "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
     "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */

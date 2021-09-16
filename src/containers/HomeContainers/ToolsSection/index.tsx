@@ -10,8 +10,8 @@ import Nmap from './assets/tool-logo-nmap 1.svg'
 import Sqlmap from './assets/tool-logo-sqlmap 1.svg'
 import Metasploit from './assets/tool-logo-metasploit 1.svg'
 import { useMeasure } from 'react-use'
-import InfiniteSlider from 'components/InfiniteSlider'
 import PIconLink from 'components/PIconLink'
+import Slider from 'components/Slider'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -91,8 +91,7 @@ const ToolsSection = (rest: GridProps) => {
         <br />
         Burp Suite is a set of tools used for penetration testing of web applications. It is
         developed by the company named Portswigger, which is also the alias of its founder Dafydd
-        Stuttard. BurpSuite aims to be an all in one set of tools and its capabilities can be
-        enhanced by installing add-ons that are called BApps.
+        Stuttard.
       </>
     </PIconLink>,
     <PIconLink
@@ -115,10 +114,7 @@ const ToolsSection = (rest: GridProps) => {
         <br />
         John the Ripper is a fast password cracker, currently available for many flavors of Unix,
         macOS, Windows, DOS, BeOS, and OpenVMS (the latter requires a contributed patch). Its
-        primary purpose is to detect weak Unix passwords. Besides several crypt(3) password hash
-        types most commonly found on various Unix flavors, supported out of the box are Kerberos/AFS
-        and Windows LM hashes, as well as DES-based tripcodes, plus hundreds of additional hashes
-        and ciphers in "-jumbo" versions.
+        primary purpose is to detect weak Unix passwords.
       </>
     </PIconLink>,
     <PIconLink
@@ -141,8 +137,7 @@ const ToolsSection = (rest: GridProps) => {
         <br />
         Maltego is an open source intelligence and graphical link analysis tool for gathering and
         connecting information for investigative tasks. Maltego is a Java application that runs on
-        Windows, Mac and Linux. Maltego is used by a broad range of users, ranging from security
-        professionals to forensic investigators, investigative journalists, and researchers.
+        Windows, Mac and Linux.
       </>
     </PIconLink>,
     <PIconLink
@@ -165,11 +160,8 @@ const ToolsSection = (rest: GridProps) => {
         Nmap is an open source tool for network exploration and security auditing. It was designed
         to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw
         IP packets in novel ways to determine what hosts are available on the network, what services
-        (application name and version) those hosts are offering, what operating systems (and OS
-        versions) they are running, what type of packet filters/firewalls are in use, and dozens of
-        other characteristics. While Nmap is commonly used for security audits, many systems and
-        network administrators find it useful for routine tasks such as network inventory, managing
-        service upgrade schedules, and monitoring host or service uptime.
+        those hosts are offering, what operating systems they are running, what type of packet
+        filters/firewalls are in use, and dozens of other characteristics.
       </>
     </PIconLink>,
     <PIconLink
@@ -250,7 +242,7 @@ const ToolsSection = (rest: GridProps) => {
               </Box>
             </Hidden>
             <Hidden mdUp>
-              <InfiniteSlider className={classes.smMarquee}>{icons(false)}</InfiniteSlider>
+              <Slider className={classes.smMarquee}>{icons(false)}</Slider>
             </Hidden>
             <Hidden smDown>
               <div className={classes.bgHolder}>
