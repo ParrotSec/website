@@ -94,7 +94,7 @@ const ContributorsSection = ({
           <Grid container justifyContent="center" spacing={3}>
             {children}
           </Grid>
-          <Grid container xs={12} justifyContent="center">
+          <Grid container item xs={12} justifyContent="center">
             <PButton className={classes.wideButton} variant="outlined" to="">
               View All Contributors
             </PButton>

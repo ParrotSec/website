@@ -61,9 +61,9 @@ const Team: NextPage = () => {
   const classes = useStyles()
 
   return (
-    <Grid container xs={12} className={classes.root} justifyContent="center">
+    <Grid container item xs={12} className={classes.root} justifyContent="center">
       <div className={classes.wallpaper} />
-      <Grid className={classes.title} item xs={12} justifyContent="center">
+      <Grid className={classes.title} item xs={12}>
         <Typography className={classes.headingTitle} variant="h1" align="center">
           The Team <br /> behind Parrot<span style={{ fontWeight: 300 }}>OS</span>
         </Typography>
@@ -71,7 +71,7 @@ const Team: NextPage = () => {
           A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
         </Typography>
       </Grid>
-      <Grid container xs={12} md={9} spacing={4}>
+      <Grid container item xs={12} md={9} spacing={4}>
         <UserCard
           avatar={lorenzo}
           name="Lorenzo Faletra"

@@ -82,7 +82,7 @@ const UserCard = ({
   const classes = useStyles()
 
   return (
-    <Grid {...props} item xs={12} md={4} justifyContent="center">
+    <Grid {...props} container item xs={12} md={4} justifyContent="center">
       <Card className={cls({ [classes.bgColor]: variant === 'background' })} elevation={0}>
         <CardContent className={classes.card}>
           {avatar && <Avatar className={classes.iconLarge} src={avatar.src} />}

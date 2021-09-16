@@ -3,9 +3,12 @@ import UserCard from 'components/UserCard'
 
 const useStyles = makeStyles(theme => ({
   specialThanks: {
-    marginTop: theme.spacing(20)
+    marginTop: theme.spacing(15)
   },
   specialThanksTitle: {
+    marginBottom: theme.spacing(5)
+  },
+  specialThanksSubtitle: {
     marginBottom: theme.spacing(5)
   }
 }))
@@ -18,15 +21,16 @@ const SpecialThanks = (props: GridProps) => {
       {...props}
       className={classes.specialThanks}
       container
-      xs={12}
+      item
+      xs={10}
       md={9}
       justifyContent="space-around"
     >
       <Grid item xs={12} md={3}>
         <Typography variant="h1" className={classes.specialThanksTitle}>
-          Special <br /> Thanks
+          Special Thanks
         </Typography>
-        <Typography variant="subtitle2">
+        <Typography variant="subtitle2" className={classes.specialThanksSubtitle}>
           Compilers, interpreters and intelligent editors. All you need to start programming comes
           out of the box, with the most secure Linux environment.
         </Typography>
