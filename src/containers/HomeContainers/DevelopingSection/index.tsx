@@ -161,7 +161,9 @@ const DevelopingSection = () => {
               </Typography>
             </div>
             <Hidden lgUp>
-              <Slider spacing={4}>{items}</Slider>
+              <Slider spacing={4} cloneFactor={2}>
+                {items}
+              </Slider>
             </Hidden>
             <Hidden mdDown>
               <Slider
@@ -171,7 +173,12 @@ const DevelopingSection = () => {
               >
                 {items}
               </Slider>
-              <Slider className={classes.sliderBlock} spacing={4} orientation="vertical" reversed>
+              <Slider
+                className={classes.sliderBlock}
+                spacing={4}
+                orientation="vertical"
+                reversed
+              >
                 {items}
               </Slider>
             </Hidden>
