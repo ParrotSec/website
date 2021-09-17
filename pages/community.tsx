@@ -38,10 +38,6 @@ const useStyles = makeStyles(theme => ({
   },
   headingSubTitle: {
     marginTop: 27,
-    fontSize: 18,
-    [theme.breakpoints.down('md')]: {
-      fontSize: 15.3
-    },
     marginBottom: theme.spacing(6.5)
   },
   features: {
@@ -72,7 +68,7 @@ const Community: NextPage = () => {
         <Typography className={classes.headingTitle} variant="h1" align="center">
           Join the Parrot Community
         </Typography>
-        <Typography className={classes.headingSubTitle} variant="body1" align="center">
+        <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
           A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
         </Typography>
       </Grid>
