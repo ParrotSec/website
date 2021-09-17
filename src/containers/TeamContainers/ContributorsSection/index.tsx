@@ -1,5 +1,19 @@
-import { makeStyles, Grid, Typography, GridProps, Box, Paper } from '@material-ui/core'
+import { useState } from 'react'
+import {
+  makeStyles,
+  Grid,
+  Typography,
+  GridProps,
+  Box,
+  Paper,
+  Dialog,
+  DialogTitle,
+  IconButton,
+  DialogContent,
+  Fade
+} from '@material-ui/core'
 import PButton from 'components/PButton'
+import CloseIcon from '../PastContributorsSection/assets/Close.svg'
 
 const useStyles = makeStyles(theme => ({
   activeContrib: {
@@ -35,6 +49,15 @@ const useStyles = makeStyles(theme => ({
       theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
     }`,
     borderRadius: 24
+  },
+  closeButton: {
+    position: 'absolute',
+    right: theme.spacing(2),
+    top: theme.spacing(2.5),
+    fill: theme.palette.type === 'dark' ? '#FFFFFF' : '#06043E'
+  },
+  dialogTitle: {
+    padding: theme.spacing(2)
   }
 }))
 
@@ -44,6 +67,26 @@ type ContributorsSectionProps = {
   subtitle: string
 } & GridProps
 
+type DialogTitleProps = {
+  title: string
+  onClose: () => void
+}
+
+const CustomDialogTitle = ({ title, onClose, ...rest }: DialogTitleProps) => {
+  const classes = useStyles()
+
+  return (
+    <DialogTitle className={classes.dialogTitle} {...rest}>
+      <Typography variant="h2" align="center">{title}</Typography>
+      {onClose ? (
+        <IconButton aria-label="close" onClick={onClose} className={classes.closeButton}>
+          <CloseIcon />
+        </IconButton>
+      ) : null}
+    </DialogTitle>
+  )
+}
+
 const ContributorsSection = ({
   heading,
   title,
@@ -52,6 +95,15 @@ const ContributorsSection = ({
   ...rest
 }: ContributorsSectionProps) => {
   const classes = useStyles()
+
+  const [open, setOpen] = useState(false)
+
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
+  const handleClose = () => {
+    setOpen(false)
+  }
 
   return (
     <Grid
@@ -95,10 +147,25 @@ const ContributorsSection = ({
             {children}
           </Grid>
           <Grid container item xs={12} justifyContent="center">
-            <PButton className={classes.wideButton} variant="outlined" to="">
+            <PButton className={classes.wideButton} variant="outlined" onClick={handleClickOpen}>
               View All Contributors
             </PButton>
           </Grid>
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            fullWidth={true}
+            maxWidth="lg"
+            TransitionComponent={Fade}
+            transitionDuration={500}
+          >
+            <CustomDialogTitle title="All Active Contributors" onClose={handleClose} />
+            <DialogContent>
+              <Grid container justifyContent="center" spacing={3}>
+                {children}
+              </Grid>
+            </DialogContent>
+          </Dialog>
         </Paper>
       </Grid>
     </Grid>
