@@ -128,7 +128,7 @@ const DonateSection = (props: GridProps) => {
                     <img
                       src={linode.src}
                       alt="Linode"
-                      style={{ display: 'block', margin: 'auto', width: '100%', height: 'auto' }}
+                      style={{ display: 'block', margin: 'auto' }}
                     />
                   </div>
                   <Link className={classes.button} href="https://linode.com">
@@ -137,11 +137,7 @@ const DonateSection = (props: GridProps) => {
                 </Box>
                 <Box marginTop={4} display="flex" alignItems="center">
                   <div className={classes.roundedIconHolder}>
-                    <img
-                      src={vultr.src}
-                      alt="Vultr"
-                      style={{ display: 'block', margin: 'auto', width: '100%', height: 'auto' }}
-                    />
+                    <img src={vultr.src} alt="Vultr" style={{ display: 'block', margin: 'auto' }} />
                   </div>
                   <Link className={classes.button} href="http://vultr.com">
                     Vultr <Arrow className={classes.arrow} />

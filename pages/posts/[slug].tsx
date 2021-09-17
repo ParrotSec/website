@@ -6,14 +6,19 @@ import Head from 'next/head'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { PostType } from '../../types'
 import { ReactNode, useEffect, useState } from 'react'
+import PButton from 'components/PButton'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
+  heading: {
+    marginBottom: theme.spacing(4)
+  },
   img: {
     width: 300,
     height: 300,
-    borderRadius: 6
+    borderRadius: 6,
+    marginBottom: theme.spacing(2)
   }
-})
+}))
 
 type Props = {
   post: PostType
@@ -43,11 +48,19 @@ const Post = ({ post /*, morePosts, preview*/ }: Props) => {
             <Head>
               <title>{post.title}</title>
             </Head>
+            <PButton to="/blog">Back</PButton>
             <Grid container justifyContent="center" direction="column">
               <Grid container item xs={12} justifyContent="center">
                 <img className={classes.img} src={post.image} alt="Post image" />
               </Grid>
-              <Grid container item xs={12} justifyContent="center" direction="column">
+              <Grid
+                className={classes.heading}
+                container
+                item
+                xs={12}
+                justifyContent="center"
+                direction="column"
+              >
                 <Typography variant="h1" align="center">
                   {post.title}
                 </Typography>
