@@ -1,6 +1,6 @@
 import {
   Card,
-  CardActions,
+  CardActionArea,
   CardContent,
   CardMedia,
   CardProps,
@@ -8,7 +8,7 @@ import {
   Typography
 } from '@material-ui/core'
 import { PostType } from '../../../types'
-import PButton from 'components/PButton'
+import RouterLink from 'next/link'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,6 +17,9 @@ const useStyles = makeStyles(theme => ({
   media: {
     width: '100%',
     height: 'auto'
+  },
+  actionArea: {
+    borderRadius: 24
   }
 }))
 
@@ -26,20 +29,26 @@ const Post = ({ title, description, date, image, slug, author, ...rest }: PostPr
   const classes = useStyles()
   return (
     <Card elevation={0} {...rest}>
-      <CardMedia className={classes.media} component="img" alt="Post Image" image={image} />
-      <div className={classes.root}>
-        <CardContent>
-          <Typography variant="h3" paragraph>
-            {title}
-          </Typography>
-          {description && <Typography variant="body2">{description}</Typography>}
-        </CardContent>
-        <CardActions>
-          <PButton variant="contained" to={`/posts/${slug}`}>
-            Read More
-          </PButton>
-        </CardActions>
-      </div>
+      <RouterLink href={`/blog/${slug}`}>
+        <CardActionArea className={classes.actionArea}>
+          <CardMedia className={classes.media} component="img" alt="Post Image" image={image} />
+          <div className={classes.root}>
+            <CardContent>
+              <Typography variant="h3" paragraph>
+                {title}
+              </Typography>
+              {description && (
+                <Typography variant="body2" paragraph>
+                  {description}
+                </Typography>
+              )}
+              <Typography variant="body1" color="primary" style={{ opacity: 1 }}>
+                {author}
+              </Typography>
+            </CardContent>
+          </div>
+        </CardActionArea>
+      </RouterLink>
     </Card>
   )
 }

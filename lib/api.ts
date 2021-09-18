@@ -42,7 +42,7 @@ export function getAllPosts(fields: string[] = []) {
   return (
     slugs
       .map(slug => getPostBySlug(slug, fields, false))
-      // sort posts by date in descending order
+      // sort blog by date in descending order
       .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
       .map(post => {
         post.date = post.date.toLocaleString('en-US')
