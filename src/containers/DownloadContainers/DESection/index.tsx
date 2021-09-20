@@ -11,6 +11,7 @@ import {
   Paper,
   Typography
 } from '@material-ui/core'
+import Image from 'next/image'
 import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
@@ -148,9 +149,9 @@ const DESection = ({
             )}
             <Carousel>
               {screenshots.map((image, i) => (
-                <img
+                <Image
                   className={classes.carouselImg}
-                  src={image.src}
+                  src={image}
                   onClick={() => setLightBoxOpened(true)}
                   key={`screenshot-${i}`}
                   alt={`screenshot-${i}`}

@@ -66,6 +66,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "jest": "^27.0.6",
     "jest-environment-jsdom": "^27.0.6",
+    "p-min-delay": "^4.0.1",
     "prettier": "^2.3.2",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
