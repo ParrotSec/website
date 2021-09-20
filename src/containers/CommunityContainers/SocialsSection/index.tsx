@@ -77,7 +77,7 @@ const SocialsSection = (props: GridProps) => {
       <Grid className={classes.grid} item container xs={12} md={9}>
         <Paper className={classes.paper} elevation={0}>
           <Grid container alignItems="center" direction="column">
-            <Typography variant="h3" paragraph>
+            <Typography variant="h5" paragraph>
               Join Us On Social Media
             </Typography>
             <Typography variant="subtitle2">

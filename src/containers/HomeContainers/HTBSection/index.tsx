@@ -45,7 +45,7 @@ const HTBSection = (rest: GridProps) => {
         <Grid container item xs justifyContent="space-between">
           <Grid className={classes.content} container item xs={12} md={4} direction="column">
             <HTBLogo className={classes.htbIcon} />
-            <Typography variant="h2" paragraph>
+            <Typography variant="h3" paragraph>
               Parrot<span style={{ fontWeight: 300 }}>OS</span> now web-based through Hack The Box
             </Typography>
             <Typography className={classes.desc} variant="body1" paragraph>
@@ -66,7 +66,7 @@ const HTBSection = (rest: GridProps) => {
             justifyContent="flex-end"
             alignItems="flex-end"
           >
-            <img src={htbScreenshot.src} alt="Screenshot of PWNBox" style={{ width: '100%' }} />
+            <img src={htbScreenshot.src} alt="Screenshot of PWNBox" />
           </Grid>
         </Grid>
       </Paper>

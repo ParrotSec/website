@@ -46,7 +46,7 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
           spacing={4}
         >
           <Grid item xs={12} sm={4}>
-            <Typography variant="h3" paragraph>
+            <Typography variant="h5" paragraph>
               +2 million downloads
             </Typography>
             <Typography variant="body2">
@@ -55,7 +55,7 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h3" paragraph>
+            <Typography variant="h5" paragraph>
               +8k forum users
             </Typography>
             <Typography variant="body2">
@@ -64,7 +64,7 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h3" paragraph>
+            <Typography variant="h5" paragraph>
               17 Worldwide PoP
             </Typography>
             <Typography variant="body2">

@@ -19,6 +19,8 @@ module.exports = {
 
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
     'react/react-in-jsx-scope': 'off', // new React 17 doesn't require this
     'react/no-unescaped-entities': [
       'error',

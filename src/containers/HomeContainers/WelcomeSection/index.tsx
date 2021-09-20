@@ -5,23 +5,6 @@ import PButton from 'components/PButton'
 import Bulb from './assets/Bulb.svg'
 
 const useStyles = makeStyles(theme => ({
-  headingTitle: {
-    marginTop: 0,
-    marginBottom: 10,
-    fontSize: theme.spacing(9),
-    [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(8),
-      minHeight: 222
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: theme.spacing(7),
-      minHeight: 260
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: theme.spacing(4),
-      minHeight: 148
-    },
-  },
   headingSubTitle: {
     marginTop: theme.spacing(1),
     fontSize: 18,
@@ -109,7 +92,7 @@ const WelcomeSection = () => {
       >
         <span style={{ fontWeight: 'bold' }}>Parrot</span>OS
       </Box>
-      <Typography className={classes.headingTitle} variant="h1" align="center">
+      <Typography variant="h1" align="center" paragraph>
         The operating <br /> system for <span className={classes.hackers}>{name}</span>
         <span className={classes.cursor}>|</span>
       </Typography>

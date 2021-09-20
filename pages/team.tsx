@@ -17,11 +17,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: 20
   },
   headingSubTitle: {
-    marginTop: 27,
-    fontSize: 18,
-    [theme.breakpoints.down('md')]: {
-      fontSize: 15.3
-    },
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(6.5)
   },
   wallpaper:
@@ -39,20 +35,6 @@ const useStyles = makeStyles(theme => ({
           backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
         }
       : { display: 'none' },
-  headingTitle: {
-    marginTop: 0,
-    marginBottom: 10,
-    fontSize: theme.spacing(9),
-    [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(8)
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: theme.spacing(7)
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: theme.spacing(5)
-    }
-  },
   developBlock: {
     marginTop: 154
   }
@@ -65,7 +47,7 @@ const Team: NextPage = () => {
     <Grid container xs={12} className={classes.root} justifyContent="center">
       <div className={classes.wallpaper} />
       <Grid className={classes.title} item xs={12} justifyContent="center">
-        <Typography className={classes.headingTitle} variant="h1" align="center">
+        <Typography variant="h1" align="center" paragraph>
           The Team <br /> behind Parrot<span style={{ fontWeight: 300 }}>OS</span>
         </Typography>
         <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">

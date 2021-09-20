@@ -7,22 +7,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 100
   },
-  headingTitle: {
-    marginTop: 0,
-    marginBottom: 10,
-    fontSize: theme.spacing(9),
-    [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(8)
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: theme.spacing(7)
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: theme.spacing(5)
-    }
-  },
   headingSubTitle: {
-    marginTop: 27,
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(6.5)
   }
 }))
@@ -42,7 +28,7 @@ const Blog = ({ allPosts }: BlogProps) => {
         direction="column"
         wrap="nowrap"
       >
-        <Typography className={classes.headingTitle} variant="h1" align="center">
+        <Typography variant="h1" align="center" paragraph>
           Parrot OS Blog
         </Typography>
         <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">

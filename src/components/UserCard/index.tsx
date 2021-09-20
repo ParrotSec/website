@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     opacity: 1
   },
   socials: {
-    marginTop: theme.spacing(8)
+    marginTop: theme.spacing(3)
   },
   icons: {
     display: 'block',
@@ -86,7 +86,7 @@ const UserCard = ({
       <Card className={cls({ [classes.bgColor]: variant === 'background' })} elevation={0}>
         <CardContent className={classes.card}>
           {avatar && <Avatar className={classes.iconLarge} src={avatar.src} />}
-          <Typography variant="h3" paragraph={!nickname}>
+          <Typography variant="h5" paragraph={!nickname}>
             {name}
           </Typography>
           {nickname && (
