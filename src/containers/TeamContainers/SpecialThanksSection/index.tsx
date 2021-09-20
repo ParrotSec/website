@@ -36,31 +36,37 @@ const SpecialThanks = (props: GridProps) => {
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          noAvatar
         />
         <UserCard
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          noAvatar
         />
         <UserCard
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          noAvatar
         />
         <UserCard
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          noAvatar
         />
         <UserCard
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          noAvatar
         />
         <UserCard
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
+          noAvatar
         />
       </Grid>
     </Grid>

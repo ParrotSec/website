@@ -9,10 +9,10 @@ import {
   GridProps
 } from '@material-ui/core'
 import cls from 'classnames'
-import Email from 'assets/Email.svg'
-import Github from 'assets/Github.svg'
-import LinkedIn from 'assets/LinkedIn.svg'
-import Twitter from 'assets/Twitter.svg'
+import Email from './assets/Email.svg'
+import Github from './assets/Github.svg'
+import LinkedIn from './assets/LinkedIn.svg'
+import Twitter from './assets/Twitter.svg'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -57,10 +57,10 @@ const useStyles = makeStyles(theme => ({
 }))
 
 type UserCardProps = {
-  name: string
-  nickname?: string
   role: string
-  avatar?: StaticImageData
+  noAvatar?: boolean
+  nickname: string
+  name?: string
   socials?: {
     github: string
     twitter: string
@@ -74,7 +74,7 @@ const UserCard = ({
   name,
   nickname,
   role,
-  avatar,
+  noAvatar = false,
   socials,
   variant = 'paper',
   ...props
@@ -85,7 +85,9 @@ const UserCard = ({
     <Grid {...props} item xs={12} md={4} justifyContent="center">
       <Card className={cls({ [classes.bgColor]: variant === 'background' })} elevation={0}>
         <CardContent className={classes.card}>
-          {avatar && <Avatar className={classes.iconLarge} src={avatar.src} />}
+          {!noAvatar && (
+            <Avatar className={classes.iconLarge} src={`/assets/avatars/${nickname}.jpg`} />
+          )}
           <Typography variant="h5" paragraph={!nickname}>
             {name}
           </Typography>

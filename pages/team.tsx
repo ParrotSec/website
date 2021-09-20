@@ -1,5 +1,4 @@
 import { makeStyles, Grid, Typography } from '@material-ui/core'
-import lorenzo from 'assets/lorenzo.png'
 import Wallpaper from 'assets/wallpaper.png'
 import UserCard from 'components/UserCard'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
@@ -56,7 +55,6 @@ const Team: NextPage = () => {
       </Grid>
       <Grid container xs={12} md={9} spacing={4}>
         <UserCard
-          avatar={lorenzo}
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
@@ -68,7 +66,6 @@ const Team: NextPage = () => {
           }}
         />
         <UserCard
-          avatar={lorenzo}
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
@@ -80,7 +77,6 @@ const Team: NextPage = () => {
           }}
         />
         <UserCard
-          avatar={lorenzo}
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
@@ -92,7 +88,6 @@ const Team: NextPage = () => {
           }}
         />
         <UserCard
-          avatar={lorenzo}
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
@@ -104,7 +99,6 @@ const Team: NextPage = () => {
           }}
         />
         <UserCard
-          avatar={lorenzo}
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
@@ -116,7 +110,6 @@ const Team: NextPage = () => {
           }}
         />
         <UserCard
-          avatar={lorenzo}
           name="Lorenzo Faletra"
           nickname="palinuro"
           role="Team Leader, Core Dev, Infrastructure Manager, Release manager"

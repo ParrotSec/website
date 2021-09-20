@@ -2,6 +2,7 @@ import { Grid, makeStyles, Typography } from '@material-ui/core'
 import PostsSection from 'containers/BlogContainers/PostsSection'
 import { getAllPosts } from '../lib/api'
 import { PostType } from '../types'
+import ContributeSection from 'containers/HomeContainers/ContributeSection'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -10,10 +11,13 @@ const useStyles = makeStyles(theme => ({
   headingSubTitle: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(6.5)
+  },
+  contributeBlock: {
+    marginTop: theme.spacing(13)
   }
 }))
 
-type BlogProps = { allPosts: PostType[] }
+type BlogProps = { allPosts: PostType[]; featuredPosts: PostType[] }
 
 const Blog = ({ allPosts }: BlogProps) => {
   const classes = useStyles()
@@ -36,6 +40,7 @@ const Blog = ({ allPosts }: BlogProps) => {
         </Typography>
       </Grid>
       <PostsSection allPosts={allPosts} />
+      <ContributeSection className={classes.contributeBlock} />
     </Grid>
   )
 }
@@ -43,7 +48,7 @@ const Blog = ({ allPosts }: BlogProps) => {
 export default Blog
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+  const allPosts = await getAllPosts([
     'title',
     'date',
     'author',
@@ -52,6 +57,12 @@ export const getStaticProps = async () => {
     'content',
     'slug'
   ])
+
+  /* const featuredPosts = await Promise.all(
+    ['parrot-4.11-release-notes.md', '2020-05-08-parrot-hackthebox.md'].map(slug =>
+      getPostBySlug(slug, ['title', 'image', 'date', 'description'], true)
+    )
+  )*/
 
   return {
     props: { allPosts }

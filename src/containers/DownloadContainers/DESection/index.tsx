@@ -147,7 +147,6 @@ const DESection = ({
               />
             )}
             <Carousel>
-              {/*TODO: for responsiveness width should be changed to 100% and a popup needed to check the screens in fq*/}
               {screenshots.map((image, i) => (
                 <img
                   className={classes.carouselImg}

@@ -1,18 +1,18 @@
-import fs from 'fs'
+import fs from 'fs/promises'
 import { join } from 'path'
 import matter from 'gray-matter'
 import { PostType } from '../types'
 
 const postsDirectory = join(process.cwd(), 'posts')
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory)
+export async function getPostSlugs() {
+  return fs.readdir(postsDirectory)
 }
 
-export function getPostBySlug(slug: string, fields: string[] = [], serializeDate = true) {
+export async function getPostBySlug(slug: string, fields: string[] = [], serializeDate = true) {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(postsDirectory, `${realSlug}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const fileContents = await fs.readFile(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
   const fieldMap: {
@@ -33,19 +33,27 @@ export function getPostBySlug(slug: string, fields: string[] = [], serializeDate
     },
     { date: new Date() }
   )
-  if (serializeDate) post.date = post.date.toLocaleString('en-US')
+  if (serializeDate)
+    post.date = (post.date as Date).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    })
   return post
 }
 
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs()
+export async function getAllPosts(fields: string[] = []) {
+  const slugs = await getPostSlugs()
   return (
-    slugs
-      .map(slug => getPostBySlug(slug, fields, false))
+    (await Promise.all(slugs.map(slug => getPostBySlug(slug, fields, false))))
       // sort blog by date in descending order
       .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
       .map(post => {
-        post.date = post.date.toLocaleString('en-US')
+        post.date = (post.date as Date).toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric'
+        })
         return post
       }) as PostType[]
   )
