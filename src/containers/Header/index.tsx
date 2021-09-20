@@ -86,7 +86,7 @@ const Header = () => {
           <Grid
             container
             item
-            xs={12}
+            xs={11}
             sm={8}
             lg={10}
             xl={12}

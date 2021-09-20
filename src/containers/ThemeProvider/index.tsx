@@ -87,6 +87,12 @@ const SwitchThemeProvider = ({ children, ...rest }: Omit<ThemeProviderProps, 'th
               fontSize: 14,
               fontFamily: 'nimbus-sans'
             },
+            subtitle1: {
+              fontSize: 20,
+              fontWeight: 400,
+              opacity: 0.5,
+              fontFamily: 'nimbus-sans'
+            },
             subtitle2: {
               fontSize: 18,
               opacity: 0.5,

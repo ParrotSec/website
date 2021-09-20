@@ -17,6 +17,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
     backgroundSize: 'cover',
+    backgroundPosition: 'center',
     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper}')`
   },
   headingTitle: {

@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
     transitionTimingFunction: 'ease-in-out'
   },
   gridHr: {
-    marginTop: 22
+    marginTop: theme.spacing(3)
   }
 }))
 
@@ -96,7 +96,6 @@ const OSSelection = () => {
             <Button
               className={classes.crumb}
               startIcon={<Left className={classes.arrow} fill="textSecondary" />}
-              href="/"
             >
               ParrotOS
             </Button>
