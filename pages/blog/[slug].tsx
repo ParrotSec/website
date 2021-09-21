@@ -8,6 +8,16 @@ import { PostType } from '../../types'
 import { ReactNode, useEffect, useState } from 'react'
 import RouterLink from 'next/link'
 import Left from 'assets/Left.svg'
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  RedditIcon,
+  TelegramIcon
+} from 'react-share'
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -50,6 +60,7 @@ const Post = ({ post /*, morePosts, preview*/ }: Props) => {
     })()
   }, [])
   const classes = useStyles()
+  const postUrl = `https://parrotsec.org/blog/${post.slug}`
   return router.isFallback ? (
     <>Loading</>
   ) : (
@@ -112,6 +123,25 @@ const Post = ({ post /*, morePosts, preview*/ }: Props) => {
           <Grid item xs={12} md={10} lg={6}>
             {Content}
           </Grid>
+          <Box width="100%" display="flex" justifyContent="center" style={{ gap: 16 }}>
+            <FacebookShareButton url={postUrl} quote={post.title}>
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+            <TwitterShareButton url={postUrl} title={post.title}>
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+            <RedditShareButton
+              url={postUrl}
+              title={post.title}
+              windowWidth={660}
+              windowHeight={460}
+            >
+              <RedditIcon size={32} round />
+            </RedditShareButton>
+            <TelegramShareButton url={postUrl} title={post.title}>
+              <TelegramIcon size={32} round />
+            </TelegramShareButton>
+          </Box>
         </Grid>
       </article>
     </>
