@@ -11,7 +11,6 @@ import {
   Paper,
   Typography
 } from '@material-ui/core'
-import Image from 'next/image'
 import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
@@ -149,9 +148,9 @@ const DESection = ({
             )}
             <Carousel>
               {screenshots.map((image, i) => (
-                <Image
+                <img
                   className={classes.carouselImg}
-                  src={image}
+                  src={image.src}
                   onClick={() => setLightBoxOpened(true)}
                   key={`screenshot-${i}`}
                   alt={`screenshot-${i}`}
@@ -255,7 +254,10 @@ const DESection = ({
                 style={{ padding: 0 }}
               >
                 <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
-                  <Typography className={cls(classes.subBlockHeading, classes.highOpacity)} variant="subtitle2">
+                  <Typography
+                    className={cls(classes.subBlockHeading, classes.highOpacity)}
+                    variant="subtitle2"
+                  >
                     Features
                   </Typography>
                   <Typography className={classes.highOpacity} color="primary" variant="body1">
@@ -319,7 +321,11 @@ const DESection = ({
                 <Divider variant="fullWidth" />
               </Grid>
               <Grid className={classes.gridHrMarginTop} item xs={12}>
-                <Typography className={cls(classes.subBlockHeading, classes.highOpacity)} variant="subtitle2" paragraph>
+                <Typography
+                  className={cls(classes.subBlockHeading, classes.highOpacity)}
+                  variant="subtitle2"
+                  paragraph
+                >
                   Requirements
                 </Typography>
                 <Grid container item xs={12} justifyContent="space-between" spacing={3}>

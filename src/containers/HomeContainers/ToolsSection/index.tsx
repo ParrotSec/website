@@ -1,5 +1,4 @@
 import { Box, Grid, GridProps, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
-import Image from 'next/image'
 import Tools from './assets/tools.svg'
 import parrotBg from './assets/shellBg.png'
 import screenshot from './assets/screenshot.png'
@@ -64,8 +63,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(4)
     }
-  },
-  toolsImg: { display: 'block', marginLeft: 'auto', maxWidth: '90%' }
+  }
 }))
 
 const ToolsSection = (rest: GridProps) => {
@@ -249,8 +247,8 @@ const ToolsSection = (rest: GridProps) => {
               </Slider>
             </Hidden>
             <Hidden smDown>
-              <div ref={ref} className={classes.bgHolder}>
-                <Image className={classes.bg} src={parrotBg} layout="responsive" alt="Parrot Bg" />
+              <div className={classes.bgHolder}>
+                <img ref={ref} className={classes.bg} src={parrotBg.src} alt="Parrot BG" />
               </div>
             </Hidden>
             <Typography variant="h5" align="center">
@@ -293,9 +291,11 @@ const ToolsSection = (rest: GridProps) => {
                   on Kali Linux.
                 </Typography>
               </div>
-              <Box marginLeft="10%">
-                <Image src={screenshot} layout="responsive" alt="Parrot Tools" />
-              </Box>
+              <img
+                src={screenshot.src}
+                style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
+                alt="Parrot Tools"
+              />
             </Box>
           </Paper>
         </Grid>
@@ -313,9 +313,11 @@ const ToolsSection = (rest: GridProps) => {
                   on Kali Linux.
                 </Typography>
               </div>
-              <Box marginLeft="10%">
-                <Image src={screenshot} layout="responsive" alt="Parrot Tools" />
-              </Box>
+              <img
+                src={screenshot.src}
+                style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
+                alt="Parrot Tools"
+              />
             </Box>
           </Paper>
         </Grid>

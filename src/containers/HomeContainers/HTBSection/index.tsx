@@ -1,5 +1,4 @@
-import { Box, Grid, GridProps, makeStyles, Paper, Typography } from '@material-ui/core'
-import Image from 'next/image'
+import { Grid, GridProps, makeStyles, Paper, Typography } from '@material-ui/core'
 import PButton from 'components/PButton'
 import HTBLogo from './assets/htbLogo.svg'
 import htbScreenshot from './assets/htbScreenshot.png'
@@ -63,14 +62,7 @@ const HTBSection = (rest: GridProps) => {
             justifyContent="flex-end"
             alignItems="flex-end"
           >
-            <Box width="90%">
-              <Image
-                height={599}
-                src={htbScreenshot}
-                layout="responsive"
-                alt="Screenshot of PWNBox"
-              />
-            </Box>
+            <img src={htbScreenshot.src} alt="Screenshot of PWNBox" style={{ paddingLeft: '10%' }} />
           </Grid>
         </Grid>
       </Paper>
