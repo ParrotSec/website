@@ -1,39 +1,13 @@
 import { useState } from 'react'
-import {
-  Box,
-  Breadcrumbs,
-  Button,
-  CircularProgress,
-  Divider,
-  Grid,
-  makeStyles
-} from '@material-ui/core'
+import { Box, Breadcrumbs, Button, Divider, Grid, makeStyles } from '@material-ui/core'
 import Left from 'assets/Left.svg'
 import RouterLink from 'next/link'
-import dynamic from 'next/dynamic'
 import { useMeasure } from 'react-use'
 import Carousel from 'components/Carousel'
 import OSHome from 'containers/DownloadContainers/OSHome'
+import OSSecurity from 'containers/DownloadContainers/OSSecurity'
+import OSCloud from 'containers/DownloadContainers/OSCloud'
 import cls from 'classnames'
-
-const OSSecurity = dynamic(() => import('containers/DownloadContainers/OSSecurity'), {
-  loading: function FallbackSecurity() {
-    return (
-      <Grid container justifyContent="center">
-        <CircularProgress />
-      </Grid>
-    )
-  }
-})
-const OSCloud = dynamic(() => import('containers/DownloadContainers/OSCloud'), {
-  loading: function FallbackCloud() {
-    return (
-      <Grid container justifyContent="center">
-        <CircularProgress />
-      </Grid>
-    )
-  }
-})
 
 const useStyles = makeStyles(theme => ({
   arrow: {
