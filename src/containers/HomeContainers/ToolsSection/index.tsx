@@ -229,7 +229,7 @@ const ToolsSection = (rest: GridProps) => {
             <div className={classes.headerIconWrapper}>
               <Tools className={classes.headerIcon} />
             </div>
-            <Typography variant="h2" align="center" paragraph>
+            <Typography variant="h3" align="center" paragraph>
               Tools for every occasion
             </Typography>
             <Typography variant="subtitle2" align="center" paragraph>
@@ -237,19 +237,21 @@ const ToolsSection = (rest: GridProps) => {
             </Typography>
             {/*TODO: for futher animations need to apply box-shadow*/}
             <Hidden smDown>
-              <Box position="relative" width={width} marginTop="46px">
+              <Box position="relative" width={width} marginTop="46px" zIndex={2}>
                 {icons(true)}
               </Box>
             </Hidden>
             <Hidden mdUp>
-              <Slider className={classes.smMarquee} cloneFactor={2}>{icons(false)}</Slider>
+              <Slider className={classes.smMarquee} cloneFactor={2}>
+                {icons(false)}
+              </Slider>
             </Hidden>
             <Hidden smDown>
               <div className={classes.bgHolder}>
                 <img ref={ref} className={classes.bg} src={parrotBg.src} alt="Parrot BG" />
               </div>
             </Hidden>
-            <Typography variant="h3" align="center">
+            <Typography variant="h5" align="center">
               Explore over 600+ tools
             </Typography>
             <Grid className={classes.buttons} container item xs={12} spacing={4}>
@@ -279,7 +281,7 @@ const ToolsSection = (rest: GridProps) => {
           <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
               <div className={classes.paperPadding}>
-                <Typography variant="h3" paragraph>
+                <Typography variant="h5" paragraph>
                   Hacking tools at your fingertips
                 </Typography>
                 <Typography variant="body1">
@@ -301,7 +303,7 @@ const ToolsSection = (rest: GridProps) => {
           <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
               <div className={classes.paperPadding}>
-                <Typography variant="h3" paragraph>
+                <Typography variant="h5" paragraph>
                   This block should be replaced
                 </Typography>
                 <Typography variant="body1">

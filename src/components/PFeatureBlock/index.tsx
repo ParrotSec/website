@@ -78,7 +78,7 @@ const PFeatureBlock = ({
       <div className={classes.iconWrapper}>
         <Icon className={classes.icon} />
       </div>
-      <Typography variant="h3">{title}</Typography>
+      <Typography variant="h5">{title}</Typography>
       <Typography className={classes.body} variant="body1">
         {children}
       </Typography>

@@ -114,7 +114,7 @@ const DESection = ({
   return (
     <Grid className={cls(classes.grid, className)} container item xs={12} lg={8} {...rest}>
       <Paper className={classes.root} elevation={0}>
-        <Typography variant="h3" paragraph>
+        <Typography variant="h5" paragraph>
           {name}
         </Typography>
         <Typography variant="subtitle2" paragraph>
@@ -147,7 +147,6 @@ const DESection = ({
               />
             )}
             <Carousel>
-              {/*TODO: for responsiveness width should be changed to 100% and a popup needed to check the screens in fq*/}
               {screenshots.map((image, i) => (
                 <img
                   className={classes.carouselImg}
@@ -255,7 +254,10 @@ const DESection = ({
                 style={{ padding: 0 }}
               >
                 <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
-                  <Typography className={cls(classes.subBlockHeading, classes.highOpacity)} variant="subtitle2">
+                  <Typography
+                    className={cls(classes.subBlockHeading, classes.highOpacity)}
+                    variant="subtitle2"
+                  >
                     Features
                   </Typography>
                   <Typography className={classes.highOpacity} color="primary" variant="body1">
@@ -319,7 +321,11 @@ const DESection = ({
                 <Divider variant="fullWidth" />
               </Grid>
               <Grid className={classes.gridHrMarginTop} item xs={12}>
-                <Typography className={cls(classes.subBlockHeading, classes.highOpacity)} variant="subtitle2" paragraph>
+                <Typography
+                  className={cls(classes.subBlockHeading, classes.highOpacity)}
+                  variant="subtitle2"
+                  paragraph
+                >
                   Requirements
                 </Typography>
                 <Grid container item xs={12} justifyContent="space-between" spacing={3}>

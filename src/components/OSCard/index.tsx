@@ -39,7 +39,7 @@ const OSCard = ({ Icon, iconClassName, title, children, ...rest }: OSCardProps) 
         <div className={cls(classes.iconHolder, iconClassName)}>
           <Icon className={classes.icon} />
         </div>
-        <Typography variant="h3" paragraph>
+        <Typography variant="h5" paragraph>
           {title}
         </Typography>
         <Typography variant="body1" paragraph>

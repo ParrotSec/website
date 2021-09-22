@@ -33,7 +33,7 @@ const OSHome = ({ classesGeneral }: OSHomeProps) => {
             <div className={cls(classesGeneral.iconHolder, classes.home)}>
               <Home className={classesGeneral.headerIcon} />
             </div>
-            <Typography variant="h2" align="center">
+            <Typography variant="h3" align="center">
               Home Edition
             </Typography>
           </Box>

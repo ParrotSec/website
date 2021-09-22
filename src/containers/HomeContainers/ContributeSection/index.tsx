@@ -25,7 +25,7 @@ const ContributeSection = (props: GridProps) => {
       <div className={classes.iconWrapper}>
         <Shell className={classes.icon} />
       </div>
-      <Typography variant="h1" paragraph align="center">
+      <Typography variant="h2" paragraph align="center">
         Develop for Parrot<span style={{ fontWeight: 300 }}>OS</span>
       </Typography>
       <Typography variant="subtitle2" align="center">

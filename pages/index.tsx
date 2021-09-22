@@ -1,16 +1,18 @@
 import { Grid, makeStyles } from '@material-ui/core'
 import Wallpaper from 'assets/wallpaper.png'
-import ContributeSection from 'containers/HomeContainers/ContributeSection'
-import DevelopingSection from 'containers/HomeContainers/DevelopingSection'
 import FeaturesSection from 'containers/HomeContainers/FeaturesSection'
-import HTBSection from 'containers/HomeContainers/HTBSection'
-import NewsletterSection from 'containers/HomeContainers/NewsletterSection'
-import OSSection from 'containers/HomeContainers/OSSection'
-import StatsSection from 'containers/HomeContainers/StatsSection'
-import ToolsSection from 'containers/HomeContainers/ToolsSection'
-import TrustSection from 'containers/HomeContainers/TrustSection'
 import WelcomeSection from 'containers/HomeContainers/WelcomeSection'
 import { NextPage } from 'next'
+import dynamic from 'next/dynamic'
+
+const DevelopingSection = dynamic(() => import('containers/HomeContainers/DevelopingSection'))
+const HTBSection = dynamic(() => import('containers/HomeContainers/HTBSection'))
+const ToolsSection = dynamic(() => import('containers/HomeContainers/ToolsSection'))
+const ContributeSection = dynamic(() => import('containers/HomeContainers/ContributeSection'))
+const OSSection = dynamic(() => import('containers/HomeContainers/OSSection'))
+const TrustSection = dynamic(() => import('containers/HomeContainers/TrustSection'))
+const StatsSection = dynamic(() => import('containers/HomeContainers/StatsSection'))
+const NewsletterSection = dynamic(() => import('containers/HomeContainers/NewsletterSection'))
 
 const useStyles = makeStyles(theme => ({
   root: {

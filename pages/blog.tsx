@@ -1,33 +1,24 @@
 import { Grid, makeStyles, Typography } from '@material-ui/core'
+import dynamic from 'next/dynamic'
 import PostsSection from 'containers/BlogContainers/PostsSection'
 import { getAllPosts } from '../lib/api'
 import { PostType } from '../types'
+const ContributeSection = dynamic(() => import('containers/HomeContainers/ContributeSection'))
 
 const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 100
   },
-  headingTitle: {
-    marginTop: 0,
-    marginBottom: 10,
-    fontSize: theme.spacing(9),
-    [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(8)
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: theme.spacing(7)
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: theme.spacing(5)
-    }
-  },
   headingSubTitle: {
-    marginTop: 27,
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(6.5)
+  },
+  contributeBlock: {
+    marginTop: theme.spacing(13)
   }
 }))
 
-type BlogProps = { allPosts: PostType[] }
+type BlogProps = { allPosts: PostType[]; featuredPosts: PostType[] }
 
 const Blog = ({ allPosts }: BlogProps) => {
   const classes = useStyles()
@@ -42,7 +33,7 @@ const Blog = ({ allPosts }: BlogProps) => {
         direction="column"
         wrap="nowrap"
       >
-        <Typography className={classes.headingTitle} variant="h1" align="center">
+        <Typography variant="h1" align="center" paragraph>
           Parrot OS Blog
         </Typography>
         <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
@@ -50,6 +41,7 @@ const Blog = ({ allPosts }: BlogProps) => {
         </Typography>
       </Grid>
       <PostsSection allPosts={allPosts} />
+      <ContributeSection className={classes.contributeBlock} />
     </Grid>
   )
 }
@@ -57,7 +49,7 @@ const Blog = ({ allPosts }: BlogProps) => {
 export default Blog
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+  const allPosts = await getAllPosts([
     'title',
     'date',
     'author',
@@ -66,6 +58,12 @@ export const getStaticProps = async () => {
     'content',
     'slug'
   ])
+
+  /* const featuredPosts = await Promise.all(
+    ['parrot-4.11-release-notes.md', '2020-05-08-parrot-hackthebox.md'].map(slug =>
+      getPostBySlug(slug, ['title', 'image', 'date', 'description'], true)
+    )
+  )*/
 
   return {
     props: { allPosts }

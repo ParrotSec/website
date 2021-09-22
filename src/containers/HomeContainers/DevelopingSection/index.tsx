@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   compilePaper: {
-    padding: `${theme.spacing(9)}px ${theme.spacing(8)}px`,
+    padding: theme.spacing(9, 8),
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(4)
     }
@@ -140,7 +140,7 @@ const DevelopingSection = () => {
   return (
     <>
       <Grid className={classes.developerBlock} container item xs={12} md={7}>
-        <Typography variant="h1" align="center" paragraph>
+        <Typography variant="h2" align="center" paragraph>
           Parrot is developer friendly. Secure in a Linux Environment.
         </Typography>
         <Typography variant="subtitle2" align="center">
@@ -152,7 +152,7 @@ const DevelopingSection = () => {
         <Grid item xs={12}>
           <Paper className={classes.devPaper} elevation={0}>
             <div className={classes.devToolsBlock}>
-              <Typography variant="h3" paragraph>
+              <Typography variant="h5" paragraph>
                 Developer tools
               </Typography>
               <Typography variant="body1" paragraph>
@@ -173,12 +173,7 @@ const DevelopingSection = () => {
               >
                 {items}
               </Slider>
-              <Slider
-                className={classes.sliderBlock}
-                spacing={4}
-                orientation="vertical"
-                reversed
-              >
+              <Slider className={classes.sliderBlock} spacing={4} orientation="vertical" reversed>
                 {items}
               </Slider>
             </Hidden>
@@ -186,7 +181,7 @@ const DevelopingSection = () => {
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.compilePaper} elevation={0}>
-            <Typography variant="h3" paragraph>
+            <Typography variant="h5" paragraph>
               Compilers & interpreters
             </Typography>
             <Typography variant="body1">

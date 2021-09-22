@@ -606,25 +606,31 @@ function CarouselItem(props: CarouselItemProps) {
       })
     : {}
 
-  return props.display ? (
-    <div {...swipeHandlers} className="CarouselItem" style={{ height: '100%' }}>
+  return (
+    <div style={{ display: props.display ? 'block' : 'none' }}>
       {props.animation === 'slide' ? (
         <Slide
           direction={
             props.active ? (props.isNext ? 'left' : 'right') : props.isNext ? 'right' : 'left'
           }
-          in={props.active}
+          in={props.display && props.active}
           timeout={props.timeout}
+          {...swipeHandlers}
         >
           <div>{props.child}</div>
         </Slide>
       ) : (
-        <Fade in={props.active} timeout={props.timeout} style={{ height: '100%' }}>
+        <Fade
+          in={props.display && props.active}
+          timeout={props.timeout}
+          style={{ height: '100%' }}
+          {...swipeHandlers}
+        >
           <div>{props.child}</div>
         </Fade>
       )}
     </div>
-  ) : null
+  )
 }
 
 type IndicatorsProps = {

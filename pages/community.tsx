@@ -23,22 +23,8 @@ const useStyles = makeStyles(theme => ({
           backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
         }
       : { display: 'none' },
-  headingTitle: {
-    marginTop: 0,
-    marginBottom: 10,
-    fontSize: theme.spacing(9),
-    [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(8)
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: theme.spacing(7)
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: theme.spacing(5)
-    }
-  },
   headingSubTitle: {
-    marginTop: 27,
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(6.5)
   },
   features: {
@@ -66,7 +52,7 @@ const Community: NextPage = () => {
         direction="column"
         wrap="nowrap"
       >
-        <Typography className={classes.headingTitle} variant="h1" align="center">
+        <Typography variant="h1" align="center" paragraph>
           Join the Parrot Community
         </Typography>
         <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">

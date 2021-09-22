@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import { Box, Button, Divider, Grid, makeStyles, Typography } from '@material-ui/core'
+import { Avatar, Box, Button, Divider, Grid, makeStyles, Typography } from '@material-ui/core'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import Head from 'next/head'
 import markdownToHtml from '../../lib/markdownToHtml'
@@ -8,14 +8,22 @@ import { PostType } from '../../types'
 import { ReactNode, useEffect, useState } from 'react'
 import RouterLink from 'next/link'
 import Left from 'assets/Left.svg'
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  RedditIcon,
+  TelegramIcon
+} from 'react-share'
 
 const useStyles = makeStyles(theme => ({
   heading: {
     marginBottom: theme.spacing(4)
   },
   img: {
-    width: 300,
-    height: 300,
     borderRadius: 6,
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2)
@@ -52,6 +60,7 @@ const Post = ({ post /*, morePosts, preview*/ }: Props) => {
     })()
   }, [])
   const classes = useStyles()
+  const postUrl = `https://parrotsec.org/blog/${post.slug}`
   return router.isFallback ? (
     <>Loading</>
   ) : (
@@ -87,7 +96,8 @@ const Post = ({ post /*, morePosts, preview*/ }: Props) => {
             container
             item
             xs={12}
-            md={6}
+            md={10}
+            lg={6}
             justifyContent="center"
             direction="column"
           >
@@ -99,19 +109,39 @@ const Post = ({ post /*, morePosts, preview*/ }: Props) => {
                 {post.description}
               </Typography>
             )}
-            <Box display="flex" justifyContent="space-between" marginTop={3}>
+            <Box display="flex" marginTop={3} alignItems="center" style={{ gap: 8 }}>
+              <Avatar src={`/assets/avatars/${post.author}.jpg`} />
               <Typography variant="body1" color="primary" style={{ opacity: 1 }}>
                 {post.author}
               </Typography>
               <Typography variant="body1">{post.date}</Typography>
             </Box>
           </Grid>
-          <Grid container item xs={12} justifyContent="center">
+          <Grid container item xs={12} md={10} lg={6} justifyContent="center">
             <img className={classes.img} src={post.image} alt="Post image" />
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={10} lg={6}>
             {Content}
           </Grid>
+          <Box width="100%" display="flex" justifyContent="center" style={{ gap: 16 }}>
+            <FacebookShareButton url={postUrl} quote={post.title}>
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+            <TwitterShareButton url={postUrl} title={post.title}>
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+            <RedditShareButton
+              url={postUrl}
+              title={post.title}
+              windowWidth={660}
+              windowHeight={460}
+            >
+              <RedditIcon size={32} round />
+            </RedditShareButton>
+            <TelegramShareButton url={postUrl} title={post.title}>
+              <TelegramIcon size={32} round />
+            </TelegramShareButton>
+          </Box>
         </Grid>
       </article>
     </>
@@ -126,10 +156,10 @@ type Params = {
   }
 }
 
-export function getStaticProps({ params }: Params) {
+export async function getStaticProps({ params }: Params) {
   return {
     props: {
-      post: getPostBySlug(params.slug, [
+      post: await getPostBySlug(params.slug, [
         'title',
         'date',
         'slug',
@@ -143,7 +173,7 @@ export function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = await getAllPosts(['slug'])
 
   return {
     paths: posts.map(posts => {

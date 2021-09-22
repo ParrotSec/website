@@ -1,6 +1,5 @@
 import { GridProps } from '@material-ui/core'
 import UserCard from 'components/UserCard'
-import lorenzo from 'assets/lorenzo.png'
 import ContributorsSection from 'containers/TeamContainers/ContributorsSection'
 
 const PastContributors = (props: GridProps) => {
@@ -13,9 +12,8 @@ contributors who improve the OS every day."
       {...props}
     >
       <UserCard
-        avatar={lorenzo}
         variant="background"
-        name="palinuro"
+        nickname="palinuro"
         role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
         socials={{
           github: 'https://github.com',
@@ -25,9 +23,8 @@ contributors who improve the OS every day."
         }}
       />
       <UserCard
-        avatar={lorenzo}
         variant="background"
-        name="palinuro"
+        nickname="palinuro"
         role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
         socials={{
           github: 'https://github.com',
@@ -37,9 +34,8 @@ contributors who improve the OS every day."
         }}
       />
       <UserCard
-        avatar={lorenzo}
         variant="background"
-        name="palinuro"
+        nickname="palinuro"
         role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
         socials={{
           github: 'https://github.com',
@@ -49,9 +45,8 @@ contributors who improve the OS every day."
         }}
       />
       <UserCard
-        avatar={lorenzo}
         variant="background"
-        name="palinuro"
+        nickname="palinuro"
         role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
         socials={{
           github: 'https://github.com',
@@ -61,9 +56,8 @@ contributors who improve the OS every day."
         }}
       />
       <UserCard
-        avatar={lorenzo}
         variant="background"
-        name="palinuro"
+        nickname="palinuro"
         role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
         socials={{
           github: 'https://github.com',
@@ -73,9 +67,8 @@ contributors who improve the OS every day."
         }}
       />
       <UserCard
-        avatar={lorenzo}
         variant="background"
-        name="palinuro"
+        nickname="palinuro"
         role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
         socials={{
           github: 'https://github.com',

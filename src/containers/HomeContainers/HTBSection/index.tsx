@@ -31,9 +31,6 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: 50,
     paddingRight: 50,
     paddingBottom: 78
-  },
-  screenshotGrid: {
-    marginLeft: 'auto'
   }
 }))
 
@@ -43,9 +40,9 @@ const HTBSection = (rest: GridProps) => {
     <Grid {...rest} container item xs={12} md={9}>
       <Paper className={classes.root} elevation={0}>
         <Grid container item xs justifyContent="space-between">
-          <Grid className={classes.content} container item xs={12} md={4} direction="column">
+          <Grid className={classes.content} container item xs={12} lg={4} direction="column">
             <HTBLogo className={classes.htbIcon} />
-            <Typography variant="h2" paragraph>
+            <Typography variant="h3" paragraph>
               Parrot<span style={{ fontWeight: 300 }}>OS</span> now web-based through Hack The Box
             </Typography>
             <Typography className={classes.desc} variant="body1" paragraph>
@@ -57,16 +54,15 @@ const HTBSection = (rest: GridProps) => {
             </PButton>
           </Grid>
           <Grid
-            className={classes.screenshotGrid}
             container
             item
-            xs={10}
-            md
+            xs={12}
+            lg
             direction="column"
             justifyContent="flex-end"
             alignItems="flex-end"
           >
-            <img src={htbScreenshot.src} alt="Screenshot of PWNBox" style={{ width: '100%' }} />
+            <img src={htbScreenshot.src} alt="Screenshot of PWNBox" style={{ paddingLeft: '10%' }} />
           </Grid>
         </Grid>
       </Paper>

@@ -5,23 +5,6 @@ import PButton from 'components/PButton'
 import Bulb from './assets/Bulb.svg'
 
 const useStyles = makeStyles(theme => ({
-  headingTitle: {
-    marginTop: 0,
-    marginBottom: 10,
-    fontSize: theme.spacing(9),
-    [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(8),
-      minHeight: 222
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: theme.spacing(7),
-      minHeight: 260
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: theme.spacing(4),
-      minHeight: 148
-    },
-  },
   headingSubTitle: {
     marginTop: theme.spacing(1),
     fontSize: 18,
@@ -74,12 +57,13 @@ const useStyles = makeStyles(theme => ({
 const typeData = ['Hackers', 'Security specialists', 'Developers', 'Sysadmins', 'Network engineers']
 let index = 0
 
-const WelcomeSection = () => {
+const RunningText = () => {
   const classes = useStyles()
-
   const [magicName, setMagicName] = useState(typeData[0])
+
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const name = useTypewriter(magicName)
+
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       index = index > typeData.length ? 0 : ++index
@@ -89,6 +73,17 @@ const WelcomeSection = () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
     }
   }, [magicName])
+
+  return (
+    <Typography variant="h1" align="center" paragraph>
+      The operating <br /> system for <span className={classes.hackers}>{name}</span>
+      <span className={classes.cursor}>|</span>
+    </Typography>
+  )
+}
+
+const WelcomeSection = () => {
+  const classes = useStyles()
 
   return (
     <Grid
@@ -109,10 +104,7 @@ const WelcomeSection = () => {
       >
         <span style={{ fontWeight: 'bold' }}>Parrot</span>OS
       </Box>
-      <Typography className={classes.headingTitle} variant="h1" align="center">
-        The operating <br /> system for <span className={classes.hackers}>{name}</span>
-        <span className={classes.cursor}>|</span>
-      </Typography>
+      <RunningText />
       <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
         A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
       </Typography>

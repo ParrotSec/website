@@ -27,7 +27,7 @@ const OSSection = () => {
   return (
     <>
       <Grid className={classes.versionsBlock} container justifyContent="center" item xs={9} md={6}>
-        <Typography variant="h1" align="center" paragraph>
+        <Typography variant="h2" align="center" paragraph>
           Parrot<span style={{ fontWeight: 300 }}>OS</span> versions
         </Typography>
         <Typography variant="subtitle2" align="center">

@@ -48,11 +48,11 @@ const useStyles = makeStyles(theme => ({
 const NewsletterSection = ({ className, ...rest }: GridProps) => {
   const classes = useStyles()
   return (
-    <Grid className={cls(classes.grid, className)} {...rest} container item xs={12} md={9}>
+    <Grid className={cls(classes.grid, className)} container item xs={12} md={9} {...rest} >
       <Paper className={classes.root} elevation={0}>
         <Grid container justifyContent="center" alignItems="center" spacing={4}>
           <Grid item xs={12} md={6}>
-            <Typography variant="h3" paragraph>
+            <Typography variant="h5" paragraph>
               Subscribe to our newsletter
             </Typography>
             <Typography variant="subtitle2">

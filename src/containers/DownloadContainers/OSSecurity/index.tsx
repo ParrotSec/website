@@ -35,7 +35,7 @@ const OSSecurity = ({ classesGeneral }: OSSecurityProps) => {
             <div className={cls(classesGeneral.iconHolder, classes.security)}>
               <Security className={classesGeneral.headerIcon} />
             </div>
-            <Typography variant="h2">Security Edition</Typography>
+            <Typography variant="h3">Security Edition</Typography>
           </Box>
           <Box marginTop="12px">
             <Typography variant="subtitle2" align="center">

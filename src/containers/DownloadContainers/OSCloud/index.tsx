@@ -35,7 +35,7 @@ const OSCloud = ({ classesGeneral }: OSCloudProps) => {
             <div className={cls(classesGeneral.iconHolder, classes.cloud)}>
               <Cloud className={classesGeneral.headerIcon} />
             </div>
-            <Typography variant="h2">Cloud Edition</Typography>
+            <Typography variant="h3">Cloud Edition</Typography>
           </Box>
           <Box marginTop="12px">
             <Typography variant="subtitle2" align="center">
