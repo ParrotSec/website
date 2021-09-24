@@ -111,13 +111,13 @@ const UserCard = ({
                 </IconButton>
               </Grid>
               <Grid item>
-                <IconButton size="small">
-                  <Twitter href={socials.twitter} className={classes.icons} />
+                <IconButton href={socials.twitter} size="small">
+                  <Twitter className={classes.icons} />
                 </IconButton>
               </Grid>
               <Grid item>
-                <IconButton size="small">
-                  <LinkedIn href={socials.linkedIn} className={classes.icons} />
+                <IconButton href={socials.linkedIn} size="small">
+                  <LinkedIn className={classes.icons} />
                 </IconButton>
               </Grid>
               <Grid item>
