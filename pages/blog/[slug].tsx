@@ -4,7 +4,7 @@ import { Avatar, Box, Button, Divider, Grid, makeStyles, Typography } from '@mat
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import Head from 'next/head'
 import markdownToHtml from '../../lib/markdownToHtml'
-import { PostType } from '../../types'
+import { PostType } from '../../src/types'
 import { ReactNode, useEffect, useState } from 'react'
 import RouterLink from 'next/link'
 import Left from 'assets/Left.svg'

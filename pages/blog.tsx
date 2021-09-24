@@ -2,7 +2,7 @@ import { Grid, makeStyles, Typography } from '@material-ui/core'
 import dynamic from 'next/dynamic'
 import PostsSection from 'containers/BlogContainers/PostsSection'
 import { getAllPosts } from '../lib/api'
-import { PostType } from '../types'
+import { PostType } from '../src/types'
 const ContributeSection = dynamic(() => import('containers/HomeContainers/ContributeSection'))
 
 const useStyles = makeStyles(theme => ({

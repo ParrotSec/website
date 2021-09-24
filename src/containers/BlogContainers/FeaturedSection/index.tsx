@@ -1,5 +1,5 @@
 import { Grid, makeStyles } from '@material-ui/core'
-import { PostType } from '../../../../types'
+import { PostType } from '../../../types'
 import Carousel from 'components/Carousel'
 
 const useStyles = makeStyles({

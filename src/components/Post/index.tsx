@@ -9,7 +9,7 @@ import {
   makeStyles,
   Typography
 } from '@material-ui/core'
-import { PostType } from '../../../types'
+import { PostType } from '../../types'
 import RouterLink from 'next/link'
 
 const useStyles = makeStyles(theme => ({

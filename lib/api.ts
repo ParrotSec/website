@@ -1,7 +1,7 @@
 import fs from 'fs/promises'
 import { join } from 'path'
 import matter from 'gray-matter'
-import { PostType } from '../types'
+import { PostType } from '../src/types'
 
 const postsDirectory = join(process.cwd(), 'posts')
 
