@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   hackers: {
     color: theme.palette.primary.main,
-    [theme.breakpoints.up(1203)]: {
+    [theme.breakpoints.up(1245)]: {
       backgroundImage: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
       backgroundSize: '100%',
       backgroundRepeat: 'repeat',
@@ -30,8 +30,22 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.main,
     fontWeight: 100,
     marginLeft: '-0.1rem',
-    [theme.breakpoints.up(1203)]: {
+    [theme.breakpoints.up(1350)]: {
       color: '#00FFF0'
+    }
+  },
+  runningText: {
+    [theme.breakpoints.down('sm')]: {
+      minHeight: 255
+    },
+    [theme.breakpoints.down('md')]: {
+      minHeight: 268
+    },
+    [theme.breakpoints.down('lg')]: {
+      minHeight: 225
+    },
+    [theme.breakpoints.down(1350)]: {
+      minHeight: 252
     }
   },
   wideButton: {
@@ -41,12 +55,12 @@ const useStyles = makeStyles(theme => ({
       theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
     }`,
     borderRadius: 24,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       padding: '21px 30px'
     }
   },
   responsiveJustify: {
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       justifyContent: 'center'
     }
   },
@@ -76,7 +90,7 @@ const RunningText = () => {
   }, [magicName])
 
   return (
-    <Typography variant="h1" align="center" paragraph>
+    <Typography className={classes.runningText} variant="h1" align="center" paragraph>
       The operating <br /> system for <span className={classes.hackers}>{name}</span>
       <span className={classes.cursor}>|</span>
     </Typography>

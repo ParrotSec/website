@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   responsiveJustify: {
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       justifyContent: 'center'
     }
   },
@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
   },
   paperPadding: {
     padding: theme.spacing(8),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(4)
     }
   }
@@ -237,7 +237,7 @@ const ToolsSection = (rest: GridProps) => {
               Choose between 600+ tools for all your hacking needs
             </Typography>
             {/*TODO: for futher animations need to apply box-shadow*/}
-            <Hidden smDown>
+            <Hidden mdDown>
               <Box position="relative" width={width} marginTop="46px" zIndex={2}>
                 {icons(true)}
               </Box>
@@ -247,7 +247,7 @@ const ToolsSection = (rest: GridProps) => {
                 {icons(false)}
               </Slider>
             </Hidden>
-            <Hidden smDown>
+            <Hidden mdDown>
               <div className={classes.bgHolder}>
                 <img ref={ref} className={classes.bg} src={parrotBg.src} alt="Parrot BG" />
               </div>

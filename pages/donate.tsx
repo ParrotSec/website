@@ -1,13 +1,29 @@
-import { Grid,  Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { SnackbarProvider } from 'notistack'
 import DonateSection from 'containers/DonateContainers/DonateSection'
 import { NextPage } from 'next'
 import { makeStyles } from '@mui/styles'
+import Wallpaper from 'assets/wallpaper.png'
 
 const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 100
   },
+  wallpaper:
+    theme.palette.mode === 'dark'
+      ? {
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          opacity: 0.1,
+          width: '100%',
+          height: '100%',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
+        }
+      : { display: 'none' },
   headingSubTitle: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(6.5)
@@ -30,6 +46,7 @@ const Donate: NextPage = () => {
   return (
     <SnackbarProvider preventDuplicate classes={{ variantSuccess: classes.snackbar }}>
       <Grid container className={classes.root} justifyContent="center">
+        <div className={classes.wallpaper} />
         <Grid
           item
           container

@@ -102,7 +102,7 @@ const Header = () => {
                 <MenuIcon className={classes.menu} />
               </IconButton>
             </Hidden>
-            <Hidden mdDown>
+            <Hidden lgDown>
               <nav className={classes.nav}>
                 <Link className={classes.link} href="/community">
                   Community

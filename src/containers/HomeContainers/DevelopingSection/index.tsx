@@ -166,7 +166,7 @@ const DevelopingSection = () => {
                 {items}
               </Slider>
             </Hidden>
-            <Hidden mdDown>
+            <Hidden lgDown>
               <Slider
                 className={cls(classes.sliderBlock, classes.marginedSlider)}
                 spacing={4}

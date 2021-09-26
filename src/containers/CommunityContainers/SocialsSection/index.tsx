@@ -12,10 +12,6 @@ import Telegram from '@mui/icons-material/Telegram'
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
-  grid: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
-  },
   paper: {
     width: '100%',
     padding: theme.spacing(8),
@@ -75,7 +71,7 @@ const SocialsSection = (props: GridProps) => {
           </PFeatureBlock>
         </Grid>
       </Grid>
-      <Grid className={classes.grid} item container xs={12} md={9}>
+      <Grid item container xs={12} md={9}>
         <Paper className={classes.paper} elevation={0}>
           <Grid container alignItems="center" direction="column">
             <Typography variant="h5" paragraph>

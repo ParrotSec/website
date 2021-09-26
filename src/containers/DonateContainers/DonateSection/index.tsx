@@ -51,12 +51,6 @@ const useStyles = makeStyles(theme => ({
   },
   highOpacity: {
     opacity: 1
-  },
-  featuresGridItem: {
-    [theme.breakpoints.down('md')]: {
-      paddingLeft: '0 !important',
-      paddingRight: '0 !important'
-    }
   }
 }))
 
@@ -87,7 +81,7 @@ const DonateSection = (props: GridProps) => {
   return (
     <Grid container item xs={12} md={9} spacing={4} justifyContent="center" {...props}>
       <Grid container item xs={12} lg={4} spacing={4} direction="column">
-        <Grid className={classes.featuresGridItem} item>
+        <Grid item>
           <PFeatureBlock
             Icon={Patreon}
             title="Patreon"
@@ -98,7 +92,7 @@ const DonateSection = (props: GridProps) => {
             Adopt us and become a recurring contributor
           </PFeatureBlock>
         </Grid>
-        <Grid className={classes.featuresGridItem} item>
+        <Grid item>
           <PFeatureBlock
             Icon={Paypal}
             title="Paypal"
@@ -109,7 +103,7 @@ const DonateSection = (props: GridProps) => {
             Send us a tip on PayPal
           </PFeatureBlock>
         </Grid>
-        <Grid className={classes.featuresGridItem} item>
+        <Grid item>
           <PFeatureBlock
             Icon={Referral}
             title="Referral Links"
