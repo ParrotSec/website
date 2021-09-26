@@ -1,12 +1,13 @@
 import { Grid, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { NextPage } from 'next'
+
 import Wallpaper from 'assets/wallpaper.png'
 import UserCard from 'components/UserCard'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSection'
 import PastContributors from 'containers/TeamContainers/PastContributorsSection'
 import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
-import { NextPage } from 'next'
-import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {

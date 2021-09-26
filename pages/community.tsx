@@ -57,7 +57,7 @@ const Community: NextPage = () => {
         <Typography variant="h1" align="center" paragraph>
           Join the Parrot Community
         </Typography>
-        <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
+        <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
           A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
         </Typography>
       </Grid>

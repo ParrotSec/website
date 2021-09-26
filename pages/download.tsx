@@ -1,10 +1,13 @@
 import { Grid } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { SnackbarProvider } from 'notistack'
+
 import OSSelection from 'containers/DownloadContainers/OSSelection'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
+
 import 'react-image-lightbox/style.css'
-import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next'
-import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
   contribute: {
@@ -17,10 +20,15 @@ const useStyles = makeStyles({
   }
 })
 
-const Download: NextPage = ({
-  version
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Download: NextPage = () => {
   const classes = useStyles()
+  const router = useRouter()
+  const version =
+    router.query.version === 'home' ||
+    router.query.version === 'security' ||
+    router.query.version === 'cloud'
+      ? router.query.version
+      : 'home'
   return (
     <SnackbarProvider preventDuplicate classes={{ variantSuccess: classes.snackbar }}>
       <Grid container justifyContent="center">
@@ -32,12 +40,3 @@ const Download: NextPage = ({
 }
 
 export default Download
-
-export const getServerSideProps: GetServerSideProps = async ctx => {
-  const version = ctx.query['version']
-  if (version !== 'home' && version !== 'security' && version !== 'cloud')
-    return { props: { version: 'home' } }
-  return {
-    props: { version: ctx.query['version'] }
-  }
-}

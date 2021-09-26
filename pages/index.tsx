@@ -1,10 +1,11 @@
 import { Grid } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { NextPage } from 'next'
+import dynamic from 'next/dynamic'
+
 import Wallpaper from 'assets/wallpaper.png'
 import FeaturesSection from 'containers/HomeContainers/FeaturesSection'
 import WelcomeSection from 'containers/HomeContainers/WelcomeSection'
-import { NextPage } from 'next'
-import dynamic from 'next/dynamic'
-import { makeStyles } from '@mui/styles'
 
 const DevelopingSection = dynamic(() => import('containers/HomeContainers/DevelopingSection'))
 const HTBSection = dynamic(() => import('containers/HomeContainers/HTBSection'))

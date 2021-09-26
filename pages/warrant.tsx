@@ -1,7 +1,8 @@
 import { Grid, Typography, Link } from '@mui/material'
-import { a11yLight, a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
-import SyntaxHighlighter from 'react-syntax-highlighter'
 import { makeStyles, useTheme } from '@mui/styles'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { a11yLight, a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
+
 import Wallpaper from 'assets/wallpaper.png'
 
 const useStyles = makeStyles(theme => ({
