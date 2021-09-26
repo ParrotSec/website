@@ -1,10 +1,12 @@
-import { AppBar, Collapse, Box, Grid, Hidden, IconButton, Toolbar } from '@mui/material'
-import Link from 'components/NextLink'
 import { Menu as MenuIcon } from '@mui/icons-material'
-import PButton from 'components/PButton'
-import Logo from './assets/logo.svg'
-import { useState } from 'react'
+import { AppBar, Collapse, Box, Grid, Hidden, IconButton, Toolbar } from '@mui/material'
 import { makeStyles } from '@mui/styles'
+import { useState } from 'react'
+
+import Logo from './assets/logo.svg'
+
+import Link from 'components/NextLink'
+import PButton from 'components/PButton'
 
 const useStyles = makeStyles(theme => ({
   root: {

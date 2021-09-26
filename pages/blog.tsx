@@ -1,10 +1,12 @@
 import { Grid, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import dynamic from 'next/dynamic'
-import PostsSection from 'containers/BlogContainers/PostsSection'
+
 import { getAllPosts } from '../lib/api'
 import { PostType } from '../src/types'
+
 import Wallpaper from 'assets/wallpaper.png'
+import PostsSection from 'containers/BlogContainers/PostsSection'
 const ContributeSection = dynamic(() => import('containers/HomeContainers/ContributeSection'))
 
 const useStyles = makeStyles(theme => ({

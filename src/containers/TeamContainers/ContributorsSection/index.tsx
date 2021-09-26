@@ -1,6 +1,7 @@
 import { Grid, Typography, GridProps, Box, Paper } from '@mui/material'
-import PButton from 'components/PButton'
 import { makeStyles } from '@mui/styles'
+
+import PButton from 'components/PButton'
 
 const useStyles = makeStyles(theme => ({
   activeContrib: {

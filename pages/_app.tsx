@@ -1,9 +1,10 @@
 // pages/_app.tsx
 /* eslint-disable react/jsx-props-no-spreading */
-import { useEffect } from 'react'
 import { Container, CssBaseline } from '@mui/material'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { useEffect } from 'react'
+
 import Footer from 'containers/Footer'
 import Header from 'containers/Header'
 import SwitchThemeProvider from 'containers/ThemeProvider'

@@ -24,15 +24,7 @@ const useStyles = makeStyles(theme => ({
 const StatsSection = ({ className, ...rest }: GridProps) => {
   const classes = useStyles()
   return (
-    <Grid
-      className={className}
-      container
-      {...rest}
-      item
-      xs={12}
-      md={9}
-      justifyContent="center"
-    >
+    <Grid className={className} container {...rest} item xs={12} md={9} justifyContent="center">
       <Paper className={classes.paper} elevation={0}>
         <Grid
           className={classes.contentGrid}

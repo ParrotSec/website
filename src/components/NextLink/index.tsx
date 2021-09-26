@@ -1,6 +1,6 @@
-import { forwardRef, Ref } from 'react'
-import Link, { LinkProps } from 'next/link'
 import { Link as MuiLink, LinkProps as MuiLinkProps } from '@mui/material'
+import Link, { LinkProps } from 'next/link'
+import { forwardRef, Ref } from 'react'
 
 type LinkRef = HTMLAnchorElement
 type NextLinkProps = Omit<MuiLinkProps, 'href' | 'classes'> &

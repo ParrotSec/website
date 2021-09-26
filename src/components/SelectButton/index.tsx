@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useRef, useState } from 'react'
+import { ArrowDropDown } from '@mui/icons-material'
 import {
   ButtonProps,
   MenuItem,
@@ -9,10 +9,11 @@ import {
   Paper,
   Popper
 } from '@mui/material'
-import { ArrowDropDown } from '@mui/icons-material'
-import cls from 'classnames'
-import PButton from 'components/PButton'
 import { makeStyles } from '@mui/styles'
+import cls from 'classnames'
+import { createContext, ReactNode, useContext, useRef, useState } from 'react'
+
+import PButton from 'components/PButton'
 
 type SelectButtonProps = {
   label: string

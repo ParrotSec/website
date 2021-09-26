@@ -1,7 +1,7 @@
-import { Children, Fragment, PropsWithChildren, useMemo } from 'react'
 import { Box, Theme, alpha } from '@mui/material'
-import cls from 'classnames'
 import { makeStyles } from '@mui/styles'
+import cls from 'classnames'
+import { Children, Fragment, PropsWithChildren, useMemo } from 'react'
 
 type SliderProps = PropsWithChildren<{
   className?: string

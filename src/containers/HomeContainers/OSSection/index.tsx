@@ -1,9 +1,11 @@
 import { Grid, Typography } from '@mui/material'
-import OSCard from 'components/OSCard'
+import { makeStyles } from '@mui/styles'
+
+import Cloud from './assets/Cloud.svg'
 import Home from './assets/Home.svg'
 import Security from './assets/Security.svg'
-import Cloud from './assets/Cloud.svg'
-import { makeStyles } from '@mui/styles'
+
+import OSCard from 'components/OSCard'
 
 const useStyles = makeStyles({
   versionsBlock: {

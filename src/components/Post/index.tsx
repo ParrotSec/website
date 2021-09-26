@@ -8,9 +8,10 @@ import {
   CardProps,
   Typography
 } from '@mui/material'
-import { PostType } from '../../types'
-import RouterLink from 'next/link'
 import { makeStyles } from '@mui/styles'
+import RouterLink from 'next/link'
+
+import { PostType } from '../../types'
 
 const useStyles = makeStyles(theme => ({
   root: {

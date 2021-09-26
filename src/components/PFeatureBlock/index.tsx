@@ -1,8 +1,10 @@
-import { ElementType, ReactNode } from 'react'
 import { Link, Paper, PaperProps, Typography } from '@mui/material'
-import NextLink from 'components/NextLink'
-import Arrow from './assets/arrow.svg'
 import { makeStyles } from '@mui/styles'
+import { ElementType, ReactNode } from 'react'
+
+import Arrow from './assets/arrow.svg'
+
+import NextLink from 'components/NextLink'
 
 const useStyles = makeStyles(theme => ({
   root: {

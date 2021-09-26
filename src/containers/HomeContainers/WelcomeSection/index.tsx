@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
 import { Box, Grid, SvgIcon, Typography } from '@mui/material'
-import useTypewriter from 'react-typewriter-hook'
-import PButton from 'components/PButton'
-import Bulb from './assets/Bulb.svg'
 import { makeStyles } from '@mui/styles'
+import { useEffect, useRef, useState } from 'react'
+import useTypewriter from 'react-typewriter-hook'
+
+import Bulb from './assets/Bulb.svg'
+
+import PButton from 'components/PButton'
 
 const useStyles = makeStyles(theme => ({
   headingSubTitle: {

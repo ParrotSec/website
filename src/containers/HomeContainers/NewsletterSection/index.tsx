@@ -1,6 +1,7 @@
 import { Grid, GridProps, IconButton, lighten, Paper, TextField, Typography } from '@mui/material'
-import Arrow from 'components/PFeatureBlock/assets/arrow.svg'
 import { makeStyles } from '@mui/styles'
+
+import Arrow from 'components/PFeatureBlock/assets/arrow.svg'
 
 const useStyles = makeStyles(theme => ({
   root: {

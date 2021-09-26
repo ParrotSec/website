@@ -1,6 +1,7 @@
-import PTooltip, { PTooltipProps } from 'components/Tooltip'
-import { CSSProperties, ElementType } from 'react'
 import { makeStyles } from '@mui/styles'
+import { CSSProperties, ElementType } from 'react'
+
+import PTooltip, { PTooltipProps } from 'components/Tooltip'
 
 type PIconLinkProps = {
   href: string

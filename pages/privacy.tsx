@@ -1,7 +1,8 @@
-import { Grid, Typography, Alert, Link } from '@mui/material'
-import RouterLink from 'next/link'
+import { Grid, Typography, Alert } from '@mui/material'
 import { makeStyles } from '@mui/styles'
+
 import Wallpaper from 'assets/wallpaper.png'
+import NextLink from 'components/NextLink'
 
 const useStyles = makeStyles(theme => ({
   wallpaper:
@@ -112,10 +113,7 @@ const Privacy = () => {
         </Typography>
         <Typography variant="body1" paragraph>
           We have never received a warrant since we began this project. Please note our{' '}
-          <RouterLink href="/warrant">
-            <Link>warrant canary</Link>
-          </RouterLink>
-          .
+          <NextLink href="/warrant">warrant canary</NextLink>.
         </Typography>
         <Typography variant="h5" paragraph>
           The Parrot Project&apos;s OpenNIC DNS Servers

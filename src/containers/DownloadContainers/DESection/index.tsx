@@ -1,4 +1,4 @@
-import { ReactNode, useState, Fragment } from 'react'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Accordion,
   AccordionDetails,
@@ -10,14 +10,15 @@ import {
   Paper,
   Typography
 } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import cls from 'classnames'
+import { useSnackbar } from 'notistack'
+import { ReactNode, useState, Fragment } from 'react'
+import Lightbox from 'react-image-lightbox'
+
 import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import cls from 'classnames'
 import SelectButton, { SelectButtonItem } from 'components/SelectButton'
-import { useSnackbar } from 'notistack'
-import Lightbox from 'react-image-lightbox'
-import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   grid: {
@@ -303,7 +304,15 @@ const DESection = ({
                 </Typography>
                 <Grid container item xs={12} justifyContent="space-between" spacing={3}>
                   {requirements.map(({ heading, description }, i) => (
-                    <Grid container direction="column" item xs={12} sm={6} lg={3} key={`requirements-${i}`}>
+                    <Grid
+                      container
+                      direction="column"
+                      item
+                      xs={12}
+                      sm={6}
+                      lg={3}
+                      key={`requirements-${i}`}
+                    >
                       <Typography variant="body2Semi" key={`requirements-${i}-heading`}>
                         {heading}
                       </Typography>

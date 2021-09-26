@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react'
 import { Box, Breadcrumbs, Button, Divider, Grid } from '@mui/material'
-import Left from 'assets/Left.svg'
+import { makeStyles } from '@mui/styles'
+import cls from 'classnames'
 import RouterLink from 'next/link'
+import { useEffect, useState } from 'react'
 import { useMeasure } from 'react-use'
+
+import Left from 'assets/Left.svg'
 import Carousel from 'components/Carousel'
+import OSCloud from 'containers/DownloadContainers/OSCloud'
 import OSHome from 'containers/DownloadContainers/OSHome'
 import OSSecurity from 'containers/DownloadContainers/OSSecurity'
-import OSCloud from 'containers/DownloadContainers/OSCloud'
-import cls from 'classnames'
-import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   arrow: {

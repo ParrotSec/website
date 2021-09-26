@@ -1,10 +1,11 @@
 import { Grid, Typography, Card, CardContent, Avatar, IconButton, GridProps } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import cls from 'classnames'
+
 import Email from './assets/Email.svg'
 import Github from './assets/Github.svg'
 import LinkedIn from './assets/LinkedIn.svg'
 import Twitter from './assets/Twitter.svg'
-import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   card: {

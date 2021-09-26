@@ -1,13 +1,10 @@
-import { useRouter } from 'next/router'
+import { Avatar, Box, Button, Divider, Grid, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import ErrorPage from 'next/error'
-import { Avatar, Box, Button, Divider, Grid, makeStyles, Typography } from '@material-ui/core'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
 import Head from 'next/head'
-import markdownToHtml from '../../lib/markdownToHtml'
-import { PostType } from '../../src/types'
-import { ReactNode, useEffect, useState } from 'react'
 import RouterLink from 'next/link'
-import Left from 'assets/Left.svg'
+import { useRouter } from 'next/router'
+import { ReactNode, useEffect, useState } from 'react'
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -18,6 +15,12 @@ import {
   RedditIcon,
   TelegramIcon
 } from 'react-share'
+
+import { getPostBySlug, getAllPosts } from '../../lib/api'
+import markdownToHtml from '../../lib/markdownToHtml'
+import { PostType } from '../../src/types'
+
+import Left from 'assets/Left.svg'
 
 const useStyles = makeStyles(theme => ({
   heading: {

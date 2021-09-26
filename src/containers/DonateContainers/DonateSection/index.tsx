@@ -1,14 +1,16 @@
 import { Box, ButtonBase, Grid, GridProps, Link, Paper, Typography } from '@mui/material'
-import PFeatureBlock from 'components/PFeatureBlock'
+import { makeStyles } from '@mui/styles'
+import { useSnackbar } from 'notistack'
+
+import Bitcoin from './assets/bitcoin.svg'
+import linode from './assets/linode.png'
 import Patreon from './assets/patreon.svg'
 import Paypal from './assets/paypal.svg'
 import Referral from './assets/referral.svg'
-import linode from './assets/linode.png'
 import vultr from './assets/vultr.png'
+
+import PFeatureBlock from 'components/PFeatureBlock'
 import Arrow from 'components/PFeatureBlock/assets/arrow.svg'
-import Bitcoin from './assets/bitcoin.svg'
-import { useSnackbar } from 'notistack'
-import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   roundedIconHolder: {

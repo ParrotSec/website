@@ -1,9 +1,10 @@
 import { Box, Grid, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import cls from 'classnames'
-import Cloud from 'containers/HomeContainers/OSSection/assets/Cloud.svg'
+
 import DESection from 'containers/DownloadContainers/DESection'
 import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
-import { makeStyles } from '@mui/styles'
+import Cloud from 'containers/HomeContainers/OSSection/assets/Cloud.svg'
 
 const useStyles = makeStyles(theme => ({
   cloud: {

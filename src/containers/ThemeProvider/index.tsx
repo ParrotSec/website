@@ -1,12 +1,12 @@
-import { createContext, useContext, useEffect, useState } from 'react'
 import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
   responsiveFontSizes,
   alpha
 } from '@mui/material'
-import { useCookie } from 'react-use'
 import { ThemeProviderProps } from '@mui/styles'
+import { createContext, useContext, useEffect, useState } from 'react'
+import { useCookie } from 'react-use'
 
 export const ThemeContext = createContext({
   switchTheme: () => {}

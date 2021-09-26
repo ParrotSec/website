@@ -1,8 +1,10 @@
 import { Grid, GridProps } from '@mui/material'
+import { useMemo } from 'react'
+
 import { PostType } from '../../../types'
+
 import Post from 'components/Post'
 import NewsletterSection from 'containers/HomeContainers/NewsletterSection'
-import { useMemo } from 'react'
 
 type PostSectionProps = {
   allPosts: PostType[]

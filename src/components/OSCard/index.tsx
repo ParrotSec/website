@@ -1,8 +1,9 @@
-import { ElementType } from 'react'
 import { Grid, GridProps, Paper, Typography } from '@mui/material'
-import cls from 'classnames'
-import PButton from 'components/PButton'
 import { makeStyles } from '@mui/styles'
+import cls from 'classnames'
+import { ElementType } from 'react'
+
+import PButton from 'components/PButton'
 
 type OSCardProps = {
   Icon: ElementType

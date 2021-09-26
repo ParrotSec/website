@@ -1,14 +1,15 @@
 import { Grid, Hidden, Paper, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import cls from 'classnames'
+
+import PIconLink from 'components/PIconLink'
+import Slider from 'components/Slider'
 import Burp from 'containers/HomeContainers/ToolsSection/assets/tool-logo-burp 1.svg'
 import John from 'containers/HomeContainers/ToolsSection/assets/tool-logo-john 1.svg'
 import Maltego from 'containers/HomeContainers/ToolsSection/assets/tool-logo-maltego 1.svg'
-import Nmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-nmap 1.svg'
 import Metasploit from 'containers/HomeContainers/ToolsSection/assets/tool-logo-metasploit 1.svg'
+import Nmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-nmap 1.svg'
 import Sqlmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-sqlmap 1.svg'
-import PIconLink from 'components/PIconLink'
-import Slider from 'components/Slider'
-import cls from 'classnames'
-import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   developerBlock: {

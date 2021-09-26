@@ -5,11 +5,11 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable react/destructuring-assignment */
 
-import { AriaAttributes, Children, Component, ReactNode, SyntheticEvent } from 'react'
+import { FiberManualRecord, NavigateBefore, NavigateNext } from '@mui/icons-material'
 import { Box, Fade, IconButton, Slide, alpha, Theme } from '@mui/material'
 import { createStyles, WithStyles, withStyles } from '@mui/styles'
-import { FiberManualRecord, NavigateBefore, NavigateNext } from '@mui/icons-material'
 import autoBind from 'auto-bind'
+import { AriaAttributes, Children, Component, ReactNode, SyntheticEvent } from 'react'
 import { useSwipeable } from 'react-swipeable'
 
 const styles = (theme: Theme) =>

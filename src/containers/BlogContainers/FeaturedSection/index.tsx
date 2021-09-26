@@ -1,7 +1,9 @@
 import { Grid } from '@mui/material'
-import { PostType } from '../../../types'
-import Carousel from 'components/Carousel'
 import { makeStyles } from '@mui/styles'
+
+import { PostType } from '../../../types'
+
+import Carousel from 'components/Carousel'
 
 const useStyles = makeStyles({
   carouselImg: {

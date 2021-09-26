@@ -1,9 +1,10 @@
 import { Grid, Typography } from '@mui/material'
-import { SnackbarProvider } from 'notistack'
-import DonateSection from 'containers/DonateContainers/DonateSection'
-import { NextPage } from 'next'
 import { makeStyles } from '@mui/styles'
+import { NextPage } from 'next'
+import { SnackbarProvider } from 'notistack'
+
 import Wallpaper from 'assets/wallpaper.png'
+import DonateSection from 'containers/DonateContainers/DonateSection'
 
 const useStyles = makeStyles(theme => ({
   root: {

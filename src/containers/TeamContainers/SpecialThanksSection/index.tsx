@@ -1,6 +1,7 @@
 import { Grid, Typography, GridProps } from '@mui/material'
-import UserCard from 'components/UserCard'
 import { makeStyles } from '@mui/styles'
+
+import UserCard from 'components/UserCard'
 
 const useStyles = makeStyles(theme => ({
   specialThanks: {

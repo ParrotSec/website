@@ -1,8 +1,10 @@
 import { Grid, GridProps, Paper, Typography } from '@mui/material'
-import PButton from 'components/PButton'
+import { makeStyles } from '@mui/styles'
+
 import HTBLogo from './assets/htbLogo.svg'
 import htbScreenshot from './assets/htbScreenshot.png'
-import { makeStyles } from '@mui/styles'
+
+import PButton from 'components/PButton'
 
 const useStyles = makeStyles(theme => ({
   root: {

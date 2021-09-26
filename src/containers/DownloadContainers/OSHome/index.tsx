@@ -1,9 +1,11 @@
 import { Box, Grid, Typography } from '@mui/material'
-import cls from 'classnames'
-import Home from 'containers/HomeContainers/OSSection/assets/Home.svg'
-import DESection from 'containers/DownloadContainers/DESection'
-import homeMate1 from './assets/home-mate-1.png'
 import { makeStyles } from '@mui/styles'
+import cls from 'classnames'
+
+import homeMate1 from './assets/home-mate-1.png'
+
+import DESection from 'containers/DownloadContainers/DESection'
+import Home from 'containers/HomeContainers/OSSection/assets/Home.svg'
 
 const useStyles = makeStyles(theme => ({
   home: {

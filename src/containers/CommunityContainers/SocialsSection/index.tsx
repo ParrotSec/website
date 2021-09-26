@@ -1,15 +1,17 @@
+import Telegram from '@mui/icons-material/Telegram'
 import { Box, Grid, GridProps, IconButton, Paper, Typography } from '@mui/material'
-import PFeatureBlock from 'components/PFeatureBlock'
-import HackTheBox from './assets/hackthebox.svg'
+import { makeStyles } from '@mui/styles'
+
+import Facebook from './assets/facebook.svg'
 import Forum from './assets/forum.svg'
+import HackTheBox from './assets/hackthebox.svg'
 import Instagram from './assets/instagram.svg'
 import LinkedIn from './assets/linkedin.svg'
 import Twitch from './assets/twitch.svg'
 import Twitter from './assets/twitter.svg'
-import Facebook from './assets/facebook.svg'
 import YouTube from './assets/youtube.svg'
-import Telegram from '@mui/icons-material/Telegram'
-import { makeStyles } from '@mui/styles'
+
+import PFeatureBlock from 'components/PFeatureBlock'
 
 const useStyles = makeStyles(theme => ({
   paper: {
