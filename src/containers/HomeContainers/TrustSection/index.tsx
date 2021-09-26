@@ -14,12 +14,12 @@ const useStyles = makeStyles(theme => ({
     maxHeight: 40,
     display: 'block',
     margin: 'auto',
-    fill: theme.palette.type === 'light' ? 'white' : 'inherit',
+    fill: theme.palette.mode === 'light' ? 'white' : 'inherit',
     '& #path1': {
-      stroke: theme.palette.type === 'light' ? '#03232E' : '#FFF'
+      stroke: theme.palette.mode === 'light' ? '#03232E' : '#FFF'
     },
     '& #path2': {
-      fill: theme.palette.type === 'light' ? '#03232E' : '#FFF'
+      fill: theme.palette.mode === 'light' ? '#03232E' : '#FFF'
     }
   }
 }))
