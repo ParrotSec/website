@@ -3,7 +3,6 @@ import { makeStyles } from '@mui/styles'
 import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 
-import Wallpaper from 'assets/wallpaper.png'
 import FeaturesSection from 'containers/HomeContainers/FeaturesSection'
 import WelcomeSection from 'containers/HomeContainers/WelcomeSection'
 
@@ -25,21 +24,6 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(5),
     fontSize: 30
   },
-  wallpaper:
-    theme.palette.mode === 'dark'
-      ? {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          opacity: 0.1,
-          width: '100%',
-          height: '100%',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
-        }
-      : { display: 'none' },
   features: {
     marginTop: 130,
     [theme.breakpoints.down('md')]: {
@@ -84,7 +68,6 @@ const Index: NextPage = () => {
   const classes = useStyles()
   return (
     <Grid container className={classes.root} justifyContent="center">
-      <div className={classes.wallpaper} />
       <WelcomeSection />
       <FeaturesSection className={classes.features} />
       <TrustSection className={classes.trustBlock} />

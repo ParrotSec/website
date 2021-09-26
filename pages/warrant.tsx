@@ -1,27 +1,7 @@
 import { Grid, Typography, Link } from '@mui/material'
-import { makeStyles, useTheme } from '@mui/styles'
+import { useTheme } from '@mui/styles'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { a11yLight, a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
-
-import Wallpaper from 'assets/wallpaper.png'
-
-const useStyles = makeStyles(theme => ({
-  wallpaper:
-    theme.palette.mode === 'dark'
-      ? {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          opacity: 0.1,
-          width: '100%',
-          height: '100%',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
-        }
-      : { display: 'none' }
-}))
 
 const Warrant = () => {
   const {
@@ -31,8 +11,6 @@ const Warrant = () => {
     }
   } = useTheme()
 
-  const classes = useStyles()
-
   const codeStyle = (mode: 'light' | 'dark') =>
     mode === 'light'
       ? { ...a11yLight, ...{ hljs: { ...a11yLight.hljs, backgroundColor: paper } } }
@@ -40,7 +18,6 @@ const Warrant = () => {
 
   return (
     <Grid container justifyContent="center">
-      <div className={classes.wallpaper} />
       <Grid item xs={10} md={8} lg={6}>
         <Typography variant="h1" align="center" paragraph>
           Warrant Canary

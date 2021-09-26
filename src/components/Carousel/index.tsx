@@ -9,7 +9,14 @@ import { FiberManualRecord, NavigateBefore, NavigateNext } from '@mui/icons-mate
 import { Box, Fade, IconButton, Slide, alpha, Theme } from '@mui/material'
 import { createStyles, WithStyles, withStyles } from '@mui/styles'
 import autoBind from 'auto-bind'
-import { AriaAttributes, Children, Component, ReactNode, SyntheticEvent } from 'react'
+import {
+  AriaAttributes,
+  Children,
+  Component,
+  CSSProperties,
+  ReactNode,
+  SyntheticEvent
+} from 'react'
 import { useSwipeable } from 'react-swipeable'
 
 const styles = (theme: Theme) =>
@@ -81,7 +88,7 @@ const styles = (theme: Theme) =>
 
 interface CarouselNavProps extends AriaAttributes {
   className?: string
-  style?: React.CSSProperties
+  style?: CSSProperties
 }
 
 type CarouselProps = {
@@ -158,7 +165,7 @@ type CarouselProps = {
   }: {
     onClick: (e: SyntheticEvent) => unknown
     className: string
-    style: React.CSSProperties
+    style: CSSProperties
     next: boolean
     prev: boolean
   }) => ReactNode
@@ -193,15 +200,11 @@ type CarouselProps = {
 } & WithStyles<typeof styles>
 
 const sanitizeNavProps = (props: CarouselNavProps) => {
-  const { className, style, ...rest } = props || {}
-
-  return props !== undefined
-    ? {
-        style: props.style !== undefined ? props.style : {},
-        className: props.className !== undefined ? props.className : '',
-        ...rest
-      }
-    : { style: {}, className: '', ...rest }
+  return {
+    ...props,
+    style: props.style !== undefined ? props.style : {},
+    className: props.className !== undefined ? props.className : ''
+  }
 }
 
 const sanitizeProps = (props: CarouselProps) => {
@@ -324,7 +327,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
 
   setActive(
     index: number,
-    callback = (_index: number, _prevActive: number) => {},
+    callback: (index: number, prevActive: number) => unknown = () => {},
     runCallbacks = true
   ) {
     const { onChange, timeout, children, strictIndexing } = sanitizeProps(this.props)
@@ -450,20 +453,14 @@ class Carousel extends Component<CarouselProps, CarouselState> {
         return reverseEdgeAnimationDirection
       }
 
-      if (this.state.active > this.state.prevActive) {
-        return true
-      }
-
-      return false
+      return this.state.active > this.state.prevActive
     }
 
     const showButton = (next = true) => {
       if (cycleNavigation) return true
 
       if (next && this.state.active + 1 > Children.count(children) - 1) return false
-      if (!next && this.state.active - 1 < 0) return false
-
-      return true
+      return !(!next && this.state.active - 1 < 0)
     }
 
     return (

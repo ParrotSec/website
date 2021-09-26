@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic'
 import { getAllPosts } from '../lib/api'
 import { PostType } from '../src/types'
 
-import Wallpaper from 'assets/wallpaper.png'
 import PostsSection from 'containers/BlogContainers/PostsSection'
 const ContributeSection = dynamic(() => import('containers/HomeContainers/ContributeSection'))
 
@@ -13,21 +12,6 @@ const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 100
   },
-  wallpaper:
-    theme.palette.mode === 'dark'
-      ? {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          opacity: 0.1,
-          width: '100%',
-          height: '100%',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
-        }
-      : { display: 'none' },
   headingSubTitle: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(6.5)
@@ -43,7 +27,6 @@ const Blog = ({ allPosts }: BlogProps) => {
   const classes = useStyles()
   return (
     <Grid container className={classes.root} justifyContent="center">
-      <div className={classes.wallpaper} />
       <Grid
         item
         container

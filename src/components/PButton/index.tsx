@@ -3,6 +3,8 @@ import { makeStyles } from '@mui/styles'
 import cls from 'classnames'
 import RouterLink from 'next/link'
 
+import gradientOffset from '../../../lib/gradient'
+
 const useStyles = makeStyles(theme => ({
   root: {
     borderRadius: 85,
@@ -32,14 +34,17 @@ const useStyles = makeStyles(theme => ({
     background: theme.palette.mode === 'light' ? '#03232E' : '#FFFFFF'
   },
   gradient: {
-    background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
+    background: `linear-gradient(99.16deg, ${theme.palette.primary.main} 24.01%, ${gradientOffset(
+      theme.palette.primary.main
+    )} 81.75%)`,
     transition: 'box-shadow 0.3s ease-in-out',
-    '&:hover':
-      theme.palette.mode === 'dark'
-        ? {
+    ...(theme.palette.mode === 'dark'
+      ? {
+          '&:hover': {
             boxShadow: '0 0 30px 10px #2c2981'
           }
-        : {},
+        }
+      : {}),
     color: '#03232E'
   }
 }))

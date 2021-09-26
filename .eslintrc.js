@@ -21,6 +21,8 @@ module.exports = {
   ],
 
   rules: {
+    '@next/next/no-img-element': 'off',
+    '@next/next/link-passhref': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-function': 'off',

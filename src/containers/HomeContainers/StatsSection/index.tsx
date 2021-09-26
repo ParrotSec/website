@@ -1,6 +1,8 @@
 import { Grid, GridProps, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
+import gradientOffset from '../../../../lib/gradient'
+
 const useStyles = makeStyles(theme => ({
   paper: {
     width: '100%',
@@ -10,7 +12,9 @@ const useStyles = makeStyles(theme => ({
     },
     ...(theme.palette.mode === 'light'
       ? {
-          background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)'
+          background: `linear-gradient(99.16deg, ${
+            theme.palette.primary.main
+          } 24.01%, ${gradientOffset(theme.palette.primary.main)} 81.75%)`
         }
       : {})
   },

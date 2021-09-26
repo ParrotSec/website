@@ -5,6 +5,7 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useEffect } from 'react'
 
+import ParrotBG from 'components/ParrotBG'
 import Footer from 'containers/Footer'
 import Header from 'containers/Header'
 import SwitchThemeProvider from 'containers/ThemeProvider'
@@ -28,6 +29,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <SwitchThemeProvider>
         <CssBaseline />
+        <ParrotBG />
         <Container maxWidth="xl">
           <Header />
           <Component {...pageProps} />

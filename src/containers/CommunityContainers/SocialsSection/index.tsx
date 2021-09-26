@@ -89,16 +89,16 @@ const SocialsSection = (props: GridProps) => {
             justifyContent="center"
             flexWrap="wrap"
           >
-            <IconButton>
+            <IconButton href="https://www.instagram.com/parrotproject/">
               <Instagram className={classes.icon} />
             </IconButton>
-            <IconButton>
+            <IconButton href="https://twitter.com/parrotsec">
               <Twitter className={classes.icon} />
             </IconButton>
-            <IconButton>
+            <IconButton href="https://www.facebook.com/ParrotSec/">
               <Facebook className={classes.icon} />
             </IconButton>
-            <IconButton>
+            <IconButton href="https://www.linkedin.com/company/parrotsec/about/">
               <LinkedIn className={classes.icon} />
             </IconButton>
             <IconButton>

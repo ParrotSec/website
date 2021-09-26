@@ -6,6 +6,7 @@ import useTypewriter from 'react-typewriter-hook'
 import Bulb from './assets/Bulb.svg'
 
 import PButton from 'components/PButton'
+import gradientOffset from '../../../../lib/gradient'
 
 const useStyles = makeStyles(theme => ({
   headingSubTitle: {
@@ -19,7 +20,9 @@ const useStyles = makeStyles(theme => ({
   hackers: {
     color: theme.palette.primary.main,
     [theme.breakpoints.up(1245)]: {
-      backgroundImage: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
+      backgroundImage: `linear-gradient(99.16deg, ${
+        theme.palette.primary.main
+      } 24.01%, ${gradientOffset(theme.palette.primary.main)} 81.75%)`,
       backgroundSize: '100%',
       backgroundRepeat: 'repeat',
       '-webkit-background-clip': 'text',
@@ -33,7 +36,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 100,
     marginLeft: '-0.1rem',
     [theme.breakpoints.up(1350)]: {
-      color: '#00FFF0'
+      color: gradientOffset(theme.palette.primary.main)
     }
   },
   runningText: {
@@ -114,7 +117,7 @@ const WelcomeSection = () => {
     >
       <Box
         fontWeight={300}
-        color="#05EEFF"
+        color="primary.main"
         letterSpacing="0.1em"
         textAlign="center"
         style={{ textTransform: 'uppercase' }}

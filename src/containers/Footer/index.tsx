@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     transition: '.2s ease-in 0s',
     '&:hover': {
       textDecoration: 'none',
-      color: '#05EEFF'
+      color: theme.palette.primary.main
     },
     '&:focus': {
       textDecoration: 'none'

@@ -50,6 +50,9 @@ const useStyles = makeStyles(theme => ({
   marginedSlider: {
     marginLeft: theme.spacing(2)
   },
+  sliderHorizontal: {
+    minHeight: 93
+  },
   sliderBlock: {
     minWidth: 93,
     marginRight: theme.spacing(8),
@@ -162,12 +165,12 @@ const DevelopingSection = () => {
                 containerization technologies like Docker or Podman.
               </Typography>
             </div>
-            <Hidden lgUp>
-              <Slider spacing={4} cloneFactor={2}>
+            <Hidden mdUp>
+              <Slider className={classes.sliderHorizontal} spacing={4} cloneFactor={2}>
                 {items}
               </Slider>
             </Hidden>
-            <Hidden lgDown>
+            <Hidden mdDown>
               <Slider
                 className={cls(classes.sliderBlock, classes.marginedSlider)}
                 spacing={4}

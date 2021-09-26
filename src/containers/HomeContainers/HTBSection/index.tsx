@@ -2,7 +2,7 @@ import { Grid, GridProps, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import HTBLogo from './assets/htbLogo.svg'
-import htbScreenshot from './assets/htbScreenshot.png'
+import htbScreenshot from './assets/htbScreenshot.webp'
 
 import PButton from 'components/PButton'
 
