@@ -8,7 +8,7 @@ import Twitch from './assets/twitch.svg'
 import Twitter from './assets/twitter.svg'
 import Facebook from './assets/facebook.svg'
 import YouTube from './assets/youtube.svg'
-import Telegram from '@material-ui/icons/Telegram'
+import Telegram from '@mui/icons-material/Telegram'
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
