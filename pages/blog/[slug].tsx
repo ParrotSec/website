@@ -87,41 +87,26 @@ const Post = ({ post /*, morePosts, preview*/ }: Props) => {
             <Divider variant="fullWidth" />
           </Grid>
         </Grid>
-        <Grid
-          className={classes.gridHr}
-          container
-          justifyContent="center"
-          alignItems="center"
-          direction="column"
-        >
-          <Grid
-            className={classes.heading}
-            container
-            item
-            xs={12}
-            md={10}
-            lg={6}
-            justifyContent="center"
-            direction="column"
-          >
-            <Typography variant="h2" component="h1" paragraph>
-              {post.title}
-            </Typography>
-            {post.description && (
-              <Typography variant="subtitle1" component="h2">
-                {post.description}
+        <Grid className={classes.gridHr} container justifyContent="center">
+          <Grid container item direction="column" alignItems="center">
+            <Grid className={classes.heading} item xs={12} md={10} lg={6}>
+              <Typography variant="h2" component="h1" paragraph>
+                {post.title}
               </Typography>
-            )}
-            <Box display="flex" marginTop={3} alignItems="center" style={{ gap: 8 }}>
-              <Avatar src={`/assets/avatars/${post.author}.jpg`} />
-              <Typography variant="body1" color="primary" style={{ opacity: 1 }}>
-                {post.author}
-              </Typography>
-              <Typography variant="body1">{post.date}</Typography>
-            </Box>
-          </Grid>
-          <Grid container item xs={12} md={10} lg={6} justifyContent="center">
-            <img className={classes.img} src={post.image} alt="Post image" />
+              {post.description && (
+                <Typography variant="subtitle1" component="h2">
+                  {post.description}
+                </Typography>
+              )}
+              <Box display="flex" marginTop={3} alignItems="center" style={{ gap: 8 }}>
+                <Avatar src={`/assets/avatars/${post.author}.jpg`} />
+                <Typography variant="body1" color="primary" style={{ opacity: 1 }}>
+                  {post.author}
+                </Typography>
+                <Typography variant="body1">{post.date}</Typography>
+              </Box>
+              <img className={classes.img} src={post.image} alt="Post image" />
+            </Grid>
           </Grid>
           <Grid item xs={12} md={10} lg={6}>
             {Content}
