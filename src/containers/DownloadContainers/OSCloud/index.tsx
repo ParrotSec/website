@@ -39,13 +39,11 @@ const OSCloud = ({ classesGeneral }: OSCloudProps) => {
             </div>
             <Typography variant="h3">Cloud Edition</Typography>
           </Box>
-          <Box marginTop="12px">
-            <Typography variant="subtitle2Semi" align="center">
-              IoT & Cloud Appliances are special editions of Parrot Security made for{' '}
-              <b>embedded devices</b>,<b>cloud environments</b>, <b>virtual machines</b> and other
-              special deployments.
-            </Typography>
-          </Box>
+          <Typography variant="subtitle2Semi" align="center" mt="12px">
+            IoT & Cloud Appliances are special editions of Parrot Security made for{' '}
+            <b>embedded devices</b>,<b>cloud environments</b>, <b>virtual machines</b> and other
+            special deployments.
+          </Typography>
         </Grid>
         <DESection
           className={classes.desktopEnvironment}

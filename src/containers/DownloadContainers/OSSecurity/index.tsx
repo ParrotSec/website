@@ -39,14 +39,11 @@ const OSSecurity = ({ classesGeneral }: OSSecurityProps) => {
             </div>
             <Typography variant="h3">Security Edition</Typography>
           </Box>
-          <Box marginTop="12px">
-            <Typography variant="subtitle2Semi" align="center">
-              Security Edition is a special purpose operating system designed for{' '}
-              <b>Penetration Testing</b> and
-              <b>Red Team operations</b>. It contains a full arsenal of ready-to use pentesting
-              tools.
-            </Typography>
-          </Box>
+          <Typography variant="subtitle2Semi" align="center" mt="12px">
+            Security Edition is a special purpose operating system designed for{' '}
+            <b>Penetration Testing</b> and
+            <b>Red Team operations</b>. It contains a full arsenal of ready-to use pentesting tools.
+          </Typography>
         </Grid>
         <DESection
           className={classes.desktopEnvironment}

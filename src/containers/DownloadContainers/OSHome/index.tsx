@@ -40,13 +40,11 @@ const OSHome = ({ classesGeneral }: OSHomeProps) => {
               Home Edition
             </Typography>
           </Box>
-          <Box marginTop="12px">
-            <Typography variant="subtitle2Semi" align="center">
-              Home edition is designed for <b>daily use</b>, <b>privacy</b> and{' '}
-              <b>software development</b>. Parrot Tools can be manually installed to assemble a
-              custom and lightweight pentesting environment.
-            </Typography>
-          </Box>
+          <Typography variant="subtitle2Semi" align="center" mt="12px">
+            Home edition is designed for <b>daily use</b>, <b>privacy</b> and{' '}
+            <b>software development</b>. Parrot Tools can be manually installed to assemble a custom
+            and lightweight pentesting environment.
+          </Typography>
         </Grid>
         <DESection
           className={classes.desktopEnvironment}
