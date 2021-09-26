@@ -1,5 +1,6 @@
-import { makeStyles, Grid, Typography, GridProps } from '@material-ui/core'
+import { Grid, Typography, GridProps } from '@mui/material'
 import UserCard from 'components/UserCard'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   specialThanks: {
@@ -20,7 +21,7 @@ const SpecialThanks = (props: GridProps) => {
       container
       xs={12}
       md={9}
-      justifyContent="space-around"
+      justifyContent="space-between"
     >
       <Grid item xs={12} md={3}>
         <Typography variant="h1" className={classes.specialThanksTitle}>

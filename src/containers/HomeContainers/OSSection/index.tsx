@@ -1,8 +1,9 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@mui/material'
 import OSCard from 'components/OSCard'
 import Home from './assets/Home.svg'
 import Security from './assets/Security.svg'
 import Cloud from './assets/Cloud.svg'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
   versionsBlock: {
@@ -30,7 +31,7 @@ const OSSection = () => {
         <Typography variant="h2" align="center" paragraph>
           Parrot<span style={{ fontWeight: 300 }}>OS</span> versions
         </Typography>
-        <Typography variant="subtitle2" align="center">
+        <Typography variant="subtitle2Semi" align="center">
           Different versions for different players, role your need and play freely.
         </Typography>
       </Grid>

@@ -1,15 +1,16 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@mui/material'
 import Wallpaper from 'assets/wallpaper.png'
 import SocialsSection from 'containers/CommunityContainers/SocialsSection'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import { NextPage } from 'next'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 100
   },
   wallpaper:
-    theme.palette.type === 'dark'
+    theme.palette.mode === 'dark'
       ? {
           position: 'absolute',
           top: 0,

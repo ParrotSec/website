@@ -1,13 +1,18 @@
 import { createContext, ReactNode, useContext, useRef, useState } from 'react'
-import { ButtonProps, makeStyles, MenuItem, MenuItemProps } from '@material-ui/core'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener'
-import Grow from '@material-ui/core/Grow'
-import MenuList from '@material-ui/core/MenuList'
-import Paper from '@material-ui/core/Paper'
-import Popper from '@material-ui/core/Popper'
-import { ArrowDropDown } from '@material-ui/icons'
+import {
+  ButtonProps,
+  MenuItem,
+  MenuItemProps,
+  ClickAwayListener,
+  Grow,
+  MenuList,
+  Paper,
+  Popper
+} from '@mui/material'
+import { ArrowDropDown } from '@mui/icons-material'
 import cls from 'classnames'
 import PButton from 'components/PButton'
+import { makeStyles } from '@mui/styles'
 
 type SelectButtonProps = {
   label: string
@@ -27,6 +32,25 @@ const useStyles = makeStyles(theme => ({
   },
   expanded: {
     transform: 'rotate(180deg)'
+  },
+  menuItem: {},
+  popper: {
+    '& li:first-child': {
+      borderTopLeftRadius: theme.spacing(2),
+      borderTopRightRadius: theme.spacing(2)
+    },
+    '& li:last-child': {
+      borderBottomLeftRadius: theme.spacing(2),
+      borderBottomRightRadius: theme.spacing(2)
+    },
+    '& li:first-child > .MuiTouchRipple-root': {
+      borderTopLeftRadius: theme.spacing(2),
+      borderTopRightRadius: theme.spacing(2)
+    },
+    '& li:last-child > .MuiTouchRipple-root': {
+      borderBottomLeftRadius: theme.spacing(2),
+      borderBottomRightRadius: theme.spacing(2)
+    }
   }
 }))
 
@@ -54,7 +78,7 @@ const SelectButton = ({ children, label, ...buttonProps }: SelectButtonProps) =>
     setOpen(prevOpen => !prevOpen)
   }
 
-  const handleClose = (event: React.MouseEvent<Document, MouseEvent>) => {
+  const handleClose = (event: MouseEvent | TouchEvent) => {
     if (anchorRef.current && anchorRef.current.contains(event.target as HTMLElement)) {
       return
     }
@@ -87,7 +111,15 @@ const SelectButton = ({ children, label, ...buttonProps }: SelectButtonProps) =>
           {label}
         </PButton>
       </div>
-      <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+      <Popper
+        className={classes.popper}
+        open={open}
+        anchorEl={anchorRef.current}
+        role={undefined}
+        transition
+        disablePortal
+        style={{ zIndex: 2000 }}
+      >
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}

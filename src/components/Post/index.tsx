@@ -6,11 +6,11 @@ import {
   CardContent,
   CardMedia,
   CardProps,
-  makeStyles,
   Typography
-} from '@material-ui/core'
+} from '@mui/material'
 import { PostType } from '../../types'
 import RouterLink from 'next/link'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {

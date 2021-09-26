@@ -1,9 +1,10 @@
-import { Grid, makeStyles } from '@material-ui/core'
+import { Grid } from '@mui/material'
 import Wallpaper from 'assets/wallpaper.png'
 import FeaturesSection from 'containers/HomeContainers/FeaturesSection'
 import WelcomeSection from 'containers/HomeContainers/WelcomeSection'
 import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
+import { makeStyles } from '@mui/styles'
 
 const DevelopingSection = dynamic(() => import('containers/HomeContainers/DevelopingSection'))
 const HTBSection = dynamic(() => import('containers/HomeContainers/HTBSection'))
@@ -24,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: 30
   },
   wallpaper:
-    theme.palette.type === 'dark'
+    theme.palette.mode === 'dark'
       ? {
           position: 'absolute',
           top: 0,
@@ -51,9 +52,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: 40
   },
   toolsBlock: {
-    marginTop: 90,
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
+    marginTop: 90
   },
   statsBlock: {
     marginTop: 217,
@@ -62,9 +61,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   htbBlock: {
-    marginTop: 32,
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
+    marginTop: 32
   },
   developBlock: {
     marginTop: 154

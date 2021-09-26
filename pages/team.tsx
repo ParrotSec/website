@@ -1,4 +1,4 @@
-import { makeStyles, Grid, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@mui/material'
 import Wallpaper from 'assets/wallpaper.png'
 import UserCard from 'components/UserCard'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
@@ -6,6 +6,7 @@ import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSect
 import PastContributors from 'containers/TeamContainers/PastContributorsSection'
 import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
 import { NextPage } from 'next'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(6.5)
   },
   wallpaper:
-    theme.palette.type === 'dark'
+    theme.palette.mode === 'dark'
       ? {
           position: 'absolute',
           top: 0,
@@ -45,11 +46,18 @@ const Team: NextPage = () => {
   return (
     <Grid container xs={12} className={classes.root} justifyContent="center">
       <div className={classes.wallpaper} />
-      <Grid className={classes.title} item xs={12} justifyContent="center">
+      <Grid
+        container
+        direction="column"
+        className={classes.title}
+        item
+        xs={12}
+        justifyContent="center"
+      >
         <Typography variant="h1" align="center" paragraph>
           The Team <br /> behind Parrot<span style={{ fontWeight: 300 }}>OS</span>
         </Typography>
-        <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
+        <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
           A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
         </Typography>
       </Grid>

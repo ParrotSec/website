@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Box, Breadcrumbs, Button, Divider, Grid, makeStyles } from '@material-ui/core'
+import { useEffect, useState } from 'react'
+import { Box, Breadcrumbs, Button, Divider, Grid } from '@mui/material'
 import Left from 'assets/Left.svg'
 import RouterLink from 'next/link'
 import { useMeasure } from 'react-use'
@@ -8,6 +8,7 @@ import OSHome from 'containers/DownloadContainers/OSHome'
 import OSSecurity from 'containers/DownloadContainers/OSSecurity'
 import OSCloud from 'containers/DownloadContainers/OSCloud'
 import cls from 'classnames'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   arrow: {
@@ -63,12 +64,18 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const OSSelection = () => {
+type OSSelectionProps = {
+  initialVersion?: 'home' | 'security' | 'cloud'
+}
+
+const OSSelection = ({ initialVersion }: OSSelectionProps) => {
   const classes = useStyles()
-  const [os, setOS] = useState<'home' | 'security' | 'cloud'>('home')
+  const [os, setOS] = useState<'home' | 'security' | 'cloud'>(initialVersion ?? 'home')
   const [homeButtonRef, { width: homeButtonWidth }] = useMeasure<HTMLButtonElement>()
   const [securityButtonRef, { width: securityButtonWidth }] = useMeasure<HTMLButtonElement>()
   const [cloudButtonRef, { width: cloudButtonWidth }] = useMeasure<HTMLButtonElement>()
+
+  useEffect(() => setOS(initialVersion ?? 'home'), [initialVersion])
 
   const osButtonsWidth = {
     home: homeButtonWidth,

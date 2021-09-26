@@ -1,8 +1,7 @@
 // pages/_app.tsx
 /* eslint-disable react/jsx-props-no-spreading */
 import { useEffect } from 'react'
-import { Container } from '@material-ui/core'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import { Container, CssBaseline } from '@mui/material'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import Footer from 'containers/Footer'

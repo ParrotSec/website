@@ -1,21 +1,8 @@
-import {
-  Grid,
-  GridProps,
-  IconButton,
-  lighten,
-  makeStyles,
-  Paper,
-  TextField,
-  Typography
-} from '@material-ui/core'
+import { Grid, GridProps, IconButton, lighten, Paper, TextField, Typography } from '@mui/material'
 import Arrow from 'components/PFeatureBlock/assets/arrow.svg'
-import cls from 'classnames'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
-  grid: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
-  },
   root: {
     width: '100%',
     padding: theme.spacing(14),
@@ -48,14 +35,14 @@ const useStyles = makeStyles(theme => ({
 const NewsletterSection = ({ className, ...rest }: GridProps) => {
   const classes = useStyles()
   return (
-    <Grid className={cls(classes.grid, className)} container item xs={12} md={9} {...rest} >
+    <Grid className={className} container item xs={12} md={9} {...rest}>
       <Paper className={classes.root} elevation={0}>
         <Grid container justifyContent="center" alignItems="center" spacing={4}>
           <Grid item xs={12} md={6}>
             <Typography variant="h5" paragraph>
               Subscribe to our newsletter
             </Typography>
-            <Typography variant="subtitle2">
+            <Typography variant="subtitle2Semi">
               Choose the channel that you are most active in and let’s stay connected!
             </Typography>
           </Grid>

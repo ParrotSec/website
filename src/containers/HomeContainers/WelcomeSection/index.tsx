@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { Box, Grid, makeStyles, SvgIcon, Typography } from '@material-ui/core'
+import { Box, Grid, SvgIcon, Typography } from '@mui/material'
 import useTypewriter from 'react-typewriter-hook'
 import PButton from 'components/PButton'
 import Bulb from './assets/Bulb.svg'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   headingSubTitle: {
@@ -37,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: 45,
     padding: '21px 87px',
     border: `1px solid ${
-      theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
+      theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
     }`,
     borderRadius: 24,
     [theme.breakpoints.down('sm')]: {
@@ -50,7 +51,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   bulb: {
-    fill: theme.palette.type === 'light' ? '#262626' : '#FFFFFF'
+    fill: theme.palette.mode === 'light' ? '#262626' : '#FFFFFF'
   }
 }))
 
@@ -105,7 +106,7 @@ const WelcomeSection = () => {
         <span style={{ fontWeight: 'bold' }}>Parrot</span>OS
       </Box>
       <RunningText />
-      <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
+      <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
         A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
       </Typography>
       <Grid container item xs={12} spacing={2}>

@@ -1,13 +1,4 @@
-import {
-  Box,
-  ButtonBase,
-  Grid,
-  GridProps,
-  Link,
-  makeStyles,
-  Paper,
-  Typography
-} from '@material-ui/core'
+import { Box, ButtonBase, Grid, GridProps, Link, Paper, Typography } from '@mui/material'
 import PFeatureBlock from 'components/PFeatureBlock'
 import Patreon from './assets/patreon.svg'
 import Paypal from './assets/paypal.svg'
@@ -17,6 +8,7 @@ import vultr from './assets/vultr.png'
 import Arrow from 'components/PFeatureBlock/assets/arrow.svg'
 import Bitcoin from './assets/bitcoin.svg'
 import { useSnackbar } from 'notistack'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   roundedIconHolder: {
@@ -31,14 +23,14 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     textTransform: 'none',
-    color: theme.palette.type === 'light' ? '#03232E' : '#05EEFF',
+    color: theme.palette.mode === 'light' ? '#03232E' : '#05EEFF',
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
     marginLeft: -theme.spacing(2),
     borderRadius: 10
   },
   arrow: {
-    fill: theme.palette.type === 'light' ? '#03232E' : '#05EEFF',
+    fill: theme.palette.mode === 'light' ? '#03232E' : '#05EEFF',
     marginLeft: 8
   },
   paper: {
@@ -76,7 +68,7 @@ const useIconStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.default
   },
   btc: {
-    fill: theme.palette.type === 'light' ? '#06043E' : '#FFFFFF'
+    fill: theme.palette.mode === 'light' ? '#06043E' : '#FFFFFF'
   }
 }))
 

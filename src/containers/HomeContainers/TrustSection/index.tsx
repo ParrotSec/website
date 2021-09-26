@@ -1,5 +1,6 @@
-import { Grid, GridProps, makeStyles, Typography } from '@material-ui/core'
+import { Grid, GridProps, Typography } from '@mui/material'
 import Oreo from './assets/oreo 1.svg'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   trustLogosBlock: {

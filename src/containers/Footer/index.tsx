@@ -1,9 +1,10 @@
-import { Grid, makeStyles, Paper, Typography, useTheme } from '@material-ui/core'
+import { Grid, Paper, Typography, useTheme } from '@mui/material'
 import Link from 'components/NextLink'
 import Logo from './assets/logo.svg'
 import PButton from 'components/PButton'
 import { Brightness3, BrightnessHigh } from '@material-ui/icons'
 import { useThemeSwitch } from 'containers/ThemeProvider'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -13,10 +14,6 @@ const useStyles = makeStyles(theme => ({
   logo: {
     width: 64,
     height: 64
-  },
-  grid: {
-    paddingLeft: 16,
-    paddingRight: 16
   },
   paper: {
     padding: 80,
@@ -40,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     fontSize: 18,
-    fontWeight: 700
+    fontWeight: 800
   },
   link: {
     paddingTop: '0.5rem',
@@ -99,7 +96,7 @@ const Footer = () => {
   const { switchTheme } = useThemeSwitch()
   return (
     <Grid className={classes.root} container justifyContent="center" component="footer">
-      <Grid className={classes.grid} item xs={12} md={9}>
+      <Grid item xs={12} md={9}>
         <Paper className={classes.paper} elevation={0}>
           <Grid container spacing={4}>
             <Grid
@@ -115,11 +112,11 @@ const Footer = () => {
               <Typography className={classes.logoTitle} variant="h3" paragraph>
                 Parrot<span style={{ fontWeight: 300 }}>OS</span>
               </Typography>
-              <Typography className={classes.logoSubTitle} variant="body1" paragraph>
+              <Typography className={classes.logoSubTitle} variant="body1Semi" paragraph>
                 A GNU/Linux distribution based on Debian and designed with Security and Privacy in
                 mind.
               </Typography>
-              <PButton className={classes.download} variant="contained" gradient href="/download">
+              <PButton className={classes.download} variant="contained" gradient to="/download">
                 Download OS
               </PButton>
             </Grid>
@@ -137,13 +134,17 @@ const Footer = () => {
                 <Typography className={classes.title} variant="h6" paragraph>
                   Versions
                 </Typography>
-                <Link className={classes.link} color="textSecondary" href="/download">
+                <Link className={classes.link} color="textSecondary" href="/download?version=home">
                   Home Edition
                 </Link>
-                <Link className={classes.link} color="textSecondary" href="/download">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="/download?version=security"
+                >
                   Security Edition
                 </Link>
-                <Link className={classes.link} color="textSecondary" href="/download">
+                <Link className={classes.link} color="textSecondary" href="/download?version=cloud">
                   Cloud Edition
                 </Link>
               </Grid>
@@ -160,16 +161,16 @@ const Footer = () => {
                 <Typography className={classes.title} variant="h6" paragraph>
                   Resources
                 </Typography>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link className={classes.link} color="textSecondary" href="/docs">
                   Documentation
                 </Link>
                 <Link className={classes.link} color="textSecondary" href="/download/home">
                   Get Involved
                 </Link>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link className={classes.link} color="textSecondary" href="/community">
                   Community
                 </Link>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link className={classes.link} color="textSecondary" href="/blog">
                   Blog
                 </Link>
               </Grid>
@@ -186,13 +187,13 @@ const Footer = () => {
                 <Typography className={classes.title} variant="h6" paragraph>
                   About Us
                 </Typography>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link className={classes.link} color="textSecondary" href="/team">
                   Team
                 </Link>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link className={classes.link} color="textSecondary" href="/partners">
                   Partners
                 </Link>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link className={classes.link} color="textSecondary" href="/donate">
                   Donate
                 </Link>
               </Grid>
@@ -234,7 +235,7 @@ const Footer = () => {
                 className={classes.themeSwitcher}
                 variant="contained"
                 startIcon={
-                  theme.palette.type === 'dark' ? (
+                  theme.palette.mode === 'dark' ? (
                     <Brightness3 fontSize="small" />
                   ) : (
                     <BrightnessHigh fontSize="small" />
@@ -243,7 +244,7 @@ const Footer = () => {
                 onClick={() => switchTheme()}
                 size="small"
               >
-                {theme.palette.type === 'dark' ? 'Dark' : 'Light'}
+                {theme.palette.mode === 'dark' ? 'Dark' : 'Light'}
               </PButton>
             </Grid>
             <Grid container item xs={12} spacing={4}>
@@ -268,12 +269,12 @@ const Footer = () => {
                   </Link>
                 </Grid>
                 <Grid item xs={12} lg>
-                  <Link className={classes.footerLink} color="textSecondary" href="/download/home">
-                    Terms
+                  <Link className={classes.footerLink} color="textSecondary" href="/warrant">
+                    Warrant
                   </Link>
                 </Grid>
                 <Grid item xs={12} lg>
-                  <Link className={classes.footerLink} color="textSecondary" href="/download/home">
+                  <Link className={classes.footerLink} color="textSecondary" href="/privacy">
                     Privacy
                   </Link>
                 </Grid>

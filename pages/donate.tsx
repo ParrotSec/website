@@ -1,7 +1,8 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core'
+import { Grid,  Typography } from '@mui/material'
 import { SnackbarProvider } from 'notistack'
 import DonateSection from 'containers/DonateContainers/DonateSection'
 import { NextPage } from 'next'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,7 +42,7 @@ const Donate: NextPage = () => {
           <Typography variant="h1" align="center" paragraph>
             Buy Us A Coffee
           </Typography>
-          <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
+          <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
             A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
           </Typography>
         </Grid>

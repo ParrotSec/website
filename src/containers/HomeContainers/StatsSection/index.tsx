@@ -1,17 +1,14 @@
-import { Grid, GridProps, makeStyles, Paper, Typography } from '@material-ui/core'
-import cls from 'classnames'
+import { Grid, GridProps, Paper, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    padding: 16
-  },
   paper: {
     width: '100%',
     padding: '74px 60px',
     [theme.breakpoints.down('xs')]: {
       padding: theme.spacing(4)
     },
-    ...(theme.palette.type === 'light'
+    ...(theme.palette.mode === 'light'
       ? {
           background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)'
         }
@@ -28,7 +25,7 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
   const classes = useStyles()
   return (
     <Grid
-      className={cls(classes.root, className)}
+      className={className}
       container
       {...rest}
       item
@@ -49,7 +46,7 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
             <Typography variant="h5" paragraph>
               +2 million downloads
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2Semi">
               Our tools are designed to be compatible with as many devices as possible via
               containerization technologies like Docker or Podman.
             </Typography>
@@ -58,7 +55,7 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
             <Typography variant="h5" paragraph>
               +8k forum users
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2Semi">
               Our tools are designed to be compatible with as many devices as possible via
               containerization technologies like Docker or Podman.
             </Typography>
@@ -67,7 +64,7 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
             <Typography variant="h5" paragraph>
               17 Worldwide PoP
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2Semi">
               This system is made to respect your freedom, and it ever will be. share with anyone,
               read the source code and change it as you want!
             </Typography>

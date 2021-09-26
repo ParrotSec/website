@@ -1,4 +1,4 @@
-import { Grid, GridProps } from '@material-ui/core'
+import { Grid, GridProps } from '@mui/material'
 import { PostType } from '../../../types'
 import Post from 'components/Post'
 import NewsletterSection from 'containers/HomeContainers/NewsletterSection'

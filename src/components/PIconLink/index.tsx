@@ -1,6 +1,6 @@
 import PTooltip, { PTooltipProps } from 'components/Tooltip'
 import { CSSProperties, ElementType } from 'react'
-import { makeStyles } from '@material-ui/core'
+import { makeStyles } from '@mui/styles'
 
 type PIconLinkProps = {
   href: string

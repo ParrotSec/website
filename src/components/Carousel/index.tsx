@@ -6,14 +6,9 @@
 /* eslint-disable react/destructuring-assignment */
 
 import { AriaAttributes, Children, Component, ReactNode, SyntheticEvent } from 'react'
-import { Box } from '@material-ui/core'
-import Fade from '@material-ui/core/Fade'
-import IconButton from '@material-ui/core/IconButton'
-import Slide from '@material-ui/core/Slide'
-import { alpha, createStyles, Theme, WithStyles, withStyles } from '@material-ui/core/styles'
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
-import NavigateNextIcon from '@material-ui/icons/NavigateNext'
+import { Box, Fade, IconButton, Slide, alpha, Theme } from '@mui/material'
+import { createStyles, WithStyles, withStyles } from '@mui/styles'
+import { FiberManualRecord, NavigateBefore, NavigateNext } from '@mui/icons-material'
 import autoBind from 'auto-bind'
 import { useSwipeable } from 'react-swipeable'
 
@@ -237,8 +232,8 @@ const sanitizeProps = (props: CarouselProps) => {
     navButtonsProps: sanitizeNavProps(props.navButtonsProps ?? {}),
     NavButton: props.NavButton,
 
-    NextIcon: props.NextIcon ?? <NavigateNextIcon style={{ fontSize: 16, opacity: 0.5 }} />,
-    PrevIcon: props.PrevIcon ?? <NavigateBeforeIcon style={{ fontSize: 16, opacity: 0.5 }} />,
+    NextIcon: props.NextIcon ?? <NavigateNext style={{ fontSize: 16, opacity: 0.5 }} />,
+    PrevIcon: props.PrevIcon ?? <NavigateBefore style={{ fontSize: 16, opacity: 0.5 }} />,
 
     indicators: props.indicators ?? true,
     indicatorContainerProps: sanitizeNavProps(props.indicatorContainerProps ?? {}),
@@ -656,7 +651,7 @@ function Indicators(props: IndicatorsProps) {
     props.IndicatorIcon !== undefined ? (
       props.IndicatorIcon
     ) : (
-      <FiberManualRecordIcon className={classes.indicatorIcon} />
+      <FiberManualRecord className={classes.indicatorIcon} />
     )
   const {
     className: indicatorIconButtonClass,

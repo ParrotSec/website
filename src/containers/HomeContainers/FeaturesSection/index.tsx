@@ -1,4 +1,4 @@
-import { Grid, GridProps, Hidden } from '@material-ui/core'
+import { Grid, GridProps, Hidden } from '@mui/material'
 import PFeatureBlock from 'components/PFeatureBlock'
 import Safety from './assets/Security.svg'
 import Build from './assets/Build.svg'

@@ -1,8 +1,9 @@
-import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
+import { Box, Grid, Typography } from '@mui/material'
 import cls from 'classnames'
 import Home from 'containers/HomeContainers/OSSection/assets/Home.svg'
 import DESection from 'containers/DownloadContainers/DESection'
 import homeMate1 from './assets/home-mate-1.png'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   home: {
@@ -38,7 +39,7 @@ const OSHome = ({ classesGeneral }: OSHomeProps) => {
             </Typography>
           </Box>
           <Box marginTop="12px">
-            <Typography variant="subtitle2" align="center">
+            <Typography variant="subtitle2Semi" align="center">
               Home edition is designed for <b>daily use</b>, <b>privacy</b> and{' '}
               <b>software development</b>. Parrot Tools can be manually installed to assemble a
               custom and lightweight pentesting environment.

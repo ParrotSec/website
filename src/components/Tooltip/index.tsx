@@ -1,4 +1,5 @@
-import { emphasize, makeStyles, Tooltip, TooltipProps } from '@material-ui/core'
+import { emphasize, Tooltip, TooltipProps } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   tooltip: {
@@ -17,13 +18,7 @@ export type PTooltipProps = TooltipProps
 
 const PTooltip = (props: PTooltipProps) => {
   const classes = useStyles()
-  return (
-    <Tooltip
-      {...props}
-      arrow
-      classes={{ tooltip: classes.tooltip, arrow: classes.arrow }}
-    ></Tooltip>
-  )
+  return <Tooltip {...props} arrow classes={{ tooltip: classes.tooltip, arrow: classes.arrow }} />
 }
 
 export default PTooltip

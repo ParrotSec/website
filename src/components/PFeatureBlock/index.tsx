@@ -1,7 +1,8 @@
 import { ElementType, ReactNode } from 'react'
-import { Link, makeStyles, Paper, PaperProps, Typography } from '@material-ui/core'
+import { Link, Paper, PaperProps, Typography } from '@mui/material'
 import NextLink from 'components/NextLink'
 import Arrow from './assets/arrow.svg'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -10,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     height: '100%'
   },
   icon: {
-    fill: theme.palette.type === 'light' ? '#FFFFFF' : '#06043E',
+    fill: theme.palette.mode === 'light' ? '#FFFFFF' : '#06043E',
     width: 32,
     height: 32
   },
@@ -18,24 +19,25 @@ const useStyles = makeStyles(theme => ({
     width: 64,
     height: 64,
     padding: 16,
-    background: theme.palette.type === 'light' ? '#03232E' : '#FFFFFF',
+    background: theme.palette.mode === 'light' ? '#03232E' : '#FFFFFF',
     borderRadius: 6,
     marginBottom: 20
   },
   button: {
     textTransform: 'none',
-    color: theme.palette.type === 'light' ? '#03232E' : '#05EEFF',
+    color: theme.palette.mode === 'light' ? '#03232E' : '#05EEFF',
     paddingLeft: 16,
     paddingRight: 16,
     marginLeft: -16,
     borderRadius: 10
   },
   body: {
+    display: 'block',
     marginTop: 20,
     marginBottom: 25
   },
   arrow: {
-    fill: theme.palette.type === 'light' ? '#03232E' : '#05EEFF',
+    fill: theme.palette.mode === 'light' ? '#03232E' : '#05EEFF',
     marginLeft: 8
   },
   fullHeight: {
@@ -79,7 +81,7 @@ const PFeatureBlock = ({
         <Icon className={classes.icon} />
       </div>
       <Typography variant="h5">{title}</Typography>
-      <Typography className={classes.body} variant="body1">
+      <Typography className={classes.body} variant="body1Semi">
         {children}
       </Typography>
       {CustomFooter ??

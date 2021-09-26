@@ -1,5 +1,6 @@
-import { makeStyles, Grid, Typography, GridProps, Box, Paper } from '@material-ui/core'
+import { Grid, Typography, GridProps, Box, Paper } from '@mui/material'
 import PButton from 'components/PButton'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   activeContrib: {
@@ -24,15 +25,13 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 20
   },
   contribSection: {
-    marginTop: theme.spacing(7),
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
+    marginTop: theme.spacing(7)
   },
   wideButton: {
     marginTop: theme.spacing(3),
     padding: theme.spacing(2, 10),
     border: `1px solid ${
-      theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
+      theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
     }`,
     borderRadius: 24
   }
@@ -60,6 +59,7 @@ const ContributorsSection = ({
       container
       item
       xs={12}
+      md={9}
       alignItems="center"
       direction="column"
       wrap="nowrap"
@@ -77,7 +77,7 @@ const ContributorsSection = ({
         <Typography className={classes.contribTitle} variant="h1" align="center">
           {title}
         </Typography>
-        <Typography className={classes.contribSubtitle} variant="subtitle2" align="center">
+        <Typography className={classes.contribSubtitle} variant="subtitle2Semi" align="center">
           {subtitle}
         </Typography>
       </Grid>

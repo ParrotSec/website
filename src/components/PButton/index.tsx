@@ -1,6 +1,7 @@
-import { Button, ButtonProps, makeStyles } from '@material-ui/core'
+import { Button, ButtonProps } from '@mui/material'
 import cls from 'classnames'
 import RouterLink from 'next/link'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,19 +17,29 @@ const useStyles = makeStyles(theme => ({
     }
   },
   outlined: {
-    borderColor: theme.palette.type === 'dark' ? 'white' : 'black'
+    color: theme.palette.text.primary,
+    borderColor: theme.palette.mode === 'dark' ? 'white' : 'black',
+    '&:hover': {
+      color: theme.palette.primary.main,
+      '& svg': {
+        fill: theme.palette.primary.main
+      }
+    }
   },
   text: {},
   contained: {
-    color: theme.palette.type === 'dark' ? '#03232E' : '#FFFFFF',
-    background: theme.palette.type === 'light' ? '#03232E' : '#FFFFFF'
+    color: theme.palette.mode === 'dark' ? '#03232E' : '#FFFFFF',
+    background: theme.palette.mode === 'light' ? '#03232E' : '#FFFFFF'
   },
   gradient: {
     background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
     transition: 'box-shadow 0.3s ease-in-out',
-    '&:hover': {
-      boxShadow: '0 0 30px 10px #2c2981'
-    },
+    '&:hover':
+      theme.palette.mode === 'dark'
+        ? {
+            boxShadow: '0 0 30px 10px #2c2981'
+          }
+        : {},
     color: '#03232E'
   }
 }))

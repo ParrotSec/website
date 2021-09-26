@@ -1,22 +1,14 @@
-import {
-  makeStyles,
-  Grid,
-  Typography,
-  Card,
-  CardContent,
-  Avatar,
-  IconButton,
-  GridProps
-} from '@material-ui/core'
+import { Grid, Typography, Card, CardContent, Avatar, IconButton, GridProps } from '@mui/material'
 import cls from 'classnames'
 import Email from './assets/Email.svg'
 import Github from './assets/Github.svg'
 import LinkedIn from './assets/LinkedIn.svg'
 import Twitter from './assets/Twitter.svg'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   card: {
-    margin: theme.spacing(2)
+    padding: theme.spacing(4)
   },
   bgColor: {
     backgroundColor: theme.palette.background.default
@@ -36,22 +28,22 @@ const useStyles = makeStyles(theme => ({
   icons: {
     display: 'block',
     margin: 'auto',
-    fill: theme.palette.type === 'light' ? 'white' : 'inherit',
+    fill: theme.palette.mode === 'light' ? 'white' : 'inherit',
     '& #github': {
-      stroke: theme.palette.type === 'light' ? '#06043E' : '#FFF',
-      fill: theme.palette.type === 'light' ? '#06043E' : '#FFF'
+      stroke: theme.palette.mode === 'light' ? '#06043E' : '#FFF',
+      fill: theme.palette.mode === 'light' ? '#06043E' : '#FFF'
     },
     '& #twitter': {
-      stroke: theme.palette.type === 'light' ? '#06043E' : '#FFF',
-      fill: theme.palette.type === 'light' ? '#06043E' : '#FFF'
+      stroke: theme.palette.mode === 'light' ? '#06043E' : '#FFF',
+      fill: theme.palette.mode === 'light' ? '#06043E' : '#FFF'
     },
     '& #linkedin': {
-      stroke: theme.palette.type === 'light' ? '#06043E' : '#FFF',
-      fill: theme.palette.type === 'light' ? '#06043E' : '#FFF'
+      stroke: theme.palette.mode === 'light' ? '#06043E' : '#FFF',
+      fill: theme.palette.mode === 'light' ? '#06043E' : '#FFF'
     },
     '& #email': {
-      stroke: theme.palette.type === 'light' ? '#06043E' : '#FFF',
-      fill: theme.palette.type === 'light' ? '#06043E' : '#FFF'
+      stroke: theme.palette.mode === 'light' ? '#06043E' : '#FFF',
+      fill: theme.palette.mode === 'light' ? '#06043E' : '#FFF'
     }
   }
 }))
@@ -96,7 +88,7 @@ const UserCard = ({
               {nickname}
             </Typography>
           )}
-          <Typography variant="body1">{role}</Typography>
+          <Typography variant="body1Semi">{role}</Typography>
           {socials && (
             <Grid
               className={classes.socials}

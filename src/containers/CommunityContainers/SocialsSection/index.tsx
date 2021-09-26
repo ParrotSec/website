@@ -1,4 +1,4 @@
-import { Box, Grid, GridProps, IconButton, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Box, Grid, GridProps, IconButton, Paper, Typography } from '@mui/material'
 import PFeatureBlock from 'components/PFeatureBlock'
 import HackTheBox from './assets/hackthebox.svg'
 import Forum from './assets/forum.svg'
@@ -9,6 +9,7 @@ import Twitter from './assets/twitter.svg'
 import Facebook from './assets/facebook.svg'
 import YouTube from './assets/youtube.svg'
 import Telegram from '@material-ui/icons/Telegram'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
   grid: {
@@ -24,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   icon: {
-    fill: theme.palette.type === 'dark' ? '#FFFFFF' : '#06043E'
+    fill: theme.palette.mode === 'dark' ? '#FFFFFF' : '#06043E'
   },
   iconWrapper: {
     marginTop: theme.spacing(6),
@@ -80,7 +81,7 @@ const SocialsSection = (props: GridProps) => {
             <Typography variant="h5" paragraph>
               Join Us On Social Media
             </Typography>
-            <Typography variant="subtitle2">
+            <Typography variant="subtitle2Semi">
               Choose the channel that you are most active in and let’s stay connected!
             </Typography>
           </Grid>
