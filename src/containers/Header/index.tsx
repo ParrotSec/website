@@ -1,6 +1,6 @@
 import { AppBar, Collapse, Box, Grid, Hidden, IconButton, Toolbar } from '@mui/material'
 import Link from 'components/NextLink'
-import { Menu as MenuIcon } from '@material-ui/icons'
+import { Menu as MenuIcon } from '@mui/icons-material'
 import PButton from 'components/PButton'
 import Logo from './assets/logo.svg'
 import { useState } from 'react'

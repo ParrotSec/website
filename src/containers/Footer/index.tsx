@@ -2,7 +2,7 @@ import { Grid, Paper, Typography, useTheme } from '@mui/material'
 import Link from 'components/NextLink'
 import Logo from './assets/logo.svg'
 import PButton from 'components/PButton'
-import { Brightness3, BrightnessHigh } from '@material-ui/icons'
+import { Brightness3, BrightnessHigh } from '@mui/icons-material'
 import { useThemeSwitch } from 'containers/ThemeProvider'
 import { makeStyles } from '@mui/styles'
 
