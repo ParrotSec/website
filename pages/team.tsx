@@ -6,6 +6,7 @@ import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSect
 import PastContributors from 'containers/TeamContainers/PastContributorsSection'
 import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
 import { NextPage } from 'next'
+import data from "public/locales/en/team.json"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -56,6 +57,23 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+const teamData = data.map((data) => {
+  return (
+    <UserCard
+      name={data.name}
+      nickname={data.nickname}
+      role={data.role}
+      noAvatar={data.avatar}
+      socials={{
+        github: data.github,
+        twitter: data.twitter,
+        linkedIn: data.linkedIn,
+        email: data.email
+      }}
+    />
+  )
+})
+
 const Team: NextPage = () => {
   const classes = useStyles()
 
@@ -71,72 +89,7 @@ const Team: NextPage = () => {
         </Typography>
       </Grid>
       <Grid container item xs={12} md={9} spacing={4}>
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
+        {teamData}
       </Grid>
       <ActiveContributors />
       <SpecialThanks />

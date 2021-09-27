@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Lorenzo Faletra",
+    "nickname": "palinuro",
+    "role": "Team Leader, Core Dev, Infrastructure Manager, Release manager",
+    "avatar": false,
+    "email": "palinuro at parrotsec dot org",
+    "github": "",
+    "twitter": "",
+    "linkedIn": "",
+    "email": ""
+  },
+  {
+    "name": "Federica Marasà",
+    "nickname": "marafed",
+    "role": "Project Manager, Web Dev, Social Media Manager, Graphic Designer",
+    "avatar": false,
+    "email": "marafed at parrotsec dot org",
+    "github": "",
+    "twitter": "",
+    "linkedIn": "",
+    "email": ""
+  },
+  {
+    "name": "Irene Pirrotta",
+    "nickname": "Tissy",
+    "role": "Project Manager, ARM Dev, Community Manager",
+    "avatar": false,
+    "email": "tissy at parrotsec dot org",
+    "github": "",
+    "twitter": "",
+    "linkedIn": "",
+    "email": ""
+  },
+  {
+    "name": "Vladyslav Dalechyn",
+    "nickname": "h0tw4t3r",
+    "role": "Core Dev, Package Maintainer",
+    "avatar": false,
+    "email": "h0tw4t3r at parrotsec dot org",
+    "github": "",
+    "twitter": "",
+    "linkedIn": "",
+    "email": ""
+  },
+  {
+    "name": "Nông Hoàng Tú",
+    "nickname": "Dm Knght",
+    "role": "Core Dev, Package Maintainer",
+    "avatar": false,
+    "email": "dmknght at parrotsec dot org",
+    "github": "",
+    "twitter": "",
+    "linkedIn": "",
+    "email": ""
+  },
+  {
+    "name": "Dario Camonita",
+    "nickname": "danterolle",
+    "role": "Core Dev, Website and Documentation Mantainer",
+    "avatar": false,
+    "email": "danterolle at parrotsec dot org",
+    "github": "",
+    "twitter": "",
+    "linkedIn": "",
+    "email": ""
+  }
+]
