@@ -1,18 +1,12 @@
-import {
-  AppBar,
-  Collapse,
-  Box,
-  Grid,
-  Hidden,
-  IconButton,
-  makeStyles,
-  Toolbar
-} from '@material-ui/core'
-import Link from 'components/NextLink'
-import { Menu as MenuIcon } from '@material-ui/icons'
-import PButton from 'components/PButton'
-import Logo from './assets/logo.svg'
+import { Menu as MenuIcon } from '@mui/icons-material'
+import { AppBar, Collapse, Box, Grid, Hidden, IconButton, Toolbar } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import { useState } from 'react'
+
+import Logo from './assets/logo.svg'
+
+import Link from 'components/NextLink'
+import PButton from 'components/PButton'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -37,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     fontFamily: 'museo-sans',
     textDecoration: 'none',
     transition: '.2s ease-in 0s',
-    color: theme.palette.type === 'dark' ? '#FFF' : 'rgba(0, 0, 0, 0.5)',
+    color: theme.palette.mode === 'dark' ? '#FFF' : 'rgba(0, 0, 0, 0.5)',
     '&:hover': {
       textDecoration: 'none',
       color: '#05EEFF'
@@ -55,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     gap: 41
   },
   menu: {
-    color: theme.palette.type === 'dark' ? 'rgba(255,255,255,.5)' : 'rgba(0,0,0,.5)'
+    color: theme.palette.mode === 'dark' ? 'rgba(255,255,255,.5)' : 'rgba(0,0,0,.5)'
   },
   register: {
     [theme.breakpoints.up('sm')]: {
@@ -110,7 +104,7 @@ const Header = () => {
                 <MenuIcon className={classes.menu} />
               </IconButton>
             </Hidden>
-            <Hidden mdDown>
+            <Hidden lgDown>
               <nav className={classes.nav}>
                 <Link className={classes.link} href="/community">
                   Community

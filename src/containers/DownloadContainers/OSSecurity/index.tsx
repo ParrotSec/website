@@ -1,8 +1,10 @@
-import { Box, Grid, makeStyles, Typography } from '@material-ui/core'
+import { Box, Grid, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import cls from 'classnames'
-import Security from 'containers/HomeContainers/OSSection/assets/Security.svg'
+
 import DESection from 'containers/DownloadContainers/DESection'
 import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
+import Security from 'containers/HomeContainers/OSSection/assets/Security.svg'
 
 const useStyles = makeStyles(theme => ({
   security: {
@@ -37,14 +39,11 @@ const OSSecurity = ({ classesGeneral }: OSSecurityProps) => {
             </div>
             <Typography variant="h3">Security Edition</Typography>
           </Box>
-          <Box marginTop="12px">
-            <Typography variant="subtitle2" align="center">
-              Security Edition is a special purpose operating system designed for{' '}
-              <b>Penetration Testing</b> and
-              <b>Red Team operations</b>. It contains a full arsenal of ready-to use pentesting
-              tools.
-            </Typography>
-          </Box>
+          <Typography variant="subtitle2Semi" align="center" mt="12px">
+            Security Edition is a special purpose operating system designed for{' '}
+            <b>Penetration Testing</b> and
+            <b>Red Team operations</b>. It contains a full arsenal of ready-to use pentesting tools.
+          </Typography>
         </Grid>
         <DESection
           className={classes.desktopEnvironment}

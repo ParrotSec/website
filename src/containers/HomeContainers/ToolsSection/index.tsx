@@ -1,15 +1,18 @@
-import { Box, Grid, GridProps, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
-import Tools from './assets/tools.svg'
-import parrotBg from './assets/shellBg.png'
-import screenshot from './assets/screenshot.png'
-import PButton from 'components/PButton'
+import { Box, Grid, GridProps, Hidden, Paper, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { useMeasure } from 'react-use'
+
+import screenshot from './assets/screenshot.webp'
+import parrotBg from './assets/shellBg.webp'
 import Burp from './assets/tool-logo-burp 1.svg'
 import John from './assets/tool-logo-john 1.svg'
 import Maltego from './assets/tool-logo-maltego 1.svg'
+import Metasploit from './assets/tool-logo-metasploit 1.svg'
 import Nmap from './assets/tool-logo-nmap 1.svg'
 import Sqlmap from './assets/tool-logo-sqlmap 1.svg'
-import Metasploit from './assets/tool-logo-metasploit 1.svg'
-import { useMeasure } from 'react-use'
+import Tools from './assets/tools.svg'
+
+import PButton from 'components/PButton'
 import PIconLink from 'components/PIconLink'
 import Slider from 'components/Slider'
 
@@ -22,13 +25,13 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: 75
   },
   headerIcon: {
-    fill: theme.palette.type === 'light' ? '#FFFFFF' : '#06043E'
+    fill: theme.palette.mode === 'light' ? '#FFFFFF' : '#06043E'
   },
   headerIconWrapper: {
     width: 64,
     height: 64,
     padding: 16,
-    background: theme.palette.type === 'light' ? '#03232E' : '#FFFFFF',
+    background: theme.palette.mode === 'light' ? '#03232E' : '#FFFFFF',
     borderRadius: 6,
     marginBottom: 20
   },
@@ -46,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   responsiveJustify: {
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       justifyContent: 'center'
     }
   },
@@ -60,7 +63,7 @@ const useStyles = makeStyles(theme => ({
   },
   paperPadding: {
     padding: theme.spacing(8),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(4)
     }
   }
@@ -232,11 +235,11 @@ const ToolsSection = (rest: GridProps) => {
             <Typography variant="h3" align="center" paragraph>
               Tools for every occasion
             </Typography>
-            <Typography variant="subtitle2" align="center" paragraph>
+            <Typography variant="subtitle2Semi" align="center" paragraph>
               Choose between 600+ tools for all your hacking needs
             </Typography>
             {/*TODO: for futher animations need to apply box-shadow*/}
-            <Hidden smDown>
+            <Hidden mdDown>
               <Box position="relative" width={width} marginTop="46px" zIndex={2}>
                 {icons(true)}
               </Box>
@@ -246,7 +249,7 @@ const ToolsSection = (rest: GridProps) => {
                 {icons(false)}
               </Slider>
             </Hidden>
-            <Hidden smDown>
+            <Hidden mdDown>
               <div className={classes.bgHolder}>
                 <img ref={ref} className={classes.bg} src={parrotBg.src} alt="Parrot BG" />
               </div>
@@ -284,7 +287,7 @@ const ToolsSection = (rest: GridProps) => {
                 <Typography variant="h5" paragraph>
                   Hacking tools at your fingertips
                 </Typography>
-                <Typography variant="body1">
+                <Typography variant="body1Semi">
                   When it comes to general tools and functional features, Parrot OS wins over Kali
                   Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
                   its own tools. There are several tools you will find on ParrotOS that is not found
@@ -306,7 +309,7 @@ const ToolsSection = (rest: GridProps) => {
                 <Typography variant="h5" paragraph>
                   This block should be replaced
                 </Typography>
-                <Typography variant="body1">
+                <Typography variant="body1Semi">
                   When it comes to general tools and functional features, Parrot OS wins over Kali
                   Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
                   its own tools. There are several tools you will find on ParrotOS that is not found

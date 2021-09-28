@@ -1,7 +1,10 @@
-import { Grid, GridProps, makeStyles, Paper, Typography } from '@material-ui/core'
-import PButton from 'components/PButton'
+import { Grid, GridProps, Paper, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+
 import HTBLogo from './assets/htbLogo.svg'
-import htbScreenshot from './assets/htbScreenshot.png'
+import htbScreenshot from './assets/htbScreenshot.webp'
+
+import PButton from 'components/PButton'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     height: 'auto',
     maxWidth: 249,
     maxHeight: 49,
-    fill: theme.palette.type === 'light' ? '#141D2B' : '#FFFFFF'
+    fill: theme.palette.mode === 'light' ? '#141D2B' : '#FFFFFF'
   },
   desc: {
     opacity: 0.5
@@ -62,7 +65,11 @@ const HTBSection = (rest: GridProps) => {
             justifyContent="flex-end"
             alignItems="flex-end"
           >
-            <img src={htbScreenshot.src} alt="Screenshot of PWNBox" style={{ paddingLeft: '10%' }} />
+            <img
+              src={htbScreenshot.src}
+              alt="Screenshot of PWNBox"
+              style={{ paddingLeft: '10%' }}
+            />
           </Grid>
         </Grid>
       </Paper>

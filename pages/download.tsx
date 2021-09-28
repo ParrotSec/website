@@ -1,9 +1,13 @@
-import { Grid, makeStyles } from '@material-ui/core'
+import { Grid } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { SnackbarProvider } from 'notistack'
+
 import OSSelection from 'containers/DownloadContainers/OSSelection'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
+
 import 'react-image-lightbox/style.css'
-import { NextPage } from 'next'
 
 const useStyles = makeStyles({
   contribute: {
@@ -18,10 +22,17 @@ const useStyles = makeStyles({
 
 const Download: NextPage = () => {
   const classes = useStyles()
+  const router = useRouter()
+  const version =
+    router.query.version === 'home' ||
+    router.query.version === 'security' ||
+    router.query.version === 'cloud'
+      ? router.query.version
+      : 'home'
   return (
     <SnackbarProvider preventDuplicate classes={{ variantSuccess: classes.snackbar }}>
       <Grid container justifyContent="center">
-        <OSSelection />
+        <OSSelection initialVersion={version} />
         <ContributeSection className={classes.contribute} />
       </Grid>
     </SnackbarProvider>

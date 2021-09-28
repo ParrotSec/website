@@ -1,6 +1,7 @@
-import PTooltip, { PTooltipProps } from 'components/Tooltip'
+import { makeStyles } from '@mui/styles'
 import { CSSProperties, ElementType } from 'react'
-import { makeStyles } from '@material-ui/core'
+
+import PTooltip, { PTooltipProps } from 'components/Tooltip'
 
 type PIconLinkProps = {
   href: string
@@ -30,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     background: '#FFF',
     borderRadius: 6,
     boxShadow: '0px 4px 10px 2px rgba(0, 0, 0, 0.25)',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: 64,
       height: 64
     }

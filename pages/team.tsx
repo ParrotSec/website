@@ -1,12 +1,15 @@
-import { makeStyles, Grid, Typography } from '@material-ui/core'
-import Wallpaper from 'assets/wallpaper.png'
+import { Grid, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { NextPage } from 'next'
+
 import UserCard from 'components/UserCard'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSection'
 import PastContributors from 'containers/TeamContainers/PastContributorsSection'
 import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
-import { NextPage } from 'next'
+
 import data from 'components/UserCard/team'
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,34 +26,6 @@ const useStyles = makeStyles(theme => ({
       fontSize: 15.3
     },
     marginBottom: theme.spacing(6.5)
-  },
-  wallpaper:
-    theme.palette.type === 'dark'
-      ? {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          opacity: 0.1,
-          width: '100%',
-          height: '100%',
-          backgroundSize: 'cover',
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
-        }
-      : { display: 'none' },
-  headingTitle: {
-    marginTop: 0,
-    marginBottom: 10,
-    fontSize: theme.spacing(9),
-    [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(8)
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: theme.spacing(7)
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: theme.spacing(5)
-    }
   },
   developBlock: {
     marginTop: 154
@@ -79,12 +54,18 @@ const Team: NextPage = () => {
 
   return (
     <Grid container item xs={12} className={classes.root} justifyContent="center">
-      <div className={classes.wallpaper} />
-      <Grid className={classes.title} item xs={12}>
-        <Typography className={classes.headingTitle} variant="h1" align="center">
+      <Grid
+        container
+        direction="column"
+        className={classes.title}
+        item
+        xs={12}
+        justifyContent="center"
+      >
+        <Typography variant="h1" align="center" paragraph>
           The Team <br /> behind Parrot<span style={{ fontWeight: 300 }}>OS</span>
         </Typography>
-        <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
+        <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
           A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
         </Typography>
       </Grid>

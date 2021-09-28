@@ -5,16 +5,18 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable react/destructuring-assignment */
 
-import { AriaAttributes, Children, Component, ReactNode, SyntheticEvent } from 'react'
-import { Box } from '@material-ui/core'
-import Fade from '@material-ui/core/Fade'
-import IconButton from '@material-ui/core/IconButton'
-import Slide from '@material-ui/core/Slide'
-import { alpha, createStyles, Theme, WithStyles, withStyles } from '@material-ui/core/styles'
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
-import NavigateNextIcon from '@material-ui/icons/NavigateNext'
+import { FiberManualRecord, NavigateBefore, NavigateNext } from '@mui/icons-material'
+import { Box, Fade, IconButton, Slide, alpha, Theme } from '@mui/material'
+import { createStyles, WithStyles, withStyles } from '@mui/styles'
 import autoBind from 'auto-bind'
+import {
+  AriaAttributes,
+  Children,
+  Component,
+  CSSProperties,
+  ReactNode,
+  SyntheticEvent
+} from 'react'
 import { useSwipeable } from 'react-swipeable'
 
 const styles = (theme: Theme) =>
@@ -86,7 +88,7 @@ const styles = (theme: Theme) =>
 
 interface CarouselNavProps extends AriaAttributes {
   className?: string
-  style?: React.CSSProperties
+  style?: CSSProperties
 }
 
 type CarouselProps = {
@@ -163,7 +165,7 @@ type CarouselProps = {
   }: {
     onClick: (e: SyntheticEvent) => unknown
     className: string
-    style: React.CSSProperties
+    style: CSSProperties
     next: boolean
     prev: boolean
   }) => ReactNode
@@ -198,15 +200,11 @@ type CarouselProps = {
 } & WithStyles<typeof styles>
 
 const sanitizeNavProps = (props: CarouselNavProps) => {
-  const { className, style, ...rest } = props || {}
-
-  return props !== undefined
-    ? {
-        style: props.style !== undefined ? props.style : {},
-        className: props.className !== undefined ? props.className : '',
-        ...rest
-      }
-    : { style: {}, className: '', ...rest }
+  return {
+    ...props,
+    style: props.style !== undefined ? props.style : {},
+    className: props.className !== undefined ? props.className : ''
+  }
 }
 
 const sanitizeProps = (props: CarouselProps) => {
@@ -237,8 +235,8 @@ const sanitizeProps = (props: CarouselProps) => {
     navButtonsProps: sanitizeNavProps(props.navButtonsProps ?? {}),
     NavButton: props.NavButton,
 
-    NextIcon: props.NextIcon ?? <NavigateNextIcon style={{ fontSize: 16, opacity: 0.5 }} />,
-    PrevIcon: props.PrevIcon ?? <NavigateBeforeIcon style={{ fontSize: 16, opacity: 0.5 }} />,
+    NextIcon: props.NextIcon ?? <NavigateNext style={{ fontSize: 16, opacity: 0.5 }} />,
+    PrevIcon: props.PrevIcon ?? <NavigateBefore style={{ fontSize: 16, opacity: 0.5 }} />,
 
     indicators: props.indicators ?? true,
     indicatorContainerProps: sanitizeNavProps(props.indicatorContainerProps ?? {}),
@@ -329,7 +327,7 @@ class Carousel extends Component<CarouselProps, CarouselState> {
 
   setActive(
     index: number,
-    callback = (_index: number, _prevActive: number) => {},
+    callback: (index: number, prevActive: number) => unknown = () => {},
     runCallbacks = true
   ) {
     const { onChange, timeout, children, strictIndexing } = sanitizeProps(this.props)
@@ -455,20 +453,14 @@ class Carousel extends Component<CarouselProps, CarouselState> {
         return reverseEdgeAnimationDirection
       }
 
-      if (this.state.active > this.state.prevActive) {
-        return true
-      }
-
-      return false
+      return this.state.active > this.state.prevActive
     }
 
     const showButton = (next = true) => {
       if (cycleNavigation) return true
 
       if (next && this.state.active + 1 > Children.count(children) - 1) return false
-      if (!next && this.state.active - 1 < 0) return false
-
-      return true
+      return !(!next && this.state.active - 1 < 0)
     }
 
     return (
@@ -656,7 +648,7 @@ function Indicators(props: IndicatorsProps) {
     props.IndicatorIcon !== undefined ? (
       props.IndicatorIcon
     ) : (
-      <FiberManualRecordIcon className={classes.indicatorIcon} />
+      <FiberManualRecord className={classes.indicatorIcon} />
     )
   const {
     className: indicatorIconButtonClass,

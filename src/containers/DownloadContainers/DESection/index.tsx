@@ -1,4 +1,4 @@
-import { ReactNode, useState, Fragment } from 'react'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Accordion,
   AccordionDetails,
@@ -7,17 +7,18 @@ import {
   Divider,
   Grid,
   GridProps,
-  makeStyles,
   Paper,
   Typography
-} from '@material-ui/core'
+} from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import cls from 'classnames'
+import { useSnackbar } from 'notistack'
+import { ReactNode, useState, Fragment } from 'react'
+import Lightbox from 'react-image-lightbox'
+
 import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import cls from 'classnames'
 import SelectButton, { SelectButtonItem } from 'components/SelectButton'
-import { useSnackbar } from 'notistack'
-import Lightbox from 'react-image-lightbox'
 
 const useStyles = makeStyles(theme => ({
   grid: {
@@ -33,12 +34,6 @@ const useStyles = makeStyles(theme => ({
   },
   subtitleMargined: {
     marginBottom: theme.spacing(4)
-  },
-  lowOpacity: {
-    opacity: 0.5
-  },
-  highOpacity: {
-    opacity: 1
   },
   subBlockHeading: {
     fontFamily: 'museo-sans',
@@ -117,7 +112,7 @@ const DESection = ({
         <Typography variant="h5" paragraph>
           {name}
         </Typography>
-        <Typography variant="subtitle2" paragraph>
+        <Typography variant="subtitle2Semi" paragraph>
           {description}
         </Typography>
         <Grid container spacing={8} justifyContent="center" alignItems="center">
@@ -166,9 +161,7 @@ const DESection = ({
                 paddingTop="10px"
                 paddingBottom="10px"
               >
-                <Typography className={classes.lowOpacity} variant="body2">
-                  Version
-                </Typography>
+                <Typography variant="body2Semi">Version</Typography>
                 <Typography variant="body2">{version}</Typography>
               </Box>
               <Divider variant="fullWidth" />
@@ -178,9 +171,7 @@ const DESection = ({
                 paddingTop="10px"
                 paddingBottom="10px"
               >
-                <Typography className={classes.lowOpacity} variant="body2">
-                  Release Date
-                </Typography>
+                <Typography variant="body2Semi">Release Date</Typography>
                 <Typography variant="body2">{releaseDate}</Typography>
               </Box>
               <Divider variant="fullWidth" />
@@ -190,9 +181,7 @@ const DESection = ({
                 paddingTop="10px"
                 paddingBottom="10px"
               >
-                <Typography className={classes.lowOpacity} variant="body2">
-                  Architecture
-                </Typography>
+                <Typography variant="body2Semi">Architecture</Typography>
                 <Typography variant="body2">{architecture}</Typography>
               </Box>
               <Divider variant="fullWidth" />
@@ -202,9 +191,7 @@ const DESection = ({
                 paddingTop="10px"
                 paddingBottom="10px"
               >
-                <Typography className={classes.lowOpacity} variant="body2">
-                  Size
-                </Typography>
+                <Typography variant="body2Semi">Size</Typography>
                 <Typography variant="body2">{size}</Typography>
               </Box>
             </Grid>
@@ -254,13 +241,10 @@ const DESection = ({
                 style={{ padding: 0 }}
               >
                 <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
-                  <Typography
-                    className={cls(classes.subBlockHeading, classes.highOpacity)}
-                    variant="subtitle2"
-                  >
+                  <Typography className={classes.subBlockHeading} variant="subtitle2">
                     Features
                   </Typography>
-                  <Typography className={classes.highOpacity} color="primary" variant="body1">
+                  <Typography color="primary" variant="body1">
                     {expanded ? 'Hide Features' : 'Show Features'}
                   </Typography>
                 </Box>
@@ -271,18 +255,13 @@ const DESection = ({
                     <Fragment key={`features-fragment-${i}`}>
                       <Grid item xs={12} container spacing={2} key={`features-${i}`}>
                         <Grid item xs={12} sm={4} key={`features-hero-grid-${i}`}>
-                          <Typography
-                            className={classes.highOpacity}
-                            variant="body1"
-                            key={`features-hero-${i}`}
-                          >
+                          <Typography variant="body1" key={`features-hero-${i}`}>
                             {hero}
                           </Typography>
                         </Grid>
                         {content.map(({ heading, description }, j) => (
                           <Grid item xs={12} sm={4} key={`features-inner-${i}-${j}`}>
                             <Typography
-                              className={classes.highOpacity}
                               variant="body1"
                               paragraph
                               key={`features-inner-${i}-${j}-heading`}
@@ -290,8 +269,7 @@ const DESection = ({
                               {heading}
                             </Typography>
                             <Typography
-                              className={classes.lowOpacity}
-                              variant="body2"
+                              variant="body2Semi"
                               key={`features-inner-${i}-${j}-description`}
                             >
                               {description}
@@ -321,28 +299,24 @@ const DESection = ({
                 <Divider variant="fullWidth" />
               </Grid>
               <Grid className={classes.gridHrMarginTop} item xs={12}>
-                <Typography
-                  className={cls(classes.subBlockHeading, classes.highOpacity)}
-                  variant="subtitle2"
-                  paragraph
-                >
+                <Typography className={classes.subBlockHeading} variant="subtitle2" paragraph>
                   Requirements
                 </Typography>
                 <Grid container item xs={12} justifyContent="space-between" spacing={3}>
                   {requirements.map(({ heading, description }, i) => (
-                    <Grid item xs={12} sm={6} lg={3} key={`requirements-${i}`}>
-                      <Typography
-                        className={classes.lowOpacity}
-                        variant="body2"
-                        key={`requirements-${i}-heading`}
-                      >
+                    <Grid
+                      container
+                      direction="column"
+                      item
+                      xs={12}
+                      sm={6}
+                      lg={3}
+                      key={`requirements-${i}`}
+                    >
+                      <Typography variant="body2Semi" key={`requirements-${i}-heading`}>
                         {heading}
                       </Typography>
-                      <Typography
-                        className={classes.highOpacity}
-                        variant="body1"
-                        key={`requirements-${i}-description`}
-                      >
+                      <Typography variant="body1" key={`requirements-${i}-description`}>
                         {description}
                       </Typography>
                     </Grid>

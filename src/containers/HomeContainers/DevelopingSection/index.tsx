@@ -1,13 +1,15 @@
-import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Grid, Hidden, Paper, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import cls from 'classnames'
+
+import PIconLink from 'components/PIconLink'
+import Slider from 'components/Slider'
 import Burp from 'containers/HomeContainers/ToolsSection/assets/tool-logo-burp 1.svg'
 import John from 'containers/HomeContainers/ToolsSection/assets/tool-logo-john 1.svg'
 import Maltego from 'containers/HomeContainers/ToolsSection/assets/tool-logo-maltego 1.svg'
-import Nmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-nmap 1.svg'
 import Metasploit from 'containers/HomeContainers/ToolsSection/assets/tool-logo-metasploit 1.svg'
+import Nmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-nmap 1.svg'
 import Sqlmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-sqlmap 1.svg'
-import PIconLink from 'components/PIconLink'
-import Slider from 'components/Slider'
-import cls from 'classnames'
 
 const useStyles = makeStyles(theme => ({
   developerBlock: {
@@ -47,6 +49,9 @@ const useStyles = makeStyles(theme => ({
   },
   marginedSlider: {
     marginLeft: theme.spacing(2)
+  },
+  sliderHorizontal: {
+    minHeight: 93
   },
   sliderBlock: {
     minWidth: 93,
@@ -143,7 +148,7 @@ const DevelopingSection = () => {
         <Typography variant="h2" align="center" paragraph>
           Parrot is developer friendly. Secure in a Linux Environment.
         </Typography>
-        <Typography variant="subtitle2" align="center">
+        <Typography variant="subtitle2Semi" align="center">
           Compilers, interpreters and intelligent editors. All you need to start programming comes
           out of the box, with the most secure Linux environment.
         </Typography>
@@ -155,13 +160,13 @@ const DevelopingSection = () => {
               <Typography variant="h5" paragraph>
                 Developer tools
               </Typography>
-              <Typography variant="body1" paragraph>
+              <Typography variant="body1Semi" paragraph>
                 Our tools are designed to be compatible with as many devices as possible via
                 containerization technologies like Docker or Podman.
               </Typography>
             </div>
-            <Hidden lgUp>
-              <Slider spacing={4} cloneFactor={2}>
+            <Hidden mdUp>
+              <Slider className={classes.sliderHorizontal} spacing={4} cloneFactor={2}>
                 {items}
               </Slider>
             </Hidden>
@@ -184,7 +189,7 @@ const DevelopingSection = () => {
             <Typography variant="h5" paragraph>
               Compilers & interpreters
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body1Semi">
               Our tools are designed to be compatible with as many devices as possible via
               containerization technologies like Docker or Podman.
             </Typography>

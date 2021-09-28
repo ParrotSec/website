@@ -1,8 +1,11 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import dynamic from 'next/dynamic'
-import PostsSection from 'containers/BlogContainers/PostsSection'
+
 import { getAllPosts } from '../lib/api'
-import { PostType } from '../types'
+import { PostType } from '../src/types'
+
+import PostsSection from 'containers/BlogContainers/PostsSection'
 const ContributeSection = dynamic(() => import('containers/HomeContainers/ContributeSection'))
 
 const useStyles = makeStyles(theme => ({
@@ -36,7 +39,7 @@ const Blog = ({ allPosts }: BlogProps) => {
         <Typography variant="h1" align="center" paragraph>
           Parrot OS Blog
         </Typography>
-        <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
+        <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
           Latest Posts
         </Typography>
       </Grid>

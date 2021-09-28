@@ -1,8 +1,12 @@
+import { Box, Grid, SvgIcon, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import { useEffect, useRef, useState } from 'react'
-import { Box, Grid, makeStyles, SvgIcon, Typography } from '@material-ui/core'
 import useTypewriter from 'react-typewriter-hook'
-import PButton from 'components/PButton'
+
 import Bulb from './assets/Bulb.svg'
+
+import PButton from 'components/PButton'
+import gradientOffset from '../../../../lib/gradient'
 
 const useStyles = makeStyles(theme => ({
   headingSubTitle: {
@@ -15,8 +19,10 @@ const useStyles = makeStyles(theme => ({
   },
   hackers: {
     color: theme.palette.primary.main,
-    [theme.breakpoints.up(1203)]: {
-      backgroundImage: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
+    [theme.breakpoints.up(1245)]: {
+      backgroundImage: `linear-gradient(99.16deg, ${
+        theme.palette.primary.main
+      } 24.01%, ${gradientOffset(theme.palette.primary.main)} 81.75%)`,
       backgroundSize: '100%',
       backgroundRepeat: 'repeat',
       '-webkit-background-clip': 'text',
@@ -29,28 +35,42 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.main,
     fontWeight: 100,
     marginLeft: '-0.1rem',
-    [theme.breakpoints.up(1203)]: {
-      color: '#00FFF0'
+    [theme.breakpoints.up(1350)]: {
+      color: gradientOffset(theme.palette.primary.main)
+    }
+  },
+  runningText: {
+    [theme.breakpoints.down('sm')]: {
+      minHeight: 255
+    },
+    [theme.breakpoints.down('md')]: {
+      minHeight: 268
+    },
+    [theme.breakpoints.down('lg')]: {
+      minHeight: 225
+    },
+    [theme.breakpoints.down(1350)]: {
+      minHeight: 252
     }
   },
   wideButton: {
     marginTop: 45,
     padding: '21px 87px',
     border: `1px solid ${
-      theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
+      theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
     }`,
     borderRadius: 24,
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       padding: '21px 30px'
     }
   },
   responsiveJustify: {
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       justifyContent: 'center'
     }
   },
   bulb: {
-    fill: theme.palette.type === 'light' ? '#262626' : '#FFFFFF'
+    fill: theme.palette.mode === 'light' ? '#262626' : '#FFFFFF'
   }
 }))
 
@@ -75,7 +95,7 @@ const RunningText = () => {
   }, [magicName])
 
   return (
-    <Typography variant="h1" align="center" paragraph>
+    <Typography className={classes.runningText} variant="h1" align="center" paragraph>
       The operating <br /> system for <span className={classes.hackers}>{name}</span>
       <span className={classes.cursor}>|</span>
     </Typography>
@@ -97,7 +117,7 @@ const WelcomeSection = () => {
     >
       <Box
         fontWeight={300}
-        color="#05EEFF"
+        color="primary.main"
         letterSpacing="0.1em"
         textAlign="center"
         style={{ textTransform: 'uppercase' }}
@@ -105,7 +125,7 @@ const WelcomeSection = () => {
         <span style={{ fontWeight: 'bold' }}>Parrot</span>OS
       </Box>
       <RunningText />
-      <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
+      <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
         A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
       </Typography>
       <Grid container item xs={12} spacing={2}>

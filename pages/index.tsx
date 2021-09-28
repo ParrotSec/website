@@ -1,9 +1,10 @@
-import { Grid, makeStyles } from '@material-ui/core'
-import Wallpaper from 'assets/wallpaper.png'
-import FeaturesSection from 'containers/HomeContainers/FeaturesSection'
-import WelcomeSection from 'containers/HomeContainers/WelcomeSection'
+import { Grid } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
+
+import FeaturesSection from 'containers/HomeContainers/FeaturesSection'
+import WelcomeSection from 'containers/HomeContainers/WelcomeSection'
 
 const DevelopingSection = dynamic(() => import('containers/HomeContainers/DevelopingSection'))
 const HTBSection = dynamic(() => import('containers/HomeContainers/HTBSection'))
@@ -23,21 +24,6 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(5),
     fontSize: 30
   },
-  wallpaper:
-    theme.palette.type === 'dark'
-      ? {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          opacity: 0.1,
-          width: '100%',
-          height: '100%',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
-        }
-      : { display: 'none' },
   features: {
     marginTop: 130,
     [theme.breakpoints.down('md')]: {
@@ -51,9 +37,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: 40
   },
   toolsBlock: {
-    marginTop: 90,
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
+    marginTop: 90
   },
   statsBlock: {
     marginTop: 217,
@@ -62,9 +46,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   htbBlock: {
-    marginTop: 32,
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
+    marginTop: 32
   },
   developBlock: {
     marginTop: 154
@@ -86,7 +68,6 @@ const Index: NextPage = () => {
   const classes = useStyles()
   return (
     <Grid container className={classes.root} justifyContent="center">
-      <div className={classes.wallpaper} />
       <WelcomeSection />
       <FeaturesSection className={classes.features} />
       <TrustSection className={classes.trustBlock} />

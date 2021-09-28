@@ -1,4 +1,4 @@
-import { Box, CircularProgress, useTheme } from '@material-ui/core'
+import { Box, CircularProgress, useTheme } from '@mui/material'
 
 const LoadingScreen = () => {
   const {

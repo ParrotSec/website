@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 // eslint-disable-next-line no-use-before-define
-import { ServerStyleSheets } from '@material-ui/core/styles'
+import { ServerStyleSheets } from '@mui/styles'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { Children } from 'react'
 

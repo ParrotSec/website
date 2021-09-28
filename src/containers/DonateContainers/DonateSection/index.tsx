@@ -1,22 +1,16 @@
-import {
-  Box,
-  ButtonBase,
-  Grid,
-  GridProps,
-  Link,
-  makeStyles,
-  Paper,
-  Typography
-} from '@material-ui/core'
-import PFeatureBlock from 'components/PFeatureBlock'
+import { Box, ButtonBase, Grid, GridProps, Link, Paper, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { useSnackbar } from 'notistack'
+
+import Bitcoin from './assets/bitcoin.svg'
+import linode from './assets/linode.png'
 import Patreon from './assets/patreon.svg'
 import Paypal from './assets/paypal.svg'
 import Referral from './assets/referral.svg'
-import linode from './assets/linode.png'
 import vultr from './assets/vultr.png'
+
+import PFeatureBlock from 'components/PFeatureBlock'
 import Arrow from 'components/PFeatureBlock/assets/arrow.svg'
-import Bitcoin from './assets/bitcoin.svg'
-import { useSnackbar } from 'notistack'
 
 const useStyles = makeStyles(theme => ({
   roundedIconHolder: {
@@ -31,14 +25,14 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     textTransform: 'none',
-    color: theme.palette.type === 'light' ? '#03232E' : '#05EEFF',
+    color: theme.palette.mode === 'light' ? '#03232E' : '#05EEFF',
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
     marginLeft: -theme.spacing(2),
     borderRadius: 10
   },
   arrow: {
-    fill: theme.palette.type === 'light' ? '#03232E' : '#05EEFF',
+    fill: theme.palette.mode === 'light' ? '#03232E' : '#05EEFF',
     marginLeft: 8
   },
   paper: {
@@ -59,12 +53,6 @@ const useStyles = makeStyles(theme => ({
   },
   highOpacity: {
     opacity: 1
-  },
-  featuresGridItem: {
-    [theme.breakpoints.down('md')]: {
-      paddingLeft: '0 !important',
-      paddingRight: '0 !important'
-    }
   }
 }))
 
@@ -76,7 +64,7 @@ const useIconStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.default
   },
   btc: {
-    fill: theme.palette.type === 'light' ? '#06043E' : '#FFFFFF'
+    fill: theme.palette.mode === 'light' ? '#06043E' : '#FFFFFF'
   }
 }))
 
@@ -95,7 +83,7 @@ const DonateSection = (props: GridProps) => {
   return (
     <Grid container item xs={12} md={9} spacing={4} justifyContent="center" {...props}>
       <Grid container item xs={12} lg={4} spacing={4} direction="column">
-        <Grid className={classes.featuresGridItem} item>
+        <Grid item>
           <PFeatureBlock
             Icon={Patreon}
             title="Patreon"
@@ -106,7 +94,7 @@ const DonateSection = (props: GridProps) => {
             Adopt us and become a recurring contributor
           </PFeatureBlock>
         </Grid>
-        <Grid className={classes.featuresGridItem} item>
+        <Grid item>
           <PFeatureBlock
             Icon={Paypal}
             title="Paypal"
@@ -117,7 +105,7 @@ const DonateSection = (props: GridProps) => {
             Send us a tip on PayPal
           </PFeatureBlock>
         </Grid>
-        <Grid className={classes.featuresGridItem} item>
+        <Grid item>
           <PFeatureBlock
             Icon={Referral}
             title="Referral Links"

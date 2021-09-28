@@ -1,12 +1,14 @@
-import { Grid, GridProps, Hidden } from '@material-ui/core'
-import PFeatureBlock from 'components/PFeatureBlock'
-import Safety from './assets/Security.svg'
+import { Grid, GridProps, Hidden } from '@mui/material'
+
 import Build from './assets/Build.svg'
-import Vector from './assets/Vector.svg'
-import Unlock from './assets/Unlock.svg'
 import Layout from './assets/Layout.svg'
+import Safety from './assets/Security.svg'
+import Unlock from './assets/Unlock.svg'
+import Vector from './assets/Vector.svg'
 import WeChat from './assets/Wechat.svg'
+
 import Carousel from 'components/Carousel'
+import PFeatureBlock from 'components/PFeatureBlock'
 
 const FeaturesSection = (props: GridProps) => {
   const blocks = [
@@ -73,7 +75,7 @@ const FeaturesSection = (props: GridProps) => {
   ]
   return (
     <Grid {...props} container item xs={12} md={9} spacing={4} justifyContent="center">
-      <Hidden smDown>
+      <Hidden mdDown>
         {blocks.map(el => (
           <Grid key={`grid-${el.key}`} item sm={6} lg={4}>
             {el}

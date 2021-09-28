@@ -1,28 +1,14 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core'
-import Wallpaper from 'assets/wallpaper.png'
+import { Grid, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { NextPage } from 'next'
+
 import SocialsSection from 'containers/CommunityContainers/SocialsSection'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
-import { NextPage } from 'next'
 
 const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 100
   },
-  wallpaper:
-    theme.palette.type === 'dark'
-      ? {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          opacity: 0.1,
-          width: '100%',
-          height: '100%',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
-        }
-      : { display: 'none' },
   headingSubTitle: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(6.5)
@@ -42,7 +28,6 @@ const Community: NextPage = () => {
   const classes = useStyles()
   return (
     <Grid container className={classes.root} justifyContent="center">
-      <div className={classes.wallpaper} />
       <Grid
         item
         container
@@ -55,7 +40,7 @@ const Community: NextPage = () => {
         <Typography variant="h1" align="center" paragraph>
           Join the Parrot Community
         </Typography>
-        <Typography className={classes.headingSubTitle} variant="subtitle2" align="center">
+        <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
           A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
         </Typography>
       </Grid>

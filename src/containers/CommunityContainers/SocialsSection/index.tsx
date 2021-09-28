@@ -1,20 +1,19 @@
-import { Box, Grid, GridProps, IconButton, makeStyles, Paper, Typography } from '@material-ui/core'
-import PFeatureBlock from 'components/PFeatureBlock'
-import HackTheBox from './assets/hackthebox.svg'
+import Telegram from '@mui/icons-material/Telegram'
+import { Box, Grid, GridProps, IconButton, Paper, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+
+import Facebook from './assets/facebook.svg'
 import Forum from './assets/forum.svg'
+import HackTheBox from './assets/hackthebox.svg'
 import Instagram from './assets/instagram.svg'
 import LinkedIn from './assets/linkedin.svg'
 import Twitch from './assets/twitch.svg'
 import Twitter from './assets/twitter.svg'
-import Facebook from './assets/facebook.svg'
 import YouTube from './assets/youtube.svg'
-import Telegram from '@material-ui/icons/Telegram'
+
+import PFeatureBlock from 'components/PFeatureBlock'
 
 const useStyles = makeStyles(theme => ({
-  grid: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
-  },
   paper: {
     width: '100%',
     padding: theme.spacing(8),
@@ -24,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   icon: {
-    fill: theme.palette.type === 'dark' ? '#FFFFFF' : '#06043E'
+    fill: theme.palette.mode === 'dark' ? '#FFFFFF' : '#06043E'
   },
   iconWrapper: {
     marginTop: theme.spacing(6),
@@ -74,13 +73,13 @@ const SocialsSection = (props: GridProps) => {
           </PFeatureBlock>
         </Grid>
       </Grid>
-      <Grid className={classes.grid} item container xs={12} md={9}>
+      <Grid item container xs={12} md={9}>
         <Paper className={classes.paper} elevation={0}>
           <Grid container alignItems="center" direction="column">
             <Typography variant="h5" paragraph>
               Join Us On Social Media
             </Typography>
-            <Typography variant="subtitle2">
+            <Typography variant="subtitle2Semi">
               Choose the channel that you are most active in and let’s stay connected!
             </Typography>
           </Grid>
@@ -90,16 +89,16 @@ const SocialsSection = (props: GridProps) => {
             justifyContent="center"
             flexWrap="wrap"
           >
-            <IconButton>
+            <IconButton href="https://www.instagram.com/parrotproject/">
               <Instagram className={classes.icon} />
             </IconButton>
-            <IconButton>
+            <IconButton href="https://twitter.com/parrotsec">
               <Twitter className={classes.icon} />
             </IconButton>
-            <IconButton>
+            <IconButton href="https://www.facebook.com/ParrotSec/">
               <Facebook className={classes.icon} />
             </IconButton>
-            <IconButton>
+            <IconButton href="https://www.linkedin.com/company/parrotsec/about/">
               <LinkedIn className={classes.icon} />
             </IconButton>
             <IconButton>

@@ -1,4 +1,5 @@
-import { GridProps } from '@material-ui/core'
+import { GridProps } from '@mui/material'
+
 import UserCard from 'components/UserCard'
 import ContributorsSection from 'containers/TeamContainers/ContributorsSection'
 

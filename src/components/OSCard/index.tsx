@@ -1,6 +1,8 @@
-import { ElementType } from 'react'
-import { Grid, GridProps, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Grid, GridProps, Paper, Typography } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import cls from 'classnames'
+import { ElementType } from 'react'
+
 import PButton from 'components/PButton'
 
 type OSCardProps = {
@@ -42,7 +44,7 @@ const OSCard = ({ Icon, iconClassName, title, children, ...rest }: OSCardProps) 
         <Typography variant="h5" paragraph>
           {title}
         </Typography>
-        <Typography variant="body1" paragraph>
+        <Typography variant="body1Semi" paragraph>
           {children}
         </Typography>
         <PButton variant="contained" to="/download" style={{ maxWidth: 177 }}>

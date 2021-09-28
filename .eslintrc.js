@@ -14,10 +14,15 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
     'plugin:prettier/recommended',
-    'plugin:@next/next/recommended'
+    'plugin:@next/next/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript'
   ],
 
   rules: {
+    '@next/next/no-img-element': 'off',
+    '@next/next/link-passhref': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-function': 'off',
@@ -33,11 +38,25 @@ module.exports = {
         ]
       }
     ],
-    'react/prop-types': 'off'
+    'react/prop-types': 'off',
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true
+        }
+      }
+    ]
   },
   settings: {
     react: {
       version: 'detect'
+    },
+    'import/resolver': {
+      typescript: {} // this loads <rootdir>/tsconfig.json to eslint
     }
   }
 }
