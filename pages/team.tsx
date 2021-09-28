@@ -6,7 +6,7 @@ import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSect
 import PastContributors from 'containers/TeamContainers/PastContributorsSection'
 import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
 import { NextPage } from 'next'
-import data from "public/locales/en/team.json"
+import data from 'components/UserCard/team'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,16 +27,16 @@ const useStyles = makeStyles(theme => ({
   wallpaper:
     theme.palette.type === 'dark'
       ? {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        zIndex: -1,
-        opacity: 0.1,
-        width: '100%',
-        height: '100%',
-        backgroundSize: 'cover',
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
-      }
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          opacity: 0.1,
+          width: '100%',
+          height: '100%',
+          backgroundSize: 'cover',
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${Wallpaper.src}')`
+        }
       : { display: 'none' },
   headingTitle: {
     marginTop: 0,
@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const teamData = data.map((data) => {
+const teamData = data.map(data => {
   return (
     <UserCard
       name={data.name}

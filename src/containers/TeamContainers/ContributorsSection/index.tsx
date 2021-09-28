@@ -7,13 +7,11 @@ import {
   Box,
   Paper,
   Dialog,
-  DialogTitle,
-  IconButton,
   DialogContent,
   Fade
 } from '@material-ui/core'
 import PButton from 'components/PButton'
-import CloseIcon from '../PastContributorsSection/assets/Close.svg'
+import CustomDialogTitle from 'components/UsersDialog'
 
 const useStyles = makeStyles(theme => ({
   activeContrib: {
@@ -49,15 +47,6 @@ const useStyles = makeStyles(theme => ({
       theme.palette.type === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
     }`,
     borderRadius: 24
-  },
-  closeButton: {
-    position: 'absolute',
-    right: theme.spacing(2),
-    top: theme.spacing(2.5),
-    fill: theme.palette.type === 'dark' ? '#FFFFFF' : '#06043E'
-  },
-  dialogTitle: {
-    padding: theme.spacing(2)
   }
 }))
 
@@ -66,26 +55,6 @@ type ContributorsSectionProps = {
   title: string
   subtitle: string
 } & GridProps
-
-type DialogTitleProps = {
-  title: string
-  onClose: () => void
-}
-
-const CustomDialogTitle = ({ title, onClose, ...rest }: DialogTitleProps) => {
-  const classes = useStyles()
-
-  return (
-    <DialogTitle className={classes.dialogTitle} {...rest}>
-      <Typography variant="h2" align="center">{title}</Typography>
-      {onClose ? (
-        <IconButton aria-label="close" onClick={onClose} className={classes.closeButton}>
-          <CloseIcon />
-        </IconButton>
-      ) : null}
-    </DialogTitle>
-  )
-}
 
 const ContributorsSection = ({
   heading,

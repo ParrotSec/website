@@ -53,9 +53,6 @@ const useStyles = makeStyles(theme => ({
       stroke: theme.palette.type === 'light' ? '#06043E' : '#FFF',
       fill: theme.palette.type === 'light' ? '#06043E' : '#FFF'
     }
-  },
-  cardStretch: {
-    width: '100%'
   }
 }))
 
@@ -85,8 +82,8 @@ const UserCard = ({
   const classes = useStyles()
 
   return (
-    <Grid {...props} container item xs={12} md={4} justifyContent="center">
-      <Card className={cls({ [classes.bgColor]: variant === 'background' }, [classes.cardStretch])} elevation={0}>
+    <Grid {...props} item xs={12} md={4} justifyContent="center" direction="column">
+      <Card className={cls({ [classes.bgColor]: variant === 'background' })} elevation={0}>
         <CardContent className={classes.card}>
           {!noAvatar && (
             <Avatar className={classes.iconLarge} src={`/assets/avatars/${nickname}.jpg`} />
