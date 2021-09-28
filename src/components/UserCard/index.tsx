@@ -75,7 +75,7 @@ const UserCard = ({
   const classes = useStyles()
 
   return (
-    <Grid {...props} item xs={12} md={4} justifyContent="center">
+    <Grid {...props} item xs={12} md={4} justifyContent="center" direction="column">
       <Card className={cls({ [classes.bgColor]: variant === 'background' })} elevation={0}>
         <CardContent className={classes.card}>
           {!noAvatar && (
@@ -104,13 +104,13 @@ const UserCard = ({
                 </IconButton>
               </Grid>
               <Grid item>
-                <IconButton size="small">
-                  <Twitter href={socials.twitter} className={classes.icons} />
+                <IconButton href={socials.twitter} size="small">
+                  <Twitter className={classes.icons} />
                 </IconButton>
               </Grid>
               <Grid item>
-                <IconButton size="small">
-                  <LinkedIn href={socials.linkedIn} className={classes.icons} />
+                <IconButton href={socials.linkedIn} size="small">
+                  <LinkedIn className={classes.icons} />
                 </IconButton>
               </Grid>
               <Grid item>

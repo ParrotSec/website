@@ -8,6 +8,9 @@ import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSect
 import PastContributors from 'containers/TeamContainers/PastContributorsSection'
 import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
 
+import data from 'components/UserCard/team'
+
+
 const useStyles = makeStyles(theme => ({
   root: {
     marginTop: 100
@@ -17,7 +20,11 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: 20
   },
   headingSubTitle: {
-    marginTop: theme.spacing(1),
+    marginTop: 27,
+    fontSize: 18,
+    [theme.breakpoints.down('md')]: {
+      fontSize: 15.3
+    },
     marginBottom: theme.spacing(6.5)
   },
   developBlock: {
@@ -25,11 +32,28 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+const teamData = data.map(data => {
+  return (
+    <UserCard
+      name={data.name}
+      nickname={data.nickname}
+      role={data.role}
+      noAvatar={data.avatar}
+      socials={{
+        github: data.github,
+        twitter: data.twitter,
+        linkedIn: data.linkedIn,
+        email: data.email
+      }}
+    />
+  )
+})
+
 const Team: NextPage = () => {
   const classes = useStyles()
 
   return (
-    <Grid container xs={12} className={classes.root} justifyContent="center">
+    <Grid container item xs={12} className={classes.root} justifyContent="center">
       <Grid
         container
         direction="column"
@@ -45,73 +69,8 @@ const Team: NextPage = () => {
           A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
         </Typography>
       </Grid>
-      <Grid container xs={12} md={9} spacing={4}>
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          socials={{
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            linkedIn: 'https://linkedin.com',
-            email: 'mailto:god@god.com'
-          }}
-        />
+      <Grid container item xs={12} md={9} spacing={4}>
+        {teamData}
       </Grid>
       <ActiveContributors />
       <SpecialThanks />
