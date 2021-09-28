@@ -3,13 +3,11 @@ import { makeStyles } from '@mui/styles'
 import { NextPage } from 'next'
 
 import UserCard from 'components/UserCard'
+import data from 'components/UserCard/team'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import ActiveContributors from 'containers/TeamContainers/ActiveContributorsSection'
 import PastContributors from 'containers/TeamContainers/PastContributorsSection'
 import SpecialThanks from 'containers/TeamContainers/SpecialThanksSection'
-
-import data from 'components/UserCard/team'
-
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,13 +30,13 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const teamData = data.map(data => {
+const teamData = data.map((data, i) => {
   return (
     <UserCard
+      key={`team-card-${i}`}
       name={data.name}
       nickname={data.nickname}
       role={data.role}
-      noAvatar={data.avatar}
       socials={{
         github: data.github,
         twitter: data.twitter,
