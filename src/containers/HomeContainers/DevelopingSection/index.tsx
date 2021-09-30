@@ -20,11 +20,11 @@ const useStyles = makeStyles(theme => ({
   },
   devPaper: {
     display: 'flex',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       flexFlow: 'column',
       paddingBottom: theme.spacing(8)
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('md')]: {
       paddingBottom: theme.spacing(4)
     }
   },
@@ -32,10 +32,10 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(8),
     paddingTop: theme.spacing(9),
     paddingBottom: theme.spacing(8),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       paddingBottom: theme.spacing(2)
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('md')]: {
       paddingLeft: theme.spacing(4),
       paddingTop: theme.spacing(4),
       paddingBottom: theme.spacing(4)
@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   },
   compilePaper: {
     padding: theme.spacing(9, 8),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('md')]: {
       padding: theme.spacing(4)
     }
   },
@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
   sliderBlock: {
     minWidth: 93,
     marginRight: theme.spacing(8),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('md')]: {
       marginRight: theme.spacing(4)
     }
   }
