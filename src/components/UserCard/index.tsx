@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
 type UserCardProps = {
   role: string
   noAvatar?: boolean
-  nickname: string
+  nickname?: string
   name?: string
   socials?: {
     github: string

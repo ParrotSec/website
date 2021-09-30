@@ -2,6 +2,7 @@ import { Grid, Typography, GridProps } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import UserCard from 'components/UserCard'
+import specialthanks from 'containers/TeamContainers/SpecialThanksSection/specialthanks'
 
 const useStyles = makeStyles(theme => ({
   specialThanks: {
@@ -14,6 +15,10 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(5)
   }
 }))
+
+const specialThanksData = specialthanks.map(data => {
+  return <UserCard name={data.name} role={data.role} noAvatar={data.avatar} />
+})
 
 const SpecialThanks = (props: GridProps) => {
   const classes = useStyles()
@@ -38,42 +43,7 @@ const SpecialThanks = (props: GridProps) => {
         </Typography>
       </Grid>
       <Grid container item xs={12} md={8} direction="row" spacing={3}>
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          noAvatar
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          noAvatar
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          noAvatar
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          noAvatar
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          noAvatar
-        />
-        <UserCard
-          name="Lorenzo Faletra"
-          nickname="palinuro"
-          role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-          noAvatar
-        />
+        {specialThanksData}
       </Grid>
     </Grid>
   )
