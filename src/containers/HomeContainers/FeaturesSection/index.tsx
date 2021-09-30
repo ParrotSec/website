@@ -1,4 +1,4 @@
-import { Grid, GridProps, Hidden } from '@material-ui/core'
+import { Grid, GridProps, Hidden } from '@mui/material'
 import PFeatureBlock from 'components/PFeatureBlock'
 import Safety from './assets/Security.svg'
 import Build from './assets/Build.svg'
@@ -17,8 +17,9 @@ const FeaturesSection = (props: GridProps) => {
       buttonLink="/docs"
       key="feature-1"
     >
-      The system is designed from the ground up to be secure. Native support for full disk encryption, blazing fast security updates
-      and a hardened debian core makes the system the perfect place to store sensitive data.
+      The system is designed from the ground up to be secure. Native support for full disk
+      encryption, blazing fast security updates and a hardened debian core makes the system the
+      perfect place to store sensitive data.
     </PFeatureBlock>,
     <PFeatureBlock
       title="Portability"
@@ -27,9 +28,10 @@ const FeaturesSection = (props: GridProps) => {
       buttonLink="/docs"
       key="feature-2"
     >
-      Parrot is based on top of Debian, the most advanced and recognized universal operating system that can run anywhere.
-      From your laptop to your Phone, the Parrot core can be executed on a huge range of environments, including servers,
-      IoT boards, cloud containers (like docker and podman) and more.
+      Parrot is based on top of Debian, the most advanced and recognized universal operating system
+      that can run anywhere. From your laptop to your Phone, the Parrot core can be executed on a
+      huge range of environments, including servers, IoT boards, cloud containers (like docker and
+      podman) and more.
     </PFeatureBlock>,
     <PFeatureBlock
       title="Performance"
@@ -38,8 +40,8 @@ const FeaturesSection = (props: GridProps) => {
       buttonLink="/docs"
       key="feature-3"
     >
-      We care about speed, and the system has been engineered to be as lightweight as possible.
-      You can run it on very old hardware, or perform very intensive tasks without performance drops.
+      We care about speed, and the system has been engineered to be as lightweight as possible. You
+      can run it on very old hardware, or perform very intensive tasks without performance drops.
       Your applications, not the operating system, will be free to use all your hardware resources.
     </PFeatureBlock>,
     <PFeatureBlock
@@ -61,8 +63,8 @@ const FeaturesSection = (props: GridProps) => {
       buttonLink="/docs"
       key="feature-5"
     >
-      Perfect default settings and great customizability are key to the success of the project.
-      You can either fall in love with the italian style of the Parrot system, or use it as a framework
+      Perfect default settings and great customizability are key to the success of the project. You
+      can either fall in love with the italian style of the Parrot system, or use it as a framework
       to build your custom system tailored around your very own needs and style.
     </PFeatureBlock>,
     <PFeatureBlock
@@ -73,9 +75,9 @@ const FeaturesSection = (props: GridProps) => {
       key="feature-6"
     >
       The system is Free and Open Source, and all the code that powers the system is made available
-      either through our APT software repository or our GIT servers for you to read, customize and contribute to.
-      Free access to the code that runs on your devices is a fundamental freedom, and we do our best to
-      fight for your rights.g
+      either through our APT software repository or our GIT servers for you to read, customize and
+      contribute to. Free access to the code that runs on your devices is a fundamental freedom, and
+      we do our best to fight for your rights.g
     </PFeatureBlock>
   ]
   return (
