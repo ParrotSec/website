@@ -1,18 +1,9 @@
-import { 
-  Grid,
-  Typography,
-  GridProps,
-  Box,
-  Paper,
-  Dialog,
-  DialogContent,
-  Fade
-} from '@mui/material'
+import { Grid, Typography, GridProps, Box, Paper } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import { useState } from 'react'
+import { Children, useState } from 'react'
 
 import PButton from 'components/PButton'
-import CustomDialogTitle from 'components/UsersDialog'
+import UsersDialog from 'components/UsersDialog'
 
 const useStyles = makeStyles(theme => ({
   activeContrib: {
@@ -113,28 +104,16 @@ const ContributorsSection = ({
       >
         <Paper className={classes.paper} elevation={0}>
           <Grid container justifyContent="center" spacing={3}>
-            {children}
+            {Children.toArray(children).slice(0, 6)}
           </Grid>
           <Grid container item xs={12} justifyContent="center">
             <PButton className={classes.wideButton} variant="outlined" onClick={handleClickOpen}>
               View All Contributors
             </PButton>
           </Grid>
-          <Dialog
-            open={open}
-            onClose={handleClose}
-            fullWidth={true}
-            maxWidth="lg"
-            TransitionComponent={Fade}
-            transitionDuration={500}
-          >
-            <CustomDialogTitle title="All Active Contributors" onClose={handleClose} />
-            <DialogContent>
-              <Grid container justifyContent="center" spacing={3}>
-                {children}
-              </Grid>
-            </DialogContent>
-          </Dialog>
+          <UsersDialog open={open} onClose={handleClose} fullWidth={true} title={title}>
+            {children}
+          </UsersDialog>
         </Paper>
       </Grid>
     </Grid>

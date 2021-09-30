@@ -1,4 +1,15 @@
-import { DialogTitle, IconButton, makeStyles, Typography } from '@material-ui/core'
+import {
+  Dialog,
+  DialogContent,
+  DialogProps,
+  DialogTitle,
+  Fade,
+  Grid,
+  IconButton
+} from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { PropsWithChildren } from 'react'
+
 import CloseIcon from 'containers/TeamContainers/PastContributorsSection/assets/Close.svg'
 
 const useStyles = makeStyles(theme => ({
@@ -6,33 +17,47 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     right: theme.spacing(2),
     top: theme.spacing(2.5),
-    fill: theme.palette.type === 'dark' ? '#FFFFFF' : '#06043E'
+    fill: theme.palette.mode === 'dark' ? '#FFFFFF' : '#06043E'
   },
   dialogTitle: {
+    textAlign: 'center',
     padding: theme.spacing(2)
   }
 }))
 
-type DialogTitleProps = {
-  title: string
-  onClose: () => void
-}
+type UsersDialogProps = PropsWithChildren<
+  {
+    title: string
+    onClose: () => void
+  } & DialogProps
+>
 
-const CustomDialogTitle = ({ title, onClose, ...rest }: DialogTitleProps) => {
+const UsersDialog = ({ title, onClose, children, ...rest }: UsersDialogProps) => {
   const classes = useStyles()
 
   return (
-    <DialogTitle className={classes.dialogTitle} {...rest}>
-      <Typography variant="h2" align="center">
+    <Dialog
+      fullWidth={true}
+      maxWidth="lg"
+      TransitionComponent={Fade}
+      transitionDuration={500}
+      {...rest}
+    >
+      <DialogTitle className={classes.dialogTitle}>
         {title}
-      </Typography>
-      {onClose ? (
-        <IconButton aria-label="close" onClick={onClose} className={classes.closeButton}>
-          <CloseIcon />
-        </IconButton>
-      ) : null}
-    </DialogTitle>
+        {onClose ? (
+          <IconButton aria-label="close" onClick={onClose} className={classes.closeButton}>
+            <CloseIcon />
+          </IconButton>
+        ) : null}
+      </DialogTitle>
+      <DialogContent>
+        <Grid container justifyContent="center" spacing={3}>
+          {children}
+        </Grid>
+      </DialogContent>
+    </Dialog>
   )
 }
 
-export default CustomDialogTitle
+export default UsersDialog
