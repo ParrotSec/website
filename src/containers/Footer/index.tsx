@@ -20,8 +20,8 @@ const useStyles = makeStyles(theme => ({
   paper: {
     padding: 80,
     paddingBottom: 52,
-    [theme.breakpoints.down('sm')]: {
-      padding: 40
+    [theme.breakpoints.down('md')]: {
+      padding: theme.spacing(4)
     }
   },
   logoBlock: {
@@ -63,20 +63,20 @@ const useStyles = makeStyles(theme => ({
     transition: '.2s ease-in 0s',
     '&:hover': {
       textDecoration: 'none',
-      color: '#05EEFF'
+      color: theme.palette.primary.main
     },
     '&:focus': {
       textDecoration: 'none'
     }
   },
   linksHolder: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       alignContent: 'flex-start'
     }
   },
   copyrightSection: {
     marginTop: 131,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       marginTop: 50
     }
   },

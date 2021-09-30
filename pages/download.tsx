@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     marginTop: 139
   },
   snackbar: {
-    background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
+    backgroundColor: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
     color: '#03232E',
     borderRadius: 16
   }

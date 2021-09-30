@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   },
   snackbar: {
     background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
-    color: '#03232E',
+    color: theme.palette.text.primary,
     borderRadius: 16
   }
 }))
