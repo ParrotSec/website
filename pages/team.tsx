@@ -64,7 +64,8 @@ const Team: NextPage = () => {
           The Team <br /> behind Parrot<span style={{ fontWeight: 300 }}>OS</span>
         </Typography>
         <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
-          A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
+          The Parrot Project is a community-driven project. In this page we list contributors and
+          members, past and present, who have contributed significantly to the project.
         </Typography>
       </Grid>
       <Grid container item xs={12} md={9} spacing={4}>

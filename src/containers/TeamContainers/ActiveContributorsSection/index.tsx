@@ -2,6 +2,11 @@ import { GridProps } from '@mui/material'
 
 import UserCard from 'components/UserCard'
 import ContributorsSection from 'containers/TeamContainers/ContributorsSection'
+import activecontrib from 'containers/TeamContainers/ActiveContributorsSection/activecontrib'
+
+const activeContribData = activecontrib.map(data => {
+  return <UserCard variant="background" name={data.name} nickname={data.nickname} role={data.role} />
+})
 
 const ActiveContributors = (props: GridProps) => {
   return (
@@ -12,72 +17,7 @@ const ActiveContributors = (props: GridProps) => {
 contributors who improve the OS every day."
       {...props}
     >
-      <UserCard
-        variant="background"
-        nickname="palinuro"
-        role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-        socials={{
-          github: 'https://github.com',
-          twitter: 'https://twitter.com',
-          linkedIn: 'https://linkedin.com',
-          email: 'mailto:god@god.com'
-        }}
-      />
-      <UserCard
-        variant="background"
-        nickname="palinuro"
-        role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-        socials={{
-          github: 'https://github.com',
-          twitter: 'https://twitter.com',
-          linkedIn: 'https://linkedin.com',
-          email: 'mailto:god@god.com'
-        }}
-      />
-      <UserCard
-        variant="background"
-        nickname="palinuro"
-        role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-        socials={{
-          github: 'https://github.com',
-          twitter: 'https://twitter.com',
-          linkedIn: 'https://linkedin.com',
-          email: 'mailto:god@god.com'
-        }}
-      />
-      <UserCard
-        variant="background"
-        nickname="palinuro"
-        role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-        socials={{
-          github: 'https://github.com',
-          twitter: 'https://twitter.com',
-          linkedIn: 'https://linkedin.com',
-          email: 'mailto:god@god.com'
-        }}
-      />
-      <UserCard
-        variant="background"
-        nickname="palinuro"
-        role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-        socials={{
-          github: 'https://github.com',
-          twitter: 'https://twitter.com',
-          linkedIn: 'https://linkedin.com',
-          email: 'mailto:god@god.com'
-        }}
-      />
-      <UserCard
-        variant="background"
-        nickname="palinuro"
-        role="Team Leader, Core Dev, Infrastructure Manager, Release manager"
-        socials={{
-          github: 'https://github.com',
-          twitter: 'https://twitter.com',
-          linkedIn: 'https://linkedin.com',
-          email: 'mailto:god@god.com'
-        }}
-      />
+      {activeContribData}
     </ContributorsSection>
   )
 }
