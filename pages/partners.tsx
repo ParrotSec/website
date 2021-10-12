@@ -1,6 +1,8 @@
-import { Grid, Typography, Paper } from '@mui/material'
+import { Grid, Typography, Paper, CardActionArea } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import { NextPage } from 'next'
+
+import HTBWallpaper from 'assets/htb_community.png'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
 
 const useStyles = makeStyles(theme => ({
@@ -22,12 +24,26 @@ const useStyles = makeStyles(theme => ({
   developBlock: {
     marginTop: 154
   },
-  paper: {
-    padding: theme.spacing(5)
+  mainSponsorPaper: {
+    padding: theme.spacing(4),
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${HTBWallpaper.src}')`
+  },
+  actionArea: {
+    display: 'flex',
+    borderRadius: 24,
+    marginTop: theme.spacing(2)
+  },
+  collaborations: {
+    paddingTop: theme.spacing(10)
+  },
+  collaborationsPaper: {
+    padding: theme.spacing(4)
   }
 }))
 
-const Team: NextPage = () => {
+const Partners: NextPage = () => {
   const classes = useStyles()
 
   return (
@@ -47,11 +63,13 @@ const Team: NextPage = () => {
           All companies and organizations that have decided to invest in the project.
         </Typography>
       </Grid>
-      <Grid container xs={12}>
-        <Grid item container xs={6} alignItems="center" justifyContent="center" wrap="nowrap">
-          <Paper className={classes.paper} elevation={0}>
+      <Grid container item xs={10} alignItems="center" justifyContent="center" wrap="nowrap">
+        <CardActionArea className={classes.actionArea} href="https://hackthebox.eu">
+          <Paper className={classes.mainSponsorPaper} elevation={0}>
             <Typography variant="h5">Main sponsor</Typography>
-            <Typography variant="h2">Hack The Box</Typography>
+            <Typography variant="h2" gutterBottom>
+              Hack The Box
+            </Typography>
             <Typography variant="body1">
               Hack The Box is an online platform providing labs and challenges for cyber security
               training. Users can improve their penetration testing skills and exchange ideas and
@@ -60,28 +78,72 @@ const Team: NextPage = () => {
               rewarding.
             </Typography>
           </Paper>
-        </Grid>
-        <Grid item container xs={4} justifyContent="center" alignItems="center" direction="column">
-          <Paper className={classes.paper} elevation={0}>
-            <Typography variant="h2">Collaborations</Typography>
-            <Paper className={classes.paper} elevation={2}>
-              <Typography variant="h4">Collaborations</Typography>
+        </CardActionArea>
+      </Grid>
+      <Grid container item xs={10} className={classes.collaborations}>
+        <Paper elevation={0} className={classes.collaborationsPaper}>
+          <Grid container item xs={12} justifyContent="center">
+            <Typography variant="h5" gutterBottom>
+              Collaborations
+            </Typography>
+          </Grid>
+          <CardActionArea className={classes.actionArea}>
+            <Paper elevation={2} className={classes.collaborationsPaper}>
+              <Typography variant="h5" gutterBottom>
+                Caine
+              </Typography>
+              <Typography paragraph>
+                We have an open collaboration channel with Nanni Bassetti, developer of Caine, a
+                GNU/Linux distribution focused on digital forensics. The collaboration consists in a
+                friendly partnership where we help Caine in its development and testing process and
+                Caine helps us with our digital forensics section.
+              </Typography>
             </Paper>
-            <Paper className={classes.paper} elevation={2}>
-              <Typography variant="h4">Collaborations</Typography>
+          </CardActionArea>
+          <CardActionArea className={classes.actionArea}>
+            <Paper elevation={2} className={classes.collaborationsPaper}>
+              <Typography variant="h5" gutterBottom>
+                Zorin OS
+              </Typography>
+              <Typography paragraph>
+                We love Zorin OS and the amazing work done by its team, and we have some common
+                goals for the future we would like to invest together in. The collaboration consists
+                in a friendly partnership on some long term plans of both the projects.
+              </Typography>
             </Paper>
-            <Paper className={classes.paper} elevation={2}>
-              <Typography variant="h4">Collaborations</Typography>
+          </CardActionArea>
+          <CardActionArea className={classes.actionArea}>
+            <Paper elevation={2} className={classes.collaborationsPaper}>
+              <Typography variant="h5" gutterBottom>
+                CS Academy
+              </Typography>
+              <Typography paragraph>
+                CS-Academy is an Spanish-language online training center that provides Cybersecurity
+                and Ethical Hacking training courses, Pentesting services, digital forensics
+                analysis and incidents response for individuals and companies.
+              </Typography>
             </Paper>
-            <Paper className={classes.paper} elevation={2}>
-              <Typography variant="h4">Collaborations</Typography>
+          </CardActionArea>
+          <CardActionArea className={classes.actionArea}>
+            <Paper elevation={2} className={classes.collaborationsPaper}>
+              <Typography variant="h5" gutterBottom>
+                ProDefence
+              </Typography>
+              <Typography paragraph>
+                is an IT company dedicated to cyber security services, protecting companies from
+                vulnerabilities and system penetration, providing security information training to
+                their employees. Company employees can take advantage of the remote support we give
+                anytime anyday to any platform. In addition to this, we analyze any file, as well
+                as, network activity for malware or any other malicious and suspicious activity and
+                help to recover and educate the users involved
+              </Typography>
             </Paper>
-          </Paper>
-        </Grid>
+          </CardActionArea>
+        </Paper>
       </Grid>
       <ContributeSection className={classes.developBlock} />
     </Grid>
   )
 }
 
-export default Team
+export default Partners
