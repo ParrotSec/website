@@ -72,6 +72,9 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundImage: `url('${ProDef.src}')`
+  },
+  mirrors: {
+    paddingTop: theme.spacing(4)
   }
 }))
 
@@ -158,7 +161,7 @@ const Partners: NextPage = () => {
               </Grid>
             </Paper>
           </CardActionArea>
-          <CardActionArea className={classes.actionArea}>
+          <CardActionArea className={classes.actionArea} href="https://cs-academy.org">
             <Paper elevation={2} className={classes.collaborationsPaper}>
               <Grid container item xs={12} direction="row">
                 <Grid item xs={8}>
@@ -177,7 +180,7 @@ const Partners: NextPage = () => {
               </Grid>
             </Paper>
           </CardActionArea>
-          <CardActionArea className={classes.actionArea}>
+          <CardActionArea className={classes.actionArea} href="https://www.prodefence.org">
             <Paper elevation={2} className={classes.collaborationsPaper}>
               <Grid container item xs={12} direction="row">
                 <Grid item xs={8}>
@@ -200,6 +203,13 @@ const Partners: NextPage = () => {
             </Paper>
           </CardActionArea>
         </Paper>
+        <Grid container item xs={12} className={classes.mirrors} justifyContent="center">
+          <Paper elevation={0}>
+            <Typography variant="h5" gutterBottom>
+              Mirrors
+            </Typography>
+          </Paper>
+        </Grid>
       </Grid>
       <ContributeSection className={classes.developBlock} />
     </Grid>
