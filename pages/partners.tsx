@@ -75,7 +75,13 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url('${ProDef.src}')`
   },
   mirrors: {
-    paddingTop: theme.spacing(4)
+    paddingTop: theme.spacing(5)
+  },
+  mirrorPaper: {
+    width: '100%'
+  },
+  mirrorTitle: {
+    margin: theme.spacing(3)
   }
 }))
 
@@ -209,15 +215,24 @@ const Partners: NextPage = () => {
             </Paper>
           </CardActionArea>
         </Paper>
-        <Grid container item xs={12} className={classes.mirrors} justifyContent="center">
-          <Paper elevation={0}>
-            <Typography variant="h5" gutterBottom>
-              Mirrors
-            </Typography>
+        <Grid container item xs={12} className={classes.mirrors}>
+          <Grid container item xs={8}>
             <Paper elevation={2}>
               <MapMirrors />
             </Paper>
-          </Paper>
+          </Grid>
+          <Grid container item xs={4} justifyContent="center">
+            <Paper elevation={2} className={classes.mirrorPaper}>
+              <Typography variant="h5" gutterBottom className={classes.mirrorTitle}>
+                Mirrors
+              </Typography>
+              <Typography paragraph className={classes.mirrorTitle}>
+                The software in the parrot archive is delivered in form of deb packages, and these
+                packages are served through a vast network of mirror servers that provide the same
+                set of packages distributed all around the world for faster software delivery.
+              </Typography>
+            </Paper>
+          </Grid>
         </Grid>
       </Grid>
       <ContributeSection className={classes.developBlock} />
