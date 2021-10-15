@@ -1,6 +1,7 @@
 import { Grid, Typography, Paper, CardActionArea } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import { NextPage } from 'next'
+import dynamic from 'next/dynamic'
 
 import Caine from 'assets/caine.png'
 import CSAcademy from 'assets/csacademy.png'
@@ -80,6 +81,11 @@ const useStyles = makeStyles(theme => ({
 
 const Partners: NextPage = () => {
   const classes = useStyles()
+
+  /* Prevent SSR to avoid ReferenceError */
+  const MapMirrors = dynamic(() => import('containers/PartnersContainers/MapSection'), {
+    ssr: false
+  })
 
   return (
     <Grid container item xs={12} className={classes.root} justifyContent="center">
@@ -208,6 +214,9 @@ const Partners: NextPage = () => {
             <Typography variant="h5" gutterBottom>
               Mirrors
             </Typography>
+            <Paper elevation={2}>
+              <MapMirrors />
+            </Paper>
           </Paper>
         </Grid>
       </Grid>
