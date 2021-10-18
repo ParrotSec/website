@@ -8,6 +8,7 @@ import CSAcademy from 'assets/csacademy.png'
 import HTBWallpaper from 'assets/htb_community.png'
 import ProDef from 'assets/prodefence.png'
 import Zorin from 'assets/zorinos.png'
+import PButton from 'components/PButton'
 import ContributeSection from 'containers/HomeContainers/ContributeSection'
 
 const useStyles = makeStyles(theme => ({
@@ -77,11 +78,19 @@ const useStyles = makeStyles(theme => ({
   mirrors: {
     paddingTop: theme.spacing(5)
   },
-  mirrorPaper: {
-    width: '100%'
-  },
   mirrorTitle: {
+    margin: theme.spacing(4)
+  },
+  mirrorDesc: {
     margin: theme.spacing(3)
+  },
+  wideButton: {
+    margin: theme.spacing(3),
+    padding: theme.spacing(2, 10),
+    border: `1px solid ${
+      theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(3, 35, 46, 0.5)'
+    }`,
+    borderRadius: 24
   }
 }))
 
@@ -222,16 +231,21 @@ const Partners: NextPage = () => {
             </Paper>
           </Grid>
           <Grid container item xs={4} justifyContent="center">
-            <Paper elevation={2} className={classes.mirrorPaper}>
-              <Typography variant="h5" gutterBottom className={classes.mirrorTitle}>
-                Mirrors
-              </Typography>
-              <Typography paragraph className={classes.mirrorTitle}>
-                The software in the parrot archive is delivered in form of deb packages, and these
-                packages are served through a vast network of mirror servers that provide the same
-                set of packages distributed all around the world for faster software delivery.
-              </Typography>
-            </Paper>
+            <Typography variant="h4" className={classes.mirrorTitle}>
+              Mirrors
+            </Typography>
+            <Typography paragraph className={classes.mirrorDesc}>
+              The software in the parrot archive is delivered in form of deb packages, and these
+              packages are served through a vast network of mirror servers that provide the same set
+              of packages distributed all around the world for faster software delivery.
+            </Typography>
+            <PButton
+              className={classes.wideButton}
+              variant="outlined"
+              to="https://parrotsec.org/docs/mirrors-list.html"
+            >
+              Our mirrors
+            </PButton>
           </Grid>
         </Grid>
       </Grid>
