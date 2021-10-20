@@ -22,7 +22,7 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "assets/*": ["src/assets/*"],
+      "assets/*": ["public/assets/*"],
       "components/*": ["src/components/*"],
       "containers/*": ["src/containers/*"],
       "posts": ["src/posts/*"]
