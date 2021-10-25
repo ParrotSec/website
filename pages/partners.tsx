@@ -29,6 +29,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: 154
   },
   mainSponsorPaper: {
+    color: '#FFFFFF',
     minHeight: '45vh',
     padding: theme.spacing(4),
     backgroundSize: 'cover',
@@ -45,6 +46,9 @@ const useStyles = makeStyles(theme => ({
   },
   collaborationsPaper: {
     padding: theme.spacing(4)
+  },
+  collaborationsDesc: {
+    paddingRight: theme.spacing(5)
   },
   mirrors: {
     paddingTop: theme.spacing(5)
@@ -119,7 +123,7 @@ const Partners: NextPage = () => {
               <CardActionArea key={data.name} className={classes.actionArea} href={data.url}>
                 <Paper elevation={0} className={classes.collaborationsPaper}>
                   <Grid container item xs={12} direction="row">
-                    <Grid item xs={8}>
+                    <Grid item xs={8} className={classes.collaborationsDesc}>
                       <Typography variant="h4" gutterBottom>
                         {data.name}
                       </Typography>

@@ -79,7 +79,10 @@ const UserCard = ({
 
   return (
     <Grid {...props} item xs={12} md={4} justifyContent="center">
-      <Card className={cls({ [classes.bgColor]: variant === 'background' }, classes.size)} elevation={0}>
+      <Card
+        className={cls({ [classes.bgColor]: variant === 'background' }, classes.size)}
+        elevation={0}
+      >
         <CardContent className={classes.card}>
           {!noAvatar && (
             <Avatar className={classes.iconLarge} src={`/assets/avatars/${nickname}.jpg`} />

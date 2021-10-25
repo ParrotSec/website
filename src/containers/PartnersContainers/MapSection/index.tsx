@@ -44,15 +44,18 @@ const MapSection = () => {
       zoomControl={false}
       scrollWheelZoom={true}
     >
+      <style>
+        {`.leaflet-control-zoom { border: 24px !important }
+        .leaflet-control-zoom-in { border-radius: 24px !important; }
+        .leaflet-control-zoom-out { border-radius: 24px !important;`}
+      </style>
       <TileLayer
         attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={position}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-        <Paper elevation={3}>
+        <Popup>A pretty CSS3 popup.</Popup>
+        <Paper elevation={0}>
           <ZoomControl position="topleft" />
         </Paper>
       </Marker>
