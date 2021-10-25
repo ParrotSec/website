@@ -1,145 +1,277 @@
 export default [
-  { url: 'https://mirrors.mit.edu/parrot', commentary: 'SIPB MIT (1Gbps)', id: 'ncsa.mit' },
+  // NCSA
   {
-    url: 'https://mirror.clarkson.edu/parrot',
+    url: 'https://mirrors.mit.edu/parrot/',
+    lat: '42.3651',
+    lon: '-71.1045',
+    commentary: 'SIPB MIT (1Gbps)',
+    id: 'ncsa.mit'
+  },
+  {
+    url: 'https://mirror.clarkson.edu/parrot/',
+    lat: '44.6548',
+    lon: '-74.9555',
     commentary: 'Clarkson University',
     id: 'ncsa.clarkson'
   },
   {
     url: 'https://ftp.osuosl.org/pub/parrotos',
+    lat: '43.0718',
+    lon: '-89.5114',
     commentary: 'Oregon State University - Open Source Lab',
     id: 'ncsa.osuosl'
   },
   {
-    url: 'https://mirrors.ocf.berkeley.edu/parrot',
+    url: 'http://mirrors.ocf.berkeley.edu/parrot',
+    lat: '37.8574',
+    lon: '-122.2449',
     commentary: 'Berkeley Open Computing Facility',
     id: 'ncsa.berkeley'
   },
-  { url: 'https://muug.ca/mirror/parrot', commentary: 'Manitoba Unix User Group', id: 'ncsa.muug' },
   {
-    url: 'https://mirror.cedia.org.ec/parrot',
+    url: 'https://mirror.wdc1.us.leaseweb.net/parrot',
+    lat: '38.7999',
+    lon: '-77.5443'
+  },
+  {
+    url: 'http://mirror.cedia.org.ec/parrot',
+    lat: '-2.8833',
+    lon: '-78.9833',
     commentary: 'RED CEDIA (National research and education center of Ecuador)',
     id: 'ncsa.cedia'
   },
   {
-    url: 'https://mirror.uta.edu.ec/parrot',
+    url: 'http://mirror.uta.edu.ec/parrot',
+    lat: '-1.2491',
+    lon: '-78.6168',
     commentary: 'UTA (Universidad Técnica de ambato)',
     id: 'ncsa.uta'
   },
   {
     url: 'http://mirror.ueb.edu.ec/parrot',
+    lat: '-2.8833',
+    lon: '-78.9833',
     commentary: 'UEB (Universidad Estatal de Bolivar)',
     id: 'ncsa.ueb'
   },
-  { url: 'http://sft.if.usp.br/parrot', commentary: 'University of Sao Paulo', id: 'ncsa.usp' },
   {
-    url: 'https://parrot.mirror.garr.it/parrot',
+    url: 'http://sft.if.usp.br/parrot',
+    lat: '-23.5475',
+    lon: '-46.6361',
+    commentary: 'University of Sao Paulo',
+    id: 'ncsa.usp'
+  },
+  {
+    url: 'https://mirror.0xem.ma/parrot/',
+    lat: '45.9454',
+    lon: '-66.6656'
+  },
+  // EMEA
+  {
+    url: 'http://parrot.mirror.garr.it/mirrors/parrot',
+    lat: '41.1177',
+    lon: '16.8512',
     commentary: 'GARR Consortium (Italian Research & Education Network)',
     id: 'emea.garr'
   },
   {
-    url: 'https://ftp.halifax.rwth-aachen.de/parrotsec',
+    url: 'http://ftp.halifax.rwth-aachen.de/parrotsec',
+    lat: '50.7766',
+    lon: '6.0834',
     commentary: 'RWTH-Aachen (Halifax students group)',
     id: 'emea.halifax'
   },
   {
-    url: 'https://ftp-stud.hs-esslingen.de/Mirrors/archive.parrotsec.org',
+    url: 'http://ftp-stud.hs-esslingen.de/pub/Mirrors/archive.parrotsec.org',
+    lat: '48.7823',
+    lon: '9.1770',
     commentary: 'Esslingen (University of Applied Sciences)',
     id: 'emea.esslingen'
   },
-  { url: 'https://ftp.nluug.nl/os/Linux/distr/parrot', commentary: 'Nluug', id: 'emea.nluug' },
   {
-    url: 'https://ftp.acc.umu.se/mirror/parrotsec.org/parrot',
+    url: 'https://mirror.fra10.de.leaseweb.net/parrot',
+    lat: '50.1155',
+    lon: '8.6842'
+  },
+  {
+    url: 'https://mirror.pyratelan.org/parrot',
+    lat: '49.4478',
+    lon: '11.0683'
+  },
+  {
+    url: 'http://ftp.nluug.nl/os/Linux/distr/parrot',
+    lat: '52.0908',
+    lon: '5.1222',
+    commentary: 'Nluug',
+    id: 'emea.nluug'
+  },
+  {
+    url: 'https://mirror.lyrahosting.com/parrot',
+    lat: '-4.6167',
+    lon: '55.4500'
+  },
+  {
+    url: 'http://ftp.acc.umu.se/mirror/parrotsec.org/parrot',
+    lat: '63.8284',
+    lon: '63.8284',
     commentary: 'ACC UMU (Academic Computer Club, Umea University)',
     id: 'emea.umu'
   },
   {
-    url: 'https://ftp.cc.uoc.gr/mirrors/linux/parrot',
+    url: 'http://ftp.cc.uoc.gr/mirrors/linux/parrot',
+    lat: '38.0667',
+    lon: '23.7667',
     commentary: 'UoC (University of Crete - Computer Center)',
     id: 'emea.uoc'
   },
   {
-    url: 'https://ftp.belnet.be/pub/archive.parrotsec.org/',
+    url: 'http://ftp.belnet.be/mirror/archive.parrotsec.org',
+    lat: '50.8504',
+    lon: '4.3488',
     commentary: 'Belnet (The Belgian National Research)',
     id: 'emea.belnet'
   },
   {
-    url: 'https://matojo.unizar.es/parrot',
+    url: 'https://matojo.unizar.es/parrot/',
+    lat: '41.6561',
+    lon: '-0.8773',
     commentary: 'Osluz (Oficina de software libre de la Universidad de Zaragoza)',
     id: 'emea.osluz'
   },
   {
-    url: 'https://mirrors.up.pt/parrot',
+    url: 'https://mirrors.up.pt/parrot/',
+    lat: '41.1931',
+    lon: '-8.5817',
     commentary: 'U.Porto (University of Porto)',
     id: 'emea.up'
   },
   {
-    url: 'https://mirrors.dotsrc.org/parrot',
+    url: 'https://mirrors.dotsrc.org/parrot/',
+    lat: '55.7704',
+    lon: '12.5038',
     commentary: 'Dotsrc (Aalborg university)',
     id: 'emea.dotsrc'
   },
-  { url: 'https://parrot.mirror.cythin.com/parrot', commentary: 'cythin.com', id: 'emea.cythin' },
   {
-    url: 'https://quantum-mirror.hu/mirrors/pub/parrot',
+    url: 'https://parrot.mirror.cythin.com/parrot',
+    lat: '50.6942',
+    lon: '3.1746',
+    commentary: 'cythin.com',
+    id: 'emea.cythin'
+  },
+  {
+    url: 'https://parrot-mirror.iriseden.eu/parrot',
+    lat: '60.1695',
+    lon: '24.9354'
+  },
+  {
+    url: 'https://quantum-mirror.hu/mirrors/pub/parrot/',
+    lat: '48.1000',
+    lon: '20.7833',
     commentary: 'quantum-mirror.hu',
     id: 'emea.quantum'
   },
   {
-    url: 'https://mirror.yandex.ru/mirrors/parrot',
+    url: 'http://turkey.archive.parrotsec.org/parrot',
+    lat: '41.0138',
+    lon: '28.9497'
+  },
+  {
+    url: 'https://mirror.cspacehostings.com/parrotsec/',
+    lat: '59.4370',
+    lon: '24.7535'
+  },
+  {
+    url: 'https://mirror.yandex.ru/mirrors/parrot/',
+    lat: '55.7522',
+    lon: '37.6156',
     commentary: 'Yandex Mirror',
     id: 'apac.yandex'
   },
-  { url: 'http://mirror.truenetwork.ru/parrot', commentary: 'Truenetwork', id: 'apac.truenetwork' },
   {
-    url: 'http://mirrors.comsys.kpi.ua/parrot',
+    url: 'https://mirror.truenetwork.ru/parrot/',
+    lat: '55.0415',
+    lon: '82.9346',
+    commentary: 'Truenetwork',
+    id: 'apac.truenetwork'
+  },
+  {
+    url: 'https://mirror.surf/parrot/',
+    lat: '56.3287',
+    lon: '44.0020'
+  },
+  {
+    url: 'http://mirrors.comsys.kpi.ua/parrot/',
+    lat: '50.4547',
+    lon: '30.5238',
     commentary: 'KPI (National Technical University of Ukraine - Comsys)',
     id: 'emea.comsys'
   },
   {
-    url: 'http://mirror.amberit.com.bd/parrotsec',
+    url: 'https://parrot.astra.in.ua/',
+    lat: '49.8383',
+    lon: '24.0232'
+  },
+  // APAC
+  {
+    url: 'http://mirror.amberit.com.bd/parrotsec/',
+    lat: '23.7104',
+    lon: '90.4074',
     commentary: 'Amberit (Dhakacom)',
     id: 'apac.amberit'
   },
   {
-    url: 'https://free.nchc.org.tw/parrot',
+    url: 'http://free.nchc.org.tw/parrot/',
+    lat: '25.0478',
+    lon: '121.5319',
     commentary: 'NCHC (Free Software Lab)',
     id: 'apac.nchc'
   },
-  { url: 'https://mirror.0x.sg/parrot', commentary: '0x', id: 'apac.0x' },
   {
-    url: 'https://mirrors.ustc.edu.cn/parrot',
+    url: 'https://mirror.0x.sg/parrot/',
+    lat: '1.2897',
+    lon: '103.8501',
+    commentary: '0x',
+    id: 'apac.0x'
+  },
+  {
+    url: 'http://mirrors.ustc.edu.cn/parrot/',
+    lat: '31.8639',
+    lon: '117.2808',
     commentary: 'University of Science and Technology of China and USTCLUG',
     id: 'apac.ustc'
   },
   {
-    url: 'https://mirror.kku.ac.th/parrot',
+    url: 'https://mirrors.tuna.tsinghua.edu.cn/parrot/',
+    lat: '39.9115',
+    lon: '116.3603',
+    commentary: 'TUNA (Tsinghua university of Beijing, TUNA association)',
+    id: 'apac.tuna'
+  },
+  {
+    url: 'http://mirrors.sjtug.sjtu.edu.cn/parrot/',
+    lat: '31.2222',
+    lon: '121.4581',
+    commentary: 'SJTUG (SJTU *NIX User Group)',
+    id: 'apac.sjtug'
+  },
+  {
+    url: 'https://mirror.lagoon.nc/pub/parrot/',
+    lat: '-22.2763',
+    lon: '166.4572',
+    commentary: 'Lagoon',
+    id: 'apac.lagoon'
+  },
+  {
+    url: 'https://mirror.kku.ac.th/parrot/',
+    lat: '13.7500',
+    lon: '100.5167',
     commentary: 'KKU (Khon Kaen University)',
     id: 'apac.kku'
   },
   {
-    url: 'http://kartolo.sby.datautama.net.id/parrot',
-    commentary: 'Datautama (PT. Data Utama Dinamika)',
-    id: 'apac.datautama'
-  },
-  {
-    url: 'https://mirrors.takeshi.nz/parrot',
-    commentary: 'Takeshi (D T Consulting Ltd)',
-    id: 'apac.takeshi'
-  },
-  {
-    url: 'http://mirrors.shu.edu.cn/parrot',
-    commentary: 'SHU(Shanghai University)',
-    id: 'apac.shu'
-  },
-  {
-    url: 'http://mirrors.sjtug.sjtu.edu.cn/parrot',
-    commentary: 'SJTUG (SJTU *NIX User Group)',
-    id: 'apac.sjtug'
-  },
-  { url: 'http://mirror.lagoon.nc/pub/parrot', commentary: 'Lagoon', id: 'apac.lagoon' },
-  {
-    url: 'https://mirrors.tuna.tsinghua.edu.cn/parrot',
-    commentary: 'TUNA (Tsinghua university of Beijing, TUNA association)',
-    id: 'apac.tuna'
+    url: 'http://kartolo.sby.datautama.net.id/parrot/',
+    lat: '-7.2492',
+    lon: '112.7508'
   }
 ]
