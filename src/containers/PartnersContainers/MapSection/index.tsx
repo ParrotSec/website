@@ -4,6 +4,8 @@ import L, { LatLngExpression } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
 
+import mirrors from '../MirrorsSection/mirrors'
+
 import marker2x from 'assets/partners/leaflet/marker-icon-2x.png'
 import marker from 'assets/partners/leaflet/marker-icon.png'
 import markerShadow from 'assets/partners/leaflet/marker-shadow.png'
@@ -53,12 +55,14 @@ const MapSection = () => {
         attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={position}>
-        <Popup>A pretty CSS3 popup.</Popup>
-        <Paper elevation={0}>
-          <ZoomControl position="topleft" />
-        </Paper>
-      </Marker>
+      {mirrors.map(data => (
+        <Marker key={data.id} position={[data.lat, data.lon]}>
+          <Popup>{data.commentary}</Popup>
+        </Marker>
+      ))}
+      <Paper elevation={0}>
+        <ZoomControl position="topleft" />
+      </Paper>
     </MapContainer>
   )
 }
