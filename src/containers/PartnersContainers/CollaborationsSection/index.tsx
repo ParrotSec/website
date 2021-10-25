@@ -2,7 +2,7 @@ import { CardActionArea, Grid, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import Carousel from 'components/Carousel'
-import collaborations from 'containers/PartnersContainers/collaborations'
+import collaborations from 'containers/PartnersContainers/CollaborationsSection/collaborations'
 
 const useStyles = makeStyles(theme => ({
   actionArea: {
