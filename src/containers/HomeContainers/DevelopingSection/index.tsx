@@ -124,9 +124,10 @@ const DevelopingSection = () => {
           A Developer Friendly environment
         </Typography>
         <Typography variant="subtitle2Semi" align="center">
-          Whether you are an IT or security professional who needs to write your custom scripts,
-          or a software developer in search for the best environment to work with your favorite languages and frameworks,
-          Parrot is made for you.<br />
+          Whether you are an IT or security professional who needs to write your custom scripts, or
+          a software developer in search for the best environment to work with your favorite
+          languages and frameworks, Parrot is made for you.
+          <br />
         </Typography>
       </Grid>
       <Grid className={classes.papersBlock} container item xs={12} md={9} spacing={4}>
@@ -137,10 +138,12 @@ const DevelopingSection = () => {
                 Compilers & Interpreters
               </Typography>
               <Typography variant="body1Semi" paragraph>
-                Parrot integrates popular compilers, interpreters, libraries and development frameworks
-                either pre-installed or one command away through our software repository, for faster and easier software development.
+                Parrot integrates popular compilers, interpreters, libraries and development
+                frameworks either pre-installed or one command away through our software repository,
+                for faster and easier software development.
                 <br />
-                You can also use Parrot in your CI/CD pipelines to add security tests to your release workflow.
+                You can also use Parrot in your CI/CD pipelines to add security tests to your
+                release workflow.
               </Typography>
             </div>
             <Hidden mdUp>
@@ -168,11 +171,13 @@ const DevelopingSection = () => {
               Development tools
             </Typography>
             <Typography variant="body1Semi">
-                We are developers too, and we love to have advanced, comfortable and easy to use environment too.
-                This is why Parrot ships with Codium pre-installed. It is an advanced and extensible editor with IDE capabilities built upon VSCode.
-                Other IDEs and editors are ready to install from our official software repository.<br />
-                <br />
-                Boot the system, start the editor, run the code. It can't get easier than that.
+              We are developers too, and we love to have advanced, comfortable and easy to use
+              environment too. This is why Parrot ships with Codium pre-installed. It is an advanced
+              and extensible editor with IDE capabilities built upon VSCode. Other IDEs and editors
+              are ready to install from our official software repository.
+              <br />
+              <br />
+              Boot the system, start the editor, run the code. It can&apos;t get easier than that.
             </Typography>
           </Paper>
         </Grid>

@@ -1,11 +1,19 @@
 import { GridProps } from '@mui/material'
 
 import UserCard from 'components/UserCard'
-import ContributorsSection from 'containers/TeamContainers/ContributorsSection'
 import activecontrib from 'containers/TeamContainers/ActiveContributorsSection/activecontrib'
+import ContributorsSection from 'containers/TeamContainers/ContributorsSection'
 
 const activeContribData = activecontrib.map(data => {
-  return <UserCard variant="background" name={data.name} nickname={data.nickname} role={data.role} />
+  return (
+    <UserCard
+      variant="background"
+      key={data.name}
+      name={data.name}
+      nickname={data.nickname}
+      role={data.role}
+    />
+  )
 })
 
 const ActiveContributors = (props: GridProps) => {

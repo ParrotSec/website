@@ -6,7 +6,13 @@ import pastcontrib from 'containers/TeamContainers/PastContributorsSection/pastc
 
 const pastContribData = pastcontrib.map(data => {
   return (
-    <UserCard variant="background" name={data.name} nickname={data.nickname} role={data.role} />
+    <UserCard
+      variant="background"
+      key={data.name}
+      name={data.name}
+      nickname={data.nickname}
+      role={data.role}
+    />
   )
 })
 

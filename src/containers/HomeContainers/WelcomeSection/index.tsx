@@ -3,10 +3,11 @@ import { makeStyles } from '@mui/styles'
 import { useEffect, useRef, useState } from 'react'
 import useTypewriter from 'react-typewriter-hook'
 
+import gradientOffset from '../../../../lib/gradient'
+
 import Bulb from './assets/Bulb.svg'
 
 import PButton from 'components/PButton'
-import gradientOffset from '../../../../lib/gradient'
 
 const useStyles = makeStyles(theme => ({
   headingSubTitle: {

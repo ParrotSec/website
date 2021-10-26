@@ -18,6 +18,12 @@ const useStyles = makeStyles(theme => ({
   },
   collaborationsDesc: {
     paddingRight: theme.spacing(5)
+  },
+  imgProp: {
+    width: '100%',
+    borderRadius: 24,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
   }
 }))
 
@@ -44,16 +50,7 @@ const CollaborationSection = () => {
                     <Typography paragraph>{data.description}</Typography>
                   </Grid>
                   <Grid container item md={4}>
-                    <Paper
-                      elevation={2}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundImage: `url('${data.image}')`
-                      }}
-                    />
+                    <img src={data.image} className={classes.imgProp} alt={data.name} />
                   </Grid>
                 </Grid>
               </Paper>
