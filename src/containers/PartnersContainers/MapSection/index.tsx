@@ -45,6 +45,7 @@ const MapSection = () => {
       zoom={2}
       zoomControl={false}
       scrollWheelZoom={true}
+      tap={false}
     >
       <style>
         {`.leaflet-control-zoom { border: 24px !important }

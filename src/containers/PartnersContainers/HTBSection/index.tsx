@@ -6,11 +6,14 @@ import HTBWallpaper from 'assets/htb_community.png'
 const useStyles = makeStyles(theme => ({
   mainSponsorPaper: {
     color: '#FFFFFF',
-    minHeight: '45vh',
+    minHeight: '55vh',
     padding: theme.spacing(4),
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${HTBWallpaper.src}')`
+    backgroundImage:
+      theme.palette.mode === 'dark'
+        ? `linear-gradient(rgba(255, 255, 255, 0), #06043E), url('${HTBWallpaper.src}')`
+        : `url('${HTBWallpaper.src}')`
   },
   actionArea: {
     display: 'flex',
