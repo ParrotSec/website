@@ -24,7 +24,7 @@ L.Icon.Default.mergeOptions({
 const useStyles = makeStyles(theme => ({
   map: {
     height: '50vh',
-    width: '50vw',
+    width: '100%',
     borderRadius: 24,
     margin: theme.spacing(3),
     zIndex: 0

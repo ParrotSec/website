@@ -36,16 +36,16 @@ const CollaborationSection = () => {
           {collaborations.map(data => (
             <CardActionArea key={data.name} className={classes.actionArea} href={data.url}>
               <Paper elevation={0} className={classes.collaborationsPaper}>
-                <Grid container item xs={12} direction="row">
-                  <Grid item xs={8} className={classes.collaborationsDesc}>
+                <Grid container item md={12} direction="row">
+                  <Grid container item md={8} className={classes.collaborationsDesc}>
                     <Typography variant="h4" gutterBottom>
                       {data.name}
                     </Typography>
                     <Typography paragraph>{data.description}</Typography>
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid container item md={4}>
                     <Paper
-                      elevation={3}
+                      elevation={2}
                       style={{
                         width: '100%',
                         height: '100%',

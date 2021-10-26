@@ -8,9 +8,6 @@ const useStyles = makeStyles(theme => ({
   mirrors: {
     paddingTop: theme.spacing(5)
   },
-  mirrorTitle: {
-    margin: theme.spacing(4)
-  },
   mirrorDesc: {
     margin: theme.spacing(3)
   },
@@ -33,14 +30,12 @@ const MirrorsSection = () => {
   })
 
   return (
-    <Grid container item xs={10} className={classes.mirrors}>
-      <Grid container item xs={8}>
+    <Grid container item md={10} className={classes.mirrors}>
+      <Grid container item md={8}>
         <MapMirrors />
       </Grid>
-      <Grid container item xs={4} justifyContent="center" alignItems="center" direction="column">
-        <Typography variant="h4" className={classes.mirrorTitle}>
-          Mirrors
-        </Typography>
+      <Grid container item md={4} justifyContent="center" alignItems="center" direction="column">
+        <Typography variant="h4">Mirrors</Typography>
         <Typography paragraph className={classes.mirrorDesc}>
           The software in the parrot archive is delivered in form of deb packages, and these
           packages are served through a vast network of mirror servers that provide the same set of
