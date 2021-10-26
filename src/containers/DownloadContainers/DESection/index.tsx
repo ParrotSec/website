@@ -198,7 +198,7 @@ const DESection = ({
             <Grid item xs={12} sm={6} md={12}>
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
                 <PButton gradient variant="contained">
-                  Download OS
+                  Download
                 </PButton>
                 <PButton variant="outlined">Torrent</PButton>
                 <PButton variant="outlined">Virtual Appliance</PButton>

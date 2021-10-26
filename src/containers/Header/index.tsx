@@ -130,7 +130,7 @@ const Header = () => {
               </nav>
               <div className={classes.downloadButtonHolder}>
                 <PButton variant="contained" gradient to="/download">
-                  Download OS
+                  Download
                 </PButton>
               </div>
             </Hidden>
@@ -168,7 +168,7 @@ const Header = () => {
                   Partners
                 </Link>
                 <Link className={classes.link} onClick={() => setCollapsed(false)} href="/download">
-                  <div>Download OS</div>
+                  <div>Download</div>
                 </Link>
               </Box>
             </Grid>

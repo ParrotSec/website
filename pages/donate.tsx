@@ -44,7 +44,7 @@ const Donate: NextPage = () => {
             Buy Us A Coffee
           </Typography>
           <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
-            A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
+            The ultimate framework for your Cyber Security operations
           </Typography>
         </Grid>
         <DonateSection className={classes.donate} />

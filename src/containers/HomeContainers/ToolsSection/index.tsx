@@ -233,10 +233,15 @@ const ToolsSection = (rest: GridProps) => {
               <Tools className={classes.headerIcon} />
             </div>
             <Typography variant="h3" align="center" paragraph>
-              Tools for every occasion
+              Tools for every operation
             </Typography>
             <Typography variant="subtitle2Semi" align="center" paragraph>
-              Choose between 600+ tools for all your hacking needs
+              Choose between 600+ tools for every kind of Red and Blue team operation.
+            </Typography>
+            <Typography variant="subtitle2Semi" align="center" paragraph>
+              Parrot Security provides a huge arsenal of tools, utilities and libraries
+              that IT and security professionals can use to test and assess the security of their assets in a reliable, compliant and reproducible way.
+              From information gathering to the final report. The Parrot system gets you covered with the most flexible environment.
             </Typography>
             {/*TODO: for futher animations need to apply box-shadow*/}
             <Hidden mdDown>
@@ -267,7 +272,7 @@ const ToolsSection = (rest: GridProps) => {
                 justifyContent="flex-end"
               >
                 <PButton variant="contained" to="/download" gradient>
-                  Download OS
+                  Download
                 </PButton>
               </Grid>
               <Grid className={classes.responsiveJustify} container item xs={12} sm={6}>
@@ -288,10 +293,16 @@ const ToolsSection = (rest: GridProps) => {
                   Hacking tools at your fingertips
                 </Typography>
                 <Typography variant="body1Semi">
-                  When it comes to general tools and functional features, Parrot OS wins over Kali
-                  Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
-                  its own tools. There are several tools you will find on ParrotOS that is not found
-                  on Kali Linux.
+                  You can install your favorite tools on top of any Linux system, but it is time-comsuming,
+                  prone to errors and hard to keep updated over time.
+                  <br />
+                  Parrot gives you the convenience of a familiar Debian environment with all the tools you will ever need.
+                  We regularly update, test and pack them for you.
+                  <br />
+                  Having a bunch of git clones thrown at your desktop is something of the past.
+                  <br />
+                  We do the hard work, not you.
+
                 </Typography>
               </div>
               <img

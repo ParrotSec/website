@@ -48,7 +48,7 @@ const OSCard = ({ Icon, iconClassName, title, children, ...rest }: OSCardProps) 
           {children}
         </Typography>
         <PButton variant="contained" to="/download" style={{ maxWidth: 177 }}>
-          Download OS
+          Download
         </PButton>
       </Paper>
     </Grid>

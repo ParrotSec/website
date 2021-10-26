@@ -122,11 +122,11 @@ const WelcomeSection = () => {
         textAlign="center"
         style={{ textTransform: 'uppercase' }}
       >
-        <span style={{ fontWeight: 'bold' }}>Parrot</span>OS
+        <span style={{ fontWeight: 'bold' }}>Parrot</span>SEC
       </Box>
       <RunningText />
       <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
-        A GNU/Linux distribution based on Debian and designed with Security and Privacy in mind.
+        The ultimate framework for your Cyber Security operations
       </Typography>
       <Grid container item xs={12} spacing={2}>
         <Grid
@@ -138,23 +138,23 @@ const WelcomeSection = () => {
           justifyContent="flex-end"
         >
           <PButton variant="contained" to="/download" gradient>
-            Download OS
+            Download
           </PButton>
         </Grid>
         <Grid className={classes.responsiveJustify} container item xs={12} sm={6}>
           <PButton variant="outlined" to="/docs">
-            Getting Started
+            Get Started
           </PButton>
         </Grid>
       </Grid>
       <PButton
         className={classes.wideButton}
         variant="outlined"
-        to="/docs"
+        to="/blog/parrot-5.0-released"
         startIcon={<SvgIcon className={classes.bulb} component={Bulb} />}
       >
         {/* eslint-disable-next-line react/no-unescaped-entities */}
-        What's new in Parrot OS 4.32.1
+        What's new in Parrot OS 5.0
       </PButton>
     </Grid>
   )

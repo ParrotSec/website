@@ -112,14 +112,13 @@ const Footer = () => {
             >
               <Logo className={classes.logo} />
               <Typography className={classes.logoTitle} variant="h3" paragraph>
-                Parrot<span style={{ fontWeight: 300 }}>OS</span>
+                Parrot<span style={{ fontWeight: 300 }}>SEC</span>
               </Typography>
               <Typography className={classes.logoSubTitle} variant="body1Semi" paragraph>
-                A GNU/Linux distribution based on Debian and designed with Security and Privacy in
-                mind.
+                The ultimate framework for your Cyber Security operations
               </Typography>
               <PButton className={classes.download} variant="contained" gradient to="/download">
-                Download OS
+                Download
               </PButton>
             </Grid>
             <Grid container item xs={12} lg={8} spacing={4}>

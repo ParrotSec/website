@@ -69,48 +69,30 @@ const items = [
     Icon={Burp}
   >
     <>
-      <b>Burp Suite</b>
+      <b>Golang</b>
       <br />
-      Burp Suite is a set of tools used for penetration testing of web applications. It is developed
-      by the company named Portswigger, which is also the alias of its founder Dafydd Stuttard.
-      BurpSuite aims to be an all in one set of tools and its capabilities can be enhanced by
-      installing add-ons that are called BApps.
+      golang description
     </>
   </PIconLink>,
   <PIconLink key="develop-john" href="https://nest.parrotsec.org/packages/tools/john" Icon={John}>
     <>
-      <b>John the Ripper</b>
+      <b>Java</b>
       <br />
-      John the Ripper is a fast password cracker, currently available for many flavors of Unix,
-      macOS, Windows, DOS, BeOS, and OpenVMS (the latter requires a contributed patch). Its primary
-      purpose is to detect weak Unix passwords. Besides several crypt(3) password hash types most
-      commonly found on various Unix flavors, supported out of the box are Kerberos/AFS and Windows
-      LM hashes, as well as DES-based tripcodes, plus hundreds of additional hashes and ciphers in
-      "-jumbo" versions.
+      java description
     </>
   </PIconLink>,
   <PIconLink key="develop-maltego" href="https://www.maltego.com/product-features/" Icon={Maltego}>
     <>
-      <b>Maltego</b>
+      <b>Python</b>
       <br />
-      Maltego is an open source intelligence and graphical link analysis tool for gathering and
-      connecting information for investigative tasks. Maltego is a Java application that runs on
-      Windows, Mac and Linux. Maltego is used by a broad range of users, ranging from security
-      professionals to forensic investigators, investigative journalists, and researchers.
+      Python description
     </>
   </PIconLink>,
   <PIconLink key="develop-nmap" href="https://nest.parrotsec.org/packages/tools/nmap" Icon={Nmap}>
     <>
-      <b>Nmap</b>
+      <b>Docker</b>
       <br />
-      Nmap is an open source tool for network exploration and security auditing. It was designed to
-      rapidly scan large networks, although it works fine against single hosts. Nmap uses raw IP
-      packets in novel ways to determine what hosts are available on the network, what services
-      (application name and version) those hosts are offering, what operating systems (and OS
-      versions) they are running, what type of packet filters/firewalls are in use, and dozens of
-      other characteristics. While Nmap is commonly used for security audits, many systems and
-      network administrators find it useful for routine tasks such as network inventory, managing
-      service upgrade schedules, and monitoring host or service uptime.
+      Docker description
     </>
   </PIconLink>,
   <PIconLink
@@ -119,23 +101,16 @@ const items = [
     Icon={Metasploit}
   >
     <>
-      <b>Metasploit</b>
+      <b>Nodejs</b>
       <br />
-      Metasploit is a tool for developing and executing exploit code against a remote target
-      machine. Other important sub-projects include the Opcode Database, shellcode archive and
-      related research.
+      Nodejs description
     </>
   </PIconLink>,
   <PIconLink key="sqlmap" href="https://nest.parrotsec.org/packages/tools/sqlmap" Icon={Sqlmap}>
     <>
-      <b>SQLMap</b>
+      <b>Rust</b>
       <br />
-      SQLmap is an open source penetration testing tool that automates the process of detecting and
-      exploiting SQL injection flaws and taking over of database servers. It comes with a powerful
-      detection engine, many niche features for the ultimate penetration tester, and a broad range
-      of switches including database fingerprinting, over data fetching from the database, accessing
-      the underlying file system, and executing commands on the operating system via out-of-band
-      connections.
+      Rust description
     </>
   </PIconLink>
 ]
@@ -145,12 +120,13 @@ const DevelopingSection = () => {
   return (
     <>
       <Grid className={classes.developerBlock} container item xs={12} md={7}>
-        <Typography variant="h2" align="center" paragraph>
-          Parrot is developer friendly. Secure in a Linux Environment.
+        <Typography variant="h1" align="center" paragraph>
+          A Developer Friendly environment
         </Typography>
         <Typography variant="subtitle2Semi" align="center">
-          Compilers, interpreters and intelligent editors. All you need to start programming comes
-          out of the box, with the most secure Linux environment.
+          Whether you are an IT or security professional who needs to write your custom scripts,
+          or a software developer in search for the best environment to work with your favorite languages and frameworks,
+          Parrot is made for you.<br />
         </Typography>
       </Grid>
       <Grid className={classes.papersBlock} container item xs={12} md={9} spacing={4}>
@@ -158,11 +134,13 @@ const DevelopingSection = () => {
           <Paper className={classes.devPaper} elevation={0}>
             <div className={classes.devToolsBlock}>
               <Typography variant="h5" paragraph>
-                Developer tools
+                Compilers & Interpreters
               </Typography>
               <Typography variant="body1Semi" paragraph>
-                Our tools are designed to be compatible with as many devices as possible via
-                containerization technologies like Docker or Podman.
+                Parrot integrates popular compilers, interpreters, libraries and development frameworks
+                either pre-installed or one command away through our software repository, for faster and easier software development.
+                <br />
+                You can also use Parrot in your CI/CD pipelines to add security tests to your release workflow.
               </Typography>
             </div>
             <Hidden mdUp>
@@ -187,11 +165,14 @@ const DevelopingSection = () => {
         <Grid item xs={12}>
           <Paper className={classes.compilePaper} elevation={0}>
             <Typography variant="h5" paragraph>
-              Compilers & interpreters
+              Development tools
             </Typography>
             <Typography variant="body1Semi">
-              Our tools are designed to be compatible with as many devices as possible via
-              containerization technologies like Docker or Podman.
+                We are developers too, and we love to have advanced, comfortable and easy to use environment too.
+                This is why Parrot ships with Codium pre-installed. It is an advanced and extensible editor with IDE capabilities built upon VSCode.
+                Other IDEs and editors are ready to install from our official software repository.<br />
+                <br />
+                Boot the system, start the editor, run the code. It can't get easier than that.
             </Typography>
           </Paper>
         </Grid>
