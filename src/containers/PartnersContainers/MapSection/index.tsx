@@ -1,4 +1,4 @@
-import { Paper } from '@mui/material'
+import { Paper, Link } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import L, { LatLngExpression } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -58,7 +58,9 @@ const MapSection = () => {
       />
       {mirrors.map(data => (
         <Marker key={data.id} position={[data.lat, data.lon]}>
-          <Popup>{data.commentary}</Popup>
+          <Popup>
+            <Link href={data.url}>{data.commentary}</Link>
+          </Popup>
         </Marker>
       ))}
       <Paper elevation={0}>

@@ -31,7 +31,8 @@ export default [
   {
     url: 'https://mirror.wdc1.us.leaseweb.net/parrot',
     lat: 38.7999,
-    lon: -77.5443
+    lon: -77.5443,
+    commentary: 'Virginia Leaseweb'
   },
   {
     url: 'http://mirror.cedia.org.ec/parrot',
@@ -64,7 +65,8 @@ export default [
   {
     url: 'https://mirror.0xem.ma/parrot/',
     lat: 45.9454,
-    lon: -66.6656
+    lon: -66.6656,
+    commentary: '0xem'
   },
   // EMEA
   {
@@ -91,12 +93,14 @@ export default [
   {
     url: 'https://mirror.fra10.de.leaseweb.net/parrot',
     lat: 50.1155,
-    lon: 8.6842
+    lon: 8.6842,
+    commentary: 'Germany Leaseweb'
   },
   {
     url: 'https://mirror.pyratelan.org/parrot',
     lat: 49.4478,
-    lon: 11.0683
+    lon: 11.0683,
+    commentary: 'pyratelan'
   },
   {
     url: 'http://ftp.nluug.nl/os/Linux/distr/parrot',
@@ -108,7 +112,8 @@ export default [
   {
     url: 'https://mirror.lyrahosting.com/parrot',
     lat: -4.6167,
-    lon: 55.45
+    lon: 55.45,
+    commentary: 'lyrahosting'
   },
   {
     url: 'http://ftp.acc.umu.se/mirror/parrotsec.org/parrot',
@@ -162,7 +167,8 @@ export default [
   {
     url: 'https://parrot-mirror.iriseden.eu/parrot',
     lat: 60.1695,
-    lon: 24.9354
+    lon: 24.9354,
+    commentary: 'iriseden'
   },
   {
     url: 'https://quantum-mirror.hu/mirrors/pub/parrot/',
@@ -174,12 +180,14 @@ export default [
   {
     url: 'http://turkey.archive.parrotsec.org/parrot',
     lat: 41.0138,
-    lon: 28.9497
+    lon: 28.9497,
+    commentary: 'Turkey EB'
   },
   {
     url: 'https://mirror.cspacehostings.com/parrotsec/',
     lat: 59.437,
-    lon: 24.7535
+    lon: 24.7535,
+    commentary: 'cspacehosting'
   },
   {
     url: 'https://mirror.yandex.ru/mirrors/parrot/',
@@ -198,7 +206,8 @@ export default [
   {
     url: 'https://mirror.surf/parrot/',
     lat: 56.3287,
-    lon: 44.002
+    lon: 44.002,
+    commentary: 'surf'
   },
   {
     url: 'http://mirrors.comsys.kpi.ua/parrot/',
@@ -210,7 +219,8 @@ export default [
   {
     url: 'https://parrot.astra.in.ua/',
     lat: 49.8383,
-    lon: 24.0232
+    lon: 24.0232,
+    commentary: 'astra.in.ua'
   },
   // APAC
   {
@@ -244,7 +254,7 @@ export default [
   {
     url: 'https://mirrors.tuna.tsinghua.edu.cn/parrot/',
     lat: 39.9115,
-    lon: '116.3603',
+    lon: 116.3603,
     commentary: 'TUNA (Tsinghua university of Beijing, TUNA association)',
     id: 'apac.tuna'
   },
@@ -272,6 +282,7 @@ export default [
   {
     url: 'http://kartolo.sby.datautama.net.id/parrot/',
     lat: -7.2492,
-    lon: 112.7508
+    lon: 112.7508,
+    commentary: 'Datautama'
   }
 ]
