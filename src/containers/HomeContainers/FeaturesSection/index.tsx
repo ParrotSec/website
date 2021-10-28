@@ -1,12 +1,14 @@
 import { Grid, GridProps, Hidden } from '@mui/material'
-import PFeatureBlock from 'components/PFeatureBlock'
-import Safety from './assets/Security.svg'
+
 import Build from './assets/Build.svg'
-import Vector from './assets/Vector.svg'
-import Unlock from './assets/Unlock.svg'
 import Layout from './assets/Layout.svg'
+import Safety from './assets/Security.svg'
+import Unlock from './assets/Unlock.svg'
+import Vector from './assets/Vector.svg'
 import WeChat from './assets/Wechat.svg'
+
 import Carousel from 'components/Carousel'
+import PFeatureBlock from 'components/PFeatureBlock'
 
 const FeaturesSection = (props: GridProps) => {
   const blocks = [
