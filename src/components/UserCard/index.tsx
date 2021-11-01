@@ -1,4 +1,13 @@
-import { Grid, Typography, Card, CardContent, Avatar, IconButton, GridProps } from '@mui/material'
+import {
+  Grid,
+  Typography,
+  Card,
+  CardContent,
+  Avatar,
+  IconButton,
+  GridProps,
+  Link
+} from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import cls from 'classnames'
 
@@ -105,24 +114,32 @@ const UserCard = ({
               spacing={2}
             >
               <Grid item>
-                <IconButton href={socials.github} size="small">
-                  <Github className={classes.icons} />
-                </IconButton>
+                <Link href={socials.github}>
+                  <IconButton size="small">
+                    <Github className={classes.icons} />
+                  </IconButton>
+                </Link>
               </Grid>
               <Grid item>
-                <IconButton size="small">
-                  <Twitter href={socials.twitter} className={classes.icons} />
-                </IconButton>
+                <Link href={socials.twitter}>
+                  <IconButton size="small">
+                    <Twitter className={classes.icons} />
+                  </IconButton>
+                </Link>
               </Grid>
               <Grid item>
-                <IconButton size="small">
-                  <LinkedIn href={socials.linkedIn} className={classes.icons} />
-                </IconButton>
+                <Link href={socials.linkedIn}>
+                  <IconButton size="small">
+                    <LinkedIn className={classes.icons} />
+                  </IconButton>
+                </Link>
               </Grid>
               <Grid item>
-                <IconButton href={socials.email} size="small">
-                  <Email className={classes.icons} />
-                </IconButton>
+                <Link href={socials.email}>
+                  <IconButton size="small">
+                    <Email className={classes.icons} />
+                  </IconButton>
+                </Link>
               </Grid>
             </Grid>
           )}

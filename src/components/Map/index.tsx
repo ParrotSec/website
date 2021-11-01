@@ -4,11 +4,10 @@ import L, { LatLngExpression } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
 
-import mirrors from '../MirrorsSection/mirrors'
-
 import marker2x from 'assets/partners/leaflet/marker-icon-2x.png'
 import marker from 'assets/partners/leaflet/marker-icon.png'
 import markerShadow from 'assets/partners/leaflet/marker-shadow.png'
+import mirrors from 'containers/PartnersContainers/MirrorsSection/mirrors'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -34,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const MapSection = () => {
+const Map = () => {
   const classes = useStyles()
   const position: LatLngExpression = [51.505, -0.09]
 
@@ -70,4 +69,4 @@ const MapSection = () => {
   )
 }
 
-export default MapSection
+export default Map

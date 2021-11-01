@@ -53,10 +53,11 @@ const FeaturesSection = (props: GridProps) => {
       buttonLink="/docs"
       key="feature-4"
     >
-      Don't leave your sensitive customer data floating around unprotected. The installer supports
-      full disk encryption, and the system lets you handle data in the most secure and reliable way.
-      Parrot OS is free from trackers and telemetry "features", and it provides many privacy tools
-      like AnonSurf, Tor Browser, a custom Firefox profile, easy cryptographic tools and much more.
+      Don&apos;t leave your sensitive customer data floating around unprotected. The installer
+      supports full disk encryption, and the system lets you handle data in the most secure and
+      reliable way. Parrot OS is free from trackers and telemetry "features", and it provides many
+      privacy tools like AnonSurf, Tor Browser, a custom Firefox profile, easy cryptographic tools
+      and much more.
     </PFeatureBlock>,
     <PFeatureBlock
       title="Customizability"
