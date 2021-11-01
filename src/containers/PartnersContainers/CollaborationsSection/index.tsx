@@ -1,8 +1,9 @@
 import { CardActionArea, Grid, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
+import collaborations from './collaborations'
+
 import Carousel from 'components/Carousel'
-import collaborations from 'containers/PartnersContainers/CollaborationsSection/collaborations'
 
 const useStyles = makeStyles(theme => ({
   actionArea: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(10)
   },
   collaborationsPaper: {
-    padding: theme.spacing(4)
+    padding: theme.spacing(2)
   },
   collaborationsDesc: {
     paddingRight: theme.spacing(5)

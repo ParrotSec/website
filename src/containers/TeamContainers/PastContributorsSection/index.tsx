@@ -1,20 +1,19 @@
 import { GridProps } from '@mui/material'
 
+import pastcontrib from './pastcontrib'
+
 import UserCard from 'components/UserCard'
 import ContributorsSection from 'containers/TeamContainers/ContributorsSection'
-import pastcontrib from 'containers/TeamContainers/PastContributorsSection/pastcontrib'
 
-const pastContribData = pastcontrib.map(data => {
-  return (
-    <UserCard
-      variant="background"
-      key={data.name}
-      name={data.name}
-      nickname={data.nickname}
-      role={data.role}
-    />
-  )
-})
+const pastContribData = pastcontrib.map((data, i) => (
+  <UserCard
+    variant="background"
+    key={`id-${i}`}
+    name={data.name}
+    nickname={data.nickname}
+    role={data.role}
+  />
+))
 
 const PastContributors = (props: GridProps) => {
   return (

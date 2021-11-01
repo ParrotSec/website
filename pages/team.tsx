@@ -58,6 +58,7 @@ const Team: NextPage = () => {
         className={classes.title}
         item
         xs={12}
+        md={9}
         justifyContent="center"
       >
         <Typography variant="h1" align="center" paragraph>

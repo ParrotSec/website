@@ -1,8 +1,9 @@
 import { Grid, Typography, GridProps } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
+import specialthanks from './specialthanks'
+
 import UserCard from 'components/UserCard'
-import specialthanks from 'containers/TeamContainers/SpecialThanksSection/specialthanks'
 
 const useStyles = makeStyles(theme => ({
   specialThanks: {
@@ -16,9 +17,9 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const specialThanksData = specialthanks.map(data => {
-  return <UserCard name={data.name} role={data.role} noAvatar={data.avatar} />
-})
+const specialThanksData = specialthanks.map((data, i) => (
+  <UserCard key={`id-${i}`} name={data.name} role={data.role} noAvatar={data.avatar} />
+))
 
 const SpecialThanks = (props: GridProps) => {
   const classes = useStyles()
