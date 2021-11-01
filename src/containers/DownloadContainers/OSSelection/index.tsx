@@ -5,7 +5,7 @@ import RouterLink from 'next/link'
 import { useEffect, useState } from 'react'
 import { useMeasure } from 'react-use'
 
-import Left from '../../../../public/assets/Left.svg'
+import Left from 'assets/Left.svg'
 import Carousel from 'components/Carousel'
 import OSCloud from 'containers/DownloadContainers/OSCloud'
 import OSHome from 'containers/DownloadContainers/OSHome'

@@ -31,7 +31,7 @@ const CollaborationSection = () => {
   const classes = useStyles()
 
   return (
-    <Grid container item xs={10} className={classes.collaborations}>
+    <Grid container item xs={12} md={9} className={classes.collaborations}>
       <Paper elevation={0} className={classes.collaborationsPaper}>
         <Grid container item xs={12} justifyContent="center">
           <Typography variant="h5" gutterBottom>

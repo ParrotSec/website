@@ -239,9 +239,10 @@ const ToolsSection = (rest: GridProps) => {
               Choose between 600+ tools for every kind of Red and Blue team operation.
             </Typography>
             <Typography variant="subtitle2Semi" align="center" paragraph>
-              Parrot Security provides a huge arsenal of tools, utilities and libraries
-              that IT and security professionals can use to test and assess the security of their assets in a reliable, compliant and reproducible way.
-              From information gathering to the final report. The Parrot system gets you covered with the most flexible environment.
+              Parrot Security provides a huge arsenal of tools, utilities and libraries that IT and
+              security professionals can use to test and assess the security of their assets in a
+              reliable, compliant and reproducible way. From information gathering to the final
+              report. The Parrot system gets you covered with the most flexible environment.
             </Typography>
             {/*TODO: for futher animations need to apply box-shadow*/}
             <Hidden mdDown>
@@ -293,16 +294,15 @@ const ToolsSection = (rest: GridProps) => {
                   Hacking tools at your fingertips
                 </Typography>
                 <Typography variant="body1Semi">
-                  You can install your favorite tools on top of any Linux system, but it is time-comsuming,
-                  prone to errors and hard to keep updated over time.
+                  You can install your favorite tools on top of any Linux system, but it is
+                  time-comsuming, prone to errors and hard to keep updated over time.
                   <br />
-                  Parrot gives you the convenience of a familiar Debian environment with all the tools you will ever need.
-                  We regularly update, test and pack them for you.
+                  Parrot gives you the convenience of a familiar Debian environment with all the
+                  tools you will ever need. We regularly update, test and pack them for you.
                   <br />
                   Having a bunch of git clones thrown at your desktop is something of the past.
                   <br />
                   We do the hard work, not you.
-
                 </Typography>
               </div>
               <img
