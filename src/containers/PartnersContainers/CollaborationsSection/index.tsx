@@ -22,7 +22,6 @@ const useStyles = makeStyles(theme => ({
   },
   imgProp: {
     width: '100%',
-    borderRadius: 24,
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   }

@@ -1,4 +1,4 @@
-import { Paper, Link } from '@mui/material'
+import { Paper, Link, useTheme } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import L, { LatLngExpression } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -35,7 +35,9 @@ const useStyles = makeStyles(theme => ({
 
 const Map = () => {
   const classes = useStyles()
-  const position: LatLngExpression = [51.505, -0.09]
+  const position: LatLngExpression = [50, 0]
+
+  const theme = useTheme()
 
   return (
     <MapContainer
@@ -47,13 +49,33 @@ const Map = () => {
       tap={false}
     >
       <style>
-        {`.leaflet-control-zoom { border: 24px !important }
+        {theme.palette.mode === 'dark'
+          ? `.leaflet-control-zoom { border: 24px !important; }
+          .leaflet-control-zoom-in { background-color: #272727 !important; color: white !important;
+        border-bottom-color: #424242 !important; border-radius: 24px !important; }
+        .leaflet-control-zoom-out {
+            background-color: #272727 !important; 
+            color: white !important; 
+            border-radius: 24px !important; 
+            margin-top: 5px;
+        }
+        .leaflet-popup-content-wrapper { 
+            border-radius: 24px !important; 
+            background-color: #272727 !important; 
+            color: white !important; 
+        }
+        .leaflet-popup-tip { background-color: #272727 !important; }`
+          : `.leaflet-control-zoom { border: 24px !important; }
         .leaflet-control-zoom-in { border-radius: 24px !important; }
-        .leaflet-control-zoom-out { border-radius: 24px !important;`}
+        .leaflet-control-zoom-out { border-radius: 24px !important; margin-top: 5px; }`}
       </style>
       <TileLayer
         attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url={
+          theme.palette.mode === 'dark'
+            ? 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
+            : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+        }
       />
       {mirrors.map(data => (
         <Marker key={data.id} position={[data.lat, data.lon]}>
