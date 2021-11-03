@@ -51,14 +51,14 @@ const Team: NextPage = () => {
   const classes = useStyles()
 
   return (
-    <Grid container item className={classes.root} justifyContent="center">
+    <Grid container className={classes.root} justifyContent="center">
       <Grid
         container
-        direction="column"
-        className={classes.title}
         item
         xs={12}
         md={9}
+        direction="column"
+        className={classes.title}
         justifyContent="center"
       >
         <Typography variant="h1" align="center" paragraph>
