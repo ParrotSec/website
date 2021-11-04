@@ -32,7 +32,7 @@ const Partners: NextPage = () => {
   const classes = useStyles()
 
   return (
-    <Grid container item className={classes.root} justifyContent="center">
+    <Grid container className={classes.root} justifyContent="center">
       <Grid
         container
         direction="column"

@@ -26,10 +26,36 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     borderRadius: 24,
     margin: theme.spacing(3),
-    zIndex: 0
-  },
-  zoomControl: {
-    borderRadius: 24
+    zIndex: 0,
+    '& .leaflet-bar': {
+      border: 0
+    },
+    '& .leaflet-bar a, .leaflet-bar a:hover': {
+      borderBottom: 0
+    },
+    '& .leaflet-popup-content-wrapper': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#272727' : '#FFFFFF',
+      color: theme.palette.mode === 'dark' ? '#FFFFFF' : '#272727',
+      borderRadius: 24
+    },
+    '& .leaflet-popup-tip': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#272727' : '#FFFFFF'
+    },
+    '& .leaflet-control-zoom': {
+      borderRadius: 24
+    },
+    '& .leaflet-control-zoom-in': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#272727 !important' : '#FFFFFF !important',
+      color: theme.palette.mode === 'dark' ? '#FFFFFF !important' : '#272727 !important',
+      borderBottom: 0,
+      borderRadius: '24px !important'
+    },
+    '& .leaflet-control-zoom-out': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#272727 !important' : '#FFFFFF !important',
+      color: theme.palette.mode === 'dark' ? '#FFFFFF !important' : '#272727 !important',
+      borderRadius: '24px !important',
+      marginTop: 5
+    }
   }
 }))
 
@@ -48,27 +74,6 @@ const Map = () => {
       scrollWheelZoom={true}
       tap={false}
     >
-      <style>
-        {theme.palette.mode === 'dark'
-          ? `.leaflet-control-zoom { border: 24px !important; }
-          .leaflet-control-zoom-in { background-color: #272727 !important; color: white !important;
-        border-bottom-color: #424242 !important; border-radius: 24px !important; }
-        .leaflet-control-zoom-out {
-            background-color: #272727 !important; 
-            color: white !important; 
-            border-radius: 24px !important; 
-            margin-top: 5px;
-        }
-        .leaflet-popup-content-wrapper { 
-            border-radius: 24px !important; 
-            background-color: #272727 !important; 
-            color: white !important; 
-        }
-        .leaflet-popup-tip { background-color: #272727 !important; }`
-          : `.leaflet-control-zoom { border: 24px !important; }
-        .leaflet-control-zoom-in { border-radius: 24px !important; }
-        .leaflet-control-zoom-out { border-radius: 24px !important; margin-top: 5px; }`}
-      </style>
       <TileLayer
         attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
         url={
