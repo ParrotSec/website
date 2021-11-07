@@ -108,16 +108,17 @@ security_team:
     name: Abdel Rhman Anter
     role: Security Team Leader
     email: anubi5 at parrotsec dot org
+
+  - nickname: ByteHackr  
+    name: Sandipan Roy(nemo)
+    role: Security Engineer   
+    email: sandipan at parrotsec dot org
   
   - nickname: XC0D3
     name: Raul Alderete
-    role: 
+    role: Security Engineer
     email: 
 
-  - nickname: Spade
-    name: 
-    role: 
-    email: 
 
 # Design Team
 design_team: 
@@ -189,7 +190,7 @@ past_contributors:
 
   - nickname: ByteHackr  
     name: Sandipan Roy(nemo)
-    role: Security Engineer, Indian Community Leader, Forum Moderator   
+    role: Indian Community Leader, Forum Moderator   
     email: sandipan at parrotsec dot org
 
   - nickname: 
@@ -224,7 +225,7 @@ past_contributors:
     
   - nickname: qr0f1l3r   
     name: Andre Patock
-    role: 
+    role: German Community Leader, Forum Moderator
     email: andrepatock at parrotsec dot org
 
   - nickname: mibofra   
@@ -236,3 +237,8 @@ past_contributors:
     name: Vangelis Mouhtsis
     role: Debian/MATE dev
     email: gnugr at parrotsec dot org
+
+  - nickname: Spade
+    name: 
+    role: Security Engineer
+    email: 
