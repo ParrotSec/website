@@ -94,8 +94,13 @@ community_team:
 
   - nickname: KileXt
     name: 
-    role: Forum Moderator, Tutorial writer
+    role: Forum Moderator, Documentation contributor
     email: 
+  
+  - nickname: Smux On/Off
+    name:
+    role: Telegram French Group admin, Documentation contributor
+    email:
 
 # Security Team
 security_team: 
