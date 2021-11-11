@@ -19,13 +19,13 @@ core_team:
 
   - nickname: marafed
     name: Federica Marasà 
-    role: Project Manager, Web Dev, Social Media Manager, Graphic Designer
+    role: Project Manager, Web Dev, Graphic Designer
     email: marafed at parrotsec dot org
     profile_pic: ../images/parrot_logo-circle.png
 
   - nickname: Tissy 
     name:  Irene Pirrotta
-    role: Project Manager, ARM Dev, Community Manager
+    role: Project Manager, ARM Dev, Community Manager, Social Media Manager
     email: tissy at parrotsec dot org
     profile_pic: ../images/parrot_logo-circle.png
 
@@ -87,11 +87,6 @@ community_team:
     role:  Telegram Admin, Forum Moderator
     email: ptd at parrotsec dot org
 
-  - nickname: mastrobirraio 
-    name: Pino Matranga
-    role: Web Team Leader, Italian Community Leader, Forum Moderator
-    email:
-
   - nickname: LulzRose
     name: Kurt Bruggeman 
     role: 
@@ -138,7 +133,7 @@ design_team:
     email: 
 
 # Special Thanks
-special_thanks: Nanni Bassetti (Caine), Albano Battistella (Zorin OS), Darix Deros (KNXSecurity), Giancarlo Niccolai, Nathaniel Jones, John Draper (cap'n crunch)
+special_thanks: Nanni Bassetti (Caine), Albano Battistella (Zorin OS), Darix Deros (KNXSecurity), Nathaniel Jones, John Draper (cap'n crunch)
 
 # Past Contributors
 past_contributors: 
