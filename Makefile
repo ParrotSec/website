@@ -1,8 +1,15 @@
 image:
 	podman build -t website .
 
-build: image
+prepare: image
 	podman run --rm -ti -v $(shell pwd):/website website yarn install
 
-test: build
+test: prepare
 	podman run --rm -ti --network host -v $(shell pwd):/website website yarn dev
+
+build: prepare
+	podman run --rm -ti --network host -v $(shell pwd):/website website yarn next build
+	podman run --rm -ti --network host -v $(shell pwd):/website website yarn next export -o _build
+
+publish:
+    rclone sync --progress --delete-after _build/ linode-frankfurt:parrot-website/
