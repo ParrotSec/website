@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(2),
     fontSize: 18,
     [theme.breakpoints.down('md')]: {
-      fontSize: 15.3
+      fontSize: 16
     },
     marginBottom: theme.spacing(6.5)
   },
@@ -31,7 +31,7 @@ const Partners: NextPage = () => {
   const classes = useStyles()
 
   return (
-    <Grid container item xs={12} className={classes.root} justifyContent="center">
+    <Grid container className={classes.root} justifyContent="center">
       <Grid
         container
         direction="column"

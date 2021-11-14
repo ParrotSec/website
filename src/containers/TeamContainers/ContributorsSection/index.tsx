@@ -96,7 +96,6 @@ const ContributorsSection = ({
       <Grid
         className={classes.contribSection}
         item
-        container
         xs={12}
         md={9}
         justifyContent="center"
@@ -106,7 +105,7 @@ const ContributorsSection = ({
           <Grid container justifyContent="center" spacing={3}>
             {Children.toArray(children).slice(0, 6)}
           </Grid>
-          <Grid container item xs={12} justifyContent="center">
+          <Grid container justifyContent="center">
             <PButton className={classes.wideButton} variant="outlined" onClick={handleClickOpen}>
               View All Contributors
             </PButton>

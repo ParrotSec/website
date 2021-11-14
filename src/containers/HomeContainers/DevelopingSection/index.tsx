@@ -4,12 +4,12 @@ import cls from 'classnames'
 
 import PIconLink from 'components/PIconLink'
 import Slider from 'components/Slider'
-import Burp from 'containers/HomeContainers/ToolsSection/assets/tool-logo-burp 1.svg'
-import John from 'containers/HomeContainers/ToolsSection/assets/tool-logo-john 1.svg'
-import Maltego from 'containers/HomeContainers/ToolsSection/assets/tool-logo-maltego 1.svg'
-import Metasploit from 'containers/HomeContainers/ToolsSection/assets/tool-logo-metasploit 1.svg'
-import Nmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-nmap 1.svg'
-import Sqlmap from 'containers/HomeContainers/ToolsSection/assets/tool-logo-sqlmap 1.svg'
+import Docker from 'containers/HomeContainers/ToolsSection/assets/docker-logo.svg'
+import Golang from 'containers/HomeContainers/ToolsSection/assets/golang-logo.svg'
+import Java from 'containers/HomeContainers/ToolsSection/assets/java-logo.svg'
+import Nodejs from 'containers/HomeContainers/ToolsSection/assets/nodejs-logo.svg'
+import Python from 'containers/HomeContainers/ToolsSection/assets/python-logo.svg'
+import Rust from 'containers/HomeContainers/ToolsSection/assets/rust-logo.svg'
 
 const useStyles = makeStyles(theme => ({
   developerBlock: {
@@ -63,54 +63,73 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const items = [
-  <PIconLink
-    key="develop-burp"
-    href="https://nest.parrotsec.org/packages/tools/burpsuite"
-    Icon={Burp}
-  >
+  <PIconLink key="golang" href="https://golang.org" Icon={Golang}>
     <>
       <b>Golang</b>
       <br />
-      golang description
+      The Go programming language is an open source project to make programmers more productive. Go
+      is expressive, concise, clean, and efficient. Its concurrency mechanisms make it easy to write
+      programs that get the most out of multicore and networked machines, while its novel type
+      system enables flexible and modular program construction. Go compiles quickly to machine code
+      yet has the convenience of garbage collection and the power of run-time reflection. It&apos;s
+      a fast, statically typed, compiled language that feels like a dynamically typed, interpreted
+      language.
     </>
   </PIconLink>,
-  <PIconLink key="develop-john" href="https://nest.parrotsec.org/packages/tools/john" Icon={John}>
+  <PIconLink key="java" href="https://www.oracle.com/java/" Icon={Java}>
     <>
       <b>Java</b>
       <br />
-      java description
+      Java is the #1 programming language and development platform. It reduces costs, shortens
+      development timeframes, drives innovation, and improves application services. With millions of
+      developers running more than 51 billion Java Virtual Machines worldwide, Java continues to be
+      the development platform of choice for enterprises and developers.
     </>
   </PIconLink>,
-  <PIconLink key="develop-maltego" href="https://www.maltego.com/product-features/" Icon={Maltego}>
+  <PIconLink key="python" href="https://www.python.org" Icon={Python}>
     <>
       <b>Python</b>
       <br />
-      Python description
+      Python is an easy to learn, powerful programming language. It has efficient high-level data
+      structures and a simple but effective approach to object-oriented programming. Python’s
+      elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal
+      language for scripting and rapid application development in many areas on most platforms.
     </>
   </PIconLink>,
-  <PIconLink key="develop-nmap" href="https://nest.parrotsec.org/packages/tools/nmap" Icon={Nmap}>
+  <PIconLink key="docker" href="https://www.docker.com" Icon={Docker}>
     <>
       <b>Docker</b>
       <br />
-      Docker description
+      Docker is an open platform for developing, shipping, and running applications. Docker enables
+      you to separate your applications from your infrastructure so you can deliver software
+      quickly. With Docker, you can manage your infrastructure in the same ways you manage your
+      applications. By taking advantage of Docker’s methodologies for shipping, testing, and
+      deploying code quickly, you can significantly reduce the delay between writing code and
+      running it in production.
     </>
   </PIconLink>,
-  <PIconLink
-    key="metasploit"
-    href="https://nest.parrotsec.org/packages/tools/metasploit-framework"
-    Icon={Metasploit}
-  >
+  <PIconLink key="nodejs" href="https://nodejs.org/en/" Icon={Nodejs}>
     <>
       <b>Nodejs</b>
       <br />
-      Nodejs description
+      Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular
+      tool for almost any kind of project! Node.js runs the V8 JavaScript engine, the core of Google
+      Chrome, outside of the browser. This allows Node.js to be very performant. A Node.js app runs
+      in a single process, without creating a new thread for every request. Node.js provides a set
+      of asynchronous I/O primitives in its standard library that prevent JavaScript code from
+      blocking and generally, libraries in Node.js are written using non-blocking paradigms, making
+      blocking behavior the exception rather than the norm.
     </>
   </PIconLink>,
-  <PIconLink key="sqlmap" href="https://nest.parrotsec.org/packages/tools/sqlmap" Icon={Sqlmap}>
+  <PIconLink key="rust" href="https://www.rust-lang.org" Icon={Rust}>
     <>
       <b>Rust</b>
       <br />
-      Rust description
+      The Rust programming language helps you write faster, more reliable software. High-level
+      ergonomics and low-level control are often at odds in programming language design; Rust
+      challenges that conflict. Through balancing powerful technical capacity and a great developer
+      experience, Rust gives you the option to control low-level details (such as memory usage)
+      without all the hassle traditionally associated with such control.
     </>
   </PIconLink>
 ]
@@ -135,12 +154,12 @@ const DevelopingSection = () => {
           <Paper className={classes.devPaper} elevation={0}>
             <div className={classes.devToolsBlock}>
               <Typography variant="h5" paragraph>
-                Compilers & Interpreters
+                Programming languages & Frameworks
               </Typography>
               <Typography variant="body1Semi" paragraph>
-                Parrot integrates popular compilers, interpreters, libraries and development
-                frameworks either pre-installed or one command away through our software repository,
-                for faster and easier software development.
+                Parrot integrates popular programming languages, compilers, interpreters, libraries
+                and development frameworks either pre-installed or one command away through our
+                software repository, for faster and easier software development.
                 <br />
                 You can also use Parrot in your CI/CD pipelines to add security tests to your
                 release workflow.

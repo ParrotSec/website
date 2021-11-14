@@ -25,7 +25,7 @@ const MirrorsSection = () => {
   const classes = useStyles()
 
   /* Prevent SSR to avoid ReferenceError */
-  const MapMirrors = dynamic(() => import('containers/PartnersContainers/MapSection'), {
+  const MapMirrors = dynamic(() => import('../../../components/Map'), {
     ssr: false
   })
 

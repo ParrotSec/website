@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: 27,
     fontSize: 18,
     [theme.breakpoints.down('md')]: {
-      fontSize: 15.3
+      fontSize: 16
     },
     marginBottom: theme.spacing(6.5)
   },
@@ -51,13 +51,14 @@ const Team: NextPage = () => {
   const classes = useStyles()
 
   return (
-    <Grid container item xs={12} className={classes.root} justifyContent="center">
+    <Grid container className={classes.root} justifyContent="center">
       <Grid
         container
-        direction="column"
-        className={classes.title}
         item
         xs={12}
+        md={9}
+        direction="column"
+        className={classes.title}
         justifyContent="center"
       >
         <Typography variant="h1" align="center" paragraph>

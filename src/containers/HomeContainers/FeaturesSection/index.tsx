@@ -1,12 +1,14 @@
 import { Grid, GridProps, Hidden } from '@mui/material'
-import PFeatureBlock from 'components/PFeatureBlock'
-import Safety from './assets/Security.svg'
+
 import Build from './assets/Build.svg'
-import Vector from './assets/Vector.svg'
-import Unlock from './assets/Unlock.svg'
 import Layout from './assets/Layout.svg'
+import Safety from './assets/Security.svg'
+import Unlock from './assets/Unlock.svg'
+import Vector from './assets/Vector.svg'
 import WeChat from './assets/Wechat.svg'
+
 import Carousel from 'components/Carousel'
+import PFeatureBlock from 'components/PFeatureBlock'
 
 const FeaturesSection = (props: GridProps) => {
   const blocks = [
@@ -51,10 +53,11 @@ const FeaturesSection = (props: GridProps) => {
       buttonLink="/docs"
       key="feature-4"
     >
-      Don't leave your sensitive customer data floating around unprotected. The installer supports
-      full disk encryption, and the system lets you handle data in the most secure and reliable way.
-      Parrot OS is free from trackers and telemetry "features", and it provides many privacy tools
-      like AnonSurf, Tor Browser, a custom Firefox profile, easy cryptographic tools and much more.
+      Don&apos;t leave your sensitive customer data floating around unprotected. The installer
+      supports full disk encryption, and the system lets you handle data in the most secure and
+      reliable way. Parrot OS is free from trackers and telemetry "features", and it provides many
+      privacy tools like AnonSurf, Tor Browser, a custom Firefox profile, easy cryptographic tools
+      and much more.
     </PFeatureBlock>,
     <PFeatureBlock
       title="Customizability"
