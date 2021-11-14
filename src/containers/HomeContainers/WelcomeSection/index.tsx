@@ -154,8 +154,7 @@ const WelcomeSection = () => {
         to="/blog/parrot-5.0-released"
         startIcon={<SvgIcon className={classes.bulb} component={Bulb} />}
       >
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        What's new in Parrot OS 5.0
+        What&apos;s new in Parrot OS 5.0
       </PButton>
     </Grid>
   )

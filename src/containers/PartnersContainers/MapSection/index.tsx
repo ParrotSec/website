@@ -1,4 +1,4 @@
-import { Paper, Link } from '@mui/material'
+import { Paper, Link, useTheme } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import L, { LatLngExpression } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -23,11 +23,25 @@ L.Icon.Default.mergeOptions({
 
 const useStyles = makeStyles(theme => ({
   map: {
-    height: '50vh',
     width: '100%',
-    borderRadius: 24,
-    margin: theme.spacing(3),
-    zIndex: 0
+    borderRadius: theme.spacing(3),
+    zIndex: 0,
+    ...(theme.palette.mode === 'dark'
+      ? {
+          background: '#262626'
+        }
+      : {}),
+    '& .leaflet-control-zoom': {
+      border: theme.spacing(3)
+    },
+    '& .leaflet-control-zoom-in': {
+      borderTopLeftRadius: `${theme.spacing(3)} !important`,
+      borderTopRightRadius: `${theme.spacing(3)} !important`
+    },
+    '& .leaflet-control-zoom-out': {
+      borderBottomLeftRadius: `${theme.spacing(3)} !important`,
+      borderBottomRightRadius: `${theme.spacing(3)} !important`
+    }
   },
   zoomControl: {
     borderRadius: 24
@@ -36,6 +50,7 @@ const useStyles = makeStyles(theme => ({
 
 const MapSection = () => {
   const classes = useStyles()
+  const theme = useTheme()
   const position: LatLngExpression = [51.505, -0.09]
 
   return (
@@ -47,14 +62,17 @@ const MapSection = () => {
       scrollWheelZoom={true}
       tap={false}
     >
-      <style>
-        {`.leaflet-control-zoom { border: 24px !important }
-        .leaflet-control-zoom-in { border-radius: 24px !important; }
-        .leaflet-control-zoom-out { border-radius: 24px !important;`}
-      </style>
       <TileLayer
-        attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution={`&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>${
+          theme.palette.mode === 'dark'
+            ? '&copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+            : ''
+        }`}
+        url={
+          theme.palette.mode === 'light'
+            ? 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            : 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
+        }
       />
       {mirrors.map(data => (
         <Marker key={data.id} position={[data.lat, data.lon]}>
