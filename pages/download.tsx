@@ -26,6 +26,7 @@ const Download: NextPage = () => {
   const version =
     router.query.version === 'home' ||
     router.query.version === 'security' ||
+    router.query.version === 'architect' ||
     router.query.version === 'cloud'
       ? router.query.version
       : 'home'

@@ -1,12 +1,11 @@
-import { Box, Breadcrumbs, Button, Divider, Grid } from '@mui/material'
-import { makeStyles } from '@mui/styles'
-import cls from 'classnames'
+import { Breadcrumbs, Button, Grid, Tab, Tabs } from '@mui/material'
+import { makeStyles, styled } from '@mui/styles'
 import RouterLink from 'next/link'
-import { useEffect, useState } from 'react'
-import { useMeasure } from 'react-use'
+import { SyntheticEvent, useEffect, useState } from 'react'
 
 import Left from 'assets/Left.svg'
 import Carousel from 'components/Carousel'
+import OSArchitect from 'containers/DownloadContainers/OSArchitect'
 import OSCloud from 'containers/DownloadContainers/OSCloud'
 import OSHome from 'containers/DownloadContainers/OSHome'
 import OSSecurity from 'containers/DownloadContainers/OSSecurity'
@@ -49,56 +48,56 @@ const useStyles = makeStyles(theme => ({
   selected: {
     color: theme.palette.primary.main
   },
-  highlight: {
-    borderRadius: '3px',
-    top: '2px',
-    left: 'initial',
-    right: '0',
-    height: '3px',
-    backgroundColor: '#55ddff',
-    transitionProperty: 'right, width',
-    transitionDuration: '.3s',
-    transitionTimingFunction: 'ease-in-out'
-  },
-  gridHr: {
-    marginTop: theme.spacing(3)
+  divider: {
+    borderBottom: `1px solid ${theme.palette.divider}`
   }
 }))
 
 type OSSelectionProps = {
-  initialVersion?: 'home' | 'security' | 'cloud'
+  initialVersion?: 'home' | 'security' | 'cloud' | 'architect'
 }
+
+type EditionTabProps = {
+  label: string
+  value: string
+  onClick: any
+}
+
+const EditionTab = styled((props: EditionTabProps) => <Tab {...props} />)(() => ({
+  textTransform: 'none'
+}))
 
 const OSSelection = ({ initialVersion }: OSSelectionProps) => {
   const classes = useStyles()
-  const [os, setOS] = useState<'home' | 'security' | 'cloud'>(initialVersion ?? 'home')
-  const [homeButtonRef, { width: homeButtonWidth }] = useMeasure<HTMLButtonElement>()
-  const [securityButtonRef, { width: securityButtonWidth }] = useMeasure<HTMLButtonElement>()
-  const [cloudButtonRef, { width: cloudButtonWidth }] = useMeasure<HTMLButtonElement>()
+  const [os, setOS] = useState<'home' | 'security' | 'cloud' | 'architect'>(
+    initialVersion ?? 'home'
+  )
 
   useEffect(() => setOS(initialVersion ?? 'home'), [initialVersion])
-
-  const osButtonsWidth = {
-    home: homeButtonWidth,
-    security: securityButtonWidth,
-    cloud: cloudButtonWidth
-  }
-
-  const osButtonHighlightRight = {
-    home: cloudButtonWidth + securityButtonWidth + 80,
-    security: cloudButtonWidth + 40,
-    cloud: 0
-  }
 
   const osIndexes = {
     home: 0,
     security: 1,
-    cloud: 2
+    cloud: 2,
+    architect: 3
+  }
+
+  const [value, setValue] = useState('home')
+
+  const handleChange = (_event: SyntheticEvent, newValue: string) => {
+    setValue(newValue)
   }
 
   return (
     <>
-      <Grid container item xs={12} lg={10} justifyContent="space-between">
+      <Grid
+        className={classes.divider}
+        container
+        item
+        xs={12}
+        lg={10}
+        justifyContent="space-between"
+      >
         <Breadcrumbs separator="|" aria-label="breadrcumb">
           <RouterLink href="/">
             <Button
@@ -119,41 +118,26 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
           justifyContent="flex-end"
           wrap="nowrap"
         >
-          <Button
-            ref={homeButtonRef}
-            className={cls(classes.osSelect, { [classes.selected]: os === 'home' })}
-            onClick={() => setOS('home')}
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            variant="scrollable"
+            aria-label="Parrot Editions"
           >
-            Home Edition
-          </Button>
-          <Button
-            ref={securityButtonRef}
-            className={cls(classes.osSelect, { [classes.selected]: os === 'security' })}
-            onClick={() => setOS('security')}
-          >
-            Security Edition
-          </Button>
-          <Button
-            ref={cloudButtonRef}
-            className={cls(classes.osSelect, { [classes.selected]: os === 'cloud' })}
-            onClick={() => setOS('cloud')}
-          >
-            Cloud Edition
-          </Button>
+            <EditionTab value="home" label="Home Edition" onClick={() => setOS('home')} />
+            <EditionTab
+              value="security"
+              label="Security Edition"
+              onClick={() => setOS('security')}
+            />
+            <EditionTab value="cloud" label="Cloud Edition" onClick={() => setOS('cloud')} />
+            <EditionTab
+              value="architect"
+              label="Architect Edition"
+              onClick={() => setOS('architect')}
+            />
+          </Tabs>
         </Grid>
-      </Grid>
-      <Grid className={classes.gridHr} item xs={12} lg={10}>
-        <Box position="relative" height="3px">
-          <Divider
-            className={classes.highlight}
-            absolute
-            style={{
-              width: osButtonsWidth[os] + 16,
-              right: osButtonHighlightRight[os]
-            }}
-          />
-        </Box>
-        <Divider variant="fullWidth" />
       </Grid>
       <Carousel
         indicators={false}
@@ -166,6 +150,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
         <OSHome classesGeneral={classes} />
         <OSSecurity classesGeneral={classes} />
         <OSCloud classesGeneral={classes} />
+        <OSArchitect classesGeneral={classes} />
       </Carousel>
     </>
   )

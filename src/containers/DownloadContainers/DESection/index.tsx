@@ -64,8 +64,8 @@ type FixedLengthArray<T, L extends number, TObj = [T, ...Array<T>]> = Pick<
 }
 
 type DESectionProps = {
-  name: string
-  description: ReactNode
+  name?: string
+  description?: ReactNode
   version: string
   releaseDate: string
   architecture: string
