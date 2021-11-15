@@ -26,5 +26,12 @@ export default [
       'is an IT company dedicated to cyber security services, protecting companies from vulnerabilities and system penetration, providing security information training to their employees. Company employees can take advantage of the remote support we give anytime anyday to any platform. In addition to this, we analyze any file, as well as, network activity for malware or any other malicious and suspicious activity and help to recover and educate the users involved.',
     url: 'https://www.prodefence.org',
     image: 'assets/partners/collaborations/prodefence.png'
+  },
+  {
+    name: 'Linode',
+    description:
+      'Cloud Computing Developers Trust. Accelerate innovation with simple, affordable, and accessible Linux cloud solutions and services. See why developers around the world trust Linode. Try free today.',
+    url: 'https://www.linode.com',
+    image: 'assets/partners/collaborations/linode.png'
   }
 ]
