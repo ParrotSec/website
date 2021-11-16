@@ -41,7 +41,7 @@ const OSCloud = ({ classesGeneral }: OSCloudProps) => {
           </Box>
           <Typography variant="subtitle2Semi" align="center" mt="12px">
             IoT & Cloud Appliances are special editions of Parrot Security made for{' '}
-            <b>embedded devices</b>,<b>cloud environments</b>, <b>virtual machines</b> and other
+            <b>embedded devices</b>, <b>cloud environments</b>, <b>virtual machines</b> and other
             special deployments.
           </Typography>
         </Grid>

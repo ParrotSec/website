@@ -41,8 +41,8 @@ const OSSecurity = ({ classesGeneral }: OSSecurityProps) => {
           </Box>
           <Typography variant="subtitle2Semi" align="center" mt="12px">
             Security Edition is a special purpose operating system designed for{' '}
-            <b>Penetration Testing</b> and
-            <b>Red Team operations</b>. It contains a full arsenal of ready-to use pentesting tools.
+            <b>Penetration Testing</b> and <b>Red Team operations</b>. It contains a full arsenal of
+            ready-to use pentesting tools.
           </Typography>
         </Grid>
         <DESection

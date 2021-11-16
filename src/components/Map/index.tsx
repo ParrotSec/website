@@ -34,12 +34,41 @@ const useStyles = makeStyles(theme => ({
       border: theme.spacing(3)
     },
     '& .leaflet-control-zoom-in': {
-      borderTopLeftRadius: `${theme.spacing(3)} !important`,
-      borderTopRightRadius: `${theme.spacing(3)} !important`
+      borderRadius: `${theme.spacing(3)} !important`,
+      ...(theme.palette.mode === 'dark'
+        ? {
+            borderColor: '#262626',
+            background: '#262626',
+            color: '#FFFFFF',
+            '&:hover': {
+              background: '#474747',
+              borderColor: '#262626',
+              color: '#FFFFFF'
+            }
+          }
+        : {})
     },
     '& .leaflet-control-zoom-out': {
-      borderBottomLeftRadius: `${theme.spacing(3)} !important`,
-      borderBottomRightRadius: `${theme.spacing(3)} !important`
+      marginTop: theme.spacing(0.5),
+      borderRadius: `${theme.spacing(3)} !important`,
+      ...(theme.palette.mode === 'dark'
+        ? {
+            borderColor: '#262626',
+            background: '#262626',
+            color: '#FFFFFF',
+            '&:hover': {
+              background: '#474747',
+              borderColor: '#262626',
+              color: '#FFFFFF'
+            }
+          }
+        : {})
+    },
+    '& .leaflet-popup-tip': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#272727' : '#FFFFFF'
+    },
+    '& .leaflet-popup-content-wrapper': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#272727' : '#FFFFFF'
     }
   },
   zoomControl: {
