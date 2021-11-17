@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
             '&:hover': {
               background: '#474747',
               borderColor: '#262626',
-              color: '#FFFFFF'
+              color: '#FFFFFF !important'
             }
           }
         : {})
@@ -70,7 +70,7 @@ const useStyles = makeStyles(theme => ({
     '& .leaflet-popup-content-wrapper': {
       backgroundColor: theme.palette.mode === 'dark' ? '#272727' : '#FFFFFF'
     },
-    '& .leaflet-bar': {
+    '& .leaflet-touch .leaflet-bar, .leaflet-touch .leaflet-control-layers': {
       border: 0
     }
   },

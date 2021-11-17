@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const optimizedImages = require('next-optimized-images')
 const withPlugins = require('next-compose-plugins')
+const optimizedImages = require('next-optimized-images')
 
 module.exports = withPlugins([
   [
@@ -9,6 +9,9 @@ module.exports = withPlugins([
       handleImages: ['jpeg', 'png']
     }
   ],
+  {
+    trailingSlash: true
+  },
   {
     webpack: config => {
       config.module.rules = [
