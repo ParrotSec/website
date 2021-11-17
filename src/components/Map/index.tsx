@@ -69,6 +69,9 @@ const useStyles = makeStyles(theme => ({
     },
     '& .leaflet-popup-content-wrapper': {
       backgroundColor: theme.palette.mode === 'dark' ? '#272727' : '#FFFFFF'
+    },
+    '& .leaflet-bar': {
+      border: 0
     }
   },
   zoomControl: {
