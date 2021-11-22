@@ -47,7 +47,7 @@ export default [
   {
     name: 'Dario Camonita',
     nickname: 'danterolle',
-    role: 'Core Dev, Website and Documentation Mantainer',
+    role: 'Core Dev, Website and Documentation Maintainer',
     github: '',
     twitter: '',
     linkedIn: '',

@@ -72,6 +72,10 @@ const useStyles = makeStyles(theme => ({
     },
     '& .leaflet-touch .leaflet-bar, .leaflet-touch .leaflet-control-layers': {
       border: 0
+    },
+    '& .leaflet-bar a.leaflet-disabled': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#262626' : '#FFFFFF',
+      color: '#FFFFFF'
     }
   },
   zoomControl: {
