@@ -35,6 +35,7 @@ const useStyles = makeStyles(theme => ({
     },
     '& .leaflet-control-zoom-in': {
       borderRadius: `${theme.spacing(3)} !important`,
+      lineHeight: '26px !important',
       ...(theme.palette.mode === 'dark'
         ? {
             borderColor: '#262626',
@@ -51,6 +52,7 @@ const useStyles = makeStyles(theme => ({
     '& .leaflet-control-zoom-out': {
       marginTop: theme.spacing(0.5),
       borderRadius: `${theme.spacing(3)} !important`,
+      lineHeight: '26px !important',
       ...(theme.palette.mode === 'dark'
         ? {
             borderColor: '#262626',
@@ -70,8 +72,8 @@ const useStyles = makeStyles(theme => ({
     '& .leaflet-popup-content-wrapper': {
       backgroundColor: theme.palette.mode === 'dark' ? '#272727' : '#FFFFFF'
     },
-    '& .leaflet-touch .leaflet-bar, .leaflet-touch .leaflet-control-layers': {
-      border: 0
+    '& .leaflet-touch .leaflet-bar .leaflet-touch .leaflet-control-layers': {
+      border: 'none'
     },
     '& .leaflet-bar a.leaflet-disabled': {
       backgroundColor: theme.palette.mode === 'dark' ? '#262626' : '#FFFFFF',
@@ -86,7 +88,7 @@ const useStyles = makeStyles(theme => ({
 const MapSection = () => {
   const classes = useStyles()
   const theme = useTheme()
-  const position: LatLngExpression = [51.505, -0.09]
+  const position: LatLngExpression = [40, 0]
 
   return (
     <MapContainer
@@ -100,7 +102,7 @@ const MapSection = () => {
       <TileLayer
         attribution={`&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>${
           theme.palette.mode === 'dark'
-            ? '&copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+            ? '&copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
             : ''
         }`}
         url={
