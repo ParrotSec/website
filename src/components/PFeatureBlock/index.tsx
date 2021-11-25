@@ -2,7 +2,7 @@ import { Link, Paper, PaperProps, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import { ElementType, ReactNode } from 'react'
 
-import Arrow from './assets/arrow.svg'
+/* import Arrow from './assets/arrow.svg' */
 
 import NextLink from 'components/NextLink'
 
@@ -60,8 +60,8 @@ type PFeatureBlockProps =
         }
       | {
           CustomFooter?: never
-          buttonText: string
-          buttonLink: string
+          buttonText?: string
+          buttonLink?: string
         }
     ) &
       PaperProps
@@ -90,13 +90,13 @@ const PFeatureBlock = ({
         (outLink ? (
           <Link className={classes.button} href={buttonLink}>
             <div>
-              {buttonText} <Arrow className={classes.arrow} />
+              {buttonText} {/* <Arrow className={classes.arrow} /> */}
             </div>
           </Link>
         ) : (
           <NextLink className={classes.button} href={buttonLink ?? '/'}>
             <div>
-              {buttonText} <Arrow className={classes.arrow} />
+              {buttonText} {/* <Arrow className={classes.arrow} /> */}
             </div>
           </NextLink>
         ))}
