@@ -1,7 +1,10 @@
 import { Grid, GridProps, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
-import Oreo from './assets/oreo 1.svg'
+import EC_Council from './assets/ec-council.svg'
+import Linode from './assets/linode.svg'
+
+import HTB from '/Users/ParrotOS/website/src/containers/HomeContainers/HTBSection/assets/htbLogo.svg'
 
 const useStyles = makeStyles(theme => ({
   trustLogosBlock: {
@@ -30,7 +33,7 @@ const TrustSection = (props: GridProps) => {
     <Grid {...props} container justifyContent="center" alignItems="center" item xs={10}>
       <Grid item xs={10}>
         <Typography variant="body1" align="center" style={{ opacity: 1 }}>
-          Trusted by cybersecurity professionals around the world
+          In partnership with
         </Typography>
       </Grid>
       <Grid
@@ -43,22 +46,13 @@ const TrustSection = (props: GridProps) => {
         justifyContent="center"
       >
         <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
+          <Linode className={classes.img} />
         </Grid>
         <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
+          <HTB className={classes.img} />
         </Grid>
         <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
-        </Grid>
-        <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
-        </Grid>
-        <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
-        </Grid>
-        <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
+          <EC_Council className={classes.img} />
         </Grid>
       </Grid>
     </Grid>
