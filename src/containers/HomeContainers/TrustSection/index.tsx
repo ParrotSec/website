@@ -1,10 +1,10 @@
 import { Grid, GridProps, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
+import HTB from '../HTBSection/assets/htbLogo.svg'
+
 import EC_Council from './assets/ec-council.svg'
 import Linode from './assets/linode.svg'
-
-import HTB from '/Users/ParrotOS/website/src/containers/HomeContainers/HTBSection/assets/htbLogo.svg'
 
 const useStyles = makeStyles(theme => ({
   trustLogosBlock: {
