@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles'
 import EC_Council from './assets/ec-council.svg'
 import Linode from './assets/linode.svg'
 
-import HTB from '/Users/ParrotOS/website/src/containers/HomeContainers/HTBSection/assets/htbLogo.svg'
+// import HTB from '/Users/ParrotOS/website/src/containers/HomeContainers/HTBSection/assets/htbLogo.svg'
 
 const useStyles = makeStyles(theme => ({
   trustLogosBlock: {
@@ -49,7 +49,7 @@ const TrustSection = (props: GridProps) => {
           <Linode className={classes.img} />
         </Grid>
         <Grid item xs={6} md={4} lg={2}>
-          <HTB className={classes.img} />
+          {/*<HTB className={classes.img} />*/}
         </Grid>
         <Grid item xs={6} md={4} lg={2}>
           <EC_Council className={classes.img} />

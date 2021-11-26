@@ -11,7 +11,6 @@ import {
   Typography
 } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import cls from 'classnames'
 import { useSnackbar } from 'notistack'
 import { ReactNode, useState, Fragment } from 'react'
 import Lightbox from 'react-image-lightbox'
@@ -21,10 +20,6 @@ import PButton from 'components/PButton'
 import SelectButton, { SelectButtonItem } from 'components/SelectButton'
 
 const useStyles = makeStyles(theme => ({
-  grid: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
-  },
   root: {
     width: '100%',
     padding: theme.spacing(8),
@@ -107,7 +102,7 @@ const DESection = ({
   const { enqueueSnackbar } = useSnackbar()
 
   return (
-    <Grid className={cls(classes.grid, className)} container item xs={12} lg={8} {...rest}>
+    <Grid className={className} container item xs={12} {...rest}>
       <Paper className={classes.root} elevation={0}>
         <Typography variant="h5" paragraph>
           {name}
