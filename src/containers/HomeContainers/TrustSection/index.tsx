@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     maxHeight: 40,
     display: 'block',
     margin: 'auto',
-    fill: theme.palette.mode === 'light' ? 'white' : 'inherit',
+    fill: theme.palette.mode === 'dark' ? 'white' : 'inherit',
     '& #path1': {
       stroke: theme.palette.mode === 'light' ? '#03232E' : '#FFF'
     },

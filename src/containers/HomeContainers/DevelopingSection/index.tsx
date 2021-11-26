@@ -9,6 +9,7 @@ import Golang from 'containers/HomeContainers/ToolsSection/assets/golang-logo.sv
 import Java from 'containers/HomeContainers/ToolsSection/assets/java-logo.svg'
 import Nodejs from 'containers/HomeContainers/ToolsSection/assets/nodejs-logo.svg'
 import Python from 'containers/HomeContainers/ToolsSection/assets/python-logo.svg'
+import React from 'containers/HomeContainers/ToolsSection/assets/react-logo.svg'
 import Rust from 'containers/HomeContainers/ToolsSection/assets/rust-logo.svg'
 
 const useStyles = makeStyles(theme => ({
@@ -130,6 +131,15 @@ const items = [
       challenges that conflict. Through balancing powerful technical capacity and a great developer
       experience, Rust gives you the option to control low-level details (such as memory usage)
       without all the hassle traditionally associated with such control.
+    </>
+  </PIconLink>,
+  <PIconLink key="react" href="https://www.reactjs.org" Icon={React}>
+    <>
+      <b>React</b>
+      <br />
+      React is a declarative, efficient, and flexible JavaScript library for building user
+      interfaces. It lets you compose complex UIs from small and isolated pieces of code called
+      “components”.
     </>
   </PIconLink>
 ]
