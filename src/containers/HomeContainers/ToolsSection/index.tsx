@@ -2,7 +2,7 @@ import { Box, Grid, GridProps, Hidden, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import { useMeasure } from 'react-use'
 
-import screenshot from './assets/screenshot.webp'
+import screenshot from './assets/parrot-monitor.png'
 import parrotBg from './assets/shellBg.webp'
 import Burp from './assets/tool-logo-burp 1.svg'
 import John from './assets/tool-logo-john 1.svg'
@@ -286,50 +286,31 @@ const ToolsSection = (rest: GridProps) => {
         </Paper>
       </Grid>
       <Grid container spacing={4} item xs={12} md={9} style={{ marginTop: 32 }}>
-        <Grid container item xs={12} md={6}>
+        <Grid container item xs={12} md={12}>
           <Paper elevation={0}>
             <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
               <div className={classes.paperPadding}>
-                <Typography variant="h5" paragraph>
+                <Typography variant="h4" paragraph>
                   Hacking tools at your fingertips
                 </Typography>
                 <Typography variant="body1Semi">
                   You can install your favorite tools on top of any Linux system, but it is
-                  time-comsuming, prone to errors and hard to keep updated over time.
+                  time-comsuming, prone to errors and hard to keep updated over time. Parrot gives
+                  you the convenience of a familiar Debian environment with all the tools you will
+                  ever need. We regularly update, test and pack them for you.
                   <br />
-                  Parrot gives you the convenience of a familiar Debian environment with all the
-                  tools you will ever need. We regularly update, test and pack them for you.
-                  <br />
-                  Having a bunch of git clones thrown at your desktop is something of the past.
-                  <br />
-                  We do the hard work, not you.
+                  Having a bunch of git clones thrown at your desktop is something of the past. We
+                  do the hard work, <b>not you</b>.
                 </Typography>
               </div>
               <img
                 src={screenshot.src}
-                style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
-                alt="Parrot Tools"
-              />
-            </Box>
-          </Paper>
-        </Grid>
-        <Grid container item xs={12} md={6}>
-          <Paper elevation={0}>
-            <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
-              <div className={classes.paperPadding}>
-                <Typography variant="h5" paragraph>
-                  This block should be replaced
-                </Typography>
-                <Typography variant="body1Semi">
-                  When it comes to general tools and functional features, Parrot OS wins over Kali
-                  Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
-                  its own tools. There are several tools you will find on ParrotOS that is not found
-                  on Kali Linux.
-                </Typography>
-              </div>
-              <img
-                src={screenshot.src}
-                style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
+                style={{
+                  display: 'block',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                  maxWidth: '90%'
+                }}
                 alt="Parrot Tools"
               />
             </Box>
