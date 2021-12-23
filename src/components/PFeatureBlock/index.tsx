@@ -35,8 +35,7 @@ const useStyles = makeStyles(theme => ({
   },
   body: {
     display: 'block',
-    marginTop: 20,
-    marginBottom: 25
+    marginTop: 20
   },
   arrow: {
     fill: theme.palette.mode === 'light' ? '#03232E' : '#05EEFF',
