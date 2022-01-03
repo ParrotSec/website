@@ -121,6 +121,9 @@ const Header = () => {
                 <Link className={classes.link} href="/swag">
                   Swag
                 </Link>
+                <Link className={classes.link} href="/contribute">
+                  Contribute
+                </Link>
                 <Link className={classes.link} href="/team">
                   Team
                 </Link>
