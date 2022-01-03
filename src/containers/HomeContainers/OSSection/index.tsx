@@ -1,13 +1,15 @@
-import { Grid, Typography } from '@mui/material'
+import { CardActionArea, Grid, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
+import Architect from './assets/Architect.svg'
 import Cloud from './assets/Cloud.svg'
 import Home from './assets/Home.svg'
+import Linode from './assets/linode-block.png'
 import Security from './assets/Security.svg'
 
 import OSCard from 'components/OSCard'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   versionsBlock: {
     marginTop: 173
   },
@@ -15,15 +17,60 @@ const useStyles = makeStyles({
     marginTop: 67
   },
   homeIcon: {
-    background: 'linear-gradient(153.43deg, #03F0FF 16.67%, #03FF77 100%)'
+    background: 'linear-gradient(153.43deg, #00B2FF 16.67%, #0028FF 100%)'
   },
   securityIcon: {
-    background: 'linear-gradient(145.47deg, #FAFD50 21.97%, #FD50D7 96.3%)'
+    background: 'linear-gradient(153.43deg, #FF9800 16.67%, #EC4F00 100%)'
   },
   cloudIcon: {
-    background: 'linear-gradient(146.41deg, #00D1FF 8.11%, #020DFF 94.7%)'
+    background: 'linear-gradient(180deg, #E806FF 10%, #B505CC 90%)'
+  },
+  architectIcon: {
+    background: 'linear-gradient(180deg, #B0B0B0 18%, #999999 91%)'
+  },
+  architectCard: {
+    maxWidth: '100%'
+  },
+  architectBlock: {
+    padding: 8,
+    width: '100%',
+    display: 'flex',
+    flexFlow: 'column'
+  },
+  versionsPaper: {
+    marginTop: 24,
+    padding: 32,
+    width: '100%',
+    display: 'flex',
+    flexFlow: 'column'
+  },
+  linode: {
+    borderRadius: 24,
+    padding: 8,
+    height: '100%',
+    display: 'flex',
+    flexFlow: 'column',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundImage: `url('${Linode.src}')`,
+    [theme.breakpoints.down('md')]: {
+      marginBottom: theme.spacing(25)
+    }
+  },
+  iconHolder: {
+    width: 64,
+    height: 64,
+    borderRadius: 6,
+    display: 'flex',
+    justifyContent: 'center',
+    marginBottom: 21
+  },
+  icon: {
+    width: 32,
+    height: 32,
+    margin: 'auto'
   }
-})
+}))
 
 const OSSection = () => {
   const classes = useStyles()
@@ -53,6 +100,23 @@ const OSSection = () => {
           <b>embedded devices</b>,<b>cloud environments</b>, <b>virtual machines</b> and other
           special deployments.
         </OSCard>
+      </Grid>
+      <Grid container item xs={12} md={9} direction="row" spacing={4} style={{ marginTop: 0 }}>
+        <Grid item xs={12} md={8}>
+          <Paper className={classes.architectBlock} elevation={0}>
+            <OSCard
+              Icon={Architect}
+              iconClassName={classes.architectIcon}
+              title="Architect Edition"
+              className={classes.architectCard}
+            >
+              ParrotOS with nothing pre-installed. Install any software and DE with this edition.
+            </OSCard>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <CardActionArea className={classes.linode} href="https://www.linode.com" />
+        </Grid>
       </Grid>
     </>
   )
