@@ -1,15 +1,19 @@
 import { Box, Grid, GridProps, Hidden, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
+import { useState } from 'react'
 import { useMeasure } from 'react-use'
 
+import burpsuiteScreenshot from './assets/burpsuite.png'
+import Ettercap from './assets/ettercap.svg'
+import ettercapScreenshot from './assets/ettercapScreenshot.png'
+import johnnyScreenshot from './assets/johnny.png'
+import nmapScreenshot from './assets/nmap.png'
 import screenshot from './assets/parrot-monitor.png'
 import parrotBg from './assets/shellBg.webp'
 import Burp from './assets/tool-logo-burp 1.svg'
 import John from './assets/tool-logo-john 1.svg'
-import Maltego from './assets/tool-logo-maltego 1.svg'
 import Metasploit from './assets/tool-logo-metasploit 1.svg'
 import Nmap from './assets/tool-logo-nmap 1.svg'
-import Sqlmap from './assets/tool-logo-sqlmap 1.svg'
 import Tools from './assets/tools.svg'
 
 import PButton from 'components/PButton'
@@ -72,9 +76,12 @@ const useStyles = makeStyles(theme => ({
 const ToolsSection = (rest: GridProps) => {
   const classes = useStyles()
   const [ref, { width, height }] = useMeasure<HTMLImageElement>()
+  const [currentSrc, setCurrentSrc] = useState(parrotBg)
 
   const icons = (absolute: boolean) => [
     <PIconLink
+      onMouseEnter={() => setCurrentSrc(burpsuiteScreenshot)}
+      onMouseLeave={() => setCurrentSrc(parrotBg)}
       key="burp"
       href="https://nest.parrotsec.org/packages/tools/burpsuite"
       Icon={Burp}
@@ -98,6 +105,8 @@ const ToolsSection = (rest: GridProps) => {
       </>
     </PIconLink>,
     <PIconLink
+      onMouseEnter={() => setCurrentSrc(johnnyScreenshot)}
+      onMouseLeave={() => setCurrentSrc(parrotBg)}
       key="john"
       href="https://nest.parrotsec.org/packages/tools/john"
       Icon={John}
@@ -121,30 +130,9 @@ const ToolsSection = (rest: GridProps) => {
       </>
     </PIconLink>,
     <PIconLink
-      key="maltego"
-      href="https://www.maltego.com/product-features/"
-      Icon={Maltego}
-      large
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              left: 0.958 * width,
-              top: 0.595 * height
-            }
-          : {}
-      }
-    >
-      <>
-        <b>Maltego</b>
-        <br />
-        Maltego is an open source intelligence and graphical link analysis tool for gathering and
-        connecting information for investigative tasks. Maltego is a Java application that runs on
-        Windows, Mac and Linux.
-      </>
-    </PIconLink>,
-    <PIconLink
       key="nmap"
+      onMouseEnter={() => setCurrentSrc(nmapScreenshot)}
+      onMouseLeave={() => setCurrentSrc(parrotBg)}
       href="https://nest.parrotsec.org/packages/tools/nmap"
       Icon={Nmap}
       style={
@@ -190,9 +178,11 @@ const ToolsSection = (rest: GridProps) => {
       </>
     </PIconLink>,
     <PIconLink
-      key="sqlmap"
-      href="https://nest.parrotsec.org/packages/tools/sqlmap"
-      Icon={Sqlmap}
+      key="ettercap"
+      href="https://nest.parrotsec.org/packages/tools/bettercap"
+      Icon={Ettercap}
+      onMouseEnter={() => setCurrentSrc(ettercapScreenshot)}
+      onMouseLeave={() => setCurrentSrc(parrotBg)}
       large
       style={
         absolute
@@ -205,14 +195,10 @@ const ToolsSection = (rest: GridProps) => {
       }
     >
       <>
-        <b>SQLMap</b>
+        <b>Ettercap</b>
         <br />
-        SQLmap is an open source penetration testing tool that automates the process of detecting
-        and exploiting SQL injection flaws and taking over of database servers. It comes with a
-        powerful detection engine, many niche features for the ultimate penetration tester, and a
-        broad range of switches including database fingerprinting, over data fetching from the
-        database, accessing the underlying file system, and executing commands on the operating
-        system via out-of-band connections.
+        Ettercap is a free and open source network security tool for man-in-the-middle attacks on
+        LAN. It can be used for computer network protocol analysis and security auditing.
       </>
     </PIconLink>
   ]
@@ -257,7 +243,7 @@ const ToolsSection = (rest: GridProps) => {
             </Hidden>
             <Hidden mdDown>
               <div className={classes.bgHolder}>
-                <img ref={ref} className={classes.bg} src={parrotBg.src} alt="Parrot BG" />
+                <img ref={ref} className={classes.bg} src={currentSrc.src} alt="Parrot BG" />
               </div>
             </Hidden>
             <Typography variant="h5" align="center">

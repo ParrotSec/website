@@ -9,7 +9,7 @@ type PIconLinkProps = {
   Icon: ElementType
   children: PTooltipProps['title']
   large?: boolean
-}
+} & Omit<PTooltipProps, 'title'>
 
 const useStyles = makeStyles(theme => ({
   iconHolder: {
@@ -38,10 +38,10 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const PIconLink = ({ style, href, Icon, children, large }: PIconLinkProps) => {
+const PIconLink = ({ style, href, Icon, children, large, ...rest }: PIconLinkProps) => {
   const classes = useStyles()
   return (
-    <PTooltip title={children}>
+    <PTooltip title={children} {...rest}>
       <a className={classes.iconHolder} href={href} style={style}>
         <Icon className={large ? classes.bigIcon : classes.icon} />
       </a>
