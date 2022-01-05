@@ -1,11 +1,15 @@
 import { Brightness3, BrightnessHigh } from '@mui/icons-material'
-import { Grid, Paper, Typography, useTheme } from '@mui/material'
+import { Box, Grid, Paper, Stack, Typography, useTheme } from '@mui/material'
 import { makeStyles } from '@mui/styles'
+import { styled } from '@mui/system'
+import cls from 'classnames'
 
+import CarbonIcon from './assets/carbon.svg'
 import Logo from './assets/logo.svg'
 
 import Link from 'components/NextLink'
 import PButton from 'components/PButton'
+import PTooltip from 'components/Tooltip'
 import { useThemeSwitch } from 'containers/ThemeProvider'
 
 const useStyles = makeStyles(theme => ({
@@ -89,7 +93,23 @@ const useStyles = makeStyles(theme => ({
     fontSize: 12,
     minWidth: 'auto',
     padding: '3px 10px'
+  },
+  carbonButton: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#32A34A !important',
+    color: '#fff !important',
+    borderRadius: 85,
+    fontWeight: 700
+  },
+  noMargin: {
+    marginTop: '0 !important'
   }
+}))
+
+const Carbon = styled(CarbonIcon)(({ theme }) => ({
+  marginRight: theme.spacing(1)
 }))
 
 const Footer = () => {
@@ -232,23 +252,40 @@ const Footer = () => {
               </Grid>
             </Grid>
             <Grid className={classes.copyrightSection} item xs={12}>
-              <PButton
-                className={classes.themeSwitcher}
-                variant="contained"
-                startIcon={
-                  theme.palette.mode === 'dark' ? (
-                    <Brightness3 fontSize="small" />
-                  ) : (
-                    <BrightnessHigh fontSize="small" />
-                  )
-                }
-                onClick={() => switchTheme()}
-                size="small"
-              >
-                {theme.palette.mode === 'dark' ? 'Dark' : 'Light'}
-              </PButton>
+              <Stack direction="row" spacing={1}>
+                <PTooltip
+                  placement="top"
+                  title={
+                    <Box width={230}>
+                      <b>We are carbon free!</b>
+                      <br />
+                      Our servers don't produce CO2 and environment friendly
+                    </Box>
+                  }
+                >
+                  <div className={cls(classes.themeSwitcher, classes.carbonButton)}>
+                    <Carbon width={21} height={21} />
+                    Carbon Free
+                  </div>
+                </PTooltip>
+                <PButton
+                  className={classes.themeSwitcher}
+                  variant="contained"
+                  startIcon={
+                    theme.palette.mode === 'dark' ? (
+                      <Brightness3 fontSize="small" />
+                    ) : (
+                      <BrightnessHigh fontSize="small" />
+                    )
+                  }
+                  onClick={() => switchTheme()}
+                  size="small"
+                >
+                  {theme.palette.mode === 'dark' ? 'Dark' : 'Light'}
+                </PButton>
+              </Stack>
             </Grid>
-            <Grid container item xs={12} spacing={4}>
+            <Grid className={classes.noMargin} container item xs={12} spacing={4}>
               <Grid item xs={12} lg={7}>
                 <Typography className={classes.footerText} color="textSecondary" variant="body2">
                   © 2021 Parrot Security. All rights reserved.
