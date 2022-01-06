@@ -21,9 +21,10 @@ const OSHome = () => {
           name="Home Edition"
           description={
             <>
-              MATE is a lightweight desktop environment with a classical GNU/Linux layout. It is the
-              default desktop environment of Parrot OS and represents the iconical look and feel of
-              the system.
+              Parrot Home Edition is a general purpose operating system with the typical Parrot look
+              and feel. This edition is designed for daily use, privacy and software development.
+              Parrot Tools can be manually installed to assemble a custom and lightweight pentesting
+              environment.
             </>
           }
           version="4.11.2"

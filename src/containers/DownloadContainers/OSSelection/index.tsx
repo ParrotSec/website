@@ -24,6 +24,7 @@ import OSArchitect from 'containers/DownloadContainers/OSArchitect'
 import OSCloud from 'containers/DownloadContainers/OSCloud'
 import OSHome from 'containers/DownloadContainers/OSHome'
 import OSSecurity from 'containers/DownloadContainers/OSSecurity'
+import Architect from 'containers/HomeContainers/OSSection/assets/Architect.svg'
 import Cloud from 'containers/HomeContainers/OSSection/assets/Cloud.svg'
 import Home from 'containers/HomeContainers/OSSection/assets/Home.svg'
 import Security from 'containers/HomeContainers/OSSection/assets/Security.svg'
@@ -209,7 +210,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                 >
                   <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
                     <Home className={classes.headerIcon} />
-                    <Typography variant="h6" align="center">
+                    <Typography variant="inherit" align="center">
                       Home Edition
                     </Typography>
                   </Box>
@@ -234,7 +235,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                 >
                   <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
                     <Security className={classes.headerIcon} />
-                    <Typography variant="h6">Security Edition</Typography>
+                    <Typography variant="inherit">Security Edition</Typography>
                   </Box>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -253,7 +254,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                 >
                   <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
                     <Cloud className={classes.headerIcon} />
-                    <Typography variant="h6">Cloud Edition</Typography>
+                    <Typography variant="inherit">Cloud Edition</Typography>
                   </Box>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -275,8 +276,8 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                   id="panel3a-header"
                 >
                   <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
-                    <Home className={classes.headerIcon} />
-                    <Typography variant="h6">Architect Edition</Typography>
+                    <Architect className={classes.headerIcon} />
+                    <Typography variant="inherit">Architect Edition</Typography>
                   </Box>
                 </AccordionSummary>
                 <AccordionDetails>

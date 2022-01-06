@@ -17,6 +17,9 @@ const OSArchitect = () => {
       <Grid container justifyContent="center">
         <DESection
           name="Parrot Architect"
+          description={
+            <>ParrotOS with nothing pre-installed. Install any software and DE with this edition.</>
+          }
           className={classes.desktopEnvironment}
           version="4.11.2"
           releaseDate="Jun 23, 2021"

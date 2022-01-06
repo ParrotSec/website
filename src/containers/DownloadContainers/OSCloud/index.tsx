@@ -22,7 +22,10 @@ const OSCloud = () => {
           className={classes.desktopEnvironment}
           name="Cloud Edition"
           description={
-            <>Parrot Home Edition packed in a handful OVA file for VirtualBox and VMWare</>
+            <>
+              Parrot Cloud is a special edition of Parrot Security made for embedded devices, cloud
+              environments, virtual machines and other special deployments.
+            </>
           }
           version="4.11.2"
           releaseDate="Jun 23, 2021"
