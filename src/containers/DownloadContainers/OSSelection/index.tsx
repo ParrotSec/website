@@ -70,16 +70,16 @@ const useStyles = makeStyles(theme => ({
     borderBottom: `1px solid ${theme.palette.divider}`
   },
   home: {
-    background: 'linear-gradient(153.43deg, #03F0FF 16.67%, #03FF77 100%)'
+    background: 'linear-gradient(153.43deg, #00B2FF 16.67%, #0028FF 100%)'
   },
   cloud: {
-    background: 'linear-gradient(146.41deg, #00D1FF 8.11%, #020DFF 94.7%)'
+    background: 'linear-gradient(180deg, #E806FF 10%, #B505CC 90%)'
   },
   security: {
-    background: 'linear-gradient(145.47deg, #FAFD50 21.97%, #FD50D7 96.3%)'
+    background: 'linear-gradient(153.43deg, #FF9800 16.67%, #EC4F00 100%)'
   },
   architect: {
-    background: 'linear-gradient(125.42deg, #5182FF 23.96%, rgba(237, 123, 255, 0.54) 100%)'
+    background: 'linear-gradient(180deg, #B0B0B0 18%, #999999 91%)'
   },
   rounded: {
     borderRadius: '24px !important'
