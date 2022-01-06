@@ -18,7 +18,7 @@ const OSHome = () => {
       <Grid container justifyContent="center">
         <DESection
           className={classes.desktopEnvironment}
-          name="MATE Desktop"
+          name="Home Edition"
           description={
             <>
               MATE is a lightweight desktop environment with a classical GNU/Linux layout. It is the

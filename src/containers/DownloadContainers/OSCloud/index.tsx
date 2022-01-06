@@ -6,7 +6,7 @@ import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.p
 
 const useStyles = makeStyles(theme => ({
   cloud: {
-    background: 'linear-gradient(146.41deg, #00D1FF 8.11%, #020DFF 94.7%)'
+    background: 'linear-gradient(180deg, #E806FF 10%, #B505CC 90%)'
   },
   desktopEnvironment: {
     marginTop: theme.spacing(8)
@@ -20,7 +20,7 @@ const OSCloud = () => {
       <Grid container justifyContent="center">
         <DESection
           className={classes.desktopEnvironment}
-          name="MATE OVA Home"
+          name="Cloud Edition"
           description={
             <>Parrot Home Edition packed in a handful OVA file for VirtualBox and VMWare</>
           }
