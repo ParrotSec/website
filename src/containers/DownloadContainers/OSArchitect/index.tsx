@@ -1,49 +1,22 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Grid } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import cls from 'classnames'
 
 import DESection from 'containers/DownloadContainers/DESection'
 import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
-import Cloud from 'containers/HomeContainers/OSSection/assets/Cloud.svg'
 
 const useStyles = makeStyles(theme => ({
-  cloud: {
-    background: 'linear-gradient(146.41deg, #00D1FF 8.11%, #020DFF 94.7%)'
-  },
   desktopEnvironment: {
     marginTop: theme.spacing(8)
   }
 }))
 
-type OSArchitectProps = {
-  classesGeneral: Record<'headerIcon' | 'iconHolder' | 'gridHeader', string>
-}
-
-const OSArchitect = ({ classesGeneral }: OSArchitectProps) => {
+const OSArchitect = () => {
   const classes = useStyles()
   return (
     <>
       <Grid container justifyContent="center">
-        <Grid
-          className={classesGeneral.gridHeader}
-          container
-          item
-          xs={10}
-          sm={8}
-          lg={6}
-          justifyContent="center"
-        >
-          <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
-            <div className={cls(classesGeneral.iconHolder, classes.cloud)}>
-              <Cloud className={classesGeneral.headerIcon} />
-            </div>
-            <Typography variant="h3">Architect Edition</Typography>
-          </Box>
-          <Typography variant="subtitle2Semi" align="center" mt="12px">
-            ParrotOS with nothing pre-installed. Install any software and DE with this edition.
-          </Typography>
-        </Grid>
         <DESection
+          name="Parrot Architect"
           className={classes.desktopEnvironment}
           version="4.11.2"
           releaseDate="Jun 23, 2021"

@@ -1,50 +1,20 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Grid } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import cls from 'classnames'
 
 import DESection from 'containers/DownloadContainers/DESection'
 import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
-import Security from 'containers/HomeContainers/OSSection/assets/Security.svg'
 
 const useStyles = makeStyles(theme => ({
-  security: {
-    background: 'linear-gradient(145.47deg, #FAFD50 21.97%, #FD50D7 96.3%)'
-  },
   desktopEnvironment: {
     marginTop: theme.spacing(8)
   }
 }))
 
-type OSSecurityProps = {
-  classesGeneral: Record<'headerIcon' | 'iconHolder' | 'gridHeader', string>
-}
-
-const OSSecurity = ({ classesGeneral }: OSSecurityProps) => {
+const OSSecurity = () => {
   const classes = useStyles()
   return (
     <>
       <Grid container justifyContent="center">
-        <Grid
-          className={classesGeneral.gridHeader}
-          container
-          item
-          xs={10}
-          sm={8}
-          lg={6}
-          justifyContent="center"
-        >
-          <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
-            <div className={cls(classesGeneral.iconHolder, classes.security)}>
-              <Security className={classesGeneral.headerIcon} />
-            </div>
-            <Typography variant="h3">Security Edition</Typography>
-          </Box>
-          <Typography variant="subtitle2Semi" align="center" mt="12px">
-            Security Edition is a special purpose operating system designed for{' '}
-            <b>Penetration Testing</b> and <b>Red Team operations</b>. It contains a full arsenal of
-            ready-to use pentesting tools.
-          </Typography>
-        </Grid>
         <DESection
           className={classes.desktopEnvironment}
           name="MATE Desktop"
@@ -123,32 +93,6 @@ const OSSecurity = ({ classesGeneral }: OSSecurityProps) => {
               'a36f996e76d362ca29f6600ef3ac4cc2326b92be718c7ba58e313de0528125b53d92441ab3237d976bb4d9e228c2b630',
             sha512:
               'dda3ea9f2a703c8d1307d8ba40f9e487a8bd4c0eea04d9cd06bc1acb9d2bd35e5889dfa429f27bf56cf5df89ad0dc328bafca305f40cea0db733f6f7bf404fde'
-          }}
-        />
-        <DESection
-          className={classes.desktopEnvironment}
-          name="KDE Desktop"
-          description={
-            <>
-              KDE Plasma is a modern desktop environment with advanced features and high
-              customizability. It uses more resources compared to MATE and gives its best on
-              powerful and modern hardware.
-            </>
-          }
-          version="4.11.2"
-          releaseDate="May 27, 2021"
-          architecture="AMD64"
-          size="4.5 GB"
-          screenshots={[homeMate1, homeMate1, homeMate1, homeMate1, homeMate1]}
-          hashes={{
-            md5: 'a0fc68757c285f456cacd67e317db2a0',
-            sha1: '9aa4b25c36fa2abaeafce8255e5a41a8f66f7b4f',
-            sha224: 'eefb72fbf0bab7dd9aefe08e9a442206398d1aa57af0634e97aa3c13',
-            sha256: '84af69858a2f26f25b39bbafec3ecf7776350ef2abf4fb0f8458cd5452d0f410',
-            sha384:
-              '6ca27ab5665ad081bc0ef6ad15f70731fe125fd272a23acd9be0e662963e340ada1adcf10426fd3254202c1e0eb0a865',
-            sha512:
-              'd1b0ddabab3348c990fa87545561552ddf750a4e3282c5ddb27fe2bfe2c2f40151910c2c6f32ecf670e84c315e7b7e5bf4b372b58ec5d85fadab3acd60a27126'
           }}
         />
       </Grid>

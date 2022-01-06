@@ -4,12 +4,12 @@ import cls from 'classnames'
 
 import PIconLink from 'components/PIconLink'
 import Slider from 'components/Slider'
+import React from 'containers/HomeContainers/ToolsSection/assets/docker-logo.svg'
 import Docker from 'containers/HomeContainers/ToolsSection/assets/docker-logo.svg'
 import Golang from 'containers/HomeContainers/ToolsSection/assets/golang-logo.svg'
 import Java from 'containers/HomeContainers/ToolsSection/assets/java-logo.svg'
 import Nodejs from 'containers/HomeContainers/ToolsSection/assets/nodejs-logo.svg'
 import Python from 'containers/HomeContainers/ToolsSection/assets/python-logo.svg'
-import React from 'containers/HomeContainers/ToolsSection/assets/react-logo.svg'
 import Rust from 'containers/HomeContainers/ToolsSection/assets/rust-logo.svg'
 
 const useStyles = makeStyles(theme => ({

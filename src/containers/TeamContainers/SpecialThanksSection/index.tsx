@@ -38,7 +38,11 @@ const SpecialThanks = (props: GridProps) => {
         <Typography variant="h1" className={classes.specialThanksTitle}>
           Special Thanks
         </Typography>
-        <Typography variant="subtitle2Semi" component="div" className={classes.specialThanksSubtitle}>
+        <Typography
+          variant="subtitle2Semi"
+          component="div"
+          className={classes.specialThanksSubtitle}
+        >
           Compilers, interpreters and intelligent editors. All you need to start programming comes
           out of the box, with the most secure Linux environment.
         </Typography>
