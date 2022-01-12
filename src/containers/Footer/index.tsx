@@ -168,6 +168,13 @@ const Footer = () => {
                 <Link className={classes.link} color="textSecondary" href="/download?version=cloud">
                   Cloud Edition
                 </Link>
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="/download?version=architect"
+                >
+                  Architect Edition
+                </Link>
               </Grid>
               <Grid
                 className={classes.linksHolder}
@@ -185,7 +192,7 @@ const Footer = () => {
                 <Link className={classes.link} color="textSecondary" href="/docs">
                   Documentation
                 </Link>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link className={classes.link} color="textSecondary" href="/contribute">
                   Get Involved
                 </Link>
                 <Link className={classes.link} color="textSecondary" href="/community">
@@ -231,23 +238,50 @@ const Footer = () => {
                 <Typography className={classes.title} variant="h6" paragraph>
                   Social
                 </Typography>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="https://www.facebook.com/ParrotSec/"
+                >
                   Facebook
                 </Link>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="https://twitter.com/parrotsec"
+                >
                   Twitter
                 </Link>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="https://www.instagram.com/parrotproject/"
+                >
                   Instagram
                 </Link>
+                {/*
                 <Link className={classes.link} color="textSecondary" href="/download/home">
                   Discord
                 </Link>
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                */}
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="https://t.me/parrotsecgroup"
+                >
                   Telegram
                 </Link>
+                {/*
                 <Link className={classes.link} color="textSecondary" href="/download/home">
                   Reddit
+                </Link>
+                */}
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="https://www.linkedin.com/company/parrotsec/about/"
+                >
+                  LinkedIn
                 </Link>
               </Grid>
             </Grid>
@@ -259,7 +293,7 @@ const Footer = () => {
                     <Box width={230}>
                       <b>We are carbon free!</b>
                       <br />
-                      Our servers don't produce CO2 and environment friendly
+                      Our servers don&apos;t produce CO2 and environment friendly
                     </Box>
                   }
                 >

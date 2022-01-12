@@ -7,9 +7,9 @@ import Forum from './assets/forum.svg'
 import HackTheBox from './assets/hackthebox.svg'
 import Instagram from './assets/instagram.svg'
 import LinkedIn from './assets/linkedin.svg'
-import Twitch from './assets/twitch.svg'
+/* import Twitch from './assets/twitch.svg' */
 import Twitter from './assets/twitter.svg'
-import YouTube from './assets/youtube.svg'
+/* import YouTube from './assets/youtube.svg' */
 
 import PFeatureBlock from 'components/PFeatureBlock'
 
@@ -101,12 +101,14 @@ const SocialsSection = (props: GridProps) => {
             <IconButton href="https://www.linkedin.com/company/parrotsec/about/">
               <LinkedIn className={classes.icon} />
             </IconButton>
+            {/*
             <IconButton>
               <YouTube className={classes.icon} />
             </IconButton>
             <IconButton>
               <Twitch className={classes.icon} />
             </IconButton>
+            */}
           </Box>
         </Paper>
       </Grid>
