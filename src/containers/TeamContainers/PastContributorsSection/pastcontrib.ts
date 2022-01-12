@@ -18,6 +18,12 @@ export default [
     email: 'nico at parrotsec dot org'
   },
   {
+    nickname: 'ByteHackr',
+    name: 'Sandipan Roy(NEMO)',
+    role: 'Security Engineer',
+    email: 'sandipan at parrotsec dot org'
+  },
+  {
     nickname: 'Mr-B Relax',
     name: 'Bimantara Sutato Putra',
     role: 'Indonesian Community Leader, Forum Moderator',
@@ -52,12 +58,6 @@ export default [
     name: '',
     role: 'Dev',
     email: 'nz at os dot vu'
-  },
-  {
-    nickname: 'ByteHackr',
-    name: 'Sandipan Roy(NEMO)',
-    role: 'Security Engineer',
-    email: 'sandipan at parrotsec dot org'
   },
   {
     nickname: '',
