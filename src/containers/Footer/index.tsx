@@ -336,11 +336,6 @@ const Footer = () => {
                 alignItems="center"
               >
                 <Grid item xs={12} lg>
-                  <Link className={classes.footerLink} color="textSecondary" href="/download/home">
-                    <div>Legal Notice</div>
-                  </Link>
-                </Grid>
-                <Grid item xs={12} lg>
                   <Link className={classes.footerLink} color="textSecondary" href="/warrant">
                     Warrant
                   </Link>
