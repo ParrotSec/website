@@ -55,8 +55,8 @@ export default [
   },
   {
     nickname: 'ByteHackr',
-    name: 'Sandipan Roy(nemo)',
-    role: 'Security Engineer, Indian Community Leader, Forum Moderator',
+    name: 'Sandipan Roy(NEMO)',
+    role: 'Security Engineer',
     email: 'sandipan at parrotsec dot org'
   },
   {
@@ -98,7 +98,7 @@ export default [
   {
     nickname: 'qr0f1l3r',
     name: 'Andre Patock',
-    role: '',
+    role: 'German Community Leader, Forum Moderator',
     email: 'andrepatock at parrotsec dot org'
   },
   {
