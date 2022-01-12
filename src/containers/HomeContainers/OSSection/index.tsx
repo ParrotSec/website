@@ -85,17 +85,32 @@ const OSSection = () => {
         </Typography>
       </Grid>
       <Grid className={classes.osBlocks} container item xs={12} md={9} spacing={4}>
-        <OSCard Icon={Home} iconClassName={classes.homeIcon} title="Home Edition">
+        <OSCard
+          Icon={Home}
+          iconClassName={classes.homeIcon}
+          title="Home Edition"
+          link="/download?version=home"
+        >
           Home edition is designed for <b>daily use</b>, <b>privacy</b> and{' '}
           <b>software development</b>. Parrot Tools can be manually installed to assemble a custom
           and lightweight pentesting environment.
         </OSCard>
-        <OSCard Icon={Security} iconClassName={classes.securityIcon} title="Security Edition">
+        <OSCard
+          Icon={Security}
+          iconClassName={classes.securityIcon}
+          title="Security Edition"
+          link="/download?version=security"
+        >
           Security Edition is a special purpose operating system designed for Penetration Testing
           and <b>Red Team</b> operations. It contains a full arsenal of ready-to use pentesting
           tools.
         </OSCard>
-        <OSCard Icon={Cloud} iconClassName={classes.cloudIcon} title="Cloud Edition">
+        <OSCard
+          Icon={Cloud}
+          iconClassName={classes.cloudIcon}
+          title="Cloud Edition"
+          link="/download?version=cloud"
+        >
           IoT & Cloud Appliances are special editions of Parrot Security made for{' '}
           <b>embedded devices</b>,<b>cloud environments</b>, <b>virtual machines</b> and other
           special deployments.
@@ -109,6 +124,7 @@ const OSSection = () => {
               iconClassName={classes.architectIcon}
               title="Architect Edition"
               className={classes.architectCard}
+              link="/download?version=architect"
             >
               ParrotOS with nothing pre-installed. Install any software and DE with this edition.
             </OSCard>

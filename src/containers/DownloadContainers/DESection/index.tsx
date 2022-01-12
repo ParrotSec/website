@@ -104,7 +104,7 @@ const DESection = ({
   return (
     <Grid className={className} container item xs={12} {...rest}>
       <Paper className={classes.root} elevation={0}>
-        <Typography variant="h5" paragraph>
+        <Typography variant="h4" paragraph>
           {name}
         </Typography>
         <Typography variant="subtitle2Semi" paragraph>
