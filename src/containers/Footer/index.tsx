@@ -6,6 +6,7 @@ import cls from 'classnames'
 
 import CarbonIcon from './assets/carbon.svg'
 import Logo from './assets/logo.svg'
+import WarrantCanary from './assets/warrant-canary.svg'
 
 import Link from 'components/NextLink'
 import PButton from 'components/PButton'
@@ -105,6 +106,9 @@ const useStyles = makeStyles(theme => ({
   },
   noMargin: {
     marginTop: '0 !important'
+  },
+  warrantIcon: {
+    marginRight: theme.spacing(1)
   }
 }))
 
@@ -335,14 +339,17 @@ const Footer = () => {
                 justifyContent="flex-end"
                 alignItems="center"
               >
-                <Grid item xs={12} lg>
+                <Grid item xs={12} lg={6}>
                   <Link className={classes.footerLink} color="textSecondary" href="/warrant">
-                    Warrant
+                    <Stack direction="row">
+                      <WarrantCanary className={classes.warrantIcon} width={21} height={21} />
+                      Warrant Canary
+                    </Stack>
                   </Link>
                 </Grid>
-                <Grid item xs={12} lg>
+                <Grid item xs={12} lg={6}>
                   <Link className={classes.footerLink} color="textSecondary" href="/privacy">
-                    Privacy
+                    Privacy Policy
                   </Link>
                 </Grid>
               </Grid>
