@@ -1,7 +1,5 @@
 import { Box, Grid, GridProps, Hidden, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import { useState } from 'react'
-import { useMeasure } from 'react-use'
 
 import burpsuiteScreenshot from './assets/burpsuite.png'
 import Ettercap from './assets/ettercap.svg'
@@ -9,13 +7,13 @@ import ettercapScreenshot from './assets/ettercapScreenshot.png'
 import johnnyScreenshot from './assets/johnny.png'
 import nmapScreenshot from './assets/nmap.png'
 import screenshot from './assets/parrot-monitor.png'
-import parrotBg from './assets/shellBg.webp'
 import Burp from './assets/tool-logo-burp 1.svg'
 import John from './assets/tool-logo-john 1.svg'
 import Metasploit from './assets/tool-logo-metasploit 1.svg'
 import Nmap from './assets/tool-logo-nmap 1.svg'
 import Tools from './assets/tools.svg'
 
+import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
 import PIconLink from 'components/PIconLink'
 import Slider from 'components/Slider'
@@ -27,6 +25,10 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: 16,
     paddingRight: 16,
     paddingBottom: 75
+  },
+  carouselImg: {
+    display: 'block',
+    margin: 'auto'
   },
   headerIcon: {
     fill: theme.palette.mode === 'light' ? '#FFFFFF' : '#06043E'
@@ -75,26 +77,14 @@ const useStyles = makeStyles(theme => ({
 
 const ToolsSection = (rest: GridProps) => {
   const classes = useStyles()
-  const [ref, { width, height }] = useMeasure<HTMLImageElement>()
-  const [currentSrc, setCurrentSrc] = useState(parrotBg)
+  const screenshots = [ettercapScreenshot, johnnyScreenshot, burpsuiteScreenshot, nmapScreenshot]
 
-  const icons = (absolute: boolean) => [
+  const icons = [
     <PIconLink
-      onMouseEnter={() => setCurrentSrc(burpsuiteScreenshot)}
-      onMouseLeave={() => setCurrentSrc(parrotBg)}
       key="burp"
       href="https://nest.parrotsec.org/packages/tools/burpsuite"
       Icon={Burp}
       large
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              top: -24,
-              left: 0.922 * width
-            }
-          : {}
-      }
     >
       <>
         <b>Burp Suite</b>
@@ -104,23 +94,7 @@ const ToolsSection = (rest: GridProps) => {
         Stuttard.
       </>
     </PIconLink>,
-    <PIconLink
-      onMouseEnter={() => setCurrentSrc(johnnyScreenshot)}
-      onMouseLeave={() => setCurrentSrc(parrotBg)}
-      key="john"
-      href="https://nest.parrotsec.org/packages/tools/john"
-      Icon={John}
-      large
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              top: 0.902 * height,
-              left: 0.045 * width
-            }
-          : {}
-      }
-    >
+    <PIconLink key="john" href="https://nest.parrotsec.org/packages/tools/john" Icon={John} large>
       <>
         <b>John the Ripper</b>
         <br />
@@ -129,22 +103,7 @@ const ToolsSection = (rest: GridProps) => {
         primary purpose is to detect weak Unix passwords.
       </>
     </PIconLink>,
-    <PIconLink
-      key="nmap"
-      onMouseEnter={() => setCurrentSrc(nmapScreenshot)}
-      onMouseLeave={() => setCurrentSrc(parrotBg)}
-      href="https://nest.parrotsec.org/packages/tools/nmap"
-      Icon={Nmap}
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              top: 0.518 * height,
-              left: -0.14 * width
-            }
-          : {}
-      }
-    >
+    <PIconLink key="nmap" href="https://nest.parrotsec.org/packages/tools/nmap" Icon={Nmap}>
       <>
         <b>Nmap</b>
         <br />
@@ -159,15 +118,6 @@ const ToolsSection = (rest: GridProps) => {
       key="metasploit"
       href="https://nest.parrotsec.org/packages/tools/metasploit-framework"
       Icon={Metasploit}
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              top: 0.23 * height,
-              left: 1.111 * width
-            }
-          : {}
-      }
     >
       <>
         <b>Metasploit</b>
@@ -181,18 +131,7 @@ const ToolsSection = (rest: GridProps) => {
       key="ettercap"
       href="https://nest.parrotsec.org/packages/tools/bettercap"
       Icon={Ettercap}
-      onMouseEnter={() => setCurrentSrc(ettercapScreenshot)}
-      onMouseLeave={() => setCurrentSrc(parrotBg)}
       large
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              top: 0.2 * height,
-              left: -42
-            }
-          : {}
-      }
     >
       <>
         <b>Ettercap</b>
@@ -231,22 +170,28 @@ const ToolsSection = (rest: GridProps) => {
               report. The Parrot system gets you covered with the most flexible environment.
             </Typography>
             {/*TODO: for futher animations need to apply box-shadow*/}
-            <Hidden mdDown>
-              <Box position="relative" width={width} marginTop="46px" zIndex={2}>
-                {icons(true)}
-              </Box>
-            </Hidden>
             <Hidden mdUp>
               <Slider className={classes.smMarquee} cloneFactor={2}>
-                {icons(false)}
+                {icons}
               </Slider>
             </Hidden>
             <Hidden mdDown>
-              <div className={classes.bgHolder}>
-                <img ref={ref} className={classes.bg} src={currentSrc.src} alt="Parrot BG" />
-              </div>
+              <Grid container justifyContent="center">
+                <Grid item xs={8}>
+                  <Carousel>
+                    {screenshots.map((image, i) => (
+                      <img
+                        className={classes.carouselImg}
+                        src={image.src}
+                        alt={`screenshot-${i}`}
+                        key={`screenshot-${i}`}
+                      />
+                    ))}
+                  </Carousel>
+                </Grid>
+              </Grid>
             </Hidden>
-            <Typography variant="h5" align="center">
+            <Typography mt={2} variant="h5" align="center">
               Explore over 600+ tools
             </Typography>
             <Grid className={classes.buttons} container item xs={12} spacing={4}>
