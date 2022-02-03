@@ -1,8 +1,9 @@
 import { Grid, GridProps, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
+import Shell from './assets/shell.svg'
+
 import PButton from 'components/PButton'
-import Shell from 'containers/HomeContainers/ContributeSection/assets/shell.svg'
 
 const useStyles = makeStyles(theme => ({
   icon: {

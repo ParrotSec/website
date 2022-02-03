@@ -2,6 +2,7 @@ import Telegram from '@mui/icons-material/Telegram'
 import { Box, Grid, GridProps, IconButton, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
+import Discord from './assets/discord.svg'
 import Facebook from './assets/facebook.svg'
 import Forum from './assets/forum.svg'
 import HackTheBox from './assets/hackthebox.svg'
@@ -97,6 +98,9 @@ const SocialsSection = (props: GridProps) => {
             </IconButton>
             <IconButton href="https://www.facebook.com/ParrotSec/">
               <Facebook className={classes.icon} />
+            </IconButton>
+            <IconButton href="#">
+              <Discord className={classes.icon} />
             </IconButton>
             <IconButton href="https://www.linkedin.com/company/parrotsec/about/">
               <LinkedIn className={classes.icon} />

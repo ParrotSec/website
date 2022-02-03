@@ -287,6 +287,9 @@ const Footer = () => {
                 >
                   LinkedIn
                 </Link>
+                <Link className={classes.link} color="textSecondary" href="#">
+                  Discord
+                </Link>
               </Grid>
             </Grid>
             <Grid className={classes.copyrightSection} item xs={12}>
@@ -326,7 +329,7 @@ const Footer = () => {
             <Grid className={classes.noMargin} container item xs={12} spacing={4}>
               <Grid item xs={12} lg={7}>
                 <Typography className={classes.footerText} color="textSecondary" variant="body2">
-                  © 2021 Parrot Security. All rights reserved.
+                  © 2022 Parrot Security. All rights reserved.
                 </Typography>
               </Grid>
               <Grid
