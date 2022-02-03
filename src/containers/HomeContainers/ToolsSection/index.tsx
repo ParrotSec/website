@@ -1,4 +1,4 @@
-import { Box, Grid, GridProps, Hidden, Paper, Typography } from '@mui/material'
+import { Grid, GridProps, Hidden, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import burpsuiteScreenshot from './assets/burpsuite.png'
@@ -6,7 +6,6 @@ import Ettercap from './assets/ettercap.svg'
 import ettercapScreenshot from './assets/ettercapScreenshot.png'
 import johnnyScreenshot from './assets/johnny.png'
 import nmapScreenshot from './assets/nmap.png'
-import screenshot from './assets/parrot-monitor.png'
 import Burp from './assets/tool-logo-burp 1.svg'
 import John from './assets/tool-logo-john 1.svg'
 import Metasploit from './assets/tool-logo-metasploit 1.svg'
@@ -60,18 +59,12 @@ const useStyles = makeStyles(theme => ({
     }
   },
   buttons: {
-    marginTop: theme.spacing(4)
+    marginTop: theme.spacing(1)
   },
   smMarquee: {
     minHeight: 93,
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4)
-  },
-  paperPadding: {
-    padding: theme.spacing(8),
-    [theme.breakpoints.down('md')]: {
-      padding: theme.spacing(4)
-    }
   }
 }))
 
@@ -163,7 +156,7 @@ const ToolsSection = (rest: GridProps) => {
             <Typography variant="subtitle2Semi" align="center" paragraph>
               Choose between 600+ tools for every kind of Red and Blue team operation.
             </Typography>
-            <Typography variant="subtitle2Semi" align="center" paragraph>
+            <Typography mb={4} variant="subtitle2Semi" align="center" paragraph>
               Parrot Security provides a huge arsenal of tools, utilities and libraries that IT and
               security professionals can use to test and assess the security of their assets in a
               reliable, compliant and reproducible way. From information gathering to the final
@@ -191,7 +184,7 @@ const ToolsSection = (rest: GridProps) => {
                 </Grid>
               </Grid>
             </Hidden>
-            <Typography mt={2} variant="h5" align="center">
+            <Typography mt={4} variant="h5" align="center">
               Explore over 600+ tools
             </Typography>
             <Grid className={classes.buttons} container item xs={12} spacing={4}>
@@ -215,38 +208,6 @@ const ToolsSection = (rest: GridProps) => {
             </Grid>
           </Grid>
         </Paper>
-      </Grid>
-      <Grid container spacing={4} item xs={12} md={9} style={{ marginTop: 32 }}>
-        <Grid container item xs={12} md={12}>
-          <Paper elevation={0}>
-            <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
-              <div className={classes.paperPadding}>
-                <Typography variant="h4" paragraph>
-                  Hacking tools at your fingertips
-                </Typography>
-                <Typography variant="body1Semi">
-                  You can install your favorite tools on top of any Linux system, but it is
-                  time-comsuming, prone to errors and hard to keep updated over time. Parrot gives
-                  you the convenience of a familiar Debian environment with all the tools you will
-                  ever need. We regularly update, test and pack them for you.
-                  <br />
-                  Having a bunch of git clones thrown at your desktop is something of the past. We
-                  do the hard work, <b>not you</b>.
-                </Typography>
-              </div>
-              <img
-                src={screenshot.src}
-                style={{
-                  display: 'block',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  maxWidth: '90%'
-                }}
-                alt="Parrot Tools"
-              />
-            </Box>
-          </Paper>
-        </Grid>
       </Grid>
     </>
   )

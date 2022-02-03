@@ -4,6 +4,7 @@ import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 
 import FeaturesSection from 'containers/HomeContainers/FeaturesSection'
+import HackToolsSection from 'containers/HomeContainers/HackToolsSection'
 import WelcomeSection from 'containers/HomeContainers/WelcomeSection'
 
 const DevelopingSection = dynamic(() => import('containers/HomeContainers/DevelopingSection'))
@@ -69,9 +70,10 @@ const Index: NextPage = () => {
   return (
     <Grid container className={classes.root} justifyContent="center">
       <WelcomeSection />
-      <FeaturesSection className={classes.features} />
-      <TrustSection className={classes.trustBlock} />
       <ToolsSection className={classes.toolsBlock} />
+      <TrustSection className={classes.trustBlock} />
+      <FeaturesSection className={classes.features} />
+      <HackToolsSection />
       <DevelopingSection />
       <StatsSection className={classes.statsBlock} />
       <OSSection />
