@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 const ContributeSection = (props: GridProps) => {
   const classes = useStyles()
   return (
-    <Grid container item xs={9} direction="column" alignItems="center" {...props}>
+    <Grid container item xs={10} md={8} direction="column" alignItems="center" {...props}>
       <div className={classes.iconWrapper}>
         <Shell className={classes.icon} />
       </div>
@@ -32,7 +32,9 @@ const ContributeSection = (props: GridProps) => {
         Develop for Parrot<span style={{ fontWeight: 300 }}>OS</span>
       </Typography>
       <Typography variant="subtitle2Semi" align="center">
-        Different versions for different players, role your need and play freely.
+        Join our development platform and contribute to the components we maintain, or contact the
+        upstream developers of the individual packages if they are not available on our platform.
+        Parrot Security is an open source project, and anyone can contribute improving it.
       </Typography>
       <PButton variant="contained" to="/contribute" style={{ width: 165, marginTop: 37 }}>
         Learn More

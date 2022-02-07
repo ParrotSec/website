@@ -136,7 +136,7 @@ const Footer = () => {
             >
               <Logo className={classes.logo} />
               <Typography className={classes.logoTitle} variant="h3" paragraph>
-                Parrot<span style={{ fontWeight: 300 }}>SEC</span>
+                Parrot<span style={{ fontWeight: 300 }}>Sec</span>
               </Typography>
               <Typography className={classes.logoSubTitle} variant="body1Semi" paragraph>
                 The ultimate framework for your Cyber Security operations
