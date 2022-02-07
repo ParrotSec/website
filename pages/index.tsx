@@ -14,7 +14,9 @@ const ContributeSection = dynamic(() => import('containers/HomeContainers/Contri
 const OSSection = dynamic(() => import('containers/HomeContainers/OSSection'))
 const TrustSection = dynamic(() => import('containers/HomeContainers/TrustSection'))
 const StatsSection = dynamic(() => import('containers/HomeContainers/StatsSection'))
+/*
 const NewsletterSection = dynamic(() => import('containers/HomeContainers/NewsletterSection'))
+*/
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -79,7 +81,7 @@ const Index: NextPage = () => {
       <OSSection />
       <HTBSection className={classes.htbBlock} />
       <ContributeSection className={classes.developBlock} />
-      <NewsletterSection className={classes.newsletterBlock} />
+      {/*<NewsletterSection className={classes.newsletterBlock} />*/}
     </Grid>
   )
 }

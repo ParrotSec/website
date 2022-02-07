@@ -10,7 +10,6 @@ import Burp from './assets/tool-logo-burp 1.svg'
 import John from './assets/tool-logo-john 1.svg'
 import Metasploit from './assets/tool-logo-metasploit 1.svg'
 import Nmap from './assets/tool-logo-nmap 1.svg'
-import Tools from './assets/tools.svg'
 
 import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
@@ -147,9 +146,6 @@ const ToolsSection = (rest: GridProps) => {
             alignItems="center"
             direction="column"
           >
-            <div className={classes.headerIconWrapper}>
-              <Tools className={classes.headerIcon} />
-            </div>
             <Typography variant="h3" align="center" paragraph>
               Tools for every operation
             </Typography>
@@ -170,7 +166,7 @@ const ToolsSection = (rest: GridProps) => {
             </Hidden>
             <Hidden mdDown>
               <Grid container justifyContent="center">
-                <Grid item xs={8}>
+                <Grid item xs={11}>
                   <Carousel>
                     {screenshots.map((image, i) => (
                       <img
