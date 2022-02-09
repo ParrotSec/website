@@ -1,15 +1,23 @@
 import { Grid, GridProps, Hidden, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
-import burpsuiteScreenshot from './assets/burpsuite.png'
-import Ettercap from './assets/ettercap.svg'
-import ettercapScreenshot from './assets/ettercapScreenshot.png'
+import aircrackIcon from './assets/aircrack-logo.svg'
+import aircrackScreenshot from './assets/aircrack-ng.png'
+import anonsurfIcon from './assets/anonsurf-logo.svg'
+import anonsurfScreenshot from './assets/anonsurf.png'
+import bettercapIcon from './assets/bettercap-logo.svg'
+import bettercapScreenshot from './assets/bettercap.png'
+import rizincutterIcon from './assets/cutter-logo.svg'
 import johnnyScreenshot from './assets/johnny.png'
-import nmapScreenshot from './assets/nmap.png'
-import Burp from './assets/tool-logo-burp 1.svg'
-import John from './assets/tool-logo-john 1.svg'
-import Metasploit from './assets/tool-logo-metasploit 1.svg'
-import Nmap from './assets/tool-logo-nmap 1.svg'
+import niktoIcon from './assets/nikto-logo.svg'
+import niktoScreenshot from './assets/nikto.png'
+import ophcrackScreenshot from './assets/ophcrack.png'
+import rizincutterScreenshot from './assets/rizin-cutter.png'
+import vscodiumScreenshot from './assets/vscodium.png'
+import wiresharkIcon from './assets/wireshark-logo.svg'
+import wiresharkScreenshot from './assets/wireshark.png'
+import zaproxyIcon from './assets/zaproxy-logo.svg'
+import zaproxyScreenshot from './assets/zaproxy.png'
 
 import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
@@ -69,67 +77,87 @@ const useStyles = makeStyles(theme => ({
 
 const ToolsSection = (rest: GridProps) => {
   const classes = useStyles()
-  const screenshots = [ettercapScreenshot, johnnyScreenshot, burpsuiteScreenshot, nmapScreenshot]
+  const screenshots = [
+    anonsurfScreenshot,
+    bettercapScreenshot,
+    aircrackScreenshot,
+    johnnyScreenshot,
+    niktoScreenshot,
+    ophcrackScreenshot,
+    rizincutterScreenshot,
+    vscodiumScreenshot,
+    wiresharkScreenshot,
+    zaproxyScreenshot
+  ]
 
   const icons = [
-    <PIconLink
-      key="burp"
-      href="https://nest.parrotsec.org/packages/tools/burpsuite"
-      Icon={Burp}
-      large
-    >
+    <PIconLink key="aircrack" Icon={aircrackIcon} large>
       <>
-        <b>Burp Suite</b>
+        <b>Aircrack</b>
         <br />
-        Burp Suite is a set of tools used for penetration testing of web applications. It is
-        developed by the company named Portswigger, which is also the alias of its founder Dafydd
-        Stuttard.
+        Aircrack-ng is a complete suite of tools to assess WiFi network security.
       </>
     </PIconLink>,
-    <PIconLink key="john" href="https://nest.parrotsec.org/packages/tools/john" Icon={John} large>
+    <PIconLink key="anonsurf" Icon={anonsurfIcon} large>
       <>
-        <b>John the Ripper</b>
+        <b>AnonSurf</b>
         <br />
-        John the Ripper is a fast password cracker, currently available for many flavors of Unix,
-        macOS, Windows, DOS, BeOS, and OpenVMS (the latter requires a contributed patch). Its
-        primary purpose is to detect weak Unix passwords.
+        AnonSurf is Parrot&apos;s anonymous mode wrapper to force connections through Tor. It is
+        written in Nim Language and uses GTK libraries so it can be used via a graphical interface
+        (GUI) and a CommandLine Interface (CLI).
       </>
     </PIconLink>,
-    <PIconLink key="nmap" href="https://nest.parrotsec.org/packages/tools/nmap" Icon={Nmap}>
+    <PIconLink key="bettercap" Icon={bettercapIcon} large>
       <>
-        <b>Nmap</b>
+        <b>Bettercap</b>
         <br />
-        Nmap is an open source tool for network exploration and security auditing. It was designed
-        to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw
-        IP packets in novel ways to determine what hosts are available on the network, what services
-        those hosts are offering, what operating systems they are running, what type of packet
-        filters/firewalls are in use, and dozens of other characteristics.
+        bettercap is a powerful, easily extensible and portable framework written in Go which aims
+        to offer to security researchers, red teamers and reverse engineers an easy to use,
+        all-in-one solution with all the features they might possibly need for performing
+        reconnaissance and attacking WiFi networks, Bluetooth Low Energy devices, wireless HID
+        devices and Ethernet networks.
       </>
     </PIconLink>,
-    <PIconLink
-      key="metasploit"
-      href="https://nest.parrotsec.org/packages/tools/metasploit-framework"
-      Icon={Metasploit}
-    >
+    <PIconLink key="nikto" Icon={niktoIcon} large>
       <>
-        <b>Metasploit</b>
+        <b>Nikto</b>
         <br />
-        Metasploit is a tool for developing and executing exploit code against a remote target
-        machine. Other important sub-projects include the Opcode Database, shellcode archive and
-        related research.
+        Nikto is an Open Source (GPL) web server scanner which performs comprehensive tests against
+        web servers for multiple items, including over 6700 potentially dangerous files/programs,
+        checks for outdated versions of over 1250 servers, and version specific problems on over 270
+        servers. It also checks for server configuration items such as the presence of multiple
+        index files, HTTP server options, and will attempt to identify installed web servers and
+        software.
       </>
     </PIconLink>,
-    <PIconLink
-      key="ettercap"
-      href="https://nest.parrotsec.org/packages/tools/bettercap"
-      Icon={Ettercap}
-      large
-    >
+    <PIconLink key="rizin-cutter" Icon={rizincutterIcon} large>
       <>
-        <b>Ettercap</b>
+        <b>Rizin Cutter</b>
         <br />
-        Ettercap is a free and open source network security tool for man-in-the-middle attacks on
-        LAN. It can be used for computer network protocol analysis and security auditing.
+        Cutter is a free and open-source reverse engineering platform powered by rizin. It aims at
+        being an advanced and customizable reverse engineering platform while keeping the user
+        experience in mind. Cutter is created by reverse engineers for reverse engineers.
+      </>
+    </PIconLink>,
+    <PIconLink key="wireshark" Icon={wiresharkIcon} large>
+      <>
+        <b>Wireshark</b>
+        <br />
+        Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see
+        what’s happening on your network at a microscopic level and is the de facto (and often de
+        jure) standard across many commercial and non-profit enterprises, government agencies, and
+        educational institutions.
+      </>
+    </PIconLink>,
+    <PIconLink key="zaproxy" Icon={zaproxyIcon} large>
+      <>
+        <b>Zaproxy</b>
+        <br />
+        The OWASP Zed Attack Proxy (ZAP) is one of the world’s most popular free security tools and
+        is actively maintained by a dedicated international team of volunteers. It can help you
+        automatically find security vulnerabilities in your web applications while you are
+        developing and testing your applications. It&apos;s also a great tool for experienced
+        pentesters to use for manual security testing.
       </>
     </PIconLink>
   ]

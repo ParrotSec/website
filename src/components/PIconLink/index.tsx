@@ -4,7 +4,7 @@ import { CSSProperties, ElementType } from 'react'
 import PTooltip, { PTooltipProps } from 'components/Tooltip'
 
 type PIconLinkProps = {
-  href: string
+  href?: string
   style?: CSSProperties
   Icon: ElementType
   children: PTooltipProps['title']
