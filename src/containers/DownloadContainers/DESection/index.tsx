@@ -196,7 +196,7 @@ const DESection = ({
                   Download
                 </PButton>
                 <PButton variant="outlined">Torrent</PButton>
-                <PButton variant="outlined">Virtual Appliance</PButton>
+                {/*<PButton variant="outlined">Virtual Appliance</PButton>*/}
                 {hashes && (
                   <SelectButton label="Compare Hashes" variant="outlined">
                     {Object.entries(hashes).map(([key, value]) => (

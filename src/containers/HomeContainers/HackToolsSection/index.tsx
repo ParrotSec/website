@@ -1,7 +1,7 @@
 import { Box, Grid, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
-import screenshot from './assets/parrot-monitor.png'
+import screenshot from './assets/parrot-desktop-5.png'
 
 const useStyles = makeStyles(theme => ({
   paperPadding: {

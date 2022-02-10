@@ -218,8 +218,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                 <AccordionDetails>
                   <Typography variant="subtitle2Semi" align="center" mt="12px">
                     Home edition is designed for <b>daily use</b>, <b>privacy</b> and{' '}
-                    <b>software development</b>. Parrot Tools can be manually installed to assemble
-                    a custom and lightweight pentesting environment.
+                    <b>software development</b>.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -241,8 +240,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                 <AccordionDetails>
                   <Typography variant="subtitle2Semi" align="center" mt="12px">
                     Security Edition is a special purpose operating system designed for{' '}
-                    <b>Penetration Testing</b> and <b>Red Team operations</b>. It contains a full
-                    arsenal of ready-to use pentesting tools.
+                    <b>Penetration Testing</b> and <b>Red Team operations</b>.
                   </Typography>
                 </AccordionDetails>
               </Accordion>

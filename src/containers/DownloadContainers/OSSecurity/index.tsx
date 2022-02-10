@@ -21,27 +21,27 @@ const OSSecurity = () => {
           description={
             <>
               Parrot Security Edition is a special purpose operating system designed for Penetration
-              Test and Red Team operations. It contains a full arsenal of ready to use pentest
+              Test and Red Team operations. It contains a full arsenal of ready to use pentesting
               tools.
             </>
           }
-          version="4.11.2"
-          releaseDate="May 28, 2021"
-          architecture="AMD64"
-          size="4.4 GB"
+          version="5.0 LTS"
+          releaseDate="Feb 16, 2022"
+          architecture="amd64"
+          size="3.8 GB"
           screenshots={[homeMate1, homeMate1, homeMate1, homeMate1, homeMate1]}
           requirements={[
-            { heading: 'Processor', description: 'Intel Core i5 or equivalent' },
+            { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
             { heading: 'Memory', description: '8 GB RAM' },
-            { heading: 'Storage', description: '16 GB available space' }
+            { heading: 'Storage', description: '40 GB available space' }
           ]}
           features={[
             {
-              hero: 'Workspace',
+              hero: 'Workstation',
               content: [
                 {
-                  heading: 'iCloud Private Relay',
+                  heading: 'Full Office Suite',
                   description: (
                     <>
                       iCloud Private Relay is a service that lets you connect to virtually any
@@ -50,7 +50,7 @@ const OSSecurity = () => {
                   )
                 },
                 {
-                  heading: 'Hide My Email',
+                  heading: 'Multimedia Production',
                   description: (
                     <>
                       Hide My Email allows you to create unique, random email addresses that forward
@@ -61,25 +61,38 @@ const OSSecurity = () => {
               ]
             },
             {
-              hero: 'Accessibility',
+              hero: 'Privacy',
               content: [
                 {
-                  heading: 'iCloud Private Relay',
+                  heading: 'Anonymity tools',
+                  description: <>AnonSurf, TOR, Firefox pre-installed Ad-blockers.</>
+                },
+                {
+                  heading: 'Cryptography',
                   description: (
                     <>
-                      iCloud Private Relay is a service that lets you connect to virtually any
-                      network and browse with Safari in an even more secure and private way.
+                      Full disk encryption and all encryption tools including zulucrypt, sirikali...
+                      at your fingertips!
+                    </>
+                  )
+                }
+              ]
+            },
+            {
+              hero: 'Development',
+              content: [
+                {
+                  heading: 'Pentest-ready',
+                  description: (
+                    <>
+                      Lots of penetration testing tools, all already installed, including
+                      Powersploit, Scapy, Rizin and more!
                     </>
                   )
                 },
                 {
-                  heading: 'Hide My Email',
-                  description: (
-                    <>
-                      Hide My Email allows you to create unique, random email addresses that forward
-                      to your personal inbox.
-                    </>
-                  )
+                  heading: 'Development Tools',
+                  description: <>VSCodium and Geany. You can start developing what you want.</>
                 }
               ]
             }

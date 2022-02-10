@@ -27,23 +27,23 @@ const OSHome = () => {
               environment.
             </>
           }
-          version="4.11.2"
-          releaseDate="May 28, 2021"
-          architecture="AMD64"
-          size="2.04 GB"
+          version="5.0 LTS"
+          releaseDate="Feb 16, 2022"
+          architecture="amd64"
+          size="1.9 GB"
           screenshots={[homeMate1, homeMate1, homeMate1, homeMate1, homeMate1]}
           requirements={[
-            { heading: 'Processor', description: 'Intel Core i5 or equivalent' },
+            { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
-            { heading: 'Memory', description: '8 GB RAM' },
+            { heading: 'Memory', description: '2 GB RAM' },
             { heading: 'Storage', description: '16 GB available space' }
           ]}
           features={[
             {
-              hero: 'Workspace',
+              hero: 'Workstation',
               content: [
                 {
-                  heading: 'iCloud Private Relay',
+                  heading: 'Full Office Suite',
                   description: (
                     <>
                       iCloud Private Relay is a service that lets you connect to virtually any
@@ -52,7 +52,7 @@ const OSHome = () => {
                   )
                 },
                 {
-                  heading: 'Hide My Email',
+                  heading: 'Multimedia Production',
                   description: (
                     <>
                       Hide My Email allows you to create unique, random email addresses that forward
@@ -63,23 +63,36 @@ const OSHome = () => {
               ]
             },
             {
-              hero: 'Accessibility',
+              hero: 'Privacy',
               content: [
                 {
-                  heading: 'iCloud Private Relay',
-                  description: (
-                    <>
-                      iCloud Private Relay is a service that lets you connect to virtually any
-                      network and browse with Safari in an even more secure and private way.
-                    </>
-                  )
+                  heading: 'Anonymity tools',
+                  description: <>AnonSurf, TOR, Firefox pre-installed Ad-blockers.</>
                 },
                 {
-                  heading: 'Hide My Email',
+                  heading: 'Cryptography',
                   description: (
                     <>
-                      Hide My Email allows you to create unique, random email addresses that forward
-                      to your personal inbox.
+                      Full disk encryption and all encryption tools including zulucrypt, sirikali...
+                      at your fingertips!
+                    </>
+                  )
+                }
+              ]
+            },
+            {
+              hero: 'Development',
+              content: [
+                {
+                  heading: 'Development Tools',
+                  description: <>VSCodium and Geany. You can start developing what you want.</>
+                },
+                {
+                  heading: 'Advanced Framework Support',
+                  description: (
+                    <>
+                      Fully support for a lot of programming languages/frameworks like Go, Rust,
+                      Python and more.
                     </>
                   )
                 }
