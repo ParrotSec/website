@@ -16,66 +16,33 @@ const OSArchitect = () => {
     <>
       <Grid container justifyContent="center">
         <DESection
-          name="Parrot Architect"
+          name="Parrot Architect & IoT"
           description={
             <>ParrotOS with nothing pre-installed. Install any software and DE with this edition.</>
           }
           className={classes.desktopEnvironment}
-          version="4.11.2"
-          releaseDate="Jun 23, 2021"
-          architecture="AMD64"
-          size="3 GB"
+          version="5.0 LTS"
+          releaseDate="Feb 16, 2022"
+          architecture="all"
+          size="337 MB"
           screenshots={[homeMate1, homeMate1, homeMate1, homeMate1, homeMate1]}
           requirements={[
-            { heading: 'Processor', description: 'Intel Core i5 or equivalent' },
+            { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
-            { heading: 'Memory', description: '8 GB RAM' },
+            { heading: 'Memory', description: '2 GB RAM' },
             { heading: 'Storage', description: '16 GB available space' }
           ]}
           features={[
             {
-              hero: 'Workspace',
+              hero: 'Totally customizable',
               content: [
                 {
-                  heading: 'iCloud Private Relay',
-                  description: (
-                    <>
-                      iCloud Private Relay is a service that lets you connect to virtually any
-                      network and browse with Safari in an even more secure and private way.
-                    </>
-                  )
+                  heading: 'Ready for any context.',
+                  description: <>Choose which tool to download upon installation.</>
                 },
                 {
-                  heading: 'Hide My Email',
-                  description: (
-                    <>
-                      Hide My Email allows you to create unique, random email addresses that forward
-                      to your personal inbox.{' '}
-                    </>
-                  )
-                }
-              ]
-            },
-            {
-              hero: 'Accessibility',
-              content: [
-                {
-                  heading: 'iCloud Private Relay',
-                  description: (
-                    <>
-                      iCloud Private Relay is a service that lets you connect to virtually any
-                      network and browse with Safari in an even more secure and private way.
-                    </>
-                  )
-                },
-                {
-                  heading: 'Hide My Email',
-                  description: (
-                    <>
-                      Hide My Email allows you to create unique, random email addresses that forward
-                      to your personal inbox.
-                    </>
-                  )
+                  heading: '(even) lighter!',
+                  description: <>You can customize it as you prefer, with any DE and any tool.</>
                 }
               ]
             }

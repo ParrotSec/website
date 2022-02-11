@@ -1,102 +1,122 @@
-import { Grid } from '@mui/material'
+import { Box, Divider, Grid, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
+import cls from 'classnames'
 
-import DESection from 'containers/DownloadContainers/DESection'
+import Carousel from 'components/Carousel'
+import PButton from 'components/PButton'
 import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
 
 const useStyles = makeStyles(theme => ({
-  cloud: {
-    background: 'linear-gradient(180deg, #E806FF 10%, #B505CC 90%)'
+  root: {
+    width: '100%',
+    padding: theme.spacing(8),
+    [theme.breakpoints.down('md')]: {
+      padding: theme.spacing(4)
+    }
   },
   desktopEnvironment: {
     marginTop: theme.spacing(8)
+  },
+  gridHrMarginTop: {
+    marginTop: 30,
+    marginBottom: 30
+  },
+  carouselImg: {
+    display: 'block',
+    margin: 'auto'
   }
 }))
 
 const OSCloud = () => {
   const classes = useStyles()
+  const screenshots = [homeMate1]
+
   return (
     <>
       <Grid container justifyContent="center">
-        <DESection
-          className={classes.desktopEnvironment}
-          name="Cloud Edition"
-          description={
-            <>
-              Parrot Cloud is a special edition of Parrot Security made for embedded devices, cloud
-              environments, virtual machines and other special deployments.
-            </>
-          }
-          version="4.11.2"
-          releaseDate="Jun 23, 2021"
-          architecture="OVA"
-          size="3 GB"
-          screenshots={[homeMate1, homeMate1, homeMate1, homeMate1, homeMate1]}
-          requirements={[
-            { heading: 'Processor', description: 'Intel Core i5 or equivalent' },
-            { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
-            { heading: 'Memory', description: '8 GB RAM' },
-            { heading: 'Storage', description: '16 GB available space' }
-          ]}
-          features={[
-            {
-              hero: 'Workspace',
-              content: [
-                {
-                  heading: 'iCloud Private Relay',
-                  description: (
-                    <>
-                      iCloud Private Relay is a service that lets you connect to virtually any
-                      network and browse with Safari in an even more secure and private way.
-                    </>
-                  )
-                },
-                {
-                  heading: 'Hide My Email',
-                  description: (
-                    <>
-                      Hide My Email allows you to create unique, random email addresses that forward
-                      to your personal inbox.{' '}
-                    </>
-                  )
-                }
-              ]
-            },
-            {
-              hero: 'Accessibility',
-              content: [
-                {
-                  heading: 'iCloud Private Relay',
-                  description: (
-                    <>
-                      iCloud Private Relay is a service that lets you connect to virtually any
-                      network and browse with Safari in an even more secure and private way.
-                    </>
-                  )
-                },
-                {
-                  heading: 'Hide My Email',
-                  description: (
-                    <>
-                      Hide My Email allows you to create unique, random email addresses that forward
-                      to your personal inbox.
-                    </>
-                  )
-                }
-              ]
-            }
-          ]}
-          hashes={{
-            md5: '0b18b14c1eb313604b238fd0ad846f7a',
-            sha1: '3d64804487cb2865f662735422de0184742d2e8e',
-            sha224: '63c569776cebb1c1a74a3d704c4dacf02cc4b78c5a02ea9805043c70',
-            sha256: 'e45841a7118a6602714e2dbb61c950e379f036692a73384251eff38a0a5103d7',
-            sha384:
-              '808ab642285a9deff51d52037342802839867703464f7adfb888fadda7a10b9838e147677eeba91fc9b511244cfb1dfe',
-            sha512:
-              'b51dc3c7588d3261cd9fc52dd86fdd135f0bf8296aa8775f9aa0a3d1b5e187c5615e7219be479dc5208fad302a614bcd4030561bd5162311a35b5ef7dac6de68'
-          }}
-        />
+        <Paper className={cls(classes.root, classes.desktopEnvironment)} elevation={0}>
+          <Typography variant="h4" paragraph>
+            Cloud Editions
+          </Typography>
+          <Typography variant="subtitle2Semi" paragraph>
+            IoT & Cloud Appliances are special editions of Parrot Security made for embedded
+            devices, cloud environments, virtual machines and other special deployments.
+          </Typography>
+          <Grid item xs={12}>
+            <Carousel>
+              {screenshots.map((image, i) => (
+                <img
+                  className={classes.carouselImg}
+                  src={image.src}
+                  alt={`screenshot-${i}`}
+                  key={`screenshot-${i}`}
+                />
+              ))}
+            </Carousel>
+          </Grid>
+          <Grid container justifyContent="center" spacing={2} style={{ marginTop: 20 }}>
+            <Grid item xs={12} md={8} justifyContent="center">
+              <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
+                <Typography variant="h6">Architect Edition</Typography>
+                <Typography variant="body1Semi">
+                  ParrotOS with nothing pre-installed. Install any software and DE with this
+                  edition.
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4} justifyContent="center">
+              <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
+                <PButton gradient variant="contained">
+                  Download
+                </PButton>
+                <PButton variant="outlined">Torrent</PButton>
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid className={classes.gridHrMarginTop} item xs={12}>
+            <Divider variant="fullWidth" />
+          </Grid>
+          <Grid container justifyContent="center" spacing={2}>
+            <Grid item xs={12} md={8} justifyContent="center">
+              <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
+                <Typography variant="h6">HackTheBox Edition</Typography>
+                <Typography variant="body1Semi">
+                  Try this version of ParrotOS customized for Hack The Box.
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4} justifyContent="center">
+              <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
+                <PButton gradient variant="contained">
+                  Download
+                </PButton>
+                <PButton variant="outlined">Torrent</PButton>
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid className={classes.gridHrMarginTop} item xs={12}>
+            <Divider variant="fullWidth" />
+          </Grid>
+          <Grid container justifyContent="center" spacing={2}>
+            <Grid item xs={12} md={8} justifyContent="center">
+              <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
+                <Typography variant="h6">Docker images</Typography>
+                <Typography variant="body1Semi">
+                  ParrotOS for Docker enables users to take advantage of the Parrot tools on top of
+                  other operating systems or in cloud environments.
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4} justifyContent="center">
+              <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
+                <PButton gradient variant="contained">
+                  Download
+                </PButton>
+                <PButton variant="outlined">Torrent</PButton>
+              </Box>
+            </Grid>
+          </Grid>
+        </Paper>
       </Grid>
     </>
   )
