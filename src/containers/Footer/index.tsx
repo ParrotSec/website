@@ -113,6 +113,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Carbon = styled(CarbonIcon)(({ theme }) => ({
+  cursor: 'pointer',
   marginRight: theme.spacing(1)
 }))
 
