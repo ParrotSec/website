@@ -45,8 +45,8 @@ const SocialsSection = (props: GridProps) => {
             buttonLink="https://community.parrotsec.org"
             outLink
           >
-            Our tools are designed to be compatible with as many devices as possible via
-            containerization technologies like Docker or Podman.
+            An awesome community is one click away. Receive assistence, share ideas and follow the
+            development of the project.
           </PFeatureBlock>
         </Grid>
         <Grid item sm={12} lg={4}>
@@ -57,8 +57,8 @@ const SocialsSection = (props: GridProps) => {
             buttonLink="https://www.hackthebox.eu/blog/pwnbox-parrot"
             outLink
           >
-            Our tools are designed to be compatible with as many devices as possible via
-            containerization technologies like Docker or Podman.
+            Hackers love Pwnbox and Parrot OS. More and more people are using the free Debian
+            Linux-based cybersecurity and penetration testing operating systems every day.
           </PFeatureBlock>
         </Grid>
         <Grid item sm={12} lg={4}>
@@ -69,8 +69,8 @@ const SocialsSection = (props: GridProps) => {
             buttonLink="https://t.me/parrotsecgroup"
             outLink
           >
-            Our tools are designed to be compatible with as many devices as possible via
-            containerization technologies like Docker or Podman.
+            The Parrot Project is a community-driven opensource project, and a gateway to spread
+            innovative ideas born inside it&apos;s community. Join in our official Telegram Group!
           </PFeatureBlock>
         </Grid>
       </Grid>

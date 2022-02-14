@@ -46,8 +46,8 @@ const OSHome = () => {
                   heading: 'Full Office Suite',
                   description: (
                     <>
-                      iCloud Private Relay is a service that lets you connect to virtually any
-                      network and browse with Safari in an even more secure and private way.
+                      Pre-installed LibreOffice, and possibility to install other softwares like
+                      OnlyOffice, etc...
                     </>
                   )
                 },
@@ -55,8 +55,8 @@ const OSHome = () => {
                   heading: 'Multimedia Production',
                   description: (
                     <>
-                      Hide My Email allows you to create unique, random email addresses that forward
-                      to your personal inbox.
+                      Pre-installed VLC, GIMP and a whole repository from which to install other
+                      software such as OBS, Blender, Kdenlive, Krita and more!
                     </>
                   )
                 }

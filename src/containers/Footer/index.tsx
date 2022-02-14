@@ -301,13 +301,14 @@ const Footer = () => {
                     <Box width={230}>
                       <b>We are carbon free!</b>
                       <br />
-                      Our servers don&apos;t produce CO2 and environment friendly
+                      our servers are hosted on carbon neutral datacenters powered by renewable
+                      sources, and we compensate any extra emissions by planting trees!
                     </Box>
                   }
                 >
                   <div className={cls(classes.themeSwitcher, classes.carbonButton)}>
                     <Carbon width={21} height={21} />
-                    Carbon Free
+                    Carbon Neutral
                   </div>
                 </PTooltip>
                 <PButton
