@@ -1,7 +1,11 @@
 import { Grid } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
+import parrotArchitect1 from './assets/parrot-architect-1.png'
+import parrotArchitect2 from './assets/parrot-architect-2.png'
+
 import DESection from 'containers/DownloadContainers/DESection'
+import parrotDesktop from 'containers/DownloadContainers/OSHome/assets/parrot-home-1.png'
 
 const useStyles = makeStyles(theme => ({
   desktopEnvironment: {
@@ -24,7 +28,7 @@ const OSArchitect = () => {
           releaseDate="Feb 16, 2022"
           architecture="all"
           size="337 MB"
-          screenshots={[]}
+          screenshots={[parrotArchitect1, parrotArchitect2, parrotDesktop]}
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
