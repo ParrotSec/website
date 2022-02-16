@@ -1,8 +1,12 @@
 import { Grid } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
+import parrotSecurity1 from './assets/parrot-security-1.png'
+import parrotSecurity2 from './assets/parrot-security-2.png'
+import parrotSecurity3 from './assets/parrot-security-3.png'
+import parrotSecurity4 from './assets/parrot-security-4.png'
+
 import DESection from 'containers/DownloadContainers/DESection'
-import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
 
 const useStyles = makeStyles(theme => ({
   desktopEnvironment: {
@@ -29,7 +33,7 @@ const OSSecurity = () => {
           releaseDate="Feb 16, 2022"
           architecture="amd64"
           size="3.8 GB"
-          screenshots={[homeMate1, homeMate1, homeMate1, homeMate1, homeMate1]}
+          screenshots={[parrotSecurity1, parrotSecurity2, parrotSecurity3, parrotSecurity4]}
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },

@@ -1,7 +1,10 @@
 import { Grid } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
-import homeMate1 from './assets/home-mate-1.png'
+import parrotHome1 from './assets/parrot-home-1.png'
+import parrotHome2 from './assets/parrot-home-2.png'
+import parrotHome3 from './assets/parrot-home-3.png'
+import parrotHome4 from './assets/parrot-home-4.png'
 
 import DESection from 'containers/DownloadContainers/DESection'
 
@@ -31,7 +34,7 @@ const OSHome = () => {
           releaseDate="Feb 16, 2022"
           architecture="amd64"
           size="1.9 GB"
-          screenshots={[homeMate1, homeMate1, homeMate1, homeMate1, homeMate1]}
+          screenshots={[parrotHome1, parrotHome2, parrotHome3, parrotHome4]}
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
@@ -55,8 +58,8 @@ const OSHome = () => {
                   heading: 'Multimedia Production',
                   description: (
                     <>
-                      Pre-installed VLC, GIMP and a whole repository from which to install other
-                      software such as OBS, Blender, Kdenlive, Krita and more!
+                      VLC, GIMP and a whole repository from which to install other software such as
+                      OBS, Blender, Kdenlive, Krita and more!
                     </>
                   )
                 }

@@ -4,7 +4,7 @@ import cls from 'classnames'
 
 import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
-import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
+import parrotDesktop from 'containers/DownloadContainers/OSHome/assets/parrot-home-1.png'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 
 const OSCloud = () => {
   const classes = useStyles()
-  const screenshots = [homeMate1]
+  const screenshots = [parrotDesktop]
 
   return (
     <>

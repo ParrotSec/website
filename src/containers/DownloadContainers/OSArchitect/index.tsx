@@ -2,7 +2,6 @@ import { Grid } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import DESection from 'containers/DownloadContainers/DESection'
-import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
 
 const useStyles = makeStyles(theme => ({
   desktopEnvironment: {
@@ -25,7 +24,7 @@ const OSArchitect = () => {
           releaseDate="Feb 16, 2022"
           architecture="all"
           size="337 MB"
-          screenshots={[homeMate1, homeMate1, homeMate1, homeMate1, homeMate1]}
+          screenshots={[]}
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
