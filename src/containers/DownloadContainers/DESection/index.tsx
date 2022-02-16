@@ -65,6 +65,8 @@ type DESectionProps = {
   releaseDate: string
   architecture: string
   size: string
+  url: string
+  torrent: string
   screenshots: StaticImageData[]
   requirements?: FixedLengthArray<{ heading: string; description: string }, 4>
   features?: {
@@ -89,6 +91,8 @@ const DESection = ({
   releaseDate,
   architecture,
   size,
+  url,
+  torrent,
   screenshots,
   requirements,
   features,
@@ -192,10 +196,12 @@ const DESection = ({
             </Grid>
             <Grid item xs={12} sm={6} md={12}>
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                <PButton gradient variant="contained">
+                <PButton gradient variant="contained" to={url}>
                   Download
                 </PButton>
-                <PButton variant="outlined">Torrent</PButton>
+                <PButton variant="outlined" to={torrent}>
+                  Torrent
+                </PButton>
                 {/*<PButton variant="outlined">Virtual Appliance</PButton>*/}
                 {hashes && (
                   <SelectButton label="Compare Hashes" variant="outlined">

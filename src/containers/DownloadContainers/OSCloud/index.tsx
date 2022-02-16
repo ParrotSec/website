@@ -66,10 +66,9 @@ const OSCloud = () => {
             </Grid>
             <Grid item xs={12} md={4} justifyContent="center">
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                <PButton gradient variant="contained">
+                <PButton gradient variant="contained" to="/download/?version=architect">
                   Download
                 </PButton>
-                <PButton variant="outlined">Torrent</PButton>
               </Box>
             </Grid>
           </Grid>
@@ -87,10 +86,19 @@ const OSCloud = () => {
             </Grid>
             <Grid item xs={12} md={4} justifyContent="center">
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                <PButton gradient variant="contained">
+                <PButton
+                  gradient
+                  variant="contained"
+                  to="http://download.parrot.sh/parrot/iso/5.0/Parrot-htb-5.0_amd64.iso"
+                >
                   Download
                 </PButton>
-                <PButton variant="outlined">Torrent</PButton>
+                <PButton
+                  variant="outlined"
+                  to="http://download.parrot.sh/parrot/iso/5.0/Parrot-htb-5.0_amd64.iso"
+                >
+                  Torrent
+                </PButton>
               </Box>
             </Grid>
           </Grid>
@@ -109,10 +117,13 @@ const OSCloud = () => {
             </Grid>
             <Grid item xs={12} md={4} justifyContent="center">
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                <PButton gradient variant="contained">
-                  Download
+                <PButton
+                  gradient
+                  variant="contained"
+                  to="https://parrotsec.org/docs/parrot-on-docker.html"
+                >
+                  Check it out
                 </PButton>
-                <PButton variant="outlined">Torrent</PButton>
               </Box>
             </Grid>
           </Grid>
