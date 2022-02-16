@@ -65,8 +65,8 @@ type DESectionProps = {
   releaseDate: string
   architecture: string
   size: string
-  url: string
-  torrent: string
+  url?: string
+  torrent?: string
   screenshots: StaticImageData[]
   requirements?: FixedLengthArray<{ heading: string; description: string }, 4>
   features?: {
