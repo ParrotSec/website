@@ -51,8 +51,8 @@ const OSHome = () => {
                   heading: 'Full Office Suite',
                   description: (
                     <>
-                      Pre-installed LibreOffice, and possibility to install other softwares like
-                      OnlyOffice, etc...
+                      Pre-installed LibreOffice, and possibility to install other softwares via the
+                      Synaptic package manager.
                     </>
                   )
                 },
