@@ -27,7 +27,7 @@ const OSArchitect = () => {
           version="5.0 LTS"
           releaseDate="Feb 16, 2022"
           architecture="all"
-          size="337 MB"
+          size="320-337 MB"
           screenshots={[parrotArchitect1, parrotArchitect2, parrotDesktop]}
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
@@ -50,6 +50,11 @@ const OSArchitect = () => {
               ]
             }
           ]}
+          architectEdition={{
+            arm64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_arm64.iso',
+            amd64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso',
+            i386: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_i386.iso'
+          }}
           hashes={{
             md5: '0b18b14c1eb313604b238fd0ad846f7a',
             sha1: '3d64804487cb2865f662735422de0184742d2e8e',

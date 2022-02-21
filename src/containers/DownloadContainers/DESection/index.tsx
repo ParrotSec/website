@@ -11,6 +11,7 @@ import {
   Typography
 } from '@mui/material'
 import { makeStyles } from '@mui/styles'
+import Link from 'next/link'
 import { useSnackbar } from 'notistack'
 import { ReactNode, useState, Fragment } from 'react'
 import Lightbox from 'react-image-lightbox'
@@ -65,8 +66,14 @@ type DESectionProps = {
   releaseDate: string
   architecture: string
   size: string
+  download?: string
   url?: string
   torrent?: string
+  architectEdition?: {
+    arm64: string
+    amd64: string
+    i386: string
+  }
   screenshots: StaticImageData[]
   requirements?: FixedLengthArray<{ heading: string; description: string }, 4>
   features?: {
@@ -91,8 +98,10 @@ const DESection = ({
   releaseDate,
   architecture,
   size,
+  download,
   url,
   torrent,
+  architectEdition,
   screenshots,
   requirements,
   features,
@@ -196,9 +205,24 @@ const DESection = ({
             </Grid>
             <Grid item xs={12} sm={6} md={12}>
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                <PButton gradient variant="contained" to={url}>
-                  Download
-                </PButton>
+                {download && (
+                  <PButton gradient variant="contained" to={url}>
+                    Download
+                  </PButton>
+                )}
+                {architectEdition && (
+                  <SelectButton label="Download" variant="contained">
+                    {Object.entries(architectEdition).map(([key]) => (
+                      <SelectButtonItem key={key}>
+                        <Link
+                          href={`https://deb.parrot.sh/parrot/iso/5.0-beta9/Parrot-architect-5.0-beta9_${key}.iso`}
+                        >
+                          {key}
+                        </Link>
+                      </SelectButtonItem>
+                    ))}
+                  </SelectButton>
+                )}
                 <PButton variant="outlined" to={torrent}>
                   Torrent
                 </PButton>

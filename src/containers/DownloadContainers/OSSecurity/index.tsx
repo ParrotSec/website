@@ -33,6 +33,7 @@ const OSSecurity = () => {
           releaseDate="Feb 16, 2022"
           architecture="amd64"
           size="3.8 GB"
+          download="Download"
           url="http://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso"
           torrent="http://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso.torrent"
           screenshots={[parrotSecurity1, parrotSecurity2, parrotSecurity3, parrotSecurity4]}
