@@ -68,7 +68,12 @@ type DESectionProps = {
   size: string
   download?: string
   url?: string
-  torrent?: string
+  torrent?: {
+    arm64: string
+    amd64: string
+    i386: string
+  }
+  torrentUrl?: string
   architectEdition?: {
     arm64: string
     amd64: string
@@ -101,6 +106,7 @@ const DESection = ({
   download,
   url,
   torrent,
+  torrentUrl,
   architectEdition,
   screenshots,
   requirements,
@@ -223,7 +229,20 @@ const DESection = ({
                     ))}
                   </SelectButton>
                 )}
-                <PButton variant="outlined" to={torrent}>
+                {torrent && (
+                  <SelectButton label="Torrent" variant="outlined">
+                    {Object.entries(torrent).map(([key]) => (
+                      <SelectButtonItem key={key}>
+                        <Link
+                          href={`https://deb.parrot.sh/parrot/iso/5.0-beta9/Parrot-architect-5.0-beta9_${key}.iso.torrent`}
+                        >
+                          {key}
+                        </Link>
+                      </SelectButtonItem>
+                    ))}
+                  </SelectButton>
+                )}
+                <PButton variant="outlined" to={torrentUrl}>
                   Torrent
                 </PButton>
                 {/*<PButton variant="outlined">Virtual Appliance</PButton>*/}

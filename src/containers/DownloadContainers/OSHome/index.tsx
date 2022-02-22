@@ -36,7 +36,7 @@ const OSHome = () => {
           size="1.9 GB"
           download="Download"
           url="http://download.parrot.sh/parrot/iso/5.0/Parrot-home-5.0_amd64.iso"
-          torrent="http://download.parrot.sh/parrot/iso/5.0/Parrot-home-5.0_amd64.iso.torrent"
+          torrentUrl="http://download.parrot.sh/parrot/iso/5.0/Parrot-home-5.0_amd64.iso.torrent"
           screenshots={[parrotHome1, parrotHome2, parrotHome3, parrotHome4]}
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
