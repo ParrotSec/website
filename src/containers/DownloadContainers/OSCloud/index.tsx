@@ -2,7 +2,6 @@ import { Box, Divider, Grid, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import cls from 'classnames'
 
-import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
 import parrotDesktop from 'containers/DownloadContainers/OSHome/assets/parrot-home-1.png'
 
@@ -21,15 +20,15 @@ const useStyles = makeStyles(theme => ({
     marginTop: 30,
     marginBottom: 30
   },
-  carouselImg: {
+  image: {
     display: 'block',
-    margin: 'auto'
+    margin: 'auto',
+    paddingBottom: theme.spacing(2)
   }
 }))
 
 const OSCloud = () => {
   const classes = useStyles()
-  const screenshots = [parrotDesktop]
 
   return (
     <>
@@ -43,16 +42,12 @@ const OSCloud = () => {
             devices, cloud environments, virtual machines and other special deployments.
           </Typography>
           <Grid item xs={12}>
-            <Carousel>
-              {screenshots.map((image, i) => (
-                <img
-                  className={classes.carouselImg}
-                  src={image.src}
-                  alt={`screenshot-${i}`}
-                  key={`screenshot-${i}`}
-                />
-              ))}
-            </Carousel>
+            <img
+              className={classes.image}
+              src={parrotDesktop.src}
+              alt="Parrot 5 Desktop"
+              key="parrot-desktop"
+            />
           </Grid>
           <Grid container justifyContent="center" spacing={2} style={{ marginTop: 20 }}>
             <Grid item xs={12} md={8} justifyContent="center">

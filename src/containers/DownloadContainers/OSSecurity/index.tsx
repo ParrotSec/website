@@ -36,6 +36,7 @@ const OSSecurity = () => {
           download="Download"
           url="http://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso"
           torrentUrl="http://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso.torrent"
+          torrentButton="Download Torrent"
           screenshots={[parrotSecurity1, parrotSecurity2, parrotSecurity3, parrotSecurity4]}
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },

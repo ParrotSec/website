@@ -3,6 +3,10 @@ import { makeStyles } from '@mui/styles'
 
 import parrotArchitect1 from './assets/parrot-architect-1.png'
 import parrotArchitect2 from './assets/parrot-architect-2.png'
+import parrotArchitect3 from './assets/parrot-architect-3.png'
+import parrotArchitect4 from './assets/parrot-architect-4.png'
+import parrotArchitect5 from './assets/parrot-architect-5.png'
+import parrotArchitect6 from './assets/parrot-architect-6.png'
 
 import DESection from 'containers/DownloadContainers/DESection'
 import parrotDesktop from 'containers/DownloadContainers/OSHome/assets/parrot-home-1.png'
@@ -28,7 +32,15 @@ const OSArchitect = () => {
           releaseDate="Feb 16, 2022"
           architecture="all"
           size="320-337 MB"
-          screenshots={[parrotArchitect1, parrotArchitect2, parrotDesktop]}
+          screenshots={[
+            parrotArchitect1,
+            parrotArchitect2,
+            parrotDesktop,
+            parrotArchitect3,
+            parrotArchitect4,
+            parrotArchitect5,
+            parrotArchitect6
+          ]}
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },

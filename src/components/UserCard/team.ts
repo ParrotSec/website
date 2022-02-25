@@ -2,7 +2,7 @@ export default [
   {
     name: 'Lorenzo Faletra',
     nickname: 'palinuro',
-    role: 'Team Leader, Core Dev, Infrastructure Manager, Release manager',
+    role: 'Team Leader, Core Dev, Infrastructure Manager, Release Manager',
     github: '',
     twitter: '',
     linkedIn: '',

@@ -73,6 +73,7 @@ type DESectionProps = {
     amd64: string
     i386: string
   }
+  torrentButton?: string
   torrentUrl?: string
   architectEdition?: {
     arm64: string
@@ -107,6 +108,7 @@ const DESection = ({
   url,
   torrent,
   torrentUrl,
+  torrentButton,
   architectEdition,
   screenshots,
   requirements,
@@ -242,9 +244,11 @@ const DESection = ({
                     ))}
                   </SelectButton>
                 )}
-                <PButton variant="outlined" to={torrentUrl}>
-                  Torrent
-                </PButton>
+                {torrentButton && (
+                  <PButton variant="outlined" to={torrentUrl}>
+                    Torrent
+                  </PButton>
+                )}
                 {/*<PButton variant="outlined">Virtual Appliance</PButton>*/}
                 {hashes && (
                   <SelectButton label="Compare Hashes" variant="outlined">
