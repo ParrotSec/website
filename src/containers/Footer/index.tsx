@@ -294,71 +294,94 @@ const Footer = () => {
               </Grid>
             </Grid>
             <Grid className={classes.copyrightSection} item xs={12}>
-              <Stack direction="row" spacing={1}>
-                <PTooltip
-                  placement="top"
-                  title={
-                    <Box width={230}>
-                      <b>We are carbon free!</b>
-                      <br />
-                      our servers are hosted on carbon neutral datacenters powered by renewable
-                      sources, and we compensate any extra emissions by planting trees!
-                    </Box>
-                  }
-                >
-                  <div className={cls(classes.themeSwitcher, classes.carbonButton)}>
-                    <Carbon width={21} height={21} />
-                    Carbon Neutral
-                  </div>
-                </PTooltip>
-                <PButton
-                  className={classes.themeSwitcher}
-                  variant="contained"
-                  startIcon={
-                    theme.palette.mode === 'dark' ? (
-                      <Brightness3 fontSize="small" />
-                    ) : (
-                      <BrightnessHigh fontSize="small" />
-                    )
-                  }
-                  onClick={() => switchTheme()}
-                  size="small"
-                >
-                  {theme.palette.mode === 'dark' ? 'Dark' : 'Light'}
-                </PButton>
-              </Stack>
-            </Grid>
-            <Grid className={classes.noMargin} container item xs={12} spacing={4}>
-              <Grid item xs={12} lg={7}>
+              <Stack
+                direction={{ xs: 'column', sm: 'row' }}
+                spacing={{ xs: 2, sm: 8 }}
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Stack direction="row" spacing={2}>
+                  <PTooltip
+                    placement="top"
+                    title={
+                      <Box width={230}>
+                        <b>We are carbon free!</b>
+                        <br />
+                        our servers are hosted on carbon neutral datacenters powered by renewable
+                        sources, and we compensate any extra emissions by planting trees!
+                      </Box>
+                    }
+                  >
+                    <div className={cls(classes.themeSwitcher, classes.carbonButton)}>
+                      <Carbon width={21} height={21} />
+                      Carbon Neutral
+                    </div>
+                  </PTooltip>
+                  <PButton
+                    className={classes.themeSwitcher}
+                    variant="contained"
+                    startIcon={
+                      theme.palette.mode === 'dark' ? (
+                        <Brightness3 fontSize="small" />
+                      ) : (
+                        <BrightnessHigh fontSize="small" />
+                      )
+                    }
+                    onClick={() => switchTheme()}
+                    size="small"
+                  >
+                    {theme.palette.mode === 'dark' ? 'Dark' : 'Light'}
+                  </PButton>
+                </Stack>
                 <Typography className={classes.footerText} color="textSecondary" variant="body2">
                   © 2022 Parrot Security. All rights reserved.
                 </Typography>
-              </Grid>
-              <Grid
-                className={classes.legalLinks}
-                container
-                item
-                xs={12}
-                lg
-                spacing={3}
-                justifyContent="flex-end"
-                alignItems="center"
-              >
-                <Grid item xs={12} lg={6}>
+                <Stack direction="row" spacing={2}>
                   <Link className={classes.footerLink} color="textSecondary" href="/warrant">
                     <Stack direction="row">
                       <WarrantCanary className={classes.warrantIcon} width={21} height={21} />
                       Warrant Canary
                     </Stack>
                   </Link>
-                </Grid>
-                <Grid item xs={12} lg={6}>
                   <Link className={classes.footerLink} color="textSecondary" href="/privacy">
                     Privacy Policy
                   </Link>
+                </Stack>
+              </Stack>
+            </Grid>
+            {/*
+              <Grid className={classes.noMargin} container item xs={12} spacing={4}>
+                <Grid item xs={12} lg={7}>
+                  <Typography className={classes.footerText} color="textSecondary" variant="body2">
+                    © 2022 Parrot Security. All rights reserved.
+                  </Typography>
+                </Grid>
+                <Grid
+                  className={classes.legalLinks}
+                  container
+                  item
+                  xs={12}
+                  lg
+                  spacing={3}
+                  justifyContent="flex-end"
+                  alignItems="center"
+                >
+                  <Grid item xs={12} lg={6}>
+                    <Link className={classes.footerLink} color="textSecondary" href="/warrant">
+                      <Stack direction="row">
+                        <WarrantCanary className={classes.warrantIcon} width={21} height={21} />
+                        Warrant Canary
+                      </Stack>
+                    </Link>
+                  </Grid>
+                  <Grid item xs={12} lg={6}>
+                    <Link className={classes.footerLink} color="textSecondary" href="/privacy">
+                      Privacy Policy
+                    </Link>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
+              */}
           </Grid>
         </Paper>
       </Grid>

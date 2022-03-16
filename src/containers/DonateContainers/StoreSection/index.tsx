@@ -2,10 +2,16 @@ import Masonry from '@mui/lab/Masonry'
 import { Grid, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
+import Article1 from './assets/article1.png'
+import Article2 from './assets/article2.png'
+import Article3 from './assets/article3.png'
+import Article4 from './assets/article4.png'
 import Shop from './assets/Shop.svg'
 
 import PButton from 'components/PButton'
 import PFeatureBlock from 'components/PFeatureBlock'
+
+const articles = [Article1, Article2, Article3, Article4]
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,12 +27,19 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const heights = [200, 60, 70, 170, 150]
-
 const StoreSection = () => {
   const classes = useStyles()
+
   return (
-    <Grid container className={classes.root} xs={12} md={9} spacing={4} justifyContent="center">
+    <Grid
+      container
+      item
+      className={classes.root}
+      xs={12}
+      md={9}
+      spacing={4}
+      justifyContent="center"
+    >
       <Grid item xs={12}>
         <Typography variant="h1" align="center" paragraph>
           Parrot Security Shop
@@ -42,10 +55,19 @@ const StoreSection = () => {
       </Grid>
       <Grid item xs={12} lg={8}>
         <Masonry columns={2} spacing={2}>
-          {heights.map((height, index) => (
-            <Paper key={index} sx={{ height }}>
-              {index + 1}
-            </Paper>
+          {articles.map((article, index) => (
+            <div key={index}>
+              <img
+                src={`${article.src}`}
+                srcSet={`${article.src}`}
+                loading="lazy"
+                style={{
+                  borderRadius: 24,
+                  display: 'block',
+                  width: '100%'
+                }}
+              />
+            </div>
           ))}
         </Masonry>
       </Grid>
@@ -53,7 +75,7 @@ const StoreSection = () => {
         <Paper elevation={0}>
           <PFeatureBlock Icon={Shop} title="Parrot Shop">
             <Typography paragraph gutterBottom>
-              Custom swag and premium designed goods for the cyber security enthusiasts.
+              Custom swag for the cyber security enthusiasts. We ship all over the world!
             </Typography>
             <PButton gradient variant="contained" to={'https://parrot-security.myspreadshop.it'}>
               Check our Store
