@@ -3,7 +3,7 @@ export default [
     name: 'Lorenzo Faletra',
     nickname: 'palinuro',
     role: 'Team Leader, Core Dev, Infrastructure Manager, Release Manager',
-    github: '',
+    github: 'https://github.com/PalinuroSec',
     twitter: '',
     linkedIn: '',
     email: 'palinuro at parrotsec dot org'
@@ -11,8 +11,8 @@ export default [
   {
     name: 'Federica Marasà',
     nickname: 'marafed',
-    role: 'Project Manager, Web Dev, Social Media Manager, Graphic Designer',
-    github: '',
+    role: 'Project Manager, Graphic Designer',
+    github: 'https://github.com/marafed',
     twitter: '',
     linkedIn: '',
     email: 'marafed at parrotsec dot org'
@@ -20,7 +20,7 @@ export default [
   {
     name: 'Irene Pirrotta',
     nickname: 'Tissy',
-    role: 'Project Manager, ARM Dev, Community Manager',
+    role: 'Social Media Manager, Community Manager',
     github: '',
     twitter: '',
     linkedIn: '',
@@ -30,7 +30,7 @@ export default [
     name: 'Vladyslav Dalechyn',
     nickname: 'h0tw4t3r',
     role: 'Core Dev, Website Maintainer',
-    github: '',
+    github: 'https://github.com/h0tw4t3r',
     twitter: '',
     linkedIn: '',
     email: 'h0tw4t3r at parrotsec dot org'
@@ -39,7 +39,7 @@ export default [
     name: 'Nông Hoàng Tú',
     nickname: 'Dm Knght',
     role: 'Core Dev, Package Maintainer',
-    github: '',
+    github: 'https://github.com/dmknght',
     twitter: '',
     linkedIn: '',
     email: 'dmknght at parrotsec dot org'
@@ -48,7 +48,7 @@ export default [
     name: 'Dario Camonita',
     nickname: 'danterolle',
     role: 'Core Dev, Website and Documentation Maintainer',
-    github: '',
+    github: 'https://github.com/danterolle',
     twitter: '',
     linkedIn: '',
     email: 'danterolle at parrotsec dot org'

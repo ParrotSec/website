@@ -43,8 +43,7 @@ const SpecialThanks = (props: GridProps) => {
           component="div"
           className={classes.specialThanksSubtitle}
         >
-          Compilers, interpreters and intelligent editors. All you need to start programming comes
-          out of the box, with the most secure Linux environment.
+          ParrotOS has also grown thanks to the important contributions of some people.
         </Typography>
       </Grid>
       <Grid container item xs={12} md={8} direction="row" spacing={3}>

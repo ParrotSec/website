@@ -20,8 +20,7 @@ const PastContributors = (props: GridProps) => {
     <ContributorsSection
       heading="Past Contributors"
       title="Legacy Contributors"
-      subtitle="ParrotOS doesn't exist only thanks to the core team, but is also the result of the help of many
-contributors who improve the OS every day."
+      subtitle="Here are all those who have dedicated part of their time in the past to contribute to The Parrot Project."
       {...props}
     >
       {pastContribData}

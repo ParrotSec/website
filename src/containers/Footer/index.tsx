@@ -296,7 +296,7 @@ const Footer = () => {
             <Grid className={classes.copyrightSection} item xs={12}>
               <Stack
                 direction={{ xs: 'column', sm: 'row' }}
-                spacing={{ xs: 2, sm: 8 }}
+                spacing={{ xs: 2, sm: 10 }}
                 justifyContent="center"
                 alignItems="center"
               >
