@@ -69,16 +69,18 @@ type DESectionProps = {
   download?: string
   url?: string
   torrent?: {
-    arm64: string
-    amd64: string
-    i386: string
+    arm64?: string
+    amd64?: string
+    i386?: string
+    armhf?: string
   }
   torrentButton?: string
   torrentUrl?: string
   architectEdition?: {
-    arm64: string
-    amd64: string
-    i386: string
+    arm64?: string
+    amd64?: string
+    i386?: string
+    armhf?: string
   }
   screenshots: StaticImageData[]
   requirements?: FixedLengthArray<{ heading: string; description: string }, 4>

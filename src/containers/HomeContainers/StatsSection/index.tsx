@@ -51,7 +51,7 @@ const StatsSection = ({ className, ...rest }: GridProps) => {
           xs={12}
           justifyContent="center"
           direction="column"
-          spacing={4}
+          spacing={2}
         >
           <Grid item xs={12} sm={4}>
             <Typography variant="h5" paragraph>
