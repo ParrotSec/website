@@ -1,13 +1,6 @@
 import { Grid } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
-import parrotArchitect1 from './assets/parrot-architect-1.png'
-import parrotArchitect2 from './assets/parrot-architect-2.png'
-import parrotArchitect3 from './assets/parrot-architect-3.png'
-import parrotArchitect4 from './assets/parrot-architect-4.png'
-import parrotArchitect5 from './assets/parrot-architect-5.png'
-import parrotArchitect6 from './assets/parrot-architect-6.png'
-
 import DESection from 'containers/DownloadContainers/DESection'
 import parrotDesktop from 'containers/DownloadContainers/OSHome/assets/parrot-home-1.png'
 
@@ -17,60 +10,46 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const OSArchitect = () => {
+const OSRaspberry = () => {
   const classes = useStyles()
   return (
     <>
       <Grid container justifyContent="center">
         <DESection
-          name="Parrot Architect & IoT"
-          description={
-            <>ParrotOS with nothing pre-installed. Install any software and DE with this edition.</>
-          }
+          name="Raspberry Pi Images"
+          description={<>From release 5.0, Parrot is also available for Raspberry Pi 4.</>}
           className={classes.desktopEnvironment}
           version="5.0 LTS"
           releaseDate="Feb 16, 2022"
-          architecture="all"
-          size="320-337 MB"
-          screenshots={[
-            parrotArchitect1,
-            parrotArchitect2,
-            parrotDesktop,
-            parrotArchitect3,
-            parrotArchitect4,
-            parrotArchitect5,
-            parrotArchitect6
-          ]}
+          architecture="arm64"
+          size="200 MB"
+          screenshots={[parrotDesktop]}
           requirements={[
-            { heading: 'Processor', description: 'Dual Core CPU' },
+            { heading: 'Processor', description: 'ARM quad core' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
             { heading: 'Memory', description: '2 GB RAM' },
-            { heading: 'Storage', description: '16 GB available space' }
+            { heading: 'Storage', description: '8 GB available space' }
           ]}
           features={[
             {
-              hero: 'Totally customizable',
+              hero: 'ParrotOS on Raspberry Pi 4',
               content: [
                 {
                   heading: 'Ready for any context.',
-                  description: <>Choose which tool to download upon installation.</>
+                  description: <>Use the full potential of Parrot on your Raspberry Pi.</>
                 },
                 {
-                  heading: '(even) lighter!',
+                  heading: 'Customizable',
                   description: <>You can customize it as you prefer, with any DE and any tool.</>
                 }
               ]
             }
           ]}
           architectEdition={{
-            arm64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_arm64.iso',
-            amd64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso',
-            i386: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_i386.iso'
+            arm64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso'
           }}
           torrent={{
-            arm64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_arm64.iso.torrent',
-            amd64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso.torrent',
-            i386: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_i386.iso.torrent'
+            arm64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso.torrent'
           }}
           hashes={{
             md5: '0b18b14c1eb313604b238fd0ad846f7a',
@@ -88,4 +67,4 @@ const OSArchitect = () => {
   )
 }
 
-export default OSArchitect
+export default OSRaspberry

@@ -23,10 +23,12 @@ import Carousel from 'components/Carousel'
 import OSArchitect from 'containers/DownloadContainers/OSArchitect'
 import OSCloud from 'containers/DownloadContainers/OSCloud'
 import OSHome from 'containers/DownloadContainers/OSHome'
+import OSRaspberry from 'containers/DownloadContainers/OSRaspberry'
 import OSSecurity from 'containers/DownloadContainers/OSSecurity'
 import Architect from 'containers/HomeContainers/OSSection/assets/Architect.svg'
 import Cloud from 'containers/HomeContainers/OSSection/assets/Cloud.svg'
 import Home from 'containers/HomeContainers/OSSection/assets/Home.svg'
+import Raspberry from 'containers/HomeContainers/OSSection/assets/Raspberry.svg'
 import Security from 'containers/HomeContainers/OSSection/assets/Security.svg'
 
 const useStyles = makeStyles(theme => ({
@@ -82,6 +84,9 @@ const useStyles = makeStyles(theme => ({
   architect: {
     background: 'linear-gradient(180deg, #B0B0B0 18%, #999999 91%)'
   },
+  raspberry: {
+    background: 'linear-gradient(90deg, rgba(150,14,50,1) 58%, rgba(189,13,59,1) 99%)'
+  },
   rounded: {
     borderRadius: '24px !important'
   },
@@ -97,7 +102,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 type OSSelectionProps = {
-  initialVersion?: 'home' | 'security' | 'cloud' | 'architect'
+  initialVersion?: 'home' | 'security' | 'cloud' | 'architect' | 'raspberry'
 }
 
 type EditionTabProps = {
@@ -110,7 +115,7 @@ const EditionTab = styled((props: EditionTabProps) => <Tab {...props} />)(() => 
   textTransform: 'none'
 }))
 
-type OSTypes = 'home' | 'security' | 'cloud' | 'architect'
+type OSTypes = 'home' | 'security' | 'cloud' | 'architect' | 'raspberry'
 
 const Accordion = ({ gradient, ...props }: AccordionProps & { gradient: OSTypes }) => {
   const classes = useStyles()
@@ -142,7 +147,8 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
     home: 0,
     security: 1,
     cloud: 2,
-    architect: 3
+    architect: 3,
+    raspberry: 4
   }
 
   return (
@@ -195,6 +201,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
               label="Architect Edition"
               onClick={() => setOS('architect')}
             />
+            <EditionTab value="raspberry" label="Raspberry Pi" onClick={() => setOS('raspberry')} />
           </Tabs>
         </Grid>
       </Hidden>
@@ -285,6 +292,27 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
+              <Accordion
+                expanded={os === 'raspberry'}
+                onChange={() => setOS('raspberry')}
+                gradient="raspberry"
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel3a-content"
+                  id="panel3a-header"
+                >
+                  <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
+                    <Raspberry className={classes.headerIcon} />
+                    <Typography variant="inherit">Raspberry Pi</Typography>
+                  </Box>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography variant="subtitle2Semi" align="center" mt="12px">
+                    ParrotOS on Raspberry Pi
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
             </div>
           </Grid>
         </Hidden>
@@ -301,6 +329,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
             <OSSecurity />
             <OSCloud />
             <OSArchitect />
+            <OSRaspberry />
           </Carousel>
         </Grid>
       </Grid>

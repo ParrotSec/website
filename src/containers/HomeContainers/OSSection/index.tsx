@@ -3,8 +3,8 @@ import { makeStyles } from '@mui/styles'
 
 import Architect from './assets/Architect.svg'
 import Cloud from './assets/Cloud.svg'
+import Comingsoon from './assets/comingsoon.png'
 import Home from './assets/Home.svg'
-import Linode from './assets/linode-block.png'
 import Security from './assets/Security.svg'
 
 import OSCard from 'components/OSCard'
@@ -26,6 +26,9 @@ const useStyles = makeStyles(theme => ({
     background: 'linear-gradient(180deg, #E806FF 10%, #B505CC 90%)'
   },
   architectIcon: {
+    background: 'linear-gradient(180deg, #B0B0B0 18%, #999999 91%)'
+  },
+  raspberryIcon: {
     background: 'linear-gradient(180deg, #B0B0B0 18%, #999999 91%)'
   },
   architectCard: {
@@ -52,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     flexFlow: 'column',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundImage: `url('${Linode.src}')`,
+    backgroundImage: `url('${Comingsoon.src}')`,
     [theme.breakpoints.down('md')]: {
       marginBottom: theme.spacing(25)
     }
@@ -131,7 +134,7 @@ const OSSection = () => {
           </Paper>
         </Grid>
         <Grid item xs={12} md={4}>
-          <CardActionArea className={classes.linode} href="https://www.linode.com" />
+          <CardActionArea className={classes.linode} href="/download" />
         </Grid>
       </Grid>
     </>
