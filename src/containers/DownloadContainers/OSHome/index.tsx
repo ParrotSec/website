@@ -5,6 +5,7 @@ import parrotHome1 from './assets/parrot-home-1.png'
 import parrotHome2 from './assets/parrot-home-2.png'
 import parrotHome3 from './assets/parrot-home-3.png'
 import parrotHome4 from './assets/parrot-home-4.png'
+import parrotHome5 from './assets/parrot-home-5.png'
 
 import DESection from 'containers/DownloadContainers/DESection'
 
@@ -38,7 +39,7 @@ const OSHome = () => {
           url="https://download.parrot.sh/parrot/iso/5.0/Parrot-home-5.0_amd64.iso"
           torrentUrl="http://download.parrot.sh/parrot/iso/5.0/Parrot-home-5.0_amd64.iso.torrent"
           torrentButton="Download Torrent"
-          screenshots={[parrotHome1, parrotHome2, parrotHome3, parrotHome4]}
+          screenshots={[parrotHome1, parrotHome2, parrotHome3, parrotHome4, parrotHome5]}
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },

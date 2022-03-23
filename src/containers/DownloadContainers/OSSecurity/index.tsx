@@ -5,6 +5,7 @@ import parrotSecurity1 from './assets/parrot-security-1.png'
 import parrotSecurity2 from './assets/parrot-security-2.png'
 import parrotSecurity3 from './assets/parrot-security-3.png'
 import parrotSecurity4 from './assets/parrot-security-4.png'
+import parrotSecurity5 from './assets/parrot-security-5.png'
 
 import DESection from 'containers/DownloadContainers/DESection'
 
@@ -37,7 +38,13 @@ const OSSecurity = () => {
           url="https://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso"
           torrentUrl="http://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso.torrent"
           torrentButton="Download Torrent"
-          screenshots={[parrotSecurity1, parrotSecurity2, parrotSecurity3, parrotSecurity4]}
+          screenshots={[
+            parrotSecurity1,
+            parrotSecurity2,
+            parrotSecurity3,
+            parrotSecurity4,
+            parrotSecurity5
+          ]}
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
