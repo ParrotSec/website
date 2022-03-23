@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexFlow: 'column'
   },
-  linode: {
+  comingSoon: {
     borderRadius: 24,
     padding: 8,
     height: '100%',
@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
     backgroundPosition: 'center',
     backgroundImage: `url('${Comingsoon.src}')`,
     [theme.breakpoints.down('md')]: {
-      marginBottom: theme.spacing(25)
+      marginBottom: theme.spacing(45)
     }
   },
   iconHolder: {
@@ -134,7 +134,7 @@ const OSSection = () => {
           </Paper>
         </Grid>
         <Grid item xs={12} md={4}>
-          <CardActionArea className={classes.linode} href="/download" />
+          <CardActionArea className={classes.comingSoon} href="/download" />
         </Grid>
       </Grid>
     </>

@@ -3,7 +3,6 @@ import { makeStyles } from '@mui/styles'
 import cls from 'classnames'
 
 import PButton from 'components/PButton'
-import parrotDesktop from 'containers/DownloadContainers/OSHome/assets/parrot-home-1.png'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,14 +40,6 @@ const OSCloud = () => {
             Cloud Appliances are special editions of Parrot Security made for embedded devices,
             cloud environments, virtual machines and other special deployments.
           </Typography>
-          <Grid item xs={12}>
-            <img
-              className={classes.image}
-              src={parrotDesktop.src}
-              alt="Parrot 5 Desktop"
-              key="parrot-desktop"
-            />
-          </Grid>
           <Grid container justifyContent="center" spacing={2} style={{ marginTop: 20 }}>
             <Grid item xs={12} md={8} justifyContent="center">
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
@@ -75,12 +66,15 @@ const OSCloud = () => {
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
                 <Typography variant="h6">HackTheBox Edition</Typography>
                 <Typography variant="body1Semi">
-                  Try this version of ParrotOS customized for Hack The Box.
+                  Try this version of ParrotOS customized for Hack The Box or explore the Pwnbox.
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} md={4} justifyContent="center">
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
+                <PButton variant="contained" to="https://www.hackthebox.com/newsroom/pwnbox">
+                  Pwnbox
+                </PButton>
                 <PButton
                   gradient
                   variant="contained"
