@@ -36,7 +36,7 @@ const PostsSection = ({ allPosts, ...rest }: PostSectionProps) => {
       {allPostsRendered.slice(0, 6)}
       <NewsletterSection md={12} />
       */}
-      {allPostsRendered.slice(6)}
+      {allPostsRendered}
     </Grid>
   )
 }

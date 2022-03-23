@@ -6,7 +6,7 @@ export default [
     github: 'https://github.com/PalinuroSec',
     twitter: '',
     linkedIn: '',
-    email: 'palinuro at parrotsec dot org'
+    email: 'mailto:palinuro@parrotsec.org'
   },
   {
     name: 'Federica Marasà',
@@ -15,7 +15,7 @@ export default [
     github: 'https://github.com/marafed',
     twitter: '',
     linkedIn: '',
-    email: 'marafed at parrotsec dot org'
+    email: 'mailto:marafed@parrotsec.org'
   },
   {
     name: 'Irene Pirrotta',
@@ -24,7 +24,7 @@ export default [
     github: '',
     twitter: '',
     linkedIn: '',
-    email: 'tissy at parrotsec dot org'
+    email: 'mailto:tissy@parrotsec.org'
   },
   {
     name: 'Vladyslav Dalechyn',
@@ -33,7 +33,7 @@ export default [
     github: 'https://github.com/h0tw4t3r',
     twitter: '',
     linkedIn: '',
-    email: 'h0tw4t3r at parrotsec dot org'
+    email: 'mailto:h0tw4t3r@parrotsec.org'
   },
   {
     name: 'Nông Hoàng Tú',
@@ -42,7 +42,7 @@ export default [
     github: 'https://github.com/dmknght',
     twitter: '',
     linkedIn: '',
-    email: 'dmknght at parrotsec dot org'
+    email: 'mailto:dmknght@parrotsec.org'
   },
   {
     name: 'Dario Camonita',
@@ -51,6 +51,6 @@ export default [
     github: 'https://github.com/danterolle',
     twitter: '',
     linkedIn: '',
-    email: 'danterolle at parrotsec dot org'
+    email: 'mailto:danterolle@parrotsec.org'
   }
 ]
