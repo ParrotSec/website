@@ -264,7 +264,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography variant="subtitle2Semi" align="center" mt="12px">
-                    IoT & Cloud Appliances are special editions of Parrot Security made for{' '}
+                    Cloud Appliances are special editions of Parrot Security made for{' '}
                     <b>embedded devices</b>, <b>cloud environments</b>, <b>virtual machines</b> and
                     other special deployments.
                   </Typography>

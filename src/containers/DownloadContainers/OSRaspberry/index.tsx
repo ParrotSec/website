@@ -39,7 +39,7 @@ const OSRaspberry = () => {
                   description: <>Use the full potential of Parrot on your Raspberry Pi.</>
                 },
                 {
-                  heading: 'Customizable',
+                  heading: 'Customizable.',
                   description: <>You can customize it as you prefer, with any DE and any tool.</>
                 }
               ]

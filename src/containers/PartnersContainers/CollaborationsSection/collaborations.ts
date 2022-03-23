@@ -23,7 +23,7 @@ export default [
   {
     name: 'ProDefence',
     description:
-      'is an IT company dedicated to cyber security services, protecting companies from vulnerabilities and system penetration, providing security information training to their employees. Company employees can take advantage of the remote support we give anytime anyday to any platform. In addition to this, we analyze any file, as well as, network activity for malware or any other malicious and suspicious activity and help to recover and educate the users involved.',
+      'is an IT company dedicated to cyber security services, protecting companies from vulnerabilities and system penetration, providing security information training to their employees. Company employees can take advantage of the remote support we give anytime anyday to any platform.',
     url: 'https://www.prodefence.org',
     image: '../assets/partners/collaborations/prodefence.png'
   },

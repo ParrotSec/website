@@ -38,8 +38,8 @@ const OSCloud = () => {
             Cloud Editions
           </Typography>
           <Typography variant="subtitle2Semi" paragraph>
-            IoT & Cloud Appliances are special editions of Parrot Security made for embedded
-            devices, cloud environments, virtual machines and other special deployments.
+            Cloud Appliances are special editions of Parrot Security made for embedded devices,
+            cloud environments, virtual machines and other special deployments.
           </Typography>
           <Grid item xs={12}>
             <img

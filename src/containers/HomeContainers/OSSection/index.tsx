@@ -114,7 +114,7 @@ const OSSection = () => {
           title="Cloud Edition"
           link="/download?version=cloud"
         >
-          IoT & Cloud Appliances are special editions of Parrot Security made for{' '}
+          Cloud Appliances are special editions of Parrot Security made for{' '}
           <b>embedded devices</b>,<b>cloud environments</b>, <b>virtual machines</b> and other
           special deployments.
         </OSCard>
