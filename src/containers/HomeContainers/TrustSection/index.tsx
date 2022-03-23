@@ -1,8 +1,9 @@
-import { Grid, GridProps, Typography } from '@mui/material'
+import { Grid, GridProps, Link, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import HTB from '../HTBSection/assets/htbLogo.svg'
 
+import Bunnycdn from './assets/bunnycdn.svg'
 import Linode from './assets/linode.svg'
 
 const useStyles = makeStyles(theme => ({
@@ -44,10 +45,19 @@ const TrustSection = (props: GridProps) => {
         justifyContent="center"
       >
         <Grid item xs={12} md={8} lg={4}>
-          <HTB className={classes.img} />
+          <Link href="https://www.linode.com/?r=2b6d749d3cb301e41bdbec5fc40e50c4316f7c66">
+            <Linode className={classes.img} />
+          </Link>
         </Grid>
         <Grid item xs={12} md={8} lg={4}>
-          <Linode className={classes.img} />
+          <Link href="https://www.hackthebox.com">
+            <HTB className={classes.img} />
+          </Link>
+        </Grid>
+        <Grid item xs={12} md={8} lg={4}>
+          <Link href="https://bunny.net?ref=ppalfbefw3">
+            <Bunnycdn className={classes.img} />
+          </Link>
         </Grid>
       </Grid>
     </Grid>

@@ -29,12 +29,12 @@ const OSSecurity = () => {
               tools.
             </>
           }
-          version="5.0 LTS"
-          releaseDate="Feb 16, 2022"
+          version="5.0 Electro Ara"
+          releaseDate="Mar 24, 2022"
           architecture="amd64"
-          size="3.8 GB"
+          size="4.2 GB"
           download="Download"
-          url="http://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso"
+          url="https://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso"
           torrentUrl="http://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso.torrent"
           torrentButton="Download Torrent"
           screenshots={[parrotSecurity1, parrotSecurity2, parrotSecurity3, parrotSecurity4]}

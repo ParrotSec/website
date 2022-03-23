@@ -84,7 +84,7 @@ const OSCloud = () => {
                 <PButton
                   gradient
                   variant="contained"
-                  to="http://download.parrot.sh/parrot/iso/5.0/Parrot-htb-5.0_amd64.iso"
+                  to="https://download.parrot.sh/parrot/iso/5.0/Parrot-htb-5.0_amd64.iso"
                 >
                   Download
                 </PButton>

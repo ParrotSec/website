@@ -17,12 +17,17 @@ const OSRaspberry = () => {
       <Grid container justifyContent="center">
         <DESection
           name="Raspberry Pi Images"
-          description={<>From release 5.0, Parrot is also available for Raspberry Pi 4.</>}
+          description={
+            <>
+              From release 5.0, Parrot is also available for Raspberry Pi 4. Without DE, you can
+              install whatever you like.
+            </>
+          }
           className={classes.desktopEnvironment}
-          version="5.0 LTS"
-          releaseDate="Feb 16, 2022"
-          architecture="arm64"
-          size="200 MB"
+          version="5.0 Electro Ara"
+          releaseDate="Mar 24, 2022"
+          architecture="armhf, arm64"
+          size="100-150 MB"
           screenshots={[parrotDesktop]}
           requirements={[
             { heading: 'Processor', description: 'ARM quad core' },
@@ -46,10 +51,12 @@ const OSRaspberry = () => {
             }
           ]}
           architectEdition={{
-            arm64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso'
+            armhf: 'https://download.parrot.sh/parrot/iso/5.0/Parrot-core-rpi-5.0_armhf.img.xz',
+            arm64: 'https://download.parrot.sh/parrot/iso/5.0/Parrot-core-rpi-5.0_arm64.img.xz'
           }}
           torrent={{
-            arm64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso.torrent'
+            armhf: '',
+            arm64: ''
           }}
           hashes={{
             md5: '0b18b14c1eb313604b238fd0ad846f7a',
