@@ -309,7 +309,8 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography variant="subtitle2Semi" align="center" mt="12px">
-                    ParrotOS on Raspberry Pi
+                    At the moment Parrot is also available for Raspberry Pi, compatibility with
+                    other IoT devices will be added in the future.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
