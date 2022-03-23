@@ -89,12 +89,15 @@ type DESectionProps = {
     content: FixedLengthArray<{ heading: ReactNode; description: ReactNode }, 2>
   }[]
   hashes?: {
-    md5: string
-    sha1: string
-    sha224: string
-    sha256: string
-    sha384: string
-    sha512: string
+    md5?: string
+    sha1?: string
+    sha224?: string
+    sha256?: string
+    sha384?: string
+    sha512?: string
+  }
+  allHashes?: {
+    url: string
   }
 } & GridProps
 
@@ -116,6 +119,7 @@ const DESection = ({
   requirements,
   features,
   hashes,
+  allHashes,
   ...rest
 }: DESectionProps) => {
   const classes = useStyles()
@@ -224,11 +228,7 @@ const DESection = ({
                   <SelectButton label="Download" variant="contained">
                     {Object.entries(architectEdition).map(([key]) => (
                       <SelectButtonItem key={key}>
-                        <Link
-                          href={`https://deb.parrot.sh/parrot/iso/5.0-beta9/Parrot-architect-5.0-beta9_${key}.iso`}
-                        >
-                          {key}
-                        </Link>
+                        <Link href="#">{key}</Link>
                       </SelectButtonItem>
                     ))}
                   </SelectButton>
@@ -237,11 +237,7 @@ const DESection = ({
                   <SelectButton label="Torrent" variant="outlined">
                     {Object.entries(torrent).map(([key]) => (
                       <SelectButtonItem key={key}>
-                        <Link
-                          href={`https://deb.parrot.sh/parrot/iso/5.0-beta9/Parrot-architect-5.0-beta9_${key}.iso.torrent`}
-                        >
-                          {key}
-                        </Link>
+                        <Link href="#">{key}</Link>
                       </SelectButtonItem>
                     ))}
                   </SelectButton>
@@ -266,6 +262,14 @@ const DESection = ({
                       </SelectButtonItem>
                     ))}
                   </SelectButton>
+                )}
+                {allHashes && (
+                  <PButton
+                    variant="outlined"
+                    to="https://download.parrot.sh/parrot/iso/5.0/signed-hashes.txt"
+                  >
+                    Check Hashes
+                  </PButton>
                 )}
               </Box>
             </Grid>
