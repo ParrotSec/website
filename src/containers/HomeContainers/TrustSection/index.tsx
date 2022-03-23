@@ -50,7 +50,7 @@ const TrustSection = (props: GridProps) => {
           </Link>
         </Grid>
         <Grid item xs={12} md={8} lg={4}>
-          <Link href="https://www.hackthebox.com">
+          <Link href="https://www.hackthebox.com/?ref=parrotsec">
             <HTB className={classes.img} />
           </Link>
         </Grid>

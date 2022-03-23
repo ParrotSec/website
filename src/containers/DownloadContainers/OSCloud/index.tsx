@@ -72,7 +72,10 @@ const OSCloud = () => {
             </Grid>
             <Grid item xs={12} md={4} justifyContent="center">
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                <PButton variant="contained" to="https://www.hackthebox.com/newsroom/pwnbox">
+                <PButton
+                  variant="contained"
+                  to="https://www.hackthebox.com/newsroom/pwnbox/?ref=parrotsec"
+                >
                   Pwnbox
                 </PButton>
                 <PButton

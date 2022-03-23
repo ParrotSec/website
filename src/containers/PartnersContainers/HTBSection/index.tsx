@@ -30,7 +30,7 @@ const HTBSection = () => {
 
   return (
     <Grid container item xs={12} md={9} alignItems="center" justifyContent="center" wrap="nowrap">
-      <CardActionArea className={classes.actionArea} href="https://hackthebox.eu">
+      <CardActionArea className={classes.actionArea} href="https://hackthebox.com/?ref=parrotsec">
         <Paper className={classes.mainSponsorPaper} elevation={0}>
           <Typography variant="h5">Main sponsor</Typography>
           <Grid container>
