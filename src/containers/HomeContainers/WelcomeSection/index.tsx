@@ -150,7 +150,7 @@ const WelcomeSection = () => {
       <PButton
         className={classes.wideButton}
         variant="outlined"
-        to="/blog/2022-03-24-what’s-new-with-parrot-5.0"
+        to="/blog/2022-03-24-parrot-5.0-press-release"
         startIcon={<SvgIcon className={classes.bulb} component={Bulb} />}
       >
         What&apos;s new in ParrotOS 5.0 Electro Ara
