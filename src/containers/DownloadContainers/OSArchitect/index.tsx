@@ -68,9 +68,11 @@ const OSArchitect = () => {
             i386: 'https://download.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_i386.iso'
           }}
           torrent={{
-            arm64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_arm64.iso.torrent',
-            amd64: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso.torrent',
-            i386: 'https://deb.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_i386.iso.torrent'
+            arm64:
+              'https://download.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_arm64.iso.torrent',
+            amd64:
+              'https://download.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso.torrent',
+            i386: 'https://download.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_i386.iso.torrent'
           }}
           allHashes={{
             url: 'https://download.parrot.sh/parrot/iso/5.0/signed-hashes.txt'

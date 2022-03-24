@@ -36,7 +36,7 @@ const OSSecurity = () => {
           size="4.2 GB"
           download="Download"
           url="https://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso"
-          torrentUrl="http://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso.torrent"
+          torrentUrl="https://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso.torrent"
           torrentButton="Download Torrent"
           screenshots={[
             parrotSecurity1,

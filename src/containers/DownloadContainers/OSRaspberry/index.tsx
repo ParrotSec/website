@@ -130,10 +130,14 @@ const OSRaspberry = () => {
                   </SelectButton>
                   <SelectButton label="Torrent" variant="outlined">
                     <SelectButtonItem>
-                      <Link href="#">armhf</Link>
+                      <Link href="https://download.parrot.sh/parrot/iso/5.0/Parrot-core-rpi-5.0_armhf.img.xz.torrent">
+                        armhf
+                      </Link>
                     </SelectButtonItem>
                     <SelectButtonItem>
-                      <Link href="#">arm64</Link>
+                      <Link href="https://download.parrot.sh/parrot/iso/5.0/Parrot-core-rpi-5.0_arm64.img.xz.torrent">
+                        arm64
+                      </Link>
                     </SelectButtonItem>
                   </SelectButton>
                   <PButton
