@@ -2,14 +2,16 @@ import { Grid, Hidden, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import cls from 'classnames'
 
+import React from './assets/docker-logo.svg'
+import Docker from './assets/docker-logo.svg'
+import Golang from './assets/golang-logo.svg'
+import Java from './assets/java-logo.svg'
+import Nodejs from './assets/nodejs-logo.svg'
+import Python from './assets/python-logo.svg'
+import Rust from './assets/rust-logo.svg'
+
 import PIconLink from 'components/PIconLink'
 import Slider from 'components/Slider'
-import Docker from 'containers/HomeContainers/ToolsSection/assets/docker-logo.svg'
-import Golang from 'containers/HomeContainers/ToolsSection/assets/golang-logo.svg'
-import Java from 'containers/HomeContainers/ToolsSection/assets/java-logo.svg'
-import Nodejs from 'containers/HomeContainers/ToolsSection/assets/nodejs-logo.svg'
-import Python from 'containers/HomeContainers/ToolsSection/assets/python-logo.svg'
-import Rust from 'containers/HomeContainers/ToolsSection/assets/rust-logo.svg'
 
 const useStyles = makeStyles(theme => ({
   developerBlock: {
@@ -130,6 +132,15 @@ const items = [
       challenges that conflict. Through balancing powerful technical capacity and a great developer
       experience, Rust gives you the option to control low-level details (such as memory usage)
       without all the hassle traditionally associated with such control.
+    </>
+  </PIconLink>,
+  <PIconLink key="react" href="https://www.reactjs.org" Icon={React}>
+    <>
+      <b>React</b>
+      <br />
+      React is a declarative, efficient, and flexible JavaScript library for building user
+      interfaces. It lets you compose complex UIs from small and isolated pieces of code called
+      “components”.
     </>
   </PIconLink>
 ]

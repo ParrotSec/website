@@ -15,8 +15,8 @@ const FeaturesSection = (props: GridProps) => {
     <PFeatureBlock
       title="System Security"
       Icon={Safety}
-      buttonText="Our approach to system security"
-      buttonLink="/docs"
+      /* buttonText="Our approach to system security" */
+      /* buttonLink="/docs" */
       key="feature-1"
     >
       The system is designed from the ground up to be secure. Native support for full disk
@@ -26,8 +26,8 @@ const FeaturesSection = (props: GridProps) => {
     <PFeatureBlock
       title="Portability"
       Icon={Build}
-      buttonText="Parrot runs anywhere"
-      buttonLink="/docs"
+      /* buttonText="Parrot runs anywhere" */
+      /* buttonLink="/docs" */
       key="feature-2"
     >
       Parrot is based on top of Debian, the most advanced and recognized universal operating system
@@ -38,8 +38,8 @@ const FeaturesSection = (props: GridProps) => {
     <PFeatureBlock
       title="Performance"
       Icon={Vector}
-      buttonText="The system is blazing fast"
-      buttonLink="/docs"
+      /* buttonText="The system is blazing fast" */
+      /* buttonLink="/docs" */
       key="feature-3"
     >
       We care about speed, and the system has been engineered to be as lightweight as possible. You
@@ -49,8 +49,8 @@ const FeaturesSection = (props: GridProps) => {
     <PFeatureBlock
       title="Privacy"
       Icon={Unlock}
-      buttonText="We care about your privacy"
-      buttonLink="/docs"
+      /* buttonText="We care about your privacy" */
+      /* buttonLink="/docs" */
       key="feature-4"
     >
       Don&apos;t leave your sensitive customer data floating around unprotected. The installer
@@ -62,8 +62,8 @@ const FeaturesSection = (props: GridProps) => {
     <PFeatureBlock
       title="Customizability"
       Icon={Layout}
-      buttonText="Customize the system"
-      buttonLink="/docs"
+      /* buttonText="Customize the system" */
+      /* buttonLink="/docs" */
       key="feature-5"
     >
       Perfect default settings and great customizability are key to the success of the project. You
@@ -73,8 +73,8 @@ const FeaturesSection = (props: GridProps) => {
     <PFeatureBlock
       title="Freedom"
       Icon={WeChat}
-      buttonText="Learn more about your rights"
-      buttonLink="/docs"
+      /* buttonText="Learn more about your rights" */
+      /* buttonLink="/docs" */
       key="feature-6"
     >
       The system is Free and Open Source, and all the code that powers the system is made available

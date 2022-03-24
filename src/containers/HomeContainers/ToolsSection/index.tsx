@@ -1,17 +1,25 @@
-import { Box, Grid, GridProps, Hidden, Paper, Typography } from '@mui/material'
+import { Grid, GridProps, Hidden, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import { useMeasure } from 'react-use'
 
-import screenshot from './assets/screenshot.webp'
-import parrotBg from './assets/shellBg.webp'
-import Burp from './assets/tool-logo-burp 1.svg'
-import John from './assets/tool-logo-john 1.svg'
-import Maltego from './assets/tool-logo-maltego 1.svg'
-import Metasploit from './assets/tool-logo-metasploit 1.svg'
-import Nmap from './assets/tool-logo-nmap 1.svg'
-import Sqlmap from './assets/tool-logo-sqlmap 1.svg'
-import Tools from './assets/tools.svg'
+import aircrackIcon from './assets/aircrack-logo.svg'
+import aircrackScreenshot from './assets/aircrack-ng.png'
+import anonsurfIcon from './assets/anonsurf-logo.svg'
+import anonsurfScreenshot from './assets/anonsurf.png'
+import bettercapIcon from './assets/bettercap-logo.svg'
+import bettercapScreenshot from './assets/bettercap.png'
+import rizincutterIcon from './assets/cutter-logo.svg'
+import johnnyScreenshot from './assets/johnny.png'
+import niktoIcon from './assets/nikto-logo.svg'
+import niktoScreenshot from './assets/nikto.png'
+import ophcrackScreenshot from './assets/ophcrack.png'
+import rizincutterScreenshot from './assets/rizin-cutter.png'
+import vscodiumScreenshot from './assets/vscodium.png'
+import wiresharkIcon from './assets/wireshark-logo.svg'
+import wiresharkScreenshot from './assets/wireshark.png'
+import zaproxyIcon from './assets/zaproxy-logo.svg'
+import zaproxyScreenshot from './assets/zaproxy.png'
 
+import Carousel from 'components/Carousel'
 import PButton from 'components/PButton'
 import PIconLink from 'components/PIconLink'
 import Slider from 'components/Slider'
@@ -23,6 +31,10 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: 16,
     paddingRight: 16,
     paddingBottom: 75
+  },
+  carouselImg: {
+    display: 'block',
+    margin: 'auto'
   },
   headerIcon: {
     fill: theme.palette.mode === 'light' ? '#FFFFFF' : '#06043E'
@@ -54,165 +66,98 @@ const useStyles = makeStyles(theme => ({
     }
   },
   buttons: {
-    marginTop: theme.spacing(4)
+    marginTop: theme.spacing(1)
   },
   smMarquee: {
     minHeight: 93,
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4)
-  },
-  paperPadding: {
-    padding: theme.spacing(8),
-    [theme.breakpoints.down('sm')]: {
-      padding: theme.spacing(4)
-    }
   }
 }))
 
 const ToolsSection = (rest: GridProps) => {
   const classes = useStyles()
-  const [ref, { width, height }] = useMeasure<HTMLImageElement>()
+  const screenshots = [
+    anonsurfScreenshot,
+    bettercapScreenshot,
+    aircrackScreenshot,
+    johnnyScreenshot,
+    niktoScreenshot,
+    ophcrackScreenshot,
+    rizincutterScreenshot,
+    vscodiumScreenshot,
+    wiresharkScreenshot,
+    zaproxyScreenshot
+  ]
 
-  const icons = (absolute: boolean) => [
-    <PIconLink
-      key="burp"
-      href="https://nest.parrotsec.org/packages/tools/burpsuite"
-      Icon={Burp}
-      large
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              top: -24,
-              left: 0.922 * width
-            }
-          : {}
-      }
-    >
+  const icons = [
+    <PIconLink key="aircrack" Icon={aircrackIcon} large>
       <>
-        <b>Burp Suite</b>
+        <b>Aircrack</b>
         <br />
-        Burp Suite is a set of tools used for penetration testing of web applications. It is
-        developed by the company named Portswigger, which is also the alias of its founder Dafydd
-        Stuttard.
+        Aircrack-ng is a complete suite of tools to assess WiFi network security.
       </>
     </PIconLink>,
-    <PIconLink
-      key="john"
-      href="https://nest.parrotsec.org/packages/tools/john"
-      Icon={John}
-      large
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              top: 0.902 * height,
-              left: 0.045 * width
-            }
-          : {}
-      }
-    >
+    <PIconLink key="anonsurf" Icon={anonsurfIcon} large>
       <>
-        <b>John the Ripper</b>
+        <b>AnonSurf</b>
         <br />
-        John the Ripper is a fast password cracker, currently available for many flavors of Unix,
-        macOS, Windows, DOS, BeOS, and OpenVMS (the latter requires a contributed patch). Its
-        primary purpose is to detect weak Unix passwords.
+        AnonSurf is Parrot&apos;s anonymous mode wrapper to force connections through Tor. It is
+        written in Nim Language and uses GTK libraries so it can be used via a graphical interface
+        (GUI) and a CommandLine Interface (CLI).
       </>
     </PIconLink>,
-    <PIconLink
-      key="maltego"
-      href="https://www.maltego.com/product-features/"
-      Icon={Maltego}
-      large
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              left: 0.958 * width,
-              top: 0.595 * height
-            }
-          : {}
-      }
-    >
+    <PIconLink key="bettercap" Icon={bettercapIcon} large>
       <>
-        <b>Maltego</b>
+        <b>Bettercap</b>
         <br />
-        Maltego is an open source intelligence and graphical link analysis tool for gathering and
-        connecting information for investigative tasks. Maltego is a Java application that runs on
-        Windows, Mac and Linux.
+        bettercap is a powerful, easily extensible and portable framework written in Go which aims
+        to offer to security researchers, red teamers and reverse engineers an easy to use,
+        all-in-one solution with all the features they might possibly need for performing
+        reconnaissance and attacking WiFi networks, Bluetooth Low Energy devices, wireless HID
+        devices and Ethernet networks.
       </>
     </PIconLink>,
-    <PIconLink
-      key="nmap"
-      href="https://nest.parrotsec.org/packages/tools/nmap"
-      Icon={Nmap}
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              top: 0.518 * height,
-              left: -0.14 * width
-            }
-          : {}
-      }
-    >
+    <PIconLink key="nikto" Icon={niktoIcon} large>
       <>
-        <b>Nmap</b>
+        <b>Nikto</b>
         <br />
-        Nmap is an open source tool for network exploration and security auditing. It was designed
-        to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw
-        IP packets in novel ways to determine what hosts are available on the network, what services
-        those hosts are offering, what operating systems they are running, what type of packet
-        filters/firewalls are in use, and dozens of other characteristics.
+        Nikto is an Open Source (GPL) web server scanner which performs comprehensive tests against
+        web servers for multiple items, including over 6700 potentially dangerous files/programs,
+        checks for outdated versions of over 1250 servers, and version specific problems on over 270
+        servers. It also checks for server configuration items such as the presence of multiple
+        index files, HTTP server options, and will attempt to identify installed web servers and
+        software.
       </>
     </PIconLink>,
-    <PIconLink
-      key="metasploit"
-      href="https://nest.parrotsec.org/packages/tools/metasploit-framework"
-      Icon={Metasploit}
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              top: 0.23 * height,
-              left: 1.111 * width
-            }
-          : {}
-      }
-    >
+    <PIconLink key="rizin-cutter" Icon={rizincutterIcon} large>
       <>
-        <b>Metasploit</b>
+        <b>Rizin Cutter</b>
         <br />
-        Metasploit is a tool for developing and executing exploit code against a remote target
-        machine. Other important sub-projects include the Opcode Database, shellcode archive and
-        related research.
+        Cutter is a free and open-source reverse engineering platform powered by rizin. It aims at
+        being an advanced and customizable reverse engineering platform while keeping the user
+        experience in mind. Cutter is created by reverse engineers for reverse engineers.
       </>
     </PIconLink>,
-    <PIconLink
-      key="sqlmap"
-      href="https://nest.parrotsec.org/packages/tools/sqlmap"
-      Icon={Sqlmap}
-      large
-      style={
-        absolute
-          ? {
-              position: 'absolute',
-              top: 0.2 * height,
-              left: -42
-            }
-          : {}
-      }
-    >
+    <PIconLink key="wireshark" Icon={wiresharkIcon} large>
       <>
-        <b>SQLMap</b>
+        <b>Wireshark</b>
         <br />
-        SQLmap is an open source penetration testing tool that automates the process of detecting
-        and exploiting SQL injection flaws and taking over of database servers. It comes with a
-        powerful detection engine, many niche features for the ultimate penetration tester, and a
-        broad range of switches including database fingerprinting, over data fetching from the
-        database, accessing the underlying file system, and executing commands on the operating
-        system via out-of-band connections.
+        Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see
+        what’s happening on your network at a microscopic level and is the de facto (and often de
+        jure) standard across many commercial and non-profit enterprises, government agencies, and
+        educational institutions.
+      </>
+    </PIconLink>,
+    <PIconLink key="zaproxy" Icon={zaproxyIcon} large>
+      <>
+        <b>Zaproxy</b>
+        <br />
+        The OWASP Zed Attack Proxy (ZAP) is one of the world’s most popular free security tools and
+        is actively maintained by a dedicated international team of volunteers. It can help you
+        automatically find security vulnerabilities in your web applications while you are
+        developing and testing your applications. It&apos;s also a great tool for experienced
+        pentesters to use for manual security testing.
       </>
     </PIconLink>
   ]
@@ -229,38 +174,41 @@ const ToolsSection = (rest: GridProps) => {
             alignItems="center"
             direction="column"
           >
-            <div className={classes.headerIconWrapper}>
-              <Tools className={classes.headerIcon} />
-            </div>
             <Typography variant="h3" align="center" paragraph>
               Tools for every operation
             </Typography>
             <Typography variant="subtitle2Semi" align="center" paragraph>
               Choose between 600+ tools for every kind of Red and Blue team operation.
             </Typography>
-            <Typography variant="subtitle2Semi" align="center" paragraph>
+            <Typography mb={4} variant="subtitle2Semi" align="center" paragraph>
               Parrot Security provides a huge arsenal of tools, utilities and libraries that IT and
               security professionals can use to test and assess the security of their assets in a
               reliable, compliant and reproducible way. From information gathering to the final
               report. The Parrot system gets you covered with the most flexible environment.
             </Typography>
             {/*TODO: for futher animations need to apply box-shadow*/}
-            <Hidden mdDown>
-              <Box position="relative" width={width} marginTop="46px" zIndex={2}>
-                {icons(true)}
-              </Box>
-            </Hidden>
             <Hidden mdUp>
               <Slider className={classes.smMarquee} cloneFactor={2}>
-                {icons(false)}
+                {icons}
               </Slider>
             </Hidden>
             <Hidden mdDown>
-              <div className={classes.bgHolder}>
-                <img ref={ref} className={classes.bg} src={parrotBg.src} alt="Parrot BG" />
-              </div>
+              <Grid container justifyContent="center">
+                <Grid item xs={11}>
+                  <Carousel>
+                    {screenshots.map((image, i) => (
+                      <img
+                        className={classes.carouselImg}
+                        src={image.src}
+                        alt={`screenshot-${i}`}
+                        key={`screenshot-${i}`}
+                      />
+                    ))}
+                  </Carousel>
+                </Grid>
+              </Grid>
             </Hidden>
-            <Typography variant="h5" align="center">
+            <Typography mt={4} variant="h5" align="center">
               Explore over 600+ tools
             </Typography>
             <Grid className={classes.buttons} container item xs={12} spacing={4}>
@@ -273,68 +221,17 @@ const ToolsSection = (rest: GridProps) => {
                 justifyContent="flex-end"
               >
                 <PButton variant="contained" to="/download" gradient>
-                  Download
+                  Download ParrotOS 5.0
                 </PButton>
               </Grid>
               <Grid className={classes.responsiveJustify} container item xs={12} sm={6}>
                 <PButton variant="outlined" to="/docs">
-                  View Tools
+                  Documentation
                 </PButton>
               </Grid>
             </Grid>
           </Grid>
         </Paper>
-      </Grid>
-      <Grid container spacing={4} item xs={12} md={9} style={{ marginTop: 32 }}>
-        <Grid container item xs={12} md={6}>
-          <Paper elevation={0}>
-            <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
-              <div className={classes.paperPadding}>
-                <Typography variant="h5" paragraph>
-                  Hacking tools at your fingertips
-                </Typography>
-                <Typography variant="body1Semi">
-                  You can install your favorite tools on top of any Linux system, but it is
-                  time-comsuming, prone to errors and hard to keep updated over time.
-                  <br />
-                  Parrot gives you the convenience of a familiar Debian environment with all the
-                  tools you will ever need. We regularly update, test and pack them for you.
-                  <br />
-                  Having a bunch of git clones thrown at your desktop is something of the past.
-                  <br />
-                  We do the hard work, not you.
-                </Typography>
-              </div>
-              <img
-                src={screenshot.src}
-                style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
-                alt="Parrot Tools"
-              />
-            </Box>
-          </Paper>
-        </Grid>
-        <Grid container item xs={12} md={6}>
-          <Paper elevation={0}>
-            <Box display="flex" justifyContent="space-between" flexDirection="column" height="100%">
-              <div className={classes.paperPadding}>
-                <Typography variant="h5" paragraph>
-                  This block should be replaced
-                </Typography>
-                <Typography variant="body1Semi">
-                  When it comes to general tools and functional features, Parrot OS wins over Kali
-                  Linux. Parrot OS has all the tools that are available in Kali Linux and also adds
-                  its own tools. There are several tools you will find on ParrotOS that is not found
-                  on Kali Linux.
-                </Typography>
-              </div>
-              <img
-                src={screenshot.src}
-                style={{ display: 'block', marginLeft: 'auto', maxWidth: '90%' }}
-                alt="Parrot Tools"
-              />
-            </Box>
-          </Paper>
-        </Grid>
       </Grid>
     </>
   )

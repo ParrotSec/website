@@ -4,7 +4,9 @@ import { useMemo } from 'react'
 import { PostType } from '../../../types'
 
 import Post from 'components/Post'
+/*
 import NewsletterSection from 'containers/HomeContainers/NewsletterSection'
+ */
 
 type PostSectionProps = {
   allPosts: PostType[]
@@ -30,9 +32,11 @@ const PostsSection = ({ allPosts, ...rest }: PostSectionProps) => {
   )
   return (
     <Grid container item xs={12} md={9} spacing={4} {...rest} justifyContent="center">
+      {/*
       {allPostsRendered.slice(0, 6)}
       <NewsletterSection md={12} />
-      {allPostsRendered.slice(6)}
+      */}
+      {allPostsRendered}
     </Grid>
   )
 }

@@ -4,6 +4,7 @@ import { NextPage } from 'next'
 import { SnackbarProvider } from 'notistack'
 
 import DonateSection from 'containers/DonateContainers/DonateSection'
+import StoreSection from 'containers/DonateContainers/StoreSection'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   },
   snackbar: {
     background: 'linear-gradient(99.16deg, #05EEFF 24.01%, #00FFF0 81.75%)',
-    color: '#03232E',
+    color: theme.palette.text.primary,
     borderRadius: 16
   }
 }))
@@ -48,6 +49,7 @@ const Donate: NextPage = () => {
           </Typography>
         </Grid>
         <DonateSection className={classes.donate} />
+        <StoreSection />
       </Grid>
     </SnackbarProvider>
   )

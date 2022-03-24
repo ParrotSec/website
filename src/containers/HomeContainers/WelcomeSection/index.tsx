@@ -150,11 +150,10 @@ const WelcomeSection = () => {
       <PButton
         className={classes.wideButton}
         variant="outlined"
-        to="/blog/parrot-5.0-released"
+        to="/blog/2022-03-24-parrot-5.0-press-release"
         startIcon={<SvgIcon className={classes.bulb} component={Bulb} />}
       >
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        What's new in Parrot OS 5.0
+        What&apos;s new in ParrotOS 5.0 Electro Ara
       </PButton>
     </Grid>
   )

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import { Theme } from '@mui/material'
+import { CSSProperties } from 'react'
 
 declare module '@mui/styles' {
   interface DefaultTheme extends Theme {}
@@ -7,16 +8,16 @@ declare module '@mui/styles' {
 
 declare module '@mui/material/Typography' {
   interface TypographyVariants {
-    body1Semi: React.CSSProperties
-    body2Semi: React.CSSProperties
-    subtitle1Semi: React.CSSProperties
-    subtitle2Semi: React.CSSProperties
+    body1Semi: CSSProperties
+    body2Semi: CSSProperties
+    subtitle1Semi: CSSProperties
+    subtitle2Semi: CSSProperties
   }
   interface TypographyVariantsOptions {
-    body1Semi?: React.CSSProperties
-    body2Semi?: React.CSSProperties
-    subtitle1Semi?: React.CSSProperties
-    subtitle2Semi?: React.CSSProperties
+    body1Semi?: CSSProperties
+    body2Semi?: CSSProperties
+    subtitle1Semi?: CSSProperties
+    subtitle2Semi?: CSSProperties
   }
   interface TypographyPropsVariantOverrides {
     body1Semi: true

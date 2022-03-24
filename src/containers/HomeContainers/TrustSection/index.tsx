@@ -1,24 +1,29 @@
-import { Grid, GridProps, Typography } from '@mui/material'
+import { Grid, GridProps, Link, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
-import Oreo from './assets/oreo 1.svg'
+import HTB from '../HTBSection/assets/htbLogo.svg'
+
+import Bunnycdn from './assets/bunnycdn.svg'
+import Linode from './assets/linode.svg'
 
 const useStyles = makeStyles(theme => ({
   trustLogosBlock: {
-    marginTop: 40
+    marginTop: theme.spacing(2)
   },
   img: {
     width: '100%',
-    height: 'auto',
-    maxWidth: 113,
-    maxHeight: 40,
+    height: '100%',
+    maxHeight: theme.spacing(6),
     display: 'block',
     margin: 'auto',
-    fill: theme.palette.mode === 'light' ? 'white' : 'inherit',
-    '& #path1': {
-      stroke: theme.palette.mode === 'light' ? '#03232E' : '#FFF'
+    fill: theme.palette.mode === 'dark' ? 'white' : 'inherit',
+    '& #linode-block': {
+      fill: '#03232E'
     },
-    '& #path2': {
+    '& #linode-text': {
+      fill: theme.palette.mode === 'light' ? '#03232E' : '#FFF'
+    },
+    '& #bunny-text': {
       fill: theme.palette.mode === 'light' ? '#03232E' : '#FFF'
     }
   }
@@ -30,7 +35,7 @@ const TrustSection = (props: GridProps) => {
     <Grid {...props} container justifyContent="center" alignItems="center" item xs={10}>
       <Grid item xs={10}>
         <Typography variant="body1" align="center" style={{ opacity: 1 }}>
-          Trusted by cybersecurity professionals around the world
+          In partnership with
         </Typography>
       </Grid>
       <Grid
@@ -42,23 +47,20 @@ const TrustSection = (props: GridProps) => {
         spacing={4}
         justifyContent="center"
       >
-        <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
+        <Grid item xs={12} md={8} lg={4}>
+          <Link href="https://www.linode.com/?r=2b6d749d3cb301e41bdbec5fc40e50c4316f7c66">
+            <Linode className={classes.img} />
+          </Link>
         </Grid>
-        <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
+        <Grid item xs={12} md={8} lg={4}>
+          <Link href="https://www.hackthebox.com/?ref=parrotsec">
+            <HTB className={classes.img} />
+          </Link>
         </Grid>
-        <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
-        </Grid>
-        <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
-        </Grid>
-        <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
-        </Grid>
-        <Grid item xs={6} md={4} lg={2}>
-          <Oreo className={classes.img} />
+        <Grid item xs={12} md={8} lg={4}>
+          <Link href="https://bunny.net?ref=ppalfbefw3">
+            <Bunnycdn className={classes.img} />
+          </Link>
         </Grid>
       </Grid>
     </Grid>

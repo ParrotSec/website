@@ -118,8 +118,12 @@ const Header = () => {
                 <Link className={classes.link} href="/donate">
                   Donate
                 </Link>
-                <Link className={classes.link} href="/swag">
+                {/* TODO: create swag webpage */}
+                {/*<Link className={classes.link} href="/swag">
                   Swag
+                </Link>*/}
+                <Link className={classes.link} href="/contribute">
+                  Contribute
                 </Link>
                 <Link className={classes.link} href="/team">
                   Team
@@ -158,9 +162,11 @@ const Header = () => {
                 <Link className={classes.link} onClick={() => setCollapsed(false)} href="/donate">
                   Donate
                 </Link>
+                {/*
                 <Link className={classes.link} onClick={() => setCollapsed(false)} href="/swag">
                   Swag
                 </Link>
+                */}
                 <Link className={classes.link} onClick={() => setCollapsed(false)} href="/team">
                   Team
                 </Link>

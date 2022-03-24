@@ -72,11 +72,9 @@ const ContributorsSection = ({
       item
       xs={12}
       md={9}
-      alignItems="center"
-      direction="column"
-      wrap="nowrap"
+      justifyContent="center"
     >
-      <Grid item xs={12}>
+      <Grid item xs={10}>
         <Box
           className={classes.contribHeader}
           fontWeight={700}
@@ -89,7 +87,12 @@ const ContributorsSection = ({
         <Typography className={classes.contribTitle} variant="h1" align="center">
           {title}
         </Typography>
-        <Typography className={classes.contribSubtitle} variant="subtitle2Semi" align="center">
+        <Typography
+          className={classes.contribSubtitle}
+          variant="subtitle2Semi"
+          component="div"
+          align="center"
+        >
           {subtitle}
         </Typography>
       </Grid>
@@ -97,7 +100,6 @@ const ContributorsSection = ({
         className={classes.contribSection}
         item
         xs={12}
-        md={9}
         justifyContent="center"
         alignItems="center"
       >

@@ -11,7 +11,7 @@ import {
   Typography
 } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import cls from 'classnames'
+import Link from 'next/link'
 import { useSnackbar } from 'notistack'
 import { ReactNode, useState, Fragment } from 'react'
 import Lightbox from 'react-image-lightbox'
@@ -21,14 +21,10 @@ import PButton from 'components/PButton'
 import SelectButton, { SelectButtonItem } from 'components/SelectButton'
 
 const useStyles = makeStyles(theme => ({
-  grid: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
-  },
   root: {
     width: '100%',
     padding: theme.spacing(8),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('md')]: {
       padding: theme.spacing(4)
     }
   },
@@ -64,12 +60,28 @@ type FixedLengthArray<T, L extends number, TObj = [T, ...Array<T>]> = Pick<
 }
 
 type DESectionProps = {
-  name: string
-  description: ReactNode
+  name?: string
+  description?: ReactNode
   version: string
   releaseDate: string
   architecture: string
   size: string
+  download?: string
+  url?: string
+  torrent?: {
+    arm64?: string
+    amd64?: string
+    i386?: string
+    armhf?: string
+  }
+  torrentButton?: string
+  torrentUrl?: string
+  architectEdition?: {
+    arm64?: string
+    amd64?: string
+    i386?: string
+    armhf?: string
+  }
   screenshots: StaticImageData[]
   requirements?: FixedLengthArray<{ heading: string; description: string }, 4>
   features?: {
@@ -77,12 +89,15 @@ type DESectionProps = {
     content: FixedLengthArray<{ heading: ReactNode; description: ReactNode }, 2>
   }[]
   hashes?: {
-    md5: string
-    sha1: string
-    sha224: string
-    sha256: string
-    sha384: string
-    sha512: string
+    md5?: string
+    sha1?: string
+    sha224?: string
+    sha256?: string
+    sha384?: string
+    sha512?: string
+  }
+  allHashes?: {
+    url: string
   }
 } & GridProps
 
@@ -94,10 +109,17 @@ const DESection = ({
   releaseDate,
   architecture,
   size,
+  download,
+  url,
+  torrent,
+  torrentUrl,
+  torrentButton,
+  architectEdition,
   screenshots,
   requirements,
   features,
   hashes,
+  allHashes,
   ...rest
 }: DESectionProps) => {
   const classes = useStyles()
@@ -107,9 +129,9 @@ const DESection = ({
   const { enqueueSnackbar } = useSnackbar()
 
   return (
-    <Grid className={cls(classes.grid, className)} container item xs={12} lg={8} {...rest}>
+    <Grid className={className} container item xs={12} {...rest}>
       <Paper className={classes.root} elevation={0}>
-        <Typography variant="h5" paragraph>
+        <Typography variant="h4" paragraph>
           {name}
         </Typography>
         <Typography variant="subtitle2Semi" paragraph>
@@ -197,11 +219,35 @@ const DESection = ({
             </Grid>
             <Grid item xs={12} sm={6} md={12}>
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                <PButton gradient variant="contained">
-                  Download
-                </PButton>
-                <PButton variant="outlined">Torrent</PButton>
-                <PButton variant="outlined">Virtual Appliance</PButton>
+                {download && (
+                  <PButton gradient variant="contained" to={url}>
+                    Download
+                  </PButton>
+                )}
+                {architectEdition && (
+                  <SelectButton label="Download" variant="contained">
+                    {Object.entries(architectEdition).map(([key, value]) => (
+                      <SelectButtonItem key={key}>
+                        <Link href={value}>{key}</Link>
+                      </SelectButtonItem>
+                    ))}
+                  </SelectButton>
+                )}
+                {torrent && (
+                  <SelectButton label="Torrent" variant="outlined">
+                    {Object.entries(torrent).map(([key, value]) => (
+                      <SelectButtonItem key={key}>
+                        <Link href={value}>{key}</Link>
+                      </SelectButtonItem>
+                    ))}
+                  </SelectButton>
+                )}
+                {torrentButton && (
+                  <PButton variant="outlined" to={torrentUrl}>
+                    Torrent
+                  </PButton>
+                )}
+                {/*<PButton variant="outlined">Virtual Appliance</PButton>*/}
                 {hashes && (
                   <SelectButton label="Compare Hashes" variant="outlined">
                     {Object.entries(hashes).map(([key, value]) => (
@@ -216,6 +262,14 @@ const DESection = ({
                       </SelectButtonItem>
                     ))}
                   </SelectButton>
+                )}
+                {allHashes && (
+                  <PButton
+                    variant="outlined"
+                    to="https://download.parrot.sh/parrot/iso/5.0/signed-hashes.txt"
+                  >
+                    Check Hashes
+                  </PButton>
                 )}
               </Box>
             </Grid>

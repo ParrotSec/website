@@ -9,6 +9,7 @@ type OSCardProps = {
   Icon: ElementType
   iconClassName?: string
   title: string
+  link: string
 } & GridProps
 
 const useStyles = makeStyles({
@@ -33,7 +34,7 @@ const useStyles = makeStyles({
   }
 })
 
-const OSCard = ({ Icon, iconClassName, title, children, ...rest }: OSCardProps) => {
+const OSCard = ({ Icon, iconClassName, title, link, children, ...rest }: OSCardProps) => {
   const classes = useStyles()
   return (
     <Grid {...rest} item xs={12} md={4}>
@@ -47,7 +48,7 @@ const OSCard = ({ Icon, iconClassName, title, children, ...rest }: OSCardProps) 
         <Typography variant="body1Semi" paragraph>
           {children}
         </Typography>
-        <PButton variant="contained" to="/download" style={{ maxWidth: 177 }}>
+        <PButton variant="contained" to={link} style={{ maxWidth: 177 }}>
           Download
         </PButton>
       </Paper>

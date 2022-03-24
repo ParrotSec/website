@@ -1,154 +1,126 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Grid } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import cls from 'classnames'
+
+import parrotSecurity1 from './assets/parrot-security-1.png'
+import parrotSecurity2 from './assets/parrot-security-2.png'
+import parrotSecurity3 from './assets/parrot-security-3.png'
+import parrotSecurity4 from './assets/parrot-security-4.png'
+import parrotSecurity5 from './assets/parrot-security-5.png'
 
 import DESection from 'containers/DownloadContainers/DESection'
-import homeMate1 from 'containers/DownloadContainers/OSHome/assets/home-mate-1.png'
-import Security from 'containers/HomeContainers/OSSection/assets/Security.svg'
 
 const useStyles = makeStyles(theme => ({
-  security: {
-    background: 'linear-gradient(145.47deg, #FAFD50 21.97%, #FD50D7 96.3%)'
-  },
   desktopEnvironment: {
     marginTop: theme.spacing(8)
   }
 }))
 
-type OSSecurityProps = {
-  classesGeneral: Record<'headerIcon' | 'iconHolder' | 'gridHeader', string>
-}
-
-const OSSecurity = ({ classesGeneral }: OSSecurityProps) => {
+const OSSecurity = () => {
   const classes = useStyles()
   return (
     <>
       <Grid container justifyContent="center">
-        <Grid
-          className={classesGeneral.gridHeader}
-          container
-          item
-          xs={10}
-          sm={8}
-          lg={6}
-          justifyContent="center"
-        >
-          <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
-            <div className={cls(classesGeneral.iconHolder, classes.security)}>
-              <Security className={classesGeneral.headerIcon} />
-            </div>
-            <Typography variant="h3">Security Edition</Typography>
-          </Box>
-          <Typography variant="subtitle2Semi" align="center" mt="12px">
-            Security Edition is a special purpose operating system designed for{' '}
-            <b>Penetration Testing</b> and
-            <b>Red Team operations</b>. It contains a full arsenal of ready-to use pentesting tools.
-          </Typography>
-        </Grid>
         <DESection
           className={classes.desktopEnvironment}
-          name="MATE Desktop"
+          name="Security Edition"
           description={
             <>
-              MATE is a lightweight desktop environment with a classical GNU/Linux layout. It is the
-              default desktop environment of Parrot OS and represents the iconical look and feel of
-              the system.
+              Parrot Security Edition is a special purpose operating system designed for Penetration
+              Test and Red Team operations. It contains a full arsenal of ready to use pentesting
+              tools.
             </>
           }
-          version="4.11.2"
-          releaseDate="May 28, 2021"
-          architecture="AMD64"
-          size="4.4 GB"
-          screenshots={[homeMate1, homeMate1, homeMate1, homeMate1, homeMate1]}
+          version="5.0 Electro Ara"
+          releaseDate="Mar 24, 2022"
+          architecture="amd64"
+          size="4.2 GB"
+          download="Download"
+          url="https://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso"
+          torrentUrl="https://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso.torrent"
+          torrentButton="Download Torrent"
+          screenshots={[
+            parrotSecurity1,
+            parrotSecurity2,
+            parrotSecurity3,
+            parrotSecurity4,
+            parrotSecurity5
+          ]}
           requirements={[
-            { heading: 'Processor', description: 'Intel Core i5 or equivalent' },
+            { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
             { heading: 'Memory', description: '8 GB RAM' },
-            { heading: 'Storage', description: '16 GB available space' }
+            { heading: 'Storage', description: '40 GB available space' }
           ]}
           features={[
             {
-              hero: 'Workspace',
+              hero: 'Workstation',
               content: [
                 {
-                  heading: 'iCloud Private Relay',
+                  heading: 'Full Office Suite',
                   description: (
                     <>
-                      iCloud Private Relay is a service that lets you connect to virtually any
-                      network and browse with Safari in an even more secure and private way.
+                      Pre-installed LibreOffice, and possibility to install other softwares via the
+                      Synaptic package manager.
                     </>
                   )
                 },
                 {
-                  heading: 'Hide My Email',
+                  heading: 'Multimedia Production',
                   description: (
                     <>
-                      Hide My Email allows you to create unique, random email addresses that forward
-                      to your personal inbox.{' '}
+                      Pre-installed VLC, GIMP and a whole repository from which to install other
+                      software such as OBS, Blender, Kdenlive, Krita and more!
                     </>
                   )
                 }
               ]
             },
             {
-              hero: 'Accessibility',
+              hero: 'Privacy',
               content: [
                 {
-                  heading: 'iCloud Private Relay',
+                  heading: 'Anonymity tools',
+                  description: <>AnonSurf, TOR, Firefox pre-installed Ad-blockers.</>
+                },
+                {
+                  heading: 'Cryptography',
                   description: (
                     <>
-                      iCloud Private Relay is a service that lets you connect to virtually any
-                      network and browse with Safari in an even more secure and private way.
+                      Full disk encryption and all encryption tools including zulucrypt, sirikali...
+                      at your fingertips!
+                    </>
+                  )
+                }
+              ]
+            },
+            {
+              hero: 'Development',
+              content: [
+                {
+                  heading: 'Pentest-ready',
+                  description: (
+                    <>
+                      Lots of penetration testing tools, all already installed, including
+                      Powersploit, Scapy, Rizin and more!
                     </>
                   )
                 },
                 {
-                  heading: 'Hide My Email',
-                  description: (
-                    <>
-                      Hide My Email allows you to create unique, random email addresses that forward
-                      to your personal inbox.
-                    </>
-                  )
+                  heading: 'Development Tools',
+                  description: <>VSCodium and Geany. You can start developing what you want.</>
                 }
               ]
             }
           ]}
           hashes={{
-            md5: 'e6fe3ae3a1c964dabde41e3e1b63ef79',
-            sha1: 'e0f82cea1aa4767c9f0c4755c48d43d8315ac80c',
-            sha224: 'af172769f96b658ecf9eedea848709fb214fdd30cc1534353ffdb92f',
-            sha256: 'd7b2b0cf1d82d3cb831cc8044248faff1a51e06f78a26974c8758f84101d1fd4',
+            md5: '26b3762051e774349a8a7cd3443991e3',
+            sha1: 'dd0f53582042ddac9fdf2b844249773eb8ac25b1',
+            sha224: 'c9683499ed924438d2df30374abc77f846306f08dcaaf801bf4b1edd',
+            sha256: '42d4c49429ae63b517c2f441c0e1d2aa35177db1dc418d9ee23c1de12ab8549d',
             sha384:
-              'a36f996e76d362ca29f6600ef3ac4cc2326b92be718c7ba58e313de0528125b53d92441ab3237d976bb4d9e228c2b630',
+              'aa1cc6ad2ea8266b38482eabaea54a82363651df3317c9d784d1c022bb2d3981f566df5c4e9756ef2eddbb14296ea040',
             sha512:
-              'dda3ea9f2a703c8d1307d8ba40f9e487a8bd4c0eea04d9cd06bc1acb9d2bd35e5889dfa429f27bf56cf5df89ad0dc328bafca305f40cea0db733f6f7bf404fde'
-          }}
-        />
-        <DESection
-          className={classes.desktopEnvironment}
-          name="KDE Desktop"
-          description={
-            <>
-              KDE Plasma is a modern desktop environment with advanced features and high
-              customizability. It uses more resources compared to MATE and gives its best on
-              powerful and modern hardware.
-            </>
-          }
-          version="4.11.2"
-          releaseDate="May 27, 2021"
-          architecture="AMD64"
-          size="4.5 GB"
-          screenshots={[homeMate1, homeMate1, homeMate1, homeMate1, homeMate1]}
-          hashes={{
-            md5: 'a0fc68757c285f456cacd67e317db2a0',
-            sha1: '9aa4b25c36fa2abaeafce8255e5a41a8f66f7b4f',
-            sha224: 'eefb72fbf0bab7dd9aefe08e9a442206398d1aa57af0634e97aa3c13',
-            sha256: '84af69858a2f26f25b39bbafec3ecf7776350ef2abf4fb0f8458cd5452d0f410',
-            sha384:
-              '6ca27ab5665ad081bc0ef6ad15f70731fe125fd272a23acd9be0e662963e340ada1adcf10426fd3254202c1e0eb0a865',
-            sha512:
-              'd1b0ddabab3348c990fa87545561552ddf750a4e3282c5ddb27fe2bfe2c2f40151910c2c6f32ecf670e84c315e7b7e5bf4b372b58ec5d85fadab3acd60a27126'
+              '4d53834dcc2097221e8bc336573599ee4ef29fcf7f9a5f961bf53fc852a7d5f2f5f8034215f96ffb1a56c26fc1b6d29e918c892a3eb2c4e0f18e0cdaa9184858'
           }}
         />
       </Grid>

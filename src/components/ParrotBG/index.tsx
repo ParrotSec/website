@@ -1,6 +1,6 @@
 import { makeStyles, useTheme } from '@mui/styles'
 
-import Wallpaper from 'assets/wallpaper.webp'
+import Wallpaper from 'assets/parrot-wallpaper.webp'
 
 const useStyles = makeStyles({
   wallpaper: {
@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     top: 0,
     left: 0,
     zIndex: -1,
-    opacity: 0.1,
+    opacity: 0.3,
     width: '100%',
     height: '100%',
     backgroundSize: 'cover',

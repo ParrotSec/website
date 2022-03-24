@@ -4,6 +4,7 @@ import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 
 import FeaturesSection from 'containers/HomeContainers/FeaturesSection'
+import HackToolsSection from 'containers/HomeContainers/HackToolsSection'
 import WelcomeSection from 'containers/HomeContainers/WelcomeSection'
 
 const DevelopingSection = dynamic(() => import('containers/HomeContainers/DevelopingSection'))
@@ -13,7 +14,9 @@ const ContributeSection = dynamic(() => import('containers/HomeContainers/Contri
 const OSSection = dynamic(() => import('containers/HomeContainers/OSSection'))
 const TrustSection = dynamic(() => import('containers/HomeContainers/TrustSection'))
 const StatsSection = dynamic(() => import('containers/HomeContainers/StatsSection'))
+/*
 const NewsletterSection = dynamic(() => import('containers/HomeContainers/NewsletterSection'))
+*/
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -69,15 +72,16 @@ const Index: NextPage = () => {
   return (
     <Grid container className={classes.root} justifyContent="center">
       <WelcomeSection />
-      <FeaturesSection className={classes.features} />
-      <TrustSection className={classes.trustBlock} />
       <ToolsSection className={classes.toolsBlock} />
+      <TrustSection className={classes.trustBlock} />
+      <FeaturesSection className={classes.features} />
+      <HackToolsSection />
       <DevelopingSection />
       <StatsSection className={classes.statsBlock} />
       <OSSection />
       <HTBSection className={classes.htbBlock} />
       <ContributeSection className={classes.developBlock} />
-      <NewsletterSection className={classes.newsletterBlock} />
+      {/*<NewsletterSection className={classes.newsletterBlock} />*/}
     </Grid>
   )
 }

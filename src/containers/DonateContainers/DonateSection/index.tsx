@@ -88,7 +88,7 @@ const DonateSection = (props: GridProps) => {
             Icon={Patreon}
             title="Patreon"
             buttonText="Adopt us"
-            buttonLink="https://patreon.com"
+            buttonLink="https://patreon.com/parrot"
             outLink
           >
             Adopt us and become a recurring contributor

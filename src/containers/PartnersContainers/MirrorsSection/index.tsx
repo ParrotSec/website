@@ -30,7 +30,7 @@ const MirrorsSection = () => {
   })
 
   return (
-    <Grid container item md={9} className={classes.mirrors}>
+    <Grid container item xs={12} md={9} className={classes.mirrors}>
       <Grid container item md={8}>
         <MapMirrors />
       </Grid>

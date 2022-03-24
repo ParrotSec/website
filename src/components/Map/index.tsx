@@ -22,48 +22,73 @@ L.Icon.Default.mergeOptions({
 
 const useStyles = makeStyles(theme => ({
   map: {
-    height: '50vh',
     width: '100%',
-    borderRadius: 24,
-    margin: theme.spacing(3),
+    borderRadius: theme.spacing(3),
     zIndex: 0,
-    '& .leaflet-bar': {
-      border: 0
+    ...(theme.palette.mode === 'dark'
+      ? {
+          background: '#262626'
+        }
+      : {}),
+    '& .leaflet-control-zoom': {
+      border: theme.spacing(3)
     },
-    '& .leaflet-bar a, .leaflet-bar a:hover': {
-      borderBottom: 0
+    '& .leaflet-control-zoom-in': {
+      borderRadius: `${theme.spacing(3)} !important`,
+      lineHeight: '26px !important',
+      ...(theme.palette.mode === 'dark'
+        ? {
+            borderColor: '#262626',
+            background: '#262626',
+            color: '#FFFFFF',
+            '&:hover': {
+              background: '#474747',
+              borderColor: '#262626',
+              color: '#FFFFFF'
+            }
+          }
+        : {})
     },
-    '& .leaflet-popup-content-wrapper': {
-      backgroundColor: theme.palette.mode === 'dark' ? '#272727' : '#FFFFFF',
-      color: theme.palette.mode === 'dark' ? '#FFFFFF' : '#272727',
-      borderRadius: 24
+    '& .leaflet-control-zoom-out': {
+      marginTop: theme.spacing(0.5),
+      borderRadius: `${theme.spacing(3)} !important`,
+      lineHeight: '26px !important',
+      ...(theme.palette.mode === 'dark'
+        ? {
+            borderColor: '#262626',
+            background: '#262626',
+            color: '#FFFFFF',
+            '&:hover': {
+              background: '#474747',
+              borderColor: '#262626',
+              color: '#FFFFFF !important'
+            }
+          }
+        : {})
     },
     '& .leaflet-popup-tip': {
       backgroundColor: theme.palette.mode === 'dark' ? '#272727' : '#FFFFFF'
     },
-    '& .leaflet-control-zoom': {
-      borderRadius: 24
+    '& .leaflet-popup-content-wrapper': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#272727' : '#FFFFFF'
     },
-    '& .leaflet-control-zoom-in': {
-      backgroundColor: theme.palette.mode === 'dark' ? '#272727 !important' : '#FFFFFF !important',
-      color: theme.palette.mode === 'dark' ? '#FFFFFF !important' : '#272727 !important',
-      borderBottom: 0,
-      borderRadius: '24px !important'
+    '& .leaflet-touch .leaflet-bar .leaflet-touch .leaflet-control-layers': {
+      border: 'none'
     },
-    '& .leaflet-control-zoom-out': {
-      backgroundColor: theme.palette.mode === 'dark' ? '#272727 !important' : '#FFFFFF !important',
-      color: theme.palette.mode === 'dark' ? '#FFFFFF !important' : '#272727 !important',
-      borderRadius: '24px !important',
-      marginTop: 5
+    '& .leaflet-bar a.leaflet-disabled': {
+      backgroundColor: theme.palette.mode === 'dark' ? '#262626' : '#FFFFFF',
+      color: '#FFFFFF'
     }
+  },
+  zoomControl: {
+    borderRadius: 24
   }
 }))
 
-const Map = () => {
+const MapSection = () => {
   const classes = useStyles()
-  const position: LatLngExpression = [50, 0]
-
   const theme = useTheme()
+  const position: LatLngExpression = [40, 0]
 
   return (
     <MapContainer
@@ -75,11 +100,15 @@ const Map = () => {
       tap={false}
     >
       <TileLayer
-        attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
-        url={
+        attribution={`&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>${
           theme.palette.mode === 'dark'
-            ? 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
-            : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            ? '&copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+            : ''
+        }`}
+        url={
+          theme.palette.mode === 'light'
+            ? 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            : 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
         }
       />
       {mirrors.map(data => (
@@ -96,4 +125,4 @@ const Map = () => {
   )
 }
 
-export default Map
+export default MapSection

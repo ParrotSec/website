@@ -96,9 +96,11 @@ const UserCard = ({
           {!noAvatar && (
             <Avatar className={classes.iconLarge} src={`/assets/avatars/${nickname}.jpg`} />
           )}
-          <Typography variant="h5" paragraph={!nickname}>
-            {name}
-          </Typography>
+          {name && (
+            <Typography variant="h5" paragraph={!nickname}>
+              {name}
+            </Typography>
+          )}
           {nickname && (
             <Typography className={classes.nicknameTextColor} paragraph>
               {nickname}
