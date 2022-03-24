@@ -1,0 +1,147 @@
+﻿---
+title: "Parrot 5.0 Press Release"
+date: 2022-03-24T14:10:32+02:00
+author: palinuro
+image: /assets/blog/5.0/parrot-5.png
+description: "We are proud to announce the release of Parrot OS 5.0."
+---
+
+We are proud to announce the release of Parrot OS 5.0.
+This new version represents a huge milestone for the project, and introduces several changes and new products to meet the always changing needs of cyber security specialists.
+
+# What’s New with Parrot 5.0
+
+Parrot’s main focus on the latest release was on making the system extremely stable and flexible.
+The system now follows a Long Term Support release model, but provides the latest version of all its tools via extensive backporting, and is never out of date.
+Parrot 5.0 was designed with cloud and customizability in mind, and provides several container options to leverage powerful orchestration tools during complex pentest scenarios.
+The Parrot offering has been simplified, and a new architect edition has been introduced to allow maximum customizability of the system.
+
+
+## Parrot Versions
+
+Parrot 5.0 keeps the former Home and Security editions, and introduces a new special HTB edition inspired by the popular PwnBox by HackTheBox.
+The KDE and XFCE alternatives are no longer available, and are replaced by the Architect edition, which supports also x86 32bit and ARMv8 64bit.
+A first experimental Raspberry pi edition is released, and will be followed by further enhancements and more boards support during the year.
+Further options are available for containers, chroots and embedded environments.
+
+
+
+### Parrot Home Edition
+
+Parrot Home Edition is a general purpose operating system with the typical Parrot look and feel. It is designed for **developers and everyday users** with an emphasis on privacy and software development. Parrot Tools can be manually installed to assemble a custom and lightweight pentesting environment.
+
+Parrot 5.0 enhances the pre-installed development tools, making it the perfect system for software developers and students. Vscodium, the open source binary release of the popular VSCode advanced editor, is shipped by default along with all the compilers and interpreters to work with **gcc, go, java, nodejs or python**, with several other options available through the official software repository.
+
+
+### Parrot Security Edition
+
+Parrot Security Edition is a special purpose operating system designed for **Penetration Test and Red Team operations**. It contains a full arsenal of ready to use pentest tools.
+
+Parrot 5.0 ships with the latest version of the best selection of security tools, while others are available through the official software repository.
+Many new tools were included since the last release, following our attempt to **fill the gap between emerging technologies and the tools to test their security.**
+
+
+### Parrot Architect, IoT and Cloud
+
+One of the main goals of Parrot 5.0 is to make the Parrot system available on as many platforms as possible. **ARM support is finally back**, and the new LTS release model makes parrot the perfect framework to build advanced security products on top of.
+
+Parrot 5.0 offers **4 IoT tarballs**, each for every architecture supported by parrot (amd64, i386, arm64 and armhf). They can be used to build new products, like **WSL and WSL2** containers, **Android** chroot containers, or using the system with popular cloud providers.
+
+The **Architect Edition** is a minimal iso file of Parrot that provides the installer only. It is available for x86 and arm, and can be used to customize the system installation, like picking a different desktop environment, doing a minimal installation or installing a custom set of tools at install time. It needs an internet connection or a local mirror to install a full desktop system, but it is capable of doing a core installation of the system completely offline.
+It can be used to install **Parrot on a server**, to configure a custom set of packages or to install the system on a **Mac M1 ARM computer** inside a native virtual machine without intel translation, which boosts the VM performance significantly.
+
+In addition to this, **Parrot for Docker** enables users to take advantage of the Parrot tools on top of other operating systems or in cloud environments. The Docker offering is especially useful when integrating security checks in a CI pipeline, or when running pentest operations with the help of advanced cloud tools like kubernetes. An emerging trend is also to use these Docker containers to **use the Parrot tools on top of other operating systems**, like Ubuntu, Arch, Fedora or Mac OS, without the performance disadvantage of a full virtual machine.
+
+Also, in cooperation with **Hack The Box**, Parrot created **PwnBox** a way to use Parrot OS directly in your browser while studying or playing on the Hack The Box platform. And with Parrot 5.0, a custom edition of Parrot with the PwnBox look and feel is available for download too.
+
+
+
+
+
+## Features
+
+### LTS and Backports
+
+Parrot 5.0 introduces a new **Long Term Support** release model. All the packages composing the core system are now tracking the latest **Debian Stable** instead of Debian Testing, and will guarantee no significant changes for at least 2 years. This approach makes Parrot more reliable, and system updates will no longer break the system as it happens with other Rolling Release systems.
+
+**Our approach to the LTS release model differs from the one adopted by Debian**. We recognize that no major feature updates and feature deprecations should occur during the lifecycle of the system, but there are some programs that don't follow our same release cycle: many programs, especially desktop ones, don't have a release every 2 years, like Debian does, and when new versions are out, older ones are deprecated and left with no support and security updates. Other times a new software gets a major release just after a new Debian version, and users are forced to stay on the previous version for the next 2 years.
+For this reason we have decided to **maintain a special backport channel** where not only the debian backports are replicated, but where we work to expand the offering of backported software as much as possible. Users using Parrot will have immediate access to the latest version of most of the programs they use daily. Along with that, users will be able to choose whether to install the backported version or stay with the older and more stable one.
+The team has also decided to **keep a Rolling Release model for all the security tools**, which will continue to receive rolling updates as soon as they are out.
+
+Last, but not least, the new LTS approach brings **extremely fast security updates**. This makes Parrot 5.0 and future versions, the perfect system for critical environments, like servers, where security is important.
+
+### Linux 5.16 and enhanced hardware support
+
+Parrot 5.0 features the latest Linux 5.16 kernel version, which offers the best performance and hardware compatibility.
+In addition to that, it also offers an extensive collection of pre-installed drivers to make the system compatible with most of the hardware, including most of the wifi dongles, making Parrot the most hardware friently GNU/Linux distro available.
+
+## Tools
+
+We have added a plethora of new tools to reveal the full potential of our users and guarantee an immersive experience. 
+
+You can find them below: 
+
+**Pocsuite3**
+
+pocsuite3 is an open-source remote vulnerability testing and proof-of-concept development framework developed by the Knownsec 404 Team. It comes with a powerful proof-of-concept engine, many nice features for the ultimate penetration testers and security researchers.
+
+**Ivy-optiv**
+
+Ivy is a payload creation framework for the execution of arbitrary VBA (macro) source code in memory. Ivy’s loader does this by abusing programmatical access in the VBA object environment to load, decrypt, and execute shellcode. 
+Jwtxploiter 
+A tool to test security of JSON Web Tokens. Jwtxploiter gives the ability to test a JWT against all known CVEs.
+
+**Python3-pcodedmp**
+
+Pcodedmp is a very powerful VBA P-Code disassembler that can be used to inspect and work with VBA documents.
+
+**Mimipenguin**
+
+Mimipenguin is a free and open source, simple yet powerful Shell/Python script used to dump the login credentials (usernames and passwords) from the current desktop user.
+
+**Ffuf**
+
+ffuf is a fest web fuzzer written in Go that allows typical directory discovery, virtual host discovery (without DNS records) and GET and POST parameter fuzzing.
+
+**Oletools**
+
+oletools is a package of python tools to analyze Microsoft OLE2 files (also called Structured Storage, Compound File Binary Format or Compound Document File Format), such as Microsoft Office documents or Outlook messages, mainly for malware analysis, forensics and debugging. It is based on the olefile parser.
+
+**findmyhash 2.0**
+
+findmyhash.py tries to crack different types of hashes using free online services.
+
+**Dirsearch**
+
+An advanced command-line tool designed to brute force directories and files in webservers, AKA web path scanner.
+
+**Pyinstxtractor**
+
+PyInstaller Extractor is a Python script to extract the contents of a PyInstaller generated Windows executable file. The contents of the pyz file (usually pyc files) present inside the executable are also extracted.
+
+
+and several new tools are available in our repository ready to be explored.
+
+
+
+# Where to get it
+
+You can download Parrot OS from our [official download page](https://www.parrotsec.org/download), and we invite you to never trust third party and unofficial sources, as they may be counterfeit and pre-packed with malware.
+
+We also provide official torrent files that can bypass most of the firewalls by leveraging https trackers and using the parrot mirrors as webseeds.
+
+# How to upgrade from a previous version
+
+**We strongly recommend to download the latest version and perform a fresh install**. It makes the system cleaner and more reliable.
+
+The system is capable of updating every single program provided by the Parrot repository, but the desktop configuration stored in the user home folder can't be altered by system updates (and for a good reason), hence updating the system would not update the latest user settings.
+
+**You can still perform a full system upgrade** from 4.11 to 5.x by running the following command
+```
+sudo parrot-upgrade
+```
+Then reboot the system and perform the upgrade again once over.
+
+the first upgrade will prepare the system and install the new repositories, and the second upgrade would perform the complete version jump, with the only exception of the user configs stored in the home folder.
+
+

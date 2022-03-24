@@ -42,8 +42,7 @@ const useStyles = makeStyles(theme => ({
   accordionSummary: {
     alignItems: 'center',
     justifyContent: 'space-between'
-  },
-  alert: {}
+  }
 }))
 
 const OSRaspberry = () => {

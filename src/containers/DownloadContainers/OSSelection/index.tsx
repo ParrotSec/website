@@ -85,7 +85,7 @@ const useStyles = makeStyles(theme => ({
     background: 'linear-gradient(180deg, #B0B0B0 18%, #999999 91%)'
   },
   raspberry: {
-    background: 'linear-gradient(90deg, rgba(150,14,50,1) 58%, rgba(189,13,59,1) 99%)'
+    background: 'linear-gradient(90deg, #960E32 58%, #BD0D3B 99%)'
   },
   rounded: {
     borderRadius: '24px !important'
@@ -161,7 +161,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
         lg={10}
         justifyContent="space-between"
       >
-        <Breadcrumbs separator="|" aria-label="breadrcumb">
+        <Breadcrumbs separator="|" aria-label="breadcrumb">
           <RouterLink href="/">
             <Button
               className={classes.crumb}

@@ -180,6 +180,13 @@ const Footer = () => {
                 >
                   Architect Edition
                 </Link>
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="/download?version=raspberry"
+                >
+                  Raspberry Pi Images
+                </Link>
               </Grid>
               <Grid
                 className={classes.linksHolder}

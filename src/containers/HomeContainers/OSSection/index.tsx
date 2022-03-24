@@ -1,10 +1,11 @@
-import { CardActionArea, Grid, Paper, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import Architect from './assets/Architect.svg'
 import Cloud from './assets/Cloud.svg'
 import Comingsoon from './assets/comingsoon.png'
 import Home from './assets/Home.svg'
+import Raspberry from './assets/Raspberry.svg'
 import Security from './assets/Security.svg'
 
 import OSCard from 'components/OSCard'
@@ -29,16 +30,21 @@ const useStyles = makeStyles(theme => ({
     background: 'linear-gradient(180deg, #B0B0B0 18%, #999999 91%)'
   },
   raspberryIcon: {
-    background: 'linear-gradient(180deg, #B0B0B0 18%, #999999 91%)'
+    background: 'linear-gradient(90deg, #960E32 58%, #BD0D3B 99%)'
   },
   architectCard: {
-    maxWidth: '100%'
+    maxWidth: '100%',
+    maxHeight: '100%'
   },
   architectBlock: {
     padding: 8,
     width: '100%',
     display: 'flex',
     flexFlow: 'column'
+  },
+  raspberryCard: {
+    maxWidth: '100%',
+    height: '100%'
   },
   versionsPaper: {
     marginTop: 24,
@@ -51,13 +57,14 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 24,
     padding: 8,
     height: '100%',
+    width: '100%',
     display: 'flex',
     flexFlow: 'column',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundImage: `url('${Comingsoon.src}')`,
-    [theme.breakpoints.down('md')]: {
-      marginBottom: theme.spacing(45)
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: theme.spacing(60)
     }
   },
   iconHolder: {
@@ -114,27 +121,44 @@ const OSSection = () => {
           title="Cloud Edition"
           link="/download?version=cloud"
         >
-          Cloud Appliances are special editions of Parrot Security made for{' '}
-          <b>embedded devices</b>,<b>cloud environments</b>, <b>virtual machines</b> and other
-          special deployments.
+          Cloud Appliances are special editions of Parrot Security made for <b>embedded devices</b>,
+          <b>cloud environments</b>, <b>virtual machines</b> and other special deployments.
         </OSCard>
       </Grid>
-      <Grid container item xs={12} md={9} direction="row" spacing={4} style={{ marginTop: 0 }}>
+      <Grid
+        container
+        item
+        xs={12}
+        md={9}
+        direction="row"
+        alignItems="stretch"
+        spacing={4}
+        style={{ marginTop: 0 }}
+      >
         <Grid item xs={12} md={8}>
-          <Paper className={classes.architectBlock} elevation={0}>
-            <OSCard
-              Icon={Architect}
-              iconClassName={classes.architectIcon}
-              title="Architect Edition"
-              className={classes.architectCard}
-              link="/download?version=architect"
-            >
-              ParrotOS with nothing pre-installed. Install any software and DE with this edition.
-            </OSCard>
-          </Paper>
+          <OSCard
+            Icon={Architect}
+            iconClassName={classes.architectIcon}
+            title="Architect Edition"
+            className={classes.architectCard}
+            link="/download?version=architect"
+          >
+            ParrotOS with nothing pre-installed. It is available for amd64, i386, arm64 and can be
+            used to customize the system installation, like picking a different desktop environment,
+            doing a minimal installation or installing a custom set of tools at install time.
+          </OSCard>
         </Grid>
         <Grid item xs={12} md={4}>
-          <CardActionArea className={classes.comingSoon} href="/download" />
+          <OSCard
+            Icon={Raspberry}
+            iconClassName={classes.raspberryIcon}
+            title="Raspberry Pi Images"
+            className={classes.raspberryCard}
+            link="/download?version=raspberry"
+          >
+            At the moment Parrot is also available for Raspberry Pi, compatibility with other IoT
+            devices will be added in the future.
+          </OSCard>
         </Grid>
       </Grid>
     </>
