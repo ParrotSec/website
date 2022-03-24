@@ -43,7 +43,8 @@ const useStyles = makeStyles(theme => ({
     flexFlow: 'column'
   },
   raspberryCard: {
-    maxWidth: '100%'
+    maxWidth: '100%',
+    height: '100%'
   },
   versionsPaper: {
     marginTop: 24,
