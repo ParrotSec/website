@@ -69,6 +69,12 @@ const OSRaspberry = () => {
               <Alert severity="info" sx={{ fontSize: 18 }}>
                 Currently it is only available in the core version, the Home and Security versions
                 will come later.
+                <Divider sx={{ my: 2 }} />
+                Default credentials:
+                <br />
+                user: <strong>pi</strong>
+                <br />
+                password: <strong>parrot</strong>
               </Alert>
             </Grid>
             <Grid container item xs={12} md={4} spacing={3} wrap="wrap-reverse">
