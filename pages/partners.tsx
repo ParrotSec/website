@@ -6,6 +6,7 @@ import ContributeSection from 'containers/HomeContainers/ContributeSection'
 import CollaborationSection from 'containers/PartnersContainers/CollaborationsSection'
 import HTBSection from 'containers/PartnersContainers/HTBSection'
 import MirrorsSection from 'containers/PartnersContainers/MirrorsSection'
+import SponsorSection from 'containers/PartnersContainers/SponsorSection'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,6 +49,7 @@ const Partners: NextPage = () => {
         </Typography>
       </Grid>
       <HTBSection />
+      <SponsorSection />
       <CollaborationSection />
       <MirrorsSection />
       <ContributeSection className={classes.developBlock} />

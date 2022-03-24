@@ -99,7 +99,7 @@ const SocialsSection = (props: GridProps) => {
             <IconButton href="https://www.facebook.com/ParrotSec/">
               <Facebook className={classes.icon} />
             </IconButton>
-            <IconButton href="#">
+            <IconButton href="https://discord.gg/j7QTaCzAsm">
               <Discord className={classes.icon} />
             </IconButton>
             <IconButton href="https://www.linkedin.com/company/parrotsec/about/">

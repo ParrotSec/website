@@ -264,11 +264,13 @@ const Footer = () => {
                 >
                   Instagram
                 </Link>
-                {/*
-                <Link className={classes.link} color="textSecondary" href="/download/home">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="https://discord.gg/j7QTaCzAsm"
+                >
                   Discord
                 </Link>
-                */}
                 <Link
                   className={classes.link}
                   color="textSecondary"
@@ -287,9 +289,6 @@ const Footer = () => {
                   href="https://www.linkedin.com/company/parrotsec/about/"
                 >
                   LinkedIn
-                </Link>
-                <Link className={classes.link} color="textSecondary" href="#">
-                  Discord
                 </Link>
               </Grid>
             </Grid>

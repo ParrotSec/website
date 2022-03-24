@@ -1,15 +1,18 @@
-import { CardActionArea, Grid, Paper, Typography } from '@mui/material'
+import { CardActionArea, Grid, Hidden, Paper, Stack, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import collaborations from './collaborations'
 
 import Carousel from 'components/Carousel'
+import BunnyLogo from 'containers/HomeContainers/TrustSection/assets/bunnycdn.svg'
+import LinodeLogo from 'containers/HomeContainers/TrustSection/assets/linode.svg'
 
 const useStyles = makeStyles(theme => ({
   actionArea: {
     display: 'flex',
     borderRadius: 24,
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(2),
+    height: '100%'
   },
   collaborations: {
     paddingTop: theme.spacing(10)
@@ -24,6 +27,17 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     backgroundSize: 'cover',
     backgroundPosition: 'center'
+  },
+  sponsorPaper: {
+    color: '#FFFFFF',
+    height: '100%',
+    padding: theme.spacing(4)
+  },
+  sponsorImg: {
+    width: '100%',
+    backgroundSize: 'cover',
+    display: 'block',
+    margin: 'auto'
   }
 }))
 
