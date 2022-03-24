@@ -226,18 +226,18 @@ const DESection = ({
                 )}
                 {architectEdition && (
                   <SelectButton label="Download" variant="contained">
-                    {Object.entries(architectEdition).map(([key]) => (
+                    {Object.entries(architectEdition).map(([key, value]) => (
                       <SelectButtonItem key={key}>
-                        <Link href="#">{key}</Link>
+                        <Link href={value}>{key}</Link>
                       </SelectButtonItem>
                     ))}
                   </SelectButton>
                 )}
                 {torrent && (
                   <SelectButton label="Torrent" variant="outlined">
-                    {Object.entries(torrent).map(([key]) => (
+                    {Object.entries(torrent).map(([key, value]) => (
                       <SelectButtonItem key={key}>
-                        <Link href="#">{key}</Link>
+                        <Link href={value}>{key}</Link>
                       </SelectButtonItem>
                     ))}
                   </SelectButton>

@@ -254,8 +254,8 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
               <Accordion expanded={os === 'cloud'} onChange={() => setOS('cloud')} gradient="cloud">
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
+                  aria-controls="panel3a-content"
+                  id="panel3a-header"
                 >
                   <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
                     <Cloud className={classes.headerIcon} />
@@ -277,8 +277,8 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
               >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel3a-content"
-                  id="panel3a-header"
+                  aria-controls="panel4a-content"
+                  id="panel4a-header"
                 >
                   <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
                     <Architect className={classes.headerIcon} />
@@ -299,8 +299,8 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
               >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel3a-content"
-                  id="panel3a-header"
+                  aria-controls="panel5a-content"
+                  id="panel5a-header"
                 >
                   <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
                     <Raspberry className={classes.headerIcon} />

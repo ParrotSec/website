@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   },
   architectCard: {
     maxWidth: '100%',
-    maxHeight: '100%'
+    height: '100%'
   },
   architectBlock: {
     padding: 8,
@@ -43,8 +43,7 @@ const useStyles = makeStyles(theme => ({
     flexFlow: 'column'
   },
   raspberryCard: {
-    maxWidth: '100%',
-    height: '100%'
+    maxWidth: '100%'
   },
   versionsPaper: {
     marginTop: 24,
@@ -156,8 +155,7 @@ const OSSection = () => {
             className={classes.raspberryCard}
             link="/download?version=raspberry"
           >
-            At the moment Parrot is also available for Raspberry Pi, compatibility with other IoT
-            devices will be added in the future.
+            From now on, Parrot is also available for Raspberry Pi. Install whatever you like.
           </OSCard>
         </Grid>
       </Grid>
