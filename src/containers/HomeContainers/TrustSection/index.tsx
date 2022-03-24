@@ -22,6 +22,9 @@ const useStyles = makeStyles(theme => ({
     },
     '& #linode-text': {
       fill: theme.palette.mode === 'light' ? '#03232E' : '#FFF'
+    },
+    '& #bunny-text': {
+      fill: theme.palette.mode === 'light' ? '#03232E' : '#FFF'
     }
   }
 }))

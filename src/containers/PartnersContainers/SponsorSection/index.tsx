@@ -13,7 +13,6 @@ const useStyles = makeStyles(theme => ({
     height: '100%'
   },
   sponsorPaper: {
-    color: '#FFFFFF',
     height: '100%',
     padding: theme.spacing(4)
   },
@@ -21,7 +20,17 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     backgroundSize: 'cover',
     display: 'block',
-    margin: 'auto'
+    margin: 'auto',
+    fill: theme.palette.mode === 'dark' ? 'white' : 'inherit',
+    '& #linode-block': {
+      fill: '#03232E'
+    },
+    '& #linode-text': {
+      fill: theme.palette.mode === 'light' ? '#03232E' : '#FFF'
+    },
+    '& #bunny-text': {
+      fill: theme.palette.mode === 'light' ? '#03232E' : '#FFF'
+    }
   }
 }))
 
@@ -43,9 +52,11 @@ const SponsorSection = () => {
                     <Typography variant="h4" gutterBottom>
                       BunnyCDN
                     </Typography>
-                    BunnyCDN is a private and fast content distribution network used to boost the
-                    download of the Parrot system. Go faster than the fastest with the
-                    next-generation CDN, edge storage, and optimization service
+                    <Typography variant="subtitle2">
+                      BunnyCDN is a private and fast content distribution network used to boost the
+                      download of the Parrot system. Go faster than the fastest with the
+                      next-generation CDN, edge storage, and optimization service.
+                    </Typography>
                     <BunnyLogo className={classes.sponsorImg} />
                   </Stack>
                 </Paper>
@@ -61,9 +72,11 @@ const SponsorSection = () => {
                     <Typography variant="h4" gutterBottom>
                       Linode
                     </Typography>
-                    Cloud Computing Developers Trust. Accelerate innovation with simple, affordable,
-                    and accessible Linux cloud solutions and services. See why developers around the
-                    world trust Linode. Try free today.
+                    <Typography variant="subtitle2">
+                      Cloud Computing Developers Trust. Accelerate innovation with simple,
+                      affordable, and accessible Linux cloud solutions and services. See why
+                      developers around the world trust Linode. Try free today.
+                    </Typography>
                     <LinodeLogo className={classes.sponsorImg} />
                   </Stack>
                 </Paper>
