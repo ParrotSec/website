@@ -48,7 +48,7 @@ const OSSecurity = () => {
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
-            { heading: 'Memory', description: '8 GB RAM' },
+            { heading: 'Memory', description: '4 GB RAM' },
             { heading: 'Storage', description: '40 GB available space' }
           ]}
           features={[
