@@ -43,7 +43,7 @@ const OSHome = () => {
           requirements={[
             { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
-            { heading: 'Memory', description: '2 GB RAM' },
+            { heading: 'Memory', description: '1 GB RAM' },
             { heading: 'Storage', description: '16 GB available space' }
           ]}
           features={[
