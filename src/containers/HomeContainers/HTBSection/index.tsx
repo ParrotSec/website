@@ -1,4 +1,4 @@
-import {Grid, GridProps, Link, Paper, Typography} from '@mui/material'
+import { Grid, GridProps, Link, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
 import HTBLogo from './assets/htbLogo.svg'

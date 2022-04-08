@@ -6,7 +6,7 @@ import { PostType } from '../../../types'
 import Post from 'components/Post'
 /*
 import NewsletterSection from 'containers/HomeContainers/NewsletterSection'
- */
+*/
 
 type PostSectionProps = {
   allPosts: PostType[]
