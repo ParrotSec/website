@@ -99,7 +99,7 @@ const DonateSection = (props: GridProps) => {
             Icon={Paypal}
             title="Paypal"
             buttonText="Send us a tip"
-            buttonLink="https://paypal.com"
+            buttonLink="https://www.paypal.me/palinuro"
             outLink
           >
             Send us a tip on PayPal
