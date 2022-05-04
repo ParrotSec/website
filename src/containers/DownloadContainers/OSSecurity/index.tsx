@@ -30,13 +30,13 @@ const OSSecurity = () => {
               tools.
             </>
           }
-          version="5.0 Electro Ara"
-          releaseDate="Mar 24, 2022"
+          version="5.0.1 Electro Ara"
+          releaseDate="May 04, 2022"
           architecture="amd64"
-          size="4.2 GB"
+          size="4.5 GB"
           download="Download"
-          url="https://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso"
-          torrentUrl="https://download.parrot.sh/parrot/iso/5.0/Parrot-security-5.0_amd64.iso.torrent"
+          url="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-security-5.0.1_amd64.iso"
+          torrentUrl="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-security-5.0.1_amd64.iso.torrent"
           torrentButton="Download Torrent"
           screenshots={[
             parrotSecurity1,
@@ -49,7 +49,7 @@ const OSSecurity = () => {
             { heading: 'Processor', description: 'Dual Core CPU' },
             { heading: 'Graphics', description: 'No Graphical Acceleration Required' },
             { heading: 'Memory', description: '1 GB RAM' },
-            { heading: 'Storage', description: '40 GB available space' }
+            { heading: 'Storage', description: '20 GB available space' }
           ]}
           features={[
             {
@@ -113,14 +113,14 @@ const OSSecurity = () => {
             }
           ]}
           hashes={{
-            md5: '26b3762051e774349a8a7cd3443991e3',
-            sha1: 'dd0f53582042ddac9fdf2b844249773eb8ac25b1',
-            sha224: 'c9683499ed924438d2df30374abc77f846306f08dcaaf801bf4b1edd',
-            sha256: '42d4c49429ae63b517c2f441c0e1d2aa35177db1dc418d9ee23c1de12ab8549d',
+            md5: '74ca72645896f83a65acd35ade46b0e0',
+            sha1: '8c28f568aaa643ce12831c49ddc35032ee145731',
+            sha224: '7508cd8c1cb7f7f235d74a625450cdf3217c8f02da0a655317905794',
+            sha256: 'a63017b201ac799cb25cba6ded8e6cb1014b3917e765f387e723f984da86ab64',
             sha384:
-              'aa1cc6ad2ea8266b38482eabaea54a82363651df3317c9d784d1c022bb2d3981f566df5c4e9756ef2eddbb14296ea040',
+              'ecd91c9b36b4189a2d93f6f014448ffa583449fec13a1297965ad43c742db79bfc09a717bd8972f987fa2532407ff502',
             sha512:
-              '4d53834dcc2097221e8bc336573599ee4ef29fcf7f9a5f961bf53fc852a7d5f2f5f8034215f96ffb1a56c26fc1b6d29e918c892a3eb2c4e0f18e0cdaa9184858'
+              'a3440b12b528e6e952291af443296352815f18e205cf7ae87f4312c2715eb07ee55bc0eab11544c1dcd28878b721c5317d3062b3e38591a83e9dbb9efa31c4eb'
           }}
         />
       </Grid>

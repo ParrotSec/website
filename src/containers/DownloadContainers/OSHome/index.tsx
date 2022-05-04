@@ -31,13 +31,13 @@ const OSHome = () => {
               environment.
             </>
           }
-          version="5.0 Electro Ara"
-          releaseDate="Mar 24, 2022"
+          version="5.0.1 Electro Ara"
+          releaseDate="May 04, 2022"
           architecture="amd64"
-          size="2 GB"
+          size="2.3 GB"
           download="Download"
-          url="https://download.parrot.sh/parrot/iso/5.0/Parrot-home-5.0_amd64.iso"
-          torrentUrl="https://download.parrot.sh/parrot/iso/5.0/Parrot-home-5.0_amd64.iso.torrent"
+          url="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-home-5.0.1_amd64.iso"
+          torrentUrl="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-home-5.0.1_amd64.iso.torrent"
           torrentButton="Download Torrent"
           screenshots={[parrotHome1, parrotHome2, parrotHome3, parrotHome4, parrotHome5]}
           requirements={[
@@ -108,14 +108,14 @@ const OSHome = () => {
             }
           ]}
           hashes={{
-            md5: '7cb32e2a131ed2ac8d663aea359879fe',
-            sha1: 'e911c7256f8bf436423272f2b6a9658126ffd691',
-            sha224: 'f382d53b3c1ae004a64caaf25ab7a647036b27c5717cdfb44b3037ab',
-            sha256: '52e902188a48f3470e0b3c3cd6b44a9741ffd8b3f0d82c6d5469b03c1e601cce',
+            md5: 'fa0446b3f705a2dfd6c26d847a1af60e',
+            sha1: '82dce21ee263e3a6c3f46eb0635f5649c6ef5067',
+            sha224: '33958cfbe1e0ffffc6016251d12ef2078cac151e1622e9af3cc621f8',
+            sha256: '64c583e33c16581c4894e9c9d67a2cc7a23fdc8698a476ccff30727c3e63eb3a',
             sha384:
-              '9056786c34edd7421459f5b86d4cf3f1bfc5aece578a78f84ad7da5d4f5490830763f14d24ed5b7de3fec3ab7f3ed405',
+              'c3de7d31c807159a3f0ccbf4c58bd9379f78ed7f14af0fcc987089e2ba533a9bb16455194ea3e7af7fad4fff347b2d2b',
             sha512:
-              '388b2f1637f581df5ade308465db58702cfa301d2c30218ee9e9f55c5fb17d5e6491dae858de9d0dab174a18a89114bcc02ca5881465d12ffb74ced99586713b'
+              '97cbe45fbfb1487df8c010d4d890eb8864873e95ad63ad496f8a983d71f251cfc96b053f6a9ef927ac2b590f9405db4a471fc32f9b96df6fa9417d4b3981aa0d'
           }}
         />
       </Grid>

@@ -26,8 +26,8 @@ const OSArchitect = () => {
             <>ParrotOS with nothing pre-installed. Install any software and DE with this edition.</>
           }
           className={classes.desktopEnvironment}
-          version="5.0 Electro Ara"
-          releaseDate="Mar 24, 2022"
+          version="5.0.1 Electro Ara"
+          releaseDate="May 04, 2022"
           architecture="all"
           size="321-343 MB"
           screenshots={[
@@ -59,19 +59,19 @@ const OSArchitect = () => {
             }
           ]}
           architectEdition={{
-            arm64: 'https://download.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_arm64.iso',
-            amd64: 'https://download.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso',
-            i386: 'https://download.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_i386.iso'
+            arm64: 'https://download.parrot.sh/parrot/iso/5.0.1/Parrot-architect-5.0.1_arm64.iso',
+            amd64: 'https://download.parrot.sh/parrot/iso/5.0.1/Parrot-architect-5.0.1_amd64.iso',
+            i386: 'https://download.parrot.sh/parrot/iso/5.0.1/Parrot-architect-5.0.1_i386.iso'
           }}
           torrent={{
             arm64:
-              'https://download.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_arm64.iso.torrent',
+              'https://download.parrot.sh/parrot/iso/5.0.1/Parrot-architect-5.0.1_arm64.iso.torrent',
             amd64:
-              'https://download.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_amd64.iso.torrent',
-            i386: 'https://download.parrot.sh/parrot/iso/5.0/Parrot-architect-5.0_i386.iso.torrent'
+              'https://download.parrot.sh/parrot/iso/5.0.1/Parrot-architect-5.0.1_amd64.iso.torrent',
+            i386: 'https://download.parrot.sh/parrot/iso/5.0.1/Parrot-architect-5.0.1_i386.iso.torrent'
           }}
           allHashes={{
-            url: 'https://download.parrot.sh/parrot/iso/5.0/signed-hashes.txt'
+            url: 'https://download.parrot.sh/parrot/iso/5.0.1/signed-hashes.txt'
           }}
         />
       </Grid>
