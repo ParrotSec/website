@@ -70,9 +70,7 @@ const OSArchitect = () => {
               'https://download.parrot.sh/parrot/iso/5.0.1/Parrot-architect-5.0.1_amd64.iso.torrent',
             i386: 'https://download.parrot.sh/parrot/iso/5.0.1/Parrot-architect-5.0.1_i386.iso.torrent'
           }}
-          allHashes={{
-            url: 'https://download.parrot.sh/parrot/iso/5.0.1/signed-hashes.txt'
-          }}
+          allHashes={{ url: 'https://download.parrot.sh/parrot/iso/5.0.1/signed-hashes.txt' }}
         />
       </Grid>
     </>
