@@ -79,8 +79,8 @@ const CollaborationSection = () => {
       <Hidden mdUp>
         <Paper elevation={0} className={classes.collaborationsPaper}>
           <Carousel>
-            {collaborations.map(data => (
-              <CardActionArea key={data.name} className={classes.actionArea} href={data.url}>
+            {collaborations.map((data, i) => (
+              <CardActionArea key={`data-${i}`} className={classes.actionArea} href={data.url}>
                 <Paper elevation={0} className={classes.collaborationsPaper}>
                   <Grid container item md={12} direction="row">
                     <Grid container item md={8} className={classes.collaborationsDesc}>

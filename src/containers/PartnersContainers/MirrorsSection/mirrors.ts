@@ -295,5 +295,12 @@ export default [
     lon: 112.7508,
     commentary: 'Datautama',
     id: 'apac.datautama'
+  },
+  {
+    url: 'https://mirrors.nxtgen.com/parrot-mirror/',
+    lat: 28.66667,
+    lon: 77.21667,
+    commentary: 'NxtGen DataCenter & Cloud Technologies',
+    id: 'apac.nxtgen'
   }
 ]
