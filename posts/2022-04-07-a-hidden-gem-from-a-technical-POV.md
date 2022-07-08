@@ -3,10 +3,8 @@ title: "A hidden gem from a technical POV"
 date: 2022-07-08T11:03:14+02:00
 author: Dm Knght
 image: /assets/blog/a_hidden_gem/a_hidden_gem.png
-description: "We are proud to announce the release of Parrot OS 5.0."
+description: "An overview of our updater"
 ---
-
-# A hidden gem from a technical POV
 
 ## How do you check for an update?
 
