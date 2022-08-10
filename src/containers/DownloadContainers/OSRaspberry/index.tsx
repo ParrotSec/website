@@ -177,31 +177,31 @@ const OSRaspberry = () => {
                     <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
                       <SelectButton label="Download" variant="contained">
                         <SelectButtonItem>
-                          <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_armhf.img.xz">
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-core-rpi-5.1_armhf.img.xz">
                             armhf
                           </Link>
                         </SelectButtonItem>
                         <SelectButtonItem>
-                          <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_arm64.img.xz">
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-core-rpi-5.1_arm64.img.xz">
                             arm64
                           </Link>
                         </SelectButtonItem>
                       </SelectButton>
                       <SelectButton label="Torrent" variant="outlined">
                         <SelectButtonItem>
-                          <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_armhf.img.xz.torrent">
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-core-rpi-5.1_armhf.img.xz.torrent">
                             armhf
                           </Link>
                         </SelectButtonItem>
                         <SelectButtonItem>
-                          <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_arm64.img.xz.torrent">
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-core-rpi-5.1_arm64.img.xz.torrent">
                             arm64
                           </Link>
                         </SelectButtonItem>
                       </SelectButton>
                       <PButton
                         variant="outlined"
-                        to="https://download.parrot.sh/parrot/iso/5.0.1/signed-hashes.txt"
+                        to="https://download.parrot.sh/parrot/iso/5.1/signed-hashes.txt"
                       >
                         Check Hashes
                       </PButton>
@@ -339,31 +339,31 @@ const OSRaspberry = () => {
                 <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
                   <SelectButton label="Download" variant="contained">
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_armhf.img.xz">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-rpi-5.1_armhf.img.xz">
                         armhf
                       </Link>
                     </SelectButtonItem>
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_arm64.img.xz">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-rpi-5.1_arm64.img.xz">
                         arm64
                       </Link>
                     </SelectButtonItem>
                   </SelectButton>
                   <SelectButton label="Torrent" variant="outlined">
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_armhf.img.xz.torrent">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-home-rpi-5.0.1_armhf.img.xz.torrent">
                         armhf
                       </Link>
                     </SelectButtonItem>
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_arm64.img.xz.torrent">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-rpi-5.1_arm64.img.xz.torrent">
                         arm64
                       </Link>
                     </SelectButtonItem>
                   </SelectButton>
                   <PButton
                     variant="outlined"
-                    to="https://download.parrot.sh/parrot/iso/5.0.1/signed-hashes.txt"
+                    to="https://download.parrot.sh/parrot/iso/5.1/signed-hashes.txt"
                   >
                     Check Hashes
                   </PButton>
@@ -494,31 +494,31 @@ const OSRaspberry = () => {
                 <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
                   <SelectButton label="Download" variant="contained">
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_armhf.img.xz">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.0.1_armhf.img.xz">
                         armhf
                       </Link>
                     </SelectButtonItem>
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_arm64.img.xz">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.1_arm64.img.xz">
                         arm64
                       </Link>
                     </SelectButtonItem>
                   </SelectButton>
                   <SelectButton label="Torrent" variant="outlined">
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_armhf.img.xz.torrent">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.1_armhf.img.xz.torrent">
                         armhf
                       </Link>
                     </SelectButtonItem>
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_arm64.img.xz.torrent">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.1_arm64.img.xz.torrent">
                         arm64
                       </Link>
                     </SelectButtonItem>
                   </SelectButton>
                   <PButton
                     variant="outlined"
-                    to="https://download.parrot.sh/parrot/iso/5.0.1/signed-hashes.txt"
+                    to="https://download.parrot.sh/parrot/iso/5.1/signed-hashes.txt"
                   >
                     Check Hashes
                   </PButton>

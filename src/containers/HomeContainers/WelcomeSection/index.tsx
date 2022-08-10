@@ -153,7 +153,7 @@ const WelcomeSection = () => {
         to="/blog/2022-03-24-parrot-5.0-press-release"
         startIcon={<SvgIcon className={classes.bulb} component={Bulb} />}
       >
-        What&apos;s new in ParrotOS 5.0 Electro Ara
+        What&apos;s new in ParrotOS 5.1 Electro Ara
       </PButton>
     </Grid>
   )

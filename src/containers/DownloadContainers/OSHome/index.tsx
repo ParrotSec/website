@@ -31,13 +31,13 @@ const OSHome = () => {
               environment.
             </>
           }
-          version="5.0.1 Electro Ara"
+          version="5.1 Electro Ara"
           releaseDate="May 04, 2022"
           architecture="amd64"
           size="2.3 GB"
           download="Download"
-          url="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-home-5.0.1_amd64.iso"
-          torrentUrl="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-home-5.0.1_amd64.iso.torrent"
+          url="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-5.1_amd64.iso"
+          torrentUrl="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-5.1_amd64.iso.torrent"
           torrentButton="Download Torrent"
           screenshots={[parrotHome1, parrotHome2, parrotHome3, parrotHome4, parrotHome5]}
           requirements={[
