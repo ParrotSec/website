@@ -1,6 +1,6 @@
 import { makeStyles, useTheme } from '@mui/styles'
 
-import Wallpaper from 'assets/parrot-wallpaper.webp'
+import Wallpaper from 'assets/fly-away.webp'
 
 const useStyles = makeStyles({
   wallpaper: {
