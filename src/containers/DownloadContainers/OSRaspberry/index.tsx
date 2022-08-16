@@ -12,7 +12,7 @@ import {
 } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import Link from 'next/link'
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 import PButton from 'components/PButton'
 import SelectButton, { SelectButtonItem } from 'components/SelectButton'
@@ -53,10 +53,20 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const OSRaspberry = () => {
+type EditionSelectionProps = {
+  initialVersion?: 'core' | 'home' | 'security'
+}
+
+type EditionTypes = 'core' | 'home' | 'security'
+
+const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
   const classes = useStyles()
   const [expanded, setExpanded] = useState(true)
-  const [expanded1, setExpanded1] = useState(true)
+
+  const [edition, setEdition] = useState<EditionTypes>(initialVersion ?? 'core')
+
+  useEffect(() => setEdition(initialVersion ?? 'core'), [initialVersion])
+
   return (
     <>
       <Grid className={classes.section} container justifyContent="center">
@@ -94,28 +104,30 @@ const OSRaspberry = () => {
           </Grid>
         </Paper>
 
-        <Accordion
-          expanded={expanded1}
-          onChange={(_event, xp) => setExpanded1(xp)}
-          elevation={0}
-          style={{ width: '100%', borderRadius: 24 }}
-        >
-          <Paper className={classes.root} elevation={0}>
+        <Paper className={classes.root} elevation={0}>
+          <Accordion
+            expanded={edition === 'core'}
+            onChange={() => setEdition('core')}
+            elevation={0}
+            style={{ width: '100%', borderRadius: 24 }}
+          >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="primary" />}
               aria-controls="panel1bh-content"
               id="panel1bh-header"
-              style={{ padding: 0, marginTop: 0 }}
+              style={{ padding: 0 }}
             >
-              <Typography variant="h5" paragraph>
-                Core Edition
-              </Typography>
+              <Grid container direction="row">
+                <Typography variant="h5" paragraph>
+                  Core Edition
+                </Typography>
+                <Typography variant="subtitle2Semi" paragraph>
+                  Without DE, you can install whatever you like. Only the base packages are
+                  installed in this edition.
+                </Typography>
+              </Grid>
             </AccordionSummary>
-            <Typography variant="subtitle2Semi" paragraph>
-              Without DE, you can install whatever you like. Only the base packages are installed in
-              this edition.
-            </Typography>
-            <AccordionDetails style={{ padding: 0 }}>
+            <AccordionDetails>
               <Grid container spacing={8} justifyContent="center" alignItems="center">
                 <Grid container item xs={12} md={8} direction="column">
                   <Alert severity="warning" sx={{ my: 2, fontSize: 18 }}>
@@ -267,315 +279,361 @@ const OSRaspberry = () => {
                 </AccordionDetails>
               </Accordion>
             </AccordionDetails>
-          </Paper>
-        </Accordion>
+          </Accordion>
+        </Paper>
 
         <Paper className={classes.root} elevation={0}>
-          <Typography variant="h5" paragraph>
-            Home Edition
-          </Typography>
-          <Typography variant="subtitle2Semi" paragraph>
-            The classic edition of ParrotOS, with MATE graphic environment and the basic tools
-            installed.
-          </Typography>
-          <Grid container spacing={8} justifyContent="center" alignItems="center">
-            <Grid container item xs={12} md={8} direction="column">
-              <Alert severity="warning" sx={{ my: 2, fontSize: 18 }}>
-                This image may run on older Raspberry Pi versions, but Raspberry pi 4 or greater
-                with at least 4gb of RAM is recommended. This is a product preview, and may suffer
-                performance issues.
-              </Alert>
-              <Alert severity="info" sx={{ fontSize: 18 }}>
-                Default credentials:
-                <Divider sx={{ my: 1 }} />
-                user: <strong>pi</strong>
-                <br />
-                password: <strong>parrot</strong>
-              </Alert>
-            </Grid>
-            <Grid container item xs={12} md={4} spacing={3} wrap="wrap-reverse">
-              <Grid item xs={12} sm={6} md={12}>
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  paddingTop="10px"
-                  paddingBottom="10px"
-                >
-                  <Typography variant="body2Semi">Version</Typography>
-                  <Typography variant="body2">5.1 Electro Ara</Typography>
-                </Box>
-                <Divider variant="fullWidth" />
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  paddingTop="10px"
-                  paddingBottom="10px"
-                >
-                  <Typography variant="body2Semi">Release Date</Typography>
-                  <Typography variant="body2">May 04, 2022</Typography>
-                </Box>
-                <Divider variant="fullWidth" />
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  paddingTop="10px"
-                  paddingBottom="10px"
-                >
-                  <Typography variant="body2Semi">Architecture</Typography>
-                  <Typography variant="body2">armhf, arm64</Typography>
-                </Box>
-                <Divider variant="fullWidth" />
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  paddingTop="10px"
-                  paddingBottom="10px"
-                >
-                  <Typography variant="body2Semi">Size</Typography>
-                  <Typography variant="body2">278-388 MB</Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={12} sm={6} md={12}>
-                <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                  <SelectButton label="Download" variant="contained">
-                    <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-rpi-5.1_armhf.img.xz">
-                        armhf
-                      </Link>
-                    </SelectButtonItem>
-                    <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-rpi-5.1_arm64.img.xz">
-                        arm64
-                      </Link>
-                    </SelectButtonItem>
-                  </SelectButton>
-                  <SelectButton label="Torrent" variant="outlined">
-                    <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-home-rpi-5.0.1_armhf.img.xz.torrent">
-                        armhf
-                      </Link>
-                    </SelectButtonItem>
-                    <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-rpi-5.1_arm64.img.xz.torrent">
-                        arm64
-                      </Link>
-                    </SelectButtonItem>
-                  </SelectButton>
-                  <PButton
-                    variant="outlined"
-                    to="https://download.parrot.sh/parrot/iso/5.1/signed-hashes.txt"
-                  >
-                    Check Hashes
-                  </PButton>
-                </Box>
-              </Grid>
-            </Grid>
-            <Grid item xs={12}>
-              <Divider variant="fullWidth" />
-            </Grid>
-          </Grid>
           <Accordion
-            expanded={expanded}
-            onChange={(_event, xp) => setExpanded(xp)}
+            expanded={edition === 'home'}
+            onChange={() => setEdition('home')}
             elevation={0}
-            style={{ width: '100%' }}
+            style={{ width: '100%', borderRadius: 24 }}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="primary" />}
               aria-controls="panel1bh-content"
               id="panel1bh-header"
-              style={{ padding: 0 }}
+              style={{ padding: 0, marginTop: 0 }}
             >
-              <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
-                <Typography className={classes.subBlockHeading} variant="subtitle2">
-                  Features
+              <Grid container direction="row">
+                <Typography variant="h5" paragraph>
+                  Home Edition
                 </Typography>
-                <Typography color="primary" variant="body1">
-                  {expanded ? 'Hide Features' : 'Show Features'}
+                <Typography variant="subtitle2Semi" paragraph>
+                  The classic edition of ParrotOS, with MATE graphic environment and the basic tools
+                  installed.
                 </Typography>
-              </Box>
+              </Grid>
             </AccordionSummary>
             <AccordionDetails style={{ padding: 0 }}>
-              <Grid container>
-                <Fragment>
-                  <Grid item xs={12} container spacing={2}>
-                    <Grid item xs={12} sm={4}>
-                      <Typography variant="body1">ParrotOS on Raspberry Pi</Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                      <Typography variant="body1" paragraph>
-                        Ready for any context.
-                      </Typography>
-                      <Typography variant="body2Semi">
-                        Use the full potential of Parrot on your Raspberry Pi.
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                      <Typography variant="body1" paragraph>
-                        Customizable.
-                      </Typography>
-                      <Typography variant="body2Semi">
-                        You can customize it as you prefer, with any DE and any tool.
-                      </Typography>
-                    </Grid>
+              <Grid container spacing={8} justifyContent="center" alignItems="center">
+                <Grid container item xs={12} md={8} direction="column">
+                  <Alert severity="warning" sx={{ my: 2, fontSize: 18 }}>
+                    This image may run on older Raspberry Pi versions, but Raspberry pi 4 or greater
+                    with at least 4gb of RAM is recommended. This is a product preview, and may
+                    suffer performance issues.
+                  </Alert>
+                  <Alert severity="info" sx={{ fontSize: 18 }}>
+                    Default credentials:
+                    <Divider sx={{ my: 1 }} />
+                    user: <strong>pi</strong>
+                    <br />
+                    password: <strong>parrot</strong>
+                  </Alert>
+                </Grid>
+                <Grid container item xs={12} md={4} spacing={3} wrap="wrap-reverse">
+                  <Grid item xs={12} sm={6} md={12}>
+                    <Box
+                      display="flex"
+                      justifyContent="space-between"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                    >
+                      <Typography variant="body2Semi">Version</Typography>
+                      <Typography variant="body2">5.1 Electro Ara</Typography>
+                    </Box>
+                    <Divider variant="fullWidth" />
+                    <Box
+                      display="flex"
+                      justifyContent="space-between"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                    >
+                      <Typography variant="body2Semi">Release Date</Typography>
+                      <Typography variant="body2">May 04, 2022</Typography>
+                    </Box>
+                    <Divider variant="fullWidth" />
+                    <Box
+                      display="flex"
+                      justifyContent="space-between"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                    >
+                      <Typography variant="body2Semi">Architecture</Typography>
+                      <Typography variant="body2">armhf, arm64</Typography>
+                    </Box>
+                    <Divider variant="fullWidth" />
+                    <Box
+                      display="flex"
+                      justifyContent="space-between"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                    >
+                      <Typography variant="body2Semi">Size</Typography>
+                      <Typography variant="body2">278-388 MB</Typography>
+                    </Box>
                   </Grid>
-                </Fragment>
+                  <Grid item xs={12} sm={6} md={12}>
+                    <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
+                      <SelectButton label="Download" variant="contained">
+                        <SelectButtonItem>
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-rpi-5.1_armhf.img.xz">
+                            armhf
+                          </Link>
+                        </SelectButtonItem>
+                        <SelectButtonItem>
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-rpi-5.1_arm64.img.xz">
+                            arm64
+                          </Link>
+                        </SelectButtonItem>
+                      </SelectButton>
+                      <SelectButton label="Torrent" variant="outlined">
+                        <SelectButtonItem>
+                          <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-home-rpi-5.0.1_armhf.img.xz.torrent">
+                            armhf
+                          </Link>
+                        </SelectButtonItem>
+                        <SelectButtonItem>
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-home-rpi-5.1_arm64.img.xz.torrent">
+                            arm64
+                          </Link>
+                        </SelectButtonItem>
+                      </SelectButton>
+                      <PButton
+                        variant="outlined"
+                        to="https://download.parrot.sh/parrot/iso/5.1/signed-hashes.txt"
+                      >
+                        Check Hashes
+                      </PButton>
+                    </Box>
+                  </Grid>
+                </Grid>
+                <Grid item xs={12}>
+                  <Divider variant="fullWidth" />
+                </Grid>
               </Grid>
+              <Accordion
+                expanded={expanded}
+                onChange={(_event, xp) => setExpanded(xp)}
+                elevation={0}
+                style={{ width: '100%' }}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon color="primary" />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                  style={{ padding: 0 }}
+                >
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="space-between"
+                    width="100%"
+                  >
+                    <Typography className={classes.subBlockHeading} variant="subtitle2">
+                      Features
+                    </Typography>
+                    <Typography color="primary" variant="body1">
+                      {expanded ? 'Hide Features' : 'Show Features'}
+                    </Typography>
+                  </Box>
+                </AccordionSummary>
+                <AccordionDetails style={{ padding: 0 }}>
+                  <Grid container>
+                    <Fragment>
+                      <Grid item xs={12} container spacing={2}>
+                        <Grid item xs={12} sm={4}>
+                          <Typography variant="body1">ParrotOS on Raspberry Pi</Typography>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <Typography variant="body1" paragraph>
+                            Ready for any context.
+                          </Typography>
+                          <Typography variant="body2Semi">
+                            Use the full potential of Parrot on your Raspberry Pi.
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <Typography variant="body1" paragraph>
+                            Customizable.
+                          </Typography>
+                          <Typography variant="body2Semi">
+                            You can customize it as you prefer, with any DE and any tool.
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                    </Fragment>
+                  </Grid>
+                </AccordionDetails>
+              </Accordion>
             </AccordionDetails>
           </Accordion>
         </Paper>
 
         <Paper className={classes.root} elevation={0}>
-          <Typography variant="h5" paragraph>
-            Security Edition
-          </Typography>
-          <Typography variant="subtitle2Semi" paragraph>
-            The classic edition of ParrotOS, with MATE graphic environment and the basic tools
-            installed.
-          </Typography>
-          <Grid container spacing={8} justifyContent="center" alignItems="center">
-            <Grid container item xs={12} md={8} direction="column">
-              <Alert severity="warning" sx={{ my: 2, fontSize: 18 }}>
-                This image may run on older Raspberry Pi versions, but Raspberry pi 4 or greater
-                with at least 4gb of RAM is recommended. This is a product preview, and may suffer
-                performance issues.
-              </Alert>
-              <Alert severity="info" sx={{ fontSize: 18 }}>
-                Default credentials:
-                <Divider sx={{ my: 1 }} />
-                user: <strong>pi</strong>
-                <br />
-                password: <strong>parrot</strong>
-              </Alert>
-            </Grid>
-            <Grid container item xs={12} md={4} spacing={3} wrap="wrap-reverse">
-              <Grid item xs={12} sm={6} md={12}>
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  paddingTop="10px"
-                  paddingBottom="10px"
-                >
-                  <Typography variant="body2Semi">Version</Typography>
-                  <Typography variant="body2">5.1 Electro Ara</Typography>
-                </Box>
-                <Divider variant="fullWidth" />
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  paddingTop="10px"
-                  paddingBottom="10px"
-                >
-                  <Typography variant="body2Semi">Release Date</Typography>
-                  <Typography variant="body2">May 04, 2022</Typography>
-                </Box>
-                <Divider variant="fullWidth" />
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  paddingTop="10px"
-                  paddingBottom="10px"
-                >
-                  <Typography variant="body2Semi">Architecture</Typography>
-                  <Typography variant="body2">armhf, arm64</Typography>
-                </Box>
-                <Divider variant="fullWidth" />
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  paddingTop="10px"
-                  paddingBottom="10px"
-                >
-                  <Typography variant="body2Semi">Size</Typography>
-                  <Typography variant="body2">278-388 MB</Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={12} sm={6} md={12}>
-                <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                  <SelectButton label="Download" variant="contained">
-                    <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.0.1_armhf.img.xz">
-                        armhf
-                      </Link>
-                    </SelectButtonItem>
-                    <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.1_arm64.img.xz">
-                        arm64
-                      </Link>
-                    </SelectButtonItem>
-                  </SelectButton>
-                  <SelectButton label="Torrent" variant="outlined">
-                    <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.1_armhf.img.xz.torrent">
-                        armhf
-                      </Link>
-                    </SelectButtonItem>
-                    <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.1_arm64.img.xz.torrent">
-                        arm64
-                      </Link>
-                    </SelectButtonItem>
-                  </SelectButton>
-                  <PButton
-                    variant="outlined"
-                    to="https://download.parrot.sh/parrot/iso/5.1/signed-hashes.txt"
-                  >
-                    Check Hashes
-                  </PButton>
-                </Box>
-              </Grid>
-            </Grid>
-            <Grid item xs={12}>
-              <Divider variant="fullWidth" />
-            </Grid>
-          </Grid>
           <Accordion
-            expanded={expanded}
-            onChange={(_event, xp) => setExpanded(xp)}
+            expanded={edition === 'security'}
+            onChange={() => setEdition('security')}
             elevation={0}
-            style={{ width: '100%' }}
+            style={{ width: '100%', borderRadius: 24 }}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon color="primary" />}
               aria-controls="panel1bh-content"
               id="panel1bh-header"
-              style={{ padding: 0 }}
+              style={{ padding: 0, marginTop: 0 }}
             >
-              <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
-                <Typography className={classes.subBlockHeading} variant="subtitle2">
-                  Features
+              <Grid container direction="row">
+                <Typography variant="h5" paragraph>
+                  Security Edition
                 </Typography>
-                <Typography color="primary" variant="body1">
-                  {expanded ? 'Hide Features' : 'Show Features'}
+                <Typography variant="subtitle2Semi" paragraph>
+                  The classic edition of ParrotOS, with MATE graphic environment and the basic tools
+                  installed.
                 </Typography>
-              </Box>
-            </AccordionSummary>
-            <AccordionDetails style={{ padding: 0 }}>
-              <Grid container>
-                <Fragment>
-                  <Grid item xs={12} container spacing={2}>
-                    <Grid item xs={12} sm={4}>
-                      <Typography variant="body1">ParrotOS on Raspberry Pi</Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                      <Typography variant="body1" paragraph>
-                        Ready for any context.
-                      </Typography>
-                      <Typography variant="body2Semi">
-                        Use the full potential of Parrot on your Raspberry Pi.
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                      <Typography variant="body1" paragraph>
-                        Customizable.
-                      </Typography>
-                      <Typography variant="body2Semi">
-                        You can customize it as you prefer, with any DE and any tool.
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </Fragment>
               </Grid>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Grid container spacing={8} justifyContent="center" alignItems="center">
+                <Grid container item xs={12} md={8} direction="column">
+                  <Alert severity="warning" sx={{ my: 2, fontSize: 18 }}>
+                    This image may run on older Raspberry Pi versions, but Raspberry pi 4 or greater
+                    with at least 4gb of RAM is recommended. This is a product preview, and may
+                    suffer performance issues.
+                  </Alert>
+                  <Alert severity="info" sx={{ fontSize: 18 }}>
+                    Default credentials:
+                    <Divider sx={{ my: 1 }} />
+                    user: <strong>pi</strong>
+                    <br />
+                    password: <strong>parrot</strong>
+                  </Alert>
+                </Grid>
+                <Grid container item xs={12} md={4} spacing={3} wrap="wrap-reverse">
+                  <Grid item xs={12} sm={6} md={12}>
+                    <Box
+                      display="flex"
+                      justifyContent="space-between"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                    >
+                      <Typography variant="body2Semi">Version</Typography>
+                      <Typography variant="body2">5.1 Electro Ara</Typography>
+                    </Box>
+                    <Divider variant="fullWidth" />
+                    <Box
+                      display="flex"
+                      justifyContent="space-between"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                    >
+                      <Typography variant="body2Semi">Release Date</Typography>
+                      <Typography variant="body2">May 04, 2022</Typography>
+                    </Box>
+                    <Divider variant="fullWidth" />
+                    <Box
+                      display="flex"
+                      justifyContent="space-between"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                    >
+                      <Typography variant="body2Semi">Architecture</Typography>
+                      <Typography variant="body2">armhf, arm64</Typography>
+                    </Box>
+                    <Divider variant="fullWidth" />
+                    <Box
+                      display="flex"
+                      justifyContent="space-between"
+                      paddingTop="10px"
+                      paddingBottom="10px"
+                    >
+                      <Typography variant="body2Semi">Size</Typography>
+                      <Typography variant="body2">278-388 MB</Typography>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={12}>
+                    <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
+                      <SelectButton label="Download" variant="contained">
+                        <SelectButtonItem>
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.0.1_armhf.img.xz">
+                            armhf
+                          </Link>
+                        </SelectButtonItem>
+                        <SelectButtonItem>
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.1_arm64.img.xz">
+                            arm64
+                          </Link>
+                        </SelectButtonItem>
+                      </SelectButton>
+                      <SelectButton label="Torrent" variant="outlined">
+                        <SelectButtonItem>
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.1_armhf.img.xz.torrent">
+                            armhf
+                          </Link>
+                        </SelectButtonItem>
+                        <SelectButtonItem>
+                          <Link href="https://download.parrot.sh/parrot/iso/5.1/Parrot-security-rpi-5.1_arm64.img.xz.torrent">
+                            arm64
+                          </Link>
+                        </SelectButtonItem>
+                      </SelectButton>
+                      <PButton
+                        variant="outlined"
+                        to="https://download.parrot.sh/parrot/iso/5.1/signed-hashes.txt"
+                      >
+                        Check Hashes
+                      </PButton>
+                    </Box>
+                  </Grid>
+                </Grid>
+                <Grid item xs={12}>
+                  <Divider variant="fullWidth" />
+                </Grid>
+              </Grid>
+              <Accordion
+                expanded={expanded}
+                onChange={(_event, xp) => setExpanded(xp)}
+                elevation={0}
+                style={{ width: '100%' }}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon color="primary" />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                  style={{ padding: 0 }}
+                >
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="space-between"
+                    width="100%"
+                  >
+                    <Typography className={classes.subBlockHeading} variant="subtitle2">
+                      Features
+                    </Typography>
+                    <Typography color="primary" variant="body1">
+                      {expanded ? 'Hide Features' : 'Show Features'}
+                    </Typography>
+                  </Box>
+                </AccordionSummary>
+                <AccordionDetails style={{ padding: 0 }}>
+                  <Grid container>
+                    <Fragment>
+                      <Grid item xs={12} container spacing={2}>
+                        <Grid item xs={12} sm={4}>
+                          <Typography variant="body1">ParrotOS on Raspberry Pi</Typography>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <Typography variant="body1" paragraph>
+                            Ready for any context.
+                          </Typography>
+                          <Typography variant="body2Semi">
+                            Use the full potential of Parrot on your Raspberry Pi.
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <Typography variant="body1" paragraph>
+                            Customizable.
+                          </Typography>
+                          <Typography variant="body2Semi">
+                            You can customize it as you prefer, with any DE and any tool.
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                    </Fragment>
+                  </Grid>
+                </AccordionDetails>
+              </Accordion>
             </AccordionDetails>
           </Accordion>
         </Paper>
