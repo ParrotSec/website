@@ -57,15 +57,15 @@ type EditionSelectionProps = {
   initialVersion?: 'core' | 'home' | 'security'
 }
 
-type EditionTypes = 'core' | 'home' | 'security'
+type EditionTypes = '' | 'core' | 'home' | 'security'
 
 const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
   const classes = useStyles()
   const [expanded, setExpanded] = useState(true)
 
-  const [edition, setEdition] = useState<EditionTypes>(initialVersion ?? 'core')
+  const [edition, setEdition] = useState<EditionTypes>(initialVersion ?? '')
 
-  useEffect(() => setEdition(initialVersion ?? 'core'), [initialVersion])
+  useEffect(() => setEdition(initialVersion ?? ''), [initialVersion])
 
   return (
     <>
@@ -112,7 +112,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
             style={{ width: '100%', borderRadius: 24 }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon color="primary" />}
+              expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1bh-content"
               id="panel1bh-header"
               style={{ padding: 0 }}
@@ -290,7 +290,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
             style={{ width: '100%', borderRadius: 24 }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon color="primary" />}
+              expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1bh-content"
               id="panel1bh-header"
               style={{ padding: 0, marginTop: 0 }}
@@ -300,8 +300,9 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                   Home Edition
                 </Typography>
                 <Typography variant="subtitle2Semi" paragraph>
-                  The classic edition of ParrotOS, with MATE graphic environment and the basic tools
-                  installed.
+                  This version of Parrot is a lightweight installation which provides the essential
+                  tools needed to start working. It relies on the same repositories as the Security
+                  Edition, letting you choose most of the programs you want to install later on.
                 </Typography>
               </Grid>
             </AccordionSummary>
@@ -468,7 +469,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
             style={{ width: '100%', borderRadius: 24 }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon color="primary" />}
+              expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1bh-content"
               id="panel1bh-header"
               style={{ padding: 0, marginTop: 0 }}
@@ -478,8 +479,9 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                   Security Edition
                 </Typography>
                 <Typography variant="subtitle2Semi" paragraph>
-                  The classic edition of ParrotOS, with MATE graphic environment and the basic tools
-                  installed.
+                  As the name suggests, this is the full edition. After the installation you have a
+                  complete out of the box pentesting workstation loaded with a large variety of
+                  tools ready to use.
                 </Typography>
               </Grid>
             </AccordionSummary>
