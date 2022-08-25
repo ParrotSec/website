@@ -1,0 +1,10 @@
+image: node:14.15.4-alpine
+
+lint:
+  before_script:
+    - apk update && apk add git
+    - git --version
+    - yarn install
+  when: always
+  script:
+    - yarn lint

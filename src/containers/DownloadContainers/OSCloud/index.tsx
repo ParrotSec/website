@@ -81,13 +81,13 @@ const OSCloud = () => {
                 <PButton
                   gradient
                   variant="contained"
-                  to="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-htb-5.0.1_amd64.iso"
+                  to="https://download.parrot.sh/parrot/iso/5.1/Parrot-htb-5.1_amd64.iso"
                 >
                   Download
                 </PButton>
                 <PButton
                   variant="outlined"
-                  to="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-htb-5.0.1_amd64.iso.torrent"
+                  to="https://download.parrot.sh/parrot/iso/5.1/Parrot-htb-5.1_amd64.iso.torrent"
                 >
                   Torrent
                 </PButton>
