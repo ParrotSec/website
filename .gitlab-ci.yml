@@ -3,6 +3,7 @@ stages:
 
 docker_build:
   stage: build
+  image: docker:latest
   script:
     - docker build -v $(pwd)/:/website -t private.parrot.run/website:latest .
     - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD
