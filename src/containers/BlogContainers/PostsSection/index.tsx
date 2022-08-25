@@ -1,12 +1,13 @@
-import { Grid, GridProps } from '@mui/material'
-import { useMemo } from 'react'
+import { Grid, GridProps, Pagination } from '@mui/material'
+import { useRouter } from 'next/router'
+import { useMemo, useState } from 'react'
 
 import { PostType } from '../../../types'
 
 import Post from 'components/Post'
 /*
 import NewsletterSection from 'containers/HomeContainers/NewsletterSection'
- */
+*/
 
 type PostSectionProps = {
   allPosts: PostType[]
@@ -30,13 +31,30 @@ const PostsSection = ({ allPosts, ...rest }: PostSectionProps) => {
       )),
     [allPosts]
   )
+
+  const router = useRouter()
+
+  const [page, setPage] = useState(1)
+  const handleChange = (_event: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value)
+    router.push(`/blog/?page=${value}`, undefined, { shallow: true })
+  }
+
+  const contentPerPage = 6
+  const lastIndex = page * contentPerPage
+  const firstIndex = lastIndex - contentPerPage
+  const count = Math.ceil(allPosts.length / contentPerPage)
+
   return (
     <Grid container item xs={12} md={9} spacing={4} {...rest} justifyContent="center">
       {/*
       {allPostsRendered.slice(0, 6)}
       <NewsletterSection md={12} />
       */}
-      {allPostsRendered}
+      {allPostsRendered.slice(firstIndex, lastIndex)}
+      <Grid container item xs={12} md={9} justifyContent="center">
+        <Pagination count={count} page={page} size="large" onChange={handleChange} />
+      </Grid>
     </Grid>
   )
 }

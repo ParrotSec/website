@@ -3,11 +3,11 @@ import { makeStyles } from '@mui/styles'
 import { useSnackbar } from 'notistack'
 
 import Bitcoin from './assets/bitcoin.svg'
+import bunny from './assets/bunny.png'
 import linode from './assets/linode.png'
 import Patreon from './assets/patreon.svg'
 import Paypal from './assets/paypal.svg'
 import Referral from './assets/referral.svg'
-import vultr from './assets/vultr.png'
 
 import PFeatureBlock from 'components/PFeatureBlock'
 import Arrow from 'components/PFeatureBlock/assets/arrow.svg'
@@ -99,7 +99,7 @@ const DonateSection = (props: GridProps) => {
             Icon={Paypal}
             title="Paypal"
             buttonText="Send us a tip"
-            buttonLink="https://paypal.com"
+            buttonLink="https://www.paypal.me/palinuro"
             outLink
           >
             Send us a tip on PayPal
@@ -110,7 +110,7 @@ const DonateSection = (props: GridProps) => {
             Icon={Referral}
             title="Referral Links"
             CustomFooter={
-              <Box marginTop={1}>
+              <Box marginTop={2}>
                 <Box display="flex" alignItems="center">
                   <div className={classes.roundedIconHolder}>
                     <img
@@ -119,16 +119,23 @@ const DonateSection = (props: GridProps) => {
                       style={{ display: 'block', margin: 'auto' }}
                     />
                   </div>
-                  <Link className={classes.button} href="https://linode.com">
+                  <Link
+                    className={classes.button}
+                    href="https://www.linode.com/?r=2b6d749d3cb301e41bdbec5fc40e50c4316f7c66"
+                  >
                     Linode <Arrow className={classes.arrow} />
                   </Link>
                 </Box>
-                <Box marginTop={4} display="flex" alignItems="center">
+                <Box marginTop={2} display="flex" alignItems="center">
                   <div className={classes.roundedIconHolder}>
-                    <img src={vultr.src} alt="Vultr" style={{ display: 'block', margin: 'auto' }} />
+                    <img
+                      src={bunny.src}
+                      alt="BunnyCDN"
+                      style={{ display: 'block', margin: 'auto' }}
+                    />
                   </div>
-                  <Link className={classes.button} href="http://vultr.com">
-                    Vultr <Arrow className={classes.arrow} />
+                  <Link className={classes.button} href="https://bunny.net?ref=ppalfbefw3">
+                    BunnyCDN <Arrow className={classes.arrow} />
                   </Link>
                 </Box>
               </Box>

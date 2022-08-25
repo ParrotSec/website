@@ -221,7 +221,7 @@ const ToolsSection = (rest: GridProps) => {
                 justifyContent="flex-end"
               >
                 <PButton variant="contained" to="/download" gradient>
-                  Download ParrotOS 5.0
+                  Download ParrotOS 5.0.1
                 </PButton>
               </Grid>
               <Grid className={classes.responsiveJustify} container item xs={12} sm={6}>

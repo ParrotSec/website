@@ -2,12 +2,12 @@ import { Grid, Hidden, Paper, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import cls from 'classnames'
 
-import React from './assets/docker-logo.svg'
 import Docker from './assets/docker-logo.svg'
 import Golang from './assets/golang-logo.svg'
 import Java from './assets/java-logo.svg'
 import Nodejs from './assets/nodejs-logo.svg'
 import Python from './assets/python-logo.svg'
+import React from './assets/react-logo.svg'
 import Rust from './assets/rust-logo.svg'
 
 import PIconLink from 'components/PIconLink'

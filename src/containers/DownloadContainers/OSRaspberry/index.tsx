@@ -86,7 +86,7 @@ const OSRaspberry = () => {
                   paddingBottom="10px"
                 >
                   <Typography variant="body2Semi">Version</Typography>
-                  <Typography variant="body2">5.0 Electro Ara</Typography>
+                  <Typography variant="body2">5.0.1 Electro Ara</Typography>
                 </Box>
                 <Divider variant="fullWidth" />
                 <Box
@@ -96,7 +96,7 @@ const OSRaspberry = () => {
                   paddingBottom="10px"
                 >
                   <Typography variant="body2Semi">Release Date</Typography>
-                  <Typography variant="body2">Mar 24, 2022</Typography>
+                  <Typography variant="body2">May 04, 2022</Typography>
                 </Box>
                 <Divider variant="fullWidth" />
                 <Box
@@ -116,38 +116,38 @@ const OSRaspberry = () => {
                   paddingBottom="10px"
                 >
                   <Typography variant="body2Semi">Size</Typography>
-                  <Typography variant="body2">100-150 MB</Typography>
+                  <Typography variant="body2">278-388 MB</Typography>
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6} md={12}>
                 <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
                   <SelectButton label="Download" variant="contained">
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0/Parrot-core-rpi-5.0_armhf.img.xz">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_armhf.img.xz">
                         armhf
                       </Link>
                     </SelectButtonItem>
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0/Parrot-core-rpi-5.0_arm64.img.xz">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_arm64.img.xz">
                         arm64
                       </Link>
                     </SelectButtonItem>
                   </SelectButton>
                   <SelectButton label="Torrent" variant="outlined">
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0/Parrot-core-rpi-5.0_armhf.img.xz.torrent">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_armhf.img.xz.torrent">
                         armhf
                       </Link>
                     </SelectButtonItem>
                     <SelectButtonItem>
-                      <Link href="https://download.parrot.sh/parrot/iso/5.0/Parrot-core-rpi-5.0_arm64.img.xz.torrent">
+                      <Link href="https://download.parrot.sh/parrot/iso/5.0.1/Parrot-core-rpi-5.0.1_arm64.img.xz.torrent">
                         arm64
                       </Link>
                     </SelectButtonItem>
                   </SelectButton>
                   <PButton
                     variant="outlined"
-                    to="https://download.parrot.sh/parrot/iso/5.0/signed-hashes.txt"
+                    to="https://download.parrot.sh/parrot/iso/5.0.1/signed-hashes.txt"
                   >
                     Check Hashes
                   </PButton>
@@ -225,7 +225,7 @@ const OSRaspberry = () => {
               </Grid>
               <Grid container direction="column" item xs={12} sm={6} lg={3}>
                 <Typography variant="body2Semi">Memory</Typography>
-                <Typography variant="body1">2 GB RAM</Typography>
+                <Typography variant="body1">1 GB RAM</Typography>
               </Grid>
               <Grid container direction="column" item xs={12} sm={6} lg={3}>
                 <Typography variant="body2Semi">Storage</Typography>

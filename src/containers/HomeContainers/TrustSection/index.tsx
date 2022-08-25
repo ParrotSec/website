@@ -14,7 +14,6 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
     maxHeight: theme.spacing(6),
-    display: 'block',
     margin: 'auto',
     fill: theme.palette.mode === 'dark' ? 'white' : 'inherit',
     '& #linode-block': {

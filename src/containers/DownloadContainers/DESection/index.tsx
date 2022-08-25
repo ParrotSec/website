@@ -266,7 +266,7 @@ const DESection = ({
                 {allHashes && (
                   <PButton
                     variant="outlined"
-                    to="https://download.parrot.sh/parrot/iso/5.0/signed-hashes.txt"
+                    to="https://download.parrot.sh/parrot/iso/5.0.1/signed-hashes.txt"
                   >
                     Check Hashes
                   </PButton>
