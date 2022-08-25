@@ -1,4 +1,5 @@
 FROM docker.io/library/node:16 AS builder
+COPY ./ /website
 WORKDIR /website
 RUN yarn install && yarn next build && yarn next export -o _build
 
