@@ -112,5 +112,17 @@ export default [
     name: 'Vangelis Mouhtsis',
     role: 'Debian/MATE dev',
     email: 'gnugr at parrotsec dot org'
+  },
+  {
+    nickname: 'h0tw4t3r',
+    name: 'Vladyslav Dalechyn',
+    role: 'Website Maintainer',
+    email: ''
+  },
+  {
+    nickname: 'mastrobirraio',
+    name: 'Pino Matranga',
+    role: 'Italian Community Leader, Forum Moderator',
+    email: ''
   }
 ]
