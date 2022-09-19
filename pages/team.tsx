@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material'
+import { Grid, Typography, Link } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import { NextPage } from 'next'
 
@@ -23,7 +23,15 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: {
       fontSize: 16
     },
-    marginBottom: theme.spacing(6.5)
+    marginBottom: theme.spacing(4)
+  },
+  email: {
+    marginTop: theme.spacing(1),
+    fontSize: 18,
+    [theme.breakpoints.down('md')]: {
+      fontSize: 16
+    },
+    marginBottom: theme.spacing(1)
   },
   developBlock: {
     marginTop: 154
@@ -67,6 +75,18 @@ const Team: NextPage = () => {
         <Typography className={classes.headingSubTitle} variant="subtitle2Semi" align="center">
           The Parrot Project is a community-driven project. In this page we list contributors and
           members, past and present, who have contributed significantly to the project.
+        </Typography>
+        <Typography className={classes.email} variant="inherit" align="center">
+          Board of Directors:{' '}
+          <Link underline="none" href={`mailto:director@parrotsec.org`}>
+            director@parrotsec.org
+          </Link>
+        </Typography>
+        <Typography className={classes.email} variant="inherit" align="center">
+          Parrot Team:{' '}
+          <Link underline="none" href={`mailto:team@parrotsec.org`}>
+            team@parrotsec.org
+          </Link>
         </Typography>
       </Grid>
       <Grid container item xs={12} md={9} spacing={4}>
