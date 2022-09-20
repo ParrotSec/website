@@ -30,12 +30,6 @@ export default [
     email: 'ptd at parrotsec dot org'
   },
   {
-    nickname: 'mastrobirraio',
-    name: 'Pino Matranga',
-    role: 'Italian Community Leader, Forum Moderator',
-    email: ''
-  },
-  {
     nickname: 'LulzRose',
     name: 'Kurt Bruggeman',
     role: '',
