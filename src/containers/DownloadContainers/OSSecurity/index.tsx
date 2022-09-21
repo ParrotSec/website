@@ -113,14 +113,14 @@ const OSSecurity = () => {
             }
           ]}
           hashes={{
-            md5: '74ca72645896f83a65acd35ade46b0e0',
-            sha1: '8c28f568aaa643ce12831c49ddc35032ee145731',
-            sha224: '7508cd8c1cb7f7f235d74a625450cdf3217c8f02da0a655317905794',
-            sha256: 'a63017b201ac799cb25cba6ded8e6cb1014b3917e765f387e723f984da86ab64',
+            md5: '21a0a15e3f13951e6d0430a8ad3d3d7e',
+            sha1: '5c529ca83a85081df6c03887859a5ade3b6b27c3',
+            sha224: 'fe4bee5ac90cba5ee38884c2374c4537231b8fb37b49ffd3f0264284',
+            sha256: '08f247a0143051715d0df2854b5e20ea45fc35e0945e174b7b2703287f1dd661',
             sha384:
-              'ecd91c9b36b4189a2d93f6f014448ffa583449fec13a1297965ad43c742db79bfc09a717bd8972f987fa2532407ff502',
+              '85c29f1dccc8fde152450884e3c19ecd1e1f7af2c2eb09146208ec9a5a1394bb2bb425a4923d4b7ca8d2376d71cb5443',
             sha512:
-              'a3440b12b528e6e952291af443296352815f18e205cf7ae87f4312c2715eb07ee55bc0eab11544c1dcd28878b721c5317d3062b3e38591a83e9dbb9efa31c4eb'
+              'd351da6fdd44de88f0a588b688203b303871d57d6fbc8fd27e7d17b234b736d230d2e80f79de73b1a18f5abc4f3bba9b5e96d86349e54e4a97237198af86e272'
           }}
         />
       </Grid>
