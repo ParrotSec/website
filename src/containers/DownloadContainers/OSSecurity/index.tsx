@@ -31,7 +31,7 @@ const OSSecurity = () => {
             </>
           }
           version="5.1 Electro Ara"
-          releaseDate="May 04, 2022"
+          releaseDate="Sept 23, 2022"
           architecture="amd64"
           size="4.5 GB"
           download="Download"

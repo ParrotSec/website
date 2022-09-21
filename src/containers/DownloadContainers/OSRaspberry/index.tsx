@@ -130,11 +130,6 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
             <AccordionDetails>
               <Grid container spacing={8} justifyContent="center" alignItems="center">
                 <Grid container item xs={12} md={8} direction="column">
-                  <Alert severity="warning" sx={{ my: 2, fontSize: 18 }}>
-                    This image may run on older Raspberry Pi versions, but Raspberry pi 4 or greater
-                    with at least 4gb of RAM is recommended. This is a product preview, and may
-                    suffer performance issues.
-                  </Alert>
                   <Alert severity="info" sx={{ fontSize: 18 }}>
                     Default credentials:
                     <Divider sx={{ my: 1 }} />
@@ -162,7 +157,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                       paddingBottom="10px"
                     >
                       <Typography variant="body2Semi">Release Date</Typography>
-                      <Typography variant="body2">May 04, 2022</Typography>
+                      <Typography variant="body2">Sept 23, 2022</Typography>
                     </Box>
                     <Divider variant="fullWidth" />
                     <Box
@@ -182,7 +177,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                       paddingBottom="10px"
                     >
                       <Typography variant="body2Semi">Size</Typography>
-                      <Typography variant="body2">278-388 MB</Typography>
+                      <Typography variant="body2">292-432 MB</Typography>
                     </Box>
                   </Grid>
                   <Grid item xs={12} sm={6} md={12}>
@@ -341,7 +336,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                       paddingBottom="10px"
                     >
                       <Typography variant="body2Semi">Release Date</Typography>
-                      <Typography variant="body2">May 04, 2022</Typography>
+                      <Typography variant="body2">Sept 23, 2022</Typography>
                     </Box>
                     <Divider variant="fullWidth" />
                     <Box
@@ -361,7 +356,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                       paddingBottom="10px"
                     >
                       <Typography variant="body2Semi">Size</Typography>
-                      <Typography variant="body2">278-388 MB</Typography>
+                      <Typography variant="body2">897 MB - 1 GB</Typography>
                     </Box>
                   </Grid>
                   <Grid item xs={12} sm={6} md={12}>
@@ -520,7 +515,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                       paddingBottom="10px"
                     >
                       <Typography variant="body2Semi">Release Date</Typography>
-                      <Typography variant="body2">May 04, 2022</Typography>
+                      <Typography variant="body2">Sept 23, 2022</Typography>
                     </Box>
                     <Divider variant="fullWidth" />
                     <Box
@@ -540,7 +535,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                       paddingBottom="10px"
                     >
                       <Typography variant="body2Semi">Size</Typography>
-                      <Typography variant="body2">278-388 MB</Typography>
+                      <Typography variant="body2">2.4 - 2.7 GB</Typography>
                     </Box>
                   </Grid>
                   <Grid item xs={12} sm={6} md={12}>
