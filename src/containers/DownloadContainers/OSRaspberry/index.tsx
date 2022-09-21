@@ -12,7 +12,7 @@ import {
 } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import Link from 'next/link'
-import { Fragment, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import PButton from 'components/PButton'
 import SelectButton, { SelectButtonItem } from 'components/SelectButton'
@@ -30,8 +30,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   gridHrMarginTop: {
-    marginTop: 30,
-    marginBottom: 30
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(2)
   },
   subtitleMargined: {
     marginBottom: theme.spacing(4)
@@ -61,7 +61,6 @@ type EditionTypes = '' | 'core' | 'home' | 'security'
 
 const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
   const classes = useStyles()
-  const [expanded, setExpanded] = useState(true)
 
   const [edition, setEdition] = useState<EditionTypes>(initialVersion ?? '')
 
@@ -79,6 +78,35 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
             is available in Core, Home and Security editions. The use of a Raspberry Pi 4 is
             strongly recommended, especially for the Security edition.
           </Typography>
+          <Grid container>
+            <Grid item xs={12} container spacing={4} style={{ paddingTop: 30 }}>
+              <Grid item xs={12} sm={4}>
+                <Typography variant="body1" paragraph>
+                  Available in all editions.
+                </Typography>
+                <Typography variant="body2Semi">Core, Home and Security.</Typography>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <Typography variant="body1" paragraph>
+                  Ready for any context.
+                </Typography>
+                <Typography variant="body2Semi">
+                  Use the full potential of Parrot on your Raspberry Pi.
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <Typography variant="body1" paragraph>
+                  Fully customizable.
+                </Typography>
+                <Typography variant="body2Semi">
+                  You can customize it as you prefer, with any tool.
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12}>
+            <Divider variant="fullWidth" className={classes.gridHrMarginTop} />
+          </Grid>
           <Grid className={classes.gridHrMarginTop} item xs={12}>
             <Typography className={classes.subBlockHeading} variant="subtitle2" paragraph>
               Requirements
@@ -215,64 +243,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                     </Box>
                   </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                  <Divider variant="fullWidth" />
-                </Grid>
               </Grid>
-              <Accordion
-                expanded={expanded}
-                onChange={(_event, xp) => setExpanded(xp)}
-                elevation={0}
-                style={{ width: '100%' }}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon color="primary" />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
-                  style={{ padding: 0 }}
-                >
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="space-between"
-                    width="100%"
-                  >
-                    <Typography className={classes.subBlockHeading} variant="subtitle2">
-                      Features
-                    </Typography>
-                    <Typography color="primary" variant="body1">
-                      {expanded ? 'Hide Features' : 'Show Features'}
-                    </Typography>
-                  </Box>
-                </AccordionSummary>
-                <AccordionDetails style={{ padding: 0 }}>
-                  <Grid container>
-                    <Fragment>
-                      <Grid item xs={12} container spacing={2}>
-                        <Grid item xs={12} sm={4}>
-                          <Typography variant="body1">ParrotOS on Raspberry Pi</Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                          <Typography variant="body1" paragraph>
-                            Ready for any context.
-                          </Typography>
-                          <Typography variant="body2Semi">
-                            Use the full potential of Parrot on your Raspberry Pi.
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                          <Typography variant="body1" paragraph>
-                            Customizable.
-                          </Typography>
-                          <Typography variant="body2Semi">
-                            You can customize it as you prefer, with any DE and any tool.
-                          </Typography>
-                        </Grid>
-                      </Grid>
-                    </Fragment>
-                  </Grid>
-                </AccordionDetails>
-              </Accordion>
             </AccordionDetails>
           </Accordion>
         </Paper>
@@ -394,64 +365,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                     </Box>
                   </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                  <Divider variant="fullWidth" />
-                </Grid>
               </Grid>
-              <Accordion
-                expanded={expanded}
-                onChange={(_event, xp) => setExpanded(xp)}
-                elevation={0}
-                style={{ width: '100%' }}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon color="primary" />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
-                  style={{ padding: 0 }}
-                >
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="space-between"
-                    width="100%"
-                  >
-                    <Typography className={classes.subBlockHeading} variant="subtitle2">
-                      Features
-                    </Typography>
-                    <Typography color="primary" variant="body1">
-                      {expanded ? 'Hide Features' : 'Show Features'}
-                    </Typography>
-                  </Box>
-                </AccordionSummary>
-                <AccordionDetails style={{ padding: 0 }}>
-                  <Grid container>
-                    <Fragment>
-                      <Grid item xs={12} container spacing={2}>
-                        <Grid item xs={12} sm={4}>
-                          <Typography variant="body1">ParrotOS on Raspberry Pi</Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                          <Typography variant="body1" paragraph>
-                            Ready for any context.
-                          </Typography>
-                          <Typography variant="body2Semi">
-                            Use the full potential of Parrot on your Raspberry Pi.
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                          <Typography variant="body1" paragraph>
-                            Customizable.
-                          </Typography>
-                          <Typography variant="body2Semi">
-                            You can customize it as you prefer, with any DE and any tool.
-                          </Typography>
-                        </Grid>
-                      </Grid>
-                    </Fragment>
-                  </Grid>
-                </AccordionDetails>
-              </Accordion>
             </AccordionDetails>
           </Accordion>
         </Paper>
@@ -573,64 +487,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                     </Box>
                   </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                  <Divider variant="fullWidth" />
-                </Grid>
               </Grid>
-              <Accordion
-                expanded={expanded}
-                onChange={(_event, xp) => setExpanded(xp)}
-                elevation={0}
-                style={{ width: '100%' }}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon color="primary" />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
-                  style={{ padding: 0 }}
-                >
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="space-between"
-                    width="100%"
-                  >
-                    <Typography className={classes.subBlockHeading} variant="subtitle2">
-                      Features
-                    </Typography>
-                    <Typography color="primary" variant="body1">
-                      {expanded ? 'Hide Features' : 'Show Features'}
-                    </Typography>
-                  </Box>
-                </AccordionSummary>
-                <AccordionDetails style={{ padding: 0 }}>
-                  <Grid container>
-                    <Fragment>
-                      <Grid item xs={12} container spacing={2}>
-                        <Grid item xs={12} sm={4}>
-                          <Typography variant="body1">ParrotOS on Raspberry Pi</Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                          <Typography variant="body1" paragraph>
-                            Ready for any context.
-                          </Typography>
-                          <Typography variant="body2Semi">
-                            Use the full potential of Parrot on your Raspberry Pi.
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                          <Typography variant="body1" paragraph>
-                            Customizable.
-                          </Typography>
-                          <Typography variant="body2Semi">
-                            You can customize it as you prefer, with any DE and any tool.
-                          </Typography>
-                        </Grid>
-                      </Grid>
-                    </Fragment>
-                  </Grid>
-                </AccordionDetails>
-              </Accordion>
             </AccordionDetails>
           </Accordion>
         </Paper>
