@@ -21,7 +21,7 @@ const OSArchitect = () => {
     <>
       <Grid container justifyContent="center">
         <DESection
-          name="Parrot Architect & IoT"
+          name="Parrot Architect"
           description={
             <>ParrotOS with nothing pre-installed. Install any software and DE with this edition.</>
           }

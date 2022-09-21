@@ -282,7 +282,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                 >
                   <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
                     <Architect className={classes.headerIcon} />
-                    <Typography variant="inherit">Architect & IoT</Typography>
+                    <Typography variant="inherit">Architect</Typography>
                   </Box>
                 </AccordionSummary>
                 <AccordionDetails>

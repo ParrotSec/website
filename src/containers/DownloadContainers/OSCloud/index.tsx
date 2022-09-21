@@ -112,7 +112,7 @@ const OSCloud = () => {
                 <PButton
                   gradient
                   variant="contained"
-                  to="https://parrotsec.org/docs/parrot-on-docker"
+                  to="https://parrotsec.org/docs/cloud/parrot-on-docker"
                 >
                   Check it out
                 </PButton>
