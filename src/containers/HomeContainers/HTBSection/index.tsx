@@ -60,10 +60,10 @@ const HTBSection = (rest: GridProps) => {
             </Typography>
             <PButton
               variant="contained"
-              to="https://hackthebox.com/?ref=parrotsec"
+              to="/download/?version=hackthebox"
               style={{ maxWidth: 165 }}
             >
-              Explore
+              Download
             </PButton>
           </Grid>
           <Grid

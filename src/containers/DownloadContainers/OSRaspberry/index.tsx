@@ -82,7 +82,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
             <Grid item xs={12} container spacing={4} style={{ paddingTop: 30 }}>
               <Grid item xs={12} sm={4}>
                 <Typography variant="body1" paragraph>
-                  Available in all editions.
+                  Available in the main editions.
                 </Typography>
                 <Typography variant="body2Semi">Core, Home and Security.</Typography>
               </Grid>
@@ -122,7 +122,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
               </Grid>
               <Grid container direction="column" item xs={12} sm={6} lg={3}>
                 <Typography variant="body2Semi">Memory</Typography>
-                <Typography variant="body1">1 GB RAM</Typography>
+                <Typography variant="body1">512 MB RAM</Typography>
               </Grid>
               <Grid container direction="column" item xs={12} sm={6} lg={3}>
                 <Typography variant="body2Semi">Storage</Typography>
@@ -151,7 +151,8 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                 </Typography>
                 <Typography variant="subtitle2Semi" paragraph>
                   Without DE, you can install whatever you like. Only the base packages are
-                  installed in this edition.
+                  installed in this edition. This makes it the lightest edition of ParrotOS, it
+                  should guarantee compatibility with all models of the Raspberry Pi.
                 </Typography>
               </Grid>
             </AccordionSummary>
