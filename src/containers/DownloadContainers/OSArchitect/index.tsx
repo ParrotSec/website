@@ -27,7 +27,7 @@ const OSArchitect = () => {
           }
           className={classes.desktopEnvironment}
           version="5.1 Electro Ara"
-          releaseDate="Sept 23, 2022"
+          releaseDate="Sept 24, 2022"
           architecture="all"
           size="379-392 MB"
           screenshots={[

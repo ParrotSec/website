@@ -28,10 +28,10 @@ import OSRaspberry from 'containers/DownloadContainers/OSRaspberry'
 import OSSecurity from 'containers/DownloadContainers/OSSecurity'
 import Architect from 'containers/HomeContainers/OSSection/assets/Architect.svg'
 import Cloud from 'containers/HomeContainers/OSSection/assets/Cloud.svg'
+import HackTheBox from 'containers/HomeContainers/OSSection/assets/hackthebox.svg'
 import Home from 'containers/HomeContainers/OSSection/assets/Home.svg'
 import Raspberry from 'containers/HomeContainers/OSSection/assets/Raspberry.svg'
 import Security from 'containers/HomeContainers/OSSection/assets/Security.svg'
-import HackTheBox from 'containers/HomeContainers/OSSection/assets/hackthebox.svg'
 
 const useStyles = makeStyles(theme => ({
   arrow: {
@@ -275,7 +275,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography variant="subtitle2Semi" align="center" mt="12px">
-                    Try the Pwnbox on your computer.
+                    Try the HTB&apos;s Pwnbox on your computer.
                   </Typography>
                 </AccordionDetails>
               </Accordion>

@@ -186,7 +186,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                       paddingBottom="10px"
                     >
                       <Typography variant="body2Semi">Release Date</Typography>
-                      <Typography variant="body2">Sept 23, 2022</Typography>
+                      <Typography variant="body2">Sept 24, 2022</Typography>
                     </Box>
                     <Divider variant="fullWidth" />
                     <Box
@@ -308,7 +308,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                       paddingBottom="10px"
                     >
                       <Typography variant="body2Semi">Release Date</Typography>
-                      <Typography variant="body2">Sept 23, 2022</Typography>
+                      <Typography variant="body2">Sept 24, 2022</Typography>
                     </Box>
                     <Divider variant="fullWidth" />
                     <Box
@@ -430,7 +430,7 @@ const OSRaspberry = ({ initialVersion }: EditionSelectionProps) => {
                       paddingBottom="10px"
                     >
                       <Typography variant="body2Semi">Release Date</Typography>
-                      <Typography variant="body2">Sept 23, 2022</Typography>
+                      <Typography variant="body2">Sept 24, 2022</Typography>
                     </Box>
                     <Divider variant="fullWidth" />
                     <Box
