@@ -64,42 +64,6 @@ const OSCloud = () => {
           <Grid container justifyContent="center" spacing={2}>
             <Grid item xs={12} md={8} justifyContent="center">
               <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                <Typography variant="h6">HackTheBox Edition</Typography>
-                <Typography variant="body1Semi">
-                  Try this version of ParrotOS customized for Hack The Box or explore the Pwnbox.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4} justifyContent="center">
-              <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
-                <PButton
-                  variant="contained"
-                  to="https://www.hackthebox.com/newsroom/pwnbox/?ref=parrotsec"
-                >
-                  Pwnbox
-                </PButton>
-                <PButton
-                  gradient
-                  variant="contained"
-                  to="https://download.parrot.sh/parrot/iso/5.1/Parrot-htb-5.1_amd64.iso"
-                >
-                  Download
-                </PButton>
-                <PButton
-                  variant="outlined"
-                  to="https://download.parrot.sh/parrot/iso/5.1/Parrot-htb-5.1_amd64.iso.torrent"
-                >
-                  Torrent
-                </PButton>
-              </Box>
-            </Grid>
-          </Grid>
-          <Grid className={classes.gridHrMarginTop} item xs={12}>
-            <Divider variant="fullWidth" />
-          </Grid>
-          <Grid container justifyContent="center" spacing={2}>
-            <Grid item xs={12} md={8} justifyContent="center">
-              <Box display="flex" flexDirection="column" style={{ gap: 10 }}>
                 <Typography variant="h6">Docker images</Typography>
                 <Typography variant="body1Semi">
                   ParrotOS for Docker enables users to take advantage of the Parrot tools on top of
@@ -112,7 +76,7 @@ const OSCloud = () => {
                 <PButton
                   gradient
                   variant="contained"
-                  to="https://parrotsec.org/docs/parrot-on-docker.html"
+                  to="https://parrotsec.org/docs/cloud/parrot-on-docker"
                 >
                   Check it out
                 </PButton>

@@ -32,7 +32,7 @@ const OSHome = () => {
             </>
           }
           version="5.1 Electro Ara"
-          releaseDate="May 04, 2022"
+          releaseDate="Sept 26, 2022"
           architecture="amd64"
           size="2.3 GB"
           download="Download"
@@ -108,14 +108,14 @@ const OSHome = () => {
             }
           ]}
           hashes={{
-            md5: 'fa0446b3f705a2dfd6c26d847a1af60e',
-            sha1: '82dce21ee263e3a6c3f46eb0635f5649c6ef5067',
-            sha224: '33958cfbe1e0ffffc6016251d12ef2078cac151e1622e9af3cc621f8',
-            sha256: '64c583e33c16581c4894e9c9d67a2cc7a23fdc8698a476ccff30727c3e63eb3a',
+            md5: 'a80094b466a199c603353305e292d360',
+            sha1: '7f5b543c753e90bdbd017f22643549401c60526a',
+            sha224: '0f1cda7184ec18fac5f83e86c0603d65493946f4f2519a6723006b30',
+            sha256: '8dd34a2503685535326f448720d093c00f3f7e490765cb74e8afc76bbafbe8ca',
             sha384:
-              'c3de7d31c807159a3f0ccbf4c58bd9379f78ed7f14af0fcc987089e2ba533a9bb16455194ea3e7af7fad4fff347b2d2b',
+              '0ce027c6921a0cce793a91041d2963b736af49f5b57e02017cfc7d805576d4d69aa3d4ec120fa172b44d5f925857388b',
             sha512:
-              '97cbe45fbfb1487df8c010d4d890eb8864873e95ad63ad496f8a983d71f251cfc96b053f6a9ef927ac2b590f9405db4a471fc32f9b96df6fa9417d4b3981aa0d'
+              '800b080363ae57116927d33d3e345839be78b1f67a75aca1c0151cc9a323ffbc2aab0584c1fc652bcda6a84547747ed2cbe6b69bea12f24e75fbd00bae2244d1'
           }}
         />
       </Grid>
