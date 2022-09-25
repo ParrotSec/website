@@ -21,15 +21,15 @@ const OSArchitect = () => {
     <>
       <Grid container justifyContent="center">
         <DESection
-          name="Parrot Architect & IoT"
+          name="Parrot Architect"
           description={
             <>ParrotOS with nothing pre-installed. Install any software and DE with this edition.</>
           }
           className={classes.desktopEnvironment}
           version="5.1 Electro Ara"
-          releaseDate="May 04, 2022"
+          releaseDate="Sept 26, 2022"
           architecture="all"
-          size="321-343 MB"
+          size="379-392 MB"
           screenshots={[
             parrotArchitect1,
             parrotArchitect2,

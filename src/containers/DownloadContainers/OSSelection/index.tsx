@@ -23,10 +23,12 @@ import Carousel from 'components/Carousel'
 import OSArchitect from 'containers/DownloadContainers/OSArchitect'
 import OSCloud from 'containers/DownloadContainers/OSCloud'
 import OSHome from 'containers/DownloadContainers/OSHome'
+import OSPwnbox from 'containers/DownloadContainers/OSPwnbox'
 import OSRaspberry from 'containers/DownloadContainers/OSRaspberry'
 import OSSecurity from 'containers/DownloadContainers/OSSecurity'
 import Architect from 'containers/HomeContainers/OSSection/assets/Architect.svg'
 import Cloud from 'containers/HomeContainers/OSSection/assets/Cloud.svg'
+import HackTheBox from 'containers/HomeContainers/OSSection/assets/hackthebox.svg'
 import Home from 'containers/HomeContainers/OSSection/assets/Home.svg'
 import Raspberry from 'containers/HomeContainers/OSSection/assets/Raspberry.svg'
 import Security from 'containers/HomeContainers/OSSection/assets/Security.svg'
@@ -78,6 +80,9 @@ const useStyles = makeStyles(theme => ({
   cloud: {
     background: 'linear-gradient(180deg, #E806FF 10%, #B505CC 90%)'
   },
+  hackthebox: {
+    background: 'linear-gradient(180deg, #9FEF00 10%, #98D521 90%)'
+  },
   security: {
     background: 'linear-gradient(153.43deg, #FF9800 16.67%, #EC4F00 100%)'
   },
@@ -102,7 +107,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 type OSSelectionProps = {
-  initialVersion?: 'home' | 'security' | 'cloud' | 'architect' | 'raspberry'
+  initialVersion?: 'home' | 'security' | 'cloud' | 'architect' | 'raspberry' | 'hackthebox'
 }
 
 type EditionTabProps = {
@@ -115,7 +120,7 @@ const EditionTab = styled((props: EditionTabProps) => <Tab {...props} />)(() => 
   textTransform: 'none'
 }))
 
-type OSTypes = 'home' | 'security' | 'cloud' | 'architect' | 'raspberry'
+type OSTypes = 'home' | 'security' | 'cloud' | 'architect' | 'raspberry' | 'hackthebox'
 
 const Accordion = ({ gradient, ...props }: AccordionProps & { gradient: OSTypes }) => {
   const classes = useStyles()
@@ -146,9 +151,10 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
   const osIndexes = {
     home: 0,
     security: 1,
-    cloud: 2,
-    architect: 3,
-    raspberry: 4
+    hackthebox: 2,
+    cloud: 3,
+    architect: 4,
+    raspberry: 5
   }
 
   return (
@@ -170,7 +176,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
               ParrotOS
             </Button>
           </RouterLink>
-          <Button className={classes.crumb}>Versions</Button>
+          <Button className={classes.crumb}>Editions</Button>
         </Breadcrumbs>
       </Grid>
       <Hidden lgUp>
@@ -195,6 +201,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
               label="Security Edition"
               onClick={() => setOS('security')}
             />
+            <EditionTab value="hackthebox" label="Pwnbox" onClick={() => setOS('hackthebox')} />
             <EditionTab value="cloud" label="Cloud Edition" onClick={() => setOS('cloud')} />
             <EditionTab
               value="architect"
@@ -251,6 +258,27 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
+              <Accordion
+                expanded={os === 'hackthebox'}
+                onChange={() => setOS('hackthebox')}
+                gradient="hackthebox"
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel4a-content"
+                  id="panel4a-header"
+                >
+                  <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
+                    <HackTheBox className={classes.headerIcon} />
+                    <Typography variant="inherit">Hack The Box</Typography>
+                  </Box>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography variant="subtitle2Semi" align="center" mt="12px">
+                    Try the HTB&apos;s Pwnbox on your computer.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
               <Accordion expanded={os === 'cloud'} onChange={() => setOS('cloud')} gradient="cloud">
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
@@ -282,7 +310,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
                 >
                   <Box display="flex" alignItems="center" flexWrap="wrap" justifyContent="center">
                     <Architect className={classes.headerIcon} />
-                    <Typography variant="inherit">Architect & IoT</Typography>
+                    <Typography variant="inherit">Architect</Typography>
                   </Box>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -328,6 +356,7 @@ const OSSelection = ({ initialVersion }: OSSelectionProps) => {
           >
             <OSHome />
             <OSSecurity />
+            <OSPwnbox />
             <OSCloud />
             <OSArchitect />
             <OSRaspberry />

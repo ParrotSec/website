@@ -158,27 +158,34 @@ const Footer = () => {
                 alignContent="flex-end"
               >
                 <Typography className={classes.title} variant="h6" paragraph>
-                  Versions
+                  Editions
                 </Typography>
                 <Link className={classes.link} color="textSecondary" href="/download?version=home">
-                  Home Edition
+                  Home
                 </Link>
                 <Link
                   className={classes.link}
                   color="textSecondary"
                   href="/download?version=security"
                 >
-                  Security Edition
+                  Security
+                </Link>
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="/download?version=hackthebox"
+                >
+                  Hack The Box
                 </Link>
                 <Link className={classes.link} color="textSecondary" href="/download?version=cloud">
-                  Cloud Edition
+                  Cloud
                 </Link>
                 <Link
                   className={classes.link}
                   color="textSecondary"
                   href="/download?version=architect"
                 >
-                  Architect Edition
+                  Architect
                 </Link>
                 <Link
                   className={classes.link}
