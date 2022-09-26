@@ -109,7 +109,7 @@ const Header = () => {
                 <Link className={classes.link} href="/community">
                   Community
                 </Link>
-                <Link className={classes.link} href="/docs">
+                <Link className={classes.link} href="https://docs.parrotsec.org">
                   Documentation
                 </Link>
                 <Link className={classes.link} href="/blog">
@@ -153,7 +153,11 @@ const Header = () => {
                 >
                   Community
                 </Link>
-                <Link className={classes.link} onClick={() => setCollapsed(false)} href="/docs">
+                <Link
+                  className={classes.link}
+                  onClick={() => setCollapsed(false)}
+                  href="https://docs.parrotsec.org"
+                >
                   Documentation
                 </Link>
                 <Link className={classes.link} onClick={() => setCollapsed(false)} href="/blog">
