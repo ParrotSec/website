@@ -225,7 +225,7 @@ const ToolsSection = (rest: GridProps) => {
                 </PButton>
               </Grid>
               <Grid className={classes.responsiveJustify} container item xs={12} sm={6}>
-                <PButton variant="outlined" to="/docs">
+                <PButton variant="outlined" to="https://docs.parrotsec.org">
                   Documentation
                 </PButton>
               </Grid>
