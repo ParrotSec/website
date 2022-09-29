@@ -18,10 +18,10 @@ export default [
     icon: Milestones
   },
   {
-    title: 'NEST - GitLab instance',
+    title: 'GitLab',
     description:
       'The platform where the source code of the parrot packages is hosted. Join it to contribute to our source code and improve the system.',
-    url: 'https://nest.parrotsec.org',
+    url: 'https://gitlab.com/parrotsec',
     icon: Gitlab
   },
   {
