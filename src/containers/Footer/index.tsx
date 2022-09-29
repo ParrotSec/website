@@ -208,7 +208,11 @@ const Footer = () => {
                 <Typography className={classes.title} variant="h6" paragraph>
                   Resources
                 </Typography>
-                <Link className={classes.link} color="textSecondary" href="/docs">
+                <Link
+                  className={classes.link}
+                  color="textSecondary"
+                  href="https://docs.parrotsec.org"
+                >
                   Documentation
                 </Link>
                 <Link className={classes.link} color="textSecondary" href="/contribute">
