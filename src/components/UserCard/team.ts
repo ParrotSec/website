@@ -9,15 +9,6 @@ export default [
     email: 'mailto:palinuro@parrotsec.org'
   },
   {
-    name: 'Federica Marasà',
-    nickname: 'marafed',
-    role: 'Project Manager, Graphic Designer',
-    github: 'https://github.com/marafed',
-    twitter: '',
-    linkedIn: '',
-    email: 'mailto:marafed@parrotsec.org'
-  },
-  {
     name: 'Irene Pirrotta',
     nickname: 'Tissy',
     role: 'Social Media Manager, Community Manager',
@@ -50,7 +41,7 @@ export default [
     role: 'Social Media and Content Specialist',
     github: '',
     twitter: 'http://twitter.com/giuliamstabile',
-    linkedIn: '',
+    linkedIn: 'https://www.linkedin.com/in/giulia-michelle-stabile-9320a6252/',
     email: 'mailto:sh4rk@parrotsec.org'
   }
 ]
