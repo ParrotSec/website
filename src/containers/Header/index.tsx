@@ -109,7 +109,7 @@ const Header = () => {
                 <Link className={classes.link} href="/community">
                   Community
                 </Link>
-                <Link className={classes.link} href="https://docs.parrotsec.org">
+                <Link className={classes.link} href="/docs">
                   Documentation
                 </Link>
                 <Link className={classes.link} href="/blog">
